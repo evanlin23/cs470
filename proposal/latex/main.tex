@@ -2,6 +2,17 @@
 \settopmatter{printacmref=false, printfolios=false}
 \usepackage{tikz}
 \usetikzlibrary{positioning,arrows.meta,calc}
+
+% --- Space-saving layout: the proposal is limited to one page ---
+% Slightly tighter margins than sigconf's default (top 57pt, bottom 73pt, sides 54pt).
+\geometry{top=24pt, bottom=26pt, inner=34pt, outer=34pt, columnsep=1pc}
+% Less space around section headings (acmart default: .75 before, .25 after).
+\makeatletter
+\renewcommand\section{\@startsection{section}{1}{\z@}%
+  {-.3\baselineskip \@plus -1\p@ \@minus -.2\p@}%
+  {.05\baselineskip}%
+  {\ACM@NRadjust\@secfont}}
+\makeatother
 % Placeholder for numbers we still have to measure. Remove before submitting.
 \newcommand{\tbd}[1]{\textcolor{red}{[#1]}}
 
@@ -15,9 +26,11 @@
 
 \begin{teaserfigure}
   \centering
-  \input{figure/flow.tex}
+  \vspace{-6pt}
+  \scalebox{0.8}{\input{figure/flow.tex}}
   \caption{Core flow: (1) co-authorship communities, with a structural hole dashed; (2) ranked researchers across the hole; (3) their matching papers and an introduction path.}
   \label{fig:flow}
+  \vspace{-6pt}
 \end{teaserfigure}
 
 \maketitle
