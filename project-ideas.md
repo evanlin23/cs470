@@ -57,6 +57,81 @@ Every component is scored 4/3/2/1/0, and you get (score ÷ 4) × weight.
 
 ---
 
+## Recommended pick: MethodBridge — methods from other fields across the structural hole
+
+*This is our earlier idea (finding methods from other departments that could be used in a research
+area). It scores best against the rubric, so it is written out here in proposal-ready form.*
+
+- **Problem / users.** Many advances come from importing a method from another field: MCMC from
+  physics into statistics, diffusion models from non-equilibrium thermodynamics into ML, PageRank
+  into biology. Researchers rarely find these methods, because (a) their reading follows their own
+  citation community, and (b) the same method has different names in different fields. (b) is the
+  **synonymy** problem from Lesson 6. The users are grad students and undergrad researchers starting
+  a project.
+- **Why it matters.** Burt's *Structural holes and good ideas* ('04, on the Lesson 1 reading list):
+  people who broker between groups have better ideas. Uzzi et al. (*Science* '13): papers that
+  combine atypical sources have more impact. The app makes the user a broker on purpose.
+- **Core concept, which carries the app.**
+  - **L10 community discovery** on the citation graph, to find actual research communities rather
+    than department labels.
+  - **L1 structural holes / local bridges.** A candidate is a method that is central in community B
+    and used there on problems similar to yours, but has *no or few citation paths* into your
+    community A. That gap is the hole.
+  - **L6 HITS**, inside community B. *Authorities* are the canonical papers for the method. *Hubs*
+    are tutorials and reviews pointing to many authorities, which are the best "start here" reading
+    for an outsider.
+  - **L1/L13 weak ties.** Suggest a **broker researcher**, ideally at UIUC, who has published in
+    both communities, as someone to ask.
+  - Representing a method by its canonical papers keeps this network-based. You don't need NLP to
+    "extract methods." Text embeddings are used only to match *problem* descriptions.
+- **In-class alternative = baseline.** Existing tools such as Connected Papers recommend by
+  co-citation and bibliographic coupling, which is in effect **triadic closure**: friends of friends,
+  strong ties, *inside* your community. Ours ranks by **structural holes and local bridges**, the
+  weak-tie side of the same lesson. Secondary contrasts are citation count (in-degree) vs. HITS for
+  choosing which papers to show, and Girvan–Newman vs. modularity for finding communities. Include
+  a plain **LLM-only** baseline ("what methods from other fields could help with X?") as well. It's
+  the obvious 2026 competitor, and comparing against it candidly strengthens the evaluation.
+- **Data.** OpenAlex: free and open, with works, references, publication years, a
+  topic/field/domain hierarchy and author institutions. Check current API-key and rate-limit terms.
+  Its field labels also act as a sanity check on the detected communities.
+- **Falsifiable claims.**
+  1. *Backtest:* freeze the citation graph **3 years before** each of N known cross-field transfers.
+     The structural-hole ranking places the eventually-imported method in its top-10 more often than
+     co-citation (triadic-closure) ranking or embedding similarity. Ground-truth transfers can come
+     from documented cases such as Gleich's *PageRank beyond the Web* (SIAM Review '15), diffusion
+     models, MCMC, and word2vec → item2vec/dna2vec.
+  2. *Users:* a larger share of suggestions are rated "new to me **and** plausibly useful"
+     than from Semantic Scholar/Connected Papers or the LLM-only baseline.
+
+  Either claim could come out false, which is exactly what the rubric asks for.
+- **Prototype (core flow).** (1) Paste an abstract or 1–3 seed papers → (2) "Your neighborhood" map:
+  your community and the communities nearby → (3) ranked **methods across the hole**, each with why:
+  the similar problems in field B that used it, the community distance, and whether anyone has
+  bridged it already → (4) a method card with a *start-here* hub paper, the authority papers and a
+  broker researcher (UIUC first) → save or export.
+- **Users / reach.** UIUC grad students and undergrad researchers in CS plus interdisciplinary units
+  (iSchool, NCSA, Beckman, IGB), via lab Slacks and ACM SIGs. Target 12–20 participants per round,
+  each judging suggestions for *their own* project. Research topics don't change between sessions,
+  so the same people can come back for round 2 and round 3.
+- **Metrics.** Backtest Hit@10 and MRR vs. the baselines; user-rated novelty × usefulness per
+  suggestion; the share of suggestions from a different OpenAlex field (field distance); time to a
+  usable lead vs. the participant's usual search.
+- **Related work.** Literature-based discovery (Swanson '86, fish oil → Raynaud's); analogy mining
+  (Hope et al., KDD '17); SOLVENT (Chan et al., CSCW '18); Sourati & Evans (*Nat. Hum. Behav.* '23);
+  Connected Papers, ResearchRabbit, Litmaps, Elicit, Semantic Scholar. **The contrast:** these tools
+  optimize similarity, which keeps you inside your own community. We look for the structural hole.
+- **Scope (realistic for one semester).** Pre-build the graph for a handful of fields (e.g. CS/ML,
+  statistics, physics, biology) instead of all of science. Run the backtest on ~15–30 hand-verified
+  transfers. Keep the UI to the four screens above.
+- **Assumptions to state.** Citation communities approximate fields. A method can be represented
+  by its canonical papers. Abstracts are enough to match problems. The 3-year freeze is long enough
+  to make the backtest honest.
+- **Risks, which become the "candid" section of the final report.** Community resolution (too coarse
+  and nothing crosses a hole; too fine and everything does). Citation lag for recent work. The
+  LLM-only baseline may do well; say where and why.
+
+---
+
 ## 2. Ideas (ranked)
 
 Each idea lists: the problem and users · the core concept (lesson) · the in-class alternative,
@@ -294,7 +369,11 @@ metrics · risks.
 | 7 | Privacy-leak mirror | ● | ◐ | ◐ | ◐ | ◐ | ◐ |
 | 8 | Fair-price sublease market | ● | ● | ○ | ○ | ◐ | ○ high |
 
-**Recommendation.**
+**Recommendation.** **MethodBridge** (the recommended pick above). It combines #5's strengths (real
+OpenAlex data today, reachable researchers, a clean HITS story) with the strongest course-concept
+argument on this list: structural holes vs. triadic closure, straight from Lesson 1 and Burt '04.
+It also has a historical backtest, which gives the Evaluation component an objective baseline
+comparison that no user study alone provides. If you'd rather not do it:
 - **#1** if you want the highest technical ceiling and an idea the instructor explicitly asked for.
 - **#2 or #3** if you want the safest path to "Sophisticated" on Users & feedback, which is 15–20%
   at every stage and where most projects lose points.
