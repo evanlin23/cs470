@@ -69,19 +69,18 @@ In Figure~\ref{fig:flow}, the map comes first, so users see \emph{where} the hol
 names. Every suggestion shows its reasons, because unexplained recommendations are hard to trust.
 
 \section{Users}
-UIUC students who want research mentors or collaborators. We will recruit 10--15 per round from our own
-networks and classes, deliberately spanning several majors so suggestions cross fields. Friends may be
-generous raters, so all ratings are blind. The same people test each revised version over three rounds.
+UIUC students who already do research (a paper or an advisor, so they have a place in the graph) and want
+mentors or collaborators outside their group. We will recruit about 10 from our networks and classes and reuse
+them across three rounds. Ratings are blind, so friendliness cannot
+favor our method.
 
 \section{Evaluation}
-(1)~\textbf{Backtest (no users).} Using only 2015--19 data, how often are the real partners of new
-cross-community collaborations (2020--24) in our top~$k$, vs.\ triadic closure, topic-only and degree?
-(2)~\textbf{Blind rating.} Each participant rates a mixed, unlabeled list of suggestions from BridgeFinder
-and the baselines as relevant and/or new to them. (3)~\textbf{Usefulness:} would they want to contact each
-person? No one has to send an email. We succeed if we beat triadic closure on (1) and (2), and will say where
-we do not.
-
-\emph{Use of AI:} Claude (Anthropic) helped brainstorm, prototype and draft; we checked everything.
+(1)~\textbf{Backtest (no users).} With 2015--19 data and only researchers $\geq$3 steps from each user (whom we
+recommend), how often do users' real 2020--24 new co-authors land in our top 10 vs.\ topic similarity alone? We expect triadic closure to win on \emph{all} new ties and will report it.
+(2)~\textbf{Blind rating.} Participants rate a mixed, unlabeled list from ours, triadic closure and
+topic-only as relevant (1--5) and new or not; we succeed if more of ours are both.
+(3)~\textbf{Usefulness.} Would they feel comfortable contacting each person? (No email is sent.)
+\emph{Use of AI:} Claude helped brainstorm and draft; we verified everything.
 
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{references}
