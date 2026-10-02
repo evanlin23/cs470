@@ -62,23 +62,24 @@ A web app for Figure~\ref{fig:flow} (Python/networkx over an OpenAlex snapshot) 
 \textbf{Oct~30:} graph, holes, backtest, prototype, feedback round~1. \textbf{Mid-Nov.:} person cards,
 intro paths, round~2. \textbf{Dec~9:} round~3, evaluation. \emph{Assumptions:} OpenAlex disambiguation is
 good enough (we will hand-check 50 authors); topic vectors capture ``similar research''; students without
-papers are placed through their advisor or lab; public data and drafted (never auto-sent) emails keep
-outreach appropriate.
+papers are placed through their advisor or lab; using only public publication data keeps suggestions appropriate.
 
 \section{Preliminary Design}
 In Figure~\ref{fig:flow}, the map comes first, so users see \emph{where} the holes are before seeing
 names. Every suggestion shows its reasons, because unexplained recommendations are hard to trust.
 
 \section{Users}
-UIUC students seeking mentors or collaborators outside their lab, plus a few faculty seeking
-interdisciplinary partners. We will recruit 10--15 students per round, for three rounds, via ACM@UIUC SIGs,
-the Office of Undergraduate Research and our labs. Each rates suggestions for their own interests.
+UIUC students who want research mentors or collaborators. We will recruit 10--15 per round from our own
+networks and classes, deliberately spanning several majors so suggestions cross fields. Friends may be
+generous raters, so all ratings are blind. The same people test each revised version over three rounds.
 
 \section{Evaluation}
-(1)~\textbf{Backtest recall@$k$} of new cross-community collaborators vs.\ triadic closure, topic-only
-and degree. (2)~\textbf{Relevant-and-new rate} of suggestions vs.\ triadic-closure and topic-only lists
-(within-subject). (3)~\textbf{Outreach intent}, with a follow-up on emails sent. Success means beating
-triadic closure on (1) and (2); we will report where we do not.
+(1)~\textbf{Backtest (no users).} Using only 2015--19 data, how often are the real partners of new
+cross-community collaborations (2020--24) in our top~$k$, vs.\ triadic closure, topic-only and degree?
+(2)~\textbf{Blind rating.} Each participant rates a mixed, unlabeled list of suggestions from BridgeFinder
+and the baselines as relevant and/or new to them. (3)~\textbf{Usefulness:} would they want to contact each
+person? No one has to send an email. We succeed if we beat triadic closure on (1) and (2), and will say where
+we do not.
 
 \emph{Use of AI:} Claude (Anthropic) helped brainstorm, prototype and draft; we checked everything.
 
