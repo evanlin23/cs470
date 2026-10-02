@@ -1,0 +1,87 @@
+\documentclass[sigconf,nonacm]{acmart}
+\settopmatter{printacmref=false, printfolios=false}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta,calc}
+% Placeholder for numbers we still have to measure. Remove before submitting.
+\newcommand{\tbd}[1]{\textcolor{red}{[#1]}}
+
+\begin{document}
+
+\title{BridgeFinder: Finding People Across Structural Holes}
+
+\author{Evan Lin and Eric Liu}
+\email{{elin26, ericl8}@illinois.edu}
+\affiliation{\institution{CS 470 project proposal, University of Illinois Urbana-Champaign}\country{}}
+
+\begin{teaserfigure}
+  \centering
+  \input{figure/flow.tex}
+  \caption{Core flow. (1) UIUC co-authorship communities; dashed = a structural hole (similar topics, almost
+  no joint papers). (2) Researchers across the hole, ranked. (3) Their matching papers and an introduction path.}
+  \label{fig:flow}
+\end{teaserfigure}
+
+\maketitle
+
+\section{Objective}
+Students seeking a research mentor, and researchers seeking collaborators, search through people they
+already know: an advisor's contacts, their lab, their department. That returns people who are already close.
+Yet new information travels through weak ties~\cite{granovetter1973}, and people who broker between groups
+that don't talk have better ideas~\cite{burt2004}. At UIUC (\tbd{N} researchers, \tbd{M} units), two groups
+can work on the same problem for years without a joint paper. \textbf{BridgeFinder} finds these gaps in the
+co-authorship graph and names the people on the other side.
+
+\section{Related Work}
+\emph{Illinois Experts}~\cite{experts} and Google Scholar search researchers by keyword but ignore network
+position: your co-author's co-author ranks like a stranger. LinkedIn's ``People You May Know'' and Twitter's
+Who-to-Follow~\cite{gupta2013} use triadic closure, the opposite of brokerage. Link
+prediction~\cite{libennowell2007} finds \emph{likely} ties; we rank ties by \emph{value}, using Burt's
+constraint~\cite{burt1992}.
+
+\section{Course Concepts \& Network Analysis}
+Core concept: \textbf{structural holes and brokerage} (Lesson~1), with \textbf{community discovery}
+(Lesson~10) and \textbf{weak ties} and \textbf{decentralized search} (Lessons~1, 13).
+
+\emph{Graph and method.} Nodes are UIUC researchers in OpenAlex~\cite{openalex}. Edges are 2015--2024 co-authorships weighted by joint papers. Each node has a topic vector.
+(1)~Louvain modularity~\cite{blondel2008} finds communities for the map.
+(2)~Two communities form a \emph{hole} when their topics are similar but few edges join them.
+(3)~For a user $u$, each researcher $v$ is scored by topic similarity $\times$ graph distance $\times$
+\emph{brokerage gain}, the drop in $u$'s constraint if the tie $u$--$v$ were added.
+(4)~A weak-tie shortest path offers an introduction.
+
+\emph{Alternatives from class.} Triadic closure only finds people already near you; topic similarity alone
+can't tell a stranger from a friend of a friend. Girvan--Newman~\cite{newman2004} could not split a 150-node
+graph in 148\,s in our pilot; Louvain split 610 nodes in 1.5\,s.
+
+\emph{Claim that could be false.} From the 2015--19 graph, BridgeFinder ranks the actual partners of new
+\emph{cross-community} collaborations (2020--24) higher than triadic-closure or topic-only ranking, and those
+collaborations' papers are cited more than new within-community ones in the same fields (Burt's claim).
+
+\section{Proposed Work}
+A web app for Figure~\ref{fig:flow} (Python/networkx over an OpenAlex snapshot) plus the backtest.
+\textbf{Oct~30:} graph, holes, backtest, prototype, feedback round~1. \textbf{Mid-Nov.:} person cards,
+intro paths, round~2. \textbf{Dec~9:} round~3, evaluation. \emph{Assumptions:} OpenAlex disambiguation is
+good enough (we will hand-check 50 authors); topic vectors capture ``similar research''; students without
+papers are placed through their advisor or lab; public data and drafted (never auto-sent) emails keep
+outreach appropriate.
+
+\section{Preliminary Design}
+In Figure~\ref{fig:flow}, the map comes first, so users see \emph{where} the holes are before seeing
+names. Every suggestion shows its reasons, because unexplained recommendations are hard to trust.
+
+\section{Users}
+UIUC students seeking mentors or collaborators outside their lab, plus a few faculty seeking
+interdisciplinary partners. We will recruit 10--15 students per round, for three rounds, via ACM@UIUC SIGs,
+the Office of Undergraduate Research and our labs. Each rates suggestions for their own interests.
+
+\section{Evaluation}
+(1)~\textbf{Backtest recall@$k$} of new cross-community collaborators vs.\ triadic closure, topic-only
+and degree. (2)~\textbf{Relevant-and-new rate} of suggestions vs.\ triadic-closure and topic-only lists
+(within-subject). (3)~\textbf{Outreach intent}, with a follow-up on emails sent. Success means beating
+triadic closure on (1) and (2); we will report where we do not.
+
+\emph{Use of AI:} Claude (Anthropic) helped brainstorm, prototype and draft; we checked everything.
+
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{references}
+\end{document}

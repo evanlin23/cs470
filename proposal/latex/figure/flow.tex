@@ -1,0 +1,66 @@
+% Figure 1: the core flow as three minimal wireframe screens (grayscale).
+\begin{tikzpicture}[
+    font=\sffamily\footnotesize,
+    frame/.style={draw=black!45, line width=0.5pt, rounded corners=3pt},
+    comm/.style={circle, draw=black!60, fill=white, line width=0.6pt},
+    tie/.style={draw=black!35, line cap=round},
+    small/.style={font=\sffamily\scriptsize, text=black!65},
+  ]
+  \def\W{5.45}\def\H{3.2}\def\G{0.55}\def\B{0.48}
+
+  \foreach \i/\t in {0/{1\enspace Campus hole map}, 1/{2\enspace People across the hole}, 2/{3\enspace Researcher card}} {
+    \pgfmathsetmacro\x{\i*(\W+\G)}
+    \draw[frame] (\x,0) rectangle (\x+\W,\H);
+    \draw[black!30] (\x,\H-\B) -- (\x+\W,\H-\B);
+    \node[anchor=west, font=\sffamily\footnotesize\bfseries] at (\x+0.15,\H-\B/2) {\t};
+  }
+  \foreach \i in {0,1} {
+    \pgfmathsetmacro\x{\i*(\W+\G)+\W}
+    \draw[-{Stealth[length=4pt]}, line width=0.8pt, black!60] (\x+0.07,1.35) -- (\x+\G-0.07,1.35);
+  }
+
+  % Panel 1: communities and a structural hole.
+  \coordinate (Y) at (1.3,1.6);  \coordinate (M) at (4.15,1.8);
+  \coordinate (D) at (1.25,0.62); \coordinate (L) at (4.15,0.68);
+  \draw[tie, line width=2.6pt] (Y) -- (M);
+  \draw[tie, line width=1.8pt] (Y) -- (D);
+  \draw[tie, line width=1pt] (M) -- (L);
+  \draw[tie, line width=0.7pt] (D) -- (L);
+  \draw[black, line width=0.9pt, dash pattern=on 2.5pt off 2pt] (Y) -- (L)
+    node[pos=0.5, fill=white, inner sep=1pt, font=\sffamily\scriptsize\bfseries] {hole};
+  \node[comm, fill=black!12, minimum size=0.8cm, font=\sffamily\scriptsize\bfseries] at (Y) {you};
+  \node[comm, minimum size=0.6cm] at (M) {};
+  \node[comm, minimum size=0.48cm] at (D) {};
+  \node[comm, minimum size=0.52cm] at (L) {};
+  \node[small, anchor=east] at ($(Y)+(-0.45,0.2)$) {NLP};
+  \node[small, anchor=south] at ($(M)+(0,0.3)$) {Machine learning};
+  \node[small, anchor=east] at ($(D)+(-0.3,0)$) {Data sci.};
+  \node[small, anchor=north] at ($(L)+(0,-0.27)$) {Linguistics};
+
+  % Panel 2: ranked researchers.
+  \begin{scope}[shift={(\W+\G,0)}]
+    \foreach \y/\name/\dept/\top/\hop/\gain in {
+        1.95/Researcher A/Linguistics/.71/4 hops/+.18,
+        1.2/Researcher B/Linguistics/.64/no path/+.15,
+        0.45/Researcher C/Machine learning/.69/2 hops/+.04} {
+      \draw[black!30, rounded corners=2pt] (0.15,\y-0.08) rectangle (\W-0.15,\y+0.6);
+      \node[anchor=west] at (0.25,\y+0.4) {\textbf{\name} \textcolor{black!60}{$\cdot$ \dept}};
+      \node[small, anchor=west] at (0.25,\y+0.1) {topics \top\ $\cdot$ \hop\ $\cdot$ brokerage \gain};
+    }
+  \end{scope}
+
+  % Panel 3: researcher card.
+  \begin{scope}[shift={(2*\W+2*\G,0)}]
+    \node[small, anchor=west, font=\sffamily\scriptsize\bfseries] at (0.15,2.48) {Matching papers};
+    \node[anchor=north west, text width=5cm, inner sep=0pt] at (0.25,2.3)
+      {2 on semantic parsing for low-resource languages};
+    \node[small, anchor=west, font=\sffamily\scriptsize\bfseries] at (0.15,1.55) {Introduction path};
+    \node[anchor=west] (p0) at (0.25,1.15) {You};
+    \node[right=9pt of p0] (p1) {Advisor};
+    \node[right=9pt of p1] (p2) {Co-author};
+    \node[right=9pt of p2] (p3) {\textbf{A}};
+    \foreach \a/\b in {p0/p1, p1/p2, p2/p3} \draw[-{Stealth[length=3pt]}, black!60] (\a) -- (\b);
+    \node[draw=black!70, rounded corners=2pt, inner sep=3pt, anchor=south east] at (\W-0.2,0.2)
+      {Draft outreach email};
+  \end{scope}
+\end{tikzpicture}
