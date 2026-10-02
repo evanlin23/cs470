@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MethodBridge core flow</title>
+<style>
+  :root {
+    --ink: #1d2330; --muted: #5d6677; --line: #d9dee7; --bg: #ffffff; --panel: #f6f8fb;
+    --home: #2f6fde; --web: #e0662f; --phys: #8a55c9; --ml: #1f9d78; --stat: #b58a12;
+    --chip: #eef2f8;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+         font-family: "Liberation Sans", Arial, Helvetica, sans-serif; }
+  .strip { display: grid; grid-template-columns: repeat(4, 360px); gap: 14px; padding: 10px; width: max-content; }
+  .screen { border: 1.5px solid var(--line); border-radius: 10px; height: 300px; overflow: hidden;
+            display: flex; flex-direction: column; background: #fff; }
+  .bar { display: flex; align-items: center; gap: 8px; padding: 7px 10px; background: var(--panel);
+         border-bottom: 1px solid var(--line); font-size: 15px; font-weight: 700; }
+  .step { background: var(--ink); color: #fff; border-radius: 50%; width: 22px; height: 22px;
+          display: inline-flex; align-items: center; justify-content: center; font-size: 13px; }
+  .body { padding: 9px 11px; font-size: 13.5px; line-height: 1.3; flex: 1; display: flex; flex-direction: column; gap: 7px; }
+  .label { font-size: 11.5px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; font-weight: 700; }
+  .box { border: 1px solid var(--line); border-radius: 6px; padding: 6px 8px; background: #fff; }
+  .chips { display: flex; flex-wrap: wrap; gap: 4px; }
+  .chip { background: var(--chip); border-radius: 10px; padding: 2px 8px; font-size: 12px; }
+  .btn { margin-top: auto; align-self: flex-end; background: var(--home); color: #fff; border-radius: 6px;
+         padding: 6px 12px; font-weight: 700; font-size: 13px; }
+  .btn.alt { background: #fff; color: var(--home); border: 1.5px solid var(--home); }
+  .row { display: flex; gap: 6px; }
+  .card { border: 1px solid var(--line); border-left: 5px solid var(--web); border-radius: 6px; padding: 5px 8px; }
+  .card.phys { border-left-color: var(--phys); } .card.ml { border-left-color: var(--ml); }
+  .card b { font-size: 14px; }
+  .meta { color: var(--muted); font-size: 12px; }
+  .why { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 3px; }
+  .why span { font-size: 11px; border-radius: 9px; padding: 1px 7px; background: #fdf0e9; color: #9a3d12; }
+  .why span.g { background: #e9f6f1; color: #11684f; } .why span.b { background: #eaf1fd; color: #1f4fa8; }
+  svg text { font-family: inherit; }
+  .k { font-size: 11.5px; color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="strip">
+
+  <!-- 1. Seed -->
+  <div class="screen">
+    <div class="bar"><span class="step">1</span> Describe your problem</div>
+    <div class="body">
+      <div class="label">Your abstract or seed papers</div>
+      <div class="box" style="font-size:12.5px">We want to prioritize genes from a microarray experiment using known gene–gene interactions…</div>
+      <div class="chips">
+        <span class="chip">Ideker 2002</span><span class="chip">Gasch 2000</span>
+        <span class="chip">Breitling 2004</span><span class="chip">+ 9 more</span>
+      </div>
+      <div class="label" style="margin-top:4px">In plain words (no jargon)</div>
+      <div class="box" style="font-size:12.5px">Rank items using each item's own score <i>plus</i> the links between items.</div>
+      <div class="meta">Why: the same method has different names in different fields.</div>
+      <div class="btn">Map my neighborhood →</div>
+    </div>
+  </div>
+
+  <!-- 2. Neighborhood map -->
+  <div class="screen">
+    <div class="bar"><span class="step">2</span> Your research neighborhood</div>
+    <div class="body" style="padding:4px 8px">
+      <svg viewBox="0 0 340 222" width="340" height="222" aria-label="community map">
+        <!-- ties between fields (drawn first; clusters are painted over them) -->
+        <g stroke="#9aa3b2" fill="none" stroke-linecap="round">
+          <line x1="110" y1="100" x2="268" y2="46" stroke-width="1.3" stroke-dasharray="4 3"/>
+          <line x1="110" y1="100" x2="285" y2="124" stroke-width="2.6"/>
+          <line x1="110" y1="100" x2="210" y2="196" stroke-width="4.5"/>
+          <line x1="110" y1="100" x2="38" y2="198" stroke-width="7"/>
+        </g>
+        <g>
+          <text x="110" y="24" text-anchor="middle" font-size="12.5" font-weight="700" fill="#2f6fde">Your field</text>
+          <text x="110" y="38" text-anchor="middle" font-size="11" fill="#5d6677">gene expression &amp; networks</text>
+          <circle cx="110" cy="100" r="44" fill="#fff"/>
+          <circle cx="110" cy="100" r="44" fill="#2f6fde" fill-opacity=".16" stroke="#2f6fde" stroke-width="2"/>
+          <g fill="#2f6fde"><circle cx="95" cy="86" r="5"/><circle cx="118" cy="80" r="4"/><circle cx="128" cy="106" r="5"/>
+            <circle cx="102" cy="114" r="4"/><circle cx="86" cy="102" r="3.5"/><circle cx="114" cy="96" r="6"/></g>
+
+          <circle cx="268" cy="46" r="24" fill="#fff"/>
+          <circle cx="268" cy="46" r="24" fill="#e0662f" fill-opacity=".16" stroke="#e0662f" stroke-width="2"/>
+          <g fill="#e0662f"><circle cx="260" cy="42" r="6"/><circle cx="276" cy="52" r="4"/><circle cx="273" cy="36" r="3.5"/></g>
+          <text x="268" y="13" text-anchor="middle" font-size="12" font-weight="700" fill="#b44d1f">Web search</text>
+
+          <circle cx="285" cy="124" r="21" fill="#fff"/>
+          <circle cx="285" cy="124" r="21" fill="#1f9d78" fill-opacity=".16" stroke="#1f9d78" stroke-width="2"/>
+          <g fill="#1f9d78"><circle cx="279" cy="120" r="5"/><circle cx="291" cy="129" r="4"/></g>
+          <text x="283" y="161" text-anchor="middle" font-size="12" font-weight="700" fill="#14705a">Machine learning</text>
+
+          <circle cx="210" cy="196" r="15" fill="#fff"/>
+          <circle cx="210" cy="196" r="15" fill="#8a55c9" fill-opacity=".16" stroke="#8a55c9" stroke-width="2"/>
+          <text x="231" y="200" font-size="11.5" font-weight="700" fill="#6a3aa3">Network physics</text>
+
+          <circle cx="38" cy="198" r="15" fill="#fff"/>
+          <circle cx="38" cy="198" r="15" fill="#b58a12" fill-opacity=".16" stroke="#b58a12" stroke-width="2"/>
+          <text x="59" y="202" font-size="11.5" font-weight="700" fill="#8a6a0c">Statistics</text>
+        </g>
+      </svg>
+      <div class="k">Line width = citation ties between fields. <b>Thin or dashed = a structural hole</b>: a field you rarely read.</div>
+    </div>
+  </div>
+
+  <!-- 3. Methods across the hole -->
+  <div class="screen">
+    <div class="bar"><span class="step">3</span> Methods across the hole</div>
+    <div class="body">
+      <div class="card"><b>PageRank</b> <span class="meta">· Web search</span>
+        <div class="why"><span>far from your field</span><span class="g">central there (HITS)</span><span class="b">1 bridge paper</span></div></div>
+      <div class="card"><b>Hubs &amp; authorities (HITS)</b> <span class="meta">· Web search</span>
+        <div class="why"><span>far from your field</span><span class="g">central there</span></div></div>
+      <div class="card ml"><b>Label propagation on graphs</b> <span class="meta">· ML</span>
+        <div class="why"><span>medium distance</span><span class="g">central there</span><span class="b">4 bridges</span></div></div>
+      <div class="card phys"><b>Preferential attachment</b> <span class="meta">· Physics</span>
+        <div class="why"><span>near</span><span class="b">already widely bridged</span></div></div>
+      <div class="meta" style="margin-top:auto">Ranked by authority in its own field × distance from yours.</div>
+    </div>
+  </div>
+
+  <!-- 4. Method card -->
+  <div class="screen">
+    <div class="bar"><span class="step">4</span> PageRank: how to start</div>
+    <div class="body">
+      <div class="label">Start here (hub: links to all key papers)</div>
+      <div class="box">Survey: <i>Deeper Inside PageRank</i></div>
+      <div class="label">Key papers (authorities)</div>
+      <div class="box" style="font-size:12.5px">Brin &amp; Page 1998 · Kleinberg 1999 · Page et al. 1999</div>
+      <div class="label">Who bridges both fields</div>
+      <div class="box" style="font-size:12.5px">Researcher at Illinois: 3 papers in each field</div>
+      <div class="meta">Problems like yours in Web search: "rank pages using links" (41 papers)</div>
+      <div class="row" style="margin-top:auto; justify-content:flex-end">
+        <div class="btn alt" style="margin:0">Save</div><div class="btn" style="margin:0">Draft intro email</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
