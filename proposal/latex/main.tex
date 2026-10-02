@@ -24,63 +24,45 @@
 \maketitle
 
 \section{Objective}
-Students seeking a research mentor, and researchers seeking collaborators, search through people they
-already know: an advisor's contacts, their lab, their department. That returns people who are already close.
-Yet new information travels through weak ties~\cite{granovetter1973}, and people who broker between groups
-that don't talk have better ideas~\cite{burt2004}. At UIUC (\tbd{N} researchers, \tbd{M} units), two groups
-can work on the same problem for years without a joint paper. \textbf{BridgeFinder} finds these gaps in the
-co-authorship graph and names the people on the other side.
+When students search for a research mentor or researchers seek collaborators, they tend to search through connections they know: their lab, their department, etc. However, novel information spreads through weak ties~\cite{granovetter1973}, and individuals spanning structural holes between disconnected communities will be more likely to generate innovative ideas~\cite{burt2004}. Interdisciplinary research often harbors these exact structural holes. At UIUC and other universities, separate groups frequently tackle similar problems for years without co-authoring a single paper.  \textbf{BridgeFinder} finds these gaps in the co-authorship graph and names the people on the other side. 
 
 \section{Related Work}
-\emph{Illinois Experts}~\cite{experts} and Google Scholar search researchers by keyword but ignore network
-position: your co-author's co-author ranks like a stranger. LinkedIn's ``People You May Know'' and Twitter's
-Who-to-Follow~\cite{gupta2013} use triadic closure, the opposite of brokerage. Link
-prediction~\cite{libennowell2007} finds \emph{likely} ties; we rank ties by \emph{value}, using Burt's
-constraint~\cite{burt1992}.
+Current tools like Illinois Experts~\cite{experts} and Google Scholar will match by keyword, but fail to consider graph topology, treating researchers like isolated documents. LinkedIn's ``People You May Know'' and link prediction~\cite{libennowell2007} favor triadic closure, which reinforces mutual connections instead of brokerage. \textbf{BridgeFinder} explicitly detects structural holes to recommend collaborators across disconnected communities.
+
 
 \section{Course Concepts \& Network Analysis}
-Core concept: \textbf{structural holes and brokerage} (Lesson~1), with \textbf{community discovery}
-(Lesson~10) and \textbf{weak ties} and \textbf{decentralized search} (Lessons~1, 13).
+Our project centers on \textbf{brokerage} (Lesson~1): weak ties that act like local bridges, passing information between two disconnected groups. We will build a graph where the nodes are UIUC researchers in OpenAlex~\cite{openalex} and the edges are co-authorships, weighted by the number of joint papers; each node is tagged with its OpenAlex topics. Louvain modularity (Lesson~10) splits the graph into research communities, and a \emph{hole} is two communities with similar topics but few joint papers. For a student, we rank researchers at least three steps away by cosine similarity of OpenAlex topic profiles, boosted by the number of introduction paths to them.
 
-\emph{Graph and method.} Nodes are UIUC researchers in OpenAlex~\cite{openalex}. Edges are 2015--2024 co-authorships weighted by joint papers. Each node has a topic vector.
-(1)~Louvain modularity~\cite{blondel2008} finds communities for the map.
-(2)~Two communities form a \emph{hole} when their topics are similar but few edges join them.
-(3)~For a user $u$, each researcher $v$ is scored by topic similarity $\times$ graph distance $\times$
-\emph{brokerage gain}, the drop in $u$'s constraint if the tie $u$--$v$ were added.
-(4)~A weak-tie shortest path offers an introduction.
+\emph{Alternatives from class:} triadic closure only finds people who are already nearby; Girvan--Newman could not split even a 150-node graph in 148\,s in our pilot, so we use Louvain.
 
-\emph{Alternatives from class.} Triadic closure only finds people already near you; topic similarity alone
-can't tell a stranger from a friend of a friend. Girvan--Newman~\cite{newman2004} could not split a 150-node
-graph in 148\,s in our pilot; Louvain split 610 nodes in 1.5\,s.
-
-\emph{Claim that could be false.} From the 2015--19 graph, BridgeFinder ranks the actual partners of new
-\emph{cross-community} collaborations (2020--24) higher than triadic-closure or topic-only ranking, and those
-collaborations' papers are cited more than new within-community ones in the same fields (Burt's claim).
+\emph{Claim that could be false:} among researchers three or more steps away, our ranking will place people's real 2020--24 new collaborators in its top 10 more often than topic similarity alone. A pilot found only a small, uncertain gain, so this may not hold.
 
 \section{Proposed Work}
-A web app for Figure~\ref{fig:flow} (Python/networkx over an OpenAlex snapshot) plus the backtest.
-\textbf{Oct~30:} graph, holes, backtest, prototype, feedback round~1. \textbf{Mid-Nov.:} person cards,
-intro paths, round~2. \textbf{Dec~9:} round~3, evaluation. \emph{Assumptions:} OpenAlex disambiguation is
-good enough (we will hand-check 50 authors); topic vectors capture ``similar research''; students without
-papers are placed through their advisor or lab; using only public publication data keeps suggestions appropriate.
+We will create a web app with at least the three screens shown in Figure~\ref{fig:flow}. A student will be able to pick the professors whose classes they liked. The app will then show the campus map (derived from joint papers in OpenAlex). The app will also display a ranked list of researchers in other research communities, and, for each one, the papers that match their interests and who could introduce them. To create the campus map, we will write a Python program to preprocess the UIUC co-authorship graph from OpenAlex (around 110,000 papers from 2015 to 2024).
+
+\noindent\textbf{By Oct 30: } We will have the preprocessed graph and communities, as well as the first version of the app, and feedback from round 1. 
+
+\noindent\textbf{By mid-Nov: } We will have the researcher cards, introduction paths, and the round 2 feedback. 
+
+\noindent\textbf{By Dec 9: } We will polish the app based on feedback, and record the final evaluation and video. 
+
+\noindent\textbf{Assumptions: } We assume the following: the co-authors of papers know each other; OpenAlex correctly identifies people; the OpenAlex topics correctly capture what a researcher worked on; professors who teach a class do research in the corresponding area. Finally, a disclaimer is that the app can't actually tell if a professor is taking students, so it should just be used as a suggestion about people to talk to.
 
 \section{Preliminary Design}
-In Figure~\ref{fig:flow}, the map comes first, so users see \emph{where} the holes are before seeing
-names. Every suggestion shows its reasons, because unexplained recommendations are hard to trust.
+The core flow of the app follows Figure~\ref{fig:flow}. The student first picks the professors from classes they enjoyed. Then, the map will show their research communities and holes between them. Beside this, the app will also display a ranked list of researchers across those holes, and each of the researchers can be clicked to open a researcher card that shows their matching papers and the introduction path. Unlike previous work such as Illinois Experts or Google Scholar, which all start with a search box, we collect the user's interests, then show the map first so users can see where the gaps are as well as the overall research landscape. Additionally, we provide reasoning for each suggestion.
 
 \section{Users}
-UIUC students who already do research (a paper or an advisor, so they have a place in the graph) and want
-mentors or collaborators outside their group. We will recruit about 10 from our networks and classes and reuse
-them across three rounds. Ratings are blind, so friendliness cannot
-favor our method.
+Our target user group is UIUC students who liked a class and want to do research in the topic the class covered. A student will be attached to the graph through the professors whose class they enjoyed, and the app will be able to find researchers with similar work (but outside of the professors' circles) along with who could introduce them. We will try to recruit around 10 people (friends and classmates) to test the app through each of the rounds. 
 
 \section{Evaluation}
-(1)~\textbf{Backtest (no users).} With 2015--19 data and only researchers $\geq$3 steps from each user (whom we
-recommend), how often do users' real 2020--24 new co-authors land in our top 10 vs.\ topic similarity alone? We expect triadic closure to win on \emph{all} new ties and will report it.
-(2)~\textbf{Blind rating.} Participants rate a mixed, unlabeled list from ours, triadic closure and
-topic-only as relevant (1--5) and new or not; we succeed if more of ours are both.
-(3)~\textbf{Usefulness.} Would they feel comfortable contacting each person? (No email is sent.)
-\emph{Use of AI:} Claude helped brainstorm and draft; we verified everything.
+
+(1)~\textbf{Backtest:} Looking at the data from 2015 to 2019, we will predict the top 10 relevant people for each researcher using different methods (our method, triadic closure, topic only). We then count how often those people include someone who they actually started working with in 2020 to 2024.
+
+\noindent(2)~\textbf{Blind rating: } We will give each participant around 15 researcher cards (name, department, recent papers), five from each method (our method, triadic closure, topic only). These will be shuffled so they don't know which method produced them. We can then have them rate each researcher based on relevance of their work to their interests, and whether they knew the person already. Our method succeeds if more of its cards are both relevant and new to the participant.
+
+\noindent(3)~\textbf{Usefulness: } We will also survey if our users would feel comfortable enough to contact the suggested people.
+
+\noindent\emph{AI Use:} We used Claude as a collaborator to brainstorm ideas, and create an initial draft. Everything was reviewed and verified. 
 
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{references}
