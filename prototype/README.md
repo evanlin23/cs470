@@ -17,3 +17,10 @@ pip install networkx scipy
 MB_MAILTO=you@illinois.edu python3 fetch.py case_generank.json graph.json
 python3 analyze.py graph.json results.json
 ```
+
+## OpenAlex version
+
+`fetch_openalex.py CASE.json OUT.json` is a drop-in replacement for `fetch.py` that uses OpenAlex. It needs
+`OPENALEX_API_KEY` set, caches every response under `cache/`, and writes the same schema. `case_inspect.py DOI`
+lists a transfer paper's references with their OpenAlex labels, for writing new cases. The results are in
+`RESULTS_OPENALEX.md` and `results/openalex/`.

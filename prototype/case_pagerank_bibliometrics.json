@@ -1,0 +1,26 @@
+{
+  "name": "Chen, Xie, Maslov & Redner (2007): PageRank imported into citation analysis (scientific gems)",
+  "transfer_paper": "10.1016/j.joi.2006.06.001",
+  "transfer_openalex": "W1539510218",
+  "transfer_label": {
+    "field": "Computer Science",
+    "subfield": "Artificial Intelligence",
+    "topic": "Advanced Text Analysis Techniques"
+  },
+  "freeze_year": 2005,
+  "seed_rule": "leakage-safe rule: seeds = the transfer paper's OpenAlex-indexed references whose primary_topic.topic is 'scientometrics and bibliometrics research' (the home side), published <= freeze_year, minus the targets; targets = the reference(s) that are the imported method's canonical paper(s) in the other field; freeze_year = transfer year - 1. OpenAlex labels the transfer paper 'Advanced Text Analysis Techniques' (wrong) and its field labels mix physics/CS/econ arbitrarily, so home = the bibliometrics topic shared by its citation-statistics references. OpenAlex dates the paper 2006 (online), so freeze_year = 2005 and Ball 2006 (Nature) drops out of the seeds.",
+  "refs_indexed": 17,
+  "refs_resolved": 15,
+  "seeds": [
+    "10.1063/1.1996475",
+    "10.1126/science.149.3683.510",
+    "10.48550/arxiv.physics/0407137"
+  ],
+  "targets": {
+    "10.1016/s0169-7552(98)00110-x": "Brin & Page 1998, The anatomy of a large-scale hypertextual Web search engine (PageRank)",
+    "10.1145/324133.324140": "Kleinberg 1999, Authoritative sources in a hyperlinked environment (HITS)"
+  },
+  "excluded": [],
+  "citer_sample": 1200,
+  "max_candidates": 600
+}

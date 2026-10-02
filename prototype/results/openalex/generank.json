@@ -1,0 +1,464 @@
+{
+ "case": "GeneRank (2005): PageRank imported into microarray gene ranking",
+ "freeze_year": 2004,
+ "graph": {
+  "works": 599,
+  "edges": 86666,
+  "citers": 116377
+ },
+ "communities": {
+  "louvain_k": 7,
+  "louvain_Q": 0.487,
+  "louvain_s": 0.66,
+  "cnm_k": 8,
+  "cnm_Q": 0.488,
+  "cnm_s": 2.62,
+  "girvan_newman": {
+   "subgraph_nodes": 150,
+   "subgraph_edges": 8281,
+   "gn_seconds": 121.3,
+   "gn_levels_explored": 8,
+   "gn_best_modularity": 0.029,
+   "gn_best_k": 9,
+   "louvain_modularity_same_subgraph": 0.56,
+   "louvain_k_same_subgraph": 6
+  }
+ },
+ "home_communities": [
+  0,
+  1,
+  3,
+  6
+ ],
+ "targets": [
+  {
+   "target": "Brin & Page 1998, The anatomy of a large-scale hypertextual Web search engine (PageRank)",
+   "doi": "10.1016/s0169-7552(98)00110-x",
+   "in_graph": false,
+   "community": null,
+   "hole": null,
+   "MethodBridge (hole x within-community HITS)": null,
+   "Co-citation with seeds (triadic closure)": null,
+   "In-degree (citations before freeze)": null,
+   "Global HITS authority": null
+  },
+  {
+   "target": "Kleinberg 1999, Authoritative sources in a hyperlinked environment (HITS)",
+   "doi": "10.1145/324133.324140",
+   "in_graph": false,
+   "community": null,
+   "hole": null,
+   "MethodBridge (hole x within-community HITS)": null,
+   "Co-citation with seeds (triadic closure)": null,
+   "In-degree (citations before freeze)": null,
+   "Global HITS authority": null
+  },
+  {
+   "target": "Langville & Meyer 2004, Deeper Inside PageRank",
+   "doi": "10.1080/15427951.2004.10129091",
+   "in_graph": false,
+   "community": null,
+   "hole": null,
+   "MethodBridge (hole x within-community HITS)": null,
+   "Co-citation with seeds (triadic closure)": null,
+   "In-degree (citations before freeze)": null,
+   "Global HITS authority": null
+  }
+ ],
+ "top10": {
+  "MethodBridge (hole x within-community HITS)": [
+   {
+    "doi": "10.1006/abio.1976.9999",
+    "community": 2,
+    "hole": 0.968,
+    "title": "A Rapid and Sensitive Method for the Quantitation of Microgram Quantities of Protein Utilizing the Principle of Protein-Dye Binding",
+    "year": 1976,
+    "venue": "Analytical Biochemistry",
+    "is_target": false
+   },
+   {
+    "doi": "10.1016/0003-2697(76)90527-3",
+    "community": 2,
+    "hole": 0.963,
+    "title": "A rapid and sensitive method for the quantitation of microgram quantities of protein utilizing the principle of protein-dye binding",
+    "year": 1976,
+    "venue": "Analytical Biochemistry",
+    "is_target": false
+   },
+   {
+    "doi": "10.1093/nar/25.1.31",
+    "community": 4,
+    "hole": 0.866,
+    "title": "The SWISS-PROT protein sequence data bank and its supplement TrEMBL",
+    "year": 1997,
+    "venue": "Nucleic Acids Research",
+    "is_target": false
+   },
+   {
+    "doi": "10.1093/nar/26.1.38",
+    "community": 4,
+    "hole": 0.87,
+    "title": "The SWISS-PROT protein sequence data bank and its supplement TrEMBL in 1998",
+    "year": 1998,
+    "venue": "Nucleic Acids Research",
+    "is_target": false
+   },
+   {
+    "doi": "10.5860/choice.31-5500",
+    "community": 5,
+    "hole": 0.837,
+    "title": "Neural networks for pattern recognition",
+    "year": 1994,
+    "venue": "Choice Reviews Online",
+    "is_target": false
+   },
+   {
+    "doi": "10.2307/1268876",
+    "community": 5,
+    "hole": 0.749,
+    "title": "Algorithms for Clustering Data",
+    "year": 1990,
+    "venue": "Technometrics",
+    "is_target": false
+   },
+   {
+    "doi": "10.1007/978-3-642-56927-2",
+    "community": 5,
+    "hole": 0.615,
+    "title": "Self-Organizing Maps",
+    "year": 1995,
+    "venue": "Springer series in information sciences",
+    "is_target": false
+   },
+   {
+    "doi": "W2913066018",
+    "community": 5,
+    "hole": 0.628,
+    "title": "Clustering Algorithms",
+    "year": 1975,
+    "venue": "CERN Document Server (European Organization for Nuclear Research)",
+    "is_target": false
+   },
+   {
+    "doi": "10.2307/1271368",
+    "community": 5,
+    "hole": 0.602,
+    "title": "Statistical Learning Theory",
+    "year": 1999,
+    "venue": "Technometrics",
+    "is_target": false
+   },
+   {
+    "doi": "10.1093/nar/28.1.45",
+    "community": 4,
+    "hole": 0.841,
+    "title": "The SWISS-PROT protein sequence database and its supplement TrEMBL in 2000",
+    "year": 2000,
+    "venue": "Nucleic Acids Research",
+    "is_target": false
+   }
+  ],
+  "Co-citation with seeds (triadic closure)": [
+   {
+    "doi": "10.1091/mbc.9.12.3273",
+    "community": 0,
+    "hole": 0.053,
+    "title": "Comprehensive Identification of Cell Cycle\u2013regulated Genes of the YeastSaccharomyces cerevisiaeby Microarray Hybridization",
+    "year": 1998,
+    "venue": "Molecular Biology of the Cell",
+    "is_target": false
+   },
+   {
+    "doi": "10.1126/science.282.5389.699",
+    "community": 0,
+    "hole": 0.085,
+    "title": "The Transcriptional Program of Sporulation in Budding Yeast",
+    "year": 1998,
+    "venue": "Science",
+    "is_target": false
+   },
+   {
+    "doi": "10.1126/science.270.5235.467",
+    "community": 0,
+    "hole": 0.097,
+    "title": "Quantitative Monitoring of Gene Expression Patterns with a Complementary DNA Microarray",
+    "year": 1995,
+    "venue": "Science",
+    "is_target": false
+   },
+   {
+    "doi": "10.1073/pnas.95.25.14863",
+    "community": 0,
+    "hole": 0.103,
+    "title": "Cluster analysis and display of genome-wide expression patterns",
+    "year": 1998,
+    "venue": "Proceedings of the National Academy of Sciences",
+    "is_target": false
+   },
+   {
+    "doi": "10.1038/nbt1296-1675",
+    "community": 0,
+    "hole": 0.072,
+    "title": "Expression monitoring by hybridization to high-density oligonucleotide arrays",
+    "year": 1996,
+    "venue": "Nature Biotechnology",
+    "is_target": false
+   },
+   {
+    "doi": "10.1016/s1097-2765(00)80114-8",
+    "community": 0,
+    "hole": 0.049,
+    "title": "A Genome-Wide Transcriptional Analysis of the Mitotic Cell Cycle",
+    "year": 1998,
+    "venue": "Molecular Cell",
+    "is_target": false
+   },
+   {
+    "doi": "10.1016/s0092-8674(00)00015-5",
+    "community": 0,
+    "hole": 0.078,
+    "title": "Functional Discovery via a Compendium of Expression Profiles",
+    "year": 2000,
+    "venue": "Cell",
+    "is_target": false
+   },
+   {
+    "doi": "10.1038/nbt1297-1359",
+    "community": 0,
+    "hole": 0.094,
+    "title": "Genome-wide expression monitoring in Saccharomyces cerevisiae",
+    "year": 1997,
+    "venue": "Nature Biotechnology",
+    "is_target": false
+   },
+   {
+    "doi": "10.1073/pnas.96.6.2907",
+    "community": 0,
+    "hole": 0.076,
+    "title": "Interpreting patterns of gene expression with self-organizing maps: Methods and application to hematopoietic differentiation",
+    "year": 1999,
+    "venue": "Proceedings of the National Academy of Sciences",
+    "is_target": false
+   },
+   {
+    "doi": "10.1038/10343",
+    "community": 0,
+    "hole": 0.068,
+    "title": "Systematic determination of genetic network architecture",
+    "year": 1999,
+    "venue": "Nature Genetics",
+    "is_target": false
+   }
+  ],
+  "In-degree (citations before freeze)": [
+   {
+    "doi": "10.1073/pnas.95.25.14863",
+    "community": 0,
+    "hole": 0.103,
+    "title": "Cluster analysis and display of genome-wide expression patterns",
+    "year": 1998,
+    "venue": "Proceedings of the National Academy of Sciences",
+    "is_target": false
+   },
+   {
+    "doi": "10.1126/science.270.5235.467",
+    "community": 0,
+    "hole": 0.097,
+    "title": "Quantitative Monitoring of Gene Expression Patterns with a Complementary DNA Microarray",
+    "year": 1995,
+    "venue": "Science",
+    "is_target": false
+   },
+   {
+    "doi": "10.1126/science.286.5439.531",
+    "community": 0,
+    "hole": 0.058,
+    "title": "Molecular Classification of Cancer: Class Discovery and Class Prediction by Gene Expression Monitoring",
+    "year": 1999,
+    "venue": "Science",
+    "is_target": false
+   },
+   {
+    "doi": "10.1038/35000501",
+    "community": 0,
+    "hole": 0.052,
+    "title": "Distinct types of diffuse large B-cell lymphoma identified by gene expression profiling",
+    "year": 2000,
+    "venue": "Nature",
+    "is_target": false
+   },
+   {
+    "doi": "W2144634347",
+    "community": 2,
+    "hole": 0.887,
+    "title": "Molecular Cloning: A Laboratory Manual",
+    "year": 1989,
+    "venue": "UCLA - Biblioteca de Ciencias de la Salud",
+    "is_target": false
+   },
+   {
+    "doi": "10.1038/35057062",
+    "community": 4,
+    "hole": 0.714,
+    "title": "Initial sequencing and analysis of the human genome",
+    "year": 2001,
+    "venue": "Nature",
+    "is_target": false
+   },
+   {
+    "doi": "10.1093/genetics/122.1.19",
+    "community": 3,
+    "hole": 0.072,
+    "title": "A system of shuttle vectors and yeast host strains designed for efficient manipulation of DNA in Saccharomyces cerevisiae.",
+    "year": 1989,
+    "venue": "Genetics",
+    "is_target": false
+   },
+   {
+    "doi": "10.1126/science.1354393",
+    "community": 0,
+    "hole": 0.165,
+    "title": "Differential Display of Eukaryotic Messenger RNA by Means of the Polymerase Chain Reaction",
+    "year": 1992,
+    "venue": "Science",
+    "is_target": false
+   },
+   {
+    "doi": "10.1093/nar/25.17.3389",
+    "community": 2,
+    "hole": 0.81,
+    "title": "Gapped BLAST and PSI-BLAST: a new generation of protein database search programs",
+    "year": 1997,
+    "venue": "Nucleic Acids Research",
+    "is_target": false
+   },
+   {
+    "doi": "10.1016/0003-2697(90)90595-z",
+    "community": 2,
+    "hole": 0.867,
+    "title": "Molecular cloning: A laboratory manual",
+    "year": 1990,
+    "venue": "Analytical Biochemistry",
+    "is_target": false
+   }
+  ],
+  "Global HITS authority": [
+   {
+    "doi": "10.1126/science.286.5439.531",
+    "community": 0,
+    "hole": 0.058,
+    "title": "Molecular Classification of Cancer: Class Discovery and Class Prediction by Gene Expression Monitoring",
+    "year": 1999,
+    "venue": "Science",
+    "is_target": false
+   },
+   {
+    "doi": "10.1126/science.270.5235.467",
+    "community": 0,
+    "hole": 0.097,
+    "title": "Quantitative Monitoring of Gene Expression Patterns with a Complementary DNA Microarray",
+    "year": 1995,
+    "venue": "Science",
+    "is_target": false
+   },
+   {
+    "doi": "10.1091/mbc.9.12.3273",
+    "community": 0,
+    "hole": 0.053,
+    "title": "Comprehensive Identification of Cell Cycle\u2013regulated Genes of the YeastSaccharomyces cerevisiaeby Microarray Hybridization",
+    "year": 1998,
+    "venue": "Molecular Biology of the Cell",
+    "is_target": false
+   },
+   {
+    "doi": "10.1038/35000501",
+    "community": 0,
+    "hole": 0.052,
+    "title": "Distinct types of diffuse large B-cell lymphoma identified by gene expression profiling",
+    "year": 2000,
+    "venue": "Nature",
+    "is_target": false
+   },
+   {
+    "doi": "10.1073/pnas.95.25.14863",
+    "community": 0,
+    "hole": 0.103,
+    "title": "Cluster analysis and display of genome-wide expression patterns",
+    "year": 1998,
+    "venue": "Proceedings of the National Academy of Sciences",
+    "is_target": false
+   },
+   {
+    "doi": "10.1038/nbt1296-1675",
+    "community": 0,
+    "hole": 0.072,
+    "title": "Expression monitoring by hybridization to high-density oligonucleotide arrays",
+    "year": 1996,
+    "venue": "Nature Biotechnology",
+    "is_target": false
+   },
+   {
+    "doi": "10.1073/pnas.96.6.2907",
+    "community": 0,
+    "hole": 0.076,
+    "title": "Interpreting patterns of gene expression with self-organizing maps: Methods and application to hematopoietic differentiation",
+    "year": 1999,
+    "venue": "Proceedings of the National Academy of Sciences",
+    "is_target": false
+   },
+   {
+    "doi": "10.1038/ng1296-457",
+    "community": 0,
+    "hole": 0.049,
+    "title": "Use of a cDNA microarray to analyse gene expression patterns in human cancer",
+    "year": 1996,
+    "venue": "Nature Genetics",
+    "is_target": false
+   },
+   {
+    "doi": "10.1073/pnas.96.12.6745",
+    "community": 0,
+    "hole": 0.053,
+    "title": "Broad patterns of gene expression revealed by clustering analysis of tumor and normal colon tissues probed by oligonucleotide arrays",
+    "year": 1999,
+    "venue": "Proceedings of the National Academy of Sciences",
+    "is_target": false
+   },
+   {
+    "doi": "10.1038/4447",
+    "community": 0,
+    "hole": 0.065,
+    "title": "High density synthetic oligonucleotide arrays",
+    "year": 1999,
+    "venue": "Nature Genetics",
+    "is_target": false
+   }
+  ]
+ },
+ "communities_across_hole": [
+  {
+   "community": 2,
+   "size": 41,
+   "venues": "Nature; Science; Proceedings of the National Academy of Sciences",
+   "top_authority": "10.1006/abio.1976.9999",
+   "top_authority_title": "A Rapid and Sensitive Method for the Quantitation of Microgram Quantities of Protein Utilizing the Principle of Protein-Dye Binding",
+   "top_hub": "10.1074/jbc.m009140200"
+  },
+  {
+   "community": 4,
+   "size": 36,
+   "venues": "Science; Nucleic Acids Research; Nature",
+   "top_authority": "10.1093/nar/25.1.31",
+   "top_authority_title": "The SWISS-PROT protein sequence data bank and its supplement TrEMBL",
+   "top_hub": "10.1038/35080529"
+  },
+  {
+   "community": 5,
+   "size": 7,
+   "venues": "Technometrics; CERN Document Server (European Organization for Nuclear Research); Springer series in statistics",
+   "top_authority": "10.5860/choice.31-5500",
+   "top_authority_title": "Neural networks for pattern recognition",
+   "top_hub": "10.1109/34.824819"
+  }
+ ]
+}

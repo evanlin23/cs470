@@ -1,0 +1,456 @@
+{
+ "case": "Barkan & Koenigstein (2016) Item2Vec: word2vec (NLP) imported into item-based collaborative filtering",
+ "freeze_year": 2015,
+ "graph": {
+  "works": 563,
+  "edges": 89240,
+  "citers": 162880
+ },
+ "communities": {
+  "louvain_k": 8,
+  "louvain_Q": 0.477,
+  "louvain_s": 0.5,
+  "cnm_k": 8,
+  "cnm_Q": 0.476,
+  "cnm_s": 2.05,
+  "girvan_newman": {
+   "subgraph_nodes": 150,
+   "subgraph_edges": 9807,
+   "gn_seconds": 138.4,
+   "gn_levels_explored": 7,
+   "gn_best_modularity": 0.008,
+   "gn_best_k": 8,
+   "louvain_modularity_same_subgraph": 0.574,
+   "louvain_k_same_subgraph": 6
+  }
+ },
+ "home_communities": [
+  0,
+  1
+ ],
+ "targets": [
+  {
+   "target": "Mikolov et al. 2013, Efficient Estimation of Word Representations in Vector Space (word2vec)",
+   "doi": "10.48550/arxiv.1301.3781",
+   "in_graph": false,
+   "community": null,
+   "hole": null,
+   "MethodBridge (hole x within-community HITS)": null,
+   "Co-citation with seeds (triadic closure)": null,
+   "In-degree (citations before freeze)": null,
+   "Global HITS authority": null
+  }
+ ],
+ "top10": {
+  "MethodBridge (hole x within-community HITS)": [
+   {
+    "doi": "10.1017/cbo9780511815478",
+    "community": 5,
+    "hole": 0.981,
+    "title": "Social Network Analysis",
+    "year": 1994,
+    "venue": "Cambridge University Press eBooks",
+    "is_target": false
+   },
+   {
+    "doi": "10.1007/978-0-387-84858-7",
+    "community": 4,
+    "hole": 0.958,
+    "title": "The Elements of Statistical Learning",
+    "year": 2009,
+    "venue": "Springer series in statistics",
+    "is_target": false
+   },
+   {
+    "doi": "10.1038/30918",
+    "community": 5,
+    "hole": 0.98,
+    "title": "Collective dynamics of \u2018small-world\u2019 networks",
+    "year": 1998,
+    "venue": "Nature",
+    "is_target": false
+   },
+   {
+    "doi": "W2061901927",
+    "community": 5,
+    "hole": 0.984,
+    "title": "Social Network Analysis: Methods and Applications",
+    "year": 1994,
+    "venue": "",
+    "is_target": false
+   },
+   {
+    "doi": "10.1126/science.286.5439.509",
+    "community": 5,
+    "hole": 0.976,
+    "title": "Emergence of Scaling in Random Networks",
+    "year": 1999,
+    "venue": "Science",
+    "is_target": false
+   },
+   {
+    "doi": "10.1145/775152.775242",
+    "community": 6,
+    "hole": 0.891,
+    "title": "The Eigentrust algorithm for reputation management in P2P networks",
+    "year": 2003,
+    "venue": "",
+    "is_target": false
+   },
+   {
+    "doi": "10.1145/3130348.3130370",
+    "community": 2,
+    "hole": 0.889,
+    "title": "Probabilistic Latent Semantic Indexing",
+    "year": 2017,
+    "venue": "ACM SIGIR Forum",
+    "is_target": false
+   },
+   {
+    "doi": "10.1145/312624.312649",
+    "community": 2,
+    "hole": 0.892,
+    "title": "Probabilistic latent semantic indexing",
+    "year": 1999,
+    "venue": "",
+    "is_target": false
+   },
+   {
+    "doi": "10.1016/j.dss.2005.05.019",
+    "community": 6,
+    "hole": 0.815,
+    "title": "A survey of trust and reputation systems for online service provision",
+    "year": 2005,
+    "venue": "Decision Support Systems",
+    "is_target": false
+   },
+   {
+    "doi": "10.1137/s003614450342480",
+    "community": 5,
+    "hole": 0.967,
+    "title": "The Structure and Function of Complex Networks",
+    "year": 2003,
+    "venue": "SIAM Review",
+    "is_target": false
+   }
+  ],
+  "Co-citation with seeds (triadic closure)": [
+   {
+    "doi": "10.1145/3130348.3130372",
+    "community": 1,
+    "hole": 0.112,
+    "title": "An Algorithmic Framework for Performing Collaborative Filtering",
+    "year": 2017,
+    "venue": "ACM SIGIR Forum",
+    "is_target": false
+   },
+   {
+    "doi": "10.48550/arxiv.1301.7363",
+    "community": 1,
+    "hole": 0.143,
+    "title": "Empirical Analysis of Predictive Algorithms for Collaborative Filtering",
+    "year": 2013,
+    "venue": "arXiv (Cornell University)",
+    "is_target": false
+   },
+   {
+    "doi": "10.1145/192844.192905",
+    "community": 1,
+    "hole": 0.14,
+    "title": "GroupLens",
+    "year": 1994,
+    "venue": "",
+    "is_target": false
+   },
+   {
+    "doi": "10.1145/963770.963776",
+    "community": 1,
+    "hole": 0.12,
+    "title": "Item-based top- N recommendation algorithms",
+    "year": 2004,
+    "venue": "ACM Transactions on Information Systems",
+    "is_target": false
+   },
+   {
+    "doi": "10.1145/963770.963772",
+    "community": 1,
+    "hole": 0.163,
+    "title": "Evaluating collaborative filtering recommender systems",
+    "year": 2004,
+    "venue": "ACM Transactions on Information Systems",
+    "is_target": false
+   },
+   {
+    "doi": "10.1109/tkde.2005.99",
+    "community": 1,
+    "hole": 0.179,
+    "title": "Toward the next generation of recommender systems: a survey of the state-of-the-art and possible extensions",
+    "year": 2005,
+    "venue": "IEEE Transactions on Knowledge and Data Engineering",
+    "is_target": false
+   },
+   {
+    "doi": "10.1145/312624.312682",
+    "community": 1,
+    "hole": 0.111,
+    "title": "An algorithmic framework for performing collaborative filtering",
+    "year": 1999,
+    "venue": "",
+    "is_target": false
+   },
+   {
+    "doi": "10.1145/1401890.1401944",
+    "community": 0,
+    "hole": 0.12,
+    "title": "Factorization meets the neighborhood",
+    "year": 2008,
+    "venue": "",
+    "is_target": false
+   },
+   {
+    "doi": "10.1145/352871.352887",
+    "community": 1,
+    "hole": 0.085,
+    "title": "Analysis of recommendation algorithms for e-commerce",
+    "year": 2000,
+    "venue": "",
+    "is_target": false
+   },
+   {
+    "doi": "10.1155/2009/421425",
+    "community": 1,
+    "hole": 0.125,
+    "title": "A Survey of Collaborative Filtering Techniques",
+    "year": 2009,
+    "venue": "Advances in Artificial Intelligence",
+    "is_target": false
+   }
+  ],
+  "In-degree (citations before freeze)": [
+   {
+    "doi": "10.1007/978-0-387-84858-7",
+    "community": 4,
+    "hole": 0.958,
+    "title": "The Elements of Statistical Learning",
+    "year": 2009,
+    "venue": "Springer series in statistics",
+    "is_target": false
+   },
+   {
+    "doi": "10.1109/tkde.2005.99",
+    "community": 1,
+    "hole": 0.179,
+    "title": "Toward the next generation of recommender systems: a survey of the state-of-the-art and possible extensions",
+    "year": 2005,
+    "venue": "IEEE Transactions on Knowledge and Data Engineering",
+    "is_target": false
+   },
+   {
+    "doi": "10.48550/arxiv.1301.7363",
+    "community": 1,
+    "hole": 0.143,
+    "title": "Empirical Analysis of Predictive Algorithms for Collaborative Filtering",
+    "year": 2013,
+    "venue": "arXiv (Cornell University)",
+    "is_target": false
+   },
+   {
+    "doi": "10.1145/192844.192905",
+    "community": 1,
+    "hole": 0.14,
+    "title": "GroupLens",
+    "year": 1994,
+    "venue": "",
+    "is_target": false
+   },
+   {
+    "doi": "10.1145/3130348.3130372",
+    "community": 1,
+    "hole": 0.112,
+    "title": "An Algorithmic Framework for Performing Collaborative Filtering",
+    "year": 2017,
+    "venue": "ACM SIGIR Forum",
+    "is_target": false
+   },
+   {
+    "doi": "10.1023/a:1021240730564",
+    "community": 1,
+    "hole": 0.09,
+    "title": "Hybrid Recommender Systems: Survey and Experiments",
+    "year": 2002,
+    "venue": "User Modeling and User-Adapted Interaction",
+    "is_target": false
+   },
+   {
+    "doi": "10.1145/245108.245121",
+    "community": 1,
+    "hole": 0.145,
+    "title": "Recommender systems",
+    "year": 1997,
+    "venue": "Communications of the ACM",
+    "is_target": false
+   },
+   {
+    "doi": "10.5555/944919.944937",
+    "community": 2,
+    "hole": 0.878,
+    "title": "Latent dirichlet allocation",
+    "year": 2003,
+    "venue": "Journal of Machine Learning Research",
+    "is_target": false
+   },
+   {
+    "doi": "10.1002/(sici)1097-4571(199009)41:6<391::aid-asi1>3.0.co;2-9",
+    "community": 2,
+    "hole": 0.889,
+    "title": "Indexing by latent semantic analysis",
+    "year": 1990,
+    "venue": "Journal of the American Society for Information Science",
+    "is_target": false
+   },
+   {
+    "doi": "10.5860/choice.46-2715",
+    "community": 2,
+    "hole": 0.904,
+    "title": "Introduction to information retrieval",
+    "year": 2009,
+    "venue": "Choice Reviews Online",
+    "is_target": false
+   }
+  ],
+  "Global HITS authority": [
+   {
+    "doi": "10.1145/3130348.3130372",
+    "community": 1,
+    "hole": 0.112,
+    "title": "An Algorithmic Framework for Performing Collaborative Filtering",
+    "year": 2017,
+    "venue": "ACM SIGIR Forum",
+    "is_target": false
+   },
+   {
+    "doi": "10.48550/arxiv.1301.7363",
+    "community": 1,
+    "hole": 0.143,
+    "title": "Empirical Analysis of Predictive Algorithms for Collaborative Filtering",
+    "year": 2013,
+    "venue": "arXiv (Cornell University)",
+    "is_target": false
+   },
+   {
+    "doi": "10.1145/192844.192905",
+    "community": 1,
+    "hole": 0.14,
+    "title": "GroupLens",
+    "year": 1994,
+    "venue": "",
+    "is_target": false
+   },
+   {
+    "doi": "10.1145/223904.223931",
+    "community": 1,
+    "hole": 0.106,
+    "title": "Social information filtering",
+    "year": 1995,
+    "venue": "",
+    "is_target": false
+   },
+   {
+    "doi": "10.1145/963770.963772",
+    "community": 1,
+    "hole": 0.163,
+    "title": "Evaluating collaborative filtering recommender systems",
+    "year": 2004,
+    "venue": "ACM Transactions on Information Systems",
+    "is_target": false
+   },
+   {
+    "doi": "10.1145/245108.245124",
+    "community": 1,
+    "hole": 0.086,
+    "title": "Fab",
+    "year": 1997,
+    "venue": "Communications of the ACM",
+    "is_target": false
+   },
+   {
+    "doi": "10.1145/312624.312682",
+    "community": 1,
+    "hole": 0.111,
+    "title": "An algorithmic framework for performing collaborative filtering",
+    "year": 1999,
+    "venue": "",
+    "is_target": false
+   },
+   {
+    "doi": "10.1145/245108.245126",
+    "community": 1,
+    "hole": 0.083,
+    "title": "GroupLens",
+    "year": 1997,
+    "venue": "Communications of the ACM",
+    "is_target": false
+   },
+   {
+    "doi": "10.1109/tkde.2005.99",
+    "community": 1,
+    "hole": 0.179,
+    "title": "Toward the next generation of recommender systems: a survey of the state-of-the-art and possible extensions",
+    "year": 2005,
+    "venue": "IEEE Transactions on Knowledge and Data Engineering",
+    "is_target": false
+   },
+   {
+    "doi": "10.1145/138859.138867",
+    "community": 1,
+    "hole": 0.132,
+    "title": "Using collaborative filtering to weave an information tapestry",
+    "year": 1992,
+    "venue": "Communications of the ACM",
+    "is_target": false
+   }
+  ]
+ },
+ "communities_across_hole": [
+  {
+   "community": 5,
+   "size": 29,
+   "venues": "?; Cambridge University Press eBooks; Proceedings of the VLDB Endowment",
+   "top_authority": "10.1017/cbo9780511815478",
+   "top_authority_title": "Social Network Analysis",
+   "top_hub": "10.1145/1132952.1132954"
+  },
+  {
+   "community": 4,
+   "size": 51,
+   "venues": "?; Journal of the Royal Statistical Society Series B (Statistical Methodology); Machine Learning",
+   "top_authority": "10.1007/978-0-387-84858-7",
+   "top_authority_title": "The Elements of Statistical Learning",
+   "top_hub": "10.1145/1497577.1497578"
+  },
+  {
+   "community": 6,
+   "size": 31,
+   "venues": "?; Lecture notes in computer science; ACM Transactions on Internet Technology",
+   "top_authority": "10.1145/775152.775242",
+   "top_authority_title": "The Eigentrust algorithm for reputation management in P2P networks",
+   "top_hub": "10.1145/1592451.1592452"
+  },
+  {
+   "community": 2,
+   "size": 38,
+   "venues": "?; Information Processing & Management; Choice Reviews Online",
+   "top_authority": "10.1145/3130348.3130370",
+   "top_authority_title": "Probabilistic Latent Semantic Indexing",
+   "top_hub": "10.1613/jair.2934"
+  },
+  {
+   "community": 7,
+   "size": 11,
+   "venues": "?; Lecture notes in computer science; Journal of Information Science",
+   "top_authority": "10.1177/0165551506062337",
+   "top_authority_title": "Usage patterns of collaborative tagging systems",
+   "top_hub": "10.17877/de290r-5505"
+  }
+ ]
+}

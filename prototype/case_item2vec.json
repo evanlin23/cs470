@@ -1,0 +1,25 @@
+{
+  "name": "Barkan & Koenigstein (2016) Item2Vec: word2vec (NLP) imported into item-based collaborative filtering",
+  "transfer_paper": "10.1109/mlsp.2016.7738886",
+  "transfer_openalex": "W2298765043",
+  "transfer_label": {
+    "field": "Computer Science",
+    "subfield": "Artificial Intelligence",
+    "topic": "Topic Modeling"
+  },
+  "freeze_year": 2015,
+  "seed_rule": "leakage-safe rule: seeds = the transfer paper's OpenAlex-indexed references whose primary_topic.topic is 'Recommender Systems and Techniques' (the home side), published <= freeze_year, minus the targets; targets = the reference(s) that are the imported method's canonical paper(s) in the other field; freeze_year = transfer year - 1. All references share field 'Computer Science', so the field level cannot separate the sides; the topic level is used. OpenAlex labels the transfer paper itself 'Topic Modeling', so home = the recommender-systems topic of its CF references. 6 of 18 referenced_works are dangling ids (404), probably including Mikolov et al. NIPS 2013 'Distributed representations', which is therefore not a target.",
+  "refs_indexed": 18,
+  "refs_resolved": 12,
+  "seeds": [
+    "10.1109/mc.2009.263",
+    "10.1109/mic.2003.1167344",
+    "10.1145/371920.372071"
+  ],
+  "targets": {
+    "10.48550/arxiv.1301.3781": "Mikolov et al. 2013, Efficient Estimation of Word Representations in Vector Space (word2vec)"
+  },
+  "excluded": [],
+  "citer_sample": 1200,
+  "max_candidates": 600
+}

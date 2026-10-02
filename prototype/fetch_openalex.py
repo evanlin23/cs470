@@ -140,8 +140,10 @@ def meta_of(w):
 
 def expand(seed_dois, freeze_year, citer_sample=1200, max_candidates=600, rng_seed=0, extra=()):
     t0 = time.time()
-    seed_works = lookup(dois=seed_dois)
-    missing = sorted(set(d.lower() for d in seed_dois) - {ident(w) for w in seed_works.values()})
+    seed_works = lookup(dois=[s for s in seed_dois if s.startswith("10.")],
+                        ids=[s for s in seed_dois if not s.startswith("10.")])
+    got = {ident(w) for w in seed_works.values()} | set(seed_works)
+    missing = sorted(s for s in seed_dois if s.lower() not in got and s not in got)
     if missing:
         print(f"    seeds not found in OpenAlex: {missing}")
     seed_w = sorted(seed_works)

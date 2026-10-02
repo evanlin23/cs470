@@ -1,0 +1,48 @@
+{
+  "name": "Sohl-Dickstein et al. (2015): non-equilibrium thermodynamics imported into deep generative models (diffusion models)",
+  "transfer_paper": "W2129069237",
+  "transfer_openalex": "W2129069237",
+  "transfer_label": {
+    "field": "Physics and Astronomy",
+    "subfield": "Statistical and Nonlinear Physics",
+    "topic": "Advanced Thermodynamics and Statistical Mechanics"
+  },
+  "freeze_year": 2014,
+  "seed_rule": "leakage-safe rule: seeds = the transfer paper's OpenAlex-indexed references whose primary_topic.field is 'Computer Science' (the home side), published <= freeze_year, minus the targets; targets = the reference(s) that are the imported method's canonical paper(s) in the other field; freeze_year = transfer year - 1. OpenAlex labels the transfer paper itself 'Physics and Astronomy' (the method's side), so home = Computer Science, the field of most of its references. The PRL 2011 minimum-probability-flow ref is physics-labelled but is the authors' own ML method, so it is neither seed nor target.",
+  "refs_indexed": 45,
+  "refs_resolved": 40,
+  "seeds": [
+    "10.1016/0168-9002(94)00931-7",
+    "10.1016/j.jmp.2011.08.004",
+    "10.1023/a:1007665907178",
+    "10.1023/a:1008923215028",
+    "10.1023/a:1011109015675",
+    "10.1109/cvpr.2006.169",
+    "10.1109/tpami.2005.151",
+    "10.1162/089976602760128018",
+    "10.1162/089976698300017953",
+    "10.1162/neco.1992.4.6.863",
+    "10.1162/neco.1995.7.5.889",
+    "10.48550/arxiv.1207.4404",
+    "10.48550/arxiv.1301.6725",
+    "10.48550/arxiv.1302.5125",
+    "10.48550/arxiv.1306.1091",
+    "10.48550/arxiv.1311.2115",
+    "10.48550/arxiv.1401.4082",
+    "10.48550/arxiv.1409.0585",
+    "10.48550/arxiv.1410.0630",
+    "10.48550/arxiv.1410.8516",
+    "10.48550/arxiv.1412.8566",
+    "W2135181320",
+    "W2156775093",
+    "W2520314965"
+  ],
+  "targets": {
+    "10.1103/physreve.56.5018": "Jarzynski 1997, Equilibrium free-energy differences from nonequilibrium measurements",
+    "10.1146/annurev-conmatphys-062910-140506": "Jarzynski 2011, Equalities and inequalities: irreversibility and the second law at the nanoscale",
+    "W3082095273": "Langevin 1908, Sur la theorie du mouvement brownien"
+  },
+  "excluded": [],
+  "citer_sample": 1200,
+  "max_candidates": 600
+}

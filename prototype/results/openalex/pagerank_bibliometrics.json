@@ -1,0 +1,459 @@
+{
+ "case": "Chen, Xie, Maslov & Redner (2007): PageRank imported into citation analysis (scientific gems)",
+ "freeze_year": 2005,
+ "graph": {
+  "works": 545,
+  "edges": 70199,
+  "citers": 55780
+ },
+ "communities": {
+  "louvain_k": 7,
+  "louvain_Q": 0.57,
+  "louvain_s": 0.34,
+  "cnm_k": 6,
+  "cnm_Q": 0.567,
+  "cnm_s": 1.7,
+  "girvan_newman": {
+   "subgraph_nodes": 150,
+   "subgraph_edges": 6417,
+   "gn_seconds": 126.2,
+   "gn_levels_explored": 13,
+   "gn_best_modularity": 0.012,
+   "gn_best_k": 14,
+   "louvain_modularity_same_subgraph": 0.557,
+   "louvain_k_same_subgraph": 6
+  }
+ },
+ "home_communities": [
+  0,
+  2
+ ],
+ "targets": [
+  {
+   "target": "Brin & Page 1998, The anatomy of a large-scale hypertextual Web search engine (PageRank)",
+   "doi": "10.1016/s0169-7552(98)00110-x",
+   "in_graph": true,
+   "community": 3,
+   "hole": 0.562,
+   "MethodBridge (hole x within-community HITS)": 465,
+   "Co-citation with seeds (triadic closure)": 496,
+   "In-degree (citations before freeze)": 18,
+   "Global HITS authority": 51
+  },
+  {
+   "target": "Kleinberg 1999, Authoritative sources in a hyperlinked environment (HITS)",
+   "doi": "10.1145/324133.324140",
+   "in_graph": true,
+   "community": 3,
+   "hole": 0.579,
+   "MethodBridge (hole x within-community HITS)": 470,
+   "Co-citation with seeds (triadic closure)": 452,
+   "In-degree (citations before freeze)": 23,
+   "Global HITS authority": 99
+  }
+ ],
+ "top10": {
+  "MethodBridge (hole x within-community HITS)": [
+   {
+    "doi": "W1576818901",
+    "community": 5,
+    "hole": 0.973,
+    "title": "Genetic Programming: On the Programming of Computers by Means of Natural Selection",
+    "year": 1992,
+    "venue": "Medical Entomology and Zoology",
+    "is_target": false
+   },
+   {
+    "doi": "10.1037/h0040373",
+    "community": 6,
+    "hole": 0.955,
+    "title": "Blind variation and selective retentions in creative thought as in other knowledge processes.",
+    "year": 1960,
+    "venue": "Psychological Review",
+    "is_target": false
+   },
+   {
+    "doi": "10.7551/mitpress/5782.003.0013",
+    "community": 6,
+    "hole": 0.953,
+    "title": "Scientific Discovery",
+    "year": 1987,
+    "venue": "The MIT Press eBooks",
+    "is_target": false
+   },
+   {
+    "doi": "10.1037/h0043943",
+    "community": 6,
+    "hole": 0.941,
+    "title": "The two disciplines of scientific psychology.",
+    "year": 1957,
+    "venue": "American Psychologist",
+    "is_target": false
+   },
+   {
+    "doi": "10.1063/1.3050879",
+    "community": 1,
+    "hole": 0.891,
+    "title": "The Structure of Scientific Revolutions",
+    "year": 1963,
+    "venue": "Physics Today",
+    "is_target": false
+   },
+   {
+    "doi": "10.1037/h0048850",
+    "community": 6,
+    "hole": 0.972,
+    "title": "The associative basis of the creative process.",
+    "year": 1962,
+    "venue": "Psychological Review",
+    "is_target": false
+   },
+   {
+    "doi": "10.4159/harvard.9780674424753",
+    "community": 6,
+    "hole": 0.948,
+    "title": "Genius, Creativity, and Leadership",
+    "year": 1984,
+    "venue": "Harvard University Press eBooks",
+    "is_target": false
+   },
+   {
+    "doi": "10.1146/annurev.ps.32.020181.002255",
+    "community": 6,
+    "hole": 0.971,
+    "title": "Creativity, Intelligence, and Personality",
+    "year": 1981,
+    "venue": "Annual Review of Psychology",
+    "is_target": false
+   },
+   {
+    "doi": "W2061901927",
+    "community": 4,
+    "hole": 0.778,
+    "title": "Social Network Analysis: Methods and Applications",
+    "year": 1994,
+    "venue": "",
+    "is_target": false
+   },
+   {
+    "doi": "10.2307/1421785",
+    "community": 6,
+    "hole": 0.943,
+    "title": "Darwin on Man: A Psychological Study of Scientific Creativity",
+    "year": 1975,
+    "venue": "The American Journal of Psychology",
+    "is_target": false
+   }
+  ],
+  "Co-citation with seeds (triadic closure)": [
+   {
+    "doi": "10.7312/pric91844",
+    "community": 0,
+    "hole": 0.182,
+    "title": "Little Science, Big Science",
+    "year": 1963,
+    "venue": "Columbia University Press eBooks",
+    "is_target": false
+   },
+   {
+    "doi": "10.1177/030631277400400102",
+    "community": 0,
+    "hole": 0.075,
+    "title": "The Structure of Scientific Literatures I: Identifying and Graphing Specialties",
+    "year": 1974,
+    "venue": "Social Studies of Science",
+    "is_target": false
+   },
+   {
+    "doi": "10.1002/asi.4630240406",
+    "community": 0,
+    "hole": 0.144,
+    "title": "Co\u2010citation in the scientific literature: A new measure of the relationship between two documents",
+    "year": 1973,
+    "venue": "Journal of the American Society for Information Science",
+    "is_target": false
+   },
+   {
+    "doi": "10.1002/asi.4630270505",
+    "community": 0,
+    "hole": 0.077,
+    "title": "A general theory of bibliometric and other cumulative advantage processes",
+    "year": 1976,
+    "venue": "Journal of the American Society for Information Science",
+    "is_target": false
+   },
+   {
+    "doi": "W406100599",
+    "community": 0,
+    "hole": 0.084,
+    "title": "Communication among scientists and engineers",
+    "year": 1970,
+    "venue": "",
+    "is_target": false
+   },
+   {
+    "doi": "10.1126/science.178.4060.471",
+    "community": 0,
+    "hole": 0.086,
+    "title": "Citation Analysis as a Tool in Journal Evaluation",
+    "year": 1972,
+    "venue": "Science",
+    "is_target": false
+   },
+   {
+    "doi": "10.2307/3104125",
+    "community": 0,
+    "hole": 0.083,
+    "title": "Citation Indexing-Its Theory and Application in Science, Technology, and Humanities",
+    "year": 1980,
+    "venue": "Technology and Culture",
+    "is_target": false
+   },
+   {
+    "doi": "10.1002/asi.5090140103",
+    "community": 0,
+    "hole": 0.176,
+    "title": "Bibliographic coupling between scientific papers",
+    "year": 1963,
+    "venue": "American Documentation",
+    "is_target": false
+   },
+   {
+    "doi": "W2023754051",
+    "community": 0,
+    "hole": 0.099,
+    "title": "The Matthew effect in science. The reward and communication systems of science are considered.",
+    "year": 1968,
+    "venue": "PubMed",
+    "is_target": false
+   },
+   {
+    "doi": "10.21236/ad0466578",
+    "community": 0,
+    "hole": 0.08,
+    "title": "THE USE OF CITATION DATA IN WRITING THE HISTORY OF SCIENCE",
+    "year": 1964,
+    "venue": "",
+    "is_target": false
+   }
+  ],
+  "In-degree (citations before freeze)": [
+   {
+    "doi": "10.1063/1.3050879",
+    "community": 1,
+    "hole": 0.891,
+    "title": "The Structure of Scientific Revolutions",
+    "year": 1963,
+    "venue": "Physics Today",
+    "is_target": false
+   },
+   {
+    "doi": "10.1126/science.286.5439.509",
+    "community": 2,
+    "hole": 0.059,
+    "title": "Emergence of Scaling in Random Networks",
+    "year": 1999,
+    "venue": "Science",
+    "is_target": false
+   },
+   {
+    "doi": "10.1103/revmodphys.74.47",
+    "community": 2,
+    "hole": 0.042,
+    "title": "Statistical mechanics of complex networks",
+    "year": 2002,
+    "venue": "Reviews of Modern Physics",
+    "is_target": false
+   },
+   {
+    "doi": "10.1038/30918",
+    "community": 2,
+    "hole": 0.088,
+    "title": "Collective dynamics of \u2018small-world\u2019 networks",
+    "year": 1998,
+    "venue": "Nature",
+    "is_target": false
+   },
+   {
+    "doi": "10.1086/225469",
+    "community": 4,
+    "hole": 0.765,
+    "title": "The Strength of Weak Ties",
+    "year": 1973,
+    "venue": "American Journal of Sociology",
+    "is_target": false
+   },
+   {
+    "doi": "W1576818901",
+    "community": 5,
+    "hole": 0.973,
+    "title": "Genetic Programming: On the Programming of Computers by Means of Natural Selection",
+    "year": 1992,
+    "venue": "Medical Entomology and Zoology",
+    "is_target": false
+   },
+   {
+    "doi": "10.4324/9780203710753-35",
+    "community": 4,
+    "hole": 0.792,
+    "title": "Diffusion of Innovations 1",
+    "year": 2019,
+    "venue": "",
+    "is_target": false
+   },
+   {
+    "doi": "W2061901927",
+    "community": 4,
+    "hole": 0.778,
+    "title": "Social Network Analysis: Methods and Applications",
+    "year": 1994,
+    "venue": "",
+    "is_target": false
+   },
+   {
+    "doi": "W1639032689",
+    "community": 5,
+    "hole": 0.958,
+    "title": "Genetic Algorithms in Search, Optimization and Machine Learning",
+    "year": 1988,
+    "venue": "",
+    "is_target": false
+   },
+   {
+    "doi": "10.1037/0033-295x.84.3.231",
+    "community": 1,
+    "hole": 0.969,
+    "title": "Telling more than we can know: Verbal reports on mental processes.",
+    "year": 1977,
+    "venue": "Psychological Review",
+    "is_target": false
+   }
+  ],
+  "Global HITS authority": [
+   {
+    "doi": "10.1126/science.286.5439.509",
+    "community": 2,
+    "hole": 0.059,
+    "title": "Emergence of Scaling in Random Networks",
+    "year": 1999,
+    "venue": "Science",
+    "is_target": false
+   },
+   {
+    "doi": "10.1103/revmodphys.74.47",
+    "community": 2,
+    "hole": 0.042,
+    "title": "Statistical mechanics of complex networks",
+    "year": 2002,
+    "venue": "Reviews of Modern Physics",
+    "is_target": false
+   },
+   {
+    "doi": "10.1038/30918",
+    "community": 2,
+    "hole": 0.088,
+    "title": "Collective dynamics of \u2018small-world\u2019 networks",
+    "year": 1998,
+    "venue": "Nature",
+    "is_target": false
+   },
+   {
+    "doi": "10.1038/43601",
+    "community": 2,
+    "hole": 0.095,
+    "title": "Diameter of the World-Wide Web",
+    "year": 1999,
+    "venue": "Nature",
+    "is_target": false
+   },
+   {
+    "doi": "10.1038/35065725",
+    "community": 2,
+    "hole": 0.036,
+    "title": "Exploring complex networks",
+    "year": 2001,
+    "venue": "Nature",
+    "is_target": false
+   },
+   {
+    "doi": "10.1080/00018730110112519",
+    "community": 2,
+    "hole": 0.026,
+    "title": "Evolution of networks",
+    "year": 2002,
+    "venue": "Advances In Physics",
+    "is_target": false
+   },
+   {
+    "doi": "10.1145/316188.316229",
+    "community": 2,
+    "hole": 0.059,
+    "title": "On power-law relationships of the Internet topology",
+    "year": 1999,
+    "venue": "",
+    "is_target": false
+   },
+   {
+    "doi": "10.1038/35019019",
+    "community": 2,
+    "hole": 0.019,
+    "title": "Error and attack tolerance of complex networks",
+    "year": 2000,
+    "venue": "Nature",
+    "is_target": false
+   },
+   {
+    "doi": "W3103071483",
+    "community": 2,
+    "hole": 0.032,
+    "title": "Error and attack tolerance of complex networks",
+    "year": 2000,
+    "venue": "",
+    "is_target": false
+   },
+   {
+    "doi": "10.1137/s003614450342480",
+    "community": 2,
+    "hole": 0.081,
+    "title": "The Structure and Function of Complex Networks",
+    "year": 2003,
+    "venue": "SIAM Review",
+    "is_target": false
+   }
+  ]
+ },
+ "communities_across_hole": [
+  {
+   "community": 5,
+   "size": 5,
+   "venues": "Scientific American; Computers & Mathematics with Applications; IEEE Transactions on Evolutionary Computation",
+   "top_authority": "W1576818901",
+   "top_authority_title": "Genetic Programming: On the Programming of Computers by Means of Natural Selection",
+   "top_hub": "10.1017/cbo9781139165358"
+  },
+  {
+   "community": 6,
+   "size": 269,
+   "venues": "Journal of Personality and Social Psychology; Creativity Research Journal; Scientometrics",
+   "top_authority": "10.1037/h0040373",
+   "top_authority_title": "Blind variation and selective retentions in creative thought as in other knowledge processes.",
+   "top_hub": "10.1017/cbo9781139165358.010"
+  },
+  {
+   "community": 1,
+   "size": 17,
+   "venues": "American Journal of Physics; The American Historical Review; The Canadian Journal of Sociology",
+   "top_authority": "10.1063/1.3050879",
+   "top_authority_title": "The Structure of Scientific Revolutions",
+   "top_hub": "10.1080/0734151042000304367"
+  },
+  {
+   "community": 4,
+   "size": 12,
+   "venues": "?; American Journal of Sociology; Social Networks",
+   "top_authority": "W2061901927",
+   "top_authority_title": "Social Network Analysis: Methods and Applications",
+   "top_hub": "10.1016/s1441-3582(04)70094-4"
+  }
+ ]
+}
