@@ -1,0 +1,16 @@
+{
+ "authors_ge3_papers_2015_19": 7675,
+ "no_uiuc_paper_after_2020": 3630,
+ "uiuc_paper_in_2024": 2100,
+ "left_by_2020_sample_n": 100,
+ "left_by_2020_last_known_includes_uiuc": 26,
+ "left_by_2020_with_orcid": 68,
+ "left_by_2020_works_count_median": 38,
+ "still_publishing_2024_sample_n": 100,
+ "still_publishing_2024_last_known_includes_uiuc": 76,
+ "still_publishing_2024_with_orcid": 92,
+ "still_publishing_2024_works_count_median": 101,
+ "newcomers_2020_24": 19102,
+ "newcomers_with_1_paper": 11527,
+ "newcomers_whose_first_paper_has_established_uiuc_coauthor": 9268
+}

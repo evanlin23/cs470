@@ -1,0 +1,179 @@
+{
+ "GA_nodes": 22193,
+ "GA_edges": 65360,
+ "cohort": 5801,
+ "authors_A_ge2_papers": 10965,
+ "share_A_ge2_still_publishing_at_uiuc_in_B": 0.529,
+ "new_tie_pairs": 8982,
+ "persisting_pairs": 7638,
+ "louvain_A_seconds": 2.1,
+ "egos_with_new_ties": 3458,
+ "share_of_top10_that_are_friends_of_friends": {
+  "random": 0.013,
+  "degree (popular people)": 0.116,
+  "Adamic-Adar (triadic closure)": 0.872,
+  "topic only": 0.301,
+  "topic x distance": 0.047,
+  "spec: topic x distance x brokerage gain": 0.021,
+  "topic, far candidates only (d>=3)": 0.0,
+  "proposed: topic x warm-intro paths (d=3)": 0.0
+ },
+ "ci95_spec_minus_topic_far": [
+  -0.0005,
+  0.0035
+ ],
+ "ci95_spec_minus_topicxdist_far": [
+  0.0,
+  0.0004
+ ],
+ "ci95_warmintro_minus_topic_far_only": [
+  -0.0003,
+  0.0044
+ ],
+ "ci95_spec_minus_adamicadar_all": [
+  -0.0581,
+  -0.0474
+ ],
+ "far_candidates_distinct_gain_values_per_ego": {
+  "egos_checked": 1500,
+  "egos_with_exactly_1_distinct_gain_among_far_candidates": 1500,
+  "max_gain_spread_among_far_candidates": 0.0
+ },
+ "backtest_seconds": 93.9,
+ "precision_at_10_all_new_ties": {
+  "random": 0.0005,
+  "degree (popular people)": 0.0079,
+  "Adamic-Adar (triadic closure)": 0.0755,
+  "topic only": 0.055,
+  "topic x distance": 0.0278,
+  "spec: topic x distance x brokerage gain": 0.0227,
+  "topic, far candidates only (d>=3)": 0.0246,
+  "proposed: topic x warm-intro paths (d=3)": 0.0261
+ },
+ "precision_at_10_new_ties_at_distance_ge3": {
+  "random": 0.0003,
+  "degree (popular people)": 0.0029,
+  "Adamic-Adar (triadic closure)": 0.0072,
+  "topic only": 0.025,
+  "topic x distance": 0.0263,
+  "spec: topic x distance x brokerage gain": 0.0264,
+  "topic, far candidates only (d>=3)": 0.0317,
+  "proposed: topic x warm-intro paths (d=3)": 0.0336
+ },
+ "egos_with_a_distance_ge3_new_tie": 1165,
+ "new_tie_rate_per_1000_by_sim_and_distance": {
+  "sim<.05|dist2": [
+   935,
+   57594,
+   16.234
+  ],
+  "sim<.05|dist3": [
+   1002,
+   423092,
+   2.368
+  ],
+  "sim<.05|dist4-5": [
+   1115,
+   3184587,
+   0.35
+  ],
+  "sim<.05|dist6+/none": [
+   672,
+   4757109,
+   0.141
+  ],
+  "sim.05-.1|dist2": [
+   402,
+   11594,
+   34.673
+  ],
+  "sim.05-.1|dist3": [
+   232,
+   28257,
+   8.21
+  ],
+  "sim.05-.1|dist4-5": [
+   148,
+   50708,
+   2.919
+  ],
+  "sim.05-.1|dist6+/none": [
+   75,
+   27337,
+   2.744
+  ],
+  "sim.1-.2|dist2": [
+   560,
+   11455,
+   48.887
+  ],
+  "sim.1-.2|dist3": [
+   252,
+   20548,
+   12.264
+  ],
+  "sim.1-.2|dist4-5": [
+   124,
+   33579,
+   3.693
+  ],
+  "sim.1-.2|dist6+/none": [
+   118,
+   19173,
+   6.154
+  ],
+  "sim.2-.4|dist2": [
+   575,
+   8812,
+   65.252
+  ],
+  "sim.2-.4|dist3": [
+   191,
+   11703,
+   16.321
+  ],
+  "sim.2-.4|dist4-5": [
+   126,
+   15529,
+   8.114
+  ],
+  "sim.2-.4|dist6+/none": [
+   110,
+   9810,
+   11.213
+  ],
+  "sim>=.4|dist2": [
+   615,
+   5286,
+   116.345
+  ],
+  "sim>=.4|dist3": [
+   117,
+   4158,
+   28.139
+  ],
+  "sim>=.4|dist4-5": [
+   80,
+   4032,
+   19.841
+  ],
+  "sim>=.4|dist6+/none": [
+   120,
+   3359,
+   35.725
+  ]
+ },
+ "spearman_gain_vs_distance_top200": 0.443,
+ "gain_by_distance_median": {
+  "2": 0.0092,
+  "3": 0.018,
+  "4": 0.0268,
+  "5": 0.0431,
+  "6": 0.0625,
+  "7": 0.091
+ },
+ "far_new_ties_cross_vs_same_community": [
+  3891,
+  591
+ ]
+}

@@ -1,0 +1,28 @@
+{
+ "new, distance 2 (friend of friend)": {
+  "pairs": 3491,
+  "mean_norm_cites": 2.32,
+  "median_norm_cites": 0.72
+ },
+ "new, distance >=3": {
+  "pairs": 5491,
+  "mean_norm_cites": 1.27,
+  "median_norm_cites": 0.59
+ },
+ "new, distance >=3, cross-community": {
+  "pairs": 4845,
+  "mean_norm_cites": 1.19,
+  "median_norm_cites": 0.59
+ },
+ "new, distance >=3, same community": {
+  "pairs": 646,
+  "mean_norm_cites": 1.84,
+  "median_norm_cites": 0.53
+ },
+ "persisting tie": {
+  "pairs": 7638,
+  "mean_norm_cites": 1.44,
+  "median_norm_cites": 0.61
+ },
+ "mannwhitney_far_vs_fof_p": 1.25e-11
+}

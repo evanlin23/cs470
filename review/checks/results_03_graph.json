@@ -1,0 +1,378 @@
+{
+ "works_total": 109471,
+ "works_research_types": 98575,
+ "authors_per_work": {
+  "median": 4,
+  "p90": 11,
+  "p99": 100,
+  "max": 100
+ },
+ "share_works_gt25_authors": 0.0334,
+ "share_works_gt100_authors": 0.0,
+ "works_authors_truncated_flag": 0,
+ "pairs_from_gt25_if_kept": 10330271,
+ "pairs_from_le25": 1520113,
+ "share_uiuc_author_slots_on_gt25": 0.0316,
+ "authorships_total": 709197,
+ "authorships_null_author_id": 40435,
+ "authorships_no_institution": 23653,
+ "uiuc_authorships": 219579,
+ "uiuc_authorships_null_author_id": 9135,
+ "works_without_any_uiuc_flagged_author": 927,
+ "uiuc_orcids": 26432,
+ "uiuc_orcids_split_over_multiple_ids": 139,
+ "uiuc_ids_with_multiple_orcids": 0,
+ "uiuc_names_with_multiple_ids": 1674,
+ "uiuc_distinct_names": 38289,
+ "examples_name_multi_id": [
+  [
+   "bo li",
+   44
+  ],
+  [
+   "yang liu",
+   27
+  ],
+  [
+   "yu zhang",
+   23
+  ],
+  [
+   "tong zhang",
+   20
+  ],
+  [
+   "han zhao",
+   18
+  ],
+  [
+   "gang wang",
+   16
+  ],
+  [
+   "yang wang",
+   15
+  ],
+  [
+   "yang zhang",
+   15
+  ]
+ ],
+ "topics_missing_research_works": 94,
+ "build_seconds": 1.5,
+ "graph": {
+  "nodes": 41295,
+  "edges": 139010,
+  "density": "1.63e-04",
+  "components": 8039,
+  "isolates": 6839,
+  "giant_nodes": 30358,
+  "giant_share": 0.735,
+  "second_component": 29,
+  "deg_mean": 6.73,
+  "deg_median": 4,
+  "deg_p90": 15,
+  "deg_p99": 58,
+  "deg_max": 346,
+  "authors_with_1_paper": 20666,
+  "authors_with_ge5_papers": 9477
+ },
+ "degree_hist_capped50": {
+  "0": 6839,
+  "1": 4682,
+  "2": 4726,
+  "3": 4212,
+  "4": 3510,
+  "5": 2834,
+  "6": 2403,
+  "7": 1812,
+  "8": 1453,
+  "9": 1230,
+  "10": 939,
+  "11": 772,
+  "12": 649,
+  "13": 509,
+  "14": 464,
+  "15": 416,
+  "16": 356,
+  "17": 294,
+  "18": 273,
+  "19": 192,
+  "20": 234,
+  "21": 205,
+  "22": 163,
+  "23": 177,
+  "24": 138,
+  "25": 117,
+  "26": 124,
+  "27": 86,
+  "28": 86,
+  "29": 77,
+  "30": 86,
+  "31": 70,
+  "32": 53,
+  "33": 57,
+  "34": 49,
+  "35": 43,
+  "36": 47,
+  "37": 41,
+  "38": 38,
+  "39": 34,
+  "40": 31,
+  "41": 36,
+  "42": 27,
+  "43": 35,
+  "44": 28,
+  "45": 26,
+  "46": 19,
+  "47": 27,
+  "48": 17,
+  "49": 16,
+  "50": 543
+ },
+ "giant_avg_clustering_sample": 0.662,
+ "core_ge3_papers": {
+  "nodes": 14563,
+  "edges": 70048,
+  "giant_nodes": 13071
+ },
+ "louvain_seconds": 1.3,
+ "louvain_Q": 0.832,
+ "louvain_k": 52,
+ "louvain_sizes_top10": [
+  804,
+  634,
+  602,
+  571,
+  525,
+  456,
+  440,
+  436,
+  433,
+  380
+ ],
+ "louvain_k_ge20": 48,
+ "louvain_top12": [
+  {
+   "size": 804,
+   "top_subfields": [
+    [
+     "Plant Science",
+     0.28
+    ],
+    [
+     "Soil Science",
+     0.07
+    ],
+    [
+     "Agronomy and Crop Science",
+     0.07
+    ]
+   ]
+  },
+  {
+   "size": 634,
+   "top_subfields": [
+    [
+     "Public Health, Environmental and Occupational Health",
+     0.1
+    ],
+    [
+     "General Health Professions",
+     0.06
+    ],
+    [
+     "Cognitive Neuroscience",
+     0.05
+    ]
+   ]
+  },
+  {
+   "size": 602,
+   "top_subfields": [
+    [
+     "Artificial Intelligence",
+     0.25
+    ],
+    [
+     "Computer Networks and Communications",
+     0.14
+    ],
+    [
+     "Hardware and Architecture",
+     0.09
+    ]
+   ]
+  },
+  {
+   "size": 571,
+   "top_subfields": [
+    [
+     "Atomic and Molecular Physics, and Optics",
+     0.29
+    ],
+    [
+     "Materials Chemistry",
+     0.2
+    ],
+    [
+     "Condensed Matter Physics",
+     0.09
+    ]
+   ]
+  },
+  {
+   "size": 525,
+   "top_subfields": [
+    [
+     "Ecology",
+     0.23
+    ],
+    [
+     "Nature and Landscape Conservation",
+     0.1
+    ],
+    [
+     "Molecular Biology",
+     0.09
+    ]
+   ]
+  },
+  {
+   "size": 456,
+   "top_subfields": [
+    [
+     "Computer Science Applications",
+     0.11
+    ],
+    [
+     "Education",
+     0.09
+    ],
+    [
+     "Artificial Intelligence",
+     0.07
+    ]
+   ]
+  },
+  {
+   "size": 440,
+   "top_subfields": [
+    [
+     "Artificial Intelligence",
+     0.65
+    ],
+    [
+     "Computer Vision and Pattern Recognition",
+     0.04
+    ],
+    [
+     "Information Systems",
+     0.03
+    ]
+   ]
+  },
+  {
+   "size": 436,
+   "top_subfields": [
+    [
+     "Biomedical Engineering",
+     0.22
+    ],
+    [
+     "Molecular Biology",
+     0.19
+    ],
+    [
+     "Atomic and Molecular Physics, and Optics",
+     0.07
+    ]
+   ]
+  },
+  {
+   "size": 433,
+   "top_subfields": [
+    [
+     "Organic Chemistry",
+     0.15
+    ],
+    [
+     "Electrical and Electronic Engineering",
+     0.14
+    ],
+    [
+     "Materials Chemistry",
+     0.1
+    ]
+   ]
+  },
+  {
+   "size": 380,
+   "top_subfields": [
+    [
+     "Mechanical Engineering",
+     0.26
+    ],
+    [
+     "Materials Chemistry",
+     0.12
+    ],
+    [
+     "Biomedical Engineering",
+     0.11
+    ]
+   ]
+  },
+  {
+   "size": 376,
+   "top_subfields": [
+    [
+     "Artificial Intelligence",
+     0.15
+    ],
+    [
+     "Information Systems",
+     0.15
+    ],
+    [
+     "Sociology and Political Science",
+     0.09
+    ]
+   ]
+  },
+  {
+   "size": 370,
+   "top_subfields": [
+    [
+     "Molecular Biology",
+     0.5
+    ],
+    [
+     "Genetics",
+     0.06
+    ],
+    [
+     "Ecology, Evolution, Behavior and Systematics",
+     0.06
+    ]
+   ]
+  }
+ ],
+ "nmi_community_vs_subfield": 0.408,
+ "nmi_shuffled_baseline": 0.076,
+ "median_purity_comms_ge20": 0.25,
+ "n_distinct_subfields_in_core": 216,
+ "constraint_500_nodes_seconds": 12.76,
+ "effective_size_500_nodes_seconds": 12.48,
+ "est_constraint_all_core_minutes": 5.6,
+ "constraint_summary": {
+  "median": 0.403,
+  "min": 0.038,
+  "max": 1.216
+ },
+ "spearman_constraint_vs_degree": -0.89,
+ "spearman_effsize_vs_degree": 0.973,
+ "spearman_constraint_vs_n_neighbor_communities": -0.723,
+ "degree5to15_n": 225,
+ "degree5to15_spearman_constraint_vs_ncomm": -0.507
+}
