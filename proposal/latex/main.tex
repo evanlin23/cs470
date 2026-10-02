@@ -6,13 +6,6 @@
 % --- Space-saving layout: the proposal is limited to one page ---
 % Tighter margins than sigconf's default (top 57pt, bottom 73pt, sides 54pt).
 \geometry{top=20pt, bottom=20pt, inner=34pt, outer=34pt, columnsep=1pc}
-% Less space around section headings (acmart default: .75 before, .25 after).
-\makeatletter
-\renewcommand\section{\@startsection{section}{1}{\z@}%
-  {-.3\baselineskip \@plus -1\p@ \@minus -.2\p@}%
-  {.05\baselineskip}%
-  {\ACM@NRadjust\@secfont}}
-\makeatother
 % Placeholder for numbers we still have to measure. Remove before submitting.
 \newcommand{\tbd}[1]{\textcolor{red}{[#1]}}
 
@@ -20,8 +13,7 @@
 
 \title{BridgeFinder: Finding People Across Structural Holes}
 
-\author{Evan Lin and Eric Liu}
-\email{{elin26, ericl8}@illinois.edu}
+\author{Evan Lin (elin26@illinois.edu) \quad Eric Liu (ericl8@illinois.edu)}
 \affiliation{\institution{CS 470 project proposal, University of Illinois Urbana-Champaign}\country{}}
 
 \begin{teaserfigure}
@@ -29,6 +21,7 @@
   \vspace{-6pt}
   \scalebox{0.74}{\input{figure/flow.tex}}
   \caption{Core flow: (1) co-authorship communities, with a structural hole dashed; (2) ranked researchers across the hole; (3) their matching papers and an introduction path.}
+  \Description{Three wireframe screens: a campus map of research communities with a structural hole marked, a ranked list of researchers across the hole, and a researcher card showing matching papers and an introduction path.}
   \label{fig:flow}
   \vspace{-4pt}
 \end{teaserfigure}
@@ -51,7 +44,7 @@ Current tools like Illinois Experts~\cite{experts} and Google Scholar will match
 % Core concept: \textbf{structural holes and brokerage} (Lesson~1), with \textbf{community discovery}
 % (Lesson~10) and \textbf{weak ties} and \textbf{decentralized search} (Lessons~1, 13).
 
-Our project centers on the core concept of \textbf{brokerage}, which emphasizes the importance of weak ties that act like local bridges, passing information between two disconnected groups. We will build a graph where the nodes are UIUC researchers in OpenAlex~\cite{openalex}, and the edges are co-authorships, weighted by the number of joint papers. In addition, each node will be tagged with the OpenAlex topics that the researcher works on. Researchers who co-author densely with each other form research communities. For a student, we rank researchers at least three steps away by topic similarity, boosted by the number of introduction paths to them. An alternative concept we considered for this project was triadic closure. However, triadic closure only finds those already within your network, meaning that we fail to find new topics to do research in with this approach. Our falsifiable claim is that from the graph restricted to papers published from 2015 to 2019, BridgeFinder ranks the actual partners of new cross-community collaborations (from papers published in 2020 to 2024) higher than triadic closure or topic only ranking. 
+Our project centers on the core concept of \textbf{brokerage}, which emphasizes the importance of weak ties that act like local bridges, passing information between two disconnected groups. We will build a graph where the nodes are UIUC researchers in OpenAlex~\cite{openalex}, and the edges are co-authorships, weighted by the number of joint papers. In addition, each node will be tagged with the OpenAlex topics that the researcher works on. Researchers who co-author densely with each other form research communities. For a student, we rank researchers at least three steps away by topic similarity, boosted by the number of introduction paths to them. An alternative we considered was triadic closure, but it only finds people already within your network, so it cannot surface new research topics. Our falsifiable claim is that, using only papers from 2015 to 2019, BridgeFinder ranks the actual partners of new cross-community collaborations in 2020 to 2024 higher than triadic closure or topic-only ranking. 
 
 
 % \emph{Alternatives from class.} Triadic closure only finds people already near you; topic similarity alone
