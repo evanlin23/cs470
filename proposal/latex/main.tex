@@ -16,26 +16,38 @@
 \begin{teaserfigure}
   \centering
   \input{figure/flow.tex}
-  \caption{Core flow. (1) UIUC co-authorship communities; dashed = a structural hole (similar topics, almost
-  no joint papers). (2) Researchers across the hole, ranked. (3) Their matching papers and an introduction path.}
+  \caption{Core flow: (1) co-authorship communities, with a structural hole dashed; (2) ranked researchers across the hole; (3) their matching papers and an introduction path.}
   \label{fig:flow}
 \end{teaserfigure}
 
 \maketitle
 
 \section{Objective}
-When students search for a research mentor or researchers seek collaborators, they tend to search through connections they know: their lab, their department, etc. However, novel information spreads through weak ties~\cite{granovetter1973}, and individuals spanning structural holes between disconnected communities will be more likely to generate innovative ideas~\cite{burt2004}. Interdisciplinary research often harbors these exact structural holes. At UIUC and other universities, separate groups frequently tackle similar problems for years without co-authoring a single paper.  \textbf{BridgeFinder} finds these gaps in the co-authorship graph and names the people on the other side. 
+When students search for a research mentor or researchers seek collaborators, they tend to search through connections they know: their lab, their department, etc. However, novel information spreads through weak ties~\cite{granovetter1973}, and individuals spanning structural holes between disconnected communities will be more likely to generate innovative ideas~\cite{burt2004}. Interdisciplinary research often harbors these exact structural holes. At UIUC and other universities, separate groups frequently tackle similar problems for years without co-authoring a single paper. The Feb 2024 Gray Book lists 2,574 professor-titled faculty across 110 departments~\cite{graybook2024}, far too many to browse. \textbf{BridgeFinder} finds these gaps in the co-authorship graph and names the people on the other side. 
 
 \section{Related Work}
-Current tools like Illinois Experts~\cite{experts} and Google Scholar will match by keyword, but fail to consider graph topology, treating researchers like isolated documents. LinkedIn's ``People You May Know'' and link prediction~\cite{libennowell2007} favor triadic closure, which reinforces mutual connections instead of brokerage. \textbf{BridgeFinder} explicitly detects structural holes to recommend collaborators across disconnected communities.
+% \emph{Illinois Experts}~\cite{experts} and Google Scholar searches researchers by keyword but ignores network position: your co-author's co-author ranks like a stranger. LinkedIn's ``People You May Know'' and Twitter's
+% Who-to-Follow~\cite{gupta2013} use triadic closure, the opposite of brokerage. Link
+% prediction~\cite{libennowell2007} finds \emph{likely} ties; we rank ties by \emph{value}, using Burt's
+% constraint~\cite{burt1992}.
+
+Current tools like Illinois Experts~\cite{experts} and Google Scholar will match by keyword, but fail to consider graph topology, treating researchers like isolated documents. Barley et al.~\cite{barley2025} found that joining an interdisciplinary institute at UIUC diversified members' co-authors, and Dahlander and McFarland~\cite{dahlander2013} studied 15 years of Stanford collaborations, but neither produced a tool. Tang et al.~\cite{tang2012} recommend cross-domain collaborators with a topic model, and link prediction~\cite{libennowell2007} finds likely ties; BridgeFinder instead ranks by structural holes and introduction paths in a campus co-authorship graph, and evaluates on cross-community ties. LinkedIn's ``People You May Know'' uses triadic closure, which reinforces mutual connections instead of brokerage positioning. BridgeFinder explicitly detects structural holes to recommend collaborators across disconnected communities.
 
 
 \section{Course Concepts \& Network Analysis}
-Our project centers on \textbf{brokerage} (Lesson~1): weak ties that act like local bridges, passing information between two disconnected groups. We will build a graph where the nodes are UIUC researchers in OpenAlex~\cite{openalex} and the edges are co-authorships, weighted by the number of joint papers; each node is tagged with its OpenAlex topics. Louvain modularity (Lesson~10) splits the graph into research communities, and a \emph{hole} is two communities with similar topics but few joint papers. For a student, we rank researchers at least three steps away by cosine similarity of OpenAlex topic profiles, boosted by the number of introduction paths to them.
+% Core concept: \textbf{structural holes and brokerage} (Lesson~1), with \textbf{community discovery}
+% (Lesson~10) and \textbf{weak ties} and \textbf{decentralized search} (Lessons~1, 13).
 
-\emph{Alternatives from class:} triadic closure only finds people who are already nearby; Girvan--Newman could not split even a 150-node graph in 148\,s in our pilot, so we use Louvain.
+Our project centers on the core concept of \textbf{brokerage}, which emphasizes the importance of weak ties that act like local bridges, passing information between two disconnected groups. We will build a graph where the nodes are UIUC researchers in OpenAlex~\cite{openalex}, and the edges are co-authorships, weighted on the amount of joint papers. In addition, each node will be tagged with the OpenAlex topics that the researcher works on. Louvain modularity (Lesson~10) splits the graph into research communities; for a student, we rank researchers at least three steps away by topic similarity, boosted by the number of introduction paths to them. An alternative concept we considered for this project was triadic closure. However, triadic closure only finds those already within your network, meaning that we fail to find new topics to do research in with this approach. Our falsifiable claim is that from the graph restricted to papers published from 2015 to 2019, BridgeFinder ranks the actual partners of new cross-community collaborations (from papers published in 2020 to 2024) higher than triadic closure or topic only ranking. 
 
-\emph{Claim that could be false:} among researchers three or more steps away, our ranking will place people's real 2020--24 new collaborators in its top 10 more often than topic similarity alone. A pilot found only a small, uncertain gain, so this may not hold.
+
+% \emph{Alternatives from class.} Triadic closure only finds people already near you; topic similarity alone
+% can't tell a stranger from a friend of a friend. Girvan--Newman~\cite{newman2004} could not split a 150-node
+% graph in 148\,s in our pilot; Louvain split 610 nodes in 1.5\,s.
+
+% \emph{Claim that could be false.} From the 2015--19 graph, BridgeFinder ranks the actual partners of new
+% \emph{cross-community} collaborations (2020--24) higher than triadic-closure or topic-only ranking, and those
+% collaborations' papers are cited more than new within-community ones in the same fields (Burt's claim).
 
 \section{Proposed Work}
 We will create a web app with at least the three screens shown in Figure~\ref{fig:flow}. A student will be able to pick the professors whose classes they liked. The app will then show the campus map (derived from joint papers in OpenAlex). The app will also display a ranked list of researchers in other research communities, and, for each one, the papers that match their interests and who could introduce them. To create the campus map, we will write a Python program to preprocess the UIUC co-authorship graph from OpenAlex (around 110,000 papers from 2015 to 2024).
@@ -52,11 +64,11 @@ We will create a web app with at least the three screens shown in Figure~\ref{fi
 The core flow of the app follows Figure~\ref{fig:flow}. The student first picks the professors from classes they enjoyed. Then, the map will show their research communities and holes between them. Beside this, the app will also display a ranked list of researchers across those holes, and each of the researchers can be clicked to open a researcher card that shows their matching papers and the introduction path. Unlike previous work such as Illinois Experts or Google Scholar, which all start with a search box, we collect the user's interests, then show the map first so users can see where the gaps are as well as the overall research landscape. Additionally, we provide reasoning for each suggestion.
 
 \section{Users}
-Our target user group is UIUC students who liked a class and want to do research in the topic the class covered. A student will be attached to the graph through the professors whose class they enjoyed, and the app will be able to find researchers with similar work (but outside of the professors' circles) along with who could introduce them. We will try to recruit around 10 people (friends and classmates) to test the app through each of the rounds. 
+Our target user group is UIUC students who liked a class and want to do research in the topic the class covered. A student will be attached to the graph through the professors whose class they enjoyed, and the app will be able to find researchers with similar work (but outside of the professors' circles) along with who could introduce them. We will try to recruit around 10 people (friends and classmates looking for a research position) to test the app through each of the rounds. 
 
 \section{Evaluation}
 
-(1)~\textbf{Backtest:} Looking at the data from 2015 to 2019, we will predict the top 10 relevant people for each researcher using different methods (our method, triadic closure, topic only). We then count how often those people include someone who they actually started working with in 2020 to 2024.
+(1)~\textbf{Backtest:} Looking at the data from 2015 to 2019, we will predict the top 10 relevant people for each researcher using different methods (our method, triadic closure, topic only). We then count how often those people include someone in a different community who they actually started working with in 2020 to 2024.
 
 \noindent(2)~\textbf{Blind rating: } We will give each participant around 15 researcher cards (name, department, recent papers), five from each method (our method, triadic closure, topic only). These will be shuffled so they don't know which method produced them. We can then have them rate each researcher based on relevance of their work to their interests, and whether they knew the person already. Our method succeeds if more of its cards are both relevant and new to the participant.
 
