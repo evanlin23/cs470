@@ -1,0 +1,27 @@
+{
+  "name": "GeneRank (2005): PageRank imported into microarray gene ranking",
+  "transfer_paper": "10.1186/1471-2105-6-233",
+  "freeze_year": 2004,
+  "seed_rule": "the transfer paper's references published in biology venues (Crossref container-title)",
+  "seeds": [
+    "10.1126/science.290.5500.2306",
+    "10.1016/s1097-2765(02)00531-2",
+    "10.1126/science.278.5338.680",
+    "10.1093/bioinformatics/18.suppl_1.s233",
+    "10.1091/mbc.11.12.4241",
+    "10.1093/nar/gkg838",
+    "10.1038/424610a",
+    "10.1093/bioinformatics/bth910",
+    "10.1038/sj.tpj.6500209",
+    "10.1186/1471-2105-5-100",
+    "10.1101/gad.1039602",
+    "10.1038/35054095"
+  ],
+  "targets": {
+    "10.1016/s0169-7552(98)00110-x": "Brin & Page 1998, The anatomy of a large-scale hypertextual Web search engine (PageRank)",
+    "10.1145/324133.324140": "Kleinberg 1999, Authoritative sources in a hyperlinked environment (HITS)",
+    "10.1080/15427951.2004.10129091": "Langville & Meyer 2004, Deeper Inside PageRank"
+  },
+  "citer_sample": 1200,
+  "max_candidates": 600
+}
