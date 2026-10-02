@@ -1,0 +1,461 @@
+{
+ "case": "GeneRank (2005): PageRank imported into microarray gene ranking",
+ "freeze_year": 2004,
+ "graph": {
+  "works": 610,
+  "edges": 82873,
+  "citers": 407790
+ },
+ "communities": {
+  "louvain_k": 4,
+  "louvain_Q": 0.508,
+  "louvain_s": 1.51,
+  "cnm_k": 5,
+  "cnm_Q": 0.507,
+  "cnm_s": 4.98,
+  "girvan_newman": {
+   "subgraph_nodes": 150,
+   "subgraph_edges": 8767,
+   "gn_seconds": 147.6,
+   "gn_levels_explored": 5,
+   "gn_best_modularity": 0.0,
+   "gn_best_k": 6,
+   "louvain_modularity_same_subgraph": 0.432,
+   "louvain_k_same_subgraph": 5
+  }
+ },
+ "home_communities": [
+  0
+ ],
+ "targets": [
+  {
+   "target": "Brin & Page 1998, The anatomy of a large-scale hypertextual Web search engine (PageRank)",
+   "doi": "10.1016/s0169-7552(98)00110-x",
+   "in_graph": false,
+   "community": null,
+   "hole": null,
+   "MethodBridge (hole x within-community HITS)": null,
+   "Co-citation with seeds (triadic closure)": null,
+   "In-degree (citations before freeze)": null,
+   "Global HITS authority": null
+  },
+  {
+   "target": "Kleinberg 1999, Authoritative sources in a hyperlinked environment (HITS)",
+   "doi": "10.1145/324133.324140",
+   "in_graph": false,
+   "community": null,
+   "hole": null,
+   "MethodBridge (hole x within-community HITS)": null,
+   "Co-citation with seeds (triadic closure)": null,
+   "In-degree (citations before freeze)": null,
+   "Global HITS authority": null
+  },
+  {
+   "target": "Langville & Meyer 2004, Deeper Inside PageRank",
+   "doi": "10.1080/15427951.2004.10129091",
+   "in_graph": false,
+   "community": null,
+   "hole": null,
+   "MethodBridge (hole x within-community HITS)": null,
+   "Co-citation with seeds (triadic closure)": null,
+   "In-degree (citations before freeze)": null,
+   "Global HITS authority": null
+  }
+ ],
+ "top10": {
+  "MethodBridge (hole x within-community HITS)": [
+   {
+    "doi": "10.1038/227680a0",
+    "community": 3,
+    "hole": 0.99,
+    "title": "Cleavage of Structural Proteins during the Assembly of the Head of Bacteriophage T4",
+    "year": 1970,
+    "venue": "Nature",
+    "is_target": false
+   },
+   {
+    "doi": "10.1128/jb.153.1.163-168.1983",
+    "community": 2,
+    "hole": 0.985,
+    "title": "Transformation of intact yeast cells treated with alkali cations",
+    "year": 1983,
+    "venue": "Journal of Bacteriology",
+    "is_target": false
+   },
+   {
+    "doi": "10.1093/nar/22.22.4673",
+    "community": 1,
+    "hole": 0.964,
+    "title": "CLUSTAL W: improving the sensitivity of progressive multiple sequence alignment through sequence weighting, position-specific gap penalties and weight matrix choice",
+    "year": 1994,
+    "venue": "Nucleic Acids Research",
+    "is_target": false
+   },
+   {
+    "doi": "10.1006/abio.1976.9999",
+    "community": 3,
+    "hole": 0.997,
+    "title": null,
+    "year": null,
+    "venue": null,
+    "is_target": false
+   },
+   {
+    "doi": "10.1016/0003-2697(76)90527-3",
+    "community": 3,
+    "hole": 0.997,
+    "title": "A rapid and sensitive method for the quantitation of microgram quantities of protein utilizing the principle of protein-dye binding",
+    "year": 1976,
+    "venue": "Analytical Biochemistry",
+    "is_target": false
+   },
+   {
+    "doi": "10.1093/nar/25.17.3389",
+    "community": 1,
+    "hole": 0.908,
+    "title": "Gapped BLAST and PSI-BLAST: a new generation of protein database search programs",
+    "year": 1997,
+    "venue": "Nucleic Acids Research",
+    "is_target": false
+   },
+   {
+    "doi": "10.1093/genetics/122.1.19",
+    "community": 2,
+    "hole": 0.942,
+    "title": "A system of shuttle vectors and yeast host strains designed for efficient manipulation of DNA in Saccharomyces cerevisiae.",
+    "year": 1989,
+    "venue": "Genetics",
+    "is_target": false
+   },
+   {
+    "doi": "10.1016/s0022-2836(05)80360-2",
+    "community": 1,
+    "hole": 0.95,
+    "title": "Basic local alignment search tool",
+    "year": 1990,
+    "venue": "Journal of Molecular Biology",
+    "is_target": false
+   },
+   {
+    "doi": "10.1016/0076-6879(83)01015-0",
+    "community": 2,
+    "hole": 0.982,
+    "title": "[12] One-step gene disruption in yeast",
+    "year": 1983,
+    "venue": "Methods in Enzymology",
+    "is_target": false
+   },
+   {
+    "doi": "10.1073/pnas.85.8.2444",
+    "community": 1,
+    "hole": 0.978,
+    "title": "Improved tools for biological sequence comparison.",
+    "year": 1988,
+    "venue": "Proceedings of the National Academy of Sciences",
+    "is_target": false
+   }
+  ],
+  "Co-citation with seeds (triadic closure)": [
+   {
+    "doi": "10.1073/pnas.95.25.14863",
+    "community": 0,
+    "hole": 0.118,
+    "title": "Cluster analysis and display of genome-wide expression patterns",
+    "year": 1998,
+    "venue": "Proceedings of the National Academy of Sciences",
+    "is_target": false
+   },
+   {
+    "doi": "10.1126/science.270.5235.467",
+    "community": 0,
+    "hole": 0.156,
+    "title": "Quantitative Monitoring of Gene Expression Patterns with a Complementary DNA Microarray",
+    "year": 1995,
+    "venue": "Science",
+    "is_target": false
+   },
+   {
+    "doi": "10.1091/mbc.9.12.3273",
+    "community": 0,
+    "hole": 0.233,
+    "title": "Comprehensive Identification of Cell Cycle\u2013regulated Genes of the Yeast<i>Saccharomyces cerevisiae</i>by Microarray Hybridization",
+    "year": 1998,
+    "venue": "Molecular Biology of the Cell",
+    "is_target": false
+   },
+   {
+    "doi": "10.1126/science.282.5389.699",
+    "community": 0,
+    "hole": 0.321,
+    "title": "The Transcriptional Program of Sporulation in Budding Yeast",
+    "year": 1998,
+    "venue": "Science",
+    "is_target": false
+   },
+   {
+    "doi": "10.1038/nbt1296-1675",
+    "community": 0,
+    "hole": 0.114,
+    "title": "Expression monitoring by hybridization to high-density oligonucleotide arrays",
+    "year": 1996,
+    "venue": "Nature Biotechnology",
+    "is_target": false
+   },
+   {
+    "doi": "10.1016/s1097-2765(00)80114-8",
+    "community": 0,
+    "hole": 0.19,
+    "title": "A Genome-Wide Transcriptional Analysis of the Mitotic Cell Cycle",
+    "year": 1998,
+    "venue": "Molecular Cell",
+    "is_target": false
+   },
+   {
+    "doi": "10.1038/nbt1297-1359",
+    "community": 0,
+    "hole": 0.212,
+    "title": "Genome-wide expression monitoring in Saccharomyces cerevisiae",
+    "year": 1997,
+    "venue": "Nature Biotechnology",
+    "is_target": false
+   },
+   {
+    "doi": "10.1016/s0092-8674(00)00015-5",
+    "community": 0,
+    "hole": 0.2,
+    "title": "Functional Discovery via a Compendium of Expression Profiles",
+    "year": 2000,
+    "venue": "Cell",
+    "is_target": false
+   },
+   {
+    "doi": "10.1126/science.286.5439.531",
+    "community": 0,
+    "hole": 0.045,
+    "title": "Molecular Classification of Cancer: Class Discovery and Class Prediction by Gene Expression Monitoring",
+    "year": 1999,
+    "venue": "Science",
+    "is_target": false
+   },
+   {
+    "doi": "10.1073/pnas.96.6.2907",
+    "community": 0,
+    "hole": 0.067,
+    "title": "Interpreting patterns of gene expression with self-organizing maps: Methods and application to hematopoietic differentiation",
+    "year": 1999,
+    "venue": "Proceedings of the National Academy of Sciences",
+    "is_target": false
+   }
+  ],
+  "In-degree (citations before freeze)": [
+   {
+    "doi": "10.1038/227680a0",
+    "community": 3,
+    "hole": 0.99,
+    "title": "Cleavage of Structural Proteins during the Assembly of the Head of Bacteriophage T4",
+    "year": 1970,
+    "venue": "Nature",
+    "is_target": false
+   },
+   {
+    "doi": "10.1006/abio.1976.9999",
+    "community": 3,
+    "hole": 0.997,
+    "title": null,
+    "year": null,
+    "venue": null,
+    "is_target": false
+   },
+   {
+    "doi": "10.1016/0003-2697(76)90527-3",
+    "community": 3,
+    "hole": 0.997,
+    "title": "A rapid and sensitive method for the quantitation of microgram quantities of protein utilizing the principle of protein-dye binding",
+    "year": 1976,
+    "venue": "Analytical Biochemistry",
+    "is_target": false
+   },
+   {
+    "doi": "10.1073/pnas.74.12.5463",
+    "community": 3,
+    "hole": 0.988,
+    "title": "DNA sequencing with chain-terminating inhibitors",
+    "year": 1977,
+    "venue": "Proceedings of the National Academy of Sciences",
+    "is_target": false
+   },
+   {
+    "doi": "10.1093/nar/22.22.4673",
+    "community": 1,
+    "hole": 0.964,
+    "title": "CLUSTAL W: improving the sensitivity of progressive multiple sequence alignment through sequence weighting, position-specific gap penalties and weight matrix choice",
+    "year": 1994,
+    "venue": "Nucleic Acids Research",
+    "is_target": false
+   },
+   {
+    "doi": "10.1093/nar/25.17.3389",
+    "community": 1,
+    "hole": 0.908,
+    "title": "Gapped BLAST and PSI-BLAST: a new generation of protein database search programs",
+    "year": 1997,
+    "venue": "Nucleic Acids Research",
+    "is_target": false
+   },
+   {
+    "doi": "10.1016/s0022-2836(05)80360-2",
+    "community": 1,
+    "hole": 0.95,
+    "title": "Basic local alignment search tool",
+    "year": 1990,
+    "venue": "Journal of Molecular Biology",
+    "is_target": false
+   },
+   {
+    "doi": "10.1073/pnas.85.8.2444",
+    "community": 1,
+    "hole": 0.978,
+    "title": "Improved tools for biological sequence comparison.",
+    "year": 1988,
+    "venue": "Proceedings of the National Academy of Sciences",
+    "is_target": false
+   },
+   {
+    "doi": "10.1128/jb.153.1.163-168.1983",
+    "community": 2,
+    "hole": 0.985,
+    "title": "Transformation of intact yeast cells treated with alkali cations",
+    "year": 1983,
+    "venue": "Journal of Bacteriology",
+    "is_target": false
+   },
+   {
+    "doi": "10.1093/genetics/122.1.19",
+    "community": 2,
+    "hole": 0.942,
+    "title": "A system of shuttle vectors and yeast host strains designed for efficient manipulation of DNA in Saccharomyces cerevisiae.",
+    "year": 1989,
+    "venue": "Genetics",
+    "is_target": false
+   }
+  ],
+  "Global HITS authority": [
+   {
+    "doi": "10.1038/227680a0",
+    "community": 3,
+    "hole": 0.99,
+    "title": "Cleavage of Structural Proteins during the Assembly of the Head of Bacteriophage T4",
+    "year": 1970,
+    "venue": "Nature",
+    "is_target": false
+   },
+   {
+    "doi": "10.1006/abio.1976.9999",
+    "community": 3,
+    "hole": 0.997,
+    "title": null,
+    "year": null,
+    "venue": null,
+    "is_target": false
+   },
+   {
+    "doi": "10.1016/0003-2697(76)90527-3",
+    "community": 3,
+    "hole": 0.997,
+    "title": "A rapid and sensitive method for the quantitation of microgram quantities of protein utilizing the principle of protein-dye binding",
+    "year": 1976,
+    "venue": "Analytical Biochemistry",
+    "is_target": false
+   },
+   {
+    "doi": "10.1073/pnas.74.12.5463",
+    "community": 3,
+    "hole": 0.988,
+    "title": "DNA sequencing with chain-terminating inhibitors",
+    "year": 1977,
+    "venue": "Proceedings of the National Academy of Sciences",
+    "is_target": false
+   },
+   {
+    "doi": "10.1016/s0022-2836(05)80360-2",
+    "community": 1,
+    "hole": 0.95,
+    "title": "Basic local alignment search tool",
+    "year": 1990,
+    "venue": "Journal of Molecular Biology",
+    "is_target": false
+   },
+   {
+    "doi": "10.1093/nar/22.22.4673",
+    "community": 1,
+    "hole": 0.964,
+    "title": "CLUSTAL W: improving the sensitivity of progressive multiple sequence alignment through sequence weighting, position-specific gap penalties and weight matrix choice",
+    "year": 1994,
+    "venue": "Nucleic Acids Research",
+    "is_target": false
+   },
+   {
+    "doi": "10.1073/pnas.85.8.2444",
+    "community": 1,
+    "hole": 0.978,
+    "title": "Improved tools for biological sequence comparison.",
+    "year": 1988,
+    "venue": "Proceedings of the National Academy of Sciences",
+    "is_target": false
+   },
+   {
+    "doi": "10.1093/nar/25.17.3389",
+    "community": 1,
+    "hole": 0.908,
+    "title": "Gapped BLAST and PSI-BLAST: a new generation of protein database search programs",
+    "year": 1997,
+    "venue": "Nucleic Acids Research",
+    "is_target": false
+   },
+   {
+    "doi": "10.1128/jb.153.1.163-168.1983",
+    "community": 2,
+    "hole": 0.985,
+    "title": "Transformation of intact yeast cells treated with alkali cations",
+    "year": 1983,
+    "venue": "Journal of Bacteriology",
+    "is_target": false
+   },
+   {
+    "doi": "10.1093/genetics/122.1.19",
+    "community": 2,
+    "hole": 0.942,
+    "title": "A system of shuttle vectors and yeast host strains designed for efficient manipulation of DNA in Saccharomyces cerevisiae.",
+    "year": 1989,
+    "venue": "Genetics",
+    "is_target": false
+   }
+  ]
+ },
+ "communities_across_hole": [
+  {
+   "community": 3,
+   "size": 5,
+   "venues": "Proceedings of the National Academy of Sciences; Analytical Biochemistry; ?",
+   "top_authority": "10.1038/227680a0",
+   "top_authority_title": "Cleavage of Structural Proteins during the Assembly of the Head of Bacteriophage T4",
+   "top_hub": "10.1016/s0378-1119(96)00473-8"
+  },
+  {
+   "community": 2,
+   "size": 169,
+   "venues": "Molecular and Cellular Biology; Genes &amp; Development; Nature",
+   "top_authority": "10.1128/jb.153.1.163-168.1983",
+   "top_authority_title": "Transformation of intact yeast cells treated with alkali cations",
+   "top_hub": "10.1266/ggs.74.241"
+  },
+  {
+   "community": 1,
+   "size": 71,
+   "venues": "Science; Nature; Nucleic Acids Research",
+   "top_authority": "10.1093/nar/22.22.4673",
+   "top_authority_title": "CLUSTAL W: improving the sensitivity of progressive multiple sequence alignment through sequence weighting, position-specific gap penalties and weight matrix choice",
+   "top_hub": "10.1016/s0076-6879(03)64006-1"
+  }
+ ]
+}
