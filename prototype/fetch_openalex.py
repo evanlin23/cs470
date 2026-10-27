@@ -36,64 +36,34 @@ def fetch_openalex_page(url, mailto):
             time.sleep(2 ** attempt)
 
 
-def fetch_works(mailto, max_works=5000, start_year=2015, end_year=2024, cache_file=None):
-    if cache_file is None:
-        cache_file = "prototype/uiuc_raw_works_scaled.json" if max_works > 5000 else "prototype/uiuc_raw_works.json"
-
+def fetch_works(mailto, max_works=5000, start_year=2015, end_year=2024, cache_file="uiuc_raw_works.json"):
     if os.path.exists(cache_file):
+        print(f"Loading cached works from {cache_file}...")
         with open(cache_file) as f:
-            cached = json.load(f)
-        if len(cached) >= max_works:
-            print(f"Loading cached works ({len(cached)} items) from {cache_file}...")
-            return cached[:max_works]
+            return json.load(f)
 
-    print(f"Fetching UIUC works ({start_year}-{end_year}, target: {max_works}) from OpenAlex API...")
+    print(f"Fetching UIUC works ({start_year}-{end_year}) from OpenAlex API...")
     works = []
-    years = list(range(start_year, end_year + 1))
-    per_year_target = (max_works + len(years) - 1) // len(years) if max_works > 8000 else max_works
+    cursor = "*"
+    per_page = 200
 
-    if max_works > 8000:
-        # Fetch partitioned by year to stay safely under OpenAlex's 10k basic pagination limit
-        for year in years:
-            if len(works) >= max_works:
-                break
-            year_works = 0
-            page = 1
-            per_page = 200
-            base_filter = f"institutions.ror:{UIUC_ROR},publication_year:{year}"
-            encoded_filter = urllib.parse.quote(base_filter)
-            print(f"  Fetching publication year {year} (target ~{per_year_target})...")
+    base_filter = f"institutions.ror:{UIUC_ROR},publication_year:{start_year}-{end_year}"
+    encoded_filter = urllib.parse.quote(base_filter)
 
-            while year_works < per_year_target and len(works) < max_works:
-                url = f"{OPENALEX_API}/works?filter={encoded_filter}&per-page={per_page}&page={page}&mailto={urllib.parse.quote(mailto)}&select=id,doi,title,publication_year,authorships,topics,cited_by_count"
-                data = fetch_openalex_page(url, mailto)
-                if not data or "results" not in data:
-                    break
-                results = data["results"]
-                if not results:
-                    break
-                works.extend(results)
-                year_works += len(results)
-                print(f"    Year {year}: {year_works} works (Total so far: {len(works)}/{max_works})...")
-                page += 1
-                time.sleep(0.1)
-    else:
-        page = 1
-        per_page = 200
-        base_filter = f"institutions.ror:{UIUC_ROR},publication_year:{start_year}-{end_year}"
-        encoded_filter = urllib.parse.quote(base_filter)
-        while len(works) < max_works:
-            url = f"{OPENALEX_API}/works?filter={encoded_filter}&per-page={per_page}&page={page}&mailto={urllib.parse.quote(mailto)}&select=id,doi,title,publication_year,authorships,topics,cited_by_count"
-            data = fetch_openalex_page(url, mailto)
-            if not data or "results" not in data:
-                break
-            results = data["results"]
-            if not results:
-                break
-            works.extend(results)
-            print(f"  Fetched {len(works)} / {max_works} works...")
-            page += 1
-            time.sleep(0.1)
+    while cursor and len(works) < max_works:
+        url = f"{OPENALEX_API}/works?filter={encoded_filter}&per-page={per_page}&cursor={urllib.parse.quote(cursor)}&select=id,doi,title,publication_year,authorships,topics,cited_by_count"
+        data = fetch_openalex_page(url, mailto)
+        if not data or "results" not in data:
+            break
+
+        results = data["results"]
+        if not results:
+            break
+
+        works.extend(results)
+        print(f"  Fetched {len(works)} / {min(max_works, data.get('meta', {}).get('count', max_works))} works...")
+        cursor = data.get("meta", {}).get("next_cursor")
+        time.sleep(0.1)  # Polite pool delay
 
     print(f"Total works fetched: {len(works)}. Saving to {cache_file}...")
     with open(cache_file, "w") as f:

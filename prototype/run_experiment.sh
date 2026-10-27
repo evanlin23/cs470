@@ -5,7 +5,7 @@ echo "=== BridgeFinder Experiment Runner ==="
 
 # 1. Install prerequisites
 echo "[Step 1/3] Checking dependencies..."
-python3 -m pip install -q --user --break-system-packages networkx scipy 2>/dev/null || true
+pip install -q networkx scipy
 
 # 2. Fetch data from OpenAlex API
 echo "[Step 2/3] Harvesting UIUC co-authorship records from OpenAlex API..."

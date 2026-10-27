@@ -2,12 +2,10 @@
   "n_cross_papers": 1095,
   "n_within_papers": 4163,
   "mean_citations_cross": 68.45,
-  "mean_citations_within": 60.71,
   "median_citations_cross": 36.0,
+  "mean_citations_within": 60.71,
   "median_citations_within": 37.0,
   "impact_ratio": 1.128,
   "mann_whitney_u": 2217682.5,
-  "p_value_one_sided": 0.9158189396720117,
-  "p_value_two_sided": 0.1683690342203611,
-  "statistically_significant": false
+  "p_value_two_sided": 0.1684
 }
