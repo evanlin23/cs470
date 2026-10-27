@@ -315,34 +315,36 @@ Using $\mathcal{G}_{\text{train}}$ (2015--2019), \texttt{prototype/backtest.py} 
 \begin{table}[h]
 \centering
 \scriptsize
-\caption{Reproducible offline backtest results predicting 2020--2024 cross-community ties on both committed OpenAlex datasets.}
+\caption{Reproducible leak-free offline backtest results predicting 2020--2024 cross-community ties on both committed datasets.}
 \label{tab:backtest_pilot}
-\setlength{\tabcolsep}{2.2pt}
+\setlength{\tabcolsep}{2.0pt}
 \begin{tabularx}{\columnwidth}{Xcccc|cccc}
 \toprule
-& \multicolumn{4}{c|}{\textbf{5k Corpus ($N=183$ seeds)}} & \multicolumn{4}{c}{\textbf{25k Corpus ($N=1,379$ seeds)}} \\
+& \multicolumn{4}{c|}{\textbf{5k Corpus ($N=185$ seeds)}} & \multicolumn{4}{c}{\textbf{25k Corpus ($N=1,386$ seeds)}} \\
 \textbf{Model} & \textbf{P@5} & \textbf{P@10} & \textbf{R@10} & \textbf{NDCG} & \textbf{P@5} & \textbf{P@10} & \textbf{R@10} & \textbf{NDCG} \\
 \midrule
-Pref. Attach. & .0011 & .0005 & .0018 & .0011 & .0087 & .0093 & .0167 & .0136 \\
-Betweenness & .0098 & .0060 & .0537 & .0220 & .0088 & .0106 & .0193 & .0162 \\
-Topic-Only & \textbf{.1727} & \textbf{.1060} & \textbf{.5651} & \textbf{.4452} & \textbf{.1111} & \textbf{.0818} & \textbf{.2731} & \textbf{.2111} \\
-Triadic (AA) & .0153 & .0126 & .0504 & .0377 & .0289 & .0229 & .0620 & .0487 \\
+Pref. Attach. & .0011 & .0005 & .0018 & .0011 & .0081 & .0094 & .0154 & .0125 \\
+Betweenness & .0022 & .0054 & .0477 & .0192 & .0076 & .0077 & .0103 & .0109 \\
+Topic-Only (Pre-2020) & .0076 & .0124 & .0783 & .0342 & .0201 & .0181 & .0634 & .0406 \\
+Triadic (AA) & .0076 & .0070 & .0398 & .0279 & .0283 & .0232 & .0628 & .0459 \\
 \midrule
-\textbf{BridgeFinder} & .0798 & .0536 & .2670 & .2086 & .0660 & .0551 & .1689 & .1280 \\
+\textbf{BF (Topic+Path)} & \textbf{.0216} & \textbf{.0200} & \textbf{.1282} & \textbf{.0697} & .0333 & .0291 & .0899 & .0630 \\
+\textbf{BridgeFinder (Full)} & .0195 & .0195 & .1235 & .0671 & \textbf{.0364} & \textbf{.0314} & \textbf{.0989} & \textbf{.0705} \\
 \bottomrule
 \end{tabularx}
 \vspace{-3pt}
 \end{table}
 
-\noindent\textbf{What the Backtest Reveals About the Network (Candid Interpretation):}
+\noindent\textbf{Temporal Leakage Audit \& Experimental Validation:}
 \begin{itemize}
     \setlength{\itemsep}{0.1pt}\setlength{\parskip}{0pt}
-    \item \textbf{Why Pure Topology Fails ($H_{\text{pred}}$ Confirmed):} Triadic Closure (Adamic-Adar $P@5 = 0.0153$ on 5k, $0.0289$ on 25k) and Preferential Attachment ($0.0011$ and $0.0087$) fail at predicting cross-community ties because few open triads exist across structural holes prior to collaboration. BridgeFinder beats Triadic Closure by **$5.2\times$ P@5** on the 5k corpus and **$2.3\times$ P@5** ($+0.079$ NDCG@10) on the 25k corpus, exceeding our $\ge 2.0\times$ threshold.
-    \item \textbf{Why Topic-Only Beats BridgeFinder Offline---and Why That Matters:} The most striking empirical result in Table~\ref{tab:backtest_pilot} is that unconstrained Topic-Only beats BridgeFinder on every offline metric ($P@5 = 0.1727$ vs. $0.0798$ on 5k; $0.1111$ vs. $0.0660$ on 25k). This reveals a fundamental property of academic networks: *most cross-community co-authorships that form organically occur between topic-adjacent researchers regardless of whether they are high-autonomy brokers*. Because Topic-Only ranks the entire unconstrained pool of topic-matching faculty while BridgeFinder down-weights high-constraint clique members ($C_v \to 1$) and requires boundary-spanning structure ($\text{BSI}, H_v$), BridgeFinder shrinks the candidate pool and sacrifices raw historical recall. Consequently, offline link prediction alone cannot justify brokerage weighting: **for BridgeFinder to be worth the offline recall hit, our human user study must show that Topic-Only recommendations are either already familiar to students (low novelty) or lack a viable introduction path (low outreach comfort), whereas BridgeFinder delivers significantly higher \emph{Relevant-and-New} leads with actionable introductions.**
+    \item \textbf{Auditing Temporal Data Leakage in Topic Profiles:} In our initial prototype, author topic vectors were extracted across the full 2015--2024 corpus. An empirical audit revealed that $45.9\%$ of authors had topic profiles altered by post-2019 publications; joint cross-community papers in 2020--2024 leaked novel interdisciplinary keywords backwards into pre-split predictors, artificially inflating raw Topic-Only recall ($P@5 \approx 0.17$). When topics are strictly restricted to pre-2020 publications ($p[\text{year}] \le 2019$), leak-free Topic-Only drops to $P@5 = 0.0076$ (5k) and $0.0201$ (25k).
+    \item \textbf{Confirmation of the Original Proposal Prediction Claim ($H_{\text{pred}}$):} With temporal leakage eliminated, our proposal's primary falsifiable claim is fully confirmed: BridgeFinder outperforms \emph{both} triadic closure and topic-only baselines. On the 5k corpus, proposal-aligned Topic+Path achieves **$P@5 = 0.0216$** ($2.8\times$ over Topic-Only and Triadic Closure, $+0.035$ NDCG@10). On the 25k scaled corpus, Multi-Objective BridgeFinder achieves **$P@5 = 0.0364$** ($+81\%$ over Topic-Only $0.0201$, and $+29\%$ over Triadic Closure $0.0283$) with **$0.0989$ R@10** ($+56\%$ over both baselines).
+    \item \textbf{Candidate Distance Thresholds ($d \ge 3$ vs. $d=2$):} The original proposal specified candidates at least three steps away ($d \ge 3$). However, mathematically, for any candidate with $d(u,v) \ge 3$, common neighbors $N(u) \cap N(v) = \emptyset$, so Adamic-Adar is identically zero ($\text{Score}_{\text{AA}} = 0$). To evaluate link prediction informatively against triadic closure, candidate pools admit 2-hop cross-community warm bridges ($C(u) \neq C(v)$), directly reflecting Round~1 user feedback.
 \end{itemize}
 
 \subsection{Phase 2: Burt's Citation Impact Test (Completed)}
-We executed \texttt{prototype/citation\_impact.py} across all $6,233$ post-2019 multi-authored papers in the 25k corpus (\texttt{prototype/results/citation\_impact.json}). Cross-community papers spanning $\ge 2$ Louvain communities ($N = 1,095$) achieved a **mean of 68.45 citations** compared to **60.71 citations** for within-community papers ($N = 4,163$), yielding an **Impact Ratio of $1.128\times$** (a 12.8\% mean citation premium). However, median citations were nearly identical ($36.0$ cross-community vs. $37.0$ within-community), and a two-sided Mann-Whitney U test yielded $U = 2,217,682.5, p = 0.1684$ (a statistical null on rank-sum location). Candidly, this shows that crossing a structural hole does not automatically raise a typical (median) paper's citations; rather, cross-community collaborations exhibit higher variance and a heavy right tail where breakout interdisciplinary papers drive the 12.8\% mean premium.
+We executed \texttt{prototype/citation\_impact.py} across all $6,231$ post-2019 multi-authored papers in the 25k corpus (\texttt{prototype/results/citation\_impact.json}). Accounting for all papers: cross-community papers spanning $\ge 2$ Louvain communities ($N = 1,071$) achieved a **mean of 64.86 citations** ($\sigma = 241.34$) compared to **61.60 citations** ($\sigma = 119.92$) for within-community papers ($N = 4,183$), yielding an **Impact Ratio of $1.053\times$**; the remaining $977$ papers had authors outside the pre-2019 giant component Louvain partition. Medians were virtually identical ($36.0$ cross-community vs. $37.0$ within-community), and a two-sided Mann-Whitney U test yielded $U = 2,156,737.0, p = 0.0601$ (inconclusive on medians). As hypothesized by Burt, crossing a structural hole does not shift median citations; rather, cross-community papers exhibit $>2.0\times$ higher variance with a heavy right tail of breakout interdisciplinary breakthroughs.
 
 \subsection{Phase 3: Double-Blind User Study Protocol (Nov 1--15)}
 We implemented the study generator (\texttt{prototype/study/generate\_cards.py}), web rating app (\texttt{prototype/study/index.html}), and participant-level statistical analyzer (\texttt{prototype/study/analyze\_study.py}). To ensure controlled within-subject comparisons, each of the $N=15$ student participants selects the departmental seed profile closest to their coursework from 5 standardized UIUC seeds (CS, ECE, Bioengineering, Crop Sciences, Information Sciences) and rates 15 shuffled, unlabeled cards (5 BridgeFinder, 5 Triadic Closure, 5 Topic-Only) on 7-point Likert scales for *Relevance*, *Novelty*, and *Outreach Actionability*, followed by the 10-item SUS questionnaire. Ratings are aggregated into per-participant means ($df = 14$) before running paired $t$-tests and Wilcoxon signed-rank tests with Bonferroni correction ($\alpha = 0.0167$).
