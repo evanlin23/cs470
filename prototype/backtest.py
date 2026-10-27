@@ -55,17 +55,16 @@ def build_graphs(data, split_year=2019):
 def compute_burt_constraint(G):
     """Computes Burt's aggregate network constraint C_i and autonomy H_i = 1 - C_i."""
     burt_autonomy = {}
+    node_strength = {n: sum(d.get("weight", 1.0) for _, d in G[n].items()) for n in G.nodes()}
+
     for i in G.nodes():
         neighbors = list(G.neighbors(i))
         k = len(neighbors)
-        if k == 0:
+        if k <= 1:
             burt_autonomy[i] = 0.0
             continue
-        if k == 1:
-            burt_autonomy[i] = 0.0  # complete constraint (C_i = 1)
-            continue
 
-        total_w = sum(G[i][nbr].get("weight", 1.0) for nbr in neighbors)
+        total_w = node_strength[i]
         p = {nbr: G[i][nbr].get("weight", 1.0) / total_w for nbr in neighbors}
 
         # Dyadic constraint c_ij
@@ -74,7 +73,7 @@ def compute_burt_constraint(G):
             indirect = 0.0
             for q in neighbors:
                 if q != j and G.has_edge(q, j):
-                    total_q = sum(G[q][w].get("weight", 1.0) for w in G.neighbors(q))
+                    total_q = node_strength.get(q, 0.0)
                     p_qj = G[q][j].get("weight", 1.0) / total_q if total_q > 0 else 0
                     indirect += p[q] * p_qj
             c_ij = (p[j] + indirect) ** 2
@@ -166,11 +165,22 @@ def evaluate_baselines(g_train, g_eval, authors, min_eval_edges=1):
         for v in candidates:
             scores["Topic-Only"][v] = compute_topic_similarity(u_topics, sub_g.nodes[v]["topics"])
 
+        # Precompute 2-hop neighbors and Adamic-Adar scores for candidate pool
+        u_nbrs = list(sub_g.neighbors(u))
+        aa_scores = defaultdict(float)
+        two_hop_nodes = set()
+        for w in u_nbrs:
+            deg = sub_g.degree(w)
+            if deg > 1:
+                inv_log = 1.0 / math.log(deg)
+                for nbr_w in sub_g.neighbors(w):
+                    if nbr_w != u:
+                        aa_scores[nbr_w] += inv_log
+                        two_hop_nodes.add(nbr_w)
+
         # 4. Triadic Closure (Adamic-Adar across community boundary)
         for v in candidates:
-            common = list(nx.common_neighbors(sub_g, u, v))
-            aa = sum(1.0 / math.log(sub_g.degree(w)) for w in common if sub_g.degree(w) > 1)
-            scores["Triadic Closure (Adamic-Adar)"][v] = aa
+            scores["Triadic Closure (Adamic-Adar)"][v] = aa_scores.get(v, 0.0)
 
         # 5. BridgeFinder Multi-Objective
         for v in candidates:
@@ -183,8 +193,7 @@ def evaluate_baselines(g_train, g_eval, authors, min_eval_edges=1):
             bsi = ext_u / len(v_nbrs) if v_nbrs else 0.0
 
             # Path transmission (2-hop common neighbor or 3-hop)
-            common = list(nx.common_neighbors(sub_g, u, v))
-            path_prob = 0.5 if common else 0.1
+            path_prob = 0.5 if v in two_hop_nodes else 0.1
 
             score = 0.35 * topic_sim + 0.25 * autonomy + 0.25 * bsi + 0.15 * path_prob
             scores["BridgeFinder"][v] = score

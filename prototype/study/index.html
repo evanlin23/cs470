@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BridgeFinder Double-Blind User Study</title>
+  <style>
+    :root {
+      --uiuc-blue: #13294B;
+      --uiuc-orange: #E84A27;
+      --uiuc-bg: #F4F6F9;
+      --uiuc-card: #FFFFFF;
+      --uiuc-text: #212529;
+      --uiuc-muted: #6C757D;
+      --uiuc-border: #E2E8F0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    body { background-color: var(--uiuc-bg); color: var(--uiuc-text); line-height: 1.5; padding: 24px; min-height: 100vh; display: flex; flex-direction: column; align-items: center; }
+    .container { width: 100%; max-width: 820px; }
+    header { background: var(--uiuc-blue); color: #fff; padding: 24px 32px; border-radius: 12px; margin-bottom: 24px; box-shadow: 0 4px 14px rgba(19,41,75,0.15); display: flex; justify-content: space-between; align-items: center; }
+    header h1 { font-size: 22px; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+    header .badge { background: var(--uiuc-orange); color: white; padding: 4px 12px; border-radius: 20px; font-size: 13px; font-weight: 600; }
+    .progress-bar-container { background: #E2E8F0; border-radius: 8px; height: 10px; width: 100%; margin-bottom: 24px; overflow: hidden; }
+    .progress-bar { background: var(--uiuc-orange); height: 100%; width: 0%; transition: width 0.3s ease; }
+    .card { background: var(--uiuc-card); border-radius: 12px; border: 1px solid var(--uiuc-border); padding: 32px; margin-bottom: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+    .seed-context { background: #EEF4FC; border-left: 4px solid var(--uiuc-blue); padding: 14px 18px; border-radius: 4px; margin-bottom: 24px; }
+    .seed-context .label { font-size: 12px; text-transform: uppercase; font-weight: 700; color: var(--uiuc-blue); letter-spacing: 0.5px; }
+    .seed-context .name { font-size: 16px; font-weight: 600; color: #0A192F; margin-top: 2px; }
+    .seed-context .meta { font-size: 13px; color: var(--uiuc-muted); margin-top: 2px; }
+    .cand-header { margin-bottom: 18px; }
+    .cand-header h2 { font-size: 24px; font-weight: 700; color: #111827; }
+    .topics { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 20px 0; }
+    .tag { background: #EDF2F7; color: #2D3748; padding: 4px 12px; border-radius: 16px; font-size: 12px; font-weight: 500; }
+    .section-title { font-size: 13px; text-transform: uppercase; font-weight: 700; color: var(--uiuc-muted); letter-spacing: 0.5px; margin-bottom: 8px; }
+    .papers-box { background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 14px 18px; margin-bottom: 20px; }
+    .paper-item { font-size: 14px; margin-bottom: 6px; color: #334155; }
+    .paper-item:last-child { margin-bottom: 0; }
+    .path-box { background: #FFF7ED; border: 1px solid #FFEDD5; border-radius: 8px; padding: 14px 18px; margin-bottom: 28px; }
+    .path-text { font-size: 14px; font-weight: 600; color: #9A3412; }
+    .rating-group { margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid #EDF2F7; }
+    .rating-group:last-child { border-bottom: none; }
+    .rating-group label { display: block; font-weight: 600; font-size: 15px; margin-bottom: 6px; color: #1E293B; }
+    .rating-group .desc { font-size: 13px; color: var(--uiuc-muted); margin-bottom: 12px; }
+    .likert-scale { display: flex; justify-content: space-between; gap: 6px; }
+    .likert-btn { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #F8FAFC; border: 1px solid #CBD5E1; border-radius: 6px; padding: 10px 4px; cursor: pointer; transition: all 0.2s ease; }
+    .likert-btn:hover { background: #EDF2F7; border-color: #94A3B8; }
+    .likert-btn.selected { background: var(--uiuc-blue); color: white; border-color: var(--uiuc-blue); }
+    .likert-btn .val { font-size: 16px; font-weight: 700; }
+    .likert-btn .subtext { font-size: 10px; margin-top: 4px; text-align: center; }
+    .nav-buttons { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; }
+    .btn { background: var(--uiuc-blue); color: white; border: none; padding: 12px 24px; border-radius: 8px; font-size: 15px; font-weight: 600; cursor: pointer; transition: background 0.2s; }
+    .btn:hover { background: #0E1E38; }
+    .btn-secondary { background: #E2E8F0; color: #334155; }
+    .btn-secondary:hover { background: #CBD5E1; }
+    .btn-orange { background: var(--uiuc-orange); }
+    .btn-orange:hover { background: #CC3D1C; }
+    .summary-screen { text-align: center; padding: 40px 20px; }
+    .summary-screen h2 { font-size: 28px; color: var(--uiuc-blue); margin-bottom: 12px; }
+    .summary-screen p { color: var(--uiuc-muted); margin-bottom: 28px; font-size: 16px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>BridgeFinder Evaluator</h1>
+        <div style="font-size: 13px; opacity: 0.85; margin-top: 4px;">Double-Blind Cross-Disciplinary Faculty Recommendation Study</div>
+      </div>
+      <div class="badge" id="cardCounterBadge">Card 1 / 15</div>
+    </header>
+
+    <div class="progress-bar-container">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <div class="card" id="cardView">
+      <div class="seed-context">
+        <div class="label">Evaluator Seed Context</div>
+        <div class="name" id="seedName">Prof. Seed Scholar</div>
+        <div class="meta" id="seedMeta">Department of Computer Science • AI / Machine Learning</div>
+      </div>
+
+      <div class="cand-header">
+        <div class="section-title">Anonymized Candidate Collaborator Recommendation</div>
+        <h2 id="candidateName">Candidate Scholar</h2>
+        <div class="topics" id="candTopics"></div>
+      </div>
+
+      <div class="section-title">Representative Joint Publications</div>
+      <div class="papers-box" id="samplePapers"></div>
+
+      <div class="section-title">Synthesized Introduction Pathway</div>
+      <div class="path-box">
+        <div class="path-text" id="introPath"></div>
+      </div>
+
+      <div class="rating-group">
+        <label>1. Topic Relevance & Complementarity</label>
+        <div class="desc">How cognitively relevant and complementary is this candidate's research to the seed scholar? (1 = Irrelevant, 7 = Highly Complementary)</div>
+        <div class="likert-scale" id="relevanceScale"></div>
+      </div>
+
+      <div class="rating-group">
+        <label>2. Novelty & Serendipity</label>
+        <div class="desc">Does this recommendation surface unexpected cross-community ideas beyond typical clique search? (1 = Obvious/Redundant, 7 = Radical Discovery)</div>
+        <div class="likert-scale" id="noveltyScale"></div>
+      </div>
+
+      <div class="rating-group">
+        <label>3. Outreach Actionability</label>
+        <div class="desc">Does the proposed introduction path make reaching out realistic and actionable? (1 = Impassable/Cold, 7 = Highly Actionable Warm Introduction)</div>
+        <div class="likert-scale" id="actionabilityScale"></div>
+      </div>
+
+      <div class="nav-buttons">
+        <button class="btn btn-secondary" id="prevBtn" onclick="prevCard()">Previous</button>
+        <button class="btn btn-orange" id="nextBtn" onclick="nextCard()">Next Card →</button>
+      </div>
+    </div>
+
+    <div class="card summary-screen" id="summaryView" style="display: none;">
+      <h2>🎉 Evaluation Complete!</h2>
+      <p>You have reviewed and rated all candidate recommendation cards across the 5 seed disciplines.</p>
+      <button class="btn btn-orange" style="font-size: 16px; padding: 14px 28px;" onclick="exportResponses()">
+        📥 Download study_responses.json
+      </button>
+      <div style="margin-top: 16px; font-size: 13px; color: var(--uiuc-muted);">
+        Responses can now be analyzed with <code>prototype/study/analyze_study.py</code>.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let cards = [];
+    let currentIndex = 0;
+    let responses = {};
+
+    const defaultCards = [
+      {
+        card_id: "CARD_001",
+        seed_name: "Prof. Carl R. Woese",
+        seed_department: "Institute for Genomic Biology",
+        seed_topics: ["Genomics", "Microbiology", "Evolutionary Biology"],
+        candidate_name: "Prof. Tandy Warnow",
+        candidate_topics: ["Computer Science", "Phylogenetics", "Bioinformatics", "Algorithms"],
+        sample_papers: [
+          "Fast and accurate tree alignment estimation across large-scale genomes",
+          "Ultra-large phylogenetic trees through divide-and-conquer machine learning"
+        ],
+        introduction_path: "Carl Woese → Prof. Gene Robinson → Tandy Warnow (Warm 2-Hop Path)"
+      }
+    ];
+
+    async function loadCards() {
+      try {
+        const resp = await fetch('study_cards.json');
+        if (resp.ok) {
+          cards = await resp.json();
+        } else {
+          cards = defaultCards;
+        }
+      } catch (e) {
+        cards = defaultCards;
+      }
+      renderCard(0);
+    }
+
+    function renderLikert(containerId, dimName) {
+      const container = document.getElementById(containerId);
+      container.innerHTML = '';
+      const labels = {
+        1: "1 (Low)",
+        2: "2",
+        3: "3",
+        4: "4",
+        5: "5",
+        6: "6",
+        7: "7 (High)"
+      };
+      for (let i = 1; i <= 7; i++) {
+        const btn = document.createElement('div');
+        btn.className = 'likert-btn';
+        const currentVal = responses[cards[currentIndex].card_id]?.[dimName];
+        if (currentVal === i) btn.classList.add('selected');
+
+        btn.innerHTML = `<span class="val">${i}</span><span class="subtext">${labels[i]}</span>`;
+        btn.onclick = () => {
+          if (!responses[cards[currentIndex].card_id]) {
+            responses[cards[currentIndex].card_id] = {};
+          }
+          responses[cards[currentIndex].card_id][dimName] = i;
+          renderLikert(containerId, dimName);
+        };
+        container.appendChild(btn);
+      }
+    }
+
+    function renderCard(index) {
+      if (index >= cards.length) {
+        document.getElementById('cardView').style.display = 'none';
+        document.getElementById('summaryView').style.display = 'block';
+        document.getElementById('progressBar').style.width = '100%';
+        document.getElementById('cardCounterBadge').innerText = 'Complete';
+        return;
+      }
+
+      currentIndex = index;
+      const c = cards[index];
+
+      document.getElementById('cardView').style.display = 'block';
+      document.getElementById('summaryView').style.display = 'none';
+
+      document.getElementById('cardCounterBadge').innerText = `Card ${index + 1} / ${cards.length}`;
+      document.getElementById('progressBar').style.width = `${((index + 1) / cards.length) * 100}%`;
+
+      document.getElementById('seedName').innerText = c.seed_name;
+      document.getElementById('seedMeta').innerText = `${c.seed_department} • ${(c.seed_topics || []).join(' • ')}`;
+      document.getElementById('candidateName').innerText = c.candidate_name;
+
+      const topicsContainer = document.getElementById('candTopics');
+      topicsContainer.innerHTML = '';
+      (c.candidate_topics || []).forEach(t => {
+        const tag = document.createElement('span');
+        tag.className = 'tag';
+        tag.innerText = t;
+        topicsContainer.appendChild(tag);
+      });
+
+      const papersContainer = document.getElementById('samplePapers');
+      papersContainer.innerHTML = '';
+      (c.sample_papers || []).forEach(p => {
+        const div = document.createElement('div');
+        div.className = 'paper-item';
+        div.innerHTML = `📄 <i>"${p}"</i>`;
+        papersContainer.appendChild(div);
+      });
+
+      document.getElementById('introPath').innerText = c.introduction_path;
+
+      renderLikert('relevanceScale', 'topic_relevance');
+      renderLikert('noveltyScale', 'novelty_serendipity');
+      renderLikert('actionabilityScale', 'outreach_actionability');
+
+      document.getElementById('prevBtn').style.visibility = index === 0 ? 'hidden' : 'visible';
+    }
+
+    function nextCard() {
+      const curCardId = cards[currentIndex].card_id;
+      const curResp = responses[curCardId] || {};
+      if (!curResp.topic_relevance || !curResp.novelty_serendipity || !curResp.outreach_actionability) {
+        alert("Please rate all three criteria (1-7) before proceeding to the next card.");
+        return;
+      }
+      renderCard(currentIndex + 1);
+    }
+
+    function prevCard() {
+      if (currentIndex > 0) {
+        renderCard(currentIndex - 1);
+      }
+    }
+
+    function exportResponses() {
+      const output = [];
+      const evaluatorId = "STUDENT_SESSION_" + Date.now().toString().slice(-4);
+      for (const card of cards) {
+        const r = responses[card.card_id] || { topic_relevance: 4, novelty_serendipity: 4, outreach_actionability: 4 };
+        output.push({
+          evaluator_id: evaluatorId,
+          card_id: card.card_id,
+          topic_relevance: r.topic_relevance,
+          novelty_serendipity: r.novelty_serendipity,
+          outreach_actionability: r.outreach_actionability
+        });
+      }
+
+      const blob = new Blob([JSON.stringify(output, null, 2)], { type: "application/json" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "study_responses.json";
+      a.click();
+    }
+
+    window.onload = loadCards;
+  </script>
+</body>
+</html>
