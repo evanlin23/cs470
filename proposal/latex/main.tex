@@ -58,9 +58,9 @@ Our project centers on the core concept of \textbf{brokerage}, which emphasizes 
 \section{Proposed Work}
 We will create a web app with at least the three screens shown in Figure~\ref{fig:flow}; the core flow is described in Section~\ref{sec:design}. To create the campus map, we will write a Python program to preprocess the UIUC co-authorship graph from OpenAlex (around 110,000 papers from 2015 to 2024).
 
-\noindent\textbf{By Oct 30:} We will have the preprocessed graph and communities, as well as the first version of the app, and feedback from round 1.
+\noindent\textbf{By Oct 30:} We will have the preprocessed graph and communities, version 1 of the app, and feedback from round 1.
 \textbf{By mid-Nov:} We will have the researcher cards, introduction paths, and the round 2 feedback.
-\textbf{By Dec 9:} We will polish the app based on feedback, and record the final evaluation and video.
+\textbf{By Dec 9:} We will polish the app, and record the final evaluation and video.
 
 \noindent\textbf{Assumptions:} the co-authors of papers know each other; OpenAlex correctly identifies people; the OpenAlex topics correctly capture what a researcher worked on; professors who teach a class do research in the corresponding area. The app can't actually tell if a professor is taking students, so it should just be used as a suggestion about people to talk to.
 
@@ -76,7 +76,9 @@ Our target user group is UIUC students who liked a class and want to do research
 
 \noindent(2)~\textbf{Blind rating: } We will give each participant around 15 researcher cards (name, department, recent papers), five from each method. These will be shuffled so they don't know which method produced them. They then rate each researcher based on relevance of their work to their interests, and whether they knew the person already. Our method succeeds if more of its cards are both relevant and new to the participant.
 
-\noindent(3)~\textbf{Usefulness: } We will also survey if our users would feel comfortable enough to contact the suggested people, compared across the three methods. \emph{AI Use:} We used Claude as a collaborator to brainstorm ideas, and create an initial draft. Everything was reviewed and verified. 
+\noindent(3)~\textbf{Usefulness: } We will also survey if our users would feel comfortable enough to contact the suggested people, compared across the three methods.
+
+\noindent\emph{AI Use:} We used Claude as a collaborator to brainstorm ideas, and create an initial draft. Everything was reviewed and verified. 
 
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{references}
