@@ -5,6 +5,7 @@ import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from model import prepare_model, rank_candidates, MODEL_VERSION
+from topic_groups import classify_topics
 
 COLORS = ["#2563EB", "#0284C7", "#16A34A", "#CA8A04", "#9333EA", "#EA580C", "#DC2626", "#0D9488"]
 
@@ -32,6 +33,7 @@ def build_and_export(data_path, out_path="prototype/web/data.json"):
         c = membership[n]
         return {"id": n, "name": authors[n]["name"], "community_id": c,
                 "community_name": palettes[c]["name"], "department": palettes[c]["name"],
+                "topic_group": classify_topics(sorted(graph.nodes[n]["topics"])),
                 "color": palettes[c]["color"], "degree": graph.degree(n),
                 "burt_autonomy": round(autonomy[n], 3), "topics": sorted(graph.nodes[n]["topics"])[:5]}
     recommendations = {}
@@ -54,7 +56,8 @@ def build_and_export(data_path, out_path="prototype/web/data.json"):
         recommendations[seed] = recs
     links = [{"source": u, "target": v, "type": "intra"} for u, v in graph.edges() if u in visible and v in visible]
     bundle = {"metadata": {"model_version": MODEL_VERSION, "split_year": 2019, "source": Path(data_path).name,
-                           "weights": [0.60, 0.12, 0.12, 0.16], "routes": "Observed co-authorships, not verified social introductions"},
+                           "weights": [0.60, 0.12, 0.12, 0.16],
+                           "topic_groups": "Keyword hints, not department labels; no effect on rankings", "routes": "Observed co-authorships, not verified social introductions"},
               "seeds": [profile(n) for n in seeds], "recommendations": recommendations,
               "graph": {"nodes": [profile(n) for n in sorted(visible)], "links": links+dashed},
               "colleges": {c: palettes[c] for c in sorted({membership[n] for n in visible})}}

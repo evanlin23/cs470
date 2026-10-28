@@ -72,7 +72,7 @@ class WorkflowTests(unittest.TestCase):
         seed=self.cards[0]['seed_id']
         rows=[c for c in self.cards if c['seed_id']==seed]
         # Explicitly synthetic, in-memory contract test. Never a study result.
-        session={'participant_id':'contract-test', 'seed_id':seed, 'sus':[5,1]*5,
+        session={'schema_version':1,'dataset_id':self.cards[0]['dataset_id'],'participant_id':'contract-test', 'seed_id':seed, 'sus':[5,1]*5,
                  'ratings':[{'card_id':c['card_id'],'relevance':5,'novelty':5,'actionability':5} for c in rows]}
         result=analysis.analyze([session],self.keys)
         self.assertEqual(result['mean_sus'],100)

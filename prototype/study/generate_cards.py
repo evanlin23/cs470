@@ -4,12 +4,13 @@ Overlapping top-five candidates are shown once and attributed to every model
 that selected them, preserving paired comparisons without a priority bias.
 """
 import argparse
+import hashlib
 import json
 import random
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from model import prepare_model, rank_candidates, path_description
+from model import prepare_model, rank_candidates, path_description, MODEL_VERSION
 
 
 def generate(data):
@@ -34,6 +35,12 @@ def generate(data):
                           'candidate_name': authors[candidate]['name'], 'candidate_topics': sorted(graph.nodes[candidate]['topics'])[:5],
                           'sample_papers': papers, 'introduction_path': path_description(row, authors), 'path_ids': row['path_ids']})
             keys[card_id] = {'models': selection['methods'], 'candidate_id': candidate, 'seed_id': seed}
+    # Bind public cards and hidden attribution to one immutable dataset revision.
+    revision = hashlib.sha256(json.dumps({'cards': cards, 'keys': keys, 'model': MODEL_VERSION},
+                                         sort_keys=True, ensure_ascii=False, separators=(',', ':')).encode()).hexdigest()
+    for card in cards:
+        card['dataset_id'] = revision
+        keys[card['card_id']]['dataset_id'] = revision
     return cards, keys
 
 
@@ -44,6 +51,8 @@ if __name__ == '__main__':
     parser.add_argument('--keys', default='prototype/study/truth_keys.json')
     args = parser.parse_args()
     cards, keys = generate(json.loads(Path(args.data).read_text()))
+    Path(args.out).parent.mkdir(parents=True, exist_ok=True)
+    Path(args.keys).parent.mkdir(parents=True, exist_ok=True)
     Path(args.out).write_text(json.dumps(cards, indent=2))
     Path(args.keys).write_text(json.dumps(keys, indent=2))
     print(f'Exported {len(cards)} unique cards across {len({c["seed_id"] for c in cards})} seeds')
