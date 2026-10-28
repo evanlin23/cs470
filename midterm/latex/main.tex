@@ -2,7 +2,7 @@
 \usepackage[margin=0.7in,columnsep=0.24in]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern,microtype,amsmath,amssymb,booktabs,tabularx,url,graphicx}
-\usepackage[font=small,labelfont=bf]{caption}
+\usepackage[font=small,labelfont=bf,labelsep=period]{caption}
 \usepackage{needspace}
 \usepackage[hidelinks]{hyperref}
 \setlength{\emergencystretch}{1em}
@@ -14,7 +14,7 @@
 \renewcommand{\dbltopfraction}{0.95}
 \renewcommand{\textfraction}{0.05}
 \renewcommand{\dblfloatpagefraction}{0.7}
-\title{BridgeFinder: Finding Research Collaborators\\Across Communities at UIUC}
+\title{BridgeFinder\\Finding Research Collaborators Across Communities at UIUC}
 \author{Evan Lin \qquad Eric Liu\\University of Illinois Urbana-Champaign}
 \date{CS 470 Mid-Semester Report, October 2026}
 \begin{document}
@@ -34,11 +34,11 @@ A student who enjoyed a computing class might want to apply those skills in biol
 BridgeFinder helps UIUC undergraduate and early-stage graduate students explore research beyond their existing contacts. A student chooses a familiar researcher, sees suggestions outside that person's collaboration group, and opens a card with topics, papers, and a possible introduction route. The starting researcher's work stands in for the student's interests, so the student needs no publications of their own.
 
 % Rewrite purpose: Objective 3: explain the relevance/discovery challenge and the unproven benefit.
-The challenge is to suggest someone relevant who also extends the student's usual circle. The prototype implements this flow; whether it helps students choose useful contacts still needs testing.
+The challenge is to suggest someone relevant who also extends the student's usual circle. The prototype supports this sequence. We still need to test whether the suggestions help students choose someone to contact.
 
 \section{Related Work}
 % Rewrite purpose: Related work 1: explain each search tool, its useful contribution, and our different task.
-\textbf{Researcher search.} Illinois Experts~\cite{experts} collects institutional profiles and publications, making expertise easy to check. Google Scholar~\cite{scholar} helps readers find papers and follow authors. Both help identify names; our task also needs a route from a familiar person to a suggested contact. BridgeFinder puts that relationship beside the research match.
+\textbf{Researcher search.} Illinois Experts~\cite{experts} collects institutional profiles and publications, making expertise easy to check. Google Scholar~\cite{scholar} helps readers find papers and follow authors. These tools help students identify researchers. BridgeFinder also shows how a suggested researcher connects to someone the student knows.
 
 % Rewrite purpose: Related work 2: explain the two map tools and why we adapt exploration from papers to people.
 \textbf{Literature maps.} Connected Papers~\cite{connectedpapers} makes related papers visible in a local map. ResearchRabbit~\cite{researchrabbit} supports continued discovery from paper collections. Both make exploration easier, but their main objects are papers. BridgeFinder adapts visual exploration to people and possible introductions.
@@ -47,12 +47,12 @@ The challenge is to suggest someone relevant who also extends the student's usua
 \textbf{Recommendations.} Liben-Nowell and Kleinberg~\cite{libennowell2007} compare network-based link predictions. Shared-contact measures are understandable, but favor nearby people. We compare against Adamic--Adar while looking farther away. Tang et al.~\cite{tang2012} combine research interests and relationships for cross-domain collaboration recommendation. That supports considering both topic and network evidence, but ranking quality alone does not show whether a student can use a suggestion. We therefore also plan a student evaluation.
 
 % Rewrite purpose: Related work 4: give the weak-tie/brokerage motivation without claiming verified introductions.
-\textbf{Network theory.} Granovetter~\cite{granovetter1973} explains how weak ties can reach beyond close circles. Burt~\cite{burt1992} explains the advantage of bridging separate groups. These ideas motivate our discovery goal; they do not establish that a co-authorship path is a trusted introduction.
+\textbf{Network theory.} Granovetter~\cite{granovetter1973} explains how weak ties can reach beyond close circles. Burt~\cite{burt1992} explains the advantage of bridging separate groups. We use these ideas to look beyond a familiar collaboration group. A co-authorship path alone cannot tell us whether the people know each other well enough to make an introduction.
 
 \section{\texorpdfstring{Course Concepts and\\Network Analysis}{Course Concepts and Network Analysis}}
 \subsection{Graph and communities}
 % Rewrite purpose: Network 1: name the course concept; define real data, nodes, edge weights, and inclusion.
-Our core course concept is brokerage: connecting people across collaboration groups. We use OpenAlex~\cite{openalex} publications from 2015--2024. Nodes are authors affiliated with UIUC on a collected paper. An edge joins two authors who wrote together, weighted by their number of joint papers. We retain papers with at least two UIUC authors and omit external collaborators.
+Our project uses the course concept of brokerage to suggest connections across collaboration groups. We use OpenAlex~\cite{openalex} publications from 2015--2024. Nodes are authors affiliated with UIUC on a collected paper. An edge joins two authors who wrote together, weighted by their number of joint papers. We retain papers with at least two UIUC authors and omit external collaborators.
 
 % Rewrite purpose: Network 2: state the two actual sample sizes and introduce Table 1.
 Our pilot contains 5,000 collected works, of which 2,493 meet that rule. The larger sample contains 25,000 works, of which 13,229 remain. These are samples, not a complete campus directory. Table~\ref{tab:network} describes the earlier papers used to make recommendations.
@@ -77,7 +77,7 @@ Modularity & 0.900 & 0.905\\
 
 \Needspace{8\baselineskip}
 % Rewrite purpose: Network 3: explain the method and justify it against Girvan-Newman.
-We use Louvain~\cite{blondel2008} to find communities with many collaborations inside each group. It seeks high \emph{modularity}: more within-group edge weight than expected from node strengths. We chose it over Girvan--Newman~\cite{girvan2002}, whose repeated shortest-path calculations are costly on these graphs.
+We use Louvain~\cite{blondel2008} to find communities with many collaborations inside each group. It seeks high \emph{modularity}, meaning more within-group edge weight than expected from node strengths. We chose it over Girvan--Newman~\cite{girvan2002}, whose repeated shortest-path calculations are costly on these graphs.
 
 % Rewrite purpose: Network 4: interpret the results, including the disconnected-component caveat.
 The high modularity suggests concentrated collaboration groups, making cross-group discovery worth exploring. Disconnected components also raise modularity, so this is not evidence of disciplinary separation. Communities are numbered groups, not verified departments.
@@ -87,7 +87,7 @@ The high modularity suggests concentrated collaboration groups, making cross-gro
 Following the proposal, candidates must be in another community and at least three hops from the starting researcher. One hop is one co-authorship edge. This excludes existing collaborators and people who already share a co-author. Candidates must also be reachable so we can show a route. All 500 suggestions in the current 50-person demo have three-edge routes.
 
 % Rewrite purpose: Network 6: introduce the score; keep the following equation and definitions together.
-We rank candidates by topic overlap, with a bonus for introduction paths:
+The ranking combines topic overlap with a bonus for introduction paths, as shown below.
 \begin{equation}
 \mathrm{Score}(u,v)=S(u,v)+0.5\frac{c_3(u,v)}{1+c_3(u,v)}.
 \end{equation}
@@ -95,26 +95,26 @@ We rank candidates by topic overlap, with a bonus for introduction paths:
 $S$ is the number of shared topics divided by the number of distinct topics across both researchers. Each researcher has up to ten topics from their 2015--2019 papers. $c_3$ counts three-edge paths through two distinct intermediaries. The bonus grows with the number of routes but stays below 0.5. More distant candidates remain eligible without that bonus. The coefficient and saturation are fixed implementation choices, not learned probabilities.
 
 % Rewrite purpose: Network 8: explain why network analysis is essential to the app.
-Without the network, the app would lose its group boundary, distance rule, and introduction routes and become a topic search tool. These rules help us look beyond shared contacts; they do not measure personal trust.
+Without the network, the app would lose its group boundary, distance rule, and introduction routes and become a topic search tool. The resulting suggestions extend beyond shared contacts, although the graph does not tell us whether an introduction would be welcome.
 
 \section{Design and Implementation}
 % Rewrite purpose: Design opening: introduce the demonstrable end-to-end flow.
-The working prototype has three views:
+The prototype takes the student through three views.
 
 % Rewrite purpose: Design 1: describe entry, justify the demo selection, and link to related work.
 \textbf{1. Researchers.} The student searches 50 starting researchers by name or topic. We chose highly connected authors across large communities so the demo has enough suggestions. The landing page explains the steps and defines a researcher card. As in profile search~\cite{experts}, it provides an entry point without requiring a student profile.
 
 % Rewrite purpose: Design 2: explain the map and line types and trace the interaction to related work.
-\textbf{2. Network.} A map shows the selected researcher, suggestions, and intermediaries. Solid lines show observed co-authorships; orange dashed lines show suggested connections. This borrows visual exploration from literature maps~\cite{connectedpapers,researchrabbit} while focusing on people.
+\textbf{2. Network.} A map shows the selected researcher, suggestions, and intermediaries. Solid lines show observed co-authorships. Orange dashed lines show suggested connections. This borrows visual exploration from literature maps~\cite{connectedpapers,researchrabbit} while focusing on people.
 
 % Rewrite purpose: Design 3: explain the card and outreach; connect ordering to feedback and call out Figure 1.
-\textbf{3. Suggestions.} Selecting a name or dashed line opens a card with an observed shortest route, topics, and example papers. The route appears first in response to student feedback. An optional explanation shows the ranking score. An outreach draft can be edited, copied, or downloaded; no email is sent. Figure~\ref{fig:prototype} shows the map and route detail.
+\textbf{3. Suggestions.} Selecting a name or dashed line opens a card with an observed shortest route, topics, and example papers. The route appears first in response to student feedback. An optional explanation shows the ranking score. Students can edit, copy, or download an outreach draft. The app does not send email. Figure~\ref{fig:prototype} shows the map and route detail.
 
 \begin{figure*}[t]
 \centering
 \includegraphics[width=0.56\textwidth]{midterm/review/screenshots/02-map.png}\\[3pt]
 \includegraphics[width=0.72\textwidth]{midterm/review/screenshots/03-recommendation.png}
-\caption{Top: John A. Rogers's map, with observed co-authorships in solid lines and suggestions in orange dashed lines. Bottom: Pilgyu Kang's card detail shows a route through Paul V. Braun and SungWoo Nam. Topics and papers appear below this detail. The route is observed in publications, not a confirmed introduction.}
+\caption{The upper image shows John A. Rogers's map. Solid lines represent observed co-authorships, and orange dashed lines represent suggestions. The lower image shows a detail of Pilgyu Kang's card, with a route through Paul V. Braun and SungWoo Nam. Topics and papers appear below this detail. The route is observed in publications, not a confirmed introduction.}
 \label{fig:prototype}
 \end{figure*}
 
@@ -123,25 +123,26 @@ The app, historical test, and study cards share one ranking implementation. Reco
 
 \section{Users and Feedback}
 % Rewrite purpose: Users 1: identify the tested population and report only the author-confirmed session facts.
-Our target users want research opportunities but have few contacts beyond their classes or department. We gathered feedback in five individual, 30-minute think-aloud sessions: three CS/CE undergraduate juniors or seniors and two graduate students from Bioengineering and Information Sciences.
+Our target users want research opportunities but have few contacts beyond their classes or department. We gathered feedback in five individual, 30-minute think-aloud sessions. Participants were three CS/CE undergraduate juniors or seniors and two graduate students from Bioengineering and Information Sciences.
 
 % Rewrite purpose: Users 2: justify the sample composition and size for formative feedback.
-The undergraduates fit the entry problem of exploring research before having publications. The graduate students add perspectives from application areas. Five sessions suit an initial search for interaction problems~\cite{nielsen1993}, rather than a campus-wide usability estimate. The feedback led to four changes:
+The undergraduates fit the entry problem of exploring research before having publications. The graduate students add perspectives from application areas. Five sessions suit an initial search for interaction problems~\cite{nielsen1993}, rather than a campus-wide usability estimate. We made four changes in response to the feedback.
 
 % Rewrite purpose: Feedback 1: preserve the observed task, first-screen confusion, and implemented explanation.
-\textbf{Getting started.} One student trying to find a relevant professor did not understand that they first needed to select a researcher to enter the graph. This exposed a missing explanation of the first step. We added landing-page instructions: choose a starting researcher, explore a suggestion, then review its route. The page now explains that the starting person's publications guide the suggestions.
+\textbf{Getting started.} One student trying to find a relevant professor did not understand that they first needed to select a researcher to enter the graph. We added instructions on the landing page explaining that students should choose a starting researcher, explore a suggestion, and then review its route. The page now explains that the starting person's publications guide the suggestions.
 
 % Rewrite purpose: Feedback 2: link UI/card confusion to the overhaul and new card definition.
-\textbf{Understanding the interface.} Students found the interface unintuitive, prompting an overhaul with simpler layouts and clearly named views. They were also unsure what a card meant. We have now added a plain definition: a researcher card is a profile with topics, example papers, and a possible introduction route. The map legend distinguishes observed collaborations from suggestions.
+\textbf{Understanding the interface.} Students found the interface unintuitive, prompting an overhaul with simpler layouts and clearly named views. They were also unsure what a card meant. The landing page now defines a researcher card as a profile with topics, example papers, and a possible introduction route. The map legend distinguishes observed collaborations from suggestions.
 
 % Rewrite purpose: Feedback 3: link excessive graph clutter to the focused display and community colors.
 \textbf{Readable map.} The graph showed too many nodes and was difficult to follow. We narrowed the display to the selected researcher, suggestions, and people along their routes. Community colors help distinguish groups without showing the entire campus graph.
 
+\Needspace{7\baselineskip}
 % Rewrite purpose: Feedback 4: explain the mismatch correction without calling inferred labels departments.
 \textbf{Correct labels.} Some tags in the original design did not match the researchers shown. We corrected the profile labeling and distinguish inferred research areas from collaboration groups. These labels do not claim verified departmental appointments.
 
 % Rewrite purpose: Feedback limit: distinguish implemented revisions from unmeasured human improvement.
-The new entry instructions and card definition have not yet been retested with students. These qualitative observations explain the revisions; they do not establish improved usability. We do not report issue counts or participant quotations.
+The new entry instructions and card definition have not yet been retested with students. The observations explain why we made the revisions. Further testing is needed to find out whether they help. We do not report issue counts or participant quotations.
 
 \section{Evaluation}
 \subsection{Historical prediction}
@@ -185,30 +186,30 @@ We will recruit 15 students, aiming for three each from CS, ECE, Bioengineering,
 Each student will choose a starting researcher, open a suggestion and outreach draft, and explain the route and dashed line without coaching. A facilitator will record task completion and whether the student identifies the intermediaries and distinguishes suggestions from existing ties.
 
 % Rewrite purpose: Study 3: explain rating contexts, method blinding, and overlap attribution.
-Students will then choose one of five study contexts and rate up to 15 shuffled cards: five from each method above. Method labels are hidden. Shared candidates appear once and count for every method that selected them. We will measure:
+Students will then choose one of five study contexts and rate up to 15 shuffled cards, with five from each method above. Method labels are hidden. Shared candidates appear once and count for every method that selected them. We will collect the following measures.
 \Needspace{7\baselineskip}
 \begin{itemize}
 \setlength{\itemsep}{2pt}
 % Rewrite purpose: Metric 1: preserve the measured construct, scale, threshold, and named comparison.
-\item \textbf{Relevant discovery:} ratings from 1 to 7 for relevance to the starting researcher's work and novelty to the student. For BridgeFinder, we target means of at least 5 and a 25-percentage-point gain over Adamic--Adar in cards rated at least 5 on both. Topic-Only is a second comparison.
+\item \textbf{Relevant discovery.} Students will rate relevance to the starting researcher's work and novelty to themselves on scales from 1 to 7. For BridgeFinder, we target means of at least 5 and a 25-percentage-point gain over Adamic--Adar in cards rated at least 5 on both. Topic-Only is a second comparison.
 % Rewrite purpose: Metric 2: preserve the actionability question, threshold, comparison, and scope.
-\item \textbf{Willingness to contact:} a 1--7 rating of how realistic contact feels given the route. For BridgeFinder, we target a mean of at least 5 and improvement over Topic-Only. This tests the full suggestion, not the path alone.
+\item \textbf{Willingness to contact.} Students will rate how realistic contact feels given the route on a scale from 1 to 7. For BridgeFinder, we target a mean of at least 5 and improvement over Topic-Only. Because the methods suggest different people, this rating cannot isolate the effect of showing a path.
 % Rewrite purpose: Metric 3: preserve task/comprehension and SUS targets for the interactive app.
-\item \textbf{Usability:} at least 12 of 15 students should complete the task and explain the line types correctly without help. The ten-item System Usability Scale will assess the interactive app, with a target mean of 80/100.
+\item \textbf{Usability.} At least 12 of 15 students should complete the task and explain the line types correctly without help. The ten-item System Usability Scale will assess the interactive app, with a target mean of 80/100.
 \end{itemize}
 % Rewrite purpose: Study 4: keep participants as the analysis unit and label the study as not yet run.
-We will compare methods using participant averages, not treat individual cards as independent responses. The rating and analysis tools are implemented; the study has not yet been run.
+We will compare methods using participant averages, not treat individual cards as independent responses. The rating and analysis tools are implemented. We have not yet run the study.
 
 \section{Limitations and Next Steps}
 % Rewrite purpose: Conclusion 1: state the data, introduction, coverage, and interest-proxy limitations.
 Co-authorship cannot confirm an introduction or mentoring availability. Our sample omits external and informal ties and falls short of the proposed 110,000-work collection. The 50 starting researchers and five study contexts limit coverage. A researcher's topics may also be a poor proxy for a student's interests.
 
 % Rewrite purpose: Conclusion 2: give next steps and return to the original student problem.
-In November, we will run the student study and revise the interface. Any ranking changes will use separate validation data. The final question is whether students can find a useful contact beyond their usual circle.
+In November, we will run the student study and revise the interface. Any ranking changes will use separate validation data. We will use the findings to assess whether the suggestions help students identify researchers they would consider contacting.
 
 \section*{Contributions and AI Use}
 % Rewrite purpose: Disclosure: authors should confirm responsibilities and the AI-use account.
-Evan Lin worked on data collection, prediction tests, and the map. Eric Liu worked on scoring, citation analysis, study tools, and formative sessions. Both contributed to the report. Claude assisted with early development and drafting; OpenAI Codex assisted with checks, tests, and revision. No participant responses or quotations were generated.
+Evan Lin worked on data collection, prediction tests, and the map. Eric Liu worked on scoring, citation analysis, study tools, and formative sessions. Both contributed to the report. Claude assisted with early development and drafting. OpenAI Codex assisted with checks, tests, and revision. No participant responses or quotations were generated.
 
 \begin{thebibliography}{99}\small\raggedright
 \setlength{\itemsep}{1.2pt}\setlength{\parskip}{0pt}

@@ -36,7 +36,7 @@ def package(destination, verify=False):
     figures = re.findall(r'\\includegraphics(?:\[[^\]]*\])?\{([^}]+)\}', source.read_text())
     files = {'main.tex': source}
     files.update({name: ROOT / name for name in figures})
-    for name in ['rubric-review.md', 'rewrite-guide.md', 'analysis-notes.md']:
+    for name in ['rubric-review.md', 'rewrite-guide.md', 'analysis-notes.md', 'style-review.md']:
         files['review/' + name] = ROOT / 'midterm/review' / name
     destination.parent.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(destination, 'w', compression=zipfile.ZIP_DEFLATED) as archive:

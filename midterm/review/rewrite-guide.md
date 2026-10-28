@@ -56,3 +56,7 @@ Read the cited work you rely on, confirm that each comparison accurately reflect
 Edit `main.tex` in the Overleaf ZIP using pdfLaTeX. The bibliography is embedded in that file. Keep the two figure paths and their directory structure unless you update the source references. Recompile after changing text, check every page, and make sure figures remain readable and references resolve. The current draft is four pages; that is an editorial target, not a page limit stated in the supplied rubric. Prioritize readable text over squeezing content into a page target.
 
 If your rewrite changes a method, numerical claim or study protocol, synchronize the corresponding prototype or clearly label it as planned work. Rewording alone cannot establish a completed study or guarantee a grade.
+
+## Prose style
+
+The draft now uses periods or commas in place of colons and semicolons in its authored prose. Metric items use full sentences, and the closing paragraph states what the study findings will be used for. Preserve accurate names, reference titles, numerical ranges and the AI-use disclosure. There is no reliable punctuation-based test of authorship. Use your own explanation of the project rather than trying to imitate a supposed human-writing checklist. `style-review.md` records the source check and scope of these edits.

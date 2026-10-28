@@ -81,6 +81,10 @@ Compared the section order directly with every rubric component. Sections 1–6 
 
 Added source-only paragraph-purpose comments in `main.tex` and a section-to-criterion map in `rewrite-guide.md`. These make it possible for the authors to keep the structure while rewording each paragraph. They do not add visible audit material to the submission. The method alternative, real-data interpretation, design rationales, formative-sample justification, feedback-to-change links, and evaluation comparisons/thresholds remain; none was removed for brevity. Extra statistics remain in the supporting notes. Numerical results, methods, and study status are unchanged.
 
+### Pass 8: prose style without losing rubric evidence
+
+The user requested removal of particular punctuation and formulaic phrasing. The authored title/body/caption now use no colons, semicolons or em dashes. Metric fragments were rewritten as sentences, and the closing line now describes how the study findings will be used. Original reference metadata and numerical-range punctuation remain accurate. Paragraph-purpose comments and the rubric-aligned structure remain intact. `style-review.md` records two research sources and explains why punctuation cannot establish authorship. The AI-use disclosure is preserved. No factual result or reported session event was changed.
+
 ## What is not a rubric deduction by itself
 
 The rubric does not demand that predictions beat Adamic–Adar, that citation comparisons be significant, that the planned 15-person trial already be complete, that 110,000 papers already be harvested, or that a particular notes artifact be attached. Negative findings, a justified formative sample and candid scope limitations can still support excellent midterm work. These are limitations to discuss accurately, not automatic percentage penalties.
