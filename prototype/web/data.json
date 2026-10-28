@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "split_year": 2019,
     "source": "uiuc_data_scaled.json",
     "weights": {
@@ -948,7 +948,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.720588,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 1,
         "path_steps": [
           {
@@ -1003,7 +1003,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.631818,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 2,
         "path_steps": [
           {
@@ -1057,7 +1057,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.631818,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 3,
         "path_steps": [
           {
@@ -1111,7 +1111,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.61039,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 4,
         "path_steps": [
           {
@@ -1165,7 +1165,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.533333,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 5,
         "path_steps": [
           {
@@ -1219,7 +1219,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.533333,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 6,
         "path_steps": [
           {
@@ -1273,7 +1273,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.527778,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 7,
         "path_steps": [
           {
@@ -1329,7 +1329,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.525974,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 8,
         "path_steps": [
           {
@@ -1386,7 +1386,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.521429,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 9,
         "path_steps": [
           {
@@ -1443,7 +1443,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.516917,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 10,
         "path_steps": [
           {
@@ -1502,7 +1502,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.723214,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 1,
         "path_steps": [
           {
@@ -1559,7 +1559,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.694286,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 2,
         "path_steps": [
           {
@@ -1616,7 +1616,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.6875,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 3,
         "path_steps": [
           {
@@ -1673,7 +1673,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.651786,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 4,
         "path_steps": [
           {
@@ -1730,7 +1730,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.631016,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 5,
         "path_steps": [
           {
@@ -1787,7 +1787,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.613971,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 6,
         "path_steps": [
           {
@@ -1844,7 +1844,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.604167,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 7,
         "path_steps": [
           {
@@ -1901,7 +1901,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.597647,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 8,
         "path_steps": [
           {
@@ -1958,7 +1958,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.591667,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 9,
         "path_steps": [
           {
@@ -2015,7 +2015,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.591111,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 10,
         "path_steps": [
           {
@@ -2074,7 +2074,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.672619,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 1,
         "path_steps": [
           {
@@ -2131,7 +2131,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.628571,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 2,
         "path_steps": [
           {
@@ -2188,7 +2188,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.605042,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 3,
         "path_steps": [
           {
@@ -2245,7 +2245,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.59188,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 4,
         "path_steps": [
           {
@@ -2300,7 +2300,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.581818,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 5,
         "path_steps": [
           {
@@ -2354,7 +2354,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.581818,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 6,
         "path_steps": [
           {
@@ -2410,7 +2410,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.581699,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 7,
         "path_steps": [
           {
@@ -2467,7 +2467,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.57598,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 8,
         "path_steps": [
           {
@@ -2524,7 +2524,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.569444,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 9,
         "path_steps": [
           {
@@ -2579,7 +2579,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.566092,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 10,
         "path_steps": [
           {
@@ -2635,7 +2635,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.675,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 1,
         "path_steps": [
           {
@@ -2691,7 +2691,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.65873,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 2,
         "path_steps": [
           {
@@ -2746,7 +2746,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.643357,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 3,
         "path_steps": [
           {
@@ -2800,7 +2800,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.619318,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 4,
         "path_steps": [
           {
@@ -2855,7 +2855,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.61039,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 5,
         "path_steps": [
           {
@@ -2911,7 +2911,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.602083,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 6,
         "path_steps": [
           {
@@ -2968,7 +2968,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.6,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 7,
         "path_steps": [
           {
@@ -3025,7 +3025,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.594872,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 8,
         "path_steps": [
           {
@@ -3082,7 +3082,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.594872,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 9,
         "path_steps": [
           {
@@ -3139,7 +3139,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.592857,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 10,
         "path_steps": [
           {
@@ -3196,7 +3196,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.648485,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 1,
         "path_steps": [
           {
@@ -3252,7 +3252,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.620513,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 2,
         "path_steps": [
           {
@@ -3309,7 +3309,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.6,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 3,
         "path_steps": [
           {
@@ -3366,7 +3366,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.587879,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 4,
         "path_steps": [
           {
@@ -3423,7 +3423,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.586111,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 5,
         "path_steps": [
           {
@@ -3480,7 +3480,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.584795,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 6,
         "path_steps": [
           {
@@ -3537,7 +3537,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.576471,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 7,
         "path_steps": [
           {
@@ -3594,7 +3594,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.572193,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 8,
         "path_steps": [
           {
@@ -3651,7 +3651,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.565657,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 9,
         "path_steps": [
           {
@@ -3708,7 +3708,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.5625,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 10,
         "path_steps": [
           {
@@ -3765,7 +3765,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.754545,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 1,
         "path_steps": [
           {
@@ -3821,7 +3821,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.730159,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 2,
         "path_steps": [
           {
@@ -3878,7 +3878,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.711538,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 3,
         "path_steps": [
           {
@@ -3935,7 +3935,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.694444,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 4,
         "path_steps": [
           {
@@ -3992,7 +3992,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.694286,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 5,
         "path_steps": [
           {
@@ -4049,7 +4049,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.65873,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 6,
         "path_steps": [
           {
@@ -4106,7 +4106,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.638009,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 7,
         "path_steps": [
           {
@@ -4163,7 +4163,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.620915,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 8,
         "path_steps": [
           {
@@ -4218,7 +4218,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.598485,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 9,
         "path_steps": [
           {
@@ -4274,7 +4274,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.597647,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 10,
         "path_steps": [
           {
@@ -4333,7 +4333,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.583333,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 1,
         "path_steps": [
           {
@@ -4390,7 +4390,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.577778,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 2,
         "path_steps": [
           {
@@ -4447,7 +4447,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.569444,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 3,
         "path_steps": [
           {
@@ -4504,7 +4504,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.565657,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 4,
         "path_steps": [
           {
@@ -4561,7 +4561,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.561111,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 5,
         "path_steps": [
           {
@@ -4616,7 +4616,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.55,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 6,
         "path_steps": [
           {
@@ -4672,7 +4672,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.548611,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 7,
         "path_steps": [
           {
@@ -4729,7 +4729,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.528846,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 8,
         "path_steps": [
           {
@@ -4784,7 +4784,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.527778,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 9,
         "path_steps": [
           {
@@ -4838,7 +4838,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.527778,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 10,
         "path_steps": [
           {
@@ -4896,7 +4896,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.839161,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 1,
         "path_steps": [
           {
@@ -4951,7 +4951,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.7,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 2,
         "path_steps": [
           {
@@ -5005,7 +5005,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.7,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 3,
         "path_steps": [
           {
@@ -5059,7 +5059,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.675,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 4,
         "path_steps": [
           {
@@ -5113,7 +5113,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.675,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 5,
         "path_steps": [
           {
@@ -5167,7 +5167,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.675,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 6,
         "path_steps": [
           {
@@ -5221,7 +5221,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.675,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 7,
         "path_steps": [
           {
@@ -5277,7 +5277,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.644444,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 8,
         "path_steps": [
           {
@@ -5334,7 +5334,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.630769,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 9,
         "path_steps": [
           {
@@ -5389,7 +5389,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.626263,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 10,
         "path_steps": [
           {
@@ -5447,7 +5447,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.533333,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 1,
         "path_steps": [
           {
@@ -5502,7 +5502,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.483333,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 2,
         "path_steps": [
           {
@@ -5556,7 +5556,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.483333,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 3,
         "path_steps": [
           {
@@ -5612,7 +5612,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.461538,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 4,
         "path_steps": [
           {
@@ -5669,7 +5669,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.458333,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 5,
         "path_steps": [
           {
@@ -5726,7 +5726,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.454545,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 6,
         "path_steps": [
           {
@@ -5783,7 +5783,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.45,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 7,
         "path_steps": [
           {
@@ -5840,7 +5840,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.4375,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 8,
         "path_steps": [
           {
@@ -5895,7 +5895,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.428571,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 9,
         "path_steps": [
           {
@@ -5949,7 +5949,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.428571,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 10,
         "path_steps": [
           {
@@ -6007,7 +6007,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.454545,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 1,
         "path_steps": [
           {
@@ -6064,7 +6064,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.45,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 2,
         "path_steps": [
           {
@@ -6121,7 +6121,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.45,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 3,
         "path_steps": [
           {
@@ -6176,7 +6176,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.45,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 4,
         "path_steps": [
           {
@@ -6230,7 +6230,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.45,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 5,
         "path_steps": [
           {
@@ -6284,7 +6284,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.45,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 6,
         "path_steps": [
           {
@@ -6340,7 +6340,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.45,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 7,
         "path_steps": [
           {
@@ -6397,7 +6397,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.45,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 8,
         "path_steps": [
           {
@@ -6454,7 +6454,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.45,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 9,
         "path_steps": [
           {
@@ -6511,7 +6511,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.45,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 10,
         "path_steps": [
           {
@@ -6570,7 +6570,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.469298,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 1,
         "path_steps": [
           {
@@ -6627,7 +6627,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.444444,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 2,
         "path_steps": [
           {
@@ -6684,7 +6684,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.428571,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 3,
         "path_steps": [
           {
@@ -6741,7 +6741,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.416667,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 4,
         "path_steps": [
           {
@@ -6798,7 +6798,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.416667,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 5,
         "path_steps": [
           {
@@ -6853,7 +6853,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.416667,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 6,
         "path_steps": [
           {
@@ -6907,7 +6907,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.416667,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 7,
         "path_steps": [
           {
@@ -6961,7 +6961,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.416667,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 8,
         "path_steps": [
           {
@@ -7017,7 +7017,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.416667,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 9,
         "path_steps": [
           {
@@ -7074,7 +7074,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.416667,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 10,
         "path_steps": [
           {
@@ -7133,7 +7133,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.511111,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 1,
         "path_steps": [
           {
@@ -7190,7 +7190,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.461538,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 2,
         "path_steps": [
           {
@@ -7247,7 +7247,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.458333,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 3,
         "path_steps": [
           {
@@ -7304,7 +7304,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.458333,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 4,
         "path_steps": [
           {
@@ -7361,7 +7361,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.458333,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 5,
         "path_steps": [
           {
@@ -7418,7 +7418,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.458333,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 6,
         "path_steps": [
           {
@@ -7475,7 +7475,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.444444,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 7,
         "path_steps": [
           {
@@ -7532,7 +7532,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.444444,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 8,
         "path_steps": [
           {
@@ -7589,7 +7589,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.444444,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 9,
         "path_steps": [
           {
@@ -7646,7 +7646,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.444444,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 10,
         "path_steps": [
           {
@@ -7703,7 +7703,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.636364,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 1,
         "path_steps": [
           {
@@ -7757,7 +7757,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.61039,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 2,
         "path_steps": [
           {
@@ -7811,7 +7811,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.61039,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 3,
         "path_steps": [
           {
@@ -7865,7 +7865,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.61039,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 4,
         "path_steps": [
           {
@@ -7921,7 +7921,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.608392,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 5,
         "path_steps": [
           {
@@ -7978,7 +7978,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.608392,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 6,
         "path_steps": [
           {
@@ -8035,7 +8035,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.6,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 7,
         "path_steps": [
           {
@@ -8090,7 +8090,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.598485,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 8,
         "path_steps": [
           {
@@ -8146,7 +8146,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.587879,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 9,
         "path_steps": [
           {
@@ -8203,7 +8203,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.565657,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 10,
         "path_steps": [
           {
@@ -8262,7 +8262,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.531046,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 1,
         "path_steps": [
           {
@@ -8317,7 +8317,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.527778,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 2,
         "path_steps": [
           {
@@ -8371,7 +8371,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.527778,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 3,
         "path_steps": [
           {
@@ -8427,7 +8427,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.523109,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 4,
         "path_steps": [
           {
@@ -8484,7 +8484,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.521429,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 5,
         "path_steps": [
           {
@@ -8541,7 +8541,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.516667,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 6,
         "path_steps": [
           {
@@ -8598,7 +8598,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.515873,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 7,
         "path_steps": [
           {
@@ -8655,7 +8655,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.5125,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 8,
         "path_steps": [
           {
@@ -8712,7 +8712,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.508824,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 9,
         "path_steps": [
           {
@@ -8769,7 +8769,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.504167,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 10,
         "path_steps": [
           {
@@ -8828,7 +8828,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.711538,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 1,
         "path_steps": [
           {
@@ -8885,7 +8885,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.613636,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 2,
         "path_steps": [
           {
@@ -8942,7 +8942,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.607143,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 3,
         "path_steps": [
           {
@@ -8999,7 +8999,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.561111,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 4,
         "path_steps": [
           {
@@ -9054,7 +9054,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.556818,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 5,
         "path_steps": [
           {
@@ -9108,7 +9108,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.556818,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 6,
         "path_steps": [
           {
@@ -9162,7 +9162,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.556818,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 7,
         "path_steps": [
           {
@@ -9218,7 +9218,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.551471,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 8,
         "path_steps": [
           {
@@ -9273,7 +9273,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.541667,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 9,
         "path_steps": [
           {
@@ -9327,7 +9327,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.533333,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 10,
         "path_steps": [
           {
@@ -9384,7 +9384,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.641667,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 1,
         "path_steps": [
           {
@@ -9441,7 +9441,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.628846,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 2,
         "path_steps": [
           {
@@ -9498,7 +9498,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.625,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 3,
         "path_steps": [
           {
@@ -9555,7 +9555,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.6,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 4,
         "path_steps": [
           {
@@ -9610,7 +9610,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.556818,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 5,
         "path_steps": [
           {
@@ -9664,7 +9664,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.556818,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 6,
         "path_steps": [
           {
@@ -9718,7 +9718,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.556818,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 7,
         "path_steps": [
           {
@@ -9772,7 +9772,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.556818,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 8,
         "path_steps": [
           {
@@ -9826,7 +9826,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.556818,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 9,
         "path_steps": [
           {
@@ -9882,7 +9882,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.546218,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 10,
         "path_steps": [
           {
@@ -9941,7 +9941,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.763636,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 1,
         "path_steps": [
           {
@@ -9998,7 +9998,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.738636,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 2,
         "path_steps": [
           {
@@ -10053,7 +10053,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.728571,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 3,
         "path_steps": [
           {
@@ -10108,7 +10108,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.716667,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 4,
         "path_steps": [
           {
@@ -10164,7 +10164,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.704545,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 5,
         "path_steps": [
           {
@@ -10221,7 +10221,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.6875,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 6,
         "path_steps": [
           {
@@ -10278,7 +10278,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.675214,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 7,
         "path_steps": [
           {
@@ -10333,7 +10333,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.675,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 8,
         "path_steps": [
           {
@@ -10387,7 +10387,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.675,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 9,
         "path_steps": [
           {
@@ -10441,7 +10441,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.675,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 10,
         "path_steps": [
           {
@@ -10499,7 +10499,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.513369,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 1,
         "path_steps": [
           {
@@ -10556,7 +10556,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.5125,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 2,
         "path_steps": [
           {
@@ -10613,7 +10613,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.511111,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 3,
         "path_steps": [
           {
@@ -10670,7 +10670,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.511111,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 4,
         "path_steps": [
           {
@@ -10727,7 +10727,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.510101,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 5,
         "path_steps": [
           {
@@ -10784,7 +10784,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.502632,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 6,
         "path_steps": [
           {
@@ -10841,7 +10841,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.497076,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 7,
         "path_steps": [
           {
@@ -10898,7 +10898,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.496324,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 8,
         "path_steps": [
           {
@@ -10955,7 +10955,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.491071,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 9,
         "path_steps": [
           {
@@ -11012,7 +11012,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.481481,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 10,
         "path_steps": [
           {
@@ -11071,7 +11071,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.65,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 1,
         "path_steps": [
           {
@@ -11128,7 +11128,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.65,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 2,
         "path_steps": [
           {
@@ -11185,7 +11185,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.647436,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 3,
         "path_steps": [
           {
@@ -11242,7 +11242,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.638009,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 4,
         "path_steps": [
           {
@@ -11299,7 +11299,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.586111,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 5,
         "path_steps": [
           {
@@ -11356,7 +11356,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.565657,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 6,
         "path_steps": [
           {
@@ -11413,7 +11413,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.5625,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 7,
         "path_steps": [
           {
@@ -11470,7 +11470,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.5625,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 8,
         "path_steps": [
           {
@@ -11527,7 +11527,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.561111,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 9,
         "path_steps": [
           {
@@ -11582,7 +11582,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.556818,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 10,
         "path_steps": [
           {
@@ -11640,7 +11640,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.605769,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 1,
         "path_steps": [
           {
@@ -11697,7 +11697,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.593137,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 2,
         "path_steps": [
           {
@@ -11752,7 +11752,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.581818,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 3,
         "path_steps": [
           {
@@ -11808,7 +11808,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.576471,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 4,
         "path_steps": [
           {
@@ -11865,7 +11865,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.569444,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 5,
         "path_steps": [
           {
@@ -11922,7 +11922,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.565657,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 6,
         "path_steps": [
           {
@@ -11979,7 +11979,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.561905,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 7,
         "path_steps": [
           {
@@ -12034,7 +12034,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.556818,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 8,
         "path_steps": [
           {
@@ -12088,7 +12088,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.556818,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 9,
         "path_steps": [
           {
@@ -12142,7 +12142,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.556818,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 10,
         "path_steps": [
           {
@@ -12200,7 +12200,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.577778,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 1,
         "path_steps": [
           {
@@ -12257,7 +12257,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.565657,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 2,
         "path_steps": [
           {
@@ -12314,7 +12314,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.562092,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 3,
         "path_steps": [
           {
@@ -12371,7 +12371,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.546218,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 4,
         "path_steps": [
           {
@@ -12428,7 +12428,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.527778,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 5,
         "path_steps": [
           {
@@ -12485,7 +12485,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.525,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 6,
         "path_steps": [
           {
@@ -12540,7 +12540,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.520833,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 7,
         "path_steps": [
           {
@@ -12596,7 +12596,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.519298,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 8,
         "path_steps": [
           {
@@ -12653,7 +12653,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.519298,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 9,
         "path_steps": [
           {
@@ -12710,7 +12710,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.516917,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 10,
         "path_steps": [
           {
@@ -12767,7 +12767,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.631818,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 1,
         "path_steps": [
           {
@@ -12821,7 +12821,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.631818,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 2,
         "path_steps": [
           {
@@ -12877,7 +12877,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.5875,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 3,
         "path_steps": [
           {
@@ -12934,7 +12934,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.576471,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 4,
         "path_steps": [
           {
@@ -12991,7 +12991,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.551515,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 5,
         "path_steps": [
           {
@@ -13047,7 +13047,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.549145,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 6,
         "path_steps": [
           {
@@ -13104,7 +13104,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.548611,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 7,
         "path_steps": [
           {
@@ -13159,7 +13159,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.544872,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 8,
         "path_steps": [
           {
@@ -13213,7 +13213,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.544872,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 9,
         "path_steps": [
           {
@@ -13269,7 +13269,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.542017,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 10,
         "path_steps": [
           {
@@ -13328,7 +13328,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.576471,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 1,
         "path_steps": [
           {
@@ -13385,7 +13385,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.561905,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 2,
         "path_steps": [
           {
@@ -13442,7 +13442,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.561111,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 3,
         "path_steps": [
           {
@@ -13497,7 +13497,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.556818,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 4,
         "path_steps": [
           {
@@ -13553,7 +13553,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.553846,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 5,
         "path_steps": [
           {
@@ -13610,7 +13610,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.548611,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 6,
         "path_steps": [
           {
@@ -13665,7 +13665,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.547619,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 7,
         "path_steps": [
           {
@@ -13719,7 +13719,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.547619,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 8,
         "path_steps": [
           {
@@ -13775,7 +13775,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.542857,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 9,
         "path_steps": [
           {
@@ -13832,7 +13832,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.540351,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 10,
         "path_steps": [
           {
@@ -13889,7 +13889,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.61039,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 1,
         "path_steps": [
           {
@@ -13943,7 +13943,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.61039,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 2,
         "path_steps": [
           {
@@ -13999,7 +13999,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.587302,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 3,
         "path_steps": [
           {
@@ -14056,7 +14056,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.569444,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 4,
         "path_steps": [
           {
@@ -14113,7 +14113,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.5625,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 5,
         "path_steps": [
           {
@@ -14170,7 +14170,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.555556,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 6,
         "path_steps": [
           {
@@ -14227,7 +14227,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.555556,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 7,
         "path_steps": [
           {
@@ -14284,7 +14284,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.553571,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 8,
         "path_steps": [
           {
@@ -14339,7 +14339,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.533333,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 9,
         "path_steps": [
           {
@@ -14395,7 +14395,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.519298,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 10,
         "path_steps": [
           {
@@ -14454,7 +14454,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.65,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 1,
         "path_steps": [
           {
@@ -14511,7 +14511,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.630769,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 2,
         "path_steps": [
           {
@@ -14568,7 +14568,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.616667,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 3,
         "path_steps": [
           {
@@ -14625,7 +14625,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.5875,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 4,
         "path_steps": [
           {
@@ -14682,7 +14682,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.570513,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 5,
         "path_steps": [
           {
@@ -14738,7 +14738,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.566667,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 6,
         "path_steps": [
           {
@@ -14795,7 +14795,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.561905,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 7,
         "path_steps": [
           {
@@ -14850,7 +14850,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.556818,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 8,
         "path_steps": [
           {
@@ -14905,7 +14905,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.556818,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 9,
         "path_steps": [
           {
@@ -14959,7 +14959,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.556818,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 10,
         "path_steps": [
           {
@@ -15015,7 +15015,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.581818,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 1,
         "path_steps": [
           {
@@ -15069,7 +15069,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.515152,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 2,
         "path_steps": [
           {
@@ -15124,7 +15124,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.514423,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 3,
         "path_steps": [
           {
@@ -15181,7 +15181,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.506944,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 4,
         "path_steps": [
           {
@@ -15237,7 +15237,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.505495,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 5,
         "path_steps": [
           {
@@ -15292,7 +15292,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.5,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 6,
         "path_steps": [
           {
@@ -15346,7 +15346,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.5,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 7,
         "path_steps": [
           {
@@ -15400,7 +15400,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.5,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 8,
         "path_steps": [
           {
@@ -15454,7 +15454,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.5,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 9,
         "path_steps": [
           {
@@ -15508,7 +15508,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.5,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 10,
         "path_steps": [
           {
@@ -15566,7 +15566,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.511111,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 1,
         "path_steps": [
           {
@@ -15623,7 +15623,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.511111,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 2,
         "path_steps": [
           {
@@ -15680,7 +15680,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.486111,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 3,
         "path_steps": [
           {
@@ -15735,7 +15735,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.483333,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 4,
         "path_steps": [
           {
@@ -15789,7 +15789,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.483333,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 5,
         "path_steps": [
           {
@@ -15843,7 +15843,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.483333,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 6,
         "path_steps": [
           {
@@ -15899,7 +15899,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.479167,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 7,
         "path_steps": [
           {
@@ -15956,7 +15956,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.4625,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 8,
         "path_steps": [
           {
@@ -16013,7 +16013,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.4625,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 9,
         "path_steps": [
           {
@@ -16070,7 +16070,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.458824,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 10,
         "path_steps": [
           {
@@ -16129,7 +16129,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.651786,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 1,
         "path_steps": [
           {
@@ -16186,7 +16186,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.631944,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 2,
         "path_steps": [
           {
@@ -16241,7 +16241,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.556818,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 3,
         "path_steps": [
           {
@@ -16295,7 +16295,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.556818,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 4,
         "path_steps": [
           {
@@ -16349,7 +16349,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.527778,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 5,
         "path_steps": [
           {
@@ -16405,7 +16405,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.52322,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 6,
         "path_steps": [
           {
@@ -16462,7 +16462,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.520833,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 7,
         "path_steps": [
           {
@@ -16519,7 +16519,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.517857,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 8,
         "path_steps": [
           {
@@ -16576,7 +16576,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.516917,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 9,
         "path_steps": [
           {
@@ -16633,7 +16633,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.510965,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 10,
         "path_steps": [
           {
@@ -16690,7 +16690,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.556818,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 1,
         "path_steps": [
           {
@@ -16746,7 +16746,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.541667,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 2,
         "path_steps": [
           {
@@ -16801,7 +16801,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.515152,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 3,
         "path_steps": [
           {
@@ -16855,7 +16855,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.515152,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 4,
         "path_steps": [
           {
@@ -16909,7 +16909,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.515152,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 5,
         "path_steps": [
           {
@@ -16965,7 +16965,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.487179,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 6,
         "path_steps": [
           {
@@ -17022,7 +17022,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.458333,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 7,
         "path_steps": [
           {
@@ -17078,7 +17078,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.45,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 8,
         "path_steps": [
           {
@@ -17133,7 +17133,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.444444,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 9,
         "path_steps": [
           {
@@ -17189,7 +17189,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.444444,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 10,
         "path_steps": [
           {
@@ -17248,7 +17248,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.542857,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 1,
         "path_steps": [
           {
@@ -17305,7 +17305,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.525,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 2,
         "path_steps": [
           {
@@ -17362,7 +17362,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.517647,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 3,
         "path_steps": [
           {
@@ -17417,7 +17417,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.515152,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 4,
         "path_steps": [
           {
@@ -17473,7 +17473,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.51417,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 5,
         "path_steps": [
           {
@@ -17528,7 +17528,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.511905,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 6,
         "path_steps": [
           {
@@ -17582,7 +17582,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.511905,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 7,
         "path_steps": [
           {
@@ -17636,7 +17636,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.5,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 8,
         "path_steps": [
           {
@@ -17691,7 +17691,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.49359,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 9,
         "path_steps": [
           {
@@ -17748,7 +17748,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.490132,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 10,
         "path_steps": [
           {
@@ -17805,7 +17805,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.75,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 1,
         "path_steps": [
           {
@@ -17859,7 +17859,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.744444,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 2,
         "path_steps": [
           {
@@ -17916,7 +17916,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.738636,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 3,
         "path_steps": [
           {
@@ -17971,7 +17971,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.7375,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 4,
         "path_steps": [
           {
@@ -18027,7 +18027,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.723684,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 5,
         "path_steps": [
           {
@@ -18084,7 +18084,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.716667,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 6,
         "path_steps": [
           {
@@ -18139,7 +18139,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.716667,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 7,
         "path_steps": [
           {
@@ -18193,7 +18193,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.716667,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 8,
         "path_steps": [
           {
@@ -18247,7 +18247,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.716667,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 9,
         "path_steps": [
           {
@@ -18303,7 +18303,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.7,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 10,
         "path_steps": [
           {
@@ -18362,7 +18362,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.801136,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 1,
         "path_steps": [
           {
@@ -18419,7 +18419,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.6875,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 2,
         "path_steps": [
           {
@@ -18476,7 +18476,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.685315,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 3,
         "path_steps": [
           {
@@ -18532,7 +18532,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.672727,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 4,
         "path_steps": [
           {
@@ -18589,7 +18589,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.642857,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 5,
         "path_steps": [
           {
@@ -18646,7 +18646,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.6375,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 6,
         "path_steps": [
           {
@@ -18701,7 +18701,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.633333,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 7,
         "path_steps": [
           {
@@ -18755,7 +18755,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.633333,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 8,
         "path_steps": [
           {
@@ -18809,7 +18809,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.619318,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 9,
         "path_steps": [
           {
@@ -18863,7 +18863,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.619318,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 10,
         "path_steps": [
           {
@@ -18921,7 +18921,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.666667,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 1,
         "path_steps": [
           {
@@ -18976,7 +18976,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.643357,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 2,
         "path_steps": [
           {
@@ -19030,7 +19030,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.643357,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 3,
         "path_steps": [
           {
@@ -19084,7 +19084,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.643357,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 4,
         "path_steps": [
           {
@@ -19139,7 +19139,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.633333,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 5,
         "path_steps": [
           {
@@ -19196,7 +19196,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.604396,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 6,
         "path_steps": [
           {
@@ -19251,7 +19251,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.572917,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 7,
         "path_steps": [
           {
@@ -19305,7 +19305,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.572917,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 8,
         "path_steps": [
           {
@@ -19359,7 +19359,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.566092,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 9,
         "path_steps": [
           {
@@ -19413,7 +19413,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.566092,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 10,
         "path_steps": [
           {
@@ -19471,7 +19471,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.605769,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 1,
         "path_steps": [
           {
@@ -19528,7 +19528,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.60119,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 2,
         "path_steps": [
           {
@@ -19583,7 +19583,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.581818,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 3,
         "path_steps": [
           {
@@ -19639,7 +19639,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.576471,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 4,
         "path_steps": [
           {
@@ -19694,7 +19694,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.556818,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 5,
         "path_steps": [
           {
@@ -19748,7 +19748,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.556818,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 6,
         "path_steps": [
           {
@@ -19802,7 +19802,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.55,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 7,
         "path_steps": [
           {
@@ -19858,7 +19858,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.542857,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 8,
         "path_steps": [
           {
@@ -19913,7 +19913,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.537879,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 9,
         "path_steps": [
           {
@@ -19969,7 +19969,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.533333,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 10,
         "path_steps": [
           {
@@ -20028,7 +20028,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.721212,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 1,
         "path_steps": [
           {
@@ -20084,7 +20084,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.65,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 2,
         "path_steps": [
           {
@@ -20141,7 +20141,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.575397,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 3,
         "path_steps": [
           {
@@ -20196,7 +20196,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.556818,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 4,
         "path_steps": [
           {
@@ -20250,7 +20250,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.55,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 5,
         "path_steps": [
           {
@@ -20304,7 +20304,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.55,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 6,
         "path_steps": [
           {
@@ -20359,7 +20359,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.541667,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 7,
         "path_steps": [
           {
@@ -20416,7 +20416,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.539683,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 8,
         "path_steps": [
           {
@@ -20473,7 +20473,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.528846,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 9,
         "path_steps": [
           {
@@ -20530,7 +20530,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.521212,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 10,
         "path_steps": [
           {
@@ -20589,7 +20589,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.666667,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 1,
         "path_steps": [
           {
@@ -20645,7 +20645,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.566667,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 2,
         "path_steps": [
           {
@@ -20702,7 +20702,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.561905,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 3,
         "path_steps": [
           {
@@ -20759,7 +20759,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.527778,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 4,
         "path_steps": [
           {
@@ -20816,7 +20816,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.519298,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 5,
         "path_steps": [
           {
@@ -20873,7 +20873,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.516667,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 6,
         "path_steps": [
           {
@@ -20930,7 +20930,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.515873,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 7,
         "path_steps": [
           {
@@ -20986,7 +20986,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.514423,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 8,
         "path_steps": [
           {
@@ -21043,7 +21043,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.51417,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 9,
         "path_steps": [
           {
@@ -21100,7 +21100,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.5125,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 10,
         "path_steps": [
           {
@@ -21159,7 +21159,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.587302,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 1,
         "path_steps": [
           {
@@ -21216,7 +21216,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.577778,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 2,
         "path_steps": [
           {
@@ -21273,7 +21273,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.572193,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 3,
         "path_steps": [
           {
@@ -21330,7 +21330,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.570833,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 4,
         "path_steps": [
           {
@@ -21387,7 +21387,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.570513,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 5,
         "path_steps": [
           {
@@ -21442,7 +21442,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.568182,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 6,
         "path_steps": [
           {
@@ -21496,7 +21496,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.568182,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 7,
         "path_steps": [
           {
@@ -21550,7 +21550,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.556818,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 8,
         "path_steps": [
           {
@@ -21605,7 +21605,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.55609,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 9,
         "path_steps": [
           {
@@ -21660,7 +21660,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.555556,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 10,
         "path_steps": [
           {
@@ -21718,7 +21718,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.587302,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 1,
         "path_steps": [
           {
@@ -21775,7 +21775,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.579861,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 2,
         "path_steps": [
           {
@@ -21830,7 +21830,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.567708,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 3,
         "path_steps": [
           {
@@ -21884,7 +21884,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.567708,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 4,
         "path_steps": [
           {
@@ -21940,7 +21940,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.562092,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 5,
         "path_steps": [
           {
@@ -21997,7 +21997,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.553571,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 6,
         "path_steps": [
           {
@@ -22052,7 +22052,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.55,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 7,
         "path_steps": [
           {
@@ -22107,7 +22107,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.54359,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 8,
         "path_steps": [
           {
@@ -22164,7 +22164,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.540351,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 9,
         "path_steps": [
           {
@@ -22221,7 +22221,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.535417,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 10,
         "path_steps": [
           {
@@ -22278,7 +22278,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.636364,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 1,
         "path_steps": [
           {
@@ -22333,7 +22333,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.630952,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 2,
         "path_steps": [
           {
@@ -22388,7 +22388,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.626263,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 3,
         "path_steps": [
           {
@@ -22443,7 +22443,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.625,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 4,
         "path_steps": [
           {
@@ -22499,7 +22499,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.621212,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 5,
         "path_steps": [
           {
@@ -22555,7 +22555,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.616667,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 6,
         "path_steps": [
           {
@@ -22611,7 +22611,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.616667,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 7,
         "path_steps": [
           {
@@ -22668,7 +22668,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.612179,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 8,
         "path_steps": [
           {
@@ -22724,7 +22724,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.611111,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 9,
         "path_steps": [
           {
@@ -22780,7 +22780,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.604167,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 10,
         "path_steps": [
           {
@@ -22839,7 +22839,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.705769,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 1,
         "path_steps": [
           {
@@ -22896,7 +22896,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.666667,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 2,
         "path_steps": [
           {
@@ -22952,7 +22952,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.647727,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 3,
         "path_steps": [
           {
@@ -23009,7 +23009,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.643137,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 4,
         "path_steps": [
           {
@@ -23066,7 +23066,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.620915,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 5,
         "path_steps": [
           {
@@ -23123,7 +23123,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.616667,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 6,
         "path_steps": [
           {
@@ -23180,7 +23180,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.616071,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 7,
         "path_steps": [
           {
@@ -23237,7 +23237,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.604167,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 8,
         "path_steps": [
           {
@@ -23292,7 +23292,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.598485,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 9,
         "path_steps": [
           {
@@ -23346,7 +23346,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.598485,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 10,
         "path_steps": [
           {
@@ -23404,7 +23404,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.763636,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 1,
         "path_steps": [
           {
@@ -23461,7 +23461,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.756303,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 2,
         "path_steps": [
           {
@@ -23518,7 +23518,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.738636,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 3,
         "path_steps": [
           {
@@ -23575,7 +23575,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.738636,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 4,
         "path_steps": [
           {
@@ -23632,7 +23632,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.723684,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 5,
         "path_steps": [
           {
@@ -23689,7 +23689,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.720588,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 6,
         "path_steps": [
           {
@@ -23745,7 +23745,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.710227,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 7,
         "path_steps": [
           {
@@ -23802,7 +23802,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.704545,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 8,
         "path_steps": [
           {
@@ -23859,7 +23859,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.694444,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 9,
         "path_steps": [
           {
@@ -23916,7 +23916,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.694444,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 10,
         "path_steps": [
           {
@@ -23975,7 +23975,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.75,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 1,
         "path_steps": [
           {
@@ -24032,7 +24032,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.716667,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 2,
         "path_steps": [
           {
@@ -24089,7 +24089,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.708333,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 3,
         "path_steps": [
           {
@@ -24146,7 +24146,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.69697,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 4,
         "path_steps": [
           {
@@ -24203,7 +24203,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.69697,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 5,
         "path_steps": [
           {
@@ -24260,7 +24260,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.69697,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 6,
         "path_steps": [
           {
@@ -24317,7 +24317,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.6875,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 7,
         "path_steps": [
           {
@@ -24374,7 +24374,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.6875,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 8,
         "path_steps": [
           {
@@ -24431,7 +24431,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.680769,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 9,
         "path_steps": [
           {
@@ -24487,7 +24487,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.672727,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 10,
         "path_steps": [
           {
@@ -24544,7 +24544,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.55,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 1,
         "path_steps": [
           {
@@ -24600,7 +24600,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.547619,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 2,
         "path_steps": [
           {
@@ -24655,7 +24655,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.515152,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 3,
         "path_steps": [
           {
@@ -24710,7 +24710,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.5,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 4,
         "path_steps": [
           {
@@ -24767,7 +24767,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.416667,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 5,
         "path_steps": [
           {
@@ -24824,7 +24824,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.416667,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 6,
         "path_steps": [
           {
@@ -24881,7 +24881,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.416667,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 7,
         "path_steps": [
           {
@@ -24938,7 +24938,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.4,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 8,
         "path_steps": [
           {
@@ -24995,7 +24995,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.4,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 9,
         "path_steps": [
           {
@@ -25052,7 +25052,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.4,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 10,
         "path_steps": [
           {
@@ -25111,7 +25111,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.683333,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 1,
         "path_steps": [
           {
@@ -25168,7 +25168,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.616667,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 2,
         "path_steps": [
           {
@@ -25225,7 +25225,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.613636,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 3,
         "path_steps": [
           {
@@ -25282,7 +25282,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.583333,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 4,
         "path_steps": [
           {
@@ -25339,7 +25339,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.580357,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 5,
         "path_steps": [
           {
@@ -25394,7 +25394,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.520833,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 6,
         "path_steps": [
           {
@@ -25448,7 +25448,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.5,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 7,
         "path_steps": [
           {
@@ -25502,7 +25502,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.5,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 8,
         "path_steps": [
           {
@@ -25556,7 +25556,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.5,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 9,
         "path_steps": [
           {
@@ -25612,7 +25612,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.487179,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 10,
         "path_steps": [
           {
@@ -25671,7 +25671,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.5,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 1,
         "path_steps": [
           {
@@ -25728,7 +25728,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.461538,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 2,
         "path_steps": [
           {
@@ -25785,7 +25785,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.45,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 3,
         "path_steps": [
           {
@@ -25842,7 +25842,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.45,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 4,
         "path_steps": [
           {
@@ -25899,7 +25899,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.444444,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 5,
         "path_steps": [
           {
@@ -25956,7 +25956,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.4375,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 6,
         "path_steps": [
           {
@@ -26013,7 +26013,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.4375,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 7,
         "path_steps": [
           {
@@ -26070,7 +26070,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.428571,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 8,
         "path_steps": [
           {
@@ -26127,7 +26127,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.428571,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 9,
         "path_steps": [
           {
@@ -26184,7 +26184,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.428571,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 10,
         "path_steps": [
           {
@@ -26241,7 +26241,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.535714,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 1,
         "path_steps": [
           {
@@ -26297,7 +26297,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.515873,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 2,
         "path_steps": [
           {
@@ -26354,7 +26354,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.47619,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 3,
         "path_steps": [
           {
@@ -26411,7 +26411,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.461538,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 4,
         "path_steps": [
           {
@@ -26468,7 +26468,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.458333,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 5,
         "path_steps": [
           {
@@ -26523,7 +26523,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.458333,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 6,
         "path_steps": [
           {
@@ -26579,7 +26579,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.45,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 7,
         "path_steps": [
           {
@@ -26636,7 +26636,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.45,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 8,
         "path_steps": [
           {
@@ -26692,7 +26692,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.444444,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 9,
         "path_steps": [
           {
@@ -26749,7 +26749,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.4375,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 10,
         "path_steps": [
           {
@@ -26806,7 +26806,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.85,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 1,
         "path_steps": [
           {
@@ -26862,7 +26862,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.575,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 2,
         "path_steps": [
           {
@@ -26919,7 +26919,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.416667,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 3,
         "path_steps": [
           {
@@ -26976,7 +26976,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.416667,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 4,
         "path_steps": [
           {
@@ -27033,7 +27033,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.416667,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 5,
         "path_steps": [
           {
@@ -27090,7 +27090,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.416667,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 6,
         "path_steps": [
           {
@@ -27147,7 +27147,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.4,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 7,
         "path_steps": [
           {
@@ -27204,7 +27204,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.4,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 8,
         "path_steps": [
           {
@@ -27261,7 +27261,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.4,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 9,
         "path_steps": [
           {
@@ -27318,7 +27318,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.4,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 10,
         "path_steps": [
           {
@@ -27375,7 +27375,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.583333,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 1,
         "path_steps": [
           {
@@ -27431,7 +27431,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.517857,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 2,
         "path_steps": [
           {
@@ -27488,7 +27488,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.455556,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 3,
         "path_steps": [
           {
@@ -27543,7 +27543,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.45,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 4,
         "path_steps": [
           {
@@ -27597,7 +27597,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.45,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 5,
         "path_steps": [
           {
@@ -27652,7 +27652,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.431818,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 6,
         "path_steps": [
           {
@@ -27709,7 +27709,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.416667,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 7,
         "path_steps": [
           {
@@ -27766,7 +27766,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.416667,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 8,
         "path_steps": [
           {
@@ -27823,7 +27823,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.416667,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 9,
         "path_steps": [
           {
@@ -27880,7 +27880,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.416667,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 10,
         "path_steps": [
           {
@@ -27937,7 +27937,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.7,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 1,
         "path_steps": [
           {
@@ -27991,7 +27991,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.646104,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 2,
         "path_steps": [
           {
@@ -28047,7 +28047,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.630769,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 3,
         "path_steps": [
           {
@@ -28104,7 +28104,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.570513,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 4,
         "path_steps": [
           {
@@ -28161,7 +28161,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.561905,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 5,
         "path_steps": [
           {
@@ -28216,7 +28216,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.556818,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 6,
         "path_steps": [
           {
@@ -28272,7 +28272,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.547619,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 7,
         "path_steps": [
           {
@@ -28327,7 +28327,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.541667,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 8,
         "path_steps": [
           {
@@ -28383,7 +28383,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.539683,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 9,
         "path_steps": [
           {
@@ -28440,7 +28440,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.538095,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 10,
         "path_steps": [
           {
@@ -28497,7 +28497,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.650568,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 1,
         "path_steps": [
           {
@@ -28551,7 +28551,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.633333,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 2,
         "path_steps": [
           {
@@ -28606,7 +28606,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.61039,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 3,
         "path_steps": [
           {
@@ -28660,7 +28660,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.61039,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 4,
         "path_steps": [
           {
@@ -28714,7 +28714,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.61039,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 5,
         "path_steps": [
           {
@@ -28770,7 +28770,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.5875,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 6,
         "path_steps": [
           {
@@ -28827,7 +28827,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.586111,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 7,
         "path_steps": [
           {
@@ -28882,7 +28882,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.581818,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 8,
         "path_steps": [
           {
@@ -28938,7 +28938,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.575397,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 9,
         "path_steps": [
           {
@@ -28995,7 +28995,7 @@
         "distance": 3,
         "proposal_eligible": true,
         "score": 0.575,
-        "aa": 0,
+        "shared_coauthors": 0,
         "rank": 10,
         "path_steps": [
           {

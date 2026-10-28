@@ -23,7 +23,7 @@
 
 \begin{abstract}
 % Rewrite purpose: Opening: problem, contribution, completed progress, main result, and next evaluation.
-Students who want research experience often know an instructor but few researchers outside that instructor's circle. BridgeFinder helps them find related researchers and see who might connect them. We have built a three-screen prototype, analyzed two UIUC publication samples, and gathered feedback from five students. Our historical test finds that shared-contact ranking predicts more later collaborations than our method. The next study will test whether students nevertheless find our suggestions relevant, unfamiliar, and useful for contacting someone.
+Students who want research experience often know an instructor but few researchers outside that instructor's circle. BridgeFinder helps them find related researchers and see who might connect them. We have built a three-screen prototype, analyzed a UIUC publication dataset, and gathered feedback from five students. Our historical test finds that shared-contact ranking predicts more later collaborations than our method. The next study will test whether students nevertheless find our suggestions relevant, unfamiliar, and useful for contacting someone.
 \end{abstract}
 
 \section{Objective}
@@ -44,7 +44,7 @@ The challenge is to suggest someone relevant who also extends the student's usua
 \textbf{Literature maps.} Connected Papers~\cite{connectedpapers} makes related papers visible in a local map. ResearchRabbit~\cite{researchrabbit} supports continued discovery from paper collections. Both make exploration easier, but their main objects are papers. BridgeFinder adapts visual exploration to people and possible introductions.
 
 % Rewrite purpose: Related work 3: contrast network prediction and cross-domain ranking with student usefulness.
-\textbf{Recommendations.} Liben-Nowell and Kleinberg~\cite{libennowell2007} compare network-based link predictions. Shared-contact measures are understandable, but favor nearby people. We compare against Adamic--Adar while looking farther away. Tang et al.~\cite{tang2012} combine research interests and relationships for cross-domain collaboration recommendation. That supports considering both topic and network evidence, but ranking quality alone does not show whether a student can use a suggestion. We therefore also plan a student evaluation.
+\textbf{Recommendations.} Liben-Nowell and Kleinberg~\cite{libennowell2007} compare network-based link predictions. Shared-contact measures are understandable, but favor nearby people. We compare with simple triadic closure, which ranks candidates by how many co-authors they share with the starting researcher. Tang et al.~\cite{tang2012} combine research interests and relationships for cross-domain collaboration recommendation. That supports considering both topic and network evidence, but ranking quality alone does not show whether a student can use a suggestion. We therefore also plan a student evaluation.
 
 % Rewrite purpose: Related work 4: give the weak-tie/brokerage motivation without claiming verified introductions.
 \textbf{Network theory.} Granovetter~\cite{granovetter1973} explains how weak ties can reach beyond close circles. Burt~\cite{burt1992} explains the advantage of bridging separate groups. We use these ideas to look beyond a familiar collaboration group. A co-authorship path alone cannot tell us whether the people know each other well enough to make an introduction.
@@ -54,8 +54,8 @@ The challenge is to suggest someone relevant who also extends the student's usua
 % Rewrite purpose: Network 1: name the course concept; define real data, nodes, edge weights, and inclusion.
 Brokerage involves connecting people across groups that have few ties to one another. We use this course concept to suggest researchers outside a familiar person's collaboration group. We use OpenAlex~\cite{openalex} publications from 2015--2024. Nodes are authors affiliated with UIUC on a collected paper. An edge joins two authors who wrote together, weighted by their number of joint papers. We retain papers with at least two UIUC authors and omit external collaborators.
 
-% Rewrite purpose: Network 2: state the two actual sample sizes and introduce Table 1.
-Our pilot contains 5,000 collected works, of which 2,493 meet that rule. The larger sample contains 25,000 works, of which 13,229 remain. These are samples, not a complete campus directory. Table~\ref{tab:network} describes the earlier papers used to make recommendations.
+% Rewrite purpose: Network 2: describe the one current dataset, its collection limit, and Table 1.
+Our dataset contains 13,229 papers that meet this rule, retained from a collection of 25,000 OpenAlex works. The collection was capped, so it does not include every relevant UIUC paper. Table~\ref{tab:network} describes the 2015--2019 graph used to make recommendations.
 
 \begin{table}[!ht]
 \centering\small
@@ -63,14 +63,14 @@ Our pilot contains 5,000 collected works, of which 2,493 meet that rule. The lar
 \caption{Co-authorship graphs from 2015--2019 papers.}
 \label{tab:network}
 \renewcommand{\arraystretch}{1.1}
-\begin{tabularx}{\columnwidth}{@{}Xrr@{}}
+\begin{tabularx}{\columnwidth}{@{}Xr@{}}
 \toprule
-& Pilot & Larger\\
+Measure & Dataset\\
 \midrule
-Authors & 3,642 & 9,042\\
-Edges & 16,408 & 36,748\\
-Communities & 344 & 455\\
-Modularity & 0.900 & 0.905\\
+Authors & 9,042\\
+Edges & 36,748\\
+Communities & 455\\
+Modularity & 0.905\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -146,14 +146,14 @@ The new entry instructions and card definition have not yet been retested with s
 
 \section{Evaluation}
 \subsection{Historical prediction}
-% Rewrite purpose: Evaluation 1: explain the temporal test, actual seed counts, and who is excluded.
-We used 2015--2019 papers to build the graph and topic profiles, then checked whether suggestions became new cross-community co-authors in 2020--2024. We evaluated 184 starting researchers in the pilot sample and 1,369 in the larger sample. Each had at least one new cross-community tie between training-graph authors. Researchers without such future ties are excluded.
+% Rewrite purpose: Evaluation 1: explain the temporal test, the actual seed count, and who is excluded.
+We used 2015--2019 papers to build the graph and topic profiles, then checked whether suggestions became new cross-community co-authors in 2020--2024. We evaluated 1,369 starting researchers in this dataset. Each had at least one new cross-community tie between training-graph authors. Researchers without such future ties are excluded.
 
 % Rewrite purpose: Evaluation 2: name baselines and explain the different candidate pools.
-We compare with \textbf{Topic-Only} on the same candidate pool and \textbf{Adamic--Adar}, which ranks candidates with shared co-authors at distance two. Restricting Adamic--Adar to our three-or-more-hop pool would give only zero scores. All methods predict the same future ties, so this compares discovery strategies with different pools.
+We compare with \textbf{Topic-Only} on the same candidate pool and \textbf{Triadic closure}, the shared-contact baseline in our proposal. We rank these candidates by their number of shared co-authors, with no additional weighting. These candidates are two hops away. Restricting that baseline to our three-or-more-hop pool would give only zero scores. All methods predict the same future ties, so this compares discovery strategies with different pools.
 
-% Rewrite purpose: Evaluation 3: define both prediction metrics and why they fit the shortlist task.
-\textbf{P@5} is the fraction of the first five suggestions that became collaborators. \textbf{NDCG@10} rewards placing actual collaborators near the top of the first ten. Both are averaged across starting researchers. These measures test shortlists and ordering, respectively.
+% Rewrite purpose: Evaluation 3: explain the proposal's top-ten prediction measure.
+We measure the fraction of each researcher's top ten suggestions that became collaborators in the later period. This is precision at ten, or \textbf{P@10}. It matches the proposal's test of whether the shortlist includes people who later worked together. We average the fraction across starting researchers.
 
 \begin{table}[!ht]
 \centering\small
@@ -161,21 +161,19 @@ We compare with \textbf{Topic-Only} on the same candidate pool and \textbf{Adami
 \caption{Prediction of new 2020--2024 cross-community ties. Higher is better.}
 \label{tab:results}
 \renewcommand{\arraystretch}{1.1}
-\begin{tabularx}{\columnwidth}{@{}Xrr@{\hspace{9pt}}rr@{}}
+\begin{tabularx}{\columnwidth}{@{}Xr@{}}
 \toprule
-&\multicolumn{2}{c}{Pilot}&\multicolumn{2}{c}{Larger}\\
-\cmidrule(lr){2-3}\cmidrule(l){4-5}
-Method&P@5&\shortstack{NDCG\\@10}&P@5&\shortstack{NDCG\\@10}\\
+Method & P@10\\
 \midrule
-Topic-Only&0.0043&0.0154&0.0108&0.0205\\
-Adamic--Adar&0.0130&0.0368&0.0282&0.0472\\
-BridgeFinder&0.0065&0.0149&0.0102&0.0225\\
+Topic-Only&0.0099\\
+Triadic closure&0.0223\\
+BridgeFinder&0.0094\\
 \bottomrule
 \end{tabularx}
 \end{table}
 
 % Rewrite purpose: Evaluation 4: interpret Table 2, report missed targets, and state what it cannot establish.
-Table~\ref{tab:results} shows that BridgeFinder predicts fewer later ties than Adamic--Adar. It misses our targets of doubling P@5 and adding 0.05 to NDCG@10 over Adamic--Adar. The path bonus also has mixed results against Topic-Only. We have not estimated uncertainty, and these comparisons do not isolate distance from scoring. Historical prediction does not establish whether students find the farther-away contacts useful.
+Table~\ref{tab:results} shows that BridgeFinder predicts fewer later ties than either baseline. It therefore does not meet the proposal's goal of ranking later collaborators above triadic closure and topic-only ranking. We have not estimated uncertainty, and these comparisons do not isolate distance from scoring. The student study will test whether the suggestions are useful for discovery despite their weaker historical prediction.
 
 \Needspace{8\baselineskip}
 \subsection{Planned student study}
@@ -191,7 +189,7 @@ For the card comparison, students will choose one of five starting researchers a
 \begin{itemize}
 \setlength{\itemsep}{2pt}
 % Rewrite purpose: Metric 1: preserve the measured construct, scale, threshold, and named comparison.
-\item \textbf{Relevant discovery.} Students will rate relevance to the starting researcher's work and novelty to themselves on scales from 1 to 7. For BridgeFinder, we target means of at least 5 and a 25-percentage-point gain over Adamic--Adar in cards rated at least 5 on both. Topic-Only is a second comparison.
+\item \textbf{Relevant discovery.} Students will rate relevance to the starting researcher's work and novelty to themselves on scales from 1 to 7. For BridgeFinder, we target means of at least 5 and a 25-percentage-point gain over triadic closure in cards rated at least 5 on both. Topic-Only is a second comparison.
 % Rewrite purpose: Metric 2: preserve the actionability question, threshold, comparison, and scope.
 \item \textbf{Willingness to contact.} Students will rate how realistic contact feels given the route on a scale from 1 to 7. For BridgeFinder, we target a mean of at least 5 and improvement over Topic-Only. Because the methods suggest different people, this rating cannot isolate the effect of showing a path.
 % Rewrite purpose: Metric 3: preserve task/comprehension and SUS targets for the interactive app.

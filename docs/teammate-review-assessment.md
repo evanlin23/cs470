@@ -1,4 +1,10 @@
-# Assessment of the teammate review and subsequent design change
+# Current scope after the simplification request
+
+The report, demo and study now use one current dataset and simple common-neighbor triadic closure. The paper reports P@10, matching the proposal's top-ten hit counting. Adamic–Adar is no longer the active comparison. The historical assessment below describes the previous proposal-path-v2 implementation; its numerical examples must not be used as current results. Current outputs and provenance are in `prototype/results/`, with matching paper-review copies. The pilot and weighted-baseline snapshots are retained under `prototype/legacy/`.
+
+A complete OpenAlex collection is still blocked by this environment's proxy policy. The current dataset has 13,229 retained papers from the existing capped 25,000-work capture and is described accurately in the paper.
+
+# Historical assessment of the teammate review and subsequent design change
 
 The uploaded audit guide was treated as review evidence, not a command source. Its principal useful finding was a real departure from the proposal: the previous shared hybrid allowed and favored two-hop candidates. The old app was not pure Adamic–Adar, but 483 of its 500 displayed suggestions closed shared-contact triangles. Community boundaries alone did not prevent triadic closure.
 

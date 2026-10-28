@@ -10,26 +10,24 @@
       "Advanced Sensor and Energy Harvesting Materials",
       "Nanofabrication and Lithography Techniques"
     ],
-    "candidate_name": "Caroline Cvetkovic",
+    "candidate_name": "SungGyu Chun",
     "candidate_topics": [
-      "3D Printing in Biomedical Research",
       "Advanced Materials and Mechanics",
-      "Anatomy and Medical Technology",
-      "Hydrogels: synthesis, properties, applications",
-      "Micro and Nano Robotics"
+      "Advanced Sensor and Energy Harvesting Materials",
+      "Graphene research and applications"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
-      "Optogenetic skeletal muscle-powered adaptive biological machines",
-      "3D Printed Stem-Cell-Laden, Microchanneled Hydrogel Patch for the Enhanced Release of Cell-Secreting Factors and Treatment of Myocardial Infarctions"
+      "Heterogeneous, Three-Dimensional Texturing of Graphene"
     ],
-    "introduction_path": "John A. Rogers \u2192 Mantian Xue \u2192 Caroline Cvetkovic (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "introduction_path": "John A. Rogers \u2192 Paul V. Braun \u2192 SungWoo Nam \u2192 SungGyu Chun (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
     "path_ids": [
       "https://openalex.org/A5045551635",
-      "https://openalex.org/A5045870519",
-      "https://openalex.org/A5034623072"
+      "https://openalex.org/A5040320137",
+      "https://openalex.org/A5101901781",
+      "https://openalex.org/A5044985385"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_002",
@@ -48,7 +46,7 @@
       "Electrowetting and Microfluidic Technologies",
       "Surface Modification and Superhydrophobicity"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
       "Exploring the Role of Habitat on the Wettability of Cicada Wings"
     ],
@@ -59,7 +57,7 @@
       "https://openalex.org/A5033093452",
       "https://openalex.org/A5016857452"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_003",
@@ -80,7 +78,7 @@
       "Electrochemical Analysis and Applications",
       "Electrochemical sensors and biosensors"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
       "Lutein and Brain Function",
       "Rapid Mitogenic Regulation of the mTORC1 Inhibitor, DEPTOR, by Phosphatidic Acid"
@@ -91,7 +89,7 @@
       "https://openalex.org/A5007246518",
       "https://openalex.org/A5006238710"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_004",
@@ -104,24 +102,26 @@
       "Advanced Sensor and Energy Harvesting Materials",
       "Nanofabrication and Lithography Techniques"
     ],
-    "candidate_name": "SungGyu Chun",
+    "candidate_name": "Gabriel Popescu",
     "candidate_topics": [
-      "Advanced Materials and Mechanics",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Graphene research and applications"
+      "3D Printing in Biomedical Research",
+      "AI in cancer detection",
+      "Advanced Fluorescence Microscopy Techniques",
+      "Cellular Mechanics and Interactions",
+      "Digital Holography and Microscopy"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
-      "Heterogeneous, Three-Dimensional Texturing of Graphene"
+      "High\u2010Resolution Projection Microstereolithography for Patterning of Neovasculature",
+      "Prediction of Prostate Cancer Recurrence Using Quantitative Phase Imaging"
     ],
-    "introduction_path": "John A. Rogers \u2192 Paul V. Braun \u2192 SungWoo Nam \u2192 SungGyu Chun (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "introduction_path": "John A. Rogers \u2192 Yiyue Luo \u2192 Gabriel Popescu (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
     "path_ids": [
       "https://openalex.org/A5045551635",
-      "https://openalex.org/A5040320137",
-      "https://openalex.org/A5101901781",
-      "https://openalex.org/A5044985385"
+      "https://openalex.org/A5007246518",
+      "https://openalex.org/A5056127619"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_005",
@@ -140,7 +140,7 @@
       "Advanced Sensor and Energy Harvesting Materials",
       "Photonic Crystals and Applications"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
       "Colloidal Photonic Crystal Strain Sensor Integrated with Deformable Graphene Phototransducer"
     ],
@@ -151,7 +151,7 @@
       "https://openalex.org/A5101901781",
       "https://openalex.org/A5024053459"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_006",
@@ -170,7 +170,7 @@
       "Advanced Sensor and Energy Harvesting Materials",
       "Graphene research and applications"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
       "Heterogeneous, Three-Dimensional Texturing of Graphene"
     ],
@@ -181,7 +181,7 @@
       "https://openalex.org/A5101901781",
       "https://openalex.org/A5024935115"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_007",
@@ -194,26 +194,26 @@
       "Advanced Sensor and Energy Harvesting Materials",
       "Nanofabrication and Lithography Techniques"
     ],
-    "candidate_name": "Gabriel Popescu",
+    "candidate_name": "Jaeuk Sung",
     "candidate_topics": [
-      "3D Printing in Biomedical Research",
-      "AI in cancer detection",
-      "Advanced Fluorescence Microscopy Techniques",
-      "Cellular Mechanics and Interactions",
-      "Digital Holography and Microscopy"
+      "Advanced Materials and Mechanics",
+      "Advanced Polymer Synthesis and Characterization",
+      "Lipid Membrane Structure and Behavior",
+      "Nanofabrication and Lithography Techniques",
+      "Nanoparticle-Based Drug Delivery"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
-      "High\u2010Resolution Projection Microstereolithography for Patterning of Neovasculature",
-      "Prediction of Prostate Cancer Recurrence Using Quantitative Phase Imaging"
+      "Microfluidics Synthesis of Gene Silencing Cubosomes",
+      "Interfacial Mechanophore Activation Using Laser-Induced Stress Waves"
     ],
-    "introduction_path": "John A. Rogers \u2192 Yiyue Luo \u2192 Gabriel Popescu (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "introduction_path": "John A. Rogers \u2192 David G. Cahill \u2192 Jaeuk Sung (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
     "path_ids": [
       "https://openalex.org/A5045551635",
-      "https://openalex.org/A5007246518",
-      "https://openalex.org/A5056127619"
+      "https://openalex.org/A5001475799",
+      "https://openalex.org/A5056431073"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_008",
@@ -234,7 +234,7 @@
       "Fatty Acid Research and Health",
       "Ion-surface interactions and analysis"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
       "Lutein and Brain Function",
       "Classification of Large Cellular Populations and Discovery of Rare Cells Using Single Cell Matrix-Assisted Laser Desorption/Ionization Time-of-Flight Mass Spectrometry"
@@ -245,7 +245,7 @@
       "https://openalex.org/A5007246518",
       "https://openalex.org/A5020098405"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_009",
@@ -264,7 +264,7 @@
       "Modular Robots and Swarm Intelligence",
       "Soft Robotics and Applications"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
       "A crawling robot driven by multi-stable origami"
     ],
@@ -275,7 +275,7 @@
       "https://openalex.org/A5076771658",
       "https://openalex.org/A5001887744"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_010",
@@ -296,7 +296,7 @@
       "Advanced Materials and Mechanics",
       "Cellular Mechanics and Interactions"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
       "Breast cancer diagnosis using spatial light interference microscopy",
       "Label-Free Imaging of Single Microtubule Dynamics Using Spatial Light Interference Microscopy"
@@ -307,7 +307,7 @@
       "https://openalex.org/A5007246518",
       "https://openalex.org/A5004021726"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_011",
@@ -328,7 +328,7 @@
       "Electrochemical sensors and biosensors",
       "Gold and Silver Nanoparticles Synthesis and Applications"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
       "Mechanically Self-Assembled, Three-Dimensional Graphene\u2013Gold Hybrid Nanostructures for Advanced Nanoplasmonic Sensors",
       "Heterogeneous, Three-Dimensional Texturing of Graphene"
@@ -340,10 +340,43 @@
       "https://openalex.org/A5101901781",
       "https://openalex.org/A5082130732"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_012",
+    "seed_id": "https://openalex.org/A5002313901",
+    "seed_name": "Ruopeng An",
+    "seed_department": "Community 2",
+    "seed_topics": [
+      "Aging, Health, and Disability",
+      "Balance, Gait, and Falls Prevention",
+      "Dementia and Cognitive Impairment Research",
+      "Gut microbiota and health"
+    ],
+    "candidate_name": "David M. B\u00fcchner",
+    "candidate_topics": [
+      "Balance, Gait, and Falls Prevention",
+      "Context-Aware Activity Recognition Systems",
+      "Frailty in Older Adults",
+      "Nutrition, Health and Food Behavior",
+      "Obesity, Physical Activity, Diet"
+    ],
+    "model_version": "proposal-path-v3-common-neighbors",
+    "sample_papers": [
+      "Accelerometer\u2010Measured Physical Activity and Mortality in Women Aged 63 to 99",
+      "A comparative study of fruit and vegetable consumption and physical activity among adolescents in 49 Low-and-Middle-Income Countries"
+    ],
+    "introduction_path": "Ruopeng An \u2192 Jong Cheol Shin \u2192 Diana S. Grigsby\u2010Toussaint \u2192 David M. B\u00fcchner (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5002313901",
+      "https://openalex.org/A5045816651",
+      "https://openalex.org/A5013505213",
+      "https://openalex.org/A5047169089"
+    ],
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
+  },
+  {
+    "card_id": "CARD_013",
     "seed_id": "https://openalex.org/A5002313901",
     "seed_name": "Ruopeng An",
     "seed_department": "Community 2",
@@ -360,7 +393,7 @@
       "Nutrition, Health and Food Behavior",
       "Sensory Analysis and Statistical Methods"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
       "Influence of seasoning on vegetable selection, liking and intent to purchase",
       "Consumer Acceptance Comparison Between Seasoned and Unseasoned Vegetables"
@@ -371,10 +404,10 @@
       "https://openalex.org/A5001585537",
       "https://openalex.org/A5048982789"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
-    "card_id": "CARD_013",
+    "card_id": "CARD_014",
     "seed_id": "https://openalex.org/A5002313901",
     "seed_name": "Ruopeng An",
     "seed_department": "Community 2",
@@ -390,7 +423,7 @@
       "Nutrition, Health and Food Behavior",
       "Sensory Analysis and Statistical Methods"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
       "Influence of seasoning on vegetable selection, liking and intent to purchase"
     ],
@@ -400,38 +433,7 @@
       "https://openalex.org/A5001585537",
       "https://openalex.org/A5054161406"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
-  },
-  {
-    "card_id": "CARD_014",
-    "seed_id": "https://openalex.org/A5002313901",
-    "seed_name": "Ruopeng An",
-    "seed_department": "Community 2",
-    "seed_topics": [
-      "Aging, Health, and Disability",
-      "Balance, Gait, and Falls Prevention",
-      "Dementia and Cognitive Impairment Research",
-      "Gut microbiota and health"
-    ],
-    "candidate_name": "Ann C. Benefiel",
-    "candidate_topics": [
-      "Food composition and properties",
-      "Gut microbiota and health",
-      "Nutritional Studies and Diet"
-    ],
-    "model_version": "proposal-path-v2",
-    "sample_papers": [
-      "Fat, fibre and cancer risk in African Americans and rural Africans"
-    ],
-    "introduction_path": "Ruopeng An \u2192 John W. Erdman \u2192 Lindsey K. Ly \u2192 H. Rex Gaskins \u2192 Ann C. Benefiel (4 co-authorship hops; acquaintance and willingness to introduce are unverified)",
-    "path_ids": [
-      "https://openalex.org/A5002313901",
-      "https://openalex.org/A5033908566",
-      "https://openalex.org/A5000839333",
-      "https://openalex.org/A5014700891",
-      "https://openalex.org/A5057095314"
-    ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_015",
@@ -452,7 +454,7 @@
       "Fungal and yeast genetics research",
       "Genomics and Phylogenetic Studies"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
       "Plasma Exosomal miRNAs in Persons with and without Alzheimer Disease: Altered Expression and Prospects for Biomarkers",
       "Draft genome sequences of Chrysoporthe austroafricana, Diplodia scrobiculata, Fusarium nygamai, Leptographium lundbergii, Limonomyces culmigenus, Stagonosporopsis tanaceti, and Thielaviopsis punctulata"
@@ -464,7 +466,7 @@
       "https://openalex.org/A5000839333",
       "https://openalex.org/A5105406899"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_016",
@@ -485,7 +487,7 @@
       "Diet, Metabolism, and Disease",
       "Drug Transport and Resistance Mechanisms"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
       "Relationship Between Microbiota of the Colonic Mucosa vs Feces and Symptoms, Colonic Transit, and Methane Production in Female Patients With Chronic Constipation",
       "Table grape consumption reduces adiposity and markers of hepatic lipogenesis and alters gut microbiota in butter fat-fed mice"
@@ -497,7 +499,7 @@
       "https://openalex.org/A5000839333",
       "https://openalex.org/A5023983153"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_017",
@@ -510,26 +512,25 @@
       "Dementia and Cognitive Impairment Research",
       "Gut microbiota and health"
     ],
-    "candidate_name": "Karen Chapman\u2010Novakofski",
+    "candidate_name": "Franck G. Carbonero",
     "candidate_topics": [
-      "Consumer Attitudes and Food Labeling",
-      "Diabetes Management and Education",
-      "Food and Agricultural Sciences",
-      "Health Education and Validation",
-      "Mobile Health and mHealth Applications"
+      "Food composition and properties",
+      "Gut microbiota and health",
+      "Nutritional Studies and Diet"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
-      "The use of mobile apps to improve nutrition outcomes: A systematic literature review",
-      "A New Tool for Nutrition App Quality Evaluation (AQEL): Development, Validation, and Reliability Testing"
+      "Fat, fibre and cancer risk in African Americans and rural Africans"
     ],
-    "introduction_path": "Ruopeng An \u2192 Sharon M. Nickols\u2010Richardson \u2192 Karen Chapman\u2010Novakofski (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "introduction_path": "Ruopeng An \u2192 John W. Erdman \u2192 Lindsey K. Ly \u2192 H. Rex Gaskins \u2192 Franck G. Carbonero (4 co-authorship hops; acquaintance and willingness to introduce are unverified)",
     "path_ids": [
       "https://openalex.org/A5002313901",
-      "https://openalex.org/A5001585537",
-      "https://openalex.org/A5088418798"
+      "https://openalex.org/A5033908566",
+      "https://openalex.org/A5000839333",
+      "https://openalex.org/A5014700891",
+      "https://openalex.org/A5065876203"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_018",
@@ -542,26 +543,26 @@
       "Dementia and Cognitive Impairment Research",
       "Gut microbiota and health"
     ],
-    "candidate_name": "WILLIAM C. SULLIVAN",
+    "candidate_name": "Saravanan Devendran",
     "candidate_topics": [
-      "Educational Environments and Student Outcomes",
-      "Environmental Justice and Health Disparities",
-      "Facilities and Workplace Management",
-      "Place Attachment and Urban Studies",
-      "Urban Arborization and Environmental Studies"
+      "Animal Nutrition and Physiology",
+      "Clostridium difficile and Clostridium perfringens research",
+      "Drug Transport and Resistance Mechanisms",
+      "Enzyme Catalysis and Immobilization",
+      "Enzyme Production and Characterization"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
-      "A dose\u2013response curve describing the relationship between tree cover density and landscape preference",
-      "Impact of views to school landscapes on recovery from stress and mental fatigue"
+      "Identification and characterization of a 20\u03b2-HSDH from the anaerobic gut bacterium Butyricicoccus desmolans ATCC 43058",
+      "Identification of a gene encoding a flavoprotein involved in bile acid metabolism by the human gut bacterium Clostridium scindens ATCC 35704"
     ],
-    "introduction_path": "Ruopeng An \u2192 Dongying Li \u2192 WILLIAM C. SULLIVAN (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "introduction_path": "Ruopeng An \u2192 John W. Erdman \u2192 Saravanan Devendran (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
     "path_ids": [
       "https://openalex.org/A5002313901",
-      "https://openalex.org/A5031707610",
-      "https://openalex.org/A5011365072"
+      "https://openalex.org/A5033908566",
+      "https://openalex.org/A5010560377"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_019",
@@ -582,7 +583,7 @@
       "Extracellular vesicles in disease",
       "Genetic Mapping and Diversity in Plants and Animals"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
       "The pineapple genome and the evolution of CAM photosynthesis",
       "Plasma Exosomal miRNAs in Persons with and without Alzheimer Disease: Altered Expression and Prospects for Biomarkers"
@@ -594,7 +595,7 @@
       "https://openalex.org/A5000839333",
       "https://openalex.org/A5001434945"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_020",
@@ -613,7 +614,7 @@
       "Obesity, Physical Activity, Diet",
       "Physical Activity and Health"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
       "A comparative study of fruit and vegetable consumption and physical activity among adolescents in 49 Low-and-Middle-Income Countries"
     ],
@@ -624,7 +625,7 @@
       "https://openalex.org/A5013505213",
       "https://openalex.org/A5016351920"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_021",
@@ -637,27 +638,26 @@
       "Dementia and Cognitive Impairment Research",
       "Gut microbiota and health"
     ],
-    "candidate_name": "David M. B\u00fcchner",
+    "candidate_name": "Jason M. Ridlon",
     "candidate_topics": [
-      "Balance, Gait, and Falls Prevention",
-      "Context-Aware Activity Recognition Systems",
-      "Frailty in Older Adults",
-      "Nutrition, Health and Food Behavior",
-      "Obesity, Physical Activity, Diet"
+      "Animal Nutrition and Physiology",
+      "Cancer, Lipids, and Metabolism",
+      "Clostridium difficile and Clostridium perfringens research",
+      "Drug Transport and Resistance Mechanisms",
+      "Genetic factors in colorectal cancer"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
-      "Accelerometer\u2010Measured Physical Activity and Mortality in Women Aged 63 to 99",
-      "A comparative study of fruit and vegetable consumption and physical activity among adolescents in 49 Low-and-Middle-Income Countries"
+      "Taurocholic acid metabolism by gut microbes and colon cancer",
+      "Identification and characterization of a 20\u03b2-HSDH from the anaerobic gut bacterium Butyricicoccus desmolans ATCC 43058"
     ],
-    "introduction_path": "Ruopeng An \u2192 Jong Cheol Shin \u2192 Diana S. Grigsby\u2010Toussaint \u2192 David M. B\u00fcchner (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "introduction_path": "Ruopeng An \u2192 John W. Erdman \u2192 Jason M. Ridlon (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
     "path_ids": [
       "https://openalex.org/A5002313901",
-      "https://openalex.org/A5045816651",
-      "https://openalex.org/A5013505213",
-      "https://openalex.org/A5047169089"
+      "https://openalex.org/A5033908566",
+      "https://openalex.org/A5026366028"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_022",
@@ -670,26 +670,26 @@
       "Dementia and Cognitive Impairment Research",
       "Gut microbiota and health"
     ],
-    "candidate_name": "Saravanan Devendran",
+    "candidate_name": "Michael J. Miller",
     "candidate_topics": [
       "Animal Nutrition and Physiology",
-      "Clostridium difficile and Clostridium perfringens research",
-      "Drug Transport and Resistance Mechanisms",
-      "Enzyme Catalysis and Immobilization",
-      "Enzyme Production and Characterization"
+      "Bacteriophages and microbial interactions",
+      "Genomics, phytochemicals, and oxidative stress",
+      "Gut microbiota and health",
+      "Infant Nutrition and Health"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
-      "Identification and characterization of a 20\u03b2-HSDH from the anaerobic gut bacterium Butyricicoccus desmolans ATCC 43058",
-      "Identification of a gene encoding a flavoprotein involved in bile acid metabolism by the human gut bacterium Clostridium scindens ATCC 35704"
+      "Maternal fucosyltransferase 2 status affects the gut bifidobacterial communities of breastfed infants",
+      "Myrosinase-dependent and \u2013independent formation and control of isothiocyanate products of glucosinolate hydrolysis"
     ],
-    "introduction_path": "Ruopeng An \u2192 John W. Erdman \u2192 Saravanan Devendran (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "introduction_path": "Ruopeng An \u2192 Sharon Marie Donovan \u2192 Michael J. Miller (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
     "path_ids": [
       "https://openalex.org/A5002313901",
-      "https://openalex.org/A5033908566",
-      "https://openalex.org/A5010560377"
+      "https://openalex.org/A5049145231",
+      "https://openalex.org/A5007697293"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_023",
@@ -702,25 +702,25 @@
       "Dementia and Cognitive Impairment Research",
       "Gut microbiota and health"
     ],
-    "candidate_name": "Franck G. Carbonero",
+    "candidate_name": "Ann C. Benefiel",
     "candidate_topics": [
       "Food composition and properties",
       "Gut microbiota and health",
       "Nutritional Studies and Diet"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
       "Fat, fibre and cancer risk in African Americans and rural Africans"
     ],
-    "introduction_path": "Ruopeng An \u2192 John W. Erdman \u2192 Lindsey K. Ly \u2192 H. Rex Gaskins \u2192 Franck G. Carbonero (4 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "introduction_path": "Ruopeng An \u2192 John W. Erdman \u2192 Lindsey K. Ly \u2192 H. Rex Gaskins \u2192 Ann C. Benefiel (4 co-authorship hops; acquaintance and willingness to introduce are unverified)",
     "path_ids": [
       "https://openalex.org/A5002313901",
       "https://openalex.org/A5033908566",
       "https://openalex.org/A5000839333",
       "https://openalex.org/A5014700891",
-      "https://openalex.org/A5065876203"
+      "https://openalex.org/A5057095314"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_024",
@@ -741,7 +741,7 @@
       "Gut microbiota and health",
       "Inflammatory Bowel Disease"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
       "Fat, fibre and cancer risk in African Americans and rural Africans",
       "Relationship Between Microbiota of the Colonic Mucosa vs Feces and Symptoms, Colonic Transit, and Methane Production in Female Patients With Chronic Constipation"
@@ -753,7 +753,7 @@
       "https://openalex.org/A5000839333",
       "https://openalex.org/A5014700891"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_025",
@@ -772,7 +772,7 @@
       "Gut microbiota and health",
       "Nutritional Studies and Diet"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
       "Race-dependent association of sulfidogenic bacteria with colorectal cancer"
     ],
@@ -783,7 +783,7 @@
       "https://openalex.org/A5011316965",
       "https://openalex.org/A5000152935"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_026",
@@ -796,24 +796,24 @@
       "Advanced Materials and Mechanics",
       "Advanced Sensor and Energy Harvesting Materials"
     ],
-    "candidate_name": "Heriberto Flores-Zuleta",
+    "candidate_name": "Ujjal Das",
     "candidate_topics": [
       "Advanced Battery Materials and Technologies",
-      "Advancements in Battery Materials",
-      "Electrochemical Analysis and Applications"
+      "Advanced Battery Technologies Research",
+      "Advancements in Battery Materials"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
-      "Probing the reversibility and kinetics of Li + during SEI formation and (de)intercalation on edge plane graphite using ion-sensitive scanning electrochemical microscopy"
+      "Role of Manganese Deposition on Graphite in the Capacity Fading of Lithium Ion Batteries"
     ],
-    "introduction_path": "Paul V. Braun \u2192 Jianjun Cheng \u2192 Joaqu\u00edn Rodr\u00edguez\u2010L\u00f3pez \u2192 Heriberto Flores-Zuleta (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "introduction_path": "Paul V. Braun \u2192 Andrew A. Gewirth \u2192 Larry A. Curtiss \u2192 Ujjal Das (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
     "path_ids": [
       "https://openalex.org/A5040320137",
-      "https://openalex.org/A5010902410",
-      "https://openalex.org/A5007986677",
-      "https://openalex.org/A5027415377"
+      "https://openalex.org/A5021345935",
+      "https://openalex.org/A5058864798",
+      "https://openalex.org/A5018529571"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_027",
@@ -826,26 +826,26 @@
       "Advanced Materials and Mechanics",
       "Advanced Sensor and Energy Harvesting Materials"
     ],
-    "candidate_name": "Joselle M. McCracken",
+    "candidate_name": "Zheng Yan",
     "candidate_topics": [
-      "3D Printing in Biomedical Research",
+      "Additive Manufacturing and 3D Printing Technologies",
       "Advanced MEMS and NEMS Technologies",
       "Advanced Materials and Mechanics",
-      "Cellular Mechanics and Interactions",
-      "Hydrogels: synthesis, properties, applications"
+      "Advanced Sensor and Energy Harvesting Materials",
+      "Cellular and Composite Structures"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
       "Assembly of micro/nanomaterials into complex, three-dimensional architectures by compressive buckling",
-      "Programming Mechanical and Physicochemical Properties of 3D Hydrogel Cellular Microcultures via Direct Ink Writing"
+      "A mechanically driven form of Kirigami as a route to 3D mesostructures in micro/nanomembranes"
     ],
-    "introduction_path": "Paul V. Braun \u2192 Mikhail E. Kandel \u2192 Joselle M. McCracken (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "introduction_path": "Paul V. Braun \u2192 Yiyue Luo \u2192 Zheng Yan (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
     "path_ids": [
       "https://openalex.org/A5040320137",
-      "https://openalex.org/A5004021726",
-      "https://openalex.org/A5059414563"
+      "https://openalex.org/A5007246518",
+      "https://openalex.org/A5036017595"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_028",
@@ -864,7 +864,7 @@
       "Graphene research and applications",
       "Supercapacitor Materials and Fabrication"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
       "Layer Number Dependence of Li+ Intercalation on Few-Layer Graphene and Electrochemical Imaging of Its Solid\u2013Electrolyte Interphase Evolution"
     ],
@@ -875,7 +875,7 @@
       "https://openalex.org/A5007986677",
       "https://openalex.org/A5100363740"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_029",
@@ -888,24 +888,24 @@
       "Advanced Materials and Mechanics",
       "Advanced Sensor and Energy Harvesting Materials"
     ],
-    "candidate_name": "Philip R. Barnett",
+    "candidate_name": "Heriberto Flores-Zuleta",
     "candidate_topics": [
-      "Advanced Battery Technologies Research",
-      "Heat Transfer and Optimization",
-      "Thermal properties of materials"
+      "Advanced Battery Materials and Technologies",
+      "Advancements in Battery Materials",
+      "Electrochemical Analysis and Applications"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
-      "Carbon fiber composites with 2D microvascular networks for battery cooling"
+      "Probing the reversibility and kinetics of Li + during SEI formation and (de)intercalation on edge plane graphite using ion-sensitive scanning electrochemical microscopy"
     ],
-    "introduction_path": "Paul V. Braun \u2192 Ji Ho Shin \u2192 Scott R. White \u2192 Philip R. Barnett (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "introduction_path": "Paul V. Braun \u2192 Jianjun Cheng \u2192 Joaqu\u00edn Rodr\u00edguez\u2010L\u00f3pez \u2192 Heriberto Flores-Zuleta (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
     "path_ids": [
       "https://openalex.org/A5040320137",
-      "https://openalex.org/A5006184738",
-      "https://openalex.org/A5005620680",
-      "https://openalex.org/A5027616541"
+      "https://openalex.org/A5010902410",
+      "https://openalex.org/A5007986677",
+      "https://openalex.org/A5027415377"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_030",
@@ -924,7 +924,7 @@
       "Advancements in Battery Materials",
       "Electrochemical Analysis and Applications"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
       "Probing the reversibility and kinetics of Li + during SEI formation and (de)intercalation on edge plane graphite using ion-sensitive scanning electrochemical microscopy"
     ],
@@ -935,7 +935,7 @@
       "https://openalex.org/A5007986677",
       "https://openalex.org/A5087466524"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_031",
@@ -954,7 +954,7 @@
       "Advanced Battery Technologies Research",
       "Advancements in Battery Materials"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
       "Role of Manganese Deposition on Graphite in the Capacity Fading of Lithium Ion Batteries"
     ],
@@ -965,7 +965,7 @@
       "https://openalex.org/A5058864798",
       "https://openalex.org/A5009510433"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_032",
@@ -978,26 +978,26 @@
       "Advanced Materials and Mechanics",
       "Advanced Sensor and Energy Harvesting Materials"
     ],
-    "candidate_name": "Bong Hoon Kim",
+    "candidate_name": "Kyung\u2010In Jang",
     "candidate_topics": [
-      "Advanced Drug Delivery Systems",
       "Advanced Materials and Mechanics",
       "Advanced Sensor and Energy Harvesting Materials",
-      "Electrohydrodynamics and Fluid Dynamics",
+      "Elasticity and Material Modeling",
+      "Microfluidic and Capillary Electrophoresis Applications",
       "Nanomaterials and Printing Technologies"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
-      "High-Resolution Patterns of Quantum Dots Formed by Electrohydrodynamic Jet Printing for Light-Emitting Diodes",
-      "Biological lipid membranes for on-demand, wireless drug delivery from thin, bioresorbable electronic implants"
+      "Assembly of micro/nanomaterials into complex, three-dimensional architectures by compressive buckling",
+      "Soft, stretchable, fully implantable miniaturized optoelectronic systems for wireless optogenetics"
     ],
-    "introduction_path": "Paul V. Braun \u2192 Ji Ho Shin \u2192 Bong Hoon Kim (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "introduction_path": "Paul V. Braun \u2192 Yonggang Y. Huang \u2192 Kyung\u2010In Jang (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
     "path_ids": [
       "https://openalex.org/A5040320137",
-      "https://openalex.org/A5006184738",
-      "https://openalex.org/A5074378883"
+      "https://openalex.org/A5011255000",
+      "https://openalex.org/A5072065388"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_033",
@@ -1010,24 +1010,26 @@
       "Advanced Materials and Mechanics",
       "Advanced Sensor and Energy Harvesting Materials"
     ],
-    "candidate_name": "Ujjal Das",
+    "candidate_name": "Philipp Gutruf",
     "candidate_topics": [
-      "Advanced Battery Materials and Technologies",
-      "Advanced Battery Technologies Research",
-      "Advancements in Battery Materials"
+      "Advanced MEMS and NEMS Technologies",
+      "Advanced Materials and Mechanics",
+      "Advanced Sensor and Energy Harvesting Materials",
+      "MXene and MAX Phase Materials",
+      "Nanofabrication and Lithography Techniques"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
-      "Role of Manganese Deposition on Graphite in the Capacity Fading of Lithium Ion Batteries"
+      "Miniaturized Battery\u2010Free Wireless Systems for Wearable Pulse Oximetry",
+      "Mechanical assembly of complex, 3D mesostructures from releasable multilayers of advanced materials"
     ],
-    "introduction_path": "Paul V. Braun \u2192 Andrew A. Gewirth \u2192 Larry A. Curtiss \u2192 Ujjal Das (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "introduction_path": "Paul V. Braun \u2192 Yonggang Y. Huang \u2192 Philipp Gutruf (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
     "path_ids": [
       "https://openalex.org/A5040320137",
-      "https://openalex.org/A5021345935",
-      "https://openalex.org/A5058864798",
-      "https://openalex.org/A5018529571"
+      "https://openalex.org/A5011255000",
+      "https://openalex.org/A5017456629"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_034",
@@ -1048,7 +1050,7 @@
       "Neuroscience and Neural Engineering",
       "Non-Invasive Vital Sign Monitoring"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
       "High-Resolution Patterns of Quantum Dots Formed by Electrohydrodynamic Jet Printing for Light-Emitting Diodes",
       "Miniaturized Flexible Electronic Systems with Wireless Power and Near\u2010Field Communication Capabilities"
@@ -1059,7 +1061,7 @@
       "https://openalex.org/A5011255000",
       "https://openalex.org/A5106822982"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_035",
@@ -1078,7 +1080,7 @@
       "Advanced Battery Technologies Research",
       "Advancements in Battery Materials"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
       "Role of Manganese Deposition on Graphite in the Capacity Fading of Lithium Ion Batteries"
     ],
@@ -1089,7 +1091,7 @@
       "https://openalex.org/A5058864798",
       "https://openalex.org/A5012401237"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_036",
@@ -1110,7 +1112,7 @@
       "Thermal properties of materials",
       "Topology Optimization in Engineering"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
       "Gradient-based design of actively-cooled microvascular composite panels",
       "Carbon fiber composites with 2D microvascular networks for battery cooling"
@@ -1122,7 +1124,7 @@
       "https://openalex.org/A5005620680",
       "https://openalex.org/A5010259829"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_037",
@@ -1142,7 +1144,7 @@
       "Advancements in Battery Materials",
       "Microstructure and mechanical properties"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
       "High damage tolerance of electrochemically lithiated silicon",
       "Molecular dynamics simulations of plasticity and cracking in lithiated silicon electrodes"
@@ -1155,7 +1157,7 @@
       "https://openalex.org/A5034381555",
       "https://openalex.org/A5100324819"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_038",
@@ -1174,7 +1176,7 @@
       "Advanced Battery Technologies Research",
       "Advancements in Battery Materials"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
       "Role of Manganese Deposition on Graphite in the Capacity Fading of Lithium Ion Batteries"
     ],
@@ -1185,7 +1187,7 @@
       "https://openalex.org/A5058864798",
       "https://openalex.org/A5103242318"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_039",
@@ -1198,26 +1200,26 @@
       "Advanced Materials and Mechanics",
       "Advanced Sensor and Energy Harvesting Materials"
     ],
-    "candidate_name": "Kyung\u2010In Jang",
+    "candidate_name": "Joselle M. McCracken",
     "candidate_topics": [
+      "3D Printing in Biomedical Research",
+      "Advanced MEMS and NEMS Technologies",
       "Advanced Materials and Mechanics",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Elasticity and Material Modeling",
-      "Microfluidic and Capillary Electrophoresis Applications",
-      "Nanomaterials and Printing Technologies"
+      "Cellular Mechanics and Interactions",
+      "Hydrogels: synthesis, properties, applications"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
       "Assembly of micro/nanomaterials into complex, three-dimensional architectures by compressive buckling",
-      "Soft, stretchable, fully implantable miniaturized optoelectronic systems for wireless optogenetics"
+      "Programming Mechanical and Physicochemical Properties of 3D Hydrogel Cellular Microcultures via Direct Ink Writing"
     ],
-    "introduction_path": "Paul V. Braun \u2192 Yonggang Y. Huang \u2192 Kyung\u2010In Jang (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "introduction_path": "Paul V. Braun \u2192 Mikhail E. Kandel \u2192 Joselle M. McCracken (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
     "path_ids": [
       "https://openalex.org/A5040320137",
-      "https://openalex.org/A5011255000",
-      "https://openalex.org/A5072065388"
+      "https://openalex.org/A5004021726",
+      "https://openalex.org/A5059414563"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_040",
@@ -1230,26 +1232,24 @@
       "Advanced Materials and Mechanics",
       "Advanced Sensor and Energy Harvesting Materials"
     ],
-    "candidate_name": "Zheng Yan",
+    "candidate_name": "Philip R. Barnett",
     "candidate_topics": [
-      "Additive Manufacturing and 3D Printing Technologies",
-      "Advanced MEMS and NEMS Technologies",
-      "Advanced Materials and Mechanics",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Cellular and Composite Structures"
+      "Advanced Battery Technologies Research",
+      "Heat Transfer and Optimization",
+      "Thermal properties of materials"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
-      "Assembly of micro/nanomaterials into complex, three-dimensional architectures by compressive buckling",
-      "A mechanically driven form of Kirigami as a route to 3D mesostructures in micro/nanomembranes"
+      "Carbon fiber composites with 2D microvascular networks for battery cooling"
     ],
-    "introduction_path": "Paul V. Braun \u2192 Yiyue Luo \u2192 Zheng Yan (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "introduction_path": "Paul V. Braun \u2192 Ji Ho Shin \u2192 Scott R. White \u2192 Philip R. Barnett (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
     "path_ids": [
       "https://openalex.org/A5040320137",
-      "https://openalex.org/A5007246518",
-      "https://openalex.org/A5036017595"
+      "https://openalex.org/A5006184738",
+      "https://openalex.org/A5005620680",
+      "https://openalex.org/A5027616541"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_041",
@@ -1262,27 +1262,26 @@
       "Antimicrobial Peptides and Activities",
       "Antimicrobial agents and applications"
     ],
-    "candidate_name": "Jiayu Leong",
+    "candidate_name": "Randy H. Ewoldt",
     "candidate_topics": [
-      "Advanced Drug Delivery Systems",
-      "Advanced Polymer Synthesis and Characterization",
-      "Bacterial biofilms and quorum sensing",
-      "Dendrimers and Hyperbranched Polymers",
-      "Diatoms and Algae Research"
+      "3D Printing in Biomedical Research",
+      "Advanced Materials and Mechanics",
+      "Cellular Mechanics and Interactions",
+      "Control Systems and Identification",
+      "Elasticity and Material Modeling"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
-      "Engineering Polymersomes for Diagnostics and Therapy",
-      "Disease-directed design of biodegradable polymers: Reactive oxygen species and pH-responsive micellar nanoparticles for anticancer drug delivery"
+      "Constitutive model fingerprints in medium-amplitude oscillatory shear",
+      "Quantitative rheological model selection: Good fits versus credible models using Bayesian inference"
     ],
-    "introduction_path": "Jianjun Cheng \u2192 Steven C. Zimmerman \u2192 Hyunjoon Kong \u2192 Jiayu Leong (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "introduction_path": "Jianjun Cheng \u2192 Joaqu\u00edn Rodr\u00edguez\u2010L\u00f3pez \u2192 Randy H. Ewoldt (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
     "path_ids": [
       "https://openalex.org/A5010902410",
-      "https://openalex.org/A5052747722",
-      "https://openalex.org/A5058397377",
-      "https://openalex.org/A5031899418"
+      "https://openalex.org/A5007986677",
+      "https://openalex.org/A5031482147"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_042",
@@ -1295,26 +1294,27 @@
       "Antimicrobial Peptides and Activities",
       "Antimicrobial agents and applications"
     ],
-    "candidate_name": "Andrew A. Gewirth",
+    "candidate_name": "Santosh Kumar Misra",
     "candidate_topics": [
-      "Advanced Battery Materials and Technologies",
-      "Advanced Battery Technologies Research",
-      "Advanced battery technologies research",
-      "Advancements in Battery Materials",
-      "CO2 Reduction Techniques and Catalysts"
+      "Advanced biosensing and bioanalysis techniques",
+      "Biosensors and Analytical Detection",
+      "Carbon and Quantum Dots Applications",
+      "Electrochemical sensors and biosensors",
+      "Graphene and Nanomaterials Applications"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
-      "The Interplay of Al and Mg Speciation in Advanced Mg Battery Electrolyte Solutions",
-      "High Activity Oxygen Evolution Reaction Catalysts from Additive-Controlled Electrodeposited Ni and NiFe Films"
+      "Trimodal Therapy: Combining Hyperthermia with Repurposed Bexarotene and Ultrasound for Treating Liver Cancer",
+      "Regulating Biocompatibility of Carbon Spheres via Defined Nanoscale Chemistry and a Careful Selection of Surface Functionalities"
     ],
-    "introduction_path": "Jianjun Cheng \u2192 Lingyang Zhu \u2192 Andrew A. Gewirth (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "introduction_path": "Jianjun Cheng \u2192 Lawrence W. Dobrucki \u2192 Hailey J. Knox \u2192 Santosh Kumar Misra (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
     "path_ids": [
       "https://openalex.org/A5010902410",
-      "https://openalex.org/A5019036156",
-      "https://openalex.org/A5021345935"
+      "https://openalex.org/A5004490629",
+      "https://openalex.org/A5040049671",
+      "https://openalex.org/A5018760782"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_043",
@@ -1335,7 +1335,7 @@
       "Coronary Interventions and Diagnostics",
       "Diamond and Carbon-based Materials Research"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
       "Functional carbon nanodots for multiscale imaging and therapy",
       "Hyperspectral Imaging Offers Visual and Quantitative Evidence of Drug Release from Zwitterionic\u2010Phospholipid\u2010Nanocarbon When Concurrently Tracked in 3D Intracellular Space"
@@ -1347,7 +1347,7 @@
       "https://openalex.org/A5040049671",
       "https://openalex.org/A5076942007"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_044",
@@ -1368,7 +1368,7 @@
       "Electrohydrodynamics and Fluid Dynamics",
       "Nanomaterials and Printing Technologies"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
       "High-Resolution Patterns of Quantum Dots Formed by Electrohydrodynamic Jet Printing for Light-Emitting Diodes",
       "Biological lipid membranes for on-demand, wireless drug delivery from thin, bioresorbable electronic implants"
@@ -1379,7 +1379,7 @@
       "https://openalex.org/A5006184738",
       "https://openalex.org/A5074378883"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_045",
@@ -1400,7 +1400,7 @@
       "Elasticity and Material Modeling",
       "Electrohydrodynamics and Fluid Dynamics"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
       "Soft network composite materials with deterministic and bio-inspired designs",
       "High-Resolution Patterns of Quantum Dots Formed by Electrohydrodynamic Jet Printing for Light-Emitting Diodes"
@@ -1411,7 +1411,7 @@
       "https://openalex.org/A5022223514",
       "https://openalex.org/A5006572968"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_046",
@@ -1432,7 +1432,7 @@
       "Chemical Synthesis and Analysis",
       "Microbial Natural Products and Biosynthesis"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
       "Structure\u2013Activity Relationships of the S-Linked Glycocin Sublancin",
       "Investigations into the Mechanism of Action of Sublancin"
@@ -1445,7 +1445,7 @@
       "https://openalex.org/A5014465828",
       "https://openalex.org/A5080885123"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_047",
@@ -1458,27 +1458,26 @@
       "Antimicrobial Peptides and Activities",
       "Antimicrobial agents and applications"
     ],
-    "candidate_name": "Santosh Kumar Misra",
+    "candidate_name": "Dae Seung Wie",
     "candidate_topics": [
-      "Advanced biosensing and bioanalysis techniques",
-      "Biosensors and Analytical Detection",
-      "Carbon and Quantum Dots Applications",
-      "Electrochemical sensors and biosensors",
-      "Graphene and Nanomaterials Applications"
+      "Advanced MEMS and NEMS Technologies",
+      "Advanced Sensor and Energy Harvesting Materials",
+      "Electrowetting and Microfluidic Technologies",
+      "Nanomaterials and Printing Technologies",
+      "Neuroscience and Neural Engineering"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
-      "Trimodal Therapy: Combining Hyperthermia with Repurposed Bexarotene and Ultrasound for Treating Liver Cancer",
-      "Regulating Biocompatibility of Carbon Spheres via Defined Nanoscale Chemistry and a Careful Selection of Surface Functionalities"
+      "Thermally Triggered Degradation of Transient Electronic Devices",
+      "Biodegradable Thin Metal Foils and Spin\u2010On Glass Materials for Transient Electronics"
     ],
-    "introduction_path": "Jianjun Cheng \u2192 Lawrence W. Dobrucki \u2192 Hailey J. Knox \u2192 Santosh Kumar Misra (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "introduction_path": "Jianjun Cheng \u2192 Scott R. White \u2192 Dae Seung Wie (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
     "path_ids": [
       "https://openalex.org/A5010902410",
-      "https://openalex.org/A5004490629",
-      "https://openalex.org/A5040049671",
-      "https://openalex.org/A5018760782"
+      "https://openalex.org/A5005620680",
+      "https://openalex.org/A5009139113"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_048",
@@ -1499,7 +1498,7 @@
       "Nanoplatforms for cancer theranostics",
       "Ultrasound and Hyperthermia Applications"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
       "Trimodal Therapy: Combining Hyperthermia with Repurposed Bexarotene and Ultrasound for Treating Liver Cancer",
       "3D\u2010Printed Multidrug\u2010Eluting Stent from Graphene\u2010Nanoplatelet\u2010Doped Biodegradable Polymer Composite"
@@ -1511,7 +1510,7 @@
       "https://openalex.org/A5055819205",
       "https://openalex.org/A5007993855"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_049",
@@ -1532,7 +1531,7 @@
       "Nanoparticle-Based Drug Delivery",
       "Tissue Engineering and Regenerative Medicine"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
       "Engineering Polymersomes for Diagnostics and Therapy",
       "Surface tethering of stem cells with H2O2-responsive anti-oxidizing colloidal particles for protection against oxidation-induced death"
@@ -1544,42 +1543,10 @@
       "https://openalex.org/A5058397377",
       "https://openalex.org/A5103989066"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_050",
-    "seed_id": "https://openalex.org/A5010902410",
-    "seed_name": "Jianjun Cheng",
-    "seed_department": "Community 4",
-    "seed_topics": [
-      "Advanced Drug Delivery Systems",
-      "Advanced Polymer Synthesis and Characterization",
-      "Antimicrobial Peptides and Activities",
-      "Antimicrobial agents and applications"
-    ],
-    "candidate_name": "Kyung\u2010In Jang",
-    "candidate_topics": [
-      "Advanced Materials and Mechanics",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Elasticity and Material Modeling",
-      "Microfluidic and Capillary Electrophoresis Applications",
-      "Nanomaterials and Printing Technologies"
-    ],
-    "model_version": "proposal-path-v2",
-    "sample_papers": [
-      "Assembly of micro/nanomaterials into complex, three-dimensional architectures by compressive buckling",
-      "Soft, stretchable, fully implantable miniaturized optoelectronic systems for wireless optogenetics"
-    ],
-    "introduction_path": "Jianjun Cheng \u2192 Daniel V. Harburg \u2192 Kyung\u2010In Jang (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
-    "path_ids": [
-      "https://openalex.org/A5010902410",
-      "https://openalex.org/A5022223514",
-      "https://openalex.org/A5072065388"
-    ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
-  },
-  {
-    "card_id": "CARD_051",
     "seed_id": "https://openalex.org/A5010902410",
     "seed_name": "Jianjun Cheng",
     "seed_department": "Community 4",
@@ -1597,7 +1564,7 @@
       "Microbial Natural Products and Biosynthesis",
       "RNA Interference and Gene Delivery"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
       "Rapid Screening of Lanthipeptide Analogs via In-Colony Removal of Leader Peptides in Escherichia coli",
       "An efficient gene knock-in strategy using 5\u2032-modified double-stranded DNA donors with short homology arms"
@@ -1609,7 +1576,40 @@
       "https://openalex.org/A5006238710",
       "https://openalex.org/A5046237702"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
+  },
+  {
+    "card_id": "CARD_051",
+    "seed_id": "https://openalex.org/A5010902410",
+    "seed_name": "Jianjun Cheng",
+    "seed_department": "Community 4",
+    "seed_topics": [
+      "Advanced Drug Delivery Systems",
+      "Advanced Polymer Synthesis and Characterization",
+      "Antimicrobial Peptides and Activities",
+      "Antimicrobial agents and applications"
+    ],
+    "candidate_name": "Jiayu Leong",
+    "candidate_topics": [
+      "Advanced Drug Delivery Systems",
+      "Advanced Polymer Synthesis and Characterization",
+      "Bacterial biofilms and quorum sensing",
+      "Dendrimers and Hyperbranched Polymers",
+      "Diatoms and Algae Research"
+    ],
+    "model_version": "proposal-path-v3-common-neighbors",
+    "sample_papers": [
+      "Engineering Polymersomes for Diagnostics and Therapy",
+      "Disease-directed design of biodegradable polymers: Reactive oxygen species and pH-responsive micellar nanoparticles for anticancer drug delivery"
+    ],
+    "introduction_path": "Jianjun Cheng \u2192 Steven C. Zimmerman \u2192 Hyunjoon Kong \u2192 Jiayu Leong (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5010902410",
+      "https://openalex.org/A5052747722",
+      "https://openalex.org/A5058397377",
+      "https://openalex.org/A5031899418"
+    ],
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_052",
@@ -1622,26 +1622,26 @@
       "Antimicrobial Peptides and Activities",
       "Antimicrobial agents and applications"
     ],
-    "candidate_name": "Randy H. Ewoldt",
+    "candidate_name": "Andrew A. Gewirth",
     "candidate_topics": [
-      "3D Printing in Biomedical Research",
-      "Advanced Materials and Mechanics",
-      "Cellular Mechanics and Interactions",
-      "Control Systems and Identification",
-      "Elasticity and Material Modeling"
+      "Advanced Battery Materials and Technologies",
+      "Advanced Battery Technologies Research",
+      "Advanced battery technologies research",
+      "Advancements in Battery Materials",
+      "CO2 Reduction Techniques and Catalysts"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
-      "Constitutive model fingerprints in medium-amplitude oscillatory shear",
-      "Quantitative rheological model selection: Good fits versus credible models using Bayesian inference"
+      "The Interplay of Al and Mg Speciation in Advanced Mg Battery Electrolyte Solutions",
+      "High Activity Oxygen Evolution Reaction Catalysts from Additive-Controlled Electrodeposited Ni and NiFe Films"
     ],
-    "introduction_path": "Jianjun Cheng \u2192 Joaqu\u00edn Rodr\u00edguez\u2010L\u00f3pez \u2192 Randy H. Ewoldt (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "introduction_path": "Jianjun Cheng \u2192 Lingyang Zhu \u2192 Andrew A. Gewirth (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
     "path_ids": [
       "https://openalex.org/A5010902410",
-      "https://openalex.org/A5007986677",
-      "https://openalex.org/A5031482147"
+      "https://openalex.org/A5019036156",
+      "https://openalex.org/A5021345935"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_053",
@@ -1662,7 +1662,7 @@
       "Catalysis for Biomass Conversion",
       "Enzyme Catalysis and Immobilization"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
       "Recent advances in biological production of sugar alcohols",
       "Simultaneous Utilization of Cellobiose, Xylose, and Acetic Acid from Lignocellulosic Biomass for Biofuel Production by an Engineered Yeast Platform"
@@ -1674,7 +1674,7 @@
       "https://openalex.org/A5022751421",
       "https://openalex.org/A5101879859"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_054",
@@ -1695,7 +1695,7 @@
       "Genomics, phytochemicals, and oxidative stress",
       "Glutathione Transferases and Polymorphisms"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
       "Influence of Epicuticular Physicochemical Properties on Porcine Rotavirus Adsorption to 24 Leafy Green Vegetables and Tomatoes",
       "Correlation of Quinone Reductase Activity and Allyl Isothiocyanate Formation Among Different Genotypes and Grades of Horseradish Roots"
@@ -1706,7 +1706,7 @@
       "https://openalex.org/A5000650931",
       "https://openalex.org/A5028984028"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_055",
@@ -1727,7 +1727,7 @@
       "Plant biochemistry and biosynthesis",
       "Probiotics and Fermented Foods"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
       "Metabolic Engineering of Probiotic Saccharomyces boulardii",
       "Improved squalene production through increasing lipid contents in Saccharomyces cerevisiae"
@@ -1739,7 +1739,7 @@
       "https://openalex.org/A5006621494",
       "https://openalex.org/A5100442576"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_056",
@@ -1752,26 +1752,26 @@
       "Climate change impacts on agriculture",
       "Crop Yield and Soil Fertility"
     ],
-    "candidate_name": "\u0411\u043e \u041b\u0438",
+    "candidate_name": "Sibo Wang",
     "candidate_topics": [
-      "Antimicrobial Peptides and Activities",
-      "Chemical Synthesis and Analysis",
-      "Climate change impacts on agriculture",
-      "Microbial Natural Products and Biosynthesis",
-      "Remote Sensing in Agriculture"
+      "Advanced Neural Network Applications",
+      "Astronomical Observations and Instrumentation",
+      "Astrophysical Phenomena and Observations",
+      "Galaxies: Formation, Evolution, Phenomena",
+      "Gamma-ray bursts and supernovae"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
-      "Two Flavoenzymes Catalyze the Post-Translational Generation of 5-Chlorotryptophan and 2-Aminovinyl-Cysteine during NAI-107 Biosynthesis",
-      "Toward building a transparent statistical model for improving crop yield prediction: Modeling rainfed corn in the U.S"
+      "Detecting In-Season Crop Nitrogen Stress of Corn for Field Trials Using UAV- and CubeSat-Based Multispectral Sensing",
+      "Deep learning at scale for the construction of galaxy catalogs in the Dark Energy Survey"
     ],
-    "introduction_path": "Stephen P. Long \u2192 Kaiyu Guan \u2192 \u0411\u043e \u041b\u0438 (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "introduction_path": "Stephen P. Long \u2192 Shaowen Wang \u2192 Sibo Wang (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
     "path_ids": [
       "https://openalex.org/A5074295593",
-      "https://openalex.org/A5053935458",
-      "https://openalex.org/A5100738534"
+      "https://openalex.org/A5026042163",
+      "https://openalex.org/A5100736049"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_057",
@@ -1792,7 +1792,7 @@
       "Fungal and yeast genetics research",
       "Microbial Metabolic Engineering and Bioproduction"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
       "Production of biofuels and chemicals from xylose using native and engineered yeast strains",
       "Biosynthesis of a Functional Human Milk Oligosaccharide, 2\u2032-Fucosyllactose, and l -Fucose Using Engineered Saccharomyces cerevisiae"
@@ -1804,7 +1804,7 @@
       "https://openalex.org/A5022751421",
       "https://openalex.org/A5109166086"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_058",
@@ -1825,7 +1825,7 @@
       "Lipid metabolism and biosynthesis",
       "Microbial Metabolic Engineering and Bioproduction"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
       "Enhanced isoprenoid production f rom xylose by engineered Saccharomyces cerevisiae",
       "Glucose repression can be alleviated by reducing glucose phosphorylation rate in Saccharomyces cerevisiae"
@@ -1837,7 +1837,7 @@
       "https://openalex.org/A5022751421",
       "https://openalex.org/A5072987212"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_059",
@@ -1858,7 +1858,7 @@
       "Adversarial Robustness in Machine Learning",
       "Agricultural Engineering and Mechanization"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
       "Research and development in agricultural robotics: A perspective of digital farming",
       "Robust Deep Reinforcement Learning with Adversarial Attacks"
@@ -1869,7 +1869,7 @@
       "https://openalex.org/A5026042163",
       "https://openalex.org/A5073739058"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_060",
@@ -1890,7 +1890,7 @@
       "Microbial Metabolic Engineering and Bioproduction",
       "Plant biochemistry and biosynthesis"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
       "PHO13 deletion-induced transcriptional activation prevents sedoheptulose accumulation during xylose metabolism in engineered Saccharomyces cerevisiae",
       "Enhanced isoprenoid production f rom xylose by engineered Saccharomyces cerevisiae"
@@ -1902,7 +1902,7 @@
       "https://openalex.org/A5022751421",
       "https://openalex.org/A5057259259"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_061",
@@ -1921,7 +1921,7 @@
       "Greenhouse Technology and Climate Control",
       "Smart Agriculture and AI"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
       "Use of computational modeling combined with advanced visualization to develop strategies for the design of crop ideotypes to address food security"
     ],
@@ -1931,7 +1931,7 @@
       "https://openalex.org/A5073183275",
       "https://openalex.org/A5010579391"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_062",
@@ -1952,7 +1952,7 @@
       "Remote Sensing in Agriculture",
       "Soil Carbon and Nitrogen Dynamics"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
       "Crop Rotation and Tillage Effects on Soil Physical and Chemical Properties in Illinois",
       "Corn residue, tillage, and nitrogen rate effects on soil properties"
@@ -1963,7 +1963,7 @@
       "https://openalex.org/A5026042163",
       "https://openalex.org/A5091431112"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   },
   {
     "card_id": "CARD_063",
@@ -1982,7 +1982,7 @@
       "Fungal and yeast genetics research",
       "Microbial Metabolic Engineering and Bioproduction"
     ],
-    "model_version": "proposal-path-v2",
+    "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
       "PHO13 deletion-induced transcriptional activation prevents sedoheptulose accumulation during xylose metabolism in engineered Saccharomyces cerevisiae"
     ],
@@ -1994,6 +1994,6 @@
       "https://openalex.org/A5057259259",
       "https://openalex.org/A5013830080"
     ],
-    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
   }
 ]

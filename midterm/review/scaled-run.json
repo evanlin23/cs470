@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "model_version": "proposal-path-v2",
+  "model_version": "proposal-path-v3-common-neighbors",
   "dataset_file": "uiuc_data_scaled.json",
   "dataset_sha256": "91e02ba3a40d5e59af5b9d718689fe50fa0521c4269ca84b3852168597435e48",
   "source_sha256": {
-    "model.py": "12ec17ed99bb2dd27d15f3b3667e7652ab0b709c123df2d5c86feeeee2f7b0d3",
-    "backtest.py": "ee70d42365273297ef59bdae6504cec3b1901ef4147efe560954727798226d5f"
+    "model.py": "9c0680c43e6c8142a04ab83e92ef8c58008670ce3f1425c78d4483c111b2af2d",
+    "backtest.py": "f7881f16cd686e046332fed41910831e69cc49dfa9b76dc8368b1ac65a947b98"
   },
   "runtime": {
     "python": "3.12.14",
@@ -22,7 +22,6 @@
   "eligible_seeds": 1369,
   "split_year": 2019,
   "louvain_seed": 42,
-  "betweenness_seed": 42,
   "tie_break": "author_id",
   "weights": {
     "topic": 1.0,
@@ -33,10 +32,10 @@
   "edge_weight": "joint_paper_count",
   "baseline_pools": {
     "Topic-Only": "reachable cross-community distance >=3",
-    "Triadic Closure (Adamic-Adar)": "native shared-contact cross-community",
-    "popularity_and_betweenness": "all non-coauthor cross-community"
+    "Triadic Closure": "native shared-contact cross-community",
+    "triadic_closure_score": "number of shared coauthors"
   },
   "ground_truth": "all new cross-community ties among training nodes",
   "result_file": "backtest_results_scaled.json",
-  "result_sha256": "e71ed547000afe422e67507c506d75fff980d08f1798aacdaaec5e9d483d4328"
+  "result_sha256": "acef5c67e27df1e348e88d279f92f846ec2522310525a7ef311119c2fd785ed4"
 }

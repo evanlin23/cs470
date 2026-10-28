@@ -1,10 +1,10 @@
 # Proposal-aligned prototype validation
 
-Current model: `proposal-path-v2`. The user's design direction restored joint-paper-count edges, reachable cross-community non-coauthors at shortest distance >=3, and training-topic similarity plus a saturated three-edge-path bonus. The proposal's three-screen happy path and restrained research-directory styling remain. Historical shared-model-v1 source/results are archived separately.
+Current model: `proposal-path-v3-common-neighbors`. The user's design direction restored joint-paper-count edges, reachable cross-community non-coauthors at shortest distance >=3, and training-topic similarity plus a saturated three-edge-path bonus. The proposal's three-screen happy path and restrained research-directory styling remain. Historical shared-model-v1 source/results are archived separately.
 
 ## Verified
 
-`python -m unittest discover -s prototype/tests -v`: **19 tests passed**. Checks cover canonical result/report copies and provenance, all published prediction values and the supporting citation-analysis note, all 500 displayed rankings and shortest observed paths, hand-calculated score/eligibility (including four-hop and disconnected candidates), training-only features, native baseline study attribution and participant-level analysis.
+`python -m unittest discover -s prototype/tests -v`: **20 tests passed**. Checks cover canonical result/report copies and provenance, all published prediction values and the supporting citation-analysis note, all 500 displayed rankings and shortest observed paths, hand-calculated score/eligibility (including four-hop and disconnected candidates), training-only features, native baseline study attribution and participant-level analysis.
 
 `python prototype/tests/browser_workflow.py --artifacts /tmp/bridgefinder-checks`: **11 Chromium tests passed**. The suite starts an isolated supported server and checks:
 
@@ -24,7 +24,7 @@ The first run found that a node label intercepted the click on a suggested edge.
 
 ## Model and evidence limits
 
-All 500 bundled suggestions have three-edge routes and no shared co-author. Native Adamic–Adar uses two-hop candidates, while BridgeFinder and Topic-Only share the >=3-hop pool. Zero overlap between these pools is structural, not evidence of recommendation quality. Fresh backtests are weaker than Adamic–Adar; the report states that outcome.
+All 500 bundled suggestions have three-edge routes and no shared co-author. Simple triadic closure counts shared co-authors among two-hop candidates, while BridgeFinder and Topic-Only share the >=3-hop pool. Zero overlap between these pools is structural, not evidence of recommendation quality. Fresh backtests are compared with the shared-contact baseline; the report states that outcome.
 
 The study has 63 unique cards across five community contexts. Each method contributes its true top five, with shared candidates rated once and attributed to every selecting method. Export revision IDs bind cards to their matching private key. The supported public-asset server serves both app/study and excludes private keys/raw datasets.
 
@@ -49,3 +49,7 @@ The app is `/web/` and study `/study/` on default port 8765. `refresh_results.py
 ## Author-feedback guidance update
 
 The landing page now explains why a starting researcher must be selected and gives three steps: choose that person, open a suggestion, then review the researcher card and route. A card is explicitly defined as a profile containing topics, papers and a possible introduction. The map explains its reduced scope and community colors. These changes follow the author's reported confusion; they are software-verified, not human-retested. The report also records the existing visual overhaul, corrected tags and focused map as responses to the author's additional feedback. Ranking, generated data and empirical results are unchanged.
+
+## Single-dataset, simple-closure revision
+
+The pilot dataset/results are historical. The current demo, study and report use the same 13,229-paper dataset. Common-neighbor counting replaces Adamic–Adar weighting for triadic closure. A hand-checked fixture verifies that two shared contacts rank above one regardless of contact degree. Study cards and revision IDs are regenerated from the true top five of the revised methods. The paper reports P@10, while additional computed metrics remain in supporting JSON.

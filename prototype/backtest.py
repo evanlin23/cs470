@@ -4,7 +4,7 @@ Evaluates 2015-2019 collaboration topology against 2020-2024 ground-truth cross-
 Implements leak-free temporal topic profiling (strictly pre-split publications).
 
 Usage:
-    python3 prototype/backtest.py --data prototype/uiuc_data.json --out prototype/results/backtest_results.json
+    python3 prototype/backtest.py --data prototype/uiuc_data_scaled.json --out prototype/results/backtest_results_scaled.json
 """
 import argparse
 import json
@@ -24,7 +24,6 @@ def evaluate_baselines(g_train, g_eval, authors, min_eval_edges=1, metadata=None
     graph, membership, autonomy = prepare_training_model(g_train)
     communities = [set(n for n in graph if membership[n] == c) for c in sorted(set(membership.values()))]
     print(f"Identified {len(communities)} communities (Modularity Q = {nxc.modularity(graph, communities):.4f}).")
-    centrality = nx.betweenness_centrality(graph, k=min(200, len(graph)), seed=42)
     truth = defaultdict(set)
     for u, v in g_eval.edges():
         if u in membership and v in membership and membership[u] != membership[v] and not graph.has_edge(u, v):
@@ -37,21 +36,21 @@ def evaluate_baselines(g_train, g_eval, authors, min_eval_edges=1, metadata=None
                          'evaluation_nodes': g_eval.number_of_nodes(), 'evaluation_edges': g_eval.number_of_edges(),
                          'communities': len(communities), 'modularity': nxc.modularity(graph, communities),
                          'eligible_seeds': len(seeds), 'split_year': 2019, 'louvain_seed': 42,
-                         'betweenness_seed': 42, 'tie_break': 'author_id',
+                         'tie_break': 'author_id',
                          'weights': {'topic': 1.0, 'saturated_three_path_count': 0.5},
                          'minimum_hops': 3, 'require_reachable': True, 'edge_weight': 'joint_paper_count',
                          'baseline_pools': {'Topic-Only': 'reachable cross-community distance >=3',
-                                            'Triadic Closure (Adamic-Adar)': 'native shared-contact cross-community',
-                                            'popularity_and_betweenness': 'all non-coauthor cross-community'},
+                                            'Triadic Closure': 'native shared-contact cross-community',
+                                            'triadic_closure_score': 'number of shared coauthors'},
                          'ground_truth': 'all new cross-community ties among training nodes'})
-    models = ["Preferential Attachment", "Global Betweenness", "Topic-Only", "Triadic Closure (Adamic-Adar)", "BridgeFinder"]
+    models = ["Topic-Only", "Triadic Closure", "BridgeFinder"]
     metrics = {m: defaultdict(list) for m in models}
     for u in seeds:
         rows = candidate_features(graph, u, membership, autonomy)
         proposal = [r for r in rows if r['proposal_eligible']]
-        shared_contact = [r for r in rows if r['aa'] > 0]
-        pools = [rows, rows, proposal, shared_contact, proposal]
-        keys = [lambda r: graph.degree(u)*graph.degree(r["candidate_id"]), lambda r: centrality[r["candidate_id"]], lambda r: r["topic_similarity"], lambda r: r["aa"], lambda r: r["score"]]
+        shared_contact = [r for r in rows if r['shared_coauthors'] > 0]
+        pools = [proposal, shared_contact, proposal]
+        keys = [lambda r: r["topic_similarity"], lambda r: r["shared_coauthors"], lambda r: r["score"]]
         for model, key, pool in zip(models, keys, pools):
             ranked = sorted(pool, key=lambda r: (-key(r), r["candidate_id"]))
             ids = [r["candidate_id"] for r in ranked[:10]]
@@ -68,8 +67,8 @@ def evaluate_baselines(g_train, g_eval, authors, min_eval_edges=1, metadata=None
 
 def main():
     parser = argparse.ArgumentParser(description="Run BridgeFinder Temporal Backtest")
-    parser.add_argument("--data", default="prototype/uiuc_data.json")
-    parser.add_argument("--out", default="prototype/results/backtest_results.json")
+    parser.add_argument("--data", default="prototype/uiuc_data_scaled.json")
+    parser.add_argument("--out", default="prototype/results/backtest_results_scaled.json")
     parser.add_argument("--manifest-out", help="Optional JSON sidecar with dataset/code hashes and seed counts")
     args = parser.parse_args()
 

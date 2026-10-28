@@ -1,0 +1,518 @@
+{
+  "CARD_001": {
+    "models": [
+      "Triadic Closure"
+    ],
+    "candidate_id": "https://openalex.org/A5034623072",
+    "seed_id": "https://openalex.org/A5045551635",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_002": {
+    "models": [
+      "BridgeFinder"
+    ],
+    "candidate_id": "https://openalex.org/A5016857452",
+    "seed_id": "https://openalex.org/A5045551635",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_003": {
+    "models": [
+      "Triadic Closure"
+    ],
+    "candidate_id": "https://openalex.org/A5006238710",
+    "seed_id": "https://openalex.org/A5045551635",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_004": {
+    "models": [
+      "BridgeFinder",
+      "Topic-Only"
+    ],
+    "candidate_id": "https://openalex.org/A5044985385",
+    "seed_id": "https://openalex.org/A5045551635",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_005": {
+    "models": [
+      "BridgeFinder",
+      "Topic-Only"
+    ],
+    "candidate_id": "https://openalex.org/A5024053459",
+    "seed_id": "https://openalex.org/A5045551635",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_006": {
+    "models": [
+      "BridgeFinder",
+      "Topic-Only"
+    ],
+    "candidate_id": "https://openalex.org/A5024935115",
+    "seed_id": "https://openalex.org/A5045551635",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_007": {
+    "models": [
+      "Triadic Closure"
+    ],
+    "candidate_id": "https://openalex.org/A5056127619",
+    "seed_id": "https://openalex.org/A5045551635",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_008": {
+    "models": [
+      "Triadic Closure"
+    ],
+    "candidate_id": "https://openalex.org/A5020098405",
+    "seed_id": "https://openalex.org/A5045551635",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_009": {
+    "models": [
+      "Topic-Only"
+    ],
+    "candidate_id": "https://openalex.org/A5001887744",
+    "seed_id": "https://openalex.org/A5045551635",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_010": {
+    "models": [
+      "Triadic Closure"
+    ],
+    "candidate_id": "https://openalex.org/A5004021726",
+    "seed_id": "https://openalex.org/A5045551635",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_011": {
+    "models": [
+      "BridgeFinder",
+      "Topic-Only"
+    ],
+    "candidate_id": "https://openalex.org/A5082130732",
+    "seed_id": "https://openalex.org/A5045551635",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_012": {
+    "models": [
+      "Triadic Closure"
+    ],
+    "candidate_id": "https://openalex.org/A5048982789",
+    "seed_id": "https://openalex.org/A5002313901",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_013": {
+    "models": [
+      "Triadic Closure"
+    ],
+    "candidate_id": "https://openalex.org/A5054161406",
+    "seed_id": "https://openalex.org/A5002313901",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_014": {
+    "models": [
+      "Topic-Only"
+    ],
+    "candidate_id": "https://openalex.org/A5057095314",
+    "seed_id": "https://openalex.org/A5002313901",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_015": {
+    "models": [
+      "BridgeFinder"
+    ],
+    "candidate_id": "https://openalex.org/A5105406899",
+    "seed_id": "https://openalex.org/A5002313901",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_016": {
+    "models": [
+      "BridgeFinder"
+    ],
+    "candidate_id": "https://openalex.org/A5023983153",
+    "seed_id": "https://openalex.org/A5002313901",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_017": {
+    "models": [
+      "Triadic Closure"
+    ],
+    "candidate_id": "https://openalex.org/A5088418798",
+    "seed_id": "https://openalex.org/A5002313901",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_018": {
+    "models": [
+      "Triadic Closure"
+    ],
+    "candidate_id": "https://openalex.org/A5011365072",
+    "seed_id": "https://openalex.org/A5002313901",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_019": {
+    "models": [
+      "BridgeFinder"
+    ],
+    "candidate_id": "https://openalex.org/A5001434945",
+    "seed_id": "https://openalex.org/A5002313901",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_020": {
+    "models": [
+      "Topic-Only"
+    ],
+    "candidate_id": "https://openalex.org/A5016351920",
+    "seed_id": "https://openalex.org/A5002313901",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_021": {
+    "models": [
+      "BridgeFinder",
+      "Topic-Only"
+    ],
+    "candidate_id": "https://openalex.org/A5047169089",
+    "seed_id": "https://openalex.org/A5002313901",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_022": {
+    "models": [
+      "Triadic Closure"
+    ],
+    "candidate_id": "https://openalex.org/A5010560377",
+    "seed_id": "https://openalex.org/A5002313901",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_023": {
+    "models": [
+      "Topic-Only"
+    ],
+    "candidate_id": "https://openalex.org/A5065876203",
+    "seed_id": "https://openalex.org/A5002313901",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_024": {
+    "models": [
+      "BridgeFinder"
+    ],
+    "candidate_id": "https://openalex.org/A5014700891",
+    "seed_id": "https://openalex.org/A5002313901",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_025": {
+    "models": [
+      "Topic-Only"
+    ],
+    "candidate_id": "https://openalex.org/A5000152935",
+    "seed_id": "https://openalex.org/A5002313901",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_026": {
+    "models": [
+      "BridgeFinder"
+    ],
+    "candidate_id": "https://openalex.org/A5027415377",
+    "seed_id": "https://openalex.org/A5040320137",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_027": {
+    "models": [
+      "Triadic Closure"
+    ],
+    "candidate_id": "https://openalex.org/A5059414563",
+    "seed_id": "https://openalex.org/A5040320137",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_028": {
+    "models": [
+      "BridgeFinder"
+    ],
+    "candidate_id": "https://openalex.org/A5100363740",
+    "seed_id": "https://openalex.org/A5040320137",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_029": {
+    "models": [
+      "BridgeFinder"
+    ],
+    "candidate_id": "https://openalex.org/A5027616541",
+    "seed_id": "https://openalex.org/A5040320137",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_030": {
+    "models": [
+      "BridgeFinder"
+    ],
+    "candidate_id": "https://openalex.org/A5087466524",
+    "seed_id": "https://openalex.org/A5040320137",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_031": {
+    "models": [
+      "Topic-Only"
+    ],
+    "candidate_id": "https://openalex.org/A5009510433",
+    "seed_id": "https://openalex.org/A5040320137",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_032": {
+    "models": [
+      "Triadic Closure"
+    ],
+    "candidate_id": "https://openalex.org/A5074378883",
+    "seed_id": "https://openalex.org/A5040320137",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_033": {
+    "models": [
+      "Topic-Only"
+    ],
+    "candidate_id": "https://openalex.org/A5018529571",
+    "seed_id": "https://openalex.org/A5040320137",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_034": {
+    "models": [
+      "Triadic Closure"
+    ],
+    "candidate_id": "https://openalex.org/A5106822982",
+    "seed_id": "https://openalex.org/A5040320137",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_035": {
+    "models": [
+      "Topic-Only"
+    ],
+    "candidate_id": "https://openalex.org/A5012401237",
+    "seed_id": "https://openalex.org/A5040320137",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_036": {
+    "models": [
+      "BridgeFinder"
+    ],
+    "candidate_id": "https://openalex.org/A5010259829",
+    "seed_id": "https://openalex.org/A5040320137",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_037": {
+    "models": [
+      "Topic-Only"
+    ],
+    "candidate_id": "https://openalex.org/A5100324819",
+    "seed_id": "https://openalex.org/A5040320137",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_038": {
+    "models": [
+      "Topic-Only"
+    ],
+    "candidate_id": "https://openalex.org/A5103242318",
+    "seed_id": "https://openalex.org/A5040320137",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_039": {
+    "models": [
+      "Triadic Closure"
+    ],
+    "candidate_id": "https://openalex.org/A5072065388",
+    "seed_id": "https://openalex.org/A5040320137",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_040": {
+    "models": [
+      "Triadic Closure"
+    ],
+    "candidate_id": "https://openalex.org/A5036017595",
+    "seed_id": "https://openalex.org/A5040320137",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_041": {
+    "models": [
+      "BridgeFinder",
+      "Topic-Only"
+    ],
+    "candidate_id": "https://openalex.org/A5031899418",
+    "seed_id": "https://openalex.org/A5010902410",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_042": {
+    "models": [
+      "Triadic Closure"
+    ],
+    "candidate_id": "https://openalex.org/A5021345935",
+    "seed_id": "https://openalex.org/A5010902410",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_043": {
+    "models": [
+      "BridgeFinder"
+    ],
+    "candidate_id": "https://openalex.org/A5076942007",
+    "seed_id": "https://openalex.org/A5010902410",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_044": {
+    "models": [
+      "Triadic Closure"
+    ],
+    "candidate_id": "https://openalex.org/A5074378883",
+    "seed_id": "https://openalex.org/A5010902410",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_045": {
+    "models": [
+      "Triadic Closure"
+    ],
+    "candidate_id": "https://openalex.org/A5006572968",
+    "seed_id": "https://openalex.org/A5010902410",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_046": {
+    "models": [
+      "Topic-Only"
+    ],
+    "candidate_id": "https://openalex.org/A5080885123",
+    "seed_id": "https://openalex.org/A5010902410",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_047": {
+    "models": [
+      "BridgeFinder"
+    ],
+    "candidate_id": "https://openalex.org/A5018760782",
+    "seed_id": "https://openalex.org/A5010902410",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_048": {
+    "models": [
+      "BridgeFinder",
+      "Topic-Only"
+    ],
+    "candidate_id": "https://openalex.org/A5007993855",
+    "seed_id": "https://openalex.org/A5010902410",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_049": {
+    "models": [
+      "BridgeFinder",
+      "Topic-Only"
+    ],
+    "candidate_id": "https://openalex.org/A5103989066",
+    "seed_id": "https://openalex.org/A5010902410",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_050": {
+    "models": [
+      "Triadic Closure"
+    ],
+    "candidate_id": "https://openalex.org/A5072065388",
+    "seed_id": "https://openalex.org/A5010902410",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_051": {
+    "models": [
+      "Topic-Only"
+    ],
+    "candidate_id": "https://openalex.org/A5046237702",
+    "seed_id": "https://openalex.org/A5010902410",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_052": {
+    "models": [
+      "Triadic Closure"
+    ],
+    "candidate_id": "https://openalex.org/A5031482147",
+    "seed_id": "https://openalex.org/A5010902410",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_053": {
+    "models": [
+      "BridgeFinder",
+      "Topic-Only"
+    ],
+    "candidate_id": "https://openalex.org/A5101879859",
+    "seed_id": "https://openalex.org/A5074295593",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_054": {
+    "models": [
+      "Triadic Closure"
+    ],
+    "candidate_id": "https://openalex.org/A5028984028",
+    "seed_id": "https://openalex.org/A5074295593",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_055": {
+    "models": [
+      "BridgeFinder"
+    ],
+    "candidate_id": "https://openalex.org/A5100442576",
+    "seed_id": "https://openalex.org/A5074295593",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_056": {
+    "models": [
+      "Triadic Closure"
+    ],
+    "candidate_id": "https://openalex.org/A5100738534",
+    "seed_id": "https://openalex.org/A5074295593",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_057": {
+    "models": [
+      "BridgeFinder",
+      "Topic-Only"
+    ],
+    "candidate_id": "https://openalex.org/A5109166086",
+    "seed_id": "https://openalex.org/A5074295593",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_058": {
+    "models": [
+      "BridgeFinder",
+      "Topic-Only"
+    ],
+    "candidate_id": "https://openalex.org/A5072987212",
+    "seed_id": "https://openalex.org/A5074295593",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_059": {
+    "models": [
+      "Triadic Closure"
+    ],
+    "candidate_id": "https://openalex.org/A5073739058",
+    "seed_id": "https://openalex.org/A5074295593",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_060": {
+    "models": [
+      "BridgeFinder",
+      "Topic-Only"
+    ],
+    "candidate_id": "https://openalex.org/A5057259259",
+    "seed_id": "https://openalex.org/A5074295593",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_061": {
+    "models": [
+      "Triadic Closure"
+    ],
+    "candidate_id": "https://openalex.org/A5010579391",
+    "seed_id": "https://openalex.org/A5074295593",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_062": {
+    "models": [
+      "Triadic Closure"
+    ],
+    "candidate_id": "https://openalex.org/A5091431112",
+    "seed_id": "https://openalex.org/A5074295593",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  },
+  "CARD_063": {
+    "models": [
+      "Topic-Only"
+    ],
+    "candidate_id": "https://openalex.org/A5013830080",
+    "seed_id": "https://openalex.org/A5074295593",
+    "dataset_id": "0e8eb4940ae6bc790631c7f9e48a7745a18b0143b532c64e1a9588fe97b4cd0e"
+  }
+}

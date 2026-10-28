@@ -49,7 +49,7 @@ These commands use committed datasets and the shared temporal model. Run from th
 ```bash
 python prototype/web/prepare_web_data.py
 python prototype/study/generate_cards.py
-python prototype/backtest.py --data prototype/uiuc_data.json --out /tmp/pilot-backtest.json
+python prototype/backtest.py --data prototype/uiuc_data_scaled.json --out /tmp/backtest.json
 ```
 
 `model.py` supplies the same pre-2020 graph, training-only topic profiles, seeded partition, candidate population, and ranking weights to the demo, study, and backtest. Candidate ties resolve by author ID. The topic filter changes only the starting-person list, not those predictions.
@@ -69,14 +69,18 @@ python prototype/analyze.py /tmp/graph.json /tmp/methodbridge-results.json
 python prototype/refresh_results.py
 ```
 
-This runs both temporal backtests and the separate citation analysis. All three must succeed before the command replaces any published result. It updates `prototype/results/` and the matching copies under `midterm/review/` together, including provenance sidecars with dataset/code hashes, runtime versions, and actual seed counts. The paper's numbers are checked against these canonical files by `test_publication_consistency.py`. A changed result must be assessed and reflected in the report; do not hand-edit metrics to make a check pass.
+This runs the single-dataset temporal backtest and the separate citation analysis. Both must succeed before the command replaces any published result. It updates `prototype/results/` and the matching copies under `midterm/review/` together, including provenance sidecars with dataset/code hashes, runtime versions, and actual seed counts. The paper's numbers are checked against these canonical files by `test_publication_consistency.py`. A changed result must be assessed and reflected in the report; do not hand-edit metrics to make a check pass.
 
 Historical outputs from the older remote revision are preserved under `prototype/legacy/remote-label-fix/results/`. They are not the current benchmark. Citation analysis uses its separate 25-retained-author filter and canonical graph ordering; it is not identical to the prediction graph.
 
 ## Proposal-based ranking
 
-`proposal-path-v2` follows the submitted proposal: edges count joint papers; candidates must be reachable, in another community, and at least three hops away. Rank = topic Jaccard similarity + `0.5*c3/(1+c3)`, where c3 counts simple three-edge introduction paths. More distant candidates can rank on topics without that bonus. Cards show actual shortest routes with all intermediaries.
+`proposal-path-v3-common-neighbors` follows the submitted proposal: edges count joint papers; candidates must be reachable, in another community, and at least three hops away. Rank = topic Jaccard similarity + `0.5*c3/(1+c3)`, where c3 counts simple three-edge introduction paths. More distant candidates can rank on topics without that bonus. Cards show actual shortest routes with all intermediaries.
 
-All 500 bundled suggestions currently have three-edge routes and no shared co-author. Run `python prototype/audit_recommendations.py` for the reproducible topology audit. Adamic–Adar uses native two-hop candidates; Topic-Only uses our >=3-hop pool. Different pools make this a comparison of discovery strategies, not score-only isolation. Current prediction results are weaker than Adamic–Adar and the paper reports that outcome.
+All 500 bundled suggestions currently have three-edge routes and no shared co-author. Run `python prototype/audit_recommendations.py` for the reproducible topology audit. Simple triadic closure ranks two-hop candidates by their number of shared co-authors; Topic-Only uses our >=3-hop pool. Different pools make this a comparison of discovery strategies, not score-only isolation. Current prediction results are compared with the shared-contact baseline and the paper reports that outcome.
 
 The previous two-hop-favoring hybrid is preserved under `legacy/shared-model-v1/`; it is historical, not the current benchmark. The proposal's approximately 110,000-work collection goal remains unfinished; the current larger sample contains 25,000 harvested works.
+
+## Dataset scope
+
+There is one current dataset, `uiuc_data_scaled.json`, containing 13,229 relevant retained papers from a capped 25,000-work collection. The smaller pilot is archived under `legacy/pilot-development/`. The current paper reports P@10 on this one dataset. It does not claim complete campus coverage. A full OpenAlex collection attempt was blocked by the environment proxy with HTTP 403.

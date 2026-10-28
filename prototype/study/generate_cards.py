@@ -20,12 +20,12 @@ def generate(data):
     for group in groups:
         seed = min((n for n in graph if membership[n] == group), key=lambda n: (-graph.degree(n), n))
         rows = rank_candidates(graph, seed, membership, autonomy)
-        native_aa = [r for r in candidate_features(graph, seed, membership, autonomy) if r['aa'] > 0]
-        if len(rows) < 5 or len(native_aa) < 5:
+        native_closure = [r for r in candidate_features(graph, seed, membership, autonomy) if r['shared_coauthors'] > 0]
+        if len(rows) < 5 or len(native_closure) < 5:
             raise ValueError('Study context needs five proposal candidates and five shared-contact baselines')
         selections = {}
-        for method, field in [('BridgeFinder', 'score'), ('Triadic Closure', 'aa'), ('Topic-Only', 'topic_similarity')]:
-            for row in sorted(native_aa if method == 'Triadic Closure' else rows, key=lambda r: (-r[field], r['candidate_id']))[:5]:
+        for method, field in [('BridgeFinder', 'score'), ('Triadic Closure', 'shared_coauthors'), ('Topic-Only', 'topic_similarity')]:
+            for row in sorted(native_closure if method == 'Triadic Closure' else rows, key=lambda r: (-r[field], r['candidate_id']))[:5]:
                 selections.setdefault(row['candidate_id'], {'row': row, 'methods': []})['methods'].append(method)
         items = sorted(selections.items())
         random.Random(42 + group).shuffle(items)

@@ -140,7 +140,7 @@ def main():
     parser = argparse.ArgumentParser(description="Harvest UIUC works from OpenAlex")
     parser.add_argument("--mailto", default="elin26@illinois.edu", help="Your UIUC email for the polite pool")
     parser.add_argument("--max_works", type=int, default=5000, help="Max works to harvest (use 20000+ for full run)")
-    parser.add_argument("--out", default="prototype/uiuc_data.json", help="Output JSON path")
+    parser.add_argument("--out", default="prototype/new_collection.json", help="Output JSON path")
     args = parser.parse_args()
 
     works = fetch_works(args.mailto, max_works=args.max_works)

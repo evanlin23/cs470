@@ -2,9 +2,13 @@
 
 The submission now focuses on the proposal's core question: do topic-and-path suggestions help a student discover a useful contact? The detailed citation analysis, extra popularity/centrality baselines, inferential-test names and implementation audit are retained here and in repository records. They are not necessary to explain the app or satisfy a rubric criterion. The short paper still reports the less favorable prediction results and its actual scope.
 
-## Extra baselines
+## Historical results and extra metrics
 
-`prototype/results/backtest_results.json` and `backtest_results_scaled.json` retain all five computed methods. The paper shows only Topic-Only, Adamic–Adar and BridgeFinder, the proposal's central comparisons. No results were altered or rerun for this simplification. Popularity and betweenness use all cross-community non-coauthors; their wider pools differ from the proposal pool. The manifests record source/data hashes and runtime settings.
+The current single-dataset result is `prototype/results/backtest_results_scaled.json`. The paper shows P@10 for Topic-Only, simple common-neighbor Triadic Closure and BridgeFinder. P@5, R@10 and NDCG@10 remain in the supporting result JSON but are not required to explain the proposal's top-ten evaluation.
+
+The 5,000-work pilot is historical under `prototype/legacy/pilot-development/`. The former Adamic–Adar comparison is historical under `prototype/legacy/adamic-adar-v2/`; its output also includes extra popularity/centrality baselines. These were not the simple shared-contact comparison selected by the user. Current code, paper and study attribution use common-neighbor counts and one dataset. Numerical values must come from the fresh run of that version.
+
+Full collection of every relevant 2015–2024 UIUC paper is not complete. The current 25,000-work capture was capped, and API access from this environment failed with a proxy CONNECT 403. The short paper retains the coverage limitation.
 
 ## Ancillary citation comparison
 
@@ -16,7 +20,7 @@ The former impact targets (ratio >1.10 and p<.05) were not met. Field, paper age
 
 ## Planned study details
 
-`prototype/study/README.md` retains the method-blinded protocol and participant-level analysis details. The primary planned outcome is the within-participant difference in the proportion of jointly relevant-and-new cards, BridgeFinder versus Adamic–Adar. The implementation uses a paired Wilcoxon comparison; other rating comparisons are exploratory with Holm correction, and paired t intervals are exploratory small-sample intervals. N=15 is not a powered confirmatory study.
+`prototype/study/README.md` retains the method-blinded protocol and participant-level analysis details. The primary planned outcome is the within-participant difference in the proportion of jointly relevant-and-new cards, BridgeFinder versus simple Triadic Closure. The implementation uses a paired Wilcoxon comparison; other rating comparisons are exploratory with Holm correction, and paired t intervals are exploratory small-sample intervals. N=15 is not a powered confirmatory study.
 
 Card relevance asks about the starting researcher's work, while novelty concerns the participant's own familiarity. The routes and candidates both differ across methods, so actionability comparisons do not isolate a route-display treatment. SUS concerns the interactive BridgeFinder app, not the static baselines. The main paper keeps these measurement distinctions and the success thresholds while omitting the test names.
 

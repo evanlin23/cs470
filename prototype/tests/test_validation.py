@@ -59,12 +59,26 @@ class ValidationTests(unittest.TestCase):
         self.assertEqual(rows[0]['three_hop_paths'],1)
         self.assertEqual(rows[0]['path_bonus'],.5)
         self.assertAlmostEqual(rows[0]['score'],1.25)
-        self.assertEqual(rows[0]['aa'],0)
+        self.assertEqual(rows[0]['shared_coauthors'],0)
         all_rows={row['candidate_id']:row for row in candidate_features(graph,'start',groups,autonomy)}
-        self.assertGreater(all_rows['near']['aa'],0)
+        self.assertGreater(all_rows['near']['shared_coauthors'],0)
         self.assertFalse(all_rows['near']['proposal_eligible'])
         self.assertFalse(all_rows['x']['proposal_eligible'])
         self.assertIsNone(all_rows['x']['path_ids'])
+
+    def test_simple_closure_counts_contacts_without_degree_weighting(self):
+        graph=nx.Graph([('start','hub1'),('start','hub2'),('start','contact'),
+                        ('hub1','two_contacts'),('hub2','two_contacts'),('contact','one_contact')])
+        graph.add_edges_from(('hub1',f'extra{i}') for i in range(12))
+        graph.add_edges_from(('hub2',f'other{i}') for i in range(12))
+        nx.set_node_attributes(graph,{n:{'topics':set()} for n in graph})
+        groups={n:0 if n in ['start','hub1','hub2','contact'] else 1 for n in graph}
+        features={r['candidate_id']:r for r in candidate_features(graph,'start',groups,{n:0 for n in graph})}
+        self.assertEqual(features['two_contacts']['shared_coauthors'],2)
+        self.assertEqual(features['one_contact']['shared_coauthors'],1)
+        ranked=sorted([features['one_contact'],features['two_contacts']],key=lambda r:-r['shared_coauthors'])
+        self.assertEqual(ranked[0]['candidate_id'],'two_contacts')
+        self.assertTrue(all(not row['proposal_eligible'] for row in ranked))
 
     def test_four_hop_candidates_remain_eligible_without_three_path_bonus(self):
         graph=nx.path_graph(['a','b','c','d','e'])

@@ -52,8 +52,8 @@ class WorkflowTests(unittest.TestCase):
             rows = [c for c in self.cards if c['seed_id']==seed]
             self.assertEqual(len(rows), len({self.keys[c['card_id']]['candidate_id'] for c in rows}))
             ranked = rank_candidates(self.graph,seed,self.membership,self.autonomy)
-            for method, field in [('BridgeFinder','score'),('Triadic Closure','aa'),('Topic-Only','topic_similarity')]:
-                pool=[r for r in candidate_features(self.graph,seed,self.membership,self.autonomy) if r['aa']>0] if method=='Triadic Closure' else ranked
+            for method, field in [('BridgeFinder','score'),('Triadic Closure','shared_coauthors'),('Topic-Only','topic_similarity')]:
+                pool=[r for r in candidate_features(self.graph,seed,self.membership,self.autonomy) if r['shared_coauthors']>0] if method=='Triadic Closure' else ranked
                 expected = {r['candidate_id'] for r in sorted(pool,key=lambda r:(-r[field],r['candidate_id']))[:5]}
                 actual = {self.keys[c['card_id']]['candidate_id'] for c in rows if method in self.keys[c['card_id']]['models']}
                 self.assertEqual(actual, expected)

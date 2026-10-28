@@ -7,8 +7,7 @@ import unittest
 
 ROOT=Path(__file__).resolve().parents[1]
 REPO=ROOT.parent
-JOBS=[('backtest_results.json','pilot-backtest.json','pilot-run.json'),
-      ('backtest_results_scaled.json','scaled-backtest.json','scaled-run.json'),
+JOBS=[('backtest_results_scaled.json','scaled-backtest.json','scaled-run.json'),
       ('citation_impact.json','citation-impact.json','citation-run.json')]
 
 
@@ -32,16 +31,14 @@ class PublicationConsistencyTests(unittest.TestCase):
 
     def test_all_published_prediction_cells_match_current_outputs(self):
         source=(REPO/'midterm/latex/main.tex').read_text()
-        data=[json.loads((ROOT/'results'/name).read_text()) for name in ['backtest_results.json','backtest_results_scaled.json']]
-        models=[('Topic-Only','Topic-Only'),
-                ('Adamic--Adar','Triadic Closure (Adamic-Adar)'),('BridgeFinder','BridgeFinder')]
+        data=json.loads((ROOT/'results/backtest_results_scaled.json').read_text())
+        models=[('Topic-Only','Topic-Only'), ('Triadic closure','Triadic Closure'), ('BridgeFinder','BridgeFinder')]
         for label,model in models:
             row=next(line for line in source.splitlines() if line.startswith(label+'&'))
-            self.assertEqual(re.findall(r'0\.\d{4}',row),[f'{run[model][metric]:.4f}' for run in data for metric in ['P@5','NDCG@10']])
-        counts=re.search(r'We evaluated ([\d,]+) starting researchers in the pilot sample and ([\d,]+) in the larger sample',source)
-        self.assertIsNotNone(counts)
-        for name,count in zip(['pilot-run.json','scaled-run.json'],counts.groups()):
-            self.assertEqual(int(count.replace(',','')),json.loads((ROOT/'results'/name).read_text())['eligible_seeds'])
+            self.assertEqual(re.findall(r'0\.\d{4}',row),[f'{data[model]["P@10"]:.4f}'])
+        count=re.search(r'We evaluated ([\d,]+) starting researchers in this dataset',source)
+        self.assertIsNotNone(count)
+        self.assertEqual(int(count.group(1).replace(',','')),json.loads((ROOT/'results/scaled-run.json').read_text())['eligible_seeds'])
 
     def test_report_closure_summary_matches_displayed_data_and_audit(self):
         audit=json.loads((ROOT/'review/closure-audit.json').read_text())

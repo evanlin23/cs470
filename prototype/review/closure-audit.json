@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "model_version": "proposal-path-v2",
+  "model_version": "proposal-path-v3-common-neighbors",
   "dataset_file": "uiuc_data_scaled.json",
   "dataset_sha256": "91e02ba3a40d5e59af5b9d718689fe50fa0521c4269ca84b3852168597435e48",
   "source_sha256": {
-    "model.py": "12ec17ed99bb2dd27d15f3b3667e7652ab0b709c123df2d5c86feeeee2f7b0d3",
-    "audit_recommendations.py": "0a9314ac717ab2f9b6805be2716b8c5c6e44b6db833efbc677bc243176b9731f"
+    "model.py": "9c0680c43e6c8142a04ab83e92ef8c58008670ce3f1425c78d4483c111b2af2d",
+    "audit_recommendations.py": "3b43f337d4bcf3d1e1c663aa92b6c6137fd35ecd96a85da07144d2a0221cf387"
   },
   "runtime": {
     "python": "3.12.14",
@@ -26,16 +26,16 @@
     "longer_than_three": 0,
     "unreachable": 0
   },
-  "top5_overlap_with_aa": 0,
-  "top10_overlap_with_aa": 0,
+  "top5_overlap_with_closure": 0,
+  "top10_overlap_with_closure": 0,
   "top5_overlap_with_topic_only": 88,
-  "contexts_with_different_top5_from_aa": 50,
+  "contexts_with_different_top5_from_closure": 50,
   "examples_without_shared_coauthor": [
     {
       "seed": "John A. Rogers",
       "candidate": "Pilgyu Kang",
       "rank": 1,
-      "aa_score": 0,
+      "shared_coauthors": 0,
       "score": 0.7205882352941176,
       "route": [
         "John A. Rogers",
@@ -48,7 +48,7 @@
       "seed": "John A. Rogers",
       "candidate": "Ryan Steven Han",
       "rank": 2,
-      "aa_score": 0,
+      "shared_coauthors": 0,
       "score": 0.6318181818181818,
       "route": [
         "John A. Rogers",
@@ -61,7 +61,7 @@
       "seed": "John A. Rogers",
       "candidate": "SungGyu Chun",
       "rank": 3,
-      "aa_score": 0,
+      "shared_coauthors": 0,
       "score": 0.6318181818181818,
       "route": [
         "John A. Rogers",
@@ -77,5 +77,5 @@
   ],
   "displayed_slots": 500,
   "top5_slots": 250,
-  "interpretation": "Proposal-compliant recommendations are reachable at distance >=3 and have no shared coauthor. Native Adamic\u2013Adar uses two-hop candidates; their disjoint pools enforce zero overlap, not evidence of superior quality."
+  "interpretation": "Proposal-compliant recommendations are reachable at distance >=3 and have no shared coauthor. Simple common-neighbor triadic closure uses two-hop candidates; their disjoint pools enforce zero overlap, not evidence of superior quality."
 }

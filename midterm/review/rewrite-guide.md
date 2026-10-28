@@ -36,11 +36,11 @@ Graph distance and community boundaries operationalize discovery. They do not pr
 
 ## Facts that must stay synchronized
 
-- Current model: `proposal-path-v2`. Edges count joint papers; candidates are reachable cross-community non-coauthors at shortest distance >=3.
+- Current model: `proposal-path-v3-common-neighbors`. Edges count joint papers; candidates are reachable cross-community non-coauthors at shortest distance >=3.
 - Score: `S + 0.5*c3/(1+c3)`, where S is training-topic Jaccard similarity and c3 counts simple three-edge paths. The proposal specified the general topic/path idea; the coefficient and saturation are implementation choices.
-- Topic-Only shares BridgeFinder's candidate pool. Adamic–Adar uses native two-hop candidates. Popularity/betweenness use all cross-community non-coauthors. All predict the same future ties. The comparison does not isolate distance or the route display.
-- Pilot/larger harvested works: 5,000/25,000. Retained multi-UIUC papers: 2,493/13,229. Training nodes: 3,642/9,042. Training edges: 16,408/36,748. Communities: 344/455. Eligible prediction seeds: 184/1,369.
-- Larger-sample BridgeFinder P@5/NDCG@10: .0102/.0225. Adamic–Adar: .0282/.0472. The prediction targets are not met. The short paper compares only the three methods in the proposal; additional baseline runs remain in the canonical JSON. Copy table cells from those current files, not historical review files.
+- Topic-Only shares BridgeFinder's candidate pool. Simple triadic closure uses two-hop candidates ranked by the number of shared co-authors. All predict the same future ties. The comparison does not isolate distance or the route display.
+- One current dataset contains 13,229 multi-UIUC papers from a capped collection of 25,000 works. Training nodes: 9,042. Training edges: 36,748. Communities: 455. Eligible prediction seeds: 1,369. This is not a complete campus collection. The pilot is historical.
+- Current P@10 is .0099 for Topic-Only, .0223 for simple triadic closure and .0094 for BridgeFinder. The main historical measure is P@10, the fraction of the first ten suggestions that became later collaborators, averaged across starting researchers. Use the current common-neighbor result JSON. Older Adamic–Adar values are historical. The proposal named triadic closure and top-ten hit counting; it did not name P@5 or NDCG@10.
 - Citation means: 65.13/61.55; ratio 1.058; p=.1132. Counts: 1,051 cross-community, 4,203 within-community, 977 unclassified. Neither impact target is met. This ancillary citation analysis is in review/analysis-notes.md, not the short paper.
 - All 500 displayed suggestions currently use three-edge routes. That audit describes the bundled demo, not all possible candidates.
 - The app has 50 starting researchers; the comparison study offers five starting-researcher contexts and 63 unique cards across them. Contexts are collaboration communities, not verified departments.

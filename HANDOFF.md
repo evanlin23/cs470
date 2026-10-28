@@ -19,34 +19,27 @@ The happy path is Researchers → Network → Suggestions → editable outreach.
 
 ## One ranking implementation
 
-`prototype/model.py` implements `proposal-path-v2`, shared by the app, backtest and study. Edges count joint papers. Candidates must be reachable non-coauthors in a different Louvain community, at shortest distance >=3. Score = `S + 0.5*c3/(1+c3)`, where S is training-topic Jaccard similarity and c3 counts simple three-edge introduction paths. More distant reachable candidates remain eligible without a three-step bonus. The card shows an actual shortest path. Autonomy and boundary-spanning values are descriptive, not ranking terms.
+`prototype/model.py` implements `proposal-path-v3-common-neighbors`, shared by the app, backtest and study. Edges count joint papers. Candidates must be reachable non-coauthors in a different Louvain community, at shortest distance >=3. Score = `S + 0.5*c3/(1+c3)`, where S is training-topic Jaccard similarity and c3 counts simple three-edge introduction paths. More distant reachable candidates remain eligible without a three-step bonus. The card shows an actual shortest path. Autonomy and boundary-spanning values are descriptive, not ranking terms.
 
 Numbered communities are not departments. Inferred research-area keyword labels are separate and do not alter rankings. Publication paths do not confirm personal introductions or mentoring availability.
 
 ## Proposal alignment and triadic closure
 
-The user's design direction restored the proposal's three-or-more-hop requirement and raw joint-paper weights. All 500 displayed top-ten suggestions now use three-edge paths, with no shared co-author. Adamic–Adar uses its native two-hop shared-contact pool; Topic-Only uses the same >=3-hop pool as BridgeFinder. Popularity and betweenness use all cross-community non-coauthors. All predict the same future new cross-community ties. These are comparisons of discovery strategies with different pools; zero overlap with Adamic–Adar follows from eligibility and is not evidence of higher quality.
+The user's design direction restored the proposal's three-or-more-hop requirement and raw joint-paper weights. All 500 displayed top-ten suggestions now use three-edge paths, with no shared co-author. Simple triadic closure ranks its two-hop shared-contact candidates by the number of common co-authors; Topic-Only uses the same >=3-hop pool as BridgeFinder. Popularity and betweenness use all cross-community non-coauthors. All predict the same future new cross-community ties. These are comparisons of discovery strategies with different pools; zero overlap with triadic closure follows from eligibility and is not evidence of higher quality.
 
 Run `python prototype/audit_recommendations.py` to reproduce `prototype/review/closure-audit.json`. The previous hybrid, which displayed 483 two-hop suggestions, is archived under `prototype/legacy/shared-model-v1/`. Its results are historical and must not be mixed with this experiment. The submitted proposal remains unchanged.
 
-## Current datasets and results
+## One current dataset
 
-| Dataset | Author records | Retained multi-UIUC-author papers | Training nodes / edges | Eligible prediction seeds |
-|---|---:|---:|---:|---:|
-| Pilot: 5,000 harvested works | 5,396 | 2,493 | 3,642 / 16,408 | 184 |
-| Larger: 25,000 harvested works | 16,604 | 13,229 | 9,042 / 36,748 | 1,369 |
+The app, study and current report use `prototype/uiuc_data_scaled.json`. Its historical filename is retained for provenance. It contains 13,229 multi-UIUC-author papers retained from a capped collection of 25,000 OpenAlex works. There are 16,604 author records; the 2015–2019 training graph has 9,042 authors, 36,748 edges and 455 communities (modularity .905). The temporal evaluation has 1,369 starting researchers with later new cross-community ties.
 
-| Method | Pilot P@5 | Pilot NDCG@10 | Larger P@5 | Larger NDCG@10 |
-|---|---:|---:|---:|---:|
-| Preferential Attachment | 0.0033 | 0.0040 | 0.0077 | 0.0135 |
-| Global Betweenness | 0.0033 | 0.0237 | 0.0086 | 0.0155 |
-| Topic-Only | 0.0043 | 0.0154 | 0.0108 | 0.0205 |
-| Triadic Closure (Adamic-Adar) | 0.0130 | 0.0368 | 0.0282 | 0.0472 |
-| BridgeFinder | 0.0065 | 0.0149 | 0.0102 | 0.0225 |
+The 5,000-work pilot and its outputs are development history under `prototype/legacy/pilot-development/`. They are not a second current dataset. The report presents one prediction measure, top-ten precision (P@10), directly corresponding to the proposal's top-ten hit counting. Current P@10 values are Topic-Only .0099, simple triadic closure .0223 and BridgeFinder .0094, also recorded in `prototype/results/backtest_results_scaled.json` and the matching paper copy. Other metrics remain in that supporting JSON.
 
-BridgeFinder does not outperform Adamic–Adar or meet the original prediction targets. The path bonus has mixed results against Topic-Only. This is reported directly in the paper; no weights were tuned on future outcomes to hide the result.
+The current triadic-closure baseline simply counts shared co-authors, without inverse-degree weighting. Older Adamic–Adar source, results and study attribution are archived in `prototype/legacy/adamic-adar-v2/`. They must not be mixed with the new study dataset revision.
 
-The separate citation analysis excludes papers with more than 25 retained UIUC authors. It reports 1,051 cross-community, 4,203 within-community and 977 unclassified later papers; means 65.13/61.55, ratio 1.058, two-sided Mann–Whitney p=.1132. Neither impact target is met. Use the provenance manifests to distinguish this run from historical partitions.
+This is **not** an exhaustive set of all relevant UIUC papers. A full collection attempt was blocked by the environment's OpenAlex proxy policy (HTTP CONNECT 403). Exhaustiveness requires completing the collection, checking pagination/coverage, and rerunning the pipeline. Nothing in the paper claims that has happened.
+
+The separate citation analysis remains ancillary and is not part of the short paper. Its files and provenance remain under `prototype/results/` and `midterm/review/`.
 
 ## Refresh results and generated data
 
@@ -56,7 +49,7 @@ python prototype/web/prepare_web_data.py
 python prototype/study/generate_cards.py
 ```
 
-The first command runs both prediction analyses and citation impact in a temporary directory, then publishes all results and manifests only after every command succeeds. Current metrics live in `prototype/results/`, and matching report copies live in `midterm/review/`. `pilot-run.json`, `scaled-run.json` and `citation-run.json` record dataset/code hashes, runtime versions, algorithm settings, and actual counts. Original historical outputs remain in the legacy directory.
+The first command runs the single-dataset prediction analysis and ancillary citation analysis in a temporary directory, then publishes all results and manifests only after every command succeeds. Current metrics live in `prototype/results/`, and matching report copies live in `midterm/review/`. `scaled-run.json` and `citation-run.json` record dataset/code hashes, runtime versions, algorithm settings, and actual counts. Original historical outputs remain in the legacy directory.
 
 Regenerating study data changes its revision ID when cards or attribution change. Use the matching method key when analyzing an exported session; never substitute historical keys.
 
@@ -100,3 +93,7 @@ The current report is a four-page draft. It keeps the three proposal comparisons
 ## Author feedback follow-up
 
 The author supplied the observed first-screen selection problem, an unintuitive interface, mismatched tags, unclear card terminology and an overcrowded graph. The current paper traces these to explicit entry steps, the existing UI overhaul, corrected labels, a new researcher-card definition and the focused map. New entry instructions and card explanations have not been retested with students. The prototype now describes the full route and focused graph in plain language; ranking and results are unchanged.
+
+## Complete local collection
+
+Paste the prompt in `docs/local-complete-dataset-prompt.md` into a local coding agent with OpenAlex access. It requires uncapped/resumable collection and completeness checks before publishing a new dataset, then regeneration of the report, app, study, provenance and Overleaf ZIP.

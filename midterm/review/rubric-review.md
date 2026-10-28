@@ -91,6 +91,14 @@ Read the original proposal and latest midterm side by side and checked that the 
 
 The algorithm still follows the proposal's >=3-hop, topic-plus-path approach and joint-paper weights. The focused map is a documented feedback-driven design revision. Current data coverage remains below the proposed collection size, and the study's relevance question uses the starting researcher's work as a proxy for student interests. These are disclosed limits, not wording to hide. The proposal's broader claims about existing tools, structural holes and future superiority were not copied into the results report. No empirical result, feedback event or implemented behavior changed in this pass.
 
+### Pass 10: one current dataset and the proposal's simple comparison
+
+The user requested one dataset, straightforward triadic closure, and an evaluation matching the proposal. The paper now reports the 13,229-paper dataset from the 25,000-work capture, with the collection limit explicit. Pilot data/results are archived as development history. An attempt to reach OpenAlex for exhaustive collection failed with a proxy CONNECT 403, so no complete-coverage claim is made.
+
+Triadic closure now ranks candidates by the number of shared co-authors, with no Adamic–Adar weighting. The shared model, backtest, study top fives, generated bundles, audit and tests are synchronized. Historical weighted-baseline outputs are archived. The main paper reports only P@10, corresponding to the proposal's count of later collaborators in the top ten. Additional metrics remain in supporting JSON. P@5 and NDCG@10 were implementation additions, not explicitly named proposal measures. Current values come from the newly computed run, not the previous baseline's table.
+
+The model and data-scope changes require a fresh validation rather than relying on earlier check counts. Earlier pass descriptions and their table-cell counts are historical.
+
 ## What is not a rubric deduction by itself
 
 The rubric does not demand that predictions beat Adamic–Adar, that citation comparisons be significant, that the planned 15-person trial already be complete, that 110,000 papers already be harvested, or that a particular notes artifact be attached. Negative findings, a justified formative sample and candid scope limitations can still support excellent midterm work. These are limitations to discuss accurately, not automatic percentage penalties.
@@ -99,7 +107,7 @@ The former feedback reservation concerned the reader's ability to assess the rep
 
 ## Verification and reproducibility
 
-Most changes in this loop are editorial and prospective protocol clarification. Pass 5 additionally adds first-screen instructions and reruns browser checks. Publication checks were updated to reflect the three-row table and the relocation of the ancillary citation text, while retaining numerical verification. No algorithm, dataset, study responses or numerical results were changed. Publication-consistency checks compare all 12 displayed prediction cells, seed counts, the ancillary citation note and provenance hashes. Model verification remains applicable because the ranking is unchanged. Browser verification is rerun for the landing-page change.
+Most changes in this loop are editorial and prospective protocol clarification. Pass 5 additionally adds first-screen instructions and reruns browser checks. Publication checks were updated to reflect the three-row table and the relocation of the ancillary citation text, while retaining numerical verification. Earlier editorial passes did not change algorithms or results; Pass 10 changes the baseline and regenerates its outputs. No participant responses were created. Publication-consistency checks compare all three displayed prediction values, seed counts, the ancillary citation note and provenance hashes. Model verification remains applicable because the ranking is unchanged. Browser verification is rerun for the landing-page change.
 
 The paper is built twice with pdfLaTeX from the repository root and checked for warnings, unresolved references and overflows. The Overleaf ZIP is separately compiled after clean extraction, with the root file named `main.tex` and matching figures. It contains no prototype datasets or private study key.
 
