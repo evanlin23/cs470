@@ -53,6 +53,8 @@ Graph distance and community boundaries operationalize discovery. They do not pr
 
 Read the cited work you rely on, confirm that each comparison accurately reflects it, and adjust the prose to your own interpretation. Verify author contributions and AI-use disclosure before submission. Product links are not a substitute for checking the described workflow. Do not add invented access dates.
 
+The uploaded Tang paper has now been checked. It learns cross-field collaboration topics and uses random walk with restart on a graph of authors and topics. The main paragraph explains this strength, its reliance on publication histories, and our simpler fixed-score/interest-proxy approach. Preserve the limitation that our score does not learn relationships between topics across fields. `tang-source-check.md` identifies source sections and printed pages. The original proposal's claim that Tang does not use network structure is inaccurate and must not be copied into the midterm. The proposal itself remains unchanged.
+
 ## Manual editing and final check
 
 Edit `main.tex` in the Overleaf ZIP using pdfLaTeX. The bibliography is embedded in that file. Keep the figure path and its directory structure unless you update the source reference. Recompile after changing text, check every page, and make sure figures remain readable and references resolve. The supplied rubric does not state a page limit. Prioritize readable text over squeezing content into a page target.

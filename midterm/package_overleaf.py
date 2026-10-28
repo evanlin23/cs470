@@ -21,6 +21,7 @@ step is required. Figures are included at their existing relative paths under
 midterm/review/screenshots/. Keep that structure unless you update main.tex.
 
 review/rubric-review.md contains the strict editorial assessment.
+review/tang-source-check.md records the verified primary-source comparison.
 review/rewrite-guide.md gives Evan and Eric the final rewrite priorities and
 facts that must remain synchronized. These Markdown files do not appear in
 the compiled paper. The supplied rubric does not state a page limit.
@@ -37,7 +38,7 @@ def package(destination, verify=False):
     figures = re.findall(r'\\includegraphics(?:\[[^\]]*\])?\{([^}]+)\}', source.read_text())
     files = {'main.tex': source}
     files.update({name: ROOT / name for name in figures})
-    for name in ['rubric-review.md', 'rewrite-guide.md', 'analysis-notes.md', 'style-review.md']:
+    for name in ['rubric-review.md', 'rewrite-guide.md', 'analysis-notes.md', 'style-review.md', 'tang-source-check.md']:
         files['review/' + name] = ROOT / 'midterm/review' / name
     destination.parent.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(destination, 'w', compression=zipfile.ZIP_DEFLATED) as archive:

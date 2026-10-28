@@ -2,18 +2,18 @@
 
 Scores use the uploaded rubric's integer 0–4 scale and `(score / 4) × weight`. The external review's 92.5/100 was a reasonable strict estimate. The earlier 100/100 self-assessment was too generous and is superseded here. No editorial estimate guarantees an instructor grade.
 
-## Current conservative assessment
+## Current editorial assessment
 
 | Criterion | Weight | Score | Points | Basis and limits |
 |---|---:|---:|---:|---|
 | Objective | 10 | 4 | 10 | The abstract and §1 identify the student problem, significance, challenge and completed progress. Both baseline comparisons are accurate. |
-| Related work | 10 | 3 | 7.5 | §2 explains useful tools and theory and makes our contrast explicit. The Tang paragraph identifies our distance rule and displayed routes, but its account of the cited method remains high-level. A source-verified methodological comparison would strengthen the case for 4. |
+| Related work | 10 | 4 | 10 | §2 gives relevant contributions, strengths, task-specific limits and explicit contrasts. The uploaded Tang paper now supports a concrete account of learned cross-field topics and random-walk ranking, its publication-history requirement, our student interest proxy and our fixed score's inability to learn cross-field topic relationships. |
 | Course concepts and network analysis | 15 | 4 | 15 | §3 defines the graph, weights, brokerage, communities and ranking, justifies Louvain against Girvan–Newman, and interprets real results. Harvest identity/date, per-paper affiliation, unweighted path counts and empty-topic handling are explicit. |
 | Design and implementation | 25 | 4 | 25 | §4 explains the complete three-view flow and its rationale. One large actual card image makes the route legible. Route-first ordering is a design choice, not an unsupported feedback attribution. |
 | Users and feedback | 20 | 4 | 20 | §5 identifies and justifies the four students, reports the author-confirmed minimal-context individual exploration with active feedback, and connects observations to four revisions. Recruitment and note-taking/recording were not specified and are not invented. No retest is claimed. |
 | Evaluation | 15 | 4 | 15 | §6 states candidate pools, frozen communities, seed inclusion and the fixed P@10 denominator. Planned measures have reasons, procedures, comparisons and targets. Personal-interest relevance and identical card/route presentation are described and implemented. |
 | Writing | 5 | 4 | 5 | The rubric-aligned argument, explained figure and conclusions agree with the evidence. Four rendered pages and the extracted Overleaf build are checked. |
-| **Total** | **100** | | **97.5** | No reading-impeding spelling/grammar deduction identified. |
+| **Total** | **100** | | **100** | No remaining specific rubric omission identified in this pass. This is an editorial assessment, not a guaranteed instructor grade. |
 
 The feedback score assesses an initial qualitative round, not representative usability evidence. The rubric does not require a particular participant minimum, recordings, quotations, session duration or a post-change retest. An instructor may judge the available evidence more strictly.
 
@@ -29,17 +29,19 @@ The feedback score assesses an initial qualitative round, not representative usa
 - Three-edge paths have four distinct vertices and ignore weights. Topic similarity is zero if either topic set is empty.
 - The paper uses one enlarged actual card detail instead of the small overview map. Full map captures remain in the repository. Web references show exact URLs without invented access dates.
 
-## Remaining source check
+## Resolved primary-source check
 
-Retrieving Tang et al.'s original PDF from the author's publication site was blocked by the environment's destination policy with CONNECT 403. This revision does not claim a newly verified representation or learning mechanism, or that the cited system ignores networks. It identifies our concrete distance/route design instead of inventing a limitation of Tang's algorithm.
+The previous 97.5 estimate withheld 2.5 points for the high-level Tang comparison. The author supplied the original PDF after external retrieval was blocked. Its title, authors and printed pages match the citation. Sections 2, 3.3 and 4.1–4.2 support the revised comparison. `tang-source-check.md` records the PDF hash and exact source locations.
 
-For the strongest case for full Related Work credit, read the original source and add one accurate methodological distinction, including its strength and limitation for this task. Do not award the missing 2.5 points merely because the paragraph grew longer. A new dataset, a favorable experimental result and additional prediction metrics are not required for this improvement.
+Tang learns collaboration topics and uses random walk with restart on a graph containing authors and topics. Publication histories support its author representations. Our fixed score instead uses a chosen researcher as the student's interest proxy and displays a route, while lacking learned relationships between topics in different fields. The paragraph now gives a source-supported contribution, strength, task-specific limitation and explicit methodological contrast. This evidence, rather than added length or a better experimental result, resolves the identified Related Work deduction.
+
+An instructor can still judge the formative sample, related-work depth or study plan more strictly. A rubric assessment does not establish human usability, validate reported sessions independently or guarantee a score. The authors should verify their final rewrite and contribution disclosure before submission.
 
 ## Verification
 
 - Current dataset/results/provenance match. P@10 remains .0079 for Topic-Only, .0287 for closure and .0131 for BridgeFinder.
-- Five publication checks, five full-data workflow tests and twelve validation/analysis tests pass. These cover all 500 displayed rankings/routes and genuine top-five card attribution.
-- Twelve Chromium happy-path tests pass, including stated-interest entry, saved context, actual export/analysis, all 50 starting researchers, keyboard interaction and mobile layout. Automated answers are synthetic fixtures, not human evidence.
+- This prose-only source-check pass reruns the five publication-consistency checks, the PDF build and clean Overleaf extraction/compilation. Ranking, UI and study behavior are unchanged.
+- The preceding implementation revision passed five full-data workflow tests, twelve validation/analysis tests and twelve Chromium happy-path tests. These cover all 500 displayed rankings/routes, genuine study top-five attribution, personal-interest entry, saved context, export/analysis, keyboard interaction and mobile layout. Automated answers are synthetic fixtures, not human evidence.
 - Four pages at the original 10pt size. Two pdfLaTeX passes without warnings, rendered-page inspection, and a cleanly extracted/compiled Overleaf project matching the report text.
 - Original proposal, dataset, ranking and historical results unchanged.
 
