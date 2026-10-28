@@ -13,9 +13,10 @@ import statistics
 import networkx as nx
 from networkx.algorithms import community as nxc
 from scipy import stats
+from run_metadata import metadata_for, save_manifest
 
 
-def run_citation_impact(data_path, out_path, split_year=2019):
+def run_citation_impact(data_path, out_path, split_year=2019, manifest_out=None):
     with open(data_path) as f:
         data = json.load(f)
 
@@ -24,7 +25,7 @@ def run_citation_impact(data_path, out_path, split_year=2019):
     for p in papers:
         if p["year"] <= split_year and len(p["authors"]) <= 25:
             auths = p["authors"]
-            w = 1.0 / (len(auths) - 1.0)
+            w = 1.0
             for i in range(len(auths)):
                 for j in range(i + 1, len(auths)):
                     u, v = auths[i], auths[j]
@@ -33,6 +34,12 @@ def run_citation_impact(data_path, out_path, split_year=2019):
                     else:
                         g_train.add_edge(u, v, weight=w)
 
+    # Canonical order prevents incidental input/hash iteration from changing partitions.
+    ordered = nx.Graph()
+    ordered.add_nodes_from(sorted(g_train))
+    ordered.add_weighted_edges_from((u, v, g_train[u][v]['weight'])
+                                   for u, v in sorted(tuple(sorted(edge)) for edge in g_train.edges()))
+    g_train = ordered
     # Louvain communities on training graph
     communities = nxc.louvain_communities(g_train, seed=42)
     node_to_comm = {}
@@ -83,6 +90,14 @@ def run_citation_impact(data_path, out_path, split_year=2019):
     os.makedirs(os.path.dirname(out_path) or ".", exist_ok=True)
     with open(out_path, "w") as f:
         json.dump(result, f, indent=2)
+    if manifest_out:
+        metadata = metadata_for(data_path, ['citation_impact.py'], 'citation-impact-v3-paper-counts')
+        metadata.update({'split_year': split_year, 'max_retained_uiuc_authors': 25,
+                         'louvain_seed': 42, 'training_nodes': g_train.number_of_nodes(),
+                         'training_edges': g_train.number_of_edges(), 'communities': len(communities),
+                         'modularity': nxc.modularity(g_train, communities),
+                         'evaluation_papers': result['total_eval_papers']})
+        save_manifest(manifest_out, out_path, metadata)
     print(json.dumps(result, indent=2))
     return result
 
@@ -91,5 +106,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--data", default="prototype/uiuc_data_scaled.json")
     parser.add_argument("--out", default="prototype/results/citation_impact.json")
+    parser.add_argument("--manifest-out", help="Optional reproducibility sidecar")
     args = parser.parse_args()
-    run_citation_impact(args.data, args.out)
+    run_citation_impact(args.data, args.out, manifest_out=args.manifest_out)

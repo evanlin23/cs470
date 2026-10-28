@@ -3,7 +3,7 @@ import math
 from collections import Counter, defaultdict
 import networkx as nx
 from networkx.algorithms import community as nxc
-MODEL_VERSION = "temporal-brokerage-v1"
+MODEL_VERSION = "proposal-path-v2"
 def build_graphs(data, split_year=2019):
     """Constructs weighted training graph (<= split_year) and evaluation graph (> split_year)
     with strict leak-free temporal topic profiling (pre-split only).
@@ -23,7 +23,7 @@ def build_graphs(data, split_year=2019):
         n_auth = len(auths)
         if n_auth < 2:
             continue
-        weight = 1.0 / (n_auth - 1.0)
+        weight = 1.0  # Proposal: each joint paper adds one collaboration.
 
         target_g = g_train if year <= split_year else g_eval
 
@@ -123,8 +123,13 @@ def prepare_model(data, split_year=2019):
     return graph, evaluation, authors, membership, autonomy
 
 
-def rank_candidates(graph, seed, membership, autonomy):
-    paths = nx.single_source_shortest_path(graph, seed, cutoff=3)
+def candidate_features(graph, seed, membership, autonomy):
+    """All non-coauthor, cross-community candidates for native baseline comparisons.
+
+    Only reachable candidates with shortest distance >=3 are eligible for the
+    proposal's ranking. Native Adamic–Adar retains its shared-contact pool.
+    """
+    paths = nx.single_source_shortest_path(graph, seed)
     counts = three_hop_path_counts(graph, seed)
     rows = []
     for candidate in sorted(graph):
@@ -133,19 +138,26 @@ def rank_candidates(graph, seed, membership, autonomy):
         topic = compute_topic_similarity(graph.nodes[seed]["topics"], graph.nodes[candidate]["topics"])
         bsi = sum(membership[w] == membership[seed] for w in graph[candidate]) / graph.degree(candidate)
         path = paths.get(candidate)
-        reachability = 1.0 if path and len(path) == 3 else (0.5 if path else 0.1)
+        distance = len(path)-1 if path else None
         aa = sum(1 / math.log(graph.degree(w)) for w in nx.common_neighbors(graph, seed, candidate))
+        count = counts[candidate]
+        bonus = count / (1.0 + count)
         rows.append({"candidate_id": candidate, "topic_similarity": topic,
                      "burt_autonomy": autonomy[candidate], "boundary_spanning": bsi,
-                     "path_bonus": reachability, "path_ids": path,
-                     "score": 0.60 * topic + 0.12 * autonomy[candidate] + 0.12 * bsi + 0.16 * reachability,
-                     "aa": aa, "topic_path": topic + 0.5 * counts[candidate] / (1 + counts[candidate])})
-    return sorted(rows, key=lambda r: (-r["score"], r["candidate_id"]))
+                     "three_hop_paths": count, "path_bonus": bonus, "path_ids": path,
+                     "distance": distance, "proposal_eligible": distance is not None and distance >= 3,
+                     "score": topic + 0.5 * bonus, "aa": aa})
+    return rows
+
+
+def rank_candidates(graph, seed, membership, autonomy):
+    rows = [row for row in candidate_features(graph, seed, membership, autonomy) if row['proposal_eligible']]
+    return sorted(rows, key=lambda row: (-row['score'], row['candidate_id']))
 
 
 def path_description(row, authors):
     path = row["path_ids"]
     if not path:
-        return "No co-authorship route found within three hops. Consider direct outreach; no intermediary is verified."
+        return "No observed co-authorship route exists in this graph."
     names = " → ".join(authors[n]["name"] for n in path)
     return f"{names} ({len(path)-1} co-authorship hops; acquaintance and willingness to introduce are unverified)"

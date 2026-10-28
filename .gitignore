@@ -3,3 +3,5 @@ __pycache__/
 .venv/
 # Participant exports contain private study data; keep consented data outside Git.
 prototype/study/study_responses*.json
+
+.build/

@@ -31,7 +31,7 @@ function validateCards(data){
   for(const row of data){
     if(!row||row.dataset_id!==revision||!['card_id','seed_id','seed_name','seed_department','candidate_name','introduction_path'].every(key=>typeof row[key]==='string'&&row[key].length>0)||
        ![row.seed_topics,row.candidate_topics,row.sample_papers].every(strings)||
-       (row.path_ids!==null&&(!strings(row.path_ids)||![3,4].includes(row.path_ids.length))))throw new Error('Invalid card data');
+       (row.path_ids!==null&&(!strings(row.path_ids)||row.path_ids.length < 3)))throw new Error('Invalid card data');
   }
   return data;
 }

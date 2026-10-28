@@ -15,7 +15,7 @@ import unittest
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT))
 from topic_groups import classify_topics
-from model import compute_burt_constraint, compute_topic_similarity, rank_candidates
+from model import compute_burt_constraint, compute_topic_similarity, rank_candidates, candidate_features
 import networkx as nx
 spec=importlib.util.spec_from_file_location('analysis',ROOT/'study/analyze_study.py')
 analysis=importlib.util.module_from_spec(spec);spec.loader.exec_module(analysis)
@@ -46,17 +46,35 @@ class ValidationTests(unittest.TestCase):
         self.assertEqual(compute_topic_similarity({'one','two'},{'two','three'}),1/3)
         self.assertEqual(compute_topic_similarity(set(),{'one'}),0)
 
-    def test_path_bonus_and_score_against_hand_calculation(self):
-        graph=nx.Graph([('a','b'),('b','c'),('c','d'),('e','f')])
+    def test_proposal_score_and_eligibility_against_hand_calculation(self):
+        graph=nx.Graph([('start','broker'),('broker','near'),('near','far'),('x','y')])
+        nx.set_node_attributes(graph,{'start':{'topics':{'relevant'}},'broker':{'topics':set()},
+                                      'near':{'topics':{'unrelated'}},'far':{'topics':{'relevant'}},
+                                      'x':{'topics':{'relevant'}},'y':{'topics':{'relevant'}}})
+        groups={'start':0,'broker':0,'near':1,'far':1,'x':2,'y':2}
+        autonomy=compute_burt_constraint(graph)
+        rows=rank_candidates(graph,'start',groups,autonomy)
+        self.assertEqual([row['candidate_id'] for row in rows],['far'])
+        self.assertEqual(rows[0]['distance'],3)
+        self.assertEqual(rows[0]['three_hop_paths'],1)
+        self.assertEqual(rows[0]['path_bonus'],.5)
+        self.assertAlmostEqual(rows[0]['score'],1.25)
+        self.assertEqual(rows[0]['aa'],0)
+        all_rows={row['candidate_id']:row for row in candidate_features(graph,'start',groups,autonomy)}
+        self.assertGreater(all_rows['near']['aa'],0)
+        self.assertFalse(all_rows['near']['proposal_eligible'])
+        self.assertFalse(all_rows['x']['proposal_eligible'])
+        self.assertIsNone(all_rows['x']['path_ids'])
+
+    def test_four_hop_candidates_remain_eligible_without_three_path_bonus(self):
+        graph=nx.path_graph(['a','b','c','d','e'])
         nx.set_node_attributes(graph,{n:{'topics':{'same'}} for n in graph})
-        membership={'a':0,'b':0,'c':1,'d':1,'e':2,'f':2}
-        rows={r['candidate_id']:r for r in rank_candidates(graph,'a',membership,{n:.5 for n in graph})}
-        self.assertEqual(rows['c']['path_bonus'],1)
-        self.assertEqual(rows['d']['path_bonus'],.5)
-        self.assertIsNone(rows['e']['path_ids'])
-        self.assertAlmostEqual(rows['c']['score'],.60+.12*.5+.12*.5+.16)
-        self.assertAlmostEqual(rows['d']['score'],.60+.12*.5+.16*.5)
-        self.assertAlmostEqual(rows['e']['score'],.60+.12*.5+.16*.1)
+        groups={n:0 if n in ['a','b'] else 1 for n in graph}
+        rows={row['candidate_id']:row for row in rank_candidates(graph,'a',groups,compute_burt_constraint(graph))}
+        self.assertEqual(rows['e']['distance'],4)
+        self.assertEqual(rows['e']['path_bonus'],0)
+        self.assertEqual(rows['e']['score'],1)
+        self.assertNotIn('c',rows)
 
     def test_rejects_mismatched_dataset_and_unsupported_schema(self):
         for key,value in [('dataset_id','0'*64),('schema_version',None),('schema_version',True),('schema_version',2)]:

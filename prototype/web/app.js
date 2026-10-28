@@ -45,9 +45,10 @@ function validateBundle(data) {
     if (!Array.isArray(rows) || new Set(rows.map(row => row.candidate_id)).size !== rows.length) throw new Error('Invalid candidate list.');
     for (const [index,row] of rows.entries()) {
       if (!profile(row) || row.candidate_id !== row.id || !nodes.has(row.id) || row.id === seed.id || row.rank !== index+1 ||
-          ![row.score,row.topic_similarity,row.boundary_spanning].every(value => Number.isFinite(value) && value >= 0 && value <= 1) ||
+          !(Number.isFinite(row.score) && row.score >= 0 && row.score <= 1.5) ||
+          ![row.topic_similarity,row.boundary_spanning].every(value => Number.isFinite(value) && value >= 0 && value <= 1) ||
           !strings(row.sample_papers) || row.community_id === seed.community_id || edges.has(JSON.stringify([seed.id,row.id]))) throw new Error('Invalid recommendation.');
-      if (row.path_ids !== null && (!strings(row.path_ids) || ![3,4].includes(row.path_ids.length) ||
+      if (row.path_ids !== null && (!strings(row.path_ids) || row.path_ids.length < 4 ||
           row.path_ids[0] !== seed.id || row.path_ids.at(-1) !== row.id || new Set(row.path_ids).size !== row.path_ids.length ||
           !row.path_ids.every((id,i,path) => nodes.has(id) && (!i || edges.has(JSON.stringify([path[i-1],id])))))) throw new Error('Invalid collaboration route.');
     }
@@ -197,10 +198,11 @@ function renderRecCards() {
     } else route.append(element('p','','Consider direct outreach. No intermediary is verified; longer paths may exist.'));
     route.append(element('p','path-note','This route comes from shared publications. Check that the intermediary knows them and can help.'));card.append(route);
     const metrics=element('dl','metrics-bar');
-    for (const [label,value] of [['Topic overlap',row.topic_similarity],['Network autonomy',row.burt_autonomy],['Ties to starting group',row.boundary_spanning]]) {
-      const item=element('div','metric-item');item.append(element('dt','',label),element('dd','',number(value)));metrics.append(item);
+    for (const [label,value] of [['Topic overlap',row.topic_similarity],['Three-step routes',row.three_hop_paths],['Route bonus',row.path_bonus]]) {
+      const item=element('div','metric-item');item.append(element('dt','',label),element('dd','',label === 'Three-step routes' ? String(value) : number(value)));metrics.append(item);
     }
-    const explanation=element('details','ranking-details');explanation.append(element('summary','','How this suggestion was ranked'),element('p','muted',`Combined ranking score: ${number(row.score)}. These are research-network measures, not probabilities.`),metrics);
+    const relationship=`These researchers have no shared co-author in the graph. This route uses ${row.path_ids.length-2} intermediaries. The score combines topic overlap with a bonus for three-step introduction routes.`;
+    const explanation=element('details','ranking-details');explanation.append(element('summary','','How this suggestion was ranked'),element('p','muted',relationship),element('p','muted',`Combined ranking score: ${number(row.score)}. These are research-network measures, not probabilities.`),metrics);
     card.append(element('h3','','Research topics'),topicTags(row.topics),element('h3','','Example publications'));
     const papers=element('ul','paper-list');for (const title of row.sample_papers) papers.append(element('li','',title));
     if (!row.sample_papers.length) papers.append(element('li','','No example publications available.'));

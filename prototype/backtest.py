@@ -16,9 +16,10 @@ import networkx as nx
 from networkx.algorithms import community as nxc
 
 
-from model import build_graphs, prepare_training_model, rank_candidates
+from model import build_graphs, prepare_training_model, rank_candidates, candidate_features, MODEL_VERSION
+from run_metadata import metadata_for, save_manifest
 
-def evaluate_baselines(g_train, g_eval, authors, min_eval_edges=1):
+def evaluate_baselines(g_train, g_eval, authors, min_eval_edges=1, metadata=None):
     # Canonical insertion order and tie breaks make this workflow reproducible.
     graph, membership, autonomy = prepare_training_model(g_train)
     communities = [set(n for n in graph if membership[n] == c) for c in sorted(set(membership.values()))]
@@ -31,13 +32,28 @@ def evaluate_baselines(g_train, g_eval, authors, min_eval_edges=1):
             truth[v].add(u)
     seeds = sorted(u for u in truth if len(truth[u]) >= min_eval_edges)
     print(f"Eligible evaluation seeds with new cross-community ties: {len(seeds)}")
-    models = ["Preferential Attachment", "Global Betweenness", "Topic-Only", "Triadic Closure (Adamic-Adar)", "BridgeFinder (Proposal Topic+Path)", "BridgeFinder"]
+    if metadata is not None:
+        metadata.update({'training_nodes': graph.number_of_nodes(), 'training_edges': graph.number_of_edges(),
+                         'evaluation_nodes': g_eval.number_of_nodes(), 'evaluation_edges': g_eval.number_of_edges(),
+                         'communities': len(communities), 'modularity': nxc.modularity(graph, communities),
+                         'eligible_seeds': len(seeds), 'split_year': 2019, 'louvain_seed': 42,
+                         'betweenness_seed': 42, 'tie_break': 'author_id',
+                         'weights': {'topic': 1.0, 'saturated_three_path_count': 0.5},
+                         'minimum_hops': 3, 'require_reachable': True, 'edge_weight': 'joint_paper_count',
+                         'baseline_pools': {'Topic-Only': 'reachable cross-community distance >=3',
+                                            'Triadic Closure (Adamic-Adar)': 'native shared-contact cross-community',
+                                            'popularity_and_betweenness': 'all non-coauthor cross-community'},
+                         'ground_truth': 'all new cross-community ties among training nodes'})
+    models = ["Preferential Attachment", "Global Betweenness", "Topic-Only", "Triadic Closure (Adamic-Adar)", "BridgeFinder"]
     metrics = {m: defaultdict(list) for m in models}
     for u in seeds:
-        rows = rank_candidates(graph, u, membership, autonomy)
-        keys = [lambda r: graph.degree(u)*graph.degree(r["candidate_id"]), lambda r: centrality[r["candidate_id"]], lambda r: r["topic_similarity"], lambda r: r["aa"], lambda r: r["topic_path"], lambda r: r["score"]]
-        for model, key in zip(models, keys):
-            ranked = sorted(rows, key=lambda r: (-key(r), r["candidate_id"]))
+        rows = candidate_features(graph, u, membership, autonomy)
+        proposal = [r for r in rows if r['proposal_eligible']]
+        shared_contact = [r for r in rows if r['aa'] > 0]
+        pools = [rows, rows, proposal, shared_contact, proposal]
+        keys = [lambda r: graph.degree(u)*graph.degree(r["candidate_id"]), lambda r: centrality[r["candidate_id"]], lambda r: r["topic_similarity"], lambda r: r["aa"], lambda r: r["score"]]
+        for model, key, pool in zip(models, keys, pools):
+            ranked = sorted(pool, key=lambda r: (-key(r), r["candidate_id"]))
             ids = [r["candidate_id"] for r in ranked[:10]]
             hits5 = sum(v in truth[u] for v in ids[:5])
             hits10 = sum(v in truth[u] for v in ids)
@@ -54,17 +70,21 @@ def main():
     parser = argparse.ArgumentParser(description="Run BridgeFinder Temporal Backtest")
     parser.add_argument("--data", default="prototype/uiuc_data.json")
     parser.add_argument("--out", default="prototype/results/backtest_results.json")
+    parser.add_argument("--manifest-out", help="Optional JSON sidecar with dataset/code hashes and seed counts")
     args = parser.parse_args()
 
     with open(args.data) as f:
         data = json.load(f)
 
     g_train, g_eval, authors = build_graphs(data, split_year=2019)
-    results = evaluate_baselines(g_train, g_eval, authors)
+    metadata = metadata_for(args.data, ['model.py', 'backtest.py'], MODEL_VERSION)
+    results = evaluate_baselines(g_train, g_eval, authors, metadata=metadata)
 
     os.makedirs(os.path.dirname(args.out) or ".", exist_ok=True)
     with open(args.out, "w") as f:
         json.dump(results, f, indent=2)
+    if args.manifest_out:
+        save_manifest(args.manifest_out, args.out, metadata)
     print(f"Results saved to {args.out}")
 
 

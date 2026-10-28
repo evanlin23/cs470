@@ -3,6 +3,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{lmodern,microtype,amsmath,amssymb,booktabs,tabularx,url,graphicx}
 \usepackage[font=small,labelfont=bf]{caption}
+\usepackage{needspace}
 \usepackage[hidelinks]{hyperref}
 \setlength{\emergencystretch}{1em}
 \widowpenalty=10000
@@ -21,7 +22,7 @@
 \maketitle
 
 \begin{abstract}
-Students often look for research opportunities through people they already know. BridgeFinder helps them look beyond those circles. A student selects a familiar researcher, explores a collaboration map, and sees related researchers with possible introduction paths. At midterm, we have built the web prototype, analyzed two UIUC publication datasets, and gathered feedback from five students. A test using past collaborations finds better predictions than shared-contact ranking, although the gains fall short of our goals. Next, we will test whether students find the suggestions relevant, unfamiliar, and useful for contacting someone.
+Students often look for research opportunities through people they already know. BridgeFinder helps them look beyond those circles. A student selects a familiar researcher, explores a collaboration map, and sees related researchers with possible introduction paths. At midterm, we have built the web prototype, analyzed two UIUC publication datasets, and gathered feedback from five students. A test using past collaborations finds that shared-contact ranking predicts more later ties than our proposal-based method. Next, we will test whether students find these farther-away suggestions relevant, unfamiliar, and useful for contacting someone.
 \end{abstract}
 
 \section{Objective}
@@ -29,14 +30,14 @@ A student who enjoyed a computing class might want to apply those skills in biol
 
 \textbf{BridgeFinder} finds researchers with related interests outside a familiar researcher's collaboration group and shows who might connect them. We focus on UIUC undergraduate and early-stage graduate students looking for research opportunities beyond their current department. A student can begin with an instructor or researcher whose work they know, without needing publications of their own.
 
-The main design challenge is to balance relevance with discovery. A suggestion should match the student's interests while adding someone they would be unlikely to find through their usual contacts. It should also explain a practical next step. At midterm, we have a working three-screen app, a pipeline for building the collaboration graph, tests on two publication datasets, and one round of student feedback. Our results show promise for finding later collaborators; whether the app helps students find mentors remains an open question.
+The main design challenge is to balance relevance with discovery. A suggestion should match the student's interests while adding someone they would be unlikely to find through their usual contacts. It should also explain a practical next step. At midterm, we have a working three-screen app, a pipeline for building the collaboration graph, tests on two publication datasets, and one round of student feedback. The prediction results do not yet meet our targets; whether the app helps students find mentors remains an open question.
 
 \section{Related Work}
 \textbf{Researcher search.} Illinois Experts~\cite{experts} brings together institutional profiles and publications, making it a useful place to check someone's expertise. Google Scholar~\cite{scholar} supports publication search and author profiles, which help a student follow a research topic. Both are useful sources of candidate names. Our task goes a step further: explain how a candidate relates to someone the student already knows. We therefore put the collaboration map and possible introduction beside the research match, rather than expecting a profile search to answer that question.
 
 \textbf{Literature maps.} Connected Papers~\cite{connectedpapers} gives a visual overview of related papers, helping a reader get oriented in an unfamiliar area. ResearchRabbit~\cite{researchrabbit} supports exploring related literature from a collection of papers. Their strength is making discovery an exploration rather than a sequence of keyword searches. For our purpose, however, a route between papers is not an introduction between people. BridgeFinder borrows the map-based interaction but makes researchers, shared co-authors, and candidate explanations the main objects.
 
-\textbf{Collaboration recommendation.} Liben-Nowell and Kleinberg~\cite{libennowell2007} compare ways to predict future links from a network. Common-neighbor measures such as Adamic--Adar are simple, explainable comparisons, but favor people who already share contacts. We retain shared contacts as useful routes while restricting candidates to another community. Tang et al.~\cite{tang2012} address cross-domain collaboration recommendation using evidence about research interests and relationships. Their strength is treating relevance across domains as a recommendation problem. That ranking task does not by itself test whether a student can understand a suggested contact or use an introduction path. Our study therefore measures relevance, novelty, and willingness to contact someone, alongside the prediction test.
+\textbf{Collaboration recommendation.} Liben-Nowell and Kleinberg~\cite{libennowell2007} compare ways to predict future links from a network. Common-neighbor measures such as Adamic--Adar are simple, explainable comparisons, but favor people who already share contacts. We compare against this approach while looking farther away: our candidates have no shared co-author with the starting researcher. Tang et al.~\cite{tang2012} address cross-domain collaboration recommendation using evidence about research interests and relationships. Their strength is treating relevance across domains as a recommendation problem. That ranking task does not by itself test whether a student can understand a suggested contact or use an introduction path. Our study therefore measures relevance, novelty, and willingness to contact someone, alongside the prediction test.
 
 \textbf{Evidence about research networks.} Granovetter~\cite{granovetter1973} explains how weak ties can carry information beyond close circles; Burt~\cite{burt1992,burt2004} explains the benefits available to people who bridge separate groups. These works give us a reason to look across communities, but they do not establish the value of a particular missing co-authorship. Dahlander and McFarland~\cite{dahlander2013} study how research ties form and persist over time, showing why intellectual similarity and organizational context matter. That longitudinal view helps explain collaboration, but does not provide our student-facing discovery workflow. BridgeFinder turns these ideas into suggestions that can be explored; publication data alone still cannot establish personal trust or mentoring availability.
 
@@ -55,63 +56,59 @@ We collected a pilot sample of 5,000 works and a larger sample of 25,000 works. 
 \renewcommand{\arraystretch}{1.12}
 \begin{tabularx}{\columnwidth}{@{}Xrr@{}}
 \toprule
-& Pilot & Larger sample\\
+& Pilot & Larger\\
 \midrule
 Authors with co-authorships & 3,642 & 9,042\\
 Co-authorship edges & 16,408 & 36,748\\
-Detected communities & 344 & 454\\
-Modularity & 0.949 & 0.925\\
+Detected communities & 344 & 455\\
+Modularity & 0.900 & 0.905\\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-We give each shared paper a weight of $1/(a-1)$, where $a$ is the number of UIUC authors on that paper, and add those weights across papers. This reduces the influence of large teams: one paper with many authors should not count as strongly as repeated collaboration in a small group.
+Each edge is weighted by the number of papers the two authors wrote together, as specified in the proposal. Repeated collaborations therefore count more strongly in community detection. Introduction distance counts edges, regardless of their weight.
 
 \subsection{Communities and bridges}
 We use Louvain community detection~\cite{blondel2008} to find groups with many collaborations inside the group and fewer outside it. Louvain seeks high \emph{modularity}, which measures how strongly edges fall within groups compared with a network with similar node strengths. We chose it over Girvan--Newman~\cite{girvan2002}, which repeatedly removes edges that lie on many shortest paths, because that repeated computation is costly on graphs of this size.
 
 The high modularity in Table~\ref{tab:network} suggests that the observed collaborations are concentrated in separate groups. This supports looking across group boundaries. However, some groups are in completely disconnected parts of the graph, which raises modularity even without a meaningful disciplinary divide. We label communities by number rather than treating them as verified departments.
 
-This is where structural holes and brokerage enter the app. We consider researchers in a different community who have not already co-authored with the selected researcher. A missing edge is a possible collaboration to explore, not proof that the two people do not know each other. A shared co-author provides a possible introduction; a longer path may require more intermediaries. These are observed publication paths, not measurements of friendship or trust.
+Candidates must be reachable non-coauthors in another community, at least three hops from the starting researcher. This follows the proposal: a candidate must lie beyond both existing collaborators and people who share a co-author. All 500 suggestions displayed across the prototype's 50 starting researchers currently have three-edge paths. Researchers farther away remain eligible, but disconnected researchers are excluded because we cannot show an observed introduction route. Publication paths do not measure friendship or trust.
 
 \subsection{Recommendation score}
-For selected researcher $u$ and candidate $v$, our score is
+For starting researcher $u$ and candidate $v$, we use the proposal's topic-and-path score:
 \begin{equation}
-\mathrm{Score}(u,v)=0.60S+0.12H+0.12B+0.16P.
+\mathrm{Score}(u,v)=S(u,v)+0.5\frac{c_3(u,v)}{1+c_3(u,v)}.
 \label{eq:score}
 \end{equation}
-The four terms describe different reasons to recommend someone:
-\begin{itemize}
-\setlength{\itemsep}{1pt}
-\item \textbf{Topic match ($S$):} the fraction of shared topics among the two researchers' combined topic sets (Jaccard similarity). Each set contains up to ten topics from the researcher's earlier papers.
-\item \textbf{Autonomy ($H$):} one minus Burt's network constraint~\cite{burt1992}, bounded below by zero. Constraint measures how much a person relies on contacts who also connect to one another. Autonomy is higher when those contacts are less concentrated in the same circle. Nodes with at most one neighbor receive zero.
-\item \textbf{Connection to the starting group ($B$):} the fraction of the candidate's collaborators who belong to $u$'s community.
-\item \textbf{Short introduction route ($P$):} 1 for a two-edge path, 0.5 for a three-edge path without a shorter one, and 0.1 when neither is found.
-\end{itemize}
-These are fixed design choices, not learned weights or probabilities of success. Topic match receives the most weight so that network position does not overwhelm relevance. We also test a simpler Topic+Path version to see whether the extra network features help. Without the network analysis, the app would lose its community filter and introduction paths and become a topic search tool.
+Here, $S$ is the Jaccard similarity of their topic sets: the number of shared topics divided by the number of distinct topics across both sets. Each set contains up to ten topics from that researcher's 2015--2019 papers. The term $c_3$ counts simple three-edge paths from $u$ to $v$, each passing through two distinct intermediaries.
+
+The path bonus rewards several possible routes while limiting their influence: it approaches 0.5 as the path count grows. A candidate more than three edges away receives no three-step bonus, but can still rank on topic similarity. The coefficient is a fixed design choice, not a learned value or a probability that an introduction will succeed. We show one shortest observed route on the card, even when several exist.
+
+This score implements the proposal's emphasis on related interests and introduction paths. Network position measures such as autonomy are not additional ranking terms. Without the graph, the app would lose its community boundary, distance requirement, and introduction routes and become a topic search tool.
 
 \section{Design and Implementation}
 \subsection{Using the app}
-The app follows the proposal's three-screen flow, with a starting-person selector added to help students who have no publications:
+The Researchers, Network, and Suggestions views follow the proposal's discovery flow, with a starting-person selector for students without publications:
 
-\textbf{1. Pick a familiar researcher.} The student searches a list of 50 starting researchers, chosen automatically from highly connected authors across the largest communities. The list shows names and research topics. These are historical author records; students need to check current appointments and availability.
+\textbf{1. Pick a familiar researcher.} The student searches a list of 50 starting researchers, chosen automatically from highly connected authors across the largest communities. Students can search names and topics or filter by community and inferred research area. Like institutional profiles~\cite{experts}, this gives a campus entry point. Topic labels are not departments; appointments and availability still need checking.
 
-\textbf{2. Explore the map.} The map shows the selected researcher, recommended candidates, and people along their collaboration paths. Solid lines show observed co-authorships. Orange dashed lines show recommended cross-community connections that are not existing co-authorships. This gives the student context for a suggestion, rather than only a ranked name.
+\textbf{2. Explore the map.} The map shows the selected researcher, recommended candidates, and people along their collaboration paths. Solid lines show observed co-authorships. Orange dashed lines show recommended cross-community connections that are not existing co-authorships. This adapts literature-map exploration~\cite{connectedpapers,researchrabbit} to people and missing collaboration links.
 
-\textbf{3. Open a researcher card.} Clicking a dashed line opens the candidate's card, with topics, example papers, network scores, and the observed introduction path. The path appears first because students in our initial feedback round looked for whom to contact before reading the details. Figure~\ref{fig:prototype} shows the map and one resulting card.
+\textbf{3. Open a researcher card.} Clicking a dashed line or a name in the adjacent list opens the candidate's card. The introduction comes before topics and example papers, following our initial feedback. Technical scores sit under ``How this suggestion was ranked.'' The route follows the weak-tie motivation~\cite{granovetter1973}, while topics reflect intellectual similarity~\cite{dahlander2013}. Figure~\ref{fig:prototype} shows the current map and a card detail.
 
 \begin{figure*}[t]
 \centering
-\includegraphics[width=0.62\textwidth,trim=0 150 0 0,clip]{midterm/review/screenshots/02-map.png}\\[3pt]
-\includegraphics[width=0.82\textwidth,trim=45 205 45 205,clip]{midterm/review/screenshots/03-recommendation.png}
-\caption{Implemented prototype. Top: selecting John A. Rogers shows cross-community suggestions; solid lines are observed co-authorships and dashed orange lines are suggested collaborations. Bottom: Ashish A. Kulkarni's card shows a possible route through Yiyue Luo, topics, and example papers. A publication path does not guarantee an introduction.}
+\includegraphics[width=0.56\textwidth]{midterm/review/screenshots/02-map.png}\\[3pt]
+\includegraphics[width=0.72\textwidth]{midterm/review/screenshots/03-recommendation.png}
+\caption{Current prototype. Top: the Network view for John A. Rogers; solid lines show co-authorships and orange dashed lines show suggestions. Bottom: Pilgyu Kang's card detail shows a route through Paul V. Braun and SungWoo Nam. Topics, papers, and expandable scores appear below this detail. Paths do not guarantee introductions.}
 \label{fig:prototype}
 \end{figure*}
 
 \subsection{What works now}
 Python computes recommendations in advance, and a static D3 web page displays them. The app, prediction test, and study cards share graph and ranking code, keeping the evaluation aligned with the interface.
 
-Cards show only observed paths, with at most two intermediaries, and explicitly mark unavailable routes. An outreach button opens an editable message without sending email. Automated checks verify rankings and route edges, and a browser walkthrough confirms that the main flow works. The next user round will test whether people understand it.
+Cards show an observed shortest path, including all intermediaries. Candidates without a route are excluded. An outreach button opens a message that can be edited, copied, or downloaded without sending email. The interface works on desktop and mobile and supports keyboard navigation. Browser checks cover the discovery flow for all 50 starting researchers; the next user round will test comprehension.
 
 \section{Users and Feedback}
 Our target users are UIUC students who want research opportunities beyond their current department. They may know a subject through classes but have few research contacts. We gathered feedback from five students in individual, 30-minute sessions, during which they talked through the early prototype: three CS/CE undergraduate juniors or seniors and two graduate students from Bioengineering and Information Sciences.
@@ -124,15 +121,15 @@ The feedback led to three changes, each addressing a different point in that flo
 
 \textbf{Reading the map.} Students interpreted dashed lines as weak existing collaborations. We added a legend separating observed co-authorship from suggested connections. The distinction is visible in the map in Figure~\ref{fig:prototype}: dashed links identify candidates to explore, not relationships that already exist.
 
-\textbf{Choosing a next step.} Students looked for who might introduce them before reading papers and topics. They also read a low constraint score as a poor recommendation. We moved the route to the top of the card and showed autonomy as a positive gauge. The card in Figure~\ref{fig:prototype} shows the resulting order: introduction first, then scores, topics, and example work.
+\textbf{Choosing a next step.} Students looked for who might introduce them before reading papers and topics. They also read a low constraint score as a poor recommendation. We moved the route to the top of the card; an early revision also replaced raw constraint with a positive autonomy gauge. The current design keeps the introduction prominent and places the topic-and-path score in an optional explanation, leaving topics and papers in the main view.
 
 These observations explain the design changes, but do not show that the changes solved the problems. In the next round, students will explain the line types and suggested route without help, allowing us to check comprehension rather than infer it from successful clicks. We report these first-round findings qualitatively, without issue frequencies or participant quotations.
 
 \section{Evaluation}
 \subsection{Prediction test}
-We built the graph and topic profiles using only 2015--2019 papers, then asked whether the recommended researchers actually became new cross-community co-authors in 2020--2024. We evaluated 180 starting researchers in the pilot sample and 1,385 in the larger sample. Each had at least one eligible new collaboration in the later period. This excludes researchers who formed no such ties, so the results do not describe every researcher or student.
+We built the graph and topic profiles using only 2015--2019 papers, then asked whether the recommended researchers actually became new cross-community co-authors in 2020--2024. We evaluated 184 starting researchers in the pilot sample and 1,369 in the larger sample. Each had at least one eligible new collaboration in the later period. This excludes researchers who formed no such ties, so the results do not describe every researcher or student.
 
-All methods rank the same candidates. Topic-Only tests whether topic matching is enough; Adamic--Adar tests shared contacts. Preferential attachment favors well-connected researchers, and betweenness favors researchers who lie on many shortest paths. Topic+Path tests a simpler version of our model.
+Topic-Only uses the same reachable, cross-community candidates at distance three or more as BridgeFinder, isolating the effect of the path bonus. Adamic--Adar instead uses its natural shared-contact candidates at distance two. Restricting it to our pool would make every score zero. Preferential attachment and betweenness rank all cross-community non-coauthors, favoring popularity and shortest-path centrality, respectively. These are comparisons between discovery strategies with different candidate pools, rather than a controlled comparison of scores on one pool. All use the same future cross-community ties as ground truth, including ties at distance two.
 
 We report \textbf{precision at five (P@5)}, the fraction of the first five suggestions that became collaborators, because students should not have to inspect a long list. We also report \textbf{NDCG@10}, which gives more credit when actual collaborators appear near the top of the first ten results. Both are averaged across starting researchers. Table~\ref{tab:results} reports the current implementation's results.
 
@@ -148,34 +145,34 @@ We report \textbf{precision at five (P@5)}, the fraction of the first five sugge
 \cmidrule(lr){2-3}\cmidrule(l){4-5}
 Method&P@5&\shortstack{NDCG\\@10}&P@5&\shortstack{NDCG\\@10}\\
 \midrule
-Pref. attachment&0.0011&0.0011&0.0088&0.0133\\
-Betweenness&0.0011&0.0211&0.0078&0.0148\\
-Topic-Only&0.0044&0.0274&0.0208&0.0402\\
-Adamic--Adar&0.0056&0.0297&0.0295&0.0515\\
-Topic+Path&0.0133&0.0615&0.0344&0.0620\\
-BridgeFinder&0.0133&0.0514&0.0351&0.0674\\
+Pref. attachment&0.0033&0.0040&0.0077&0.0135\\
+Betweenness&0.0033&0.0237&0.0086&0.0155\\
+Topic-Only&0.0043&0.0154&0.0108&0.0205\\
+Adamic--Adar&0.0130&0.0368&0.0282&0.0472\\
+BridgeFinder&0.0065&0.0149&0.0102&0.0225\\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-On the larger sample, BridgeFinder improves P@5 from 0.0295 to 0.0351 over Adamic--Adar, a relative gain of about 19\%. NDCG@10 rises from 0.0515 to 0.0674. However, this falls short of our targets of doubling P@5 and adding 0.05 to NDCG@10. Precision is also low in absolute terms: only about 3.5\% of the top-five suggestions become observed collaborators.
-
 \noindent\begin{minipage}{\columnwidth}
-The simpler Topic+Path model has the same pilot P@5 as BridgeFinder and better pilot NDCG@10, while the full model performs better on the larger sample. The added features therefore do not help consistently. We have not yet estimated uncertainty around these differences. The results suggest that network information is useful, but do not establish reliable gains across settings or show that the app helps students find mentors.
+On the larger sample, BridgeFinder's P@5 is 0.0102, compared with 0.0282 for Adamic--Adar. NDCG@10 is also lower: 0.0225 versus 0.0472. The proposal's targets of doubling P@5 and adding 0.05 to NDCG@10 are not met. Only about 1\% of our top-five suggestions become observed collaborators. Looking beyond shared contacts makes prediction harder; these results do not establish a benefit from that restriction.
 \par
 \end{minipage}
+
+Compared with Topic-Only on the same candidate pool, the path bonus raises pilot P@5 but lowers larger-sample P@5 slightly (0.0108 to 0.0102). Larger-sample NDCG@10 rises from 0.0205 to 0.0225, while pilot NDCG@10 falls. We have not estimated uncertainty around these differences. The bonus therefore has no consistent prediction advantage across these samples. The student study will address a different question: whether the farther-away suggestions offer relevant, unfamiliar contacts with understandable routes.
 
 \subsection{Citation impact}
 We also compared later papers involving authors from different training communities with papers whose known authors were in one community. This analysis separately excludes papers with more than 25 retained UIUC authors to reduce the influence of large teams.
 
-Of 6,231 later papers, 1,071 were cross-community, 4,183 were within-community, and 977 could not be classified because none of their authors appeared in the training graph. Mean citations were 64.86 and 61.60, respectively, a ratio of 1.053. The medians were 36 and 37. A two-sided Mann--Whitney test gave $p=0.0601$.
+Of 6,231 later papers, 1,051 were cross-community, 4,203 were within-community, and 977 could not be classified because none of their authors appeared in the training graph. Mean citations were 65.13 and 61.55, respectively, a ratio of 1.058. The medians were 36 and 37. A two-sided Mann--Whitney test gave $p=0.1132$.
 
 Our target was a mean ratio above 1.10 and a statistically significant distributional difference ($p<0.05$); neither was met. This test also does not account for field, publication age, or repeated teams. We therefore cannot conclude that crossing communities leads to more influential work.
 
+\Needspace{8\baselineskip}
 \subsection{Student evaluation}
-The next round will recruit 15 students, aiming for three each from CS, ECE, Bioengineering, Crop Sciences, and Information Sciences. This broadens the first round beyond computing. It remains an exploratory study, not a representative campus survey.
+The next round will recruit 15 students, aiming for three each from CS, ECE, Bioengineering, Crop Sciences, and Information Sciences. This is an exploratory study, not a representative campus survey.
 
-Each participant will first use the app to find a candidate and explain the suggested route. They will then choose a starting researcher and rate up to 15 shuffled cards: the top five from BridgeFinder, Adamic--Adar, and Topic-Only. Method labels will be hidden. A candidate selected by more than one method will appear once, with the rating counted for each method that selected it.
+Each participant will first use the app to find a candidate and explain the suggested route. They will then choose a starting researcher and rate up to 15 shuffled cards: the top five from BridgeFinder, Adamic--Adar, and Topic-Only. Candidate pools match the prediction test. Method labels will be hidden. A candidate selected by more than one method will appear once, with the rating counted for each method that selected it.
 
 We will measure three kinds of success:
 \begin{itemize}
@@ -184,13 +181,14 @@ We will measure three kinds of success:
 \item \textbf{Willingness to act.} Participants rate how realistic it feels to contact the candidate, also from 1 to 7. We target at least 5 and an improvement over Topic-Only, testing whether the path adds practical value.
 \item \textbf{Usability and understanding.} At least 12 of 15 participants should complete the task without help and correctly distinguish observed ties from suggested connections. We will also use the standard ten-question System Usability Scale (SUS), targeting a mean of at least 80 out of 100.
 \end{itemize}
-We will compare methods using each participant's average ratings, rather than treating all cards as independent observations. The main joint relevance-and-novelty comparison will use a paired Wilcoxon test at $p<0.05$, with differences and uncertainty intervals reported. Other comparisons will be exploratory and use Holm correction for multiple tests. The rating interface, SUS questionnaire, export, and analysis scripts are implemented and tested. The comparative study itself has not yet been run.
+We will compare participant averages, treating participants as the independent observations. The main joint relevance-and-novelty comparison will use a paired Wilcoxon test at $p<0.05$, with differences and uncertainty intervals reported. Other comparisons will be exploratory and use Holm correction for multiple tests. The rating, SUS, and export-to-analysis flow are implemented and tested. The comparative study has not yet been run.
 
 \section{Limitations and Next Steps}
-A publication path cannot tell us whether someone currently takes students or would make an introduction. Our historical UIUC sample also misses informal relationships, external collaborators, and some publications. The prediction gains therefore need to be tested against students' actual experience of the app.
+A publication path cannot tell us whether someone currently takes students or would make an introduction. Our historical UIUC sample also misses informal relationships, external collaborators, and some publications. The distance requirement also excludes disconnected candidates and nearby potential mentors. Our original collection goal was about 110,000 works; the current 25,000-work sample falls short of that coverage.
 
-In November, we will run the 15-student study and revise the interface. Any scoring changes will use separate validation data. The final report will combine user findings and prediction results to assess whether BridgeFinder helps students choose useful contacts.
+In November, we will run the study and revise the interface. Any scoring changes will use separate validation data. The final report will assess whether BridgeFinder helps students choose useful contacts.
 
+\Needspace{10\baselineskip}
 \section*{Contributions and AI Use}
 Evan Lin worked on data collection, the prediction test, and the campus map. Eric Liu worked on scoring, citation analysis, study tools, and the formative sessions. Both contributed to the report. Claude assisted with early development and drafting; OpenAI Codex assisted with implementation checks, tests, and report revision. No participant responses or quotations were generated.
 
@@ -249,23 +247,23 @@ J.~Tang, S.~Wu, J.~Sun, and H.~Su.
 
 \bibitem{scholar}
 Google.
-\newblock Google Scholar: About.
+\newblock Google Scholar: About. n.d.
 \newblock \href{https://scholar.google.com/intl/en/scholar/about.html}{Google Scholar overview}.
 
 \bibitem{connectedpapers}
 Connected Papers.
-\newblock Connected Papers: Explore connected papers in a visual graph.
+\newblock Connected Papers: Explore connected papers in a visual graph. n.d.
 \newblock \href{https://www.connectedpapers.com/}{connectedpapers.com}.
 
 \bibitem{researchrabbit}
 ResearchRabbit.
-\newblock ResearchRabbit: Literature discovery.
+\newblock ResearchRabbit: Literature discovery. n.d.
 \newblock \href{https://www.researchrabbit.ai/}{researchrabbit.ai}.
 
 \bibitem{experts}
 University~of Illinois.
-\newblock Illinois experts: Research and scholarship at {UIUC}.
-\newblock \href{https://experts.illinois.edu/}{experts.illinois.edu}, 2024.
+\newblock Illinois experts: Research and scholarship at {UIUC}. n.d.
+\newblock \href{https://experts.illinois.edu/}{experts.illinois.edu}.
 
 \end{thebibliography}
 \end{document}

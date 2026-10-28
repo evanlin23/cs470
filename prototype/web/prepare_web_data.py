@@ -14,14 +14,24 @@ def build_and_export(data_path, out_path="prototype/web/data.json"):
     data = json.loads(Path(data_path).read_text())
     graph, _, authors, membership, autonomy = prepare_model(data)
     communities = sorted(set(membership.values()))
+    ranked_cache = {}
+    def usable(node):
+        if node not in ranked_cache:
+            ranked_cache[node] = rank_candidates(graph, node, membership, autonomy)
+        return len(ranked_cache[node]) >= 10
     palettes = {c: {"name": f"Community {c+1}", "color": COLORS[c % len(COLORS)]} for c in communities}
     seeds = []
     for c in communities[:8]:
-        seeds.extend(sorted((n for n in graph if membership[n] == c), key=lambda n: (-graph.degree(n), n))[:6])
+        # Keep only starting researchers with a full proposal-compliant shortlist.
+        chosen = []
+        for n in sorted((n for n in graph if membership[n] == c), key=lambda n: (-graph.degree(n), n)):
+            if usable(n): chosen.append(n)
+            if len(chosen) == 6: break
+        seeds.extend(chosen)
     for n in sorted(graph, key=lambda n: (-graph.degree(n), n)):
         if len(seeds) >= 50:
             break
-        if n not in seeds:
+        if n not in seeds and usable(n):
             seeds.append(n)
     papers = {n: [] for n in graph}
     for paper in data["papers"]:
@@ -41,7 +51,7 @@ def build_and_export(data_path, out_path="prototype/web/data.json"):
     dashed = []
     for seed in seeds:
         recs = []
-        for i, row in enumerate(rank_candidates(graph, seed, membership, autonomy)[:10], 1):
+        for i, row in enumerate(ranked_cache[seed][:10], 1):
             candidate = row["candidate_id"]
             path = row["path_ids"]
             steps = ([{"role": "Your selected anchor", "title": authors[path[0]]["name"]}] +
@@ -56,8 +66,9 @@ def build_and_export(data_path, out_path="prototype/web/data.json"):
         recommendations[seed] = recs
     links = [{"source": u, "target": v, "type": "intra"} for u, v in graph.edges() if u in visible and v in visible]
     bundle = {"metadata": {"model_version": MODEL_VERSION, "split_year": 2019, "source": Path(data_path).name,
-                           "weights": [0.60, 0.12, 0.12, 0.16],
-                           "topic_groups": "Keyword hints, not department labels; no effect on rankings", "routes": "Observed co-authorships, not verified social introductions"},
+                           "weights": {"topic": 1.0, "saturated_three_path_count": 0.5},
+                           "minimum_hops": 3, "require_reachable": True, "edge_weight": "joint_paper_count",
+                           "topic_groups": "Keyword hints, not department labels; no effect on rankings", "routes": "Observed paths of at least three edges; not verified social introductions"},
               "seeds": [profile(n) for n in seeds], "recommendations": recommendations,
               "graph": {"nodes": [profile(n) for n in sorted(visible)], "links": links+dashed},
               "colleges": {c: palettes[c] for c in sorted({membership[n] for n in visible})}}

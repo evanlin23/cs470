@@ -10,7 +10,7 @@ import random
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from model import prepare_model, rank_candidates, path_description, MODEL_VERSION
+from model import prepare_model, rank_candidates, path_description, candidate_features, MODEL_VERSION
 
 
 def generate(data):
@@ -20,9 +20,12 @@ def generate(data):
     for group in groups:
         seed = min((n for n in graph if membership[n] == group), key=lambda n: (-graph.degree(n), n))
         rows = rank_candidates(graph, seed, membership, autonomy)
+        native_aa = [r for r in candidate_features(graph, seed, membership, autonomy) if r['aa'] > 0]
+        if len(rows) < 5 or len(native_aa) < 5:
+            raise ValueError('Study context needs five proposal candidates and five shared-contact baselines')
         selections = {}
         for method, field in [('BridgeFinder', 'score'), ('Triadic Closure', 'aa'), ('Topic-Only', 'topic_similarity')]:
-            for row in sorted(rows, key=lambda r: (-r[field], r['candidate_id']))[:5]:
+            for row in sorted(native_aa if method == 'Triadic Closure' else rows, key=lambda r: (-r[field], r['candidate_id']))[:5]:
                 selections.setdefault(row['candidate_id'], {'row': row, 'methods': []})['methods'].append(method)
         items = sorted(selections.items())
         random.Random(42 + group).shuffle(items)
@@ -33,7 +36,7 @@ def generate(data):
             cards.append({'card_id': card_id, 'seed_id': seed, 'seed_name': authors[seed]['name'],
                           'seed_department': f'Community {group+1}', 'seed_topics': sorted(graph.nodes[seed]['topics'])[:4],
                           'candidate_name': authors[candidate]['name'], 'candidate_topics': sorted(graph.nodes[candidate]['topics'])[:5],
-                          'sample_papers': papers, 'introduction_path': path_description(row, authors), 'path_ids': row['path_ids']})
+                          'model_version': MODEL_VERSION, 'sample_papers': papers, 'introduction_path': path_description(row, authors), 'path_ids': row['path_ids']})
             keys[card_id] = {'models': selection['methods'], 'candidate_id': candidate, 'seed_id': seed}
     # Bind public cards and hidden attribution to one immutable dataset revision.
     revision = hashlib.sha256(json.dumps({'cards': cards, 'keys': keys, 'model': MODEL_VERSION},

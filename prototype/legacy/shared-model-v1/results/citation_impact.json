@@ -1,0 +1,15 @@
+{
+  "n_cross_papers": 1070,
+  "n_within_papers": 4184,
+  "n_unclassified_papers": 977,
+  "total_eval_papers": 6231,
+  "mean_citations_cross": 64.95,
+  "std_citations_cross": 241.45,
+  "median_citations_cross": 36.0,
+  "mean_citations_within": 61.58,
+  "std_citations_within": 119.91,
+  "median_citations_within": 37.0,
+  "impact_ratio": 1.055,
+  "mann_whitney_u": 2153993.5,
+  "p_value_two_sided": 0.0565
+}

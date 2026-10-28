@@ -62,3 +62,21 @@ The earlier paper-transfer pilot remains in `fetch.py`, `analyze.py`, and `case_
 MB_MAILTO=you@illinois.edu python prototype/fetch.py prototype/case_generank.json /tmp/graph.json
 python prototype/analyze.py /tmp/graph.json /tmp/methodbridge-results.json
 ```
+
+## Reproduce the paper's results
+
+```bash
+python prototype/refresh_results.py
+```
+
+This runs both temporal backtests and the separate citation analysis. All three must succeed before the command replaces any published result. It updates `prototype/results/` and the matching copies under `midterm/review/` together, including provenance sidecars with dataset/code hashes, runtime versions, and actual seed counts. The paper's numbers are checked against these canonical files by `test_publication_consistency.py`. A changed result must be assessed and reflected in the report; do not hand-edit metrics to make a check pass.
+
+Historical outputs from the older remote revision are preserved under `prototype/legacy/remote-label-fix/results/`. They are not the current benchmark. Citation analysis uses its separate 25-retained-author filter and canonical graph ordering; it is not identical to the prediction graph.
+
+## Proposal-based ranking
+
+`proposal-path-v2` follows the submitted proposal: edges count joint papers; candidates must be reachable, in another community, and at least three hops away. Rank = topic Jaccard similarity + `0.5*c3/(1+c3)`, where c3 counts simple three-edge introduction paths. More distant candidates can rank on topics without that bonus. Cards show actual shortest routes with all intermediaries.
+
+All 500 bundled suggestions currently have three-edge routes and no shared co-author. Run `python prototype/audit_recommendations.py` for the reproducible topology audit. Adamic–Adar uses native two-hop candidates; Topic-Only uses our >=3-hop pool. Different pools make this a comparison of discovery strategies, not score-only isolation. Current prediction results are weaker than Adamic–Adar and the paper reports that outcome.
+
+The previous two-hop-favoring hybrid is preserved under `legacy/shared-model-v1/`; it is historical, not the current benchmark. The proposal's approximately 110,000-work collection goal remains unfinished; the current larger sample contains 25,000 harvested works.

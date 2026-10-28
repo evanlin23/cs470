@@ -1,0 +1,1 @@
+Historical temporal-brokerage-v1 snapshot before the user directed restoration of the submitted proposal. This version allowed two-hop candidates, used fractional paper weights, and ranked a 0.60/0.12/0.12/0.16 hybrid. Its metrics are historical and must not be mixed with proposal-path-v2 results. Source and generated artifacts are preserved here; active code is in prototype/.

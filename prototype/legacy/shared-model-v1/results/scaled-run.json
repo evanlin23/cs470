@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "model_version": "temporal-brokerage-v1",
+  "dataset_file": "uiuc_data_scaled.json",
+  "dataset_sha256": "91e02ba3a40d5e59af5b9d718689fe50fa0521c4269ca84b3852168597435e48",
+  "source_sha256": {
+    "model.py": "a0b6db554d44b5c159b26d9ea2f3e2a6d49cfbc77ae7e5fd3274bf983ec78028",
+    "backtest.py": "87b8bf2e1712bfba2bb0de75ff643fd65190b014913c3588b291bc4ffecf24be"
+  },
+  "runtime": {
+    "python": "3.12.14",
+    "networkx": "3.7",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1"
+  },
+  "training_nodes": 9042,
+  "training_edges": 36748,
+  "evaluation_nodes": 8518,
+  "evaluation_edges": 36436,
+  "communities": 454,
+  "modularity": 0.9247946651709119,
+  "eligible_seeds": 1385,
+  "split_year": 2019,
+  "louvain_seed": 42,
+  "betweenness_seed": 42,
+  "tie_break": "author_id",
+  "weights": [
+    0.6,
+    0.12,
+    0.12,
+    0.16
+  ],
+  "result_file": "backtest_results_scaled.json",
+  "result_sha256": "c85b5ac66825d4b0ebfc590f49e4ab1929a5f225bd8d83b7523d76b4cf4dd465"
+}

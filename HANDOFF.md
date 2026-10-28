@@ -1,181 +1,92 @@
-> Historical handoff: implementation and metrics below predate the shared-model revision. For current commands, route semantics, study protocol, and validated results, use `prototype/README.md`, `prototype/study/README.md`, and `midterm/review/rubric-review.md`.
+# BridgeFinder contributor handoff
 
-# BridgeFinder: Project Handoff & Contributor Guide
+This is the current shared-model workflow for `evanlin23/cs470`, branch `claude/modest-gauss-q759kv`. Historical exporters, study bundles and result files are preserved under `prototype/legacy/remote-label-fix/`; do not use them as current benchmarks.
 
-**Project Name:** BridgeFinder: A Social Network Brokerage Recommender for Campus Research Collaborations  
-**Course:** CS 470 (Network Science, University of Illinois Urbana-Champaign)  
-**Team Members:** Evan Lin (`elin26@illinois.edu`) & Eric Liu (`ericl8@illinois.edu`)  
-**Active Git Branch:** `claude/modest-gauss-q759kv`  
-**GitHub Repository:** [evanlin23/cs470](https://github.com/evanlin23/cs470)
+Evan Lin and Eric Liu are the project authors. The app helps UIUC students find relevant researchers outside a familiar researcher's collaboration community and inspect possible introductions.
 
----
+## Run the prototype
 
-## 1. Project Overview & Core Concept
+From the repository root, use Python 3.12 and the pinned dependencies:
 
-Most academic collaboration recommenders rely on **homophily and triadic closure** (recommending researchers in the same immediate department or mutual co-author circles). While this predicts frequent ties, it reinforces academic echo chambers.
-
-BridgeFinder instead operationalizes **Ronald Burt's theory of Structural Holes and Social Network Brokerage**:
-1. **Target Audience:** Undergraduate and graduate students who enjoyed a class or work in one domain (e.g., CS/NLP) and want to apply their skills to another domain (e.g., Agronomy or Bioengineering).
-2. **Brokerage Score Formulation:**
-   $$\text{Score}(u, v) = \alpha \cdot S_{\text{topic}}(u,v) + \beta \cdot H(v) + \gamma \cdot \text{BSI}(u,v) + \lambda \cdot P(u,v)$$
-   - $S_{\text{topic}}(u,v)$: Jaccard similarity between pre-2020 topic profiles.
-   - $H(v) = \max(0, 1 - C_v)$: Burt's autonomy metric ($C_v$ is network constraint).
-   - $\text{BSI}(u,v) = \frac{|\text{ext}(v)|}{\text{deg}(v)}$: Boundary-spanning index measuring cross-community connectivity.
-   - $P(u,v)$: Introduction path bonus ($0.5$ if $d(u,v) = 2$, $0.1$ if $d(u,v) \ge 3$ with path).
-3. **Core Hypothesis:** BridgeFinder predicts and surfaces high-value cross-community collaborations better than standard topological link predictors and topic-only baselines, providing actionable introduction paths through trusted campus faculty.
-
----
-
-## 2. Repository Directory Structure
-
-```
-cs470/
-├── proposal/                      # Submitted ACM 2-page project proposal
-│   ├── latex/                     # LaTeX source (main.tex, figure/flow.tex, references.bib)
-│   └── proposal.pdf               # Compiled proposal PDF (2 pages)
-│
-├── midterm/                       # Midterm milestone submission
-│   ├── latex/                     # LaTeX source (main.tex, main.pdf)
-│   └── midterm.pdf                # Compiled 5-page midterm report
-│
-├── prototype/                     # Core computational & evaluation pipeline
-│   ├── fetch_openalex.py          # Polite-pool OpenAlex harvester (UIUC works 2015-2024)
-│   ├── backtest.py                # Temporal link prediction backtest (2015-19 train -> 2020-24 test)
-│   ├── citation_impact.py         # Burt's citation hypothesis test (cross vs within community)
-│   ├── run_experiment.sh          # One-click harvest & backtest script
-│   │
-│   ├── uiuc_data.json             # 5,000-work dataset (2,493 papers, 3,642 authors, 183 seeds)
-│   ├── uiuc_data_scaled.json      # 25,000-work dataset (13,229 papers, 9,042 authors, 1,379 seeds)
-│   │
-│   ├── results/                   # Evaluation output logs
-│   │   ├── backtest_results.json        # 5k backtest metrics
-│   │   ├── backtest_results_scaled.json # 25k backtest metrics
-│   │   └── citation_impact.json         # Citation analysis results & Mann-Whitney p-values
-│   │
-│   ├── web/                       # Interactive D3.js campus exploration tool
-│   │   ├── index.html             # Standalone 3-screen frontend (Seed Selector, D3 Map, Researcher Cards)
-│   │   ├── prepare_web_data.py    # Extracts top communities, bridges, and paths into JSON
-│   │   └── data.json              # D3-ready graph payload
-│   │
-│   └── study/                     # Double-blind human study suite
-│       ├── generate_cards.py      # Generates 15 shuffled cards per seed across 5 departments
-│       ├── index.html             # Participant rating interface (7-point Likert + 10-item SUS)
-│       ├── study_cards.json       # Shuffled candidate researcher cards (unlabeled)
-│       ├── truth_keys.json        # Model mapping for ground truth analysis
-│       └── analyze_study.py       # Participant-level paired t-test & Wilcoxon analyzer
-│
-└── docs/                          # Architecture notes and initial idea drafts
-```
-
----
-
-## 3. Key Findings & Empirical Results
-
-### A. Temporal Backtest (2015–2019 Train $\to$ 2020–2024 Test)
-All author topic profiles are computed **strictly from pre-2020 publications** to prevent future collaboration data leakage.
-
-| Model | P@5 (5k) | NDCG@10 (5k) | P@5 (25k) | NDCG@10 (25k) |
-|---|---|---|---|---|
-| Preferential Attachment | 0.0011 | 0.0011 | 0.0081 | 0.0125 |
-| Global Betweenness | 0.0022 | 0.0192 | 0.0076 | 0.0109 |
-| Topic-Only Baseline | 0.0076 | 0.0342 | 0.0201 | 0.0406 |
-| Triadic Closure (Adamic-Adar) | 0.0076 | 0.0279 | 0.0283 | 0.0459 |
-| **BridgeFinder (Proposal Topic+Path)** | **0.0216** | **0.0697** | **0.0333** | **0.0630** |
-| **BridgeFinder (Full Score)** | **0.0195** | **0.0671** | **0.0364** | **0.0705** |
-
-*Takeaway:* BridgeFinder outperforms all topology-only baselines and Topic-Only when temporal leakage is removed, proving that structural introduction paths provide real predictive signal.
-
-### B. Burt's Citation Impact Hypothesis
-Evaluated on 6,231 post-2020 UIUC evaluation papers:
-- **Cross-Community Papers:** $N = 1,071$, Mean = 64.86 citations ($\sigma = 241.34$), Median = 36.0.
-- **Within-Community Papers:** $N = 4,183$, Mean = 61.60 citations ($\sigma = 119.92$), Median = 37.0.
-- **Impact Ratio:** $1.053\times$ (earlier 5k sample was $1.128\times$).
-- **Mann-Whitney U Test:** $p = 0.0601$ (not statistically significant at $\alpha = 0.05$).
-- *Takeaway:* Cross-community papers have higher variance and a higher mean, but the null hypothesis cannot be rejected; this is reported candidly as an inconclusive result in the paper.
-
-### C. Formative Usability (Round 1 Feedback, $N=5$)
-Think-aloud student interviews produced 3 UI/algorithmic improvements:
-1. **Screen 1:** Added 50 curated faculty seed profiles to prevent cold-start paralysis.
-2. **Screen 2:** D3 graph explicitly colors dashed orange arcs as "Structural Holes (High Topic Overlap, No Direct Tie)".
-3. **Screen 3:** Moved the 4-node introduction path to the very top of each researcher card for immediate outreach context.
-
----
-
-## 4. How to Run Everything
-
-### Prerequisites
 ```bash
-pip install networkx scipy
-# For compiling LaTeX:
-brew install tectonic # or use pdflatex
+python -m pip install -r prototype/requirements.txt
+python prototype/serve.py
 ```
 
-### 1. Run the Backtest Pipeline
+The default port is 8765. The public researcher app is `/web/`, and the method-blinded study is `/study/`. The server serves both interfaces and their shared styles without exposing the private method key or raw data. Use this server rather than serving the study directory by itself.
+
+The happy path is Researchers → Network → Suggestions → editable outreach. The UI supports desktop/mobile and keyboard use. The selected researcher/candidate can be shared through the URL. Nothing sends email automatically.
+
+## One ranking implementation
+
+`prototype/model.py` implements `proposal-path-v2`, shared by the app, backtest and study. Edges count joint papers. Candidates must be reachable non-coauthors in a different Louvain community, at shortest distance >=3. Score = `S + 0.5*c3/(1+c3)`, where S is training-topic Jaccard similarity and c3 counts simple three-edge introduction paths. More distant reachable candidates remain eligible without a three-step bonus. The card shows an actual shortest path. Autonomy and boundary-spanning values are descriptive, not ranking terms.
+
+Numbered communities are not departments. Inferred research-area keyword labels are separate and do not alter rankings. Publication paths do not confirm personal introductions or mentoring availability.
+
+## Proposal alignment and triadic closure
+
+The user's design direction restored the proposal's three-or-more-hop requirement and raw joint-paper weights. All 500 displayed top-ten suggestions now use three-edge paths, with no shared co-author. Adamic–Adar uses its native two-hop shared-contact pool; Topic-Only uses the same >=3-hop pool as BridgeFinder. Popularity and betweenness use all cross-community non-coauthors. All predict the same future new cross-community ties. These are comparisons of discovery strategies with different pools; zero overlap with Adamic–Adar follows from eligibility and is not evidence of higher quality.
+
+Run `python prototype/audit_recommendations.py` to reproduce `prototype/review/closure-audit.json`. The previous hybrid, which displayed 483 two-hop suggestions, is archived under `prototype/legacy/shared-model-v1/`. Its results are historical and must not be mixed with this experiment. The submitted proposal remains unchanged.
+
+## Current datasets and results
+
+| Dataset | Author records | Retained multi-UIUC-author papers | Training nodes / edges | Eligible prediction seeds |
+|---|---:|---:|---:|---:|
+| Pilot: 5,000 harvested works | 5,396 | 2,493 | 3,642 / 16,408 | 184 |
+| Larger: 25,000 harvested works | 16,604 | 13,229 | 9,042 / 36,748 | 1,369 |
+
+| Method | Pilot P@5 | Pilot NDCG@10 | Larger P@5 | Larger NDCG@10 |
+|---|---:|---:|---:|---:|
+| Preferential Attachment | 0.0033 | 0.0040 | 0.0077 | 0.0135 |
+| Global Betweenness | 0.0033 | 0.0237 | 0.0086 | 0.0155 |
+| Topic-Only | 0.0043 | 0.0154 | 0.0108 | 0.0205 |
+| Triadic Closure (Adamic-Adar) | 0.0130 | 0.0368 | 0.0282 | 0.0472 |
+| BridgeFinder | 0.0065 | 0.0149 | 0.0102 | 0.0225 |
+
+BridgeFinder does not outperform Adamic–Adar or meet the original prediction targets. The path bonus has mixed results against Topic-Only. This is reported directly in the paper; no weights were tuned on future outcomes to hide the result.
+
+The separate citation analysis excludes papers with more than 25 retained UIUC authors. It reports 1,051 cross-community, 4,203 within-community and 977 unclassified later papers; means 65.13/61.55, ratio 1.058, two-sided Mann–Whitney p=.1132. Neither impact target is met. Use the provenance manifests to distinguish this run from historical partitions.
+
+## Refresh results and generated data
+
 ```bash
-# To run on the scaled 25k dataset:
-python3 prototype/backtest.py --data prototype/uiuc_data_scaled.json --out prototype/results/backtest_results_scaled.json
-
-# Or run the quick test (5k dataset):
-python3 prototype/backtest.py --data prototype/uiuc_data.json --out prototype/results/backtest_results.json
+python prototype/refresh_results.py
+python prototype/web/prepare_web_data.py
+python prototype/study/generate_cards.py
 ```
 
-### 2. Run the Citation Impact Test
+The first command runs both prediction analyses and citation impact in a temporary directory, then publishes all results and manifests only after every command succeeds. Current metrics live in `prototype/results/`, and matching report copies live in `midterm/review/`. `pilot-run.json`, `scaled-run.json` and `citation-run.json` record dataset/code hashes, runtime versions, algorithm settings, and actual counts. Original historical outputs remain in the legacy directory.
+
+Regenerating study data changes its revision ID when cards or attribution change. Use the matching method key when analyzing an exported session; never substitute historical keys.
+
+## Study status
+
+The authors confirmed five initial 30-minute think-aloud sessions: three CS/CE undergraduates and two graduate students from Bioengineering and Information Sciences. Feedback led to the starting-researcher list, a clear line-type legend, and a prominent introduction route. No issue counts or participant quotations were supplied, so none are invented in the report.
+
+The planned comparison recruits 15 students across five disciplinary backgrounds. The implemented card contexts are five detected communities, not verified faculty departments. There are 63 unique cards across the five contexts. Each method contributes its actual top five; shared candidates appear once and are attributed to all selecting methods.
+
+Participants rate relevance, novelty and willingness to contact, then complete SUS. Progress survives reload in the same tab; downloads are voluntary. This is method blinding, not claimed double blinding. No real comparative-study results have been collected in the repository.
+
+See `prototype/study/README.md` for the protocol and analysis command. The primary comparison uses participant-level Relevant-and-New rates and a paired Wilcoxon test; exploratory comparisons use Holm correction. Wilcoxon does not have t-test degrees of freedom. With 15 complete pairs a paired t-test would have df=14.
+
+## Check and rebuild
+
 ```bash
-python3 prototype/citation_impact.py --data prototype/uiuc_data_scaled.json --out prototype/results/citation_impact.json
+python -m pip install -r prototype/tests/requirements.txt
+python -m unittest discover -s prototype/tests -v
+python prototype/tests/browser_workflow.py --artifacts /tmp/bridgefinder-checks
 ```
 
-### 3. Launch the Interactive D3 Campus Map
+The browser suite starts its own server and requires system Chromium. Automated responses are temporary test fixtures, not participant evidence.
+
+Build the report **from the repository root**, because its figure paths are rooted there:
+
 ```bash
-cd prototype/web
-python3 -m http.server 8000
-# Open http://localhost:8000 in your browser
-```
-*(To re-generate `prototype/web/data.json` from the scaled graph: `python3 prototype/web/prepare_web_data.py --data prototype/uiuc_data_scaled.json --out prototype/web/data.json`)*
-
-### 4. Launch the Double-Blind User Study
-```bash
-# Step 1: Regenerate study cards if needed (already pre-generated)
-python3 prototype/study/generate_cards.py --data prototype/uiuc_data_scaled.json --out prototype/study/study_cards.json
-
-# Step 2: Serve the study interface
-cd prototype/study
-python3 -m http.server 8001
-# Open http://localhost:8001 in your browser
-```
-Participants rate 15 cards, fill out the SUS usability questions, and click **"Export Responses (JSON)"**.
-
-### 5. Analyze Study Responses
-Once participant responses are collected into `prototype/study/study_responses.json`:
-```bash
-python3 prototype/study/analyze_study.py \
-  --responses prototype/study/study_responses.json \
-  --keys prototype/study/truth_keys.json \
-  --out prototype/study/study_analysis_results.json
-```
-*(Note: Per academic integrity guidelines, no mock responses are committed; run this once real participants complete the study).*
-
-### 6. Compile Reports to PDF
-```bash
-# Midterm Report (exactly 5 pages):
-cd midterm/latex && tectonic main.tex && cp main.pdf ../midterm.pdf && cd ../..
-
-# Project Proposal (2 pages):
-cd proposal/latex && tectonic main.tex && cp main.pdf ../proposal.pdf && cd ../..
+python -c "from pathlib import Path; Path('.build/midterm').mkdir(parents=True, exist_ok=True)"
+pdflatex -interaction=nonstopmode -halt-on-error -output-directory=.build/midterm midterm/latex/main.tex
+pdflatex -interaction=nonstopmode -halt-on-error -output-directory=.build/midterm midterm/latex/main.tex
+python -c "import shutil; shutil.copyfile('.build/midterm/main.pdf', 'midterm/midterm.pdf')"
 ```
 
----
-
-## 5. Upcoming Milestones & Tasks (Nov 1 – Dec 9)
-
-| Window | Milestone | Action Items |
-|---|---|---|
-| **Nov 1 – Nov 15** | **User Study Round 2 ($N=15$)** | • Recruit 15 UIUC students across CS, ECE, Bioengineering, Crop Sciences, and iSchool.<br>• Have them complete the study on `http://localhost:8001`.<br>• Save responses and run `analyze_study.py` to calculate paired $t$-tests and Wilcoxon signed-rank statistics ($df = 14$). |
-| **Nov 16 – Nov 29** | **Model & UI Iteration (Round 3)** | • Grid search optimal $(\alpha, \beta, \gamma, \lambda)$ weights on the backtest.<br>• Evaluate whether increasing the path weight $\lambda$ boosts novelty ratings.<br>• Tweak D3 force simulation performance on larger community clusters. |
-| **Dec 1 – Dec 9** | **Final Deliverables** | • Port midterm content into the official 10–12 page ACM `acmart` template.<br>• Record and edit the 10-minute final demonstration video.<br>• Deliver final code snapshot and presentation. |
-
----
-
-## 6. Git Hygiene & Branch Notes
-- **Branch:** Always branch or commit from `claude/modest-gauss-q759kv`.
-- **Large Files:** Raw API dump files `prototype/uiuc_raw_works*.json` exceed 100MB and are intentionally excluded in `.gitignore`. The processed graphs `uiuc_data.json` (3.5MB) and `uiuc_data_scaled.json` (14.5MB) are safely tracked in git.
-- **Clean Tree:** All changes are fully staged, committed, and pushed to remote.
+The earlier handoff is recoverable from Git history. The check of the uploaded group-member review is in `docs/teammate-review-assessment.md`. The prototype's UI and tests are documented in `prototype/review/validation.md`; the paper review is in `midterm/review/rubric-review.md`.

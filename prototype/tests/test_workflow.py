@@ -8,7 +8,7 @@ import unittest
 import networkx as nx
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from model import prepare_model, rank_candidates, build_graphs
+from model import prepare_model, rank_candidates, candidate_features, build_graphs
 spec = importlib.util.spec_from_file_location('study_analysis', ROOT/'study/analyze_study.py')
 analysis = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(analysis)
@@ -22,7 +22,7 @@ class WorkflowTests(unittest.TestCase):
         cls.keys = json.loads((ROOT/'study/truth_keys.json').read_text())
 
     def test_displayed_rankings_match_model_and_paths_are_real(self):
-        route_counts = {'two': 0, 'three': 0, 'unavailable': 0}
+        route_counts = {'three': 0, 'longer': 0}
         for seed, displayed in self.bundle['recommendations'].items():
             expected = rank_candidates(self.graph, seed, self.membership, self.autonomy)[:10]
             self.assertEqual([r['candidate_id'] for r in expected], [r['candidate_id'] for r in displayed])
@@ -34,18 +34,17 @@ class WorkflowTests(unittest.TestCase):
                     self.assertEqual(path[-1], actual['candidate_id'])
                     self.assertTrue(all(self.graph.has_edge(u,v) for u,v in zip(path,path[1:])))
                     self.assertEqual(len(path)-1, nx.shortest_path_length(self.graph,seed,path[-1]))
-                    route_counts['two' if len(path)==3 else 'three'] += 1
+                    self.assertGreaterEqual(len(path)-1,3)
+                    self.assertEqual(list(nx.common_neighbors(self.graph,seed,actual['candidate_id'])),[])
+                    route_counts['three' if len(path)==4 else 'longer'] += 1
                 else:
-                    self.assertEqual(actual['path_steps'], [])
-                    self.assertNotIn(actual['candidate_id'], nx.single_source_shortest_path_length(self.graph, seed, cutoff=3))
-                    route_counts['unavailable'] += 1
-        self.assertGreater(route_counts['two'], 0)
-        self.assertGreater(route_counts['three'], 0)
+                    self.fail('Proposal candidates must be reachable')
+        self.assertGreater(route_counts['three'],0)
         # Explicit disconnected-graph fixture exercises unavailable routing.
         fixture = nx.Graph([('a','b'),('c','d')])
         nx.set_node_attributes(fixture, {n: {'topics': set()} for n in fixture})
         rows = rank_candidates(fixture, 'a', {'a':0,'b':0,'c':1,'d':1}, {n:0 for n in fixture})
-        self.assertTrue(all(r['path_ids'] is None and r['path_bonus'] == .1 for r in rows))
+        self.assertEqual(rows,[])
         print('Validated route states:', route_counts)
 
     def test_study_has_five_unbiased_candidates_per_method(self):
@@ -54,7 +53,8 @@ class WorkflowTests(unittest.TestCase):
             self.assertEqual(len(rows), len({self.keys[c['card_id']]['candidate_id'] for c in rows}))
             ranked = rank_candidates(self.graph,seed,self.membership,self.autonomy)
             for method, field in [('BridgeFinder','score'),('Triadic Closure','aa'),('Topic-Only','topic_similarity')]:
-                expected = {r['candidate_id'] for r in sorted(ranked,key=lambda r:(-r[field],r['candidate_id']))[:5]}
+                pool=[r for r in candidate_features(self.graph,seed,self.membership,self.autonomy) if r['aa']>0] if method=='Triadic Closure' else ranked
+                expected = {r['candidate_id'] for r in sorted(pool,key=lambda r:(-r[field],r['candidate_id']))[:5]}
                 actual = {self.keys[c['card_id']]['candidate_id'] for c in rows if method in self.keys[c['card_id']]['models']}
                 self.assertEqual(actual, expected)
 
@@ -67,6 +67,16 @@ class WorkflowTests(unittest.TestCase):
         self.assertEqual(train.nodes['a']['topics'], {'training-only'})
         self.assertNotIn('c', train)
         self.assertTrue(evaluation.has_edge('a','c'))
+
+    def test_edge_weights_count_joint_papers_independent_of_team_size(self):
+        data = {'authors': {n: {'name': n} for n in ['a','b','c']}, 'papers': [
+            {'year':2018,'authors':['a','b','c'],'topics':[]},
+            {'year':2019,'authors':['a','b'],'topics':[]},
+            {'year':2022,'authors':['a','b'],'topics':[]}]}
+        train, future, _ = build_graphs(data)
+        self.assertEqual(train['a']['b']['weight'],2)
+        self.assertEqual(train['a']['c']['weight'],1)
+        self.assertEqual(future['a']['b']['weight'],1)
 
     def test_export_analysis_validation_and_sus(self):
         seed=self.cards[0]['seed_id']
