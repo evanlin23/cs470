@@ -1,380 +1,174 @@
-\begin{filecontents*}[overwrite]{acmart.cls}
-\NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{acmart}[2023/01/01 ACM conference class emulation]
-\DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
-\ProcessOptions\relax
-\LoadClass[9pt,twocolumn]{article}
-
-\RequirePackage[letterpaper,top=26pt,bottom=26pt,inner=30pt,outer=30pt,columnsep=11pt]{geometry}
-\RequirePackage{charter}
-\RequirePackage[scaled=0.92]{helvet}
-\RequirePackage{courier}
-\RequirePackage{microtype}
-\RequirePackage{xcolor}
-\RequirePackage{amsmath,amssymb}
-\RequirePackage{booktabs}
-\RequirePackage{tabularx}
-\RequirePackage{caption}
-\RequirePackage{fancyhdr}
-
-\definecolor{ACMBlue}{RGB}{0,75,135}
-\definecolor{UIUCBlue}{RGB}{19,41,75}
-\definecolor{UIUCOrange}{RGB}{232,74,39}
-\definecolor{DarkSlateGray}{RGB}{35,55,65}
-\definecolor{BoxGray}{RGB}{246,248,251}
-\definecolor{BorderGray}{RGB}{205,214,226}
-\definecolor{CardBg}{RGB}{252,253,255}
-
-% Section formatting
-\renewcommand{\section}{\@startsection{section}{1}{\z@}%
-  {-0.65ex \@plus -0.15ex \@minus -0.1ex}%
-  {0.12ex \@plus 0.05ex}%
-  {\normalfont\large\bfseries\sffamily\color{ACMBlue}}}
-
-\renewcommand{\subsection}{\@startsection{subsection}{2}{\z@}%
-  {-0.4ex \@plus -0.1ex \@minus -0.05ex}%
-  {0.08ex \@plus 0.05ex}%
-  {\normalfont\normalsize\bfseries\sffamily\color{DarkSlateGray}}}
-
-\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{\z@}%
-  {-0.25ex \@plus -0.1ex \@minus -0.05ex}%
-  {0.06ex \@plus 0.05ex}%
-  {\normalfont\normalsize\bfseries\itshape}}
-
-\newcommand{\settopmatter}[1]{}
-\newcommand{\affiliation}[1]{}
-\newcommand{\institution}[1]{#1}
-\newcommand{\country}[1]{#1}
-\newcommand{\city}[1]{#1}
-\newcommand{\state}[1]{#1}
-\newcommand{\email}[1]{\texttt{#1}}
-\newcommand{\Description}[1]{}
-\newcommand{\acmConference}[4]{}
-\newcommand{\acmYear}[1]{}
-\newcommand{\acmBooktitle}[1]{}
-\newcommand{\keywords}[1]{\vspace{1pt}\noindent\textbf{\sffamily Keywords:} #1\par\vspace{1pt}}
-
-\renewenvironment{abstract}{%
-  \begin{center}%
-    {\large\bfseries\sffamily Abstract\par}%
-  \end{center}%
-  \vspace{-6pt}%
-  \normalfont\small\itshape
-}{%
-  \par\vspace{2pt}
-}
-
-\pagestyle{fancy}
-\fancyhf{}
-\renewcommand{\headrulewidth}{0.4pt}
-\fancyhead[L]{\small\sffamily CS 470 Mid-Semester Report: BridgeFinder}
-\fancyhead[R]{\small\sffamily Lin and Liu}
-\fancyfoot[L]{\footnotesize\sffamily Department of Computer Science, University of Illinois Urbana-Champaign}
-\fancyfoot[R]{\footnotesize\sffamily Page \thepage}
-
-\setlength{\parskip}{0.3pt plus 0.2pt minus 0.1pt}
-\setlength{\parindent}{8pt}
-
-\endinput
-\end{filecontents*}
-\documentclass[sigconf,nonacm]{acmart}
-
-\usepackage{booktabs}
-\usepackage{tabularx}
-\usepackage{microtype}
-\usepackage{amsmath,amssymb}
-\usepackage{cite}
-\usepackage{url}
-
-\renewcommand{\topfraction}{0.95}
-\renewcommand{\bottomfraction}{0.95}
-\renewcommand{\textfraction}{0.05}
-\renewcommand{\floatpagefraction}{0.85}
-\renewcommand{\dbltopfraction}{0.95}
-\renewcommand{\dblfloatpagefraction}{0.85}
-
-\setlength{\textfloatsep}{4pt plus 1pt minus 1pt}
-\setlength{\intextsep}{3pt plus 1pt minus 1pt}
-\setlength{\floatsep}{3pt plus 1pt minus 1pt}
-\setlength{\dbltextfloatsep}{4pt plus 1pt minus 1pt}
-\setlength{\dblfloatsep}{3pt plus 1pt minus 1pt}
-\setlength{\abovecaptionskip}{2pt}
-\setlength{\belowcaptionskip}{1pt}
-
-\AtBeginDocument{
-  \setlength{\abovedisplayskip}{1.2pt plus 0.5pt minus 0.5pt}
-  \setlength{\belowdisplayskip}{1.2pt plus 0.5pt minus 0.5pt}
-  \setlength{\abovedisplayshortskip}{0.8pt plus 0.5pt minus 0.4pt}
-  \setlength{\belowdisplayshortskip}{0.8pt plus 0.5pt minus 0.4pt}
-}
-
+\documentclass[10pt,twocolumn,letterpaper]{article}
+\usepackage[margin=0.65in,columnsep=0.22in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,booktabs,tabularx,url}
+\usepackage[colorlinks=true,allcolors=blue]{hyperref}
+\setlength{\emergencystretch}{1em}
+\title{BridgeFinder: Discovering Cross-Community\\Research Collaborators at UIUC}
+\author{Evan Lin \and Eric Liu\\University of Illinois Urbana-Champaign}
+\date{CS 470 Mid-Semester Report, October 2026}
 \begin{document}
-
-\title{\LARGE\bfseries\sffamily BridgeFinder: Finding People Across Structural Holes\\in Academic Collaboration Networks}
-
-\author{\textbf{Evan Lin}\quad (\texttt{elin26@illinois.edu}) \qquad \textbf{Eric Liu}\quad (\texttt{ericl8@illinois.edu})}
-\affiliation{\institution{Department of Computer Science, University of Illinois Urbana-Champaign, Urbana, IL, USA}}
-
-\date{October 30, 2026}
-
 \maketitle
-
 \begin{abstract}
-When university students seek research mentors or faculty seek cross-disciplinary collaborators, they overwhelmingly search through familiar, densely clustered social circles. However, foundational network science demonstrates that novel ideas are disproportionately generated across structural holes separating disconnected communities (Burt 1992, 2004) and diffuse through weak ties (Granovetter 1973). Existing academic discovery tools (e.g., Illinois Experts, Google Scholar) match purely on lexical keywords and ignore graph topology, while citation tools (Connected Papers, ResearchRabbit) and social recommenders optimize for triadic closure, reinforcing insular cliques. We present \textbf{BridgeFinder}, a topology-aware recommendation heuristic and interactive D3.js visualization prototype designed to discover collaborative ties across structural holes at the University of Illinois Urbana-Champaign (UIUC). We detail our implemented OpenAlex pipeline across two committed datasets: a 5,000-work pilot corpus (2,493 multi-authored UIUC papers, 5,396 authors; training graph $|V|=3,642, |E|=16,408$, largest-component Louvain $k=28, Q=0.836$) and a 25,000-work scaled corpus (13,229 multi-authored papers, 16,604 authors; training graph $|V|=9,042, |E|=36,748$, largest-component Louvain $k=53, Q=0.881$). We resolve the proposal's topological distance ambiguity across 2-hop warm boundary bridges, 3+ hop weak ties, and disconnected institutional bridges, align our exact scoring equation with our code, and report how Round~1 think-aloud sessions with 5 students reshaped our interface. Offline backtesting across $N=185$ (pilot) and $N=1,386$ (scaled) evaluation seeds shows that BridgeFinder achieves higher P@5 and NDCG@10 than Adamic--Adar on both corpora (on the scaled dataset: P@5 of 0.0364 vs. 0.0283, NDCG@10 of 0.0705 vs. 0.0459), but does not meet all pre-specified quantitative improvement thresholds. Ablation reveals that a simpler Topic+Path model outperforms the full multi-objective formulation on the pilot corpus, showing that structural autonomy terms provide non-uniform benefits across network densities. Empirical citation impact analysis across 6,231 post-2020 papers shows cross-community papers achieved a mean citation ratio of $1.053\times$ ($p = 0.0601$, Mann--Whitney U), leaving Burt's citation hypothesis unsupported on the current data.
+Students seeking research mentors often know an instructor but lack a route into another research community. BridgeFinder uses a weighted UIUC co-authorship graph to recommend researchers outside a seed instructor's community and explain possible introductions. The challenge is balancing topical relevance with network diversity while avoiding claims that a missing co-authorship proves a social gap. We have built an OpenAlex ingestion pipeline, two real-data corpora, a three-screen web prototype, temporal backtests, a citation analysis, and a formative study with five students. The archived scaled backtest gives Full BridgeFinder P@5 of 0.0364 versus 0.0283 for Adamic--Adar, but misses our proposed improvement thresholds. A citation comparison finds a mean ratio of 1.053 ($p=0.0601$), providing no significant evidence of a cross-community advantage. Feedback led to a faculty-seed entry point, an explicit missing-tie legend, and prominent introduction paths. We distinguish the implemented demonstration from the offline model and specify the remaining work before a comparative user study.
 \end{abstract}
 
-\keywords{Structural holes, brokerage, weak ties, community discovery, co-authorship networks, decentralized search, interdisciplinary collaboration.}
+\section{Problem, objective, and contribution}
+A student who enjoyed a computing course may want to apply those skills in biology or agriculture but know neither whom to approach nor who could introduce them. Keyword search supplies names; an existing co-author network supplies routes, but tends to keep exploration close to familiar groups. Our objective is to help UIUC undergraduate and early-stage graduate students find a relevant researcher outside a familiar instructor's collaboration community and understand a plausible next step toward contact.
 
-\section{Objective}
+The problem is challenging for three reasons. Students may have no publications from which to build a personal profile. Topical similarity alone can return familiar researchers, while network distance alone can return irrelevant ones. Finally, published co-authorship is an incomplete proxy for acquaintance, trust, and willingness to mentor. BridgeFinder therefore combines topical overlap with community boundaries and brokerage features, while treating paths as suggestions to verify rather than guaranteed introductions.
 
-Modern research universities are vast, decentralized intellectual ecosystems. The February 2024 UIUC Academic Personnel Register (the ``Gray Book'') lists 2,574 tenure-track and specialized faculty holding professor titles across 110 departments~\cite{graybook2024}. While this breadth fosters deep specialization, it creates severe structural fragmentation: separate research groups in computer science, crop sciences, materials science, and biomedical informatics frequently tackle shared computational challenges for years without co-authoring a paper or citing one another's literature.
+Our contributions at midterm are (1) a weighted graph pipeline with a temporally separated evaluation on two UIUC datasets; (2) a working seed--map--recommendation interface; (3) qualitative feedback linked to concrete design changes; and (4) preliminary results and a comparative evaluation plan. These establish feasibility, not improved mentoring outcomes or causal effects of brokerage.
 
-When undergraduate or graduate students attempt to secure research mentors, or when faculty seek collaborators outside their home department, they encounter the \emph{local search dilemma}. Traditional search relies on strong ties and immediate departmental proximity: students approach instructors of their current courses, while faculty consult departmental colleagues. Sociologist Mark Granovetter established that strong ties circulate redundant information because close associates share overlapping networks~\cite{granovetter1973}. In contrast, novel information and innovative opportunities diffuse through \emph{weak ties} acting as local bridges. Ronald Burt extended this into the theory of \emph{structural holes}~\cite{burt1992,burt2004}, showing that individuals spanning gaps between disconnected groups gain substantial competitive advantages: they enjoy early access to diverse knowledge streams and synthesize ideas across domain boundaries.
+\section{Related work and design implications}
+\textbf{Structural holes and weak ties.} Granovetter explains how weak ties connect otherwise separated social circles~\cite{granovetter1973}; Burt relates brokerage to access to nonredundant information and ideas~\cite{burt1992,burt2004}. These theories motivate exploration beyond a student's immediate group. Their strength is explaining why diverse contacts can matter; their limitation here is that co-authorship data does not measure tie strength or prove that a suggested edge creates useful brokerage. We operationalize community boundaries as a testable proxy rather than claiming a direct measurement of social opportunity.
 
-Despite the proven value of brokerage, existing institutional tools fail to support it. \emph{Illinois Experts}~\cite{experts} and \emph{Google Scholar} index researchers as isolated textual documents, ranking a close lab colleague identically to an unacquainted scholar across campus. Conversely, social recommenders optimize for \emph{triadic closure}~\cite{libennowell2007,gupta2013}, reinforcing insular echo chambers. \textbf{BridgeFinder} addresses this gap by modeling UIUC as a weighted co-authorship network paired with OpenAlex topic profiles~\cite{openalex}, detecting structural holes between research communities and recommending complementary researchers alongside walkable introduction paths.
+\textbf{Academic discovery tools.} Illinois Experts~\cite{experts} and Google Scholar provide useful profile and publication search. Connected Papers and ResearchRabbit support visual literature exploration through relationships among papers. Their strength is fast discovery of expertise or related literature; their limitation for our task is that their central workflow does not explain a student-to-faculty introduction chain. BridgeFinder adapts visual graph exploration to people and makes an intermediate contact explicit. We do not claim that these systems lack all relational features.
 
-\begin{table*}[t]
-\centering
-\scriptsize
-\caption{Systematic comparison of BridgeFinder against academic search engines, citation graph tools, empirical studies, and link prediction.}
-\label{tab:related_work}
-\begin{tabularx}{\textwidth}{lccccX}
-\toprule
-\textbf{System / Paradigm} & \textbf{Co-Authorship} & \textbf{Community} & \textbf{Burt Constraint} & \textbf{Intro Path} & \textbf{Primary Strength vs. Key Weakness for Brokerage} \\
-& \textbf{Topology} & \textbf{Boundaries} & \textbf{Autonomy} & \textbf{Routing} & \\
-\midrule
-\textbf{Illinois Experts}~\cite{experts} / \textbf{Google Scholar} & No & No & No & None & \emph{Strength:} Broad lexical indexing. \emph{Weakness:} Treats scholars as isolated documents; blind to network distance. \\
-\textbf{Connected Papers / ResearchRabbit} & No (Paper citations) & Co-citation cluster & No & None & \emph{Strength:} Visual citation maps. \emph{Weakness:} Operates on paper co-citation within subfield literature; no interpersonal introduction paths. \\
-\textbf{Triadic Closure Link Prediction}~\cite{libennowell2007} & Yes (Local triads) & No & Inverted & Direct (1-hop) & \emph{Strength:} Accurately predicts high-probability ties. \emph{Weakness:} Favors common neighbors inside dense cliques where information is redundant. \\
-\textbf{Tang et al. (Cross-Domain)}~\cite{tang2012} & Partial (RWR) & Fixed dept. labels & No & None & \emph{Strength:} Cross-topic random walk matching. \emph{Weakness:} Relies on administrative departments rather than organic graph communities. \\
-\textbf{Dahlander \& McFarland}~\cite{dahlander2013}; \textbf{Barley et al.}~\cite{barley2025} & Yes (Longitudinal) & Dept. / Institute & Descriptive & None & \emph{Strength:} Rigorous empirical evidence on Stanford/UIUC ties. \emph{Weakness:} Retrospective econometric studies; no interactive recommendation tool. \\
-\midrule
-\textbf{BridgeFinder (This Work)} & \textbf{Yes (Weighted)} & \textbf{Yes (Louvain)} & \textbf{Yes ($H_v=1-C_v$)} & \textbf{Multi-hop ($2, 3, \infty$)} & \textbf{Combines organic community holes, Burt autonomy, topic overlap, and walkable introduction chains.} \\
-\bottomrule
-\end{tabularx}
-\vspace{-4pt}
-\end{table*}
+\textbf{Collaboration prediction.} Liben-Nowell and Kleinberg~\cite{libennowell2007} show how local network measures predict future links. Adamic--Adar rewards shared neighbors and is an interpretable, inexpensive baseline, but can favor familiar neighborhoods. Tang et al.~\cite{tang2012} address cross-domain collaboration recommendation, demonstrating that topical and relational evidence can be combined. Its strength is making cross-domain matching explicit; its task and model do not directly establish whether a student can act on a displayed introduction. We compare against topic-only and local-topology models, and evaluate actionability separately.
 
-Our falsifiable hypotheses and explicit quantitative success thresholds are:
-\begin{enumerate}
-    \setlength{\itemsep}{0.1pt}\setlength{\parskip}{0pt}
-    \item \textbf{$H_{\text{pred}}$ (Temporal Backtest vs. Topology Baselines):} Across 2015--2019 to 2020--2024 temporal splits, BridgeFinder improves ranking of actual future cross-community collaborators compared to triadic closure (Adamic--Adar), global betweenness, and preferential attachment, targeting $\ge 2.0\times$ higher P@5 and $\ge 0.05$ higher NDCG@10 than Adamic--Adar.
-    \item \textbf{$H_{\text{impact}}$ (Burt Citation Impact):} Post-split cross-community collaborations bridging structural holes exhibit higher citation impact than within-community collaborations, with target mean ratio $> 1.10\times$ and statistically significant distribution ($p < 0.05$, Mann--Whitney U).
-    \item \textbf{$H_{\text{user}}$ (Method-Blinded Human Discovery \& Usability):} In a method-blinded within-subject user study ($N=15$), BridgeFinder achieves mean Novelty $\ge 5.0/7.0$, mean Relevance $\ge 5.0/7.0$, beats Triadic Closure on the joint \emph{Relevant-and-New} rate ($\text{Rel} \ge 5 \land \text{Nov} \ge 5$) by $\ge 25$ percentage points ($p < 0.0167$, Bonferroni-corrected paired test), and achieves SUS $\ge 80/100$.
-\end{enumerate}
+\textbf{Organizational context.} Dahlander and McFarland~\cite{dahlander2013} study tie formation and persistence in a research organization. The longitudinal evidence motivates treating institutional context and intellectual similarity as important. Its limitation for our design is that an observational explanation is not itself an interactive discovery workflow. Our interface exposes candidate explanations; the evaluation must still test whether students find them useful.
 
-\section{Completed Related Work}
+\section{Course concepts and network analysis}
+\subsection{Graph construction and temporal scope}
+We use OpenAlex~\cite{openalex} works dated 2015--2024 associated with UIUC's ROR identifier \texttt{047426m28}. Nodes are author identifiers with UIUC affiliation on harvested works. Each retained paper contains at least two UIUC-affiliated authors; external collaborators are omitted. The 5,000-work harvest yields 2,493 such papers and 5,396 author records; the 25,000-work harvest yields 13,229 papers and 16,604 author records. These capped harvests are samples, not a campus census.
 
-We situate BridgeFinder across academic profiling tools, literature graph explorers, empirical studies of university networks, and link prediction (Table~\ref{tab:related_work}).
+For retained UIUC authors $A_p$ on paper $p$, the undirected edge weight is
+\[
+w_{ij}=\sum_{p:\,i,j\in A_p}\frac{1}{|A_p|-1}.
+\]
+Fractional weighting limits the contribution of each large team without discarding it. The backtest includes large teams (up to 70 and 92 retained authors in the two corpora); the separate citation script filters to at most 25 retained authors. Thus the two analyses do not use identical graph construction. Training uses 2015--2019 papers, evaluation uses 2020--2024 papers, and backtest topics are each author's ten most frequent training-paper topics. Authors with no training edges are outside the prediction population.
 
-\subsection{Academic Search and Visual Citation Explorers}
-Campus discovery relies heavily on profile aggregators like \emph{Illinois Experts}~\cite{experts}, VIVO~\cite{vivo2012}, and Google Scholar. While offering fast lexical lookup over titles and grants, their weakness is treating scholars as isolated text documents without graph topology: they cannot distinguish a student's lab mate from an unacquainted scholar across campus. Visual literature explorers (\emph{Connected Papers}, \emph{ResearchRabbit}) improve discovery by rendering force-directed paper graphs, a visual paradigm we adapt. However, their weakness for collaborator discovery is linking papers via co-citation and bibliographic coupling within subfield literature, rather than routing interpersonal introductions between active researchers.
+\subsection{Communities, brokerage, and routing}
+We use weighted Louvain modularity optimization~\cite{blondel2008} to identify collaboration communities, rather than assuming that departments are communities. Modularity compares within-group edge weight with a strength-preserving null model:
+\[
+Q=\frac{1}{2W}\sum_{ij}\left(w_{ij}-\frac{s_i s_j}{2W}\right)\mathbf{1}[c_i=c_j].
+\]
+Here $s_i=\sum_j w_{ij}$ and $W=\sum_{i<j}w_{ij}$. Girvan--Newman~\cite{girvan2002}, an alternative covered in community discovery, repeatedly removes high-betweenness edges and offers an interpretable hierarchy, but repeated shortest-path computations are expensive. Louvain is a practical choice for repeated analysis of thousands of authors; its resolution limit and stochastic partitions remain limitations. We do not treat its output as verified disciplinary labels.
 
-\subsection{Empirical Studies of University Networks}
-Computational social science provides empirical grounding for our work. Dahlander and McFarland~\cite{dahlander2013} analyzed 15 years of Stanford faculty collaborations, demonstrating that intellectual similarity and shared organizational foci drive tie formation and persistence. Similarly, Barley et al.~\cite{barley2025} investigated the Carl R. Woese Institute for Genomic Biology (IGB) at UIUC, showing that institute membership significantly increases researchers' co-author network diversity while maintaining publication productivity. Both studies are retrospective observational analyses: neither produces an interactive recommendation tool to prospectively identify collaborators across structural holes.
+The pilot training graph contains 3,642 nodes and 16,408 edges; the scaled graph contains 9,042 nodes and 36,748 edges. The backtest partitions the union of all nontrivial connected components, not just the largest component. A validation run found 346 pilot communities with $Q\approx0.950$. This high modularity indicates strong separation of observed collaboration groups, but disconnected components can inflate it. It does not establish that all groups are socially isolated or that crossing them is useful. The graph structure motivates both cross-community filtering and an explicit distinction between reachable and unreachable candidates.
 
-\subsection{Link Prediction versus Brokerage}
-In computer science, collaborator recommendation is typically cast as link prediction. Liben-Nowell and Kleinberg~\cite{libennowell2007} showed that common-neighbor heuristics (Adamic--Adar, Jaccard) excel at predicting which co-authorship edges are \emph{most likely} to form next. However, optimizing purely for likelihood favors friends-of-friends inside dense cliques where information redundancy is high~\cite{burt2004}. Tang et al.~\cite{tang2012} proposed cross-domain topic random walks, but rely on predefined administrative departments rather than organic network communities or Burt's constraint. BridgeFinder bridges this gap by combining Louvain community boundaries with Burt's constraint autonomy.
+For candidate $v$, Burt autonomy is $H(v)=\max(0,1-C_v)$, with
+\[
+C_v=\sum_{j\in N(v)}\left(p_{vj}+\sum_{q\in N(v)}p_{vq}p_{qj}\right)^2,
+\quad p_{ij}=\frac{w_{ij}}{\sum_k w_{ik}}.
+\]
+The implementation assigns $H=0$ to degree-zero/one nodes. This feature measures the candidate's existing neighborhood, not the marginal benefit of a new edge. Boundary spanning toward seed $u$ is $B(v,u)=|N(v)\cap C(u)|/|N(v)|$, where $C(u)$ now denotes the set of nodes in $u$'s community.
 
-\section{Course Concepts \& Network Analysis}
+Candidates are non-neighbors in another community. A distance-two candidate has a shared co-author who could be asked about an introduction. Distance three implies two intermediaries; no discovered short path calls for cold outreach. The student-to-seed anchor is user supplied and is not an observed graph edge. These ideas connect structural holes, triadic closure, community discovery, and small-world navigation from the course. Our computation is centralized graph analysis, not an implementation of decentralized local search, and graph distance does not measure sociological tie strength.
 
-BridgeFinder operationalizes CS 470 foundations from Lesson~1 (structural holes, weak ties, triadic closure), Lesson~10 (community discovery and modularity), and Lesson~13 (small-world decentralized search). Removing this network layer collapses the application into a flat keyword search that returns same-lab colleagues and provides no introduction pathways.
-
-\subsection{Graph Representation and Hyperauthorship Filtering}
-Let $\mathcal{G} = (V, E, W, \mathcal{T})$ denote the UIUC co-authorship network harvested from OpenAlex~\cite{openalex} via UIUC's ROR ID (\texttt{https://ror.org/047426m28}), where $V$ is UIUC-affiliated authors and $E \subseteq V \times V$ is undirected co-authorships. Following Newman~\cite{newman2004}, we exclude consortium papers with $|A_p| > 25$ authors and weight each paper fractionally as $w_{ij} = \sum_{p \in \mathcal{P}_{ij}} \frac{1}{|A_p| - 1}$. Top-10 topic profiles $\mathcal{T}_u$ are aggregated by frequency strictly over training papers ($p[\text{year}] \le 2019$).
-
-\begin{figure*}[t]
-\centering
-\scriptsize
-\setlength{\fboxsep}{3pt}
-\begin{tabularx}{\textwidth}{XXX}
-\fcolorbox{UIUCBlue}{CardBg}{%
-\parbox[t][2.65cm]{\dimexpr\textwidth/3-2\fboxsep-2\fboxrule-8pt\relax}{%
-\textbf{\sffamily\color{UIUCBlue}SCREEN 1: Faculty Seed Selector}\par\vspace{1pt}
-\fcolorbox{BorderGray}{white}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{\texttt{Search 50 UIUC Seeds: "Sundaram"...}}}\par\vspace{2pt}
-\fcolorbox{UIUCOrange}{BoxGray}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
-\textbf{Prof. Hari Sundaram} \hfill \texttt{[Selected]}\par
-Dept: CS / iSchool $\cdot$ Comm: $C_{12}$ (Networks)\par
-Degree: $k=24$ $\cdot$ Burt Autonomy: $H=0.81$\par
-Topics: \emph{Social Networks, Game Theory, HCI}}}\par\vspace{1pt}
-\fcolorbox{BorderGray}{white}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
-\textbf{Prof. Hanghang Tong} \hfill \texttt{[Select]}\par
-Dept: CS $\cdot$ Comm: $C_{4}$ $\cdot$ $H=0.86$}}
-}} &
-\fcolorbox{UIUCBlue}{CardBg}{%
-\parbox[t][2.65cm]{\dimexpr\textwidth/3-2\fboxsep-2\fboxrule-8pt\relax}{%
-\textbf{\sffamily\color{UIUCBlue}SCREEN 2: D3 Campus Hole Map}\par\vspace{1pt}
-\fcolorbox{BorderGray}{white}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
-\centering
-\textbf{\color{ACMBlue}[Comm $C_{12}$: CS/Networks]} \texttt{(Seed: Sundaram)}\par
-$\vert$ \emph{(Solid line: Co-authorship tie to Broker $w$)}\par
-\textbf{\color{DarkSlateGray}[Broker $w$: Shared Boundary Colleague]}\par
-$\vdots$ \textbf{\color{UIUCOrange}\emph{--- Dashed Arc: Structural Hole ---}}\par
-\textbf{\color{UIUCOrange}[Comm $C_{19}$: BioE / Genomic Networks]}\par
-\vspace{1pt}
-\tiny\texttt{Legend: [---] Co-Authorship  [- - -] Structural Hole (No Direct Tie)}
-}}\par\vspace{1pt}
-\emph{Interactive D3.js force layout (\texttt{prototype/web/index.html}): clicking a dashed arc filters Screen 3.}
-}} &
-\fcolorbox{UIUCBlue}{CardBg}{%
-\parbox[t][2.65cm]{\dimexpr\textwidth/3-2\fboxsep-2\fboxrule-8pt\relax}{%
-\textbf{\sffamily\color{UIUCBlue}SCREEN 3: Ranked Researcher Card}\par\vspace{1pt}
-\fcolorbox{BorderGray}{BoxGray}{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
-\textbf{\#1 Across Hole: Target Faculty ($C_{19}$)} \hfill $\Phi = 0.64$\par
-\textbf{\color{UIUCOrange}Intro Path (2 Hops from Seed):}\par
-\texttt{[Student Anchor] => [Prof. Sundaram] -> [Broker w] -> [Target]}\par
-\vspace{1pt}
-\textbf{Burt Autonomy ($H_v$):} \texttt{[========  ] 82\%} ($C_v=0.18$)\par
-\textbf{Boundary Spanning ($\text{BSI}$):} \texttt{0.29} $\cdot$ \textbf{Topic Sim:} \texttt{0.43}\par
-\textbf{Shared Topics:} \emph{Graph Mining, Network Diffusion}
-}}\par\vspace{1pt}
-\emph{Round 1 UI change: Intro path moved above topic badges; raw constraint $C_v$ replaced by $H_v$ gauge.}
-}}
-\end{tabularx}
-\vspace{-4pt}
-\caption{Illustrative schematic of the implemented interface (\texttt{prototype/web/index.html}) demonstrating the three-screen core flow. Metrics and researcher cards illustrate UI layout.}
-\label{fig:prototype_screens}
-\vspace{-4pt}
-\end{figure*}
-
-\subsection{Community Discovery: Louvain vs. Girvan--Newman (Lesson 10)}
-To identify structural holes between organic research groups rather than administrative departments, we partition the training graph $\mathcal{G}_{\text{train}}$ (2015--2019). In Lesson~10, we contrasted Girvan--Newman divisive edge-betweenness clustering~\cite{girvan2002} ($O(m^2 n)$) against modularity optimization. In our benchmark, Girvan--Newman failed to split a 150-node dense subgraph within 148 seconds, whereas the Louvain algorithm~\cite{blondel2008} (an empirical heuristic scaling near-linearly $O(n \log n)$ in practice on sparse graphs) maximizes weighted Newman--Girvan modularity $Q = \frac{1}{2W} \sum_{i,j} \left[ w_{ij} - \frac{s_i s_j}{2W} \right] \delta(c_i, c_j)$ in under 2 seconds, where $s_i = \sum_j w_{ij}$ is node strength and $W = \sum_{i<j} w_{ij}$. On our committed 5,000-work dataset (\texttt{uiuc\_data.json}), the training graph has $|V|=3,642$ nodes, $|E|=16,408$ edges, average clustering coefficient $CC=0.737$, and largest-component diameter $D=19$; Louvain partitions the largest connected component into $k=28$ communities with $Q=0.836$ ($k=346, Q=0.950$ across all components). On our 25,000-work scaled dataset (\texttt{uiuc\_data\_scaled.json}), the training graph has $|V|=9,042$ nodes and $|E|=36,748$ edges, partitioning the largest component into $k=53$ communities with $Q=0.881$. We denote node $u$'s community as $C(u)$.
-
-\noindent\textbf{Network Science Interpretation:} High clustering ($CC=0.737$) and modularity ($Q=0.836$) indicate dense subfield clustering at UIUC—scholars collaborate heavily within local research groups. Disconnected components inflate all-component modularity ($Q=0.950$), making giant-component modularity ($Q=0.836$) the appropriate benchmark. Graph fragmentation means multi-hop paths are unavailable for detached components. Crucially, community boundaries serve as an operational proxy for subfields rather than definitive barriers, an absent edge denotes no published co-authorship rather than lack of acquaintance, multi-hop shortest paths represent topological distance rather than sociological weak ties, and breadth-first routing is centralized offline calculation rather than decentralized local search.
-
-\subsection{Resolving Topological Distance: 2 Hops, 3+ Hops, and $\infty$ Hops (Lessons 1 \& 13)}
-\label{sec:distance_clarification}
-
-Co-authorship distance $d(u,v)$ is strictly measured in $\mathcal{G}_{\text{train}}$ from faculty seed $u$ to candidate $v$; the student-to-seed link is a user-selected anchor (instructor), not a graph edge. Candidates must satisfy $C(u) \neq C(v)$ and $(u,v) \notin E_{\text{train}}$ ($d(u,v) \ge 2$), falling into three topological tiers:
-\begin{enumerate}
-    \setlength{\itemsep}{0.1pt}\setlength{\parskip}{0pt}
-    \item \textbf{Tier 1: Warm Boundary Bridges ($d(u, v) = 2, C(u) \neq C(v)$):} $u$ and $v$ share a mutual co-author $w \in N(u) \cap N(v)$ crossing community boundaries: \texttt{Student Anchor $\Rightarrow$ Seed Prof $u \to$ Broker $w \to$ Target $v$}, offering a 1-intermediary warm introduction.
-    \item \textbf{Tier 2: Multi-Hop Weak Ties ($d(u, v) \ge 3, C(u) \neq C(v)$):} $u$ and $v$ share zero mutual co-authors, requiring a multi-hop chain ($u \to w_1 \to w_2 \to v$, Lessons~1 and 13~\cite{granovetter1973,kleinberg2000}).
-    \item \textbf{Tier 3: Truncated Radius / Disconnected ($d(u, v) \ge 3 \text{ or } \infty$):} Candidates beyond the 3-hop BFS radius or in separate components receive baseline reachability for topic-based cold outreach.
-\end{enumerate}
-
-\subsection{Exact Mathematical Definition of the Brokerage Score}
-\label{sec:brokerage_score}
-
-For seed $u \in V$ and cross-community candidate $v \in V \setminus (N(u) \cup \{u\})$ with $C(u) \neq C(v)$, we evaluate:
+\subsection{Offline score and ablation}
+Let $S$ be Jaccard overlap of training-topic sets. The backtest ranks candidates by
 \begin{equation}
-    \Phi(u, v) = 0.60 \cdot S_{\text{topic}}(u, v) + 0.12 \cdot H(v) + 0.12 \cdot \text{BSI}(v, C(u)) + 0.16 \cdot P(u, v)
-    \label{eq:unified_score}
+\Phi(u,v)=0.60S+0.12H+0.12B+0.16P.
+\label{eq:score}
 \end{equation}
-corresponding to $(1 - \eta) \cdot S_{\text{topic}} + \eta \cdot [0.3 H + 0.3 \text{BSI} + 0.4 P]$ with structural weight $\eta = 0.4$: (1) \textbf{Topic Overlap $S_{\text{topic}}(u, v)$:} Jaccard overlap on pre-split top-10 topics $\frac{|\mathcal{T}_u \cap \mathcal{T}_v|}{|\mathcal{T}_u \cup \mathcal{T}_v|}$ ($0.0$ if empty); (2) \textbf{Candidate Autonomy $H(v)$:} $H(v) = \max(0, 1 - C_v) \in [0, 1]$, where $C_v = \sum_{j \in N(v)} (p_{vj} + \sum_{q} p_{vq} p_{qj})^2$ is Burt's constraint~\cite{burt1992} ($C_v=0$ for isolates); $H(v)$ proxies candidate $v$'s existing ego-network autonomy, not the marginal brokerage change of adding edge $(u,v)$; (3) \textbf{Boundary Spanning Index $\text{BSI}(v, C(u))$:} $\frac{|N(v) \cap C(u)|}{|N(v)|} \in [0, 1]$; (4) \textbf{Tiered Path Reachability $P(u, v)$:} $P = 1.0$ if $v$ is a 2-hop neighbor ($d=2$), $0.5$ if $v$ has $\ge 1$ 3-hop simple path ($c_3 > 0$), and $0.1$ otherwise (truncated search or disconnected); (5) \textbf{Triadic Closure Handling:} Intra-community triadic closure evaluates to 0 over all candidates ($C(u) \neq C(v)$) and is omitted. Weights prioritize topical relevance ($60\%$) with a structural nudge ($40\%$). We also evaluate the proposal-faithful \textbf{Topic+Path ablation}: $\Phi_{\text{Topic+Path}}(u, v) = S_{\text{topic}}(u, v) + 0.5 \cdot \frac{c_3(u, v)}{1 + c_3(u, v)}$, where $c_3$ is the simple 3-edge path count.
+$P=1$ for two-hop candidates, $0.5$ for candidates with a simple three-edge path and no two-hop connection, and $0.1$ otherwise. The final case includes longer paths and disconnected components; it is not a reachability probability. These fixed heuristic weights prioritize relevance. A Topic+Path ablation uses $S+0.5c_3/(1+c_3)$, where $c_3$ is the number of simple three-edge paths. Comparing the ablation with the full model tests whether autonomy and boundary spanning add value beyond topic and route information.
 
-\section{Design \& Implementation (Work Completed)}
+\section{Design and implementation}
+\subsection{A demonstrable core flow}
+The implementation separates expensive graph preparation from browser interaction. \path{fetch_openalex.py} produces processed datasets; \texttt{backtest.py} and \path{citation_impact.py} evaluate them; \path{web/prepare_web_data.py} exports precomputed recommendations. A static HTTP server serves \texttt{web/index.html} and \texttt{data.json}; D3 v7 renders the graph. No account or publication history is required from the student.
 
-We built and committed the complete data pipeline, backtest engine, user study suite, and interactive web prototype: (1) \textbf{OpenAlex Ingestion (\texttt{prototype/fetch\_openalex.py}):} Uses polite-pool pagination against UIUC ROR \texttt{047426m28} to harvest works (2015--2024), extracting UIUC co-authorships and top-10 author topic counters into \texttt{uiuc\_data.json} (5k works) and \texttt{uiuc\_data\_scaled.json} (25k works); (2) \textbf{Offline Precomputation (\texttt{prototype/web/prepare\_web\_data.py}):} Builds the NetworkX graph, computes Louvain communities, Burt autonomy $H(v)$, and shortest 2-hop/3-hop introduction paths via BFS routing across community boundaries, exporting \texttt{prototype/web/data.json} for 50 faculty seeds; (3) \textbf{Interactive Web Prototype (\texttt{prototype/web/index.html}):} A standalone single-page frontend with no build step (loading D3.js v7 via CDN) served via \texttt{python3 -m http.server 8000} implementing the three-screen core flow (Figure~\ref{fig:prototype_screens}).
-
-\noindent\textbf{Supported User Walkthrough:} (1) A student selects a familiar instructor on Screen~1 (e.g., Prof. Hari Sundaram, CS/iSchool, $C_{12}$); (2) Screen~2 renders the community network and highlights dashed orange arcs representing structural holes into other subfields (e.g., $C_{19}$ Bioengineering); (3) clicking a structural hole filters Screen~3 to display ranked researcher cards showing the 4-node introduction path, Burt autonomy gauge, boundary spanning index, and shared research topics.
-
-\noindent\textbf{Implementation Status \& Limitations:} (1) \emph{Seed Selection:} 50 curated UIUC seeds (manual cold-start list); (2) \emph{Community Map:} D3 force layout of top 15 clusters; (3) \emph{Researcher Cards:} Ranked intro paths, $H(v)$, BSI, and topics (precomputed JSON payload); (4) \emph{Introduction Routing:} BFS 2-hop/3-hop routing through boundary brokers (truncated at 3 hops; OpenAlex graph); and (5) \emph{Outreach:} Shared topics displayed on card (email drafting deferred to R3).
-
-\section{Users \& Round 1 Formative Feedback}
-
-\subsection{Target User Population and Recruitment}
-Target users are UIUC undergraduate and early-stage graduate students seeking research mentors outside their home department. Across three iterative rounds (October, November, December), we recruit via ACM@UIUC SIGs, CS 470 peers, and interdisciplinary student channels ($N=5$ for Round~1 think-aloud walkthroughs and $N=15$ for Round~2/3 evaluations~\cite{nielsen1993}).
-
-\subsection{Round 1 Think-Aloud Sessions and What Changed}
-We conducted Round~1 formative think-aloud sessions with $N=5$ UIUC students (3 undergraduate CS/CE juniors/seniors, 2 graduate students from Bioengineering and Information Sciences; convenience sample) in individual 30-minute sessions using the initial prototype (`prototype/web/index.html`). In accordance with Nielsen (1993, where 5 users surface ~80\% of usability flaws), these sessions guided formative interface refinements rather than population-level statistical validation:
-\begin{enumerate}
-    \setlength{\itemsep}{0.1pt}\setlength{\parskip}{0pt}
-    \item \textbf{Cold-Start Faculty Seed Grid (Screen 1):} \emph{Observed Issue:} Undergrads lacked OpenAlex papers and could not search themselves. \emph{Design Change:} Built Screen~1 around a searchable grid of 50 active faculty seeds with department and topic filters. \emph{Expected Benefit:} Immediate entry point via familiar instructors.
-    \item \textbf{Explicit Legend for Dashed Hole Edges (Screen 2):} \emph{Observed Issue:} Testers assumed dashed lines meant ``weak co-authorship'' rather than a missing-link structural hole. \emph{Design Change:} Added an explicit visual legend labeling dashed orange arcs as \emph{``Structural Hole (No Direct Tie)''} and prioritized 2-hop warm boundary bridges ($P(u,v)=1.0$). \emph{Expected Benefit:} Clarifies missing-link concept.
-    \item \textbf{Intro Path Header \& Autonomy Gauge (Screen 3):} \emph{Observed Issue:} Testers scanned each card for \emph{``who can introduce me?''} before reading papers, and misread lower Burt constraint ($C_v = 0.18$) as a worse score. \emph{Design Change:} Moved the 4-node introduction chain (\texttt{Student $\Rightarrow$ Seed Prof $\to$ Broker $\to$ Target}) to the very top of each card above topics, and replaced raw $C_v$ with a positive percentage \textbf{Burt Autonomy Gauge ($H_v = 1 - C_v = 82\%$)}. \emph{Expected Benefit:} Immediate outreach context and intuitive interpretation.
-\end{enumerate}
-
-\section{Detailed Assessment Methodology \& Results}
-
-\subsection{Phase 1: Reproducible Temporal Backtest (Completed)}
-Using $\mathcal{G}_{\text{train}}$ (2015--2019), \texttt{prototype/backtest.py} ranks all unconnected cross-community candidates ($C(u) \neq C(v)$) for every seed researcher $u$ who formed at least one new cross-community tie in $\mathcal{G}_{\text{eval}}$ (2020--2024). Table~\ref{tab:backtest_pilot} reports exact reproducible results on both committed datasets (\texttt{backtest\_results.json} for the 5k corpus with $N=185$ seeds; \texttt{backtest\_results\_scaled.json} for the 25k corpus with $N=1,386$ seeds and $4,764$ new cross-community edges) against four baselines: Preferential Attachment ($k_u \cdot k_v$), Global Betweenness Centrality, Topic-Only Jaccard ($S_{\text{topic}}$), and Triadic Closure (Adamic--Adar $\sum_{w \in N(u)\cap N(v)} 1/\log k_w$).
-
-\begin{table}[h]
+\begin{figure}[t]
 \centering
-\scriptsize
-\caption{Reproducible leak-free offline backtest results predicting 2020--2024 cross-community ties on both committed datasets.}
-\label{tab:backtest_pilot}
-\setlength{\tabcolsep}{2.0pt}
-\begin{tabularx}{\columnwidth}{Xcccc|cccc}
+\fbox{\parbox{0.90\columnwidth}{
+\textbf{1. Choose an anchor}\par
+Search or filter the faculty-seed grid; select a familiar instructor.\par\smallskip
+$\downarrow$\par
+\textbf{2. Explore collaboration topology}\par
+View colored nodes, solid observed ties, and dashed missing-tie examples; select an eligible seed node.\par\smallskip
+$\downarrow$\par
+\textbf{3. Inspect recommendations}\par
+Open ranked cards; compare topics and autonomy, inspect the proposed intermediary, and open an editable outreach template.
+}}
+\caption{Implemented interaction flow. This schematic describes controls and navigation, not a screenshot or measured researcher profile. Dashed links illustrate missing co-authorships; they are not validated opportunities.}
+\label{fig:flow}
+\end{figure}
+
+Figure~\ref{fig:flow} connects the student problem to implemented controls. First, selecting a familiar instructor addresses the publication cold start; the generator chooses up to 50 high-degree seeds with coverage of the eight largest communities. These are automatically selected author records, not a manually verified faculty directory. Second, the map makes the community context visible, adapting literature graph exploration to people. It samples leaders from the eight largest communities and draws missing links between community leaders. Such dashed links are illustrative and are not filtered by topic overlap. Clicking an eligible node changes the seed; dashed-link filtering of recommendations is not implemented. Third, cards put the introduction before topic details and show autonomy as a positive gauge, translating an opaque structural measure into an explanation. An outreach modal supplies a template, but does not send messages.
+
+\subsection{Scope and fidelity of the prototype}
+The web generator currently uses all years and stored author topics, with a different demonstration score:
+\[
+\Phi_{\rm web}=0.35S+0.25H+0.25B+0.15P_{\rm web},
+\]
+where $P_{\rm web}=0.5$ for two-hop candidates and $0.1$ otherwise. Consequently, offline improvements for Eq.~\ref{eq:score} cannot be attributed to the displayed ranking. Aligning these implementations is required before a study comparing that model's interface.
+
+A shared co-author is data-backed for two-hop cards. Other cards insert a generic institutional liaison and label the route ``3-Hop'' without computing a three-hop path or verifying an appointment. That label must not be interpreted as an observed introduction. Community colors and department names are heuristic labels, with community indices mapped modulo eight; author titles and affiliations also need verification. These are substantive prototype limitations, not evidence of actual mentoring access. Before participant deployment, we will replace unsupported routes with an explicit ``no verified route'' state, verify seed identities, and unify the score. The core navigation can be demonstrated now; the social assertions require this additional work.
+
+\section{Users and formative feedback}
+\subsection{Population and sampling rationale}
+Our primary users are UIUC undergraduate and early-stage graduate students seeking research outside their current department. They are a better initial test population than established faculty because cold start and unfamiliar contact routes are central to the problem. Recruitment through ACM student groups, course peers, and interdisciplinary student channels is feasible but introduces convenience-sampling bias.
+
+The authors report five completed individual, 30-minute think-aloud sessions: three CS/CE undergraduate juniors/seniors and two graduate students from Bioengineering and Information Sciences. This mix includes both computing students seeking applications and students in potential destination disciplines. Five sessions are useful for finding formative interaction problems~\cite{nielsen1993}; they are not sufficient to estimate population usability or compare recommendation quality statistically. We do not infer a fixed percentage of problems discovered from the sample size.
+
+\subsection{Feedback-to-design trace}
+The following are author-reported qualitative observations; no participant quotes, issue frequencies, or quantitative usability scores are claimed.
+
+\textbf{Entry point.} Students without publications could not use themselves as a seed. The interface now starts with a searchable faculty grid and department-style filters, enabling an instructor to serve as the anchor. A subsequent test should measure whether students can identify a familiar, correctly labeled seed without help.
+
+\textbf{Meaning of dashed links.} Participants interpreted dashed lines as weak existing collaborations. The map now explicitly distinguishes observed co-authorship from a missing-tie structural-hole example. The next round should ask participants to explain the legend in their own words; successful navigation alone would not demonstrate comprehension.
+
+\textbf{Action before explanation.} Participants looked for who could introduce them before reading topic details, and a low constraint value appeared to mean a poor candidate. The revised cards place the introduction first and express constraint through an autonomy gauge. The next round should test route comprehension and whether the gauge is mistaken for a success probability.
+
+These changes are visible in the current interface, but they do not demonstrate that the reported problems have been resolved. Anonymized session notes and a repeat walkthrough would strengthen the audit trail; the repository currently contains neither session-level notes nor completed comparative-study responses.
+
+\section{Evaluation: evidence and measurement plan}
+\subsection{Temporal prediction on real data}
+The backtest predicts new 2020--2024 cross-community co-authorships using only 2015--2019 edges and topic profiles. Seeds must have at least one such future tie with an eligible training node. All methods rank the same non-neighbor, cross-community candidates across retained components. Conditioning on future-positive seeds excludes inactive researchers and makes these results more favorable than an all-student deployment population.
+
+Baselines isolate alternative explanations: preferential attachment tests popularity; sampled global betweenness tests centrality alone; Topic-Only tests topical matching; Adamic--Adar tests common-neighbor evidence. Topic+Path is the simpler ablation. Metrics are macro-averaged over eligible seeds. P@$k$ is the fraction of the top $k$ candidates who become collaborators, reflecting shortlist efficiency. R@10 is the fraction of a seed's eligible future collaborators retrieved, measuring coverage. Binary-relevance NDCG@10 discounts hits by $1/\log_2(r+1)$ and normalizes against the ideal ranking, measuring whether useful names appear early.
+
+\begin{table}[t]
+\centering\small
+\setlength{\tabcolsep}{3pt}
+\caption{Archived backtest outputs in \texttt{prototype/results/}. These are saved-run results, not deterministic guarantees.}
+\label{tab:results}
+\begin{tabular}{lrrrr}
 \toprule
-& \multicolumn{4}{c|}{\textbf{5k Corpus ($N=185$ seeds)}} & \multicolumn{4}{c}{\textbf{25k Corpus ($N=1,386$ seeds)}} \\
-\textbf{Model} & \textbf{P@5} & \textbf{P@10} & \textbf{R@10} & \textbf{NDCG@10} & \textbf{P@5} & \textbf{P@10} & \textbf{R@10} & \textbf{NDCG@10} \\
+&\multicolumn{2}{c}{Pilot}&\multicolumn{2}{c}{Scaled}\\
+Model&P@5&NDCG@10&P@5&NDCG@10\\
 \midrule
-Pref. Attach. & .0011 & .0005 & .0018 & .0011 & .0081 & .0094 & .0154 & .0125 \\
-Betweenness & .0022 & .0054 & .0477 & .0192 & .0076 & .0077 & .0103 & .0109 \\
-Topic-Only (Pre-2020) & .0076 & .0124 & .0783 & .0342 & .0201 & .0181 & .0634 & .0406 \\
-Triadic (AA) & .0076 & .0070 & .0398 & .0279 & .0283 & .0232 & .0628 & .0459 \\
-\midrule
-\textbf{BF (Topic+Path)} & \textbf{.0216} & \textbf{.0200} & \textbf{.1282} & \textbf{.0697} & .0333 & .0291 & .0899 & .0630 \\
-\textbf{BridgeFinder (Full)} & .0195 & .0195 & .1235 & .0671 & \textbf{.0364} & \textbf{.0314} & \textbf{.0989} & \textbf{.0705} \\
+Preferential attach.&.0011&.0011&.0081&.0125\\
+Betweenness&.0022&.0192&.0076&.0109\\
+Topic-Only&.0076&.0342&.0201&.0406\\
+Adamic--Adar&.0076&.0279&.0283&.0459\\
+Topic+Path&.0216&.0697&.0333&.0630\\
+Full BridgeFinder&.0195&.0671&.0364&.0705\\
 \bottomrule
-\end{tabularx}
-\vspace{-3pt}
+\end{tabular}
 \end{table}
 
-\noindent\textbf{Temporal Leakage Audit \& Experimental Findings:} (1) \emph{Auditing Temporal Leakage in Topic Profiles:} In initial exploration, author topic vectors were extracted across the full 2015--2024 corpus. An empirical audit revealed that $45.9\%$ of authors had topic profiles altered by post-2019 publications; joint cross-community papers in 2020--2024 leaked novel interdisciplinary keywords backwards into pre-split predictors, artificially inflating raw Topic-Only precision ($P@5 \approx 0.17$). Restricting topics strictly to pre-2020 publications ($p[\text{year}] \le 2019$) eliminates this leakage, dropping leak-free Topic-Only to $P@5 = 0.0076$ (5k) and $0.0201$ (25k). (2) \emph{Prediction Hypothesis ($H_{\text{pred}}$) Assessment:} BridgeFinder achieved higher reported P@5 and NDCG@10 than Adamic--Adar on both datasets, but did not meet all pre-specified quantitative thresholds ($\ge 2.0\times$ P@5 and $+0.05$ NDCG@10 against Adamic--Adar). On the pilot corpus, Full BridgeFinder increased P@5 from 0.0076 to 0.0195 ($2.57\times$, meeting P@5 target) and NDCG@10 from 0.0279 to 0.0671 ($+0.0392$, below the $+0.05$ threshold). On the scaled corpus, Full BridgeFinder increased P@5 from 0.0283 to 0.0364 ($1.29\times$, below target) and NDCG@10 from 0.0459 to 0.0705 ($+0.0246$, below target). These results support an observed predictive advantage on the historical sample rather than full confirmation of $H_{\text{pred}}$. (3) \emph{Ablation Insights:} Topic+Path outperforms Full BridgeFinder on every pilot metric (P@5 0.0216 vs. 0.0195, NDCG@10 0.0697 vs. 0.0671), whereas Full BridgeFinder performs better on the scaled corpus (P@5 0.0364 vs. 0.0333, NDCG@10 0.0705 vs. 0.0630). Structural autonomy and boundary-spanning features provide non-uniform benefits depending on network scale and density.
+Table~\ref{tab:results} suggests useful signal beyond common neighbors. On the scaled corpus, Full BridgeFinder improves P@5 by $1.29\times$ and NDCG@10 by 0.0246 over Adamic--Adar. Against our proposed success criteria of $2\times$ P@5 and $+0.05$ NDCG@10, both scaled targets are missed. On the pilot, the P@5 target is met ($2.57\times$) but the NDCG gain is only 0.0392. These thresholds are project targets, not a documented preregistration. Topic+Path wins on the pilot while the full model wins on the scaled corpus; this is mixed evidence for the extra structural features, not proof that network density causes the difference. Absolute precision remains low: most suggested researchers do not become observed co-authors.
 
-\noindent\textbf{Compact Reproducibility Specification:} Works harvested from OpenAlex API (UIUC ROR \texttt{047426m28}, 2015--2024) in October 2026. Papers filtered to $\le 25$ authors; fractional edge weights $w_{ij} = 1/(|A_p|-1)$. Partitioned into training ($p[\text{year}] \le 2019$) and evaluation ($p[\text{year}] > 2019$). Author topics computed strictly from training papers. Louvain community detection run on the training giant component with random seed 42. Seeds are all training nodes $u$ forming $\ge 1$ evaluation cross-community tie ($N=185$ for 5k, $N=1,386$ for 25k). Candidates are all training giant component nodes $v \neq u$ with $C(v) \neq C(u)$ and $(u,v) \notin E_{\text{train}}$. Metrics macro-averaged over seeds with stable Python sorting. Evaluated under Python 3.11, NetworkX 3.4, SciPy 1.14.
+\textbf{Reproducibility and uncertainty.} Louvain sets seed 42, but sampled betweenness has no fixed seed and score ties inherit set iteration order. Exact rankings and metrics can vary across processes or dependency versions. The archived files omit participant/seed-level uncertainty and run metadata. Current validation uses Python 3.12, NetworkX 3.7, and SciPy 1.18.1. A fresh run with \texttt{PYTHONHASHSEED=0} evaluated 185 pilot and 1,386 scaled seeds. Full-model P@5/NDCG@10 were 0.0205/0.0678 (pilot) and 0.0365/0.0713 (scaled), versus Adamic--Adar 0.0065/0.0317 and 0.0294/0.0467. This preserves the qualitative comparison but confirms that archived numbers are not exact reproduction targets. Before tuning weights, fix tie-breaking and random seeds, retain per-seed metrics, use a separate validation interval, and report paired bootstrap intervals over seeds. Overlapping collaboration neighborhoods limit the independence assumption even then.
 
-\subsection{Phase 2: Burt's Citation Impact Test (Completed)}
-We executed \texttt{prototype/citation\_impact.py} across all $6,231$ post-2019 multi-authored papers in the 25k corpus (\texttt{prototype/results/citation\_impact.json}). Cross-community papers spanning $\ge 2$ Louvain communities ($N = 1,071$) achieved a mean of 64.86 citations ($\sigma = 241.34$) vs. 61.60 citations ($\sigma = 119.92$) for within-community papers ($N = 4,183$), yielding an Impact Ratio of $1.053\times$; 977 papers were unclassified (authors outside pre-2019 giant component). Medians were virtually identical ($36.0$ cross-community vs. $37.0$ within-community), with two-sided Mann--Whitney $U = 2,156,737.0, p = 0.0601$.
+\subsection{Citation impact: a separate observational test}
+The citation script builds a pre-2020 graph after excluding papers with more than 25 retained UIUC authors. A later paper is cross-community when its known training authors span at least two communities, within-community when exactly one is represented, and unclassified when none is represented. Authors absent from training do not determine its category, so partially observed teams may be misclassified.
 
-\noindent\textbf{Hypothesis Assessment ($H_{\text{impact}}$):} $H_{\text{impact}}$ is \textbf{unsupported} on present data. While cross-community papers showed a slightly higher mean citation count ($1.053\times$), it fell below the $1.10\times$ target, and the distributional difference is not statistically significant ($p = 0.0601 > 0.05$). Citation counts are highly dispersed in both groups. This observational test did not normalize for publication year (2020 vs. 2024) or subfield practices, and did not control for repeated teams; current evidence does not establish a citation advantage for cross-community ties.
+The scaled analysis includes 6,231 evaluation papers: 1,071 cross-community, 4,183 within-community, and 977 unclassified. Cross-community mean citations are 64.86 (SD 241.34), versus 61.60 (SD 119.92); medians are 36 and 37. The mean ratio is 1.053, with two-sided Mann--Whitney $U=2{,}156{,}737$ and $p=0.0601$. Our success target is a ratio above 1.10 and $p<0.05$ against within-community papers. Neither criterion is met. Mann--Whitney tests a distributional difference, not specifically a difference in means. Year, field, team size, and repeated authors are uncontrolled, so these results establish neither a causal benefit nor absence of all benefit from brokerage.
 
-\subsection{Phase 3: Method-Blinded User Study Protocol (Nov 1--15)}
-We implemented the study generator (\texttt{prototype/study/generate\_cards.py}), web rating app (\texttt{prototype/study/index.html}), and statistical analyzer (\texttt{prototype/study/analyze\_study.py}). In our planned study, each of $N=15$ student participants selects the departmental profile closest to their coursework from 5 standardized UIUC seeds (CS, ECE, BioE, Crop Sci, iSchool) and rates 15 shuffled, unlabeled candidate cards (5 BridgeFinder, 5 Triadic Closure, 5 Topic-Only) on 7-point Likert scales for *Relevance*, *Novelty*, and *Outreach Actionability*, followed by the 10-item SUS on the interactive app (`prototype/web/index.html`). The primary outcome is participant-level Relevant-and-New rate ($\text{Rel} \ge 5 \land \text{Nov} \ge 5$). Ratings are aggregated into per-participant means ($df = 14$) before paired $t$-tests and Wilcoxon signed-rank tests with Bonferroni correction ($\alpha = 0.0167$). We acknowledge that $N=15$ represents an exploratory within-subject sample with limited statistical power.
+\subsection{Planned comparative user evaluation}
+We plan an exploratory within-subject study with 15 students, recruiting three from each of CS, ECE, Bioengineering, Crop Sciences, and Information Sciences. This deliberately broadens the computing-heavy formative sample and tests cross-field comprehension, although it is not representative of all UIUC students. Obtain consent, use pseudonymous identifiers, and allow withdrawal. Participants should first attempt the seed--map--card task, then rate five candidates per method (BridgeFinder, Adamic--Adar, Topic-Only) for a matched seed. Shuffle method-hidden cards, handle repeated candidates consistently, and counterbalance order. The goal is method blinding, not an unverified claim of double blinding.
 
-\begin{table}[h]
-\centering
-\scriptsize
-\caption{Project milestone schedule through final completion.}
-\label{tab:schedule}
-\setlength{\tabcolsep}{1.5pt}
-\begin{tabularx}{\columnwidth}{llX}
-\toprule
-\textbf{Target Date} & \textbf{Milestone} & \textbf{Status \& Deliverables} \\
-\midrule
-Oct 30 (Done) & Mid-Semester & 5k \& 25k graphs, backtest, citation impact ($1.053\times$), D3 prototype, think-alouds ($N=5$). \\
-Nov 1--Nov 15 & User Study R2 & Method-blinded card study ($N=15$) via \texttt{study/index.html}; paired $t$/Wilcoxon tests. \\
-Nov 16--Nov 29 & Iteration R3 & Tune $(\alpha,\beta,\gamma,\lambda)$ weights against Topic-Only; SUS usability evaluation. \\
-Dec 1--Dec 9 & Final Delivery & Native ACM \texttt{acmart}, 10--12 page final report, 10-min video demo. \\
-\bottomrule
-\end{tabularx}
-\vspace{-4pt}
-\end{table}
+\textbf{Relevance and novelty.} Seven-point relevance and novelty ratings test whether structural diversity preserves fit while surfacing unfamiliar names. Targets are mean ratings of at least 5/7 for each, compared with both baselines. The primary joint outcome is each participant's fraction of cards rated relevance $\ge5$ and novelty $\ge5$; target a 25-percentage-point gain over Adamic--Adar. Report paired differences and confidence intervals, with a paired test at $\alpha=0.05$ for this single primary comparison. Treat other comparisons as exploratory and apply Holm correction within their declared family. Do not treat 225 card ratings as 225 independent participants.
 
-\section{Discussion, Limitations \& Future Work}
+\textbf{Actionability and usability.} Seven-point actionability ratings test whether the explanation supports a plausible next step; target at least 5/7 and improvement over Topic-Only. Record unaided task completion and whether participants correctly distinguish observed ties from suggested routes, targeting at least 12 of 15 successful completions and correct explanations. Administer the standard ten-item System Usability Scale after the interactive task; score it using the standard alternating-item transformation, targeting mean SUS $\ge80/100$. SUS is compared with that fixed target, not a claim that static-card baseline systems have been usability-tested.
 
-\noindent\textbf{Midterm Progress Summary:} We built and released the complete BridgeFinder pipeline: polite-pool OpenAlex ingestion for 5k and 25k works, Louvain community partitioning on the training giant component, an interactive three-screen D3.js prototype with 50 seeds, a leak-free backtest engine, a post-split citation pipeline, and a method-blinded study suite.
+\textbf{Implementation gates.} Card generation, a rating interface, and an analyzer exist, but collection is not yet ready end to end. The interface exports \texttt{evaluator\_id} and verbose rating keys; the analyzer expects \texttt{participant\_id}, \texttt{relevance}, \texttt{novelty}, and \texttt{actionability}. The interface loads the complete card bundle rather than a chosen seed's 15 cards, and supplies default ratings for unanswered cards during export. The analyzer summarizes the joint outcome but does not test it; SUS collection/scoring is absent. Before recruitment, align schemas, preserve unanswered ratings as missing, restrict each session to the assigned cards, verify pseudonymous IDs, add SUS and the primary paired comparison, and validate the complete export-to-analysis route. No comparative human result is reported at midterm.
 
-\noindent\textbf{What Current Evidence Supports vs. Unresolved Claims:}
-(1) \emph{Supported Findings:} Temporal backtesting shows BridgeFinder achieves higher P@5 and NDCG@10 than Adamic--Adar, preferential attachment, and global betweenness across both corpora. Think-aloud feedback ($N=5$) directly drove the seed selector, hole legend, and top-of-card intro path with autonomy gauge.
-(2) \emph{Unsupported / Nuanced Findings:} $H_{\text{pred}}$ did not reach its quantitative thresholds ($\ge 2.0\times$ P@5 and $+0.05$ NDCG@10 vs. Adamic--Adar on 25k; achieved $1.29\times$ and $+0.0246$). Burt's citation hypothesis ($H_{\text{impact}}$) is unsupported on the 25k corpus ($1.053\times$ ratio, $p = 0.0601$, medians 36.0 vs. 37.0). Furthermore, Topic+Path ablation beat Full BridgeFinder on the pilot corpus, proving structural terms provide non-uniform gains across graph densities.
+\section{Discussion and next steps}
+BridgeFinder makes network structure part of both candidate selection and explanation. Removing it would remove cross-community filtering, autonomy, and shared-contact explanations, leaving topic search. The present evidence supports a feasible prototype and modest historical ranking gains; it does not establish better mentoring outcomes, usable institutional routes, or a significant citation advantage.
 
-\noindent\textbf{Methodological Limitations:}
-(1) \emph{Proxies:} OpenAlex co-authorships omit informal mentoring and teaching; Louvain communities are algorithmic clusters optimizing modularity, not administrative divisions; BFS paths measure topological distance, not social trust or intro willingness.
-(2) \emph{Confounders \& Power:} Phase~2 citation analysis lacked year and field normalization; the upcoming $N=15$ user study is an exploratory within-subject sample with limited statistical power.
+The formative sample is small and self-selected; missing session notes limit independent verification. The graph omits informal relationships, external collaborators, and unpublished work. Harvest caps, large-team cliques, modularity resolution, and heuristic department labels affect who is visible. The web demonstration differs from the evaluated model, and its institutional routes must be corrected before real outreach. These limitations guide the next iteration rather than being treated as confirmed benefits.
 
-\noindent\textbf{Next Steps:} Deploy card study ($N=15$, Table~\ref{tab:schedule}), tune $(\alpha,\beta,\gamma,\lambda)$ against Topic-Only, run SUS evaluation, and complete the 10--12 page final report.
+In early November, unify the model and display semantics, verify seed identities, and complete the study collection gates. In mid-November, run the 15-person evaluation and report participant-level outcomes, including failures and uncertainty. In late November, revise the interface from observed comprehension errors and tune weights using a held-out validation period. In December, rerun the locked evaluation, document remaining biases, and prepare the final report and demonstration. User feedback and future collaboration precision answer different questions; both are necessary before recommending deployment.
 
-\section{Division of Labor \& AI Disclosure}
+\section*{Contributions and AI assistance}
+Evan Lin: ingestion, backtest pipeline, and campus map. Eric Liu: brokerage score, citation analysis, study tooling, and formative sessions. Both authors contributed to the report. The existing project used Claude for debugging, layout, and typesetting. OpenAI Codex assisted with this rubric audit, code-to-report checks, evaluation reruns, and editing. No participant responses or quotations were generated for this revision.
 
-\noindent\textbf{Who Did What:}
-\textbf{Evan Lin (\texttt{elin26@illinois.edu}):} OpenAlex ingestion (5k/25k), backtest pipeline, and D3 campus map (\texttt{index.html}).
-\textbf{Eric Liu (\texttt{ericl8@illinois.edu}):} Brokerage scoring (Eq.~\eqref{eq:unified_score}), citation pipeline, study suite, and Round~1 think-alouds. Both co-authored this report.
-
-\noindent\textbf{AI Disclosure:} We used Claude (Anthropic) for pagination debugging, D3 layout structure, code-paper audits, and typesetting. All code, math, and data independently verified by authors.
-
-\newpage
-\bibliographystyle{plain}
-\begin{thebibliography}{99}\small
+\begin{thebibliography}{99}\small\raggedright
 \setlength{\itemsep}{1.2pt}\setlength{\parskip}{0pt}
-
-\bibitem{barley2025}
-W.~C. Barley, L.~Dinh, L.~P. Johnson, and B.~F. Allan.
-\newblock Membership in team science institute enhances diversity of researchers' collaboration networks.
-\newblock {\em PLOS ONE}, 20(2):e0322943, 2025.
 
 \bibitem{blondel2008}
 V.~D. Blondel, J.-L. Guillaume, R.~Lambiotte, and E.~Lefebvre.
@@ -406,25 +200,10 @@ M.~S. Granovetter.
 \newblock The strength of weak ties.
 \newblock {\em American Journal of Sociology}, 78(6):1360--1380, 1973.
 
-\bibitem{gupta2013}
-P.~Gupta, A.~Goel, J.~Lin, A.~Sharma, D.~Wang, and R.~Zadeh.
-\newblock {WTF}: The who-to-follow system at {Twitter}.
-\newblock In {\em Proceedings of the 22nd International Conference on World Wide Web (WWW '13)}, pages 505--514, 2013.
-
-\bibitem{kleinberg2000}
-J.~Kleinberg.
-\newblock Navigation in a small world.
-\newblock {\em Nature}, 406(6798):845--845, 2000.
-
 \bibitem{libennowell2007}
 D.~Liben-Nowell and J.~Kleinberg.
 \newblock The link-prediction problem for social networks.
 \newblock {\em Journal of the American Society for Information Science and Technology}, 58(7):1019--1031, 2007.
-
-\bibitem{newman2004}
-M.~E.~J. Newman.
-\newblock Coauthorship networks and patterns of scientific collaboration.
-\newblock {\em Proceedings of the National Academy of Sciences}, 101(suppl\_1):5200--5205, 2004.
 
 \bibitem{nielsen1993}
 J.~Nielsen.
@@ -441,21 +220,10 @@ J.~Tang, S.~Wu, J.~Sun, and H.~Su.
 \newblock Cross-domain collaboration recommendation.
 \newblock In {\em Proceedings of the 18th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (KDD '12)}, pages 1285--1293, 2012.
 
-\bibitem{graybook2024}
-University~of Illinois.
-\newblock Academic personnel register (the gray book).
-\newblock Technical report, University of Illinois Urbana-Champaign, Feb. 2024.
-
 \bibitem{experts}
 University~of Illinois.
 \newblock Illinois experts: Research and scholarship at {UIUC}.
 \newblock \url{https://experts.illinois.edu/}, 2024.
 
-\bibitem{vivo2012}
-M.~Conlon et~al.
-\newblock {VIVO}: A national network of scientists and scholars.
-\newblock {\em Journal of Open Research Software}, 1(1):e1, 2012.
-
 \end{thebibliography}
-
 \end{document}
