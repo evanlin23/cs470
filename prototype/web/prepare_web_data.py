@@ -10,8 +10,7 @@ import itertools
 import json
 import math
 import os
-import random
-from collections import defaultdict
+from collections import Counter, defaultdict
 
 import networkx as nx
 from networkx.algorithms import community as nxc
@@ -27,6 +26,76 @@ COLLEGE_PALETTE = {
     6: {"name": "Carle Illinois Medicine", "color": "#DC2626", "bg": "#FEF2F2"},
     7: {"name": "Chemistry & Chemical Eng", "color": "#0D9488", "bg": "#F0FDFA"}
 }
+
+# Keyword rules mapping OpenAlex topic display names to the 8 UIUC college buckets
+COLLEGE_KEYWORDS = {
+    0: [
+        "computer vision", "natural language processing", "machine learning",
+        "artificial intelligence", "deep learning", "software", "distributed computing",
+        "programming", "compiler", "database", "cryptography", "computer graphics",
+        "robotics", "algorithms", "neural network", "reinforcement learning",
+        "high-performance computing", "cloud computing", "cybersecurity"
+    ],
+    1: [
+        "electrical", "semiconductor", "cmos", "vlsi", "signal processing",
+        "wireless", "antenna", "photonics", "power electronics", "microelectronics",
+        "integrated circuit", "radar", "telecommunications", "control systems",
+        "electromagnetic", "5g", "mimo", "fpga", "embedded systems", "smart grid"
+    ],
+    2: [
+        "genomic", "dna ", "epigenetics", "rna", "crispr", "gene expression",
+        "cell biology", "molecular biology", "protein", "microbiome",
+        "gut microbiota", "probiotics", "immunology", "virology", "neuroscience",
+        "bioinformatics", "biophysics", "biomarker", "metabolic", "enzyme"
+    ],
+    3: [
+        "crop", "agronomy", "plant ", "photosynthesis", "soil", "soybean", "maize",
+        "corn", "wheat", "horticulture", "livestock", "animal nutrition", "poultry",
+        "swine", "cattle", "veterinary", "food biotechnology", "agricultural",
+        "weed", "pest", "irrigation", "forestry", "aquaculture"
+    ],
+    4: [
+        "materials science", "condensed matter", "superconduct", "quantum",
+        "graphene", "nanomaterials", "thin film", "crystallography", "alloy",
+        "mechanics of materials", "metamaterials", "plasmonics", "astrophysics",
+        "cosmology", "particle physics", "optics", "laser", "fluid dynamics",
+        "thermodynamics", "fracture", "composite"
+    ],
+    5: [
+        "human-computer interaction", "information science", "library",
+        "social media", "bibliometrics", "scientometrics", "digital humanities",
+        "crowdsourcing", "online communities", "misinformation", "privacy",
+        "explainable ai", "fairness", "education", "pedagogy", "usability",
+        "visualization", "civic", "governance", "sociology"
+    ],
+    6: [
+        "clinical", "patient", "surgery", "oncology", "cancer", "cardiovascular",
+        "stroke", "mri", "ultrasound", "medical imaging", "rehabilitation",
+        "pediatric", "psychiatry", "public health", "epidemiology", "911",
+        "hospital", "pathology", "neuroimaging", "exercise", "physical activity",
+        "aging", "muscle", "cortisol", "diet", "nutritional studies", "infant"
+    ],
+    7: [
+        "catalysis", "catalytic", "polymer", "organic synthesis", "electrochemistry",
+        "battery", "electrolyte", "chemical engineering", "zeolite", "mof",
+        "metal-organic", "spectroscopy", "mass spectrometry", "chromatography",
+        "supramolecular", "photochemistry", "reaction kinetics", "nanoparticle",
+        "fuel cell", "desalination", "membrane"
+    ]
+}
+
+
+def classify_topics_to_college(topics):
+    """Score a list of OpenAlex topic strings against COLLEGE_KEYWORDS."""
+    scores = Counter()
+    text = " | ".join(t.lower() for t in topics)
+    for cid, kw_list in COLLEGE_KEYWORDS.items():
+        for kw in kw_list:
+            if kw in text:
+                scores[cid] += 1
+    if scores:
+        return scores.most_common(1)[0][0]
+    return None
 
 
 def build_and_export(data_path, out_path="prototype/web/data.json"):
@@ -60,12 +129,30 @@ def build_and_export(data_path, out_path="prototype/web/data.json"):
     sub_g = G.subgraph(sub_nodes).copy()
 
     communities = nxc.louvain_communities(sub_g, seed=42)
-    # Sort communities by size
     communities = sorted(communities, key=len, reverse=True)
     node_to_comm = {}
     for cid, comm in enumerate(communities):
         for n in comm:
             node_to_comm[n] = cid
+
+    # Determine dominant college for each Louvain community via topic keyword voting
+    comm_to_college = {}
+    for cid, comm in enumerate(communities):
+        comm_votes = Counter()
+        for n in comm:
+            col = classify_topics_to_college(sub_g.nodes[n].get("topics", []))
+            if col is not None:
+                comm_votes[col] += 1
+        comm_to_college[cid] = comm_votes.most_common(1)[0][0] if comm_votes else (cid % 8)
+
+    # Assign each node to its direct topic match, falling back to its community's dominant college
+    node_to_college = {}
+    for n in sub_g.nodes():
+        direct_col = classify_topics_to_college(sub_g.nodes[n].get("topics", []))
+        if direct_col is not None:
+            node_to_college[n] = direct_col
+        else:
+            node_to_college[n] = comm_to_college.get(node_to_comm.get(n, 0), 0)
 
     # Precompute Burt autonomy
     autonomy = {}
@@ -92,16 +179,14 @@ def build_and_export(data_path, out_path="prototype/web/data.json"):
         for a in p.get("authors", []):
             author_papers[a].append(p.get("title", "Research Publication"))
 
-    # Select top 50 faculty seeds across degrees and prominent communities
+    # Select top 50 faculty seeds ensuring balanced coverage across all 8 colleges
     sorted_nodes = sorted(sub_nodes, key=lambda n: sub_g.degree(n), reverse=True)
     top_50_seeds = []
     seen = set()
 
-    # Ensure coverage across top 8 communities
-    for cid in range(min(8, len(communities))):
-        comm_members = [n for n in communities[cid] if sub_g.degree(n) >= 5]
-        comm_sorted = sorted(comm_members, key=lambda n: sub_g.degree(n), reverse=True)[:6]
-        for n in comm_sorted:
+    for col_id in range(8):
+        col_members = [n for n in sorted_nodes if node_to_college.get(n) == col_id and sub_g.degree(n) >= 5]
+        for n in col_members[:6]:
             if n not in seen:
                 seen.add(n)
                 top_50_seeds.append(n)
@@ -113,22 +198,22 @@ def build_and_export(data_path, out_path="prototype/web/data.json"):
             seen.add(n)
             top_50_seeds.append(n)
 
-    print(f"Selected {len(top_50_seeds)} top UIUC faculty seeds.")
+    print(f"Selected {len(top_50_seeds)} top UIUC faculty seeds across all 8 categories.")
 
-    # Build D3 Graph nodes and links (sample top 150 nodes for snappy 60fps force simulation)
+    # Build D3 Graph nodes and links
     d3_node_ids = set(top_50_seeds)
-    for cid in range(min(8, len(communities))):
-        c_nodes = sorted(communities[cid], key=lambda n: sub_g.degree(n), reverse=True)[:15]
+    for col_id in range(8):
+        c_nodes = [n for n in sorted_nodes if node_to_college.get(n) == col_id][:18]
         d3_node_ids.update(c_nodes)
 
     d3_nodes = []
     for nid in d3_node_ids:
-        cid = node_to_comm.get(nid, 0) % 8
-        pal = COLLEGE_PALETTE.get(cid, COLLEGE_PALETTE[0])
+        col_id = node_to_college.get(nid, 0)
+        pal = COLLEGE_PALETTE.get(col_id, COLLEGE_PALETTE[0])
         d3_nodes.append({
             "id": nid,
             "name": authors.get(nid, {}).get("name", nid),
-            "community_id": cid,
+            "community_id": col_id,
             "community_name": pal["name"],
             "color": pal["color"],
             "degree": sub_g.degree(nid),
@@ -137,7 +222,6 @@ def build_and_export(data_path, out_path="prototype/web/data.json"):
         })
 
     d3_links = []
-    # Intra-community and existing links
     for u in d3_node_ids:
         for v in sub_g.neighbors(u):
             if v in d3_node_ids and u < v:
@@ -148,12 +232,12 @@ def build_and_export(data_path, out_path="prototype/web/data.json"):
                     "weight": round(sub_g[u][v].get("weight", 1.0), 2)
                 })
 
-    # Synthesize dashed structural hole bridges between community leaders
+    # Synthesize dashed structural hole bridges between college leaders
     comm_leaders = {}
-    for cid in range(min(8, len(communities))):
-        c_nodes = [n for n in communities[cid] if n in d3_node_ids]
+    for col_id in range(8):
+        c_nodes = [n for n in d3_node_ids if node_to_college.get(n) == col_id]
         if c_nodes:
-            comm_leaders[cid] = max(c_nodes, key=lambda n: sub_g.degree(n))
+            comm_leaders[col_id] = max(c_nodes, key=lambda n: sub_g.degree(n))
 
     for c1, c2 in itertools.combinations(comm_leaders.keys(), 2):
         u, v = comm_leaders[c1], comm_leaders[c2]
@@ -169,10 +253,10 @@ def build_and_export(data_path, out_path="prototype/web/data.json"):
     recommendations = {}
     for u in top_50_seeds:
         u_comm = node_to_comm[u]
+        u_col = node_to_college[u]
         u_topics = set(sub_g.nodes[u].get("topics", []))
         u_nbrs = list(sub_g.neighbors(u))
 
-        # Adamic-adar / 2-hop lookup
         aa_scores = defaultdict(float)
         two_hop_nodes = set()
         for w in u_nbrs:
@@ -184,7 +268,13 @@ def build_and_export(data_path, out_path="prototype/web/data.json"):
                         aa_scores[nw] += inv_log
                         two_hop_nodes.add(nw)
 
-        cross_candidates = [v for v in sub_nodes if v != u and not sub_g.has_edge(u, v) and node_to_comm.get(v) != u_comm]
+        # Require candidate to be in both a different Louvain community AND a different college category
+        cross_candidates = [
+            v for v in sub_nodes
+            if v != u and not sub_g.has_edge(u, v)
+            and node_to_comm.get(v) != u_comm
+            and node_to_college.get(v) != u_col
+        ]
 
         cand_scores = []
         for v in cross_candidates:
@@ -206,8 +296,8 @@ def build_and_export(data_path, out_path="prototype/web/data.json"):
         top_recs = []
 
         for rank, (v, score, topic_sim, aut, bsi, is_2hop) in enumerate(cand_scores[:10], start=1):
-            cand_comm = node_to_comm.get(v, 0) % 8
-            pal = COLLEGE_PALETTE.get(cand_comm, COLLEGE_PALETTE[0])
+            cand_col = node_to_college.get(v, 0)
+            pal = COLLEGE_PALETTE.get(cand_col, COLLEGE_PALETTE[0])
             common_nbrs = list(nx.common_neighbors(sub_g, u, v)) if is_2hop else []
 
             broker_name = authors.get(common_nbrs[0], {}).get("name", "Departmental Colleague") if common_nbrs else "UIUC Interdisciplinary Liaison"
@@ -215,7 +305,7 @@ def build_and_export(data_path, out_path="prototype/web/data.json"):
             v_name = authors.get(v, {}).get("name", "Candidate Scholar")
 
             path_steps = [
-                {"role": "Initiator", "title": f"Student / Researcher (You)"},
+                {"role": "Initiator", "title": "Student / Researcher (You)"},
                 {"role": "Seed Mentor", "title": f"Prof. {u_name}"},
                 {"role": "Broker Intermediary", "title": f"Prof. {broker_name} ({'Direct 2-Hop Co-author' if common_nbrs else 'Joint Institute Appointment'})"},
                 {"role": "Target Collaborator", "title": f"Prof. {v_name} ({pal['name']})"}
@@ -241,8 +331,8 @@ def build_and_export(data_path, out_path="prototype/web/data.json"):
 
     seeds_list = []
     for u in top_50_seeds:
-        cid = node_to_comm.get(u, 0) % 8
-        pal = COLLEGE_PALETTE.get(cid, COLLEGE_PALETTE[0])
+        col_id = node_to_college.get(u, 0)
+        pal = COLLEGE_PALETTE.get(col_id, COLLEGE_PALETTE[0])
         seeds_list.append({
             "id": u,
             "name": authors.get(u, {}).get("name", u),

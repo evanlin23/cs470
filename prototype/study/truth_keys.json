@@ -19,7 +19,7 @@
   },
   "CARD_004": {
     "model": "Topic-Only",
-    "candidate_id": "https://openalex.org/A5100358530",
+    "candidate_id": "https://openalex.org/A5067038652",
     "seed_id": "https://openalex.org/A5023245938",
     "seed_dept": "Computer Science"
   },
@@ -37,7 +37,7 @@
   },
   "CARD_007": {
     "model": "Topic-Only",
-    "candidate_id": "https://openalex.org/A5067038652",
+    "candidate_id": "https://openalex.org/A5100358530",
     "seed_id": "https://openalex.org/A5023245938",
     "seed_dept": "Computer Science"
   },
@@ -169,13 +169,13 @@
   },
   "CARD_029": {
     "model": "Topic-Only",
-    "candidate_id": "https://openalex.org/A5011789445",
+    "candidate_id": "https://openalex.org/A5036358235",
     "seed_id": "https://openalex.org/A5030076676",
     "seed_dept": "Bioengineering"
   },
   "CARD_030": {
     "model": "Topic-Only",
-    "candidate_id": "https://openalex.org/A5036358235",
+    "candidate_id": "https://openalex.org/A5053799853",
     "seed_id": "https://openalex.org/A5030076676",
     "seed_dept": "Bioengineering"
   },
@@ -187,7 +187,7 @@
   },
   "CARD_032": {
     "model": "Triadic Closure",
-    "candidate_id": "https://openalex.org/A5084482990",
+    "candidate_id": "https://openalex.org/A5045154474",
     "seed_id": "https://openalex.org/A5030076676",
     "seed_dept": "Bioengineering"
   },
@@ -205,13 +205,13 @@
   },
   "CARD_035": {
     "model": "Topic-Only",
-    "candidate_id": "https://openalex.org/A5019258936",
+    "candidate_id": "https://openalex.org/A5101520069",
     "seed_id": "https://openalex.org/A5030076676",
     "seed_dept": "Bioengineering"
   },
   "CARD_036": {
     "model": "Topic-Only",
-    "candidate_id": "https://openalex.org/A5101520069",
+    "candidate_id": "https://openalex.org/A5019258936",
     "seed_id": "https://openalex.org/A5030076676",
     "seed_dept": "Bioengineering"
   },
@@ -241,13 +241,13 @@
   },
   "CARD_041": {
     "model": "Triadic Closure",
-    "candidate_id": "https://openalex.org/A5009783690",
+    "candidate_id": "https://openalex.org/A5084482990",
     "seed_id": "https://openalex.org/A5030076676",
     "seed_dept": "Bioengineering"
   },
   "CARD_042": {
     "model": "Triadic Closure",
-    "candidate_id": "https://openalex.org/A5045154474",
+    "candidate_id": "https://openalex.org/A5009783690",
     "seed_id": "https://openalex.org/A5030076676",
     "seed_dept": "Bioengineering"
   },
@@ -265,7 +265,7 @@
   },
   "CARD_045": {
     "model": "Triadic Closure",
-    "candidate_id": "https://openalex.org/A5006238710",
+    "candidate_id": "https://openalex.org/A5020098405",
     "seed_id": "https://openalex.org/A5045551635",
     "seed_dept": "Crop Sciences"
   },
@@ -295,7 +295,7 @@
   },
   "CARD_050": {
     "model": "Triadic Closure",
-    "candidate_id": "https://openalex.org/A5020098405",
+    "candidate_id": "https://openalex.org/A5006238710",
     "seed_id": "https://openalex.org/A5045551635",
     "seed_dept": "Crop Sciences"
   },
@@ -367,7 +367,7 @@
   },
   "CARD_062": {
     "model": "Topic-Only",
-    "candidate_id": "https://openalex.org/A5012401237",
+    "candidate_id": "https://openalex.org/A5018529571",
     "seed_id": "https://openalex.org/A5040320137",
     "seed_dept": "Information Sciences"
   },
@@ -385,13 +385,13 @@
   },
   "CARD_065": {
     "model": "BridgeFinder",
-    "candidate_id": "https://openalex.org/A5101837290",
+    "candidate_id": "https://openalex.org/A5061340418",
     "seed_id": "https://openalex.org/A5040320137",
     "seed_dept": "Information Sciences"
   },
   "CARD_066": {
     "model": "Topic-Only",
-    "candidate_id": "https://openalex.org/A5113350720",
+    "candidate_id": "https://openalex.org/A5060388876",
     "seed_id": "https://openalex.org/A5040320137",
     "seed_dept": "Information Sciences"
   },
@@ -427,7 +427,7 @@
   },
   "CARD_072": {
     "model": "Topic-Only",
-    "candidate_id": "https://openalex.org/A5103242318",
+    "candidate_id": "https://openalex.org/A5100721429",
     "seed_id": "https://openalex.org/A5040320137",
     "seed_dept": "Information Sciences"
   },
