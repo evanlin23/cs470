@@ -65,6 +65,16 @@ The author additionally reported that the UI was unintuitive (leading to the com
 
 Reassessed Users and Feedback against its actual descriptor: a matched and justified formative population, a collected feedback round, and a concrete effect on design are now clearly supported. It receives 4/4 in this editorial review, taking the weighted estimate from 95 to 100. This does not certify the user sessions independently or establish post-revision usability. It also does not override the instructor's judgment.
 
+### Pass 6: fresh review after all author feedback
+
+Reread the actual rubric and current source without treating the previous score as evidence. Checked the graph/ranking definitions against `model.py`, baseline pools and ground truth against `backtest.py`, the student rating questions against the study interface, and current labels/papers against the web exporter. Publication checks verify all published values and provenance.
+
+Three small ambiguities were corrected: the historical improvement targets now explicitly name Adamic–Adar as their comparison; relevance/novelty and willingness-to-contact thresholds explicitly apply to BridgeFinder; and Adamic–Adar is described as ranking candidates with shared co-authors. These edits change no method or outcome. The visual pass also caught the first evaluation bullet splitting across pages; space is now reserved so it stays together.
+
+The criterion assessment remains 4/4 in each category under the supplied descriptors. The objective and progress are clear; related work has task-specific contrasts; the network method is justified against an alternative and interpreted on real data; the prototype demonstrates its full flow; author-confirmed feedback now has concrete observation-to-change links; and evaluation names measures, comparisons, thresholds and collection plans. The argument and figures are explained. The grade remains an editorial judgment, not an instructor commitment. No deduction was added for unfavorable results or for not yet running a study explicitly described as future work.
+
+The paper remains deliberately short. Remaining limits are empirical rather than missing prose: no student retest of the new explanations, no completed comparative study, and no confirmation that publication paths imply acquaintance or mentoring availability. These are stated in the submission. Inspecting the PDF does not validate the author-reported sessions independently.
+
 ## What is not a rubric deduction by itself
 
 The rubric does not demand that predictions beat Adamic–Adar, that citation comparisons be significant, that the planned 15-person trial already be complete, that 110,000 papers already be harvested, or that a particular notes artifact be attached. Negative findings, a justified formative sample and candid scope limitations can still support excellent midterm work. These are limitations to discuss accurately, not automatic percentage penalties.

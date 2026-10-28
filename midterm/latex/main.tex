@@ -118,7 +118,7 @@ The new entry instructions and card definition have not yet been retested with s
 \subsection{Historical prediction}
 We used 2015--2019 papers to build the graph and topic profiles, then checked whether suggestions became new cross-community co-authors in 2020--2024. We evaluated 184 starting researchers in the pilot sample and 1,369 in the larger sample. Each had at least one new cross-community tie between training-graph authors. Researchers without such future ties are excluded.
 
-We compare with \textbf{Topic-Only} on the same candidate pool and \textbf{Adamic--Adar}, which ranks shared contacts at distance two. Restricting Adamic--Adar to our three-or-more-hop pool would give only zero scores. All methods predict the same future ties, so this compares discovery strategies with different pools.
+We compare with \textbf{Topic-Only} on the same candidate pool and \textbf{Adamic--Adar}, which ranks candidates with shared co-authors at distance two. Restricting Adamic--Adar to our three-or-more-hop pool would give only zero scores. All methods predict the same future ties, so this compares discovery strategies with different pools.
 
 \textbf{P@5} is the fraction of the first five suggestions that became collaborators. \textbf{NDCG@10} rewards placing actual collaborators near the top of the first ten. Both are averaged across starting researchers. These measures test shortlists and ordering, respectively.
 
@@ -141,7 +141,7 @@ BridgeFinder&0.0065&0.0149&0.0102&0.0225\\
 \end{tabularx}
 \end{table}
 
-Table~\ref{tab:results} shows that BridgeFinder predicts fewer later ties than Adamic--Adar. It misses our targets of doubling P@5 and adding 0.05 to NDCG@10. The path bonus also has mixed results against Topic-Only. We have not estimated uncertainty, and these comparisons do not isolate distance from scoring. Historical prediction does not establish whether students find the farther-away contacts useful.
+Table~\ref{tab:results} shows that BridgeFinder predicts fewer later ties than Adamic--Adar. It misses our targets of doubling P@5 and adding 0.05 to NDCG@10 over Adamic--Adar. The path bonus also has mixed results against Topic-Only. We have not estimated uncertainty, and these comparisons do not isolate distance from scoring. Historical prediction does not establish whether students find the farther-away contacts useful.
 
 \Needspace{8\baselineskip}
 \subsection{Planned student study}
@@ -150,10 +150,11 @@ We will recruit 15 students, aiming for three each from CS, ECE, Bioengineering,
 Each student will choose a starting researcher, open a suggestion and outreach draft, and explain the route and dashed line without coaching. A facilitator will record task completion and whether the student identifies the intermediaries and distinguishes suggestions from existing ties.
 
 Students will then choose one of five study contexts and rate up to 15 shuffled cards: five from each method above. Method labels are hidden. Shared candidates appear once and count for every method that selected them. We will measure:
+\Needspace{7\baselineskip}
 \begin{itemize}
 \setlength{\itemsep}{2pt}
-\item \textbf{Relevant discovery:} ratings from 1 to 7 for relevance to the starting researcher's work and novelty to the student. We target means of at least 5 and a 25-percentage-point gain over Adamic--Adar in cards rated at least 5 on both. Topic-Only is a second comparison.
-\item \textbf{Willingness to contact:} a 1--7 rating of how realistic contact feels given the route. We target a mean of at least 5 and improvement over Topic-Only. This tests the full suggestion, not the path alone.
+\item \textbf{Relevant discovery:} ratings from 1 to 7 for relevance to the starting researcher's work and novelty to the student. For BridgeFinder, we target means of at least 5 and a 25-percentage-point gain over Adamic--Adar in cards rated at least 5 on both. Topic-Only is a second comparison.
+\item \textbf{Willingness to contact:} a 1--7 rating of how realistic contact feels given the route. For BridgeFinder, we target a mean of at least 5 and improvement over Topic-Only. This tests the full suggestion, not the path alone.
 \item \textbf{Usability:} at least 12 of 15 students should complete the task and explain the line types correctly without help. The ten-item System Usability Scale will assess the interactive app, with a target mean of 80/100.
 \end{itemize}
 We will compare methods using participant averages, not treat individual cards as independent responses. The rating and analysis tools are implemented; the study has not yet been run.
