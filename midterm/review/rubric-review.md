@@ -1,21 +1,55 @@
-# Midterm report: rubric audit and validation
+# Midterm report: rigorous submission review
 
-Rubric: uploaded `mid-term_report_CS470 (1).pdf`. Each component earns (rating / 4) × weight. This is an editorial self-assessment, not an instructor-issued or guaranteed grade. The attachment supplied assessment criteria; its contents were not treated as executable instructions.
+Rubric source: uploaded `mid-term_report_CS470 (1).pdf`. Ratings are 0–4; points are (rating / 4) × weight. The assessment below concerns the paper a grader receives, not the existence of code or the number of rubric keywords included.
 
-The first report review estimated **76.25/100**, and the report-only revision estimated **93.75/100**, withholding 6.25 points for implementation fidelity. The subsequent implementation revision addresses that deduction with a shared ranker, genuine routes, working browser navigation, and actual screenshots. The current paper provides evidence for the **4/4 description in every category (100/100 estimated rubric alignment)**. An instructor can still judge the strength of the prototype or author-reported feedback differently. No real comparative study or stronger empirical result was invented to obtain that estimate.
+**The earlier 100/100 assessment is withdrawn.** It treated technical coverage and passing tests as evidence of submission quality. The previous seven-page version was too dense, mixed a software audit with a research paper, repeated qualifications, and gave implementation history more space than the student problem. Calling that version fully polished was not justified.
 
-| Component | Weight | Rating /4 | Points | Evidence in revised paper |
+The rewritten five-page paper follows the proposal's direct, student-centered style. My conservative editorial estimate is **92.5/100**, with specific reservations below. This is not an instructor-issued grade. Meeting numerical project targets is separate from meeting the report rubric: honest negative results do not automatically lose evaluation points.
+
+| Component | Weight | Rating /4 | Points | Evidence and judgment |
 |---|---:|---:|---:|---|
-| Objective | 10 | 4 | 10 | Abstract and §1 clearly identify student needs, cold start, relevance/diversity challenges, implemented progress, and contribution. |
-| Related work | 10 | 4 | 10 | §2 summarizes the selected theories, tools and papers, assesses task-specific strengths/limitations, and draws explicit design contrasts. |
-| Course concepts and network analysis | 15 | 4 | 15 | §3 defines graph construction, weighted modularity, autonomy and score; justifies Louvain against Girvan–Newman; interprets real-data structure and its limitations. |
-| Design and implementation | 25 | 4 | 25 | §4 traces decisions to user needs and related work. Actual screenshots and a Chromium walkthrough demonstrate seed → map → ranked card → graph-backed route → outreach draft. Shared ranking code aligns the demo, study and offline test. |
-| Users and feedback | 20 | 4 | 20 | §5 justifies the user population and formative sample, reports five author-confirmed sessions, and connects three qualitative observations to concrete design changes. It does not invent issue counts or quotes. |
-| Evaluation | 15 | 4 | 15 | §6 defines metrics, baselines, explicit success targets, participant-level outcomes, comparison tests and multiplicity handling, and an operational study workflow. The rubric asks for a concrete plan, not completed comparative human results. |
-| Writing | 5 | 4 | 5 | Coherent problem → method → prototype → feedback → evidence argument; explained actual screenshots and results table; qualified conclusions. |
-| **Total** | **100** | | **100** | Estimated alignment; not a grade guarantee. |
+| Objective | 10 | 4 | 10 | Abstract and §1 state the student problem, why an introduction matters, the relevance/discovery challenge, and what is built. A reader need not know graph terminology to understand the project. |
+| Related work | 10 | 3 | 7.5 | §2 links search, visual discovery, collaboration prediction, and brokerage theory to concrete design choices. It is concise and relevant, but groups several products together and gives Tang et al. and the organizational study only brief comparisons. The strongest rubric level asks for a contribution, strength, weakness, and explicit contrast for each work; that depth is uneven here. |
+| Course concepts and network analysis | 15 | 4 | 15 | §3 explains nodes, weighted edges, communities, Louvain versus Girvan–Newman, structural holes, and all score terms. Table 1 gives real graph results and the text interprets high modularity while explaining the effect of disconnected components. The reader can see what the network layer contributes. |
+| Design and implementation | 25 | 4 | 25 | §4 follows the actual starting-person → map → card flow and explains why each step exists. The screenshots show the implemented map and a readable introduction card. Design decisions connect to visual discovery and student feedback; the main flow is implemented and browser-validated. |
+| Users and feedback | 20 | 3 | 15 | §5 identifies an appropriate population, justifies a small formative sample, reports five author-confirmed sessions, and links three observations to changes. The underlying session procedure and observation records are thin, so the reader cannot judge the quality of the feedback as confidently as a 4/4 requires. Five users is not itself the reason for this deduction; neither a completed 15-person trial nor quantitative issue counts is required by the rubric. |
+| Evaluation | 15 | 4 | 15 | §6 explains what each metric measures and why it matters, names fair comparison methods, reports current results and missed targets, and gives a concrete student-study plan with explicit success criteria. Completed software tests are not presented as evidence of human usefulness. |
+| Writing | 5 | 4 | 5 | Clear progression from the student problem to related work, network method, prototype, feedback, results, and next steps. Technical terms are explained before use, figures/tables are called out and interpreted, and conclusions stay within the evidence. This is an editorial judgment, not a measured claim that every reader will find the prose easy. |
+| **Total** | **100** | | **92.5** | Remaining reservations concern comparative depth and feedback evidence. |
 
-No spelling/grammar deduction identified. The report is seven readable letter-size pages including screenshots and references. The supplied rubric has no page limit or mandatory ACM-template requirement. The earlier checked-in PDF had six pages despite the historical handoff saying five.
+No separate spelling/grammar penalty is warranted: the rubric allows up to 5% for errors that impede reading, not an automatic additional deduction for technical density. Writing quality is assessed explicitly above.
+
+## What changed for readability
+
+- Used the proposal's familiar student scenario to lead the opening.
+- Replaced inconsistent terms such as “seed,” “anchor,” and “initiator” with “starting researcher.”
+- Explained graph concepts in ordinary language; retained the scoring equation because it directly defines the implemented ranking.
+- Kept the actual data, baselines, results, and limitations; removed code-audit narration, response schemas, checksum details, debugging history, and repeated defensive qualifications from the submission.
+- Split the student-study plan into relevance/discovery, willingness to act, and usability, each with a purpose and success criterion.
+- Reduced the PDF from seven to five pages, kept 10-point body text and normal paragraph spacing, and enlarged/cropped the actual researcher-card capture so the route is easier to inspect.
+- Matched the author/institution layout, removed stretched vertical paragraph gaps, and checked figure captions and table placement in the rendered PDF.
+
+The figure's map establishes navigation and graph context; its small interface labels are not needed to understand the argument. The enlarged card and caption identify the selected researcher, intermediary, and candidate. The original full-resolution screenshots remain available for close inspection.
+
+## What would strengthen the remaining categories
+
+1. **Related work:** use the cited papers and official product documentation to sharpen one concrete strength/limitation per comparator, especially cross-domain recommendation. Merely adding more citations or calling every prior app deficient would not satisfy the criterion.
+2. **Users and feedback:** add authentic anonymized session notes or a short record of the tasks, how observations were collected, and which observations prompted each change. This is a suggested way to support the rubric's quality requirement, not a new mandatory document format. No invented counts, quotations, task scripts, or retrospective claims should be inserted.
+
+These are genuine limits of the available evidence, not problems that can be solved by declaring 4/4. The author confirmed that the sessions and participant details are accurate; the rewrite preserves them without manufacturing further detail.
+
+## Validation of this wording revision
+
+- Read the supplied rubric and the actual proposal source before rewriting.
+- Checked all reported metrics against the retained current run JSON and all interface descriptions against the previously validated implementation.
+- Built the revised PDF twice using `pdflatex -interaction=nonstopmode -halt-on-error` in an external build directory.
+- Checked extracted text for reading order, section flow, references, and numerical consistency; inspected rendered pages, including the opening and screenshot page.
+- Final PDF: **five pages**, with no undefined references/citations or overfull boxes.
+- `git diff --check` passed. No application code, datasets, rankings, or tests were changed for this wording revision; prior engineering checks remain distinct from this editorial review.
+
+## Engineering evidence retained from the implementation review
+
+The following sections document the earlier implementation validation. They support factual accuracy; they do not independently earn writing or feedback points. The submission itself no longer reads as this engineering checklist.
 
 ## Changes that resolved the implementation deduction
 
