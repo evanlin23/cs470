@@ -1,5 +1,7 @@
 # Repeated rubric review — current midterm draft
 
+**Collection status: incomplete.** The current results use a capped capture and are explicitly provisional. The editorial assessment below is not proof that the user's full-dataset request is finished. Network access must be applied before exhaustive collection and its evaluation can be completed.
+
 Source: uploaded `mid-term_report_CS470 (1).pdf`, checked against its extracted text. The rubric assigns integer scores 0–4 and weights each by `(score / 4) × weight`; 3 means between Sophisticated and Competent. Grammar can cost up to five percentage points when it impedes reading. The report should read as a short research paper.
 
 **Current rubric-based editorial assessment: 100/100 (4/4 in each criterion).** The author supplied the specific feedback context behind the previous 95/100 estimate, and the proposed landing-page instructions are now implemented and described accurately. This resolves that review's five-point reservation. It is an assessment against the rubric descriptors, not a guaranteed instructor grade. The earlier unconditional promise of 100 remains withdrawn.

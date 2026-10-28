@@ -1,5 +1,7 @@
 # BridgeFinder contributor handoff
 
+**Full-dataset collection is pending. Existing results are provisional capped-data results, not completion of the user's full-collection request.**
+
 This is the current shared-model workflow for `evanlin23/cs470`, branch `claude/modest-gauss-q759kv`. Historical exporters, study bundles and result files are preserved under `prototype/legacy/remote-label-fix/`; do not use them as current benchmarks.
 
 Evan Lin and Eric Liu are the project authors. The app helps UIUC students find relevant researchers outside a familiar researcher's collaboration community and inspect possible introductions.
@@ -97,3 +99,17 @@ The author supplied the observed first-screen selection problem, an unintuitive 
 ## Complete local collection
 
 Paste the prompt in `docs/local-complete-dataset-prompt.md` into a local coding agent with OpenAlex access. It requires uncapped/resumable collection and completeness checks before publishing a new dataset, then regeneration of the report, app, study, provenance and Overleaf ZIP.
+
+## Exhaustive collector
+
+`prototype/fetch_openalex.py` is now uncapped by default. It resumes query-specific page checkpoints under `.build/openalex-full`, deduplicates work IDs, validates exact UIUC affiliation and distinct author IDs, verifies cursor exhaustion and a stable matching API total, and publishes the processed dataset plus a `.collection.json` manifest only after those checks. Failed, capped or unreconciled runs do not overwrite the existing corpus. Legacy raw cache lists are not treated as complete. It retains full API work objects so truncation flags are not dropped by field selection; live API behavior still needs verification once access is enabled.
+
+Run from the repository root after enabling OpenAlex network access:
+
+```bash
+python prototype/fetch_openalex.py --cache-dir .build/openalex-full --out prototype/uiuc_data_scaled.json
+```
+
+If OpenAlex requires authentication, supply it securely through the `OPENALEX_API_KEY` environment binding. No key is currently configured, and API authentication requirements cannot yet be tested because the proxy denies the destination. Do not place keys in command text or Git.
+
+The network draft adds `api.openalex.org`, `docs.openalex.org` and `developers.openalex.org` while preserving the existing custom domain and preset policy. Saving that draft does not apply it. Review/save in environment settings and publish, then retry collection. Only after successful collection should the backtest, app/study data, screenshots, report and Overleaf ZIP be regenerated. Seven collector fixtures validate failure/resume/completeness behavior; they are not evidence that the real corpus was harvested.

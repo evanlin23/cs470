@@ -1,6 +1,6 @@
 # Rewrite guide for Evan and Eric
 
-The revised paper is an editable working draft. Keep the factual results and the distinction between completed work and planned studies while rewriting in your own voice.
+The revised paper is an editable working draft with provisional results from a capped collection. Full-dataset collection and evaluation remain pending. Keep the factual results and the distinction between completed work and planned studies while rewriting in your own voice.
 
 ## Keep this rubric-aligned structure
 
