@@ -26,7 +26,7 @@ The author supplied a concrete example: a student wanted to find a relevant prof
 
 Keep the sequence accurate: the confusion was observed; explicit instructions and the card definition were proposed in follow-up and then added; the interface overhaul and tag corrections were reported as completed changes. No student retest of the new explanations has been reported. Do not write that the change solved the problem or improved completion rates. The new account addresses the prior editorial reservation about feedback specificity.
 
-Confirm the five sessions, 30-minute format, three CS/CE undergraduates and two Bioengineering/Information Sciences graduate students, and other reported observations. These were author-confirmed in conversation, not independently observed by this review. Add issue frequencies or quotations only if authentic and useful. No new session, quote, participant identity or count was inferred from the example.
+Confirm the four sessions, 30-minute format, two undergraduates (one ECE, one Food Systems) and two graduate students (one CS, one Master of Computer Science in Computational Biology), and other reported observations. These were author-confirmed in conversation, not independently observed by this review. Add issue frequencies or quotations only if authentic and useful. No new session, quote, participant identity or count was inferred from the example.
 
 ## Keep the central argument
 
