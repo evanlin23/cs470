@@ -1,133 +1,70 @@
-# Repeated rubric review — current midterm draft
+# Strict rubric review of the full-data midterm
 
-**Current data and feedback status.** The pulled collection manifest records a completed 102,947-work query with 49,651 retained papers. Its dataset hash and analysis outputs match the files in this checkout. The author corrected the formative round to four students in 30-minute sessions, with two undergraduates (ECE and Food Systems) and two graduate students (CS and an MCS student researching computational biology). Earlier five-participant and capped-collection statements in the pass history below are superseded.
+Source is the uploaded CS 470 midterm rubric. Scores are integers from 0 to 4. Each contributes `(score / 4) × weight`. The rubric separately permits up to a five-point deduction for spelling/grammar that impedes reading. This is an editorial judgment, not an instructor-issued grade or a guarantee.
 
-Source: uploaded `mid-term_report_CS470 (1).pdf`, checked against its extracted text. The rubric assigns integer scores 0–4 and weights each by `(score / 4) × weight`; 3 means between Sophisticated and Competent. Grammar can cost up to five percentage points when it impedes reading. The report should read as a short research paper.
+## Starting grade and actual deductions
 
-**Current rubric-based editorial assessment: 100/100 (4/4 in each criterion).** The author supplied the specific feedback context behind the previous 95/100 estimate, and the proposed landing-page instructions are now implemented and described accurately. This resolves that review's five-point reservation. It is an assessment against the rubric descriptors, not a guaranteed instructor grade. The earlier unconditional promise of 100 remains withdrawn.
+**Starting estimate in this pass: 90/100.** The previous blanket 100 assessment missed a stale figure. The full-data report still illustrated the older capped-data shortlist. Pilgyu Kang was not in the current displayed shortlist for John A. Rogers. That made the previous claim that the screenshots were current inaccurate.
 
-## Final scoring
+| Criterion | Weight | Starting score | Revised score | Revised points | Evidence for revised score |
+|---|---:|---:|---:|---:|---|
+| Objective | 10 | 4 | 4 | 10 | Abstract and §1 state the student problem, contribution, relevance/discovery challenge, implemented progress and next evaluation. The abstract now reports both comparisons correctly: above topic-only, below triadic closure. |
+| Related work | 10 | 3 | 4 | 10 | §2 now gives explicit contributions and task-specific limits for the researcher-search tools, literature maps, link-prediction work, cross-domain recommendation and network theory. The contrasts motivate the entry point, map, missing-link suggestions and human evaluation. Method/data sources are explained in §3. |
+| Course concepts and network analysis | 15 | 4 | 4 | 15 | §3 defines brokerage, nodes, joint-paper weights, communities and the actual score. Louvain is justified against Girvan–Newman, as the rubric requires a method alternative. Table 1 reports actual full-data graph results, interpreted with the disconnected-component caveat. The text explains what removing the graph would remove. |
+| Design and implementation | 25 | 3 | 4 | 25 | §4 explains the full entry → map → card/outreach flow and relates decisions to the problem, related work and feedback. Figure 1 now comes from the actual current full-data prototype, with its candidate/route verified against the exported bundle. All 11 happy-path browser tests pass on that bundle. |
+| Users and feedback | 20 | 4 | 4 | 20 | §5 reports the author's corrected four-student sample and its composition, explains why undergraduates and graduate/application perspectives fit an initial round, describes talk-through feedback, and traces four observed issues to concrete revisions. New explanations are not claimed to have been human-retested. |
+| Evaluation | 15 | 4 | 4 | 15 | §6 uses one historical measure, P@10, with explicit baselines and the actual full-data results. The future study gives recruitment, tasks, blinded cards, overlap handling, participant-level analysis and comparisons/thresholds for discovery, willingness to contact and usability. Brief explanations now make each measure's purpose clearer. |
+| Writing | 5 | 3 | 4 | 5 | The argument proceeds from student need through prior work, method, interface, feedback and evidence to next steps. Tables and the current figure are referenced and explained. The prose removes unnecessary audit narration and accurately summarizes the mixed result. Rendered-page review checks the layout. |
+| **Total** | **100** | **90/100 weighted** | | **100** | No reading-impeding grammar deduction identified after revision. |
 
-| Criterion | Weight | Score /4 | Weighted points | Evidence and rationale |
-|---|---:|---:|---:|---|
-| Objective | 10 | 4 | 10 | Abstract/§1 establish the student problem, relevance-versus-discovery challenge and concise progress. The reader learns what the system contributes and what is still unproven. |
-| Related work | 10 | 4 | 10 | §2 describes researcher search, two literature tools, link prediction, cross-domain recommendation, weak-tie/brokerage theory and longitudinal collaboration research. Contributions, useful features and limits for this task are explicit. §4 connects these comparisons to design decisions. Supporting data/method sources are explained in §3. |
-| Course concepts and network analysis | 15 | 4 | 15 | §3 explains the graph, joint-paper weights, training-only topics, Louvain versus Girvan–Newman, community boundaries, distance and the path-based ranking. Table 1 reports actual graph sizes and modularity, interpreted with a disconnected-component caveat. The text explains what removing the network layer would remove. |
-| Design and implementation | 25 | 4 | 25 | §4 gives reasons for the starting-person → map → card flow, ties them to the problem and related work, and includes actual current screenshots. The demonstrated core flow includes observed routes and editable outreach. The 50-person list and use of researcher topics as an interest proxy are explicit limitations. |
-| Users and feedback | 20 | 4 | 20 | §5 identifies and justifies the formative sample and traces observations to implemented changes. The new author-provided example explains a student's goal (find a relevant professor), obstacle (not understanding the first-screen selection), and response (explicit steps and an explanation of the interest proxy). It also connects UI confusion to the design overhaul, mismatched tags to corrected labeling, and card terminology to a new definition. The paper states that the new explanations have not been retested. This supports the rubric's collected-feedback-to-design requirement without inventing outcomes. |
-| Evaluation | 15 | 4 | 15 | §6 gives justified metrics, baselines/thresholds, completed prediction results and a concrete future study. It now defines the usability task and facilitator checks, respects the actual relevance question, and distinguishes comparisons with different candidate pools from causal isolation. Participant-level analysis, exploratory comparisons and missed targets are clear. |
-| Writing | 5 | 4 | 5 | The argument proceeds from student need to prior work, network method, interface, feedback, evidence and next steps. Tables/figure are referenced and interpreted. Unsupported claims of causal benefit were removed. The four-page rendered draft has readable body text and no overflowing boxes or unresolved references. |
-| **Total** | **100** | | **100** | No additional reading-impeding grammar deduction identified. |
+The starting deductions were 2.5 points for Related Work, 6.25 for Design/Implementation and 1.25 for Writing. The revisions address those specific weaknesses; the score was not raised by changing empirical results.
 
-## Review loop and stopping rule
+## Iteration 1 — evidence and rubric gaps
 
-The loop stops when all identified changes supported by the available facts have been addressed. The author has now provided the previously missing interaction context, plus feedback about the interface, mismatched tags, unclear card terminology, and an overcrowded graph. It does not stop when a target number can be manufactured. No new sessions, quotations, counts, favorable results or source claims were invented.
+Checked the rubric independently of the existing self-score. The related-work descriptions did not always make each comparison's contribution and task-specific limit explicit. The full-data prototype changed its ranked researchers, but Figure 1 still showed the earlier example. The abstract mentioned only the disadvantage against shared-contact ranking, without stating the advantage over topic-only. These were concrete report defects.
 
-### Pass 1: strict rubric and claim review
+The corrected four-student account was retained. No minimum participant number, required quotation, issue frequency or post-revision retest was invented as an additional rubric requirement.
 
-Conservative starting ratings were Objective 4, Related Work 3, Network Analysis 4, Design 4, Users 3, Evaluation 3, Writing 3: **87.5/100**. These are retrospective editorial ratings of the starting draft, not an instructor assessment.
+## Iteration 2 — repair while keeping the paper simple
 
-Identified issues:
+- Rewrote the related-work comparisons with direct explanations of their useful contribution, task-specific limitation and connection to BridgeFinder.
+- Captured the current prototype at native 3× resolution. The example is Naiman A. Khan → Ruopeng An → Kelly Scott Swanson → Victoria J. Vieira-Potter. The caption and visible researcher card now match the current bundle.
+- Added `midterm/capture_screenshots.py` and capture metadata recording the dataset, current UI/bundle hashes, exact selected route and screenshot hashes. A publication check catches stale figure assets when those inputs change.
+- Clarified why the existing planned ratings matter without adding another historical prediction metric. One dataset and one historical measure, P@10, remain.
+- Applied the author's wording requests. The abstract states the advantage over topic-only and disadvantage against triadic closure before motivating the user study. Session duration and the generated-response sentence are omitted from the submitted prose. The short method-alternative justification remains because it is explicitly required by the rubric.
 
-- The formula was called “the proposal's score,” although the proposal specified the general topic/path approach rather than that exact saturation and coefficient.
-- Some related-work contrasts were grouped too broadly; Burt's two sources were not distinguished clearly.
-- The source of the student's interest profile was implicit: ranking uses the selected researcher's topics.
-- “Eligible” future ties could be misread as satisfying the >=3-hop rule. Ground truth also includes two-hop ties.
-- The result interpretation could imply that distance alone caused poorer prediction.
-- The proposed usability task did not give a sufficiently concrete completion/comprehension rule.
-- The willingness-to-contact comparison suggested it isolated the route's effect, even though methods choose different candidates.
+The original proposal, data, ranking, P@10 values, participant composition and supplied observations are unchanged.
 
-These were corrected in the paper without changing the algorithm or empirical results.
+## Iteration 3 — regrade and verify
 
-### Pass 2: check the measurement against the actual implementation
+Reread the revised paper against every top-level descriptor. The revised table above reflects this pass. The report supports the strongest descriptors while retaining its short-paper structure. The source-only paragraph-purpose comments remain for the authors' manual rewrite.
 
-Checked `prototype/model.py`, `backtest.py`, the web exporter, study questions and participant-level analyzer against the prose.
+The remaining limitations are reported rather than disguised. Co-authorship does not establish acquaintance or mentoring availability. Interest matching uses the starting researcher's topics as a proxy. The formative feedback is author-reported. The 15-person comparison is planned, not completed. Historical P@10 is lower than triadic closure. These do not by themselves prevent full rubric credit for a midterm with real analysis, a demonstrable prototype, feedback-driven design and a concrete evaluation plan.
 
-The paper now correctly states that card relevance is to the starting researcher's work, while novelty is personal familiarity. A separate student topic profile is not implemented. The limited 50 starting researchers and five study contexts are acknowledged. The study assesses full suggestions, not an isolated path intervention. The selected researcher remains an interest proxy; the task plan does not pretend to have been run.
+## What is still needed for a guaranteed 100
 
-This pass also removed repeated wording and simplified explanation of previous UI revisions. All result values remain unchanged. The short paper keeps the three proposal baselines; the ancillary citation analysis and extra baselines are retained in analysis-notes.md and the canonical outputs.
+No reviewer can guarantee the instructor's judgment. This pass found no remaining specific rubric omission that can responsibly be repaired with the available evidence. The authors should own and verify the final wording, citations, participant account and contribution disclosure before submission. New participant evidence must come from actual participants. More formulas, additional prediction metrics, invented quotes or a favorable outcome are not required to fill a missing rubric category.
 
-### Pass 3: submission/readability and handoff review
+## Current evidence
 
-Read the revised argument from the perspective of a reader unfamiliar with the code. Rechecked the rubric descriptors, claim-to-evidence links, section order, figures, tables and rendered pages. Remaining actionable writing and attribution issues were resolved. Those ratings were superseded after the author supplied the concrete example described in Pass 5.
+- One completed API-query harvest records 102,947 unique works and 49,651 retained papers. Its dataset hash, actual counts and analysis provenance match the checkout. That verifies the provided artifacts, not an independent replay of the remote harvest.
+- P@10 is .0079 for Topic-Only, .0287 for simple triadic closure and .0131 for BridgeFinder across 3,492 evaluated starting researchers.
+- Four formative participants were two undergraduates (ECE and Food Systems) and two graduate students (one CS student and one MCS student researching computational biology). Session duration remains available in the author record but is not necessary in the paper.
+- All 11 browser happy-path checks pass on the full-data demo/study bundle. Software fixtures are not human-study evidence.
+- Publication checks verify the numerical table, matching report copies and provenance, the ancillary citation note, all displayed route counts, and the current figure's dataset/UI/image bindings.
+- Build the report twice from the repository root, inspect the rendered pages and verify the cleanly extracted Overleaf project. The report uses one dataset and P@10 only for historical prediction; the separate planned app-evaluation measures satisfy the rubric's several-metrics requirement.
 
-`rewrite-guide.md` identifies what Evan and Eric should rewrite or verify, especially concrete formative-session context. Their final source interpretation and contribution/AI disclosure also need author ownership. This is a handoff for their rewrite, not a request to fabricate missing evidence.
-
-### Pass 4: simplest sufficient paper
-
-The user asked for substantially less complexity. The submission was rewritten as four pages with one short equation, two compact tables, one combined figure, three feedback-driven changes and three student-evaluation outcomes at that stage (the subsequent author feedback is documented in Pass 5). The main prediction table now shows only the three methods named in the proposal. The separate citation subsection, extra baseline descriptions, detailed inferential-test names and historical autonomy discussion were removed from the main paper and retained where relevant in `analysis-notes.md` and the repository. No unfavorable primary result was hidden.
-
-Rechecked every rubric criterion after these cuts. The objective, individual related-work contrasts, method-versus-alternative justification, real-data interpretation, full prototype flow, feedback traceability, metric reasons/thresholds/comparisons and honest conclusion remain. At this stage the estimate remained 95/100; added technical detail would not address the remaining feedback concern.
-
-### Pass 5: author-provided interaction context and implemented guidance
-
-The author explained that a student trying to find a relevant professor did not realize they had to select a researcher on the first screen as the entry into the graph. The author proposed clearer landing-page descriptions and steps; they did not claim those instructions had already been added or tested. We implemented a plain three-step guide on the first screen and explained that the selected researcher's publications determine the suggestions. §4 describes the guidance and §5 ties it to the observed confusion, with an explicit statement that the revision has not been retested with students.
-
-The author additionally reported that the UI was unintuitive (leading to the completed design overhaul), that tags did not match professors (a completed mechanical correction), and that the meaning of a card was unclear (leading to a newly implemented profile definition). The author also identified excessive graph nodes as a usability problem; the current map reduces the display to the selected researcher, suggestions and route intermediaries while retaining community colors. The paper separates these existing fixes from the newly added explanations and does not claim the latter have been retested. Labels remain inferred research areas and collaboration groups, not verified departments.
-
-Reassessed Users and Feedback against its actual descriptor: a matched and justified formative population, a collected feedback round, and a concrete effect on design are now clearly supported. It receives 4/4 in this editorial review, taking the weighted estimate from 95 to 100. This does not certify the user sessions independently or establish post-revision usability. It also does not override the instructor's judgment.
-
-### Pass 6: fresh review after all author feedback
-
-Reread the actual rubric and current source without treating the previous score as evidence. Checked the graph/ranking definitions against `model.py`, baseline pools and ground truth against `backtest.py`, the student rating questions against the study interface, and current labels/papers against the web exporter. Publication checks verify all published values and provenance.
-
-Three small ambiguities were corrected: the historical improvement targets now explicitly name Adamic–Adar as their comparison; relevance/novelty and willingness-to-contact thresholds explicitly apply to BridgeFinder; and Adamic–Adar is described as ranking candidates with shared co-authors. These edits change no method or outcome. The visual pass also caught the first evaluation bullet splitting across pages; space is now reserved so it stays together.
-
-The criterion assessment remains 4/4 in each category under the supplied descriptors. The objective and progress are clear; related work has task-specific contrasts; the network method is justified against an alternative and interpreted on real data; the prototype demonstrates its full flow; author-confirmed feedback now has concrete observation-to-change links; and evaluation names measures, comparisons, thresholds and collection plans. The argument and figures are explained. The grade remains an editorial judgment, not an instructor commitment. No deduction was added for unfavorable results or for not yet running a study explicitly described as future work.
-
-The paper remains deliberately short. Remaining limits are empirical rather than missing prose: no student retest of the new explanations, no completed comparative study, and no confirmation that publication paths imply acquaintance or mentoring availability. These are stated in the submission. Inspecting the PDF does not validate the author-reported sessions independently.
-
-### Pass 7: structure and paragraph-level rewriting support
-
-Compared the section order directly with every rubric component. Sections 1–6 follow the rubric order; §3 now explicitly names Course Concepts as well as Network Analysis and states the brokerage idea before defining the graph. Writing applies across the whole paper, so it is not a standalone content section. The abstract and short closing section support the required short-paper form.
-
-Added source-only paragraph-purpose comments in `main.tex` and a section-to-criterion map in `rewrite-guide.md`. These make it possible for the authors to keep the structure while rewording each paragraph. They do not add visible audit material to the submission. The method alternative, real-data interpretation, design rationales, formative-sample justification, feedback-to-change links, and evaluation comparisons/thresholds remain; none was removed for brevity. Extra statistics remain in the supporting notes. Numerical results, methods, and study status are unchanged.
-
-### Pass 8: prose style without losing rubric evidence
-
-The user requested removal of particular punctuation and formulaic phrasing. The authored title/body/caption now use no colons, semicolons or em dashes. Metric fragments were rewritten as sentences, and the closing line now describes how the study findings will be used. Original reference metadata and numerical-range punctuation remain accurate. Paragraph-purpose comments and the rubric-aligned structure remain intact. `style-review.md` records two research sources and explains why punctuation cannot establish authorship. The AI-use disclosure is preserved. No factual result or reported session event was changed.
-
-### Pass 9: comparison with the proposal's wording and flow
-
-Read the original proposal and latest midterm side by side and checked that the shared branch had no newer edits. The proposal's useful pattern is to explain the student's action before the technical method. The midterm retains that pattern, with the extra evidence required at midterm. Clarified the brokerage explanation, the distinction between 50 starting researchers and participant counts, the description of students talking through the prototype, and the five starting researchers used in the card comparison. Paragraph roles and rubric section order are unchanged.
-
-The algorithm still follows the proposal's >=3-hop, topic-plus-path approach and joint-paper weights. The focused map is a documented feedback-driven design revision. Current data coverage remains below the proposed collection size, and the study's relevance question uses the starting researcher's work as a proxy for student interests. These are disclosed limits, not wording to hide. The proposal's broader claims about existing tools, structural holes and future superiority were not copied into the results report. No empirical result, feedback event or implemented behavior changed in this pass.
-
-### Pass 10: one current dataset and the proposal's simple comparison
-
-The user requested one dataset, straightforward triadic closure, and an evaluation matching the proposal. The paper now reports the 13,229-paper dataset from the 25,000-work capture, with the collection limit explicit. Pilot data/results are archived as development history. An attempt to reach OpenAlex for exhaustive collection failed with a proxy CONNECT 403, so no complete-coverage claim is made.
-
-Triadic closure now ranks candidates by the number of shared co-authors, with no Adamic–Adar weighting. The shared model, backtest, study top fives, generated bundles, audit and tests are synchronized. Historical weighted-baseline outputs are archived. The main paper reports only P@10, corresponding to the proposal's count of later collaborators in the top ten. Additional metrics remain in supporting JSON. P@5 and NDCG@10 were implementation additions, not explicitly named proposal measures. Current values come from the newly computed run, not the previous baseline's table.
-
-The model and data-scope changes require a fresh validation rather than relying on earlier check counts. Earlier pass descriptions and their table-cell counts are historical.
-
-### Pass 11: pulled full-data results and corrected formative population
-
-Pulled the local collection/analysis and the subsequent author correction in commits `4bd2101` and `d0901c5`. The collection manifest reports 515 pages, 102,947 unique works, the same final API count and 49,651 retained papers. Checked its hash against the actual dataset and its counts against the JSON, including unique paper IDs, years, distinct retained authors and author references. The result manifests and published P@10 values pass consistency checks. These checks verify the provided artifacts; they do not independently replay the remote harvest.
-
-The feedback section now reports four students accurately. The earlier draft's miscount explanation is preserved here as a correction record rather than interrupting the submitted paper. The MCS participant is described as researching computational biology, not enrolled in an invented program with that title. The abstract, sample justification, handoff and study notes agree on the corrected count. Observations and implemented changes remain as supplied by the author, and no retest outcomes, quotations or frequencies were added. The proposal is unchanged.
-
-The rewrite guide also contained stale capped-data counts, and the ancillary citation note incorrectly said both targets failed even though the new mean ratio exceeds 1.10. These supporting-note errors were corrected to match the pulled results. No data, ranking implementation or calculated result was changed.
-
-## What is not a rubric deduction by itself
-
-The rubric does not demand that predictions beat Adamic–Adar, that citation comparisons be significant, that the planned 15-person trial already be complete, that 110,000 papers already be harvested, or that a particular notes artifact be attached. Negative findings, a justified formative sample and candid scope limitations can still support excellent midterm work. These are limitations to discuss accurately, not automatic percentage penalties.
-
-The former feedback reservation concerned the reader's ability to assess the reported round, not a demand for a new study. Five formative sessions can be sufficient. Software tests support the implementation claims but cannot establish human usability or feedback quality.
-
-## Verification and reproducibility
-
-Most changes in this loop are editorial and prospective protocol clarification. Pass 5 additionally adds first-screen instructions and reruns browser checks. Publication checks were updated to reflect the three-row table and the relocation of the ancillary citation text, while retaining numerical verification. Earlier editorial passes did not change algorithms or results; Pass 10 changes the baseline and regenerates its outputs. No participant responses were created. Publication-consistency checks compare all three displayed prediction values, seed counts, the ancillary citation note and provenance hashes. Model verification remains applicable because the ranking is unchanged. Browser verification is rerun for the landing-page change.
-
-The paper is built twice with pdfLaTeX from the repository root and checked for warnings, unresolved references and overflows. The Overleaf ZIP is separately compiled after clean extraction, with the root file named `main.tex` and matching figures. It contains no prototype datasets or private study key.
-
-Reproduce the paper from the repository root:
+## Reproduce
 
 ```bash
+python midterm/capture_screenshots.py
+python -m unittest discover -s prototype/tests -p test_publication_consistency.py -v
+python prototype/tests/browser_workflow.py --artifacts /tmp/bridgefinder-review
 mkdir -p .build/midterm
 pdflatex -interaction=nonstopmode -halt-on-error -output-directory=.build/midterm midterm/latex/main.tex
 pdflatex -interaction=nonstopmode -halt-on-error -output-directory=.build/midterm midterm/latex/main.tex
 cp .build/midterm/main.pdf midterm/midterm.pdf
-python -m unittest discover -s prototype/tests -p test_publication_consistency.py -v
 python midterm/package_overleaf.py --verify
 ```
+
+Earlier editorial passes are recoverable from Git history. This file supersedes their scores and current-status claims.

@@ -74,7 +74,7 @@ We gathered feedback from four individuals in individual 30-minute sessions who 
 ### Useful Commands
 
 ```bash
-# Run unit tests (all 27 tests pass)
+# Run supporting tests
 python -m unittest discover -s prototype/tests -v
 
 # Refresh canonical results, web data, and study cards
@@ -88,3 +88,7 @@ tectonic -Z search-path=. midterm/latex/main.tex && cp midterm/latex/main.pdf mi
 # Package and verify Overleaf ZIP
 python midterm/package_overleaf.py --verify
 ```
+
+## Current paper figure and strict review
+
+`midterm/review/rubric-review.md` contains the latest strict criterion-by-criterion review. The old figure was from the capped dataset and has been replaced with actual full-data captures. Refresh with `python midterm/capture_screenshots.py`; `capture.json` binds its selected route, images and dataset/UI hashes. The source caption must match that record. The abstract now states both baseline comparisons. Session duration and the generated-response sentence are omitted from the short paper; the four-student composition and feedback changes remain. The original proposal is unchanged.

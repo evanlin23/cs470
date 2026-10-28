@@ -1,6 +1,6 @@
 # Rewrite guide for Evan and Eric
 
-The revised paper is an editable working draft with provisional results from a capped collection. Full-dataset collection and evaluation remain pending. Keep the factual results and the distinction between completed work and planned studies while rewriting in your own voice.
+The revised paper is an editable working draft using the completed full-query collection and its historical evaluation results. Keep the factual results and the distinction between completed work and planned studies while rewriting in your own voice.
 
 ## Keep this rubric-aligned structure
 
@@ -18,7 +18,7 @@ Writing is assessed across every section, rather than in a section called “Wri
 
 Each prose paragraph and metric item in `main.tex` now has a `% Rewrite purpose:` comment above it. These comments appear in the source only. Use them as a paragraph-by-paragraph guide while replacing the wording with your own. Keep the problem → method → design → feedback → evaluation → conclusion sequence, rather than adding implementation history to the submission.
 
-Simplicity means each paragraph has a clear job. Do not remove the method alternative, interpretation of results, reasons behind design choices, sample justification, or metric comparisons: these earn rubric credit. Keep extra baseline runs, ancillary citation statistics, detailed statistical procedures and engineering checks in the repository notes unless you need them to support a specific claim.
+The strict review refreshed the figure to the current full-data example and expanded the task-specific related-work contrasts. Simplicity means each paragraph has a clear job. Do not remove the method alternative, interpretation of results, reasons behind design choices, sample justification, or metric comparisons: these earn rubric credit. Keep extra baseline runs, ancillary citation statistics, detailed statistical procedures and engineering checks in the repository notes unless you need them to support a specific claim.
 
 ## Author verification: feedback
 
@@ -66,3 +66,9 @@ The draft now uses periods or commas in place of colons and semicolons in its au
 The proposal is clearest when it explains the student's action before the technical method. Keep that approach in the midterm. Say what a student chooses, sees and can do, then explain the graph that supports it. Use “five starting researchers for the card comparison” rather than “five study contexts.” Explain brokerage in terms of connections across groups. Describe think-aloud feedback as students talking through their use of the prototype.
 
 The midterm needs more evidence than the proposal. Keep its actual graph/results tables, the method alternative, observations linked to revisions, and concrete study thresholds. Avoid copying the proposal's stronger claims about structural holes, existing products or successful prediction unless the current evidence supports them. The current relevance question concerns the starting researcher's work, not directly the student's own interests; preserve that distinction and the interest-proxy limitation.
+
+## Latest author preferences
+
+The abstract should state both comparisons, better than topic-only and worse than simple triadic closure, before explaining why the student study matters. The paper need not include session duration or a statement about generated participant responses. Keep the accurate four-student composition, talk-through method, sample rationale and feedback-to-change links. Preserve one short justification against Girvan–Newman because the rubric explicitly requires a course-method alternative. The paper's AI-use disclosure remains.
+
+The current figure is captured by `python midterm/capture_screenshots.py`. Its example is Naiman A. Khan, Ruopeng An, Kelly Scott Swanson and Victoria J. Vieira-Potter. Regenerating the dataset/UI requires refreshing the screenshot metadata and caption as well. Do not reuse the older capped-data example.

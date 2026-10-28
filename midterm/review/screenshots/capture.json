@@ -1,0 +1,36 @@
+{
+  "dataset_sha256": "0fae5f05012921f4caa07cb5d6b1d6f7949821365b053dcecbaa51a108d3bd78",
+  "model_version": "proposal-path-v3-common-neighbors",
+  "seed_id": "https://openalex.org/A5067579128",
+  "seed_name": "Naiman A. Khan",
+  "candidate_id": "https://openalex.org/A5005123696",
+  "candidate_name": "Victoria J. Vieira\u2010Potter",
+  "path_ids": [
+    "https://openalex.org/A5067579128",
+    "https://openalex.org/A5002313901",
+    "https://openalex.org/A5053823114",
+    "https://openalex.org/A5005123696"
+  ],
+  "path_names": [
+    "Naiman A. Khan",
+    "Ruopeng An",
+    "Kelly Scott Swanson",
+    "Victoria J. Vieira\u2010Potter"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 1000,
+    "device_scale_factor": 3
+  },
+  "source_sha256": {
+    "data.json": "a08bab4a6769481abe54fec6984388afc64fb0d4760d62dd348443fae4070f27",
+    "app.js": "cf13d50a88912e3a84738bc89c56aecf61aab9518b994234901abad1f3bbee6f",
+    "index.html": "bf5c92100cfcbe3af42de3d598c1e98d687883921d87b2e2acf18da5e8ef3779",
+    "styles.css": "d94d0f165b9b1d82b9615d0ad1a9830c446668c9df051d78224798d153e94e28"
+  },
+  "screenshot_sha256": {
+    "01-seeds.png": "168becd3d56b0eee8b1b8957c04f7c6650aa4add15787b3631c63dd109dea097",
+    "02-map.png": "9cdbfbb350dab39ed7a0b0bdbefdb5ea59846b626cf159672bb446796dde0033",
+    "03-recommendation.png": "4541960af19cb7c1ab42f3f04edff9dce0f896297ee20c6379db22891eab72dd"
+  }
+}

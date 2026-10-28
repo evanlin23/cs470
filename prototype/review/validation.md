@@ -53,3 +53,7 @@ The landing page now explains why a starting researcher must be selected and giv
 ## Single-dataset, simple-closure revision
 
 The pilot dataset/results are historical. The current demo, study and report use the same 13,229-paper dataset. Common-neighbor counting replaces Adamic–Adar weighting for triadic closure. A hand-checked fixture verifies that two shared contacts rank above one regardless of contact degree. Study cards and revision IDs are regenerated from the true top five of the revised methods. The paper reports P@10, while additional computed metrics remain in supporting JSON.
+
+## Strict full-data report review
+
+All 11 browser checks were rerun successfully against the full-data demo and 69-card study bundle. The report's earlier image was stale after the dataset expansion. It now uses the actual Khan → An → Swanson → Vieira-Potter route. `midterm/capture_screenshots.py` captures and checks the example; the publication suite now has five checks, including dataset/UI/route/image bindings for the paper figure. That five-check suite passes. These browser and artifact checks do not establish human usability or validate the reported sessions independently.

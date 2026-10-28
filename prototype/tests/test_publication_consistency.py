@@ -53,6 +53,21 @@ class PublicationConsistencyTests(unittest.TestCase):
         self.assertEqual(audit['displayed_top10']['unreachable'],0)
         self.assertIn('at least three hops',source)
 
+    def test_paper_figure_matches_current_full_data_demo(self):
+        record=json.loads((REPO/'midterm/review/screenshots/capture.json').read_text())
+        bundle=json.loads((ROOT/'web/data.json').read_text())
+        self.assertEqual(record['dataset_sha256'],digest(ROOT/'uiuc_data_scaled.json'))
+        self.assertEqual(record['model_version'],bundle['metadata']['model_version'])
+        for name,expected in record['source_sha256'].items():
+            self.assertEqual(digest(ROOT/'web'/name),expected,name)
+        for name,expected in record['screenshot_sha256'].items():
+            self.assertEqual(digest(REPO/'midterm/review/screenshots'/name),expected,name)
+        row=next(r for r in bundle['recommendations'][record['seed_id']] if r['id']==record['candidate_id'])
+        self.assertEqual(row['path_ids'],record['path_ids'])
+        source=(REPO/'midterm/latex/main.tex').read_text()
+        for name in record['path_names']:
+            self.assertIn(name.replace('‐','-'),source)
+
     def test_ancillary_citation_note_matches_canonical_run(self):
         source=(REPO/'midterm/review/analysis-notes.md').read_text()
         result=json.loads((ROOT/'results/citation_impact.json').read_text())
