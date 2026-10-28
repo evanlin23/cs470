@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BridgeFinder: Cross-Community Faculty Brokerage Engine</title>
-  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <title>BridgeFinder: Cross-Community Research Discovery</title>
+  <script src="vendor/d3.v7.min.js"></script>
   <style>
     :root {
       --uiuc-blue: #13294B;
@@ -87,6 +87,7 @@
     .modal-box { background: white; width: 600px; border-radius: 14px; padding: 28px; box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
     .modal-header { font-size: 18px; font-weight: 700; margin-bottom: 14px; color: var(--uiuc-blue); }
     .email-preview { background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 16px; font-family: monospace; font-size: 13px; line-height: 1.6; margin-bottom: 20px; white-space: pre-wrap; }
+  .map-legend { max-height: 230px; overflow-y: auto; max-width: 270px; }
   </style>
 </head>
 <body>
@@ -109,9 +110,9 @@
     <!-- Screen 1: Seed Selection -->
     <div id="screenSeeds" class="screen active">
       <div class="search-bar-row">
-        <input type="text" class="search-input" id="seedSearchInput" placeholder="🔍 Search UIUC faculty by name, department, or research topics (e.g., Computer Science, Crop Sciences, Genomics)..." oninput="filterSeeds()">
+        <input type="text" class="search-input" id="seedSearchInput" placeholder="🔍 Search UIUC-affiliated authors by name, community, or topics (e.g., Computer Science, Crop Sciences, Genomics)..." oninput="filterSeeds()">
       </div>
-      <div class="dept-filters" id="deptFilters"></div>
+      <p style="margin:12px 0;color:#475569">Historical 2015–2019 UIUC-affiliated authors, grouped by detected collaboration community. Current appointments and availability are unverified. Select someone whose work you know; the student-to-anchor connection is your input.</p><div class="dept-filters" id="deptFilters"></div>
       <div class="seed-grid" id="seedGrid"></div>
     </div>
 
@@ -129,12 +130,12 @@
         </div>
         <div class="map-sidebar">
           <div style="font-size: 12px; text-transform: uppercase; font-weight: 700; color: var(--uiuc-muted); letter-spacing: 0.5px;">Current Seed Focus</div>
-          <h3 id="sidebarSeedName" style="font-size: 18px; color: var(--uiuc-blue); margin: 6px 0 2px 0;">Select a Faculty Seed</h3>
+          <h3 id="sidebarSeedName" style="font-size: 18px; color: var(--uiuc-blue); margin: 6px 0 2px 0;">Select an Author Anchor</h3>
           <div id="sidebarSeedDept" style="font-size: 13px; font-weight: 600; color: #475569; margin-bottom: 14px;">Explore structural holes across campus</div>
 
           <div style="background: #F1F5F9; border-radius: 8px; padding: 12px; font-size: 13px; margin-bottom: 16px;">
             <div style="font-weight: 700; margin-bottom: 4px;">Dashed Arcs = Structural Holes</div>
-            <div style="color: var(--uiuc-muted); font-size: 12px;">The orange dashed vectors link disconnected research clusters, identifying high-autonomy broker candidates.</div>
+            <div style="color: var(--uiuc-muted); font-size: 12px;">Orange dashed links show ranked cross-community candidates with no direct co-authorship. Click one to inspect its card. Routes do not guarantee acquaintance or introductions.</div>
           </div>
 
           <div style="flex: 1; overflow-y: auto;">
@@ -142,7 +143,7 @@
             <div id="sidebarRecMiniList" style="display: flex; flex-direction: column; gap: 10px;"></div>
           </div>
 
-          <button class="btn-action" style="width: 100%; margin-top: 16px;" onclick="switchScreen('screenRecs')">
+          <button class="btn-action" style="width: 100%; margin-top: 16px;" onclick="showAllRecommendations()">
             View All Ranked Cards →
           </button>
         </div>
@@ -153,11 +154,11 @@
     <div id="screenRecs" class="screen">
       <div class="recs-header">
         <div>
-          <div style="font-size: 12px; text-transform: uppercase; font-weight: 700; color: var(--uiuc-muted);">Query Seed Professor</div>
-          <h2 id="recsSeedHeaderName" style="font-size: 22px; color: var(--uiuc-blue);">Prof. Seed Scholar</h2>
+          <div style="font-size: 12px; text-transform: uppercase; font-weight: 700; color: var(--uiuc-muted);">Selected Research Anchor</div>
+          <h2 id="recsSeedHeaderName" style="font-size: 22px; color: var(--uiuc-blue);">Research anchor</h2>
           <div id="recsSeedHeaderMeta" style="font-size: 13px; color: var(--uiuc-muted); margin-top: 2px;">Department of Computer Science • Co-authorship Degree: 42</div>
         </div>
-        <button class="btn-action" onclick="switchScreen('screenSeeds')">Change Seed Professor ↺</button>
+        <button class="btn-action" onclick="switchScreen('screenSeeds')">Change Anchor ↺</button>
       </div>
 
       <div class="rec-card-list" id="recCardList"></div>
@@ -180,6 +181,8 @@
     let appData = null;
     let selectedSeedId = null;
     let activeDeptFilter = "All";
+    let candidateFilter = null;
+    const escapeHTML = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'}[c]));
 
     // D3 Simulation variables
     let simulation, svg, g, zoom;
@@ -187,9 +190,18 @@
     async function init() {
       try {
         const resp = await fetch('data.json');
+        if (!resp.ok) throw new Error(`Data request failed: ${resp.status}`);
         appData = await resp.json();
+        // Escape display fields before the existing HTML templates interpolate them.
+        for (const row of [...appData.seeds, ...Object.values(appData.recommendations).flat()]) {
+          row.name = escapeHTML(row.name);
+          row.topics = row.topics.map(escapeHTML);
+          if (row.sample_papers) row.sample_papers = row.sample_papers.map(escapeHTML);
+          if (row.path_steps) row.path_steps = row.path_steps.map(step => ({...step, title: escapeHTML(step.title)}));
+        }
       } catch (e) {
-        console.warn("Could not load data.json directly, falling back to minimal mock", e);
+        document.getElementById("seedGrid").textContent = "Could not load the research dataset. Serve this directory using an HTTP server and reload.";
+        console.error(e);
       }
 
       if (appData && appData.seeds && appData.seeds.length > 0) {
@@ -274,6 +286,7 @@
 
     function selectSeed(seedId) {
       selectedSeedId = seedId;
+      candidateFilter = null;
       renderSeedGrid();
       renderSidebar();
       renderRecCards();
@@ -284,7 +297,7 @@
       const seed = appData.seeds.find(s => s.id === selectedSeedId);
       if (!seed) return;
 
-      document.getElementById('sidebarSeedName').innerText = `Prof. ${seed.name}`;
+      document.getElementById('sidebarSeedName').innerText = `${seed.name}`;
       document.getElementById('sidebarSeedDept').innerText = seed.department;
 
       const miniList = document.getElementById('sidebarRecMiniList');
@@ -297,9 +310,9 @@
         item.innerHTML = `
           <div style="font-weight: 700; color: #1E293B;">#${r.rank} ${r.name}</div>
           <div style="color: ${r.color}; font-weight: 600; font-size: 11px;">${r.department}</div>
-          <div style="color: var(--uiuc-muted); margin-top: 3px;">Match: <b>${r.score}</b> • Burt: <b>${r.burt_autonomy}</b></div>
+          <div style="color: var(--uiuc-muted); margin-top: 3px;">Match: <b>${r.score}</b> • Burt: <b>${Number(r.burt_autonomy).toFixed(3)}</b></div>
         `;
-        item.onclick = () => switchScreen('screenRecs');
+        item.onclick = () => inspectRecommendation(selectedSeedId, r.candidate_id);
         miniList.appendChild(item);
       });
     }
@@ -308,12 +321,12 @@
       const seed = appData.seeds.find(s => s.id === selectedSeedId);
       if (!seed) return;
 
-      document.getElementById('recsSeedHeaderName').innerText = `Prof. ${seed.name}`;
+      document.getElementById('recsSeedHeaderName').innerText = `${seed.name}`;
       document.getElementById('recsSeedHeaderMeta').innerText = `${seed.department} • Co-authorship Degree: ${seed.degree} • Burt Autonomy: ${seed.burt_autonomy}`;
 
       const container = document.getElementById('recCardList');
       container.innerHTML = '';
-      const recs = appData.recommendations[selectedSeedId] || [];
+      const recs = (appData.recommendations[selectedSeedId] || []).filter(r => !candidateFilter || r.candidate_id === candidateFilter);
 
       recs.forEach(r => {
         const card = document.createElement('div');
@@ -324,7 +337,7 @@
           <div class="rec-top-row">
             <div>
               <span class="rec-rank-badge">#${r.rank} Bridge Opportunity</span>
-              <div class="rec-name" style="margin-top: 6px;">Prof. ${r.name}</div>
+              <div class="rec-name" style="margin-top: 6px;">${r.name}</div>
               <div class="rec-meta">${r.department}</div>
             </div>
             <div class="rec-score-pill">Brokerage Score Φ: ${r.score}</div>
@@ -334,14 +347,14 @@
           <div class="path-flow" style="margin: 14px 0 16px 0;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
               <div style="font-size: 12px; font-weight: 700; text-transform: uppercase; color: #C2410C;">
-                4-Node Introduction Path (${r.path_actionability})
+                Observed route: ${r.path_actionability}
               </div>
               <span style="font-size: 11px; background: #FFEDD5; color: #9A3412; padding: 2px 8px; border-radius: 12px; font-weight: 600;">
-                Prioritized Warm Bridge
+                Co-authorship evidence only
               </span>
             </div>
             <div class="path-steps-row">
-              ${r.path_steps.map((step, idx) => `
+              ${r.path_steps.length === 0 ? "No observed route within three hops. Consider direct outreach; no intermediary is verified." : r.path_steps.map((step, idx) => `
                 <div class="path-step-node">
                   <div style="font-size: 10px; color: #9A3412; text-transform: uppercase;">${step.role}</div>
                   <div>${step.title}</div>
@@ -368,15 +381,15 @@
 
           <div class="metrics-bar">
             <div class="metric-item">
-              <div class="val">${r.topic_similarity}</div>
-              <div class="lbl">Topic Complementarity</div>
+              <div class="val">${Number(r.topic_similarity).toFixed(3)}</div>
+              <div class="lbl">Topic Overlap</div>
             </div>
             <div class="metric-item">
-              <div class="val">${r.burt_autonomy}</div>
+              <div class="val">${Number(r.burt_autonomy).toFixed(3)}</div>
               <div class="lbl">Burt Autonomy H(v)</div>
             </div>
             <div class="metric-item">
-              <div class="val">${r.boundary_spanning}</div>
+              <div class="val">${Number(r.boundary_spanning).toFixed(3)}</div>
               <div class="lbl">Boundary Spanning Index</div>
             </div>
             <div class="metric-item">
@@ -394,13 +407,28 @@
             <div style="font-size: 12px; color: var(--uiuc-muted); max-width: 70%;">
               📄 <i>"${(r.sample_papers || [])[0] || 'Interdisciplinary Research Publication'}"</i>
             </div>
-            <button class="btn-action" onclick="openIntroModal('${seed.name}', '${r.name}', '${r.path_steps[2]?.title || 'Colleague'}')">
-              Request Intro Pathway ✉️
+            <button class="btn-action outreach-button">
+              Draft Outreach ✉️
             </button>
           </div>
         `;
+        card.querySelector('.outreach-button').onclick = () => openIntroModal(seed.name, r.name, r.path_actionability);
+        card.id = 'candidate-' + r.candidate_id.split('/').pop();
         container.appendChild(card);
       });
+    }
+
+    function showAllRecommendations() {
+      candidateFilter = null;
+      renderRecCards();
+      switchScreen('screenRecs');
+    }
+
+    function inspectRecommendation(seedId, candidateId) {
+      selectSeed(seedId);
+      candidateFilter = candidateId;
+      renderRecCards();
+      switchScreen('screenRecs');
     }
 
     function initD3Graph() {
@@ -433,13 +461,17 @@
         .attr("stroke", d => d.type === "structural_hole" ? "#EA580C" : "#CBD5E1")
         .attr("stroke-width", d => d.type === "structural_hole" ? 2.5 : 1.2)
         .attr("stroke-dasharray", d => d.type === "structural_hole" ? "6,4" : "none")
-        .attr("stroke-opacity", d => d.type === "structural_hole" ? 0.85 : 0.4);
+        .attr("stroke-opacity", d => d.type === "structural_hole" ? 0.85 : 0.4)
+        .attr("data-kind", d => d.type)
+        .attr("cursor", d => d.type === "structural_hole" ? "pointer" : "default")
+        .on("click", (event, d) => { if (d.type === 'structural_hole') inspectRecommendation(d.seed_id, d.candidate_id); });
 
       // Draw nodes
       const node = g.append("g")
         .selectAll("g")
         .data(nodes)
         .join("g")
+        .attr("class", "map-node")
         .attr("cursor", "pointer")
         .call(d3.drag()
           .on("start", dragstarted)
@@ -490,7 +522,7 @@
         </div>
         <div class="legend-item" style="margin-bottom: 10px;">
           <div style="width: 24px; height: 0; border-top: 3px dashed #EA580C;"></div>
-          <span style="font-size: 11px; font-weight: 600; color: #C2410C;">Structural Hole (High Topic Overlap, No Direct Tie)</span>
+          <span style="font-size: 11px; font-weight: 600; color: #C2410C;">Suggested cross-community tie (no direct co-authorship)</span>
         </div>
         <div style="font-weight: 700; margin-bottom: 6px; font-size: 12px; color: var(--uiuc-blue); border-top: 1px solid var(--uiuc-border); padding-top: 6px;">Campus Communities</div>
       `;
@@ -501,16 +533,34 @@
         legend.appendChild(item);
       });
 
+      simulation.stop();
+      simulation.tick(200);
+      simulation.on('tick')();
       highlightSeedInD3();
     }
 
     function highlightSeedInD3() {
       if (!g) return;
+      const visible = new Set([selectedSeedId]);
+      for (const r of appData.recommendations[selectedSeedId] || []) {
+        visible.add(r.candidate_id);
+        for (const id of r.path_ids || []) visible.add(id);
+      }
+      g.selectAll('.map-node').style('display', d => visible.has(d.id) ? null : 'none');
+      g.selectAll('line').style('display', d => visible.has(d.source.id) && visible.has(d.target.id) && (d.type !== 'structural_hole' || d.seed_id === selectedSeedId) ? null : 'none');
+      const focus = g.selectAll('.map-node').data().filter(d => visible.has(d.id));
+      if (focus.length) {
+        const x0=d3.min(focus,d=>d.x)-40, x1=d3.max(focus,d=>d.x)+40;
+        const y0=d3.min(focus,d=>d.y)-40, y1=d3.max(focus,d=>d.y)+40;
+        const box=svg.attr('viewBox').split(',').map(Number);
+        const scale=Math.min(1.8, box[2]/(x1-x0)*.8, box[3]/(y1-y0)*.8);
+        svg.call(zoom.transform,d3.zoomIdentity.translate(box[2]/2,box[3]/2).scale(scale).translate(-(x0+x1)/2,-(y0+y1)/2));
+      }
       g.selectAll("circle")
         .attr("stroke", "#FFFFFF")
         .attr("stroke-width", 2);
 
-      const targetCircle = d3.select(`#node-circle-${selectedSeedId}`);
+      const targetCircle = g.selectAll("circle").filter(d => d.id === selectedSeedId);
       if (targetCircle.node()) {
         targetCircle
           .attr("stroke", "#EA580C")
@@ -547,17 +597,18 @@
       const modal = document.getElementById('introModal');
       const text = document.getElementById('modalEmailText');
       text.innerText =
-`Subject: BridgeFinder Outreach: Research Complementarity Inquiry
+`Subject: Research interests and possible collaboration
 
 Dear ${candName},
 
-I am a researcher working with Prof. ${seedName} at UIUC. In analyzing interdisciplinary collaboration opportunities across our respective departmental boundaries, your work in ${candName}'s laboratory emerged as highly complementary to our ongoing efforts.
+I am exploring research related to ${seedName}'s work and would like to learn more about your research.
 
-Through our mutual connection with ${brokerTitle}, we would welcome the opportunity to schedule a brief 20-minute discussion to explore potential joint research vectors and bridge our laboratory methodologies.
+BridgeFinder suggests topical overlap and reports: ${brokerTitle}. This is based on historical publications, not a confirmed personal connection. I would verify any proposed intermediary before requesting an introduction.
+
+Would you be open to a brief conversation about your current research and whether there may be an appropriate opportunity for a student to contribute?
 
 Best regards,
-Student / Researcher
-University of Illinois Urbana-Champaign`;
+[Your name and actual affiliation]`;
       modal.classList.add('active');
     }
 

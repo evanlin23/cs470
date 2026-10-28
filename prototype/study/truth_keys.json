@@ -1,440 +1,473 @@
 {
   "CARD_001": {
-    "model": "Triadic Closure",
-    "candidate_id": "https://openalex.org/A5034387238",
-    "seed_id": "https://openalex.org/A5023245938",
-    "seed_dept": "Computer Science"
+    "models": [
+      "BridgeFinder"
+    ],
+    "candidate_id": "https://openalex.org/A5068456625",
+    "seed_id": "https://openalex.org/A5045551635"
   },
   "CARD_002": {
-    "model": "Triadic Closure",
-    "candidate_id": "https://openalex.org/A5090048523",
-    "seed_id": "https://openalex.org/A5023245938",
-    "seed_dept": "Computer Science"
+    "models": [
+      "Triadic Closure"
+    ],
+    "candidate_id": "https://openalex.org/A5006238710",
+    "seed_id": "https://openalex.org/A5045551635"
   },
   "CARD_003": {
-    "model": "Topic-Only",
-    "candidate_id": "https://openalex.org/A5085994360",
-    "seed_id": "https://openalex.org/A5023245938",
-    "seed_dept": "Computer Science"
+    "models": [
+      "BridgeFinder",
+      "Topic-Only"
+    ],
+    "candidate_id": "https://openalex.org/A5004819366",
+    "seed_id": "https://openalex.org/A5045551635"
   },
   "CARD_004": {
-    "model": "Topic-Only",
-    "candidate_id": "https://openalex.org/A5100358530",
-    "seed_id": "https://openalex.org/A5023245938",
-    "seed_dept": "Computer Science"
+    "models": [
+      "BridgeFinder",
+      "Topic-Only"
+    ],
+    "candidate_id": "https://openalex.org/A5074607361",
+    "seed_id": "https://openalex.org/A5045551635"
   },
   "CARD_005": {
-    "model": "Triadic Closure",
-    "candidate_id": "https://openalex.org/A5047888156",
-    "seed_id": "https://openalex.org/A5023245938",
-    "seed_dept": "Computer Science"
+    "models": [
+      "BridgeFinder",
+      "Topic-Only"
+    ],
+    "candidate_id": "https://openalex.org/A5035794126",
+    "seed_id": "https://openalex.org/A5045551635"
   },
   "CARD_006": {
-    "model": "BridgeFinder",
-    "candidate_id": "https://openalex.org/A5072717764",
-    "seed_id": "https://openalex.org/A5023245938",
-    "seed_dept": "Computer Science"
+    "models": [
+      "Triadic Closure"
+    ],
+    "candidate_id": "https://openalex.org/A5056127619",
+    "seed_id": "https://openalex.org/A5045551635"
   },
   "CARD_007": {
-    "model": "Topic-Only",
-    "candidate_id": "https://openalex.org/A5067038652",
-    "seed_id": "https://openalex.org/A5023245938",
-    "seed_dept": "Computer Science"
+    "models": [
+      "Topic-Only"
+    ],
+    "candidate_id": "https://openalex.org/A5082130732",
+    "seed_id": "https://openalex.org/A5045551635"
   },
   "CARD_008": {
-    "model": "Topic-Only",
-    "candidate_id": "https://openalex.org/A5067442450",
-    "seed_id": "https://openalex.org/A5023245938",
-    "seed_dept": "Computer Science"
+    "models": [
+      "Triadic Closure"
+    ],
+    "candidate_id": "https://openalex.org/A5020098405",
+    "seed_id": "https://openalex.org/A5045551635"
   },
   "CARD_009": {
-    "model": "BridgeFinder",
-    "candidate_id": "https://openalex.org/A5084705345",
-    "seed_id": "https://openalex.org/A5023245938",
-    "seed_dept": "Computer Science"
+    "models": [
+      "BridgeFinder",
+      "Triadic Closure"
+    ],
+    "candidate_id": "https://openalex.org/A5000815509",
+    "seed_id": "https://openalex.org/A5045551635"
   },
   "CARD_010": {
-    "model": "Triadic Closure",
-    "candidate_id": "https://openalex.org/A5103934076",
-    "seed_id": "https://openalex.org/A5023245938",
-    "seed_dept": "Computer Science"
+    "models": [
+      "Triadic Closure"
+    ],
+    "candidate_id": "https://openalex.org/A5004021726",
+    "seed_id": "https://openalex.org/A5045551635"
   },
   "CARD_011": {
-    "model": "Triadic Closure",
-    "candidate_id": "https://openalex.org/A5076942007",
-    "seed_id": "https://openalex.org/A5023245938",
-    "seed_dept": "Computer Science"
+    "models": [
+      "Topic-Only"
+    ],
+    "candidate_id": "https://openalex.org/A5089390032",
+    "seed_id": "https://openalex.org/A5045551635"
   },
   "CARD_012": {
-    "model": "BridgeFinder",
-    "candidate_id": "https://openalex.org/A5063567097",
-    "seed_id": "https://openalex.org/A5023245938",
-    "seed_dept": "Computer Science"
+    "models": [
+      "BridgeFinder"
+    ],
+    "candidate_id": "https://openalex.org/A5018856932",
+    "seed_id": "https://openalex.org/A5002313901"
   },
   "CARD_013": {
-    "model": "Topic-Only",
-    "candidate_id": "https://openalex.org/A5021159198",
-    "seed_id": "https://openalex.org/A5023245938",
-    "seed_dept": "Computer Science"
+    "models": [
+      "BridgeFinder"
+    ],
+    "candidate_id": "https://openalex.org/A5027110827",
+    "seed_id": "https://openalex.org/A5002313901"
   },
   "CARD_014": {
-    "model": "BridgeFinder",
-    "candidate_id": "https://openalex.org/A5040049671",
-    "seed_id": "https://openalex.org/A5023245938",
-    "seed_dept": "Computer Science"
+    "models": [
+      "BridgeFinder"
+    ],
+    "candidate_id": "https://openalex.org/A5034499643",
+    "seed_id": "https://openalex.org/A5002313901"
   },
   "CARD_015": {
-    "model": "BridgeFinder",
-    "candidate_id": "https://openalex.org/A5087211821",
-    "seed_id": "https://openalex.org/A5023245938",
-    "seed_dept": "Computer Science"
+    "models": [
+      "BridgeFinder"
+    ],
+    "candidate_id": "https://openalex.org/A5109230816",
+    "seed_id": "https://openalex.org/A5002313901"
   },
   "CARD_016": {
-    "model": "Triadic Closure",
-    "candidate_id": "https://openalex.org/A5100376261",
-    "seed_id": "https://openalex.org/A5011255000",
-    "seed_dept": "Electrical & Computer Engineering"
+    "models": [
+      "Triadic Closure"
+    ],
+    "candidate_id": "https://openalex.org/A5011365072",
+    "seed_id": "https://openalex.org/A5002313901"
   },
   "CARD_017": {
-    "model": "Triadic Closure",
-    "candidate_id": "https://openalex.org/A5064300968",
-    "seed_id": "https://openalex.org/A5011255000",
-    "seed_dept": "Electrical & Computer Engineering"
+    "models": [
+      "BridgeFinder",
+      "Topic-Only"
+    ],
+    "candidate_id": "https://openalex.org/A5101591646",
+    "seed_id": "https://openalex.org/A5002313901"
   },
   "CARD_018": {
-    "model": "BridgeFinder",
-    "candidate_id": "https://openalex.org/A5039578774",
-    "seed_id": "https://openalex.org/A5011255000",
-    "seed_dept": "Electrical & Computer Engineering"
+    "models": [
+      "Triadic Closure"
+    ],
+    "candidate_id": "https://openalex.org/A5005434848",
+    "seed_id": "https://openalex.org/A5002313901"
   },
   "CARD_019": {
-    "model": "BridgeFinder",
-    "candidate_id": "https://openalex.org/A5064079045",
-    "seed_id": "https://openalex.org/A5011255000",
-    "seed_dept": "Electrical & Computer Engineering"
+    "models": [
+      "Topic-Only"
+    ],
+    "candidate_id": "https://openalex.org/A5000931110",
+    "seed_id": "https://openalex.org/A5002313901"
   },
   "CARD_020": {
-    "model": "BridgeFinder",
-    "candidate_id": "https://openalex.org/A5083248014",
-    "seed_id": "https://openalex.org/A5011255000",
-    "seed_dept": "Electrical & Computer Engineering"
+    "models": [
+      "Triadic Closure"
+    ],
+    "candidate_id": "https://openalex.org/A5010560377",
+    "seed_id": "https://openalex.org/A5002313901"
   },
   "CARD_021": {
-    "model": "Triadic Closure",
-    "candidate_id": "https://openalex.org/A5100763046",
-    "seed_id": "https://openalex.org/A5011255000",
-    "seed_dept": "Electrical & Computer Engineering"
+    "models": [
+      "Triadic Closure"
+    ],
+    "candidate_id": "https://openalex.org/A5015869560",
+    "seed_id": "https://openalex.org/A5002313901"
   },
   "CARD_022": {
-    "model": "Triadic Closure",
-    "candidate_id": "https://openalex.org/A5080799231",
-    "seed_id": "https://openalex.org/A5011255000",
-    "seed_dept": "Electrical & Computer Engineering"
+    "models": [
+      "Topic-Only"
+    ],
+    "candidate_id": "https://openalex.org/A5001711865",
+    "seed_id": "https://openalex.org/A5002313901"
   },
   "CARD_023": {
-    "model": "Topic-Only",
-    "candidate_id": "https://openalex.org/A5101498839",
-    "seed_id": "https://openalex.org/A5011255000",
-    "seed_dept": "Electrical & Computer Engineering"
+    "models": [
+      "Topic-Only"
+    ],
+    "candidate_id": "https://openalex.org/A5066535654",
+    "seed_id": "https://openalex.org/A5002313901"
   },
   "CARD_024": {
-    "model": "BridgeFinder",
-    "candidate_id": "https://openalex.org/A5059414563",
-    "seed_id": "https://openalex.org/A5011255000",
-    "seed_dept": "Electrical & Computer Engineering"
+    "models": [
+      "Triadic Closure"
+    ],
+    "candidate_id": "https://openalex.org/A5005461791",
+    "seed_id": "https://openalex.org/A5002313901"
   },
   "CARD_025": {
-    "model": "Topic-Only",
-    "candidate_id": "https://openalex.org/A5103266119",
-    "seed_id": "https://openalex.org/A5011255000",
-    "seed_dept": "Electrical & Computer Engineering"
+    "models": [
+      "Topic-Only"
+    ],
+    "candidate_id": "https://openalex.org/A5000152935",
+    "seed_id": "https://openalex.org/A5002313901"
   },
   "CARD_026": {
-    "model": "Topic-Only",
-    "candidate_id": "https://openalex.org/A5001702285",
-    "seed_id": "https://openalex.org/A5011255000",
-    "seed_dept": "Electrical & Computer Engineering"
+    "models": [
+      "Triadic Closure"
+    ],
+    "candidate_id": "https://openalex.org/A5058835953",
+    "seed_id": "https://openalex.org/A5014465828"
   },
   "CARD_027": {
-    "model": "BridgeFinder",
-    "candidate_id": "https://openalex.org/A5081200050",
-    "seed_id": "https://openalex.org/A5011255000",
-    "seed_dept": "Electrical & Computer Engineering"
+    "models": [
+      "Triadic Closure"
+    ],
+    "candidate_id": "https://openalex.org/A5071172253",
+    "seed_id": "https://openalex.org/A5014465828"
   },
   "CARD_028": {
-    "model": "Topic-Only",
-    "candidate_id": "https://openalex.org/A5101672192",
-    "seed_id": "https://openalex.org/A5011255000",
-    "seed_dept": "Electrical & Computer Engineering"
+    "models": [
+      "Triadic Closure"
+    ],
+    "candidate_id": "https://openalex.org/A5101987035",
+    "seed_id": "https://openalex.org/A5014465828"
   },
   "CARD_029": {
-    "model": "Topic-Only",
-    "candidate_id": "https://openalex.org/A5011789445",
-    "seed_id": "https://openalex.org/A5030076676",
-    "seed_dept": "Bioengineering"
+    "models": [
+      "BridgeFinder"
+    ],
+    "candidate_id": "https://openalex.org/A5060672032",
+    "seed_id": "https://openalex.org/A5014465828"
   },
   "CARD_030": {
-    "model": "Topic-Only",
-    "candidate_id": "https://openalex.org/A5036358235",
-    "seed_id": "https://openalex.org/A5030076676",
-    "seed_dept": "Bioengineering"
+    "models": [
+      "Topic-Only"
+    ],
+    "candidate_id": "https://openalex.org/A5101879859",
+    "seed_id": "https://openalex.org/A5014465828"
   },
   "CARD_031": {
-    "model": "Topic-Only",
-    "candidate_id": "https://openalex.org/A5100699862",
-    "seed_id": "https://openalex.org/A5030076676",
-    "seed_dept": "Bioengineering"
+    "models": [
+      "BridgeFinder"
+    ],
+    "candidate_id": "https://openalex.org/A5022751421",
+    "seed_id": "https://openalex.org/A5014465828"
   },
   "CARD_032": {
-    "model": "Triadic Closure",
-    "candidate_id": "https://openalex.org/A5084482990",
-    "seed_id": "https://openalex.org/A5030076676",
-    "seed_dept": "Bioengineering"
+    "models": [
+      "BridgeFinder"
+    ],
+    "candidate_id": "https://openalex.org/A5100734359",
+    "seed_id": "https://openalex.org/A5014465828"
   },
   "CARD_033": {
-    "model": "Triadic Closure",
-    "candidate_id": "https://openalex.org/A5025988698",
-    "seed_id": "https://openalex.org/A5030076676",
-    "seed_dept": "Bioengineering"
+    "models": [
+      "Topic-Only"
+    ],
+    "candidate_id": "https://openalex.org/A5057259259",
+    "seed_id": "https://openalex.org/A5014465828"
   },
   "CARD_034": {
-    "model": "BridgeFinder",
-    "candidate_id": "https://openalex.org/A5084705345",
-    "seed_id": "https://openalex.org/A5030076676",
-    "seed_dept": "Bioengineering"
+    "models": [
+      "Topic-Only"
+    ],
+    "candidate_id": "https://openalex.org/A5111402837",
+    "seed_id": "https://openalex.org/A5014465828"
   },
   "CARD_035": {
-    "model": "Topic-Only",
-    "candidate_id": "https://openalex.org/A5019258936",
-    "seed_id": "https://openalex.org/A5030076676",
-    "seed_dept": "Bioengineering"
+    "models": [
+      "BridgeFinder"
+    ],
+    "candidate_id": "https://openalex.org/A5051968629",
+    "seed_id": "https://openalex.org/A5014465828"
   },
   "CARD_036": {
-    "model": "Topic-Only",
-    "candidate_id": "https://openalex.org/A5101520069",
-    "seed_id": "https://openalex.org/A5030076676",
-    "seed_dept": "Bioengineering"
+    "models": [
+      "Triadic Closure"
+    ],
+    "candidate_id": "https://openalex.org/A5049830131",
+    "seed_id": "https://openalex.org/A5014465828"
   },
   "CARD_037": {
-    "model": "BridgeFinder",
-    "candidate_id": "https://openalex.org/A5047889336",
-    "seed_id": "https://openalex.org/A5030076676",
-    "seed_dept": "Bioengineering"
+    "models": [
+      "BridgeFinder",
+      "Topic-Only"
+    ],
+    "candidate_id": "https://openalex.org/A5103426477",
+    "seed_id": "https://openalex.org/A5014465828"
   },
   "CARD_038": {
-    "model": "BridgeFinder",
-    "candidate_id": "https://openalex.org/A5089496342",
-    "seed_id": "https://openalex.org/A5030076676",
-    "seed_dept": "Bioengineering"
+    "models": [
+      "Triadic Closure"
+    ],
+    "candidate_id": "https://openalex.org/A5074121951",
+    "seed_id": "https://openalex.org/A5014465828"
   },
   "CARD_039": {
-    "model": "BridgeFinder",
-    "candidate_id": "https://openalex.org/A5040373127",
-    "seed_id": "https://openalex.org/A5030076676",
-    "seed_dept": "Bioengineering"
+    "models": [
+      "Topic-Only"
+    ],
+    "candidate_id": "https://openalex.org/A5067527697",
+    "seed_id": "https://openalex.org/A5014465828"
   },
   "CARD_040": {
-    "model": "BridgeFinder",
-    "candidate_id": "https://openalex.org/A5057811124",
-    "seed_id": "https://openalex.org/A5030076676",
-    "seed_dept": "Bioengineering"
+    "models": [
+      "Triadic Closure"
+    ],
+    "candidate_id": "https://openalex.org/A5082881483",
+    "seed_id": "https://openalex.org/A5028002575"
   },
   "CARD_041": {
-    "model": "Triadic Closure",
-    "candidate_id": "https://openalex.org/A5009783690",
-    "seed_id": "https://openalex.org/A5030076676",
-    "seed_dept": "Bioengineering"
+    "models": [
+      "BridgeFinder",
+      "Triadic Closure"
+    ],
+    "candidate_id": "https://openalex.org/A5100378838",
+    "seed_id": "https://openalex.org/A5028002575"
   },
   "CARD_042": {
-    "model": "Triadic Closure",
-    "candidate_id": "https://openalex.org/A5045154474",
-    "seed_id": "https://openalex.org/A5030076676",
-    "seed_dept": "Bioengineering"
+    "models": [
+      "Topic-Only"
+    ],
+    "candidate_id": "https://openalex.org/A5084131482",
+    "seed_id": "https://openalex.org/A5028002575"
   },
   "CARD_043": {
-    "model": "Triadic Closure",
-    "candidate_id": "https://openalex.org/A5069497115",
-    "seed_id": "https://openalex.org/A5030076676",
-    "seed_dept": "Bioengineering"
+    "models": [
+      "Triadic Closure"
+    ],
+    "candidate_id": "https://openalex.org/A5049466852",
+    "seed_id": "https://openalex.org/A5028002575"
   },
   "CARD_044": {
-    "model": "Topic-Only",
-    "candidate_id": "https://openalex.org/A5075401041",
-    "seed_id": "https://openalex.org/A5045551635",
-    "seed_dept": "Crop Sciences"
+    "models": [
+      "BridgeFinder"
+    ],
+    "candidate_id": "https://openalex.org/A5064584191",
+    "seed_id": "https://openalex.org/A5028002575"
   },
   "CARD_045": {
-    "model": "Triadic Closure",
-    "candidate_id": "https://openalex.org/A5006238710",
-    "seed_id": "https://openalex.org/A5045551635",
-    "seed_dept": "Crop Sciences"
+    "models": [
+      "Triadic Closure"
+    ],
+    "candidate_id": "https://openalex.org/A5005001724",
+    "seed_id": "https://openalex.org/A5028002575"
   },
   "CARD_046": {
-    "model": "BridgeFinder",
-    "candidate_id": "https://openalex.org/A5078979316",
-    "seed_id": "https://openalex.org/A5045551635",
-    "seed_dept": "Crop Sciences"
+    "models": [
+      "Topic-Only"
+    ],
+    "candidate_id": "https://openalex.org/A5028089864",
+    "seed_id": "https://openalex.org/A5028002575"
   },
   "CARD_047": {
-    "model": "Triadic Closure",
-    "candidate_id": "https://openalex.org/A5066531902",
-    "seed_id": "https://openalex.org/A5045551635",
-    "seed_dept": "Crop Sciences"
+    "models": [
+      "BridgeFinder"
+    ],
+    "candidate_id": "https://openalex.org/A5083675871",
+    "seed_id": "https://openalex.org/A5028002575"
   },
   "CARD_048": {
-    "model": "BridgeFinder",
-    "candidate_id": "https://openalex.org/A5028716711",
-    "seed_id": "https://openalex.org/A5045551635",
-    "seed_dept": "Crop Sciences"
+    "models": [
+      "Topic-Only"
+    ],
+    "candidate_id": "https://openalex.org/A5016929091",
+    "seed_id": "https://openalex.org/A5028002575"
   },
   "CARD_049": {
-    "model": "Topic-Only",
-    "candidate_id": "https://openalex.org/A5103266119",
-    "seed_id": "https://openalex.org/A5045551635",
-    "seed_dept": "Crop Sciences"
+    "models": [
+      "Topic-Only"
+    ],
+    "candidate_id": "https://openalex.org/A5113885867",
+    "seed_id": "https://openalex.org/A5028002575"
   },
   "CARD_050": {
-    "model": "Triadic Closure",
-    "candidate_id": "https://openalex.org/A5020098405",
-    "seed_id": "https://openalex.org/A5045551635",
-    "seed_dept": "Crop Sciences"
+    "models": [
+      "Topic-Only"
+    ],
+    "candidate_id": "https://openalex.org/A5079184841",
+    "seed_id": "https://openalex.org/A5028002575"
   },
   "CARD_051": {
-    "model": "BridgeFinder",
-    "candidate_id": "https://openalex.org/A5071784590",
-    "seed_id": "https://openalex.org/A5045551635",
-    "seed_dept": "Crop Sciences"
+    "models": [
+      "BridgeFinder"
+    ],
+    "candidate_id": "https://openalex.org/A5078581248",
+    "seed_id": "https://openalex.org/A5028002575"
   },
   "CARD_052": {
-    "model": "BridgeFinder",
-    "candidate_id": "https://openalex.org/A5038274919",
-    "seed_id": "https://openalex.org/A5045551635",
-    "seed_dept": "Crop Sciences"
+    "models": [
+      "BridgeFinder",
+      "Triadic Closure"
+    ],
+    "candidate_id": "https://openalex.org/A5057240038",
+    "seed_id": "https://openalex.org/A5028002575"
   },
   "CARD_053": {
-    "model": "Topic-Only",
-    "candidate_id": "https://openalex.org/A5101802671",
-    "seed_id": "https://openalex.org/A5045551635",
-    "seed_dept": "Crop Sciences"
+    "models": [
+      "BridgeFinder",
+      "Topic-Only"
+    ],
+    "candidate_id": "https://openalex.org/A5036358235",
+    "seed_id": "https://openalex.org/A5010902410"
   },
   "CARD_054": {
-    "model": "Triadic Closure",
-    "candidate_id": "https://openalex.org/A5056127619",
-    "seed_id": "https://openalex.org/A5045551635",
-    "seed_dept": "Crop Sciences"
+    "models": [
+      "Topic-Only"
+    ],
+    "candidate_id": "https://openalex.org/A5103989066",
+    "seed_id": "https://openalex.org/A5010902410"
   },
   "CARD_055": {
-    "model": "Triadic Closure",
-    "candidate_id": "https://openalex.org/A5004021726",
-    "seed_id": "https://openalex.org/A5045551635",
-    "seed_dept": "Crop Sciences"
+    "models": [
+      "BridgeFinder"
+    ],
+    "candidate_id": "https://openalex.org/A5058397377",
+    "seed_id": "https://openalex.org/A5010902410"
   },
   "CARD_056": {
-    "model": "BridgeFinder",
-    "candidate_id": "https://openalex.org/A5007626386",
-    "seed_id": "https://openalex.org/A5045551635",
-    "seed_dept": "Crop Sciences"
+    "models": [
+      "Triadic Closure"
+    ],
+    "candidate_id": "https://openalex.org/A5031482147",
+    "seed_id": "https://openalex.org/A5010902410"
   },
   "CARD_057": {
-    "model": "Topic-Only",
-    "candidate_id": "https://openalex.org/A5081472387",
-    "seed_id": "https://openalex.org/A5045551635",
-    "seed_dept": "Crop Sciences"
+    "models": [
+      "Triadic Closure"
+    ],
+    "candidate_id": "https://openalex.org/A5074378883",
+    "seed_id": "https://openalex.org/A5010902410"
   },
   "CARD_058": {
-    "model": "Topic-Only",
-    "candidate_id": "https://openalex.org/A5035794126",
-    "seed_id": "https://openalex.org/A5045551635",
-    "seed_dept": "Crop Sciences"
+    "models": [
+      "Topic-Only"
+    ],
+    "candidate_id": "https://openalex.org/A5080885123",
+    "seed_id": "https://openalex.org/A5010902410"
   },
   "CARD_059": {
-    "model": "Topic-Only",
-    "candidate_id": "https://openalex.org/A5102073898",
-    "seed_id": "https://openalex.org/A5040320137",
-    "seed_dept": "Information Sciences"
+    "models": [
+      "Triadic Closure"
+    ],
+    "candidate_id": "https://openalex.org/A5021345935",
+    "seed_id": "https://openalex.org/A5010902410"
   },
   "CARD_060": {
-    "model": "Topic-Only",
-    "candidate_id": "https://openalex.org/A5049886971",
-    "seed_id": "https://openalex.org/A5040320137",
-    "seed_dept": "Information Sciences"
+    "models": [
+      "Topic-Only"
+    ],
+    "candidate_id": "https://openalex.org/A5007993855",
+    "seed_id": "https://openalex.org/A5010902410"
   },
   "CARD_061": {
-    "model": "Triadic Closure",
-    "candidate_id": "https://openalex.org/A5059414563",
-    "seed_id": "https://openalex.org/A5040320137",
-    "seed_dept": "Information Sciences"
+    "models": [
+      "BridgeFinder"
+    ],
+    "candidate_id": "https://openalex.org/A5018224169",
+    "seed_id": "https://openalex.org/A5010902410"
   },
   "CARD_062": {
-    "model": "Topic-Only",
-    "candidate_id": "https://openalex.org/A5012401237",
-    "seed_id": "https://openalex.org/A5040320137",
-    "seed_dept": "Information Sciences"
+    "models": [
+      "BridgeFinder"
+    ],
+    "candidate_id": "https://openalex.org/A5074231984",
+    "seed_id": "https://openalex.org/A5010902410"
   },
   "CARD_063": {
-    "model": "BridgeFinder",
-    "candidate_id": "https://openalex.org/A5110843507",
-    "seed_id": "https://openalex.org/A5040320137",
-    "seed_dept": "Information Sciences"
+    "models": [
+      "Triadic Closure"
+    ],
+    "candidate_id": "https://openalex.org/A5072065388",
+    "seed_id": "https://openalex.org/A5010902410"
   },
   "CARD_064": {
-    "model": "BridgeFinder",
-    "candidate_id": "https://openalex.org/A5050740079",
-    "seed_id": "https://openalex.org/A5040320137",
-    "seed_dept": "Information Sciences"
+    "models": [
+      "BridgeFinder"
+    ],
+    "candidate_id": "https://openalex.org/A5005323339",
+    "seed_id": "https://openalex.org/A5010902410"
   },
   "CARD_065": {
-    "model": "BridgeFinder",
-    "candidate_id": "https://openalex.org/A5101837290",
-    "seed_id": "https://openalex.org/A5040320137",
-    "seed_dept": "Information Sciences"
+    "models": [
+      "Topic-Only"
+    ],
+    "candidate_id": "https://openalex.org/A5031899418",
+    "seed_id": "https://openalex.org/A5010902410"
   },
   "CARD_066": {
-    "model": "Topic-Only",
-    "candidate_id": "https://openalex.org/A5113350720",
-    "seed_id": "https://openalex.org/A5040320137",
-    "seed_dept": "Information Sciences"
-  },
-  "CARD_067": {
-    "model": "BridgeFinder",
-    "candidate_id": "https://openalex.org/A5040752692",
-    "seed_id": "https://openalex.org/A5040320137",
-    "seed_dept": "Information Sciences"
-  },
-  "CARD_068": {
-    "model": "Triadic Closure",
-    "candidate_id": "https://openalex.org/A5036017595",
-    "seed_id": "https://openalex.org/A5040320137",
-    "seed_dept": "Information Sciences"
-  },
-  "CARD_069": {
-    "model": "Triadic Closure",
-    "candidate_id": "https://openalex.org/A5072065388",
-    "seed_id": "https://openalex.org/A5040320137",
-    "seed_dept": "Information Sciences"
-  },
-  "CARD_070": {
-    "model": "Triadic Closure",
-    "candidate_id": "https://openalex.org/A5074378883",
-    "seed_id": "https://openalex.org/A5040320137",
-    "seed_dept": "Information Sciences"
-  },
-  "CARD_071": {
-    "model": "BridgeFinder",
-    "candidate_id": "https://openalex.org/A5017456629",
-    "seed_id": "https://openalex.org/A5040320137",
-    "seed_dept": "Information Sciences"
-  },
-  "CARD_072": {
-    "model": "Topic-Only",
-    "candidate_id": "https://openalex.org/A5103242318",
-    "seed_id": "https://openalex.org/A5040320137",
-    "seed_dept": "Information Sciences"
-  },
-  "CARD_073": {
-    "model": "Triadic Closure",
-    "candidate_id": "https://openalex.org/A5106822982",
-    "seed_id": "https://openalex.org/A5040320137",
-    "seed_dept": "Information Sciences"
+    "models": [
+      "Triadic Closure"
+    ],
+    "candidate_id": "https://openalex.org/A5006572968",
+    "seed_id": "https://openalex.org/A5010902410"
   }
 }

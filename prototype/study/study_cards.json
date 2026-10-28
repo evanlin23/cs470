@@ -1,1791 +1,1951 @@
 [
   {
     "card_id": "CARD_001",
-    "seed_id": "https://openalex.org/A5023245938",
-    "seed_name": "Rohit Bhargava",
-    "seed_department": "Computer Science",
+    "seed_id": "https://openalex.org/A5045551635",
+    "seed_name": "John A. Rogers",
+    "seed_department": "Community 1",
     "seed_topics": [
-      "AI in cancer detection",
-      "Optical Imaging and Spectroscopy Techniques",
-      "Spectroscopy and Chemometric Analyses",
-      "Radiomics and Machine Learning in Medical Imaging"
-    ],
-    "candidate_name": "Parinaz Fathi",
-    "candidate_topics": [
-      "Quantum Dots Synthesis And Properties",
-      "Nanoplatforms for cancer theranostics",
-      "Diamond and Carbon-based Materials Research",
-      "Photodynamic Therapy Research Studies",
-      "Luminescence and Fluorescent Materials"
-    ],
-    "sample_papers": [
-      "Influence of Electron Acceptor and Electron Donor on the Photophysical Properties of Carbon Dots: A Comparative Investigation at the Bulk\u2010State and Single\u2010Particle Level",
-      "Biodegradable Biliverdin Nanoparticles for Efficient Photoacoustic Imaging"
-    ],
-    "introduction_path": "Rohit Bhargava \u2192 Prof. Indrajit Srivastava \u2192 Parinaz Fathi (Warm 2-Hop Path)"
-  },
-  {
-    "card_id": "CARD_002",
-    "seed_id": "https://openalex.org/A5023245938",
-    "seed_name": "Rohit Bhargava",
-    "seed_department": "Computer Science",
-    "seed_topics": [
-      "AI in cancer detection",
-      "Optical Imaging and Spectroscopy Techniques",
-      "Spectroscopy and Chemometric Analyses",
-      "Radiomics and Machine Learning in Medical Imaging"
-    ],
-    "candidate_name": "Taekjip Ha",
-    "candidate_topics": [
-      "Cellular Mechanics and Interactions",
-      "Advanced Fluorescence Microscopy Techniques",
-      "Force Microscopy Techniques and Applications",
-      "RNA Research and Splicing",
-      "DNA Repair Mechanisms"
-    ],
-    "sample_papers": [
-      "Asymmetric Unwrapping of Nucleosomes under Tension Directed by DNA Local Flexibility",
-      "Direct observation of structure-function relationship in a nucleic acid\u2013processing enzyme"
-    ],
-    "introduction_path": "Rohit Bhargava \u2192 Prof. Abid Ali Khan \u2192 Taekjip Ha (Warm 2-Hop Path)"
-  },
-  {
-    "card_id": "CARD_003",
-    "seed_id": "https://openalex.org/A5023245938",
-    "seed_name": "Rohit Bhargava",
-    "seed_department": "Computer Science",
-    "seed_topics": [
-      "AI in cancer detection",
-      "Optical Imaging and Spectroscopy Techniques",
-      "Spectroscopy and Chemometric Analyses",
-      "Radiomics and Machine Learning in Medical Imaging"
-    ],
-    "candidate_name": "Steven G. Adie",
-    "candidate_topics": [
-      "AI in cancer detection",
-      "Optical Imaging and Spectroscopy Techniques",
-      "Optical Coherence Tomography Applications",
-      "Breast Lesions and Carcinomas",
-      "Spectroscopy Techniques in Biomedical and Chemical Research"
-    ],
-    "sample_papers": [
-      "Real-time Imaging of the Resection Bed Using a Handheld Probe to Reduce Incidence of Microscopic Positive Margins in Cancer Surgery",
-      "Intraoperative optical coherence tomography for assessing human lymph nodes for metastatic cancer"
-    ],
-    "introduction_path": "Rohit Bhargava \u2192 UIUC Interdisciplinary Institute / Departmental Liaison \u2192 Steven G. Adie (Cold Institutional Path)"
-  },
-  {
-    "card_id": "CARD_004",
-    "seed_id": "https://openalex.org/A5023245938",
-    "seed_name": "Rohit Bhargava",
-    "seed_department": "Computer Science",
-    "seed_topics": [
-      "AI in cancer detection",
-      "Optical Imaging and Spectroscopy Techniques",
-      "Spectroscopy and Chemometric Analyses",
-      "Radiomics and Machine Learning in Medical Imaging"
-    ],
-    "candidate_name": "Jianfeng Wang",
-    "candidate_topics": [
-      "Optical Imaging and Spectroscopy Techniques",
-      "AI in cancer detection",
-      "Optical Coherence Tomography Applications",
-      "Photoacoustic and Ultrasonic Imaging",
-      "Extracellular vesicles in disease"
-    ],
-    "sample_papers": [
-      "Review of optical coherence tomography in oncology",
-      "Intraoperative visualization of the tumor microenvironment and quantification of extracellular vesicles by label-free nonlinear imaging"
-    ],
-    "introduction_path": "Rohit Bhargava \u2192 UIUC Interdisciplinary Institute / Departmental Liaison \u2192 Jianfeng Wang (Cold Institutional Path)"
-  },
-  {
-    "card_id": "CARD_005",
-    "seed_id": "https://openalex.org/A5023245938",
-    "seed_name": "Rohit Bhargava",
-    "seed_department": "Computer Science",
-    "seed_topics": [
-      "AI in cancer detection",
-      "Optical Imaging and Spectroscopy Techniques",
-      "Spectroscopy and Chemometric Analyses",
-      "Radiomics and Machine Learning in Medical Imaging"
-    ],
-    "candidate_name": "Aparna Anantharaman",
-    "candidate_topics": [
-      "RNA regulation and disease",
-      "RNA Research and Splicing",
-      "RNA modifications and cancer",
-      "Nuclear Structure and Function",
-      "Epigenetics and DNA Methylation"
-    ],
-    "sample_papers": [
-      "BEND3 represses rDNA transcription by stabilizing a NoRC component via USP21 deubiquitinase",
-      "ADAR2 regulates RNA stability by modifying access of decay-promoting RNA-binding proteins"
-    ],
-    "introduction_path": "Rohit Bhargava \u2192 Prof. Abid Ali Khan \u2192 Aparna Anantharaman (Warm 2-Hop Path)"
-  },
-  {
-    "card_id": "CARD_006",
-    "seed_id": "https://openalex.org/A5023245938",
-    "seed_name": "Rohit Bhargava",
-    "seed_department": "Computer Science",
-    "seed_topics": [
-      "AI in cancer detection",
-      "Optical Imaging and Spectroscopy Techniques",
-      "Spectroscopy and Chemometric Analyses",
-      "Radiomics and Machine Learning in Medical Imaging"
-    ],
-    "candidate_name": "Pinshane Y. Huang",
-    "candidate_topics": [
-      "Force Microscopy Techniques and Applications",
-      "Advanced Thermoelectric Materials and Devices",
-      "Electron and X-Ray Spectroscopy Techniques",
-      "Topological Materials and Phenomena",
-      "Boron and Carbon Nanomaterials Research"
-    ],
-    "sample_papers": [
-      "Engineering the Structural and Electronic Phases of MoTe 2 through W Substitution",
-      "High thermal conductivity in cubic boron arsenide crystals"
-    ],
-    "introduction_path": "Rohit Bhargava \u2192 Prof. Huei-Huei Chang \u2192 Pinshane Y. Huang (Warm 2-Hop Path)"
-  },
-  {
-    "card_id": "CARD_007",
-    "seed_id": "https://openalex.org/A5023245938",
-    "seed_name": "Rohit Bhargava",
-    "seed_department": "Computer Science",
-    "seed_topics": [
-      "AI in cancer detection",
-      "Optical Imaging and Spectroscopy Techniques",
-      "Spectroscopy and Chemometric Analyses",
-      "Radiomics and Machine Learning in Medical Imaging"
-    ],
-    "candidate_name": "Partha S. Ray",
-    "candidate_topics": [
-      "Gene expression and cancer classification",
-      "Optical Imaging and Spectroscopy Techniques",
-      "AI in cancer detection",
-      "Optical Coherence Tomography Applications",
-      "Breast Lesions and Carcinomas"
-    ],
-    "sample_papers": [
-      "Real-time Imaging of the Resection Bed Using a Handheld Probe to Reduce Incidence of Microscopic Positive Margins in Cancer Surgery",
-      "Diagnosis of Basal-Like Breast Cancer Using a FOXC1-Based Assay"
-    ],
-    "introduction_path": "Rohit Bhargava \u2192 UIUC Interdisciplinary Institute / Departmental Liaison \u2192 Partha S. Ray (Cold Institutional Path)"
-  },
-  {
-    "card_id": "CARD_008",
-    "seed_id": "https://openalex.org/A5023245938",
-    "seed_name": "Rohit Bhargava",
-    "seed_department": "Computer Science",
-    "seed_topics": [
-      "AI in cancer detection",
-      "Optical Imaging and Spectroscopy Techniques",
-      "Spectroscopy and Chemometric Analyses",
-      "Radiomics and Machine Learning in Medical Imaging"
-    ],
-    "candidate_name": "Haohua Tu",
-    "candidate_topics": [
-      "Optical Imaging and Spectroscopy Techniques",
-      "AI in cancer detection",
-      "Advanced Fluorescence Microscopy Techniques",
-      "Photonic Crystal and Fiber Optics",
-      "Cell Image Analysis Techniques"
-    ],
-    "sample_papers": [
-      "Suppressing Short-Term Polarization Noise and Related Spectral Decoherence in All-Normal Dispersion Fiber Supercontinuum Generation",
-      "Progress in Cherenkov femtosecond fiber lasers"
-    ],
-    "introduction_path": "Rohit Bhargava \u2192 Prof. William L. Wilson \u2192 Haohua Tu (Warm 2-Hop Path)"
-  },
-  {
-    "card_id": "CARD_009",
-    "seed_id": "https://openalex.org/A5023245938",
-    "seed_name": "Rohit Bhargava",
-    "seed_department": "Computer Science",
-    "seed_topics": [
-      "AI in cancer detection",
-      "Optical Imaging and Spectroscopy Techniques",
-      "Spectroscopy and Chemometric Analyses",
-      "Radiomics and Machine Learning in Medical Imaging"
-    ],
-    "candidate_name": "Andre Sutrisno",
-    "candidate_topics": [
-      "Zeolite Catalysis and Synthesis",
-      "biodegradable polymer synthesis and properties",
-      "Mesoporous Materials and Catalysis",
-      "Microbial Applications in Construction Materials",
-      "Recycling and utilization of industrial and municipal waste in materials production"
-    ],
-    "sample_papers": [
-      "Effects of calcium on setting mechanism of metakaolin\u2010based geopolymer",
-      "3D\u2010Printed Multidrug\u2010Eluting Stent from Graphene\u2010Nanoplatelet\u2010Doped Biodegradable Polymer Composite"
-    ],
-    "introduction_path": "Rohit Bhargava \u2192 Prof. Santosh Kumar Misra \u2192 Andre Sutrisno (Warm 2-Hop Path)"
-  },
-  {
-    "card_id": "CARD_010",
-    "seed_id": "https://openalex.org/A5023245938",
-    "seed_name": "Rohit Bhargava",
-    "seed_department": "Computer Science",
-    "seed_topics": [
-      "AI in cancer detection",
-      "Optical Imaging and Spectroscopy Techniques",
-      "Spectroscopy and Chemometric Analyses",
-      "Radiomics and Machine Learning in Medical Imaging"
-    ],
-    "candidate_name": "Vidisha Tripathi",
-    "candidate_topics": [
-      "RNA regulation and disease",
-      "Hippo pathway signaling and YAP/TAZ",
-      "RNA Research and Splicing",
-      "RNA modifications and cancer",
-      "Cancer-related molecular mechanisms research"
-    ],
-    "sample_papers": [
-      "ADAR2 regulates RNA stability by modifying access of decay-promoting RNA-binding proteins",
-      "MIR100 host gene-encoded lncRNAs regulate cell cycle by modulating the interaction between HuR and its target mRNAs"
-    ],
-    "introduction_path": "Rohit Bhargava \u2192 Prof. Abid Ali Khan \u2192 Vidisha Tripathi (Warm 2-Hop Path)"
-  },
-  {
-    "card_id": "CARD_011",
-    "seed_id": "https://openalex.org/A5023245938",
-    "seed_name": "Rohit Bhargava",
-    "seed_department": "Computer Science",
-    "seed_topics": [
-      "AI in cancer detection",
-      "Optical Imaging and Spectroscopy Techniques",
-      "Spectroscopy and Chemometric Analyses",
-      "Radiomics and Machine Learning in Medical Imaging"
-    ],
-    "candidate_name": "Fatemeh Ostadhossein",
-    "candidate_topics": [
-      "Advanced X-ray and CT Imaging",
-      "Nanoplatforms for cancer theranostics",
-      "Graphene and Nanomaterials Applications",
-      "Luminescence and Fluorescent Materials",
-      "Nanoparticle-Based Drug Delivery"
-    ],
-    "sample_papers": [
-      "Functional carbon nanodots for multiscale imaging and therapy",
-      "Hyperspectral Imaging Offers Visual and Quantitative Evidence of Drug Release from Zwitterionic\u2010Phospholipid\u2010Nanocarbon When Concurrently Tracked in 3D Intracellular Space"
-    ],
-    "introduction_path": "Rohit Bhargava \u2192 Prof. Indrajit Srivastava \u2192 Fatemeh Ostadhossein (Warm 2-Hop Path)"
-  },
-  {
-    "card_id": "CARD_012",
-    "seed_id": "https://openalex.org/A5023245938",
-    "seed_name": "Rohit Bhargava",
-    "seed_department": "Computer Science",
-    "seed_topics": [
-      "AI in cancer detection",
-      "Optical Imaging and Spectroscopy Techniques",
-      "Spectroscopy and Chemometric Analyses",
-      "Radiomics and Machine Learning in Medical Imaging"
-    ],
-    "candidate_name": "Jessica A. Krogstad",
-    "candidate_topics": [
-      "Metal and Thin Film Mechanics",
-      "Surface Modification and Superhydrophobicity",
-      "Microstructure and mechanical properties",
-      "Advanced materials and composites",
-      "nanoparticles nucleation surface interactions"
-    ],
-    "sample_papers": [
-      "Thin Film Condensation on Nanostructured Surfaces",
-      "Microstructural and compositional effects of transition metal carbide additions on dispersion-strengthened tungsten fabricated via spark plasma sintering"
-    ],
-    "introduction_path": "Rohit Bhargava \u2192 Prof. Jean Paul Allain \u2192 Jessica A. Krogstad (Warm 2-Hop Path)"
-  },
-  {
-    "card_id": "CARD_013",
-    "seed_id": "https://openalex.org/A5023245938",
-    "seed_name": "Rohit Bhargava",
-    "seed_department": "Computer Science",
-    "seed_topics": [
-      "AI in cancer detection",
-      "Optical Imaging and Spectroscopy Techniques",
-      "Spectroscopy and Chemometric Analyses",
-      "Radiomics and Machine Learning in Medical Imaging"
-    ],
-    "candidate_name": "Sarah J. Erickson-Bhatt",
-    "candidate_topics": [
-      "AI in cancer detection",
-      "Optical Imaging and Spectroscopy Techniques",
-      "Optical Coherence Tomography Applications",
-      "Breast Lesions and Carcinomas",
-      "Spectroscopy Techniques in Biomedical and Chemical Research"
-    ],
-    "sample_papers": [
-      "Real-time Imaging of the Resection Bed Using a Handheld Probe to Reduce Incidence of Microscopic Positive Margins in Cancer Surgery",
-      "Intraoperative optical coherence tomography for assessing human lymph nodes for metastatic cancer"
-    ],
-    "introduction_path": "Rohit Bhargava \u2192 UIUC Interdisciplinary Institute / Departmental Liaison \u2192 Sarah J. Erickson-Bhatt (Cold Institutional Path)"
-  },
-  {
-    "card_id": "CARD_014",
-    "seed_id": "https://openalex.org/A5023245938",
-    "seed_name": "Rohit Bhargava",
-    "seed_department": "Computer Science",
-    "seed_topics": [
-      "AI in cancer detection",
-      "Optical Imaging and Spectroscopy Techniques",
-      "Spectroscopy and Chemometric Analyses",
-      "Radiomics and Machine Learning in Medical Imaging"
-    ],
-    "candidate_name": "Hailey J. Knox",
-    "candidate_topics": [
-      "Optical Imaging and Spectroscopy Techniques",
-      "Nanoplatforms for cancer theranostics",
-      "Photodynamic Therapy Research Studies",
-      "Luminescence and Fluorescent Materials",
-      "Molecular Sensors and Ion Detection"
-    ],
-    "sample_papers": [
-      "A bioreducible N-oxide-based probe for photoacoustic imaging of hypoxia",
-      "Near-Infrared Photoactivatable Nitric Oxide Donors with Integrated Photoacoustic Monitoring"
-    ],
-    "introduction_path": "Rohit Bhargava \u2192 Prof. Indu Tripathi \u2192 Hailey J. Knox (Warm 2-Hop Path)"
-  },
-  {
-    "card_id": "CARD_015",
-    "seed_id": "https://openalex.org/A5023245938",
-    "seed_name": "Rohit Bhargava",
-    "seed_department": "Computer Science",
-    "seed_topics": [
-      "AI in cancer detection",
-      "Optical Imaging and Spectroscopy Techniques",
-      "Spectroscopy and Chemometric Analyses",
-      "Radiomics and Machine Learning in Medical Imaging"
-    ],
-    "candidate_name": "Blanka Janicek",
-    "candidate_topics": [
-      "Force Microscopy Techniques and Applications",
-      "Electron and X-Ray Spectroscopy Techniques",
-      "Gold and Silver Nanoparticles Synthesis and Applications",
-      "Topological Materials and Phenomena",
-      "Advanced Electron Microscopy Techniques and Applications"
-    ],
-    "sample_papers": [
-      "Engineering the Structural and Electronic Phases of MoTe 2 through W Substitution",
-      "Strain Modulation of Graphene by Nanoscale Substrate Curvatures: A Molecular View"
-    ],
-    "introduction_path": "Rohit Bhargava \u2192 Prof. Huei-Huei Chang \u2192 Blanka Janicek (Warm 2-Hop Path)"
-  },
-  {
-    "card_id": "CARD_016",
-    "seed_id": "https://openalex.org/A5011255000",
-    "seed_name": "Yonggang Y. Huang",
-    "seed_department": "Electrical & Computer Engineering",
-    "seed_topics": [
-      "Non-Invasive Vital Sign Monitoring",
-      "Neuroscience and Neural Engineering",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Wireless Body Area Networks"
-    ],
-    "candidate_name": "Jungwoo Lee",
-    "candidate_topics": [
-      "solar cell performance optimization",
-      "Neuroscience and Neural Engineering",
-      "Elasticity and Material Modeling",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Hydrogels: synthesis, properties, applications"
-    ],
-    "sample_papers": [
-      "Assembly of micro/nanomaterials into complex, three-dimensional architectures by compressive buckling",
-      "Soft network composite materials with deterministic and bio-inspired designs"
-    ],
-    "introduction_path": "Yonggang Y. Huang \u2192 Prof. Ralph G. Nuzzo \u2192 Jungwoo Lee (Warm 2-Hop Path)"
-  },
-  {
-    "card_id": "CARD_017",
-    "seed_id": "https://openalex.org/A5011255000",
-    "seed_name": "Yonggang Y. Huang",
-    "seed_department": "Electrical & Computer Engineering",
-    "seed_topics": [
-      "Non-Invasive Vital Sign Monitoring",
-      "Neuroscience and Neural Engineering",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Wireless Body Area Networks"
-    ],
-    "candidate_name": "Anthony R. Banks",
-    "candidate_topics": [
-      "Non-Invasive Vital Sign Monitoring",
-      "Neuroscience and Neural Engineering",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Wireless Body Area Networks",
-      "Skin Protection and Aging"
-    ],
-    "sample_papers": [
-      "Assembly of micro/nanomaterials into complex, three-dimensional architectures by compressive buckling",
-      "Miniaturized Flexible Electronic Systems with Wireless Power and Near\u2010Field Communication Capabilities"
-    ],
-    "introduction_path": "Yonggang Y. Huang \u2192 Prof. Hitoshi Araki \u2192 Anthony R. Banks (Warm 2-Hop Path)"
-  },
-  {
-    "card_id": "CARD_018",
-    "seed_id": "https://openalex.org/A5011255000",
-    "seed_name": "Yonggang Y. Huang",
-    "seed_department": "Electrical & Computer Engineering",
-    "seed_topics": [
-      "Non-Invasive Vital Sign Monitoring",
-      "Neuroscience and Neural Engineering",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Wireless Body Area Networks"
-    ],
-    "candidate_name": "Pourya Assem",
-    "candidate_topics": [
-      "Non-Invasive Vital Sign Monitoring",
-      "Silicon Carbide Semiconductor Technologies",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Wireless Body Area Networks",
-      "Analog and Mixed-Signal Circuit Design"
-    ],
-    "sample_papers": [
-      "Design and control of a GaN-based, 13-level, flying capacitor multilevel inverter",
-      "Design and control of a GaN-based, 13-level, flying capacitor multilevel inverter"
-    ],
-    "introduction_path": "Yonggang Y. Huang \u2192 Prof. Bong Hoon Kim \u2192 Pourya Assem (Warm 2-Hop Path)"
-  },
-  {
-    "card_id": "CARD_019",
-    "seed_id": "https://openalex.org/A5011255000",
-    "seed_name": "Yonggang Y. Huang",
-    "seed_department": "Electrical & Computer Engineering",
-    "seed_topics": [
-      "Non-Invasive Vital Sign Monitoring",
-      "Neuroscience and Neural Engineering",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Wireless Body Area Networks"
-    ],
-    "candidate_name": "Rebecca E. Corman",
-    "candidate_topics": [
-      "Advanced Battery Materials and Technologies",
-      "Advancements in Battery Materials",
-      "Advanced battery technologies research",
+      "Advanced MEMS and NEMS Technologies",
       "Advanced Materials and Mechanics",
-      "Advanced MEMS and NEMS Technologies"
-    ],
-    "sample_papers": [
-      "Mechanically active materials in three-dimensional mesostructures",
-      "Solution Properties and Practical Limits of Concentrated Electrolytes for Nonaqueous Redox Flow Batteries"
-    ],
-    "introduction_path": "Yonggang Y. Huang \u2192 Prof. Xin Ning \u2192 Rebecca E. Corman (Warm 2-Hop Path)"
-  },
-  {
-    "card_id": "CARD_020",
-    "seed_id": "https://openalex.org/A5011255000",
-    "seed_name": "Yonggang Y. Huang",
-    "seed_department": "Electrical & Computer Engineering",
-    "seed_topics": [
-      "Non-Invasive Vital Sign Monitoring",
-      "Neuroscience and Neural Engineering",
       "Advanced Sensor and Energy Harvesting Materials",
-      "Wireless Body Area Networks"
+      "Nanofabrication and Lithography Techniques"
     ],
-    "candidate_name": "Subing Qu",
+    "candidate_name": "Bruno G. Nicolau",
     "candidate_topics": [
-      "Advanced Battery Technologies Research",
+      "3D Printing in Biomedical Research",
       "Advanced Battery Materials and Technologies",
-      "Neuroscience and Neural Engineering",
-      "Advanced Sensor and Energy Harvesting Materials",
+      "Advanced Battery Technologies Research",
+      "Advanced Materials and Mechanics",
       "Advancements in Battery Materials"
     ],
     "sample_papers": [
-      "Large-area MRI-compatible epidermal electronic interfaces for prosthetic control and cognitive monitoring",
-      "High Volumetric and Gravimetric Capacity Electrodeposited Mesostructured Sb2O3 Sodium Ion Battery Anodes"
+      "Interfacial Processes of a Model Lithium Ion Battery Anode Observed, in Situ, with Vibrational Sum-Frequency Generation Spectroscopy",
+      "Characterization of the Cathode Electrolyte Interface in Lithium Ion Batteries by Desorption Electrospray Ionization Mass Spectrometry"
     ],
-    "introduction_path": "Yonggang Y. Huang \u2192 Prof. Yuhao Liu \u2192 Subing Qu (Warm 2-Hop Path)"
+    "introduction_path": "John A. Rogers \u2192 Yiyue Luo \u2192 Bruno G. Nicolau (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5045551635",
+      "https://openalex.org/A5007246518",
+      "https://openalex.org/A5068456625"
+    ]
   },
   {
-    "card_id": "CARD_021",
-    "seed_id": "https://openalex.org/A5011255000",
-    "seed_name": "Yonggang Y. Huang",
-    "seed_department": "Electrical & Computer Engineering",
+    "card_id": "CARD_002",
+    "seed_id": "https://openalex.org/A5045551635",
+    "seed_name": "John A. Rogers",
+    "seed_department": "Community 1",
     "seed_topics": [
-      "Non-Invasive Vital Sign Monitoring",
-      "Neuroscience and Neural Engineering",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Wireless Body Area Networks"
-    ],
-    "candidate_name": "Xiuling Li",
-    "candidate_topics": [
-      "Silicon Nanostructures and Photoluminescence",
-      "Silicon Carbide Semiconductor Technologies",
-      "2D Materials and Applications",
-      "Ga2O3 and related materials",
-      "Semiconductor materials and devices"
-    ],
-    "sample_papers": [
-      "Assembly of micro/nanomaterials into complex, three-dimensional architectures by compressive buckling",
-      "Ultra-Small, High-Frequency and Substrate-Immune Microtube Inductors Transformed from 2D to 3D"
-    ],
-    "introduction_path": "Yonggang Y. Huang \u2192 Prof. Yijie Zhang \u2192 Xiuling Li (Warm 2-Hop Path)"
-  },
-  {
-    "card_id": "CARD_022",
-    "seed_id": "https://openalex.org/A5011255000",
-    "seed_name": "Yonggang Y. Huang",
-    "seed_department": "Electrical & Computer Engineering",
-    "seed_topics": [
-      "Non-Invasive Vital Sign Monitoring",
-      "Neuroscience and Neural Engineering",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Wireless Body Area Networks"
-    ],
-    "candidate_name": "Limei Tian",
-    "candidate_topics": [
-      "Non-Invasive Vital Sign Monitoring",
-      "Neuroscience and Neural Engineering",
-      "Ultrasound Imaging and Elastography",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Force Microscopy Techniques and Applications"
-    ],
-    "sample_papers": [
-      "Epidermal radio frequency electronics for wireless power transfer",
-      "Wearable sensors: modalities, challenges, and prospects"
-    ],
-    "introduction_path": "Yonggang Y. Huang \u2192 Prof. Jan\u2010Kai Chang \u2192 Limei Tian (Warm 2-Hop Path)"
-  },
-  {
-    "card_id": "CARD_023",
-    "seed_id": "https://openalex.org/A5011255000",
-    "seed_name": "Yonggang Y. Huang",
-    "seed_department": "Electrical & Computer Engineering",
-    "seed_topics": [
-      "Non-Invasive Vital Sign Monitoring",
-      "Neuroscience and Neural Engineering",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Wireless Body Area Networks"
-    ],
-    "candidate_name": "Qinglin Yang",
-    "candidate_topics": [
-      "Advanced Sensor and Energy Harvesting Materials",
       "Advanced MEMS and NEMS Technologies",
-      "Nanofabrication and Lithography Techniques",
       "Advanced Materials and Mechanics",
-      "Nanomaterials and Printing Technologies"
-    ],
-    "sample_papers": [
-      "A mechanically driven form of Kirigami as a route to 3D mesostructures in micro/nanomembranes",
-      "In\u2010Plane Deformation Mechanics for Highly Stretchable Electronics"
-    ],
-    "introduction_path": "Yonggang Y. Huang \u2192 Prof. Xuelin Guo \u2192 Qinglin Yang (Warm 2-Hop Path)"
-  },
-  {
-    "card_id": "CARD_024",
-    "seed_id": "https://openalex.org/A5011255000",
-    "seed_name": "Yonggang Y. Huang",
-    "seed_department": "Electrical & Computer Engineering",
-    "seed_topics": [
-      "Non-Invasive Vital Sign Monitoring",
-      "Neuroscience and Neural Engineering",
       "Advanced Sensor and Energy Harvesting Materials",
-      "Wireless Body Area Networks"
-    ],
-    "candidate_name": "Joselle M. McCracken",
-    "candidate_topics": [
-      "Cellular Mechanics and Interactions",
-      "Hydrogels: synthesis, properties, applications",
-      "3D Printing in Biomedical Research",
-      "Nanofabrication and Lithography Techniques",
-      "Advanced Materials and Mechanics"
-    ],
-    "sample_papers": [
-      "Assembly of micro/nanomaterials into complex, three-dimensional architectures by compressive buckling",
-      "Programming Mechanical and Physicochemical Properties of 3D Hydrogel Cellular Microcultures via Direct Ink Writing"
-    ],
-    "introduction_path": "Yonggang Y. Huang \u2192 Prof. Molly B. Mevis \u2192 Joselle M. McCracken (Warm 2-Hop Path)"
-  },
-  {
-    "card_id": "CARD_025",
-    "seed_id": "https://openalex.org/A5011255000",
-    "seed_name": "Yonggang Y. Huang",
-    "seed_department": "Electrical & Computer Engineering",
-    "seed_topics": [
-      "Non-Invasive Vital Sign Monitoring",
-      "Neuroscience and Neural Engineering",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Wireless Body Area Networks"
-    ],
-    "candidate_name": "Jong Uk Kim",
-    "candidate_topics": [
-      "Non-Invasive Vital Sign Monitoring",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Wireless Body Area Networks",
-      "Thermoregulation and physiological responses",
       "Nanofabrication and Lithography Techniques"
-    ],
-    "sample_papers": [
-      "Transformable, Freestanding 3D Mesostructures Based on Transient Materials and Mechanical Interlocking",
-      "An on-skin platform for wireless monitoring of flow rate, cumulative loss and temperature of sweat in real time"
-    ],
-    "introduction_path": "Yonggang Y. Huang \u2192 UIUC Interdisciplinary Institute / Departmental Liaison \u2192 Jong Uk Kim (Cold Institutional Path)"
-  },
-  {
-    "card_id": "CARD_026",
-    "seed_id": "https://openalex.org/A5011255000",
-    "seed_name": "Yonggang Y. Huang",
-    "seed_department": "Electrical & Computer Engineering",
-    "seed_topics": [
-      "Non-Invasive Vital Sign Monitoring",
-      "Neuroscience and Neural Engineering",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Wireless Body Area Networks"
-    ],
-    "candidate_name": "Yechan Lee",
-    "candidate_topics": [
-      "Non-Invasive Vital Sign Monitoring",
-      "Neuroscience and Neural Engineering",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Modular Robots and Swarm Intelligence",
-      "Wireless Body Area Networks"
-    ],
-    "sample_papers": [
-      "Bioresorbable pressure sensors protected with thermally grown silicon dioxide for the monitoring of chronic diseases and healing processes",
-      "Mechanically Guided Post\u2010Assembly of 3D Electronic Systems"
-    ],
-    "introduction_path": "Yonggang Y. Huang \u2192 Prof. Jan\u2010Kai Chang \u2192 Yechan Lee (Warm 2-Hop Path)"
-  },
-  {
-    "card_id": "CARD_027",
-    "seed_id": "https://openalex.org/A5011255000",
-    "seed_name": "Yonggang Y. Huang",
-    "seed_department": "Electrical & Computer Engineering",
-    "seed_topics": [
-      "Non-Invasive Vital Sign Monitoring",
-      "Neuroscience and Neural Engineering",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Wireless Body Area Networks"
-    ],
-    "candidate_name": "Matthew Moore",
-    "candidate_topics": [
-      "Neural and Behavioral Psychology Studies",
-      "Neuroscience and Neural Engineering",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Anxiety, Depression, Psychometrics, Treatment, Cognitive Processes",
-      "Visual Attention and Saliency Detection"
-    ],
-    "sample_papers": [
-      "Large-area MRI-compatible epidermal electronic interfaces for prosthetic control and cognitive monitoring",
-      "Neural correlates of emotion-attention interactions: From perception, learning, and memory to social cognition, individual differences, and training interventions"
-    ],
-    "introduction_path": "Yonggang Y. Huang \u2192 Prof. Yuhao Liu \u2192 Matthew Moore (Warm 2-Hop Path)"
-  },
-  {
-    "card_id": "CARD_028",
-    "seed_id": "https://openalex.org/A5011255000",
-    "seed_name": "Yonggang Y. Huang",
-    "seed_department": "Electrical & Computer Engineering",
-    "seed_topics": [
-      "Non-Invasive Vital Sign Monitoring",
-      "Neuroscience and Neural Engineering",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Wireless Body Area Networks"
-    ],
-    "candidate_name": "Zijun Wei",
-    "candidate_topics": [
-      "Neuroscience and Neural Engineering",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Nanomaterials and Printing Technologies",
-      "Nanofabrication and Lithography Techniques",
-      "Advanced Materials and Mechanics"
-    ],
-    "sample_papers": [
-      "Assembly of micro/nanomaterials into complex, three-dimensional architectures by compressive buckling",
-      "Ferromagnetic, Folded Electrode Composite as a Soft Interface to the Skin for Long\u2010Term Electrophysiological Recording"
-    ],
-    "introduction_path": "Yonggang Y. Huang \u2192 Prof. Ralph G. Nuzzo \u2192 Zijun Wei (Warm 2-Hop Path)"
-  },
-  {
-    "card_id": "CARD_029",
-    "seed_id": "https://openalex.org/A5030076676",
-    "seed_name": "Catherine Jones Murphy",
-    "seed_department": "Bioengineering",
-    "seed_topics": [
-      "Plasmonic and Surface Plasmon Research",
-      "Nanoplatforms for cancer theranostics",
-      "Lipid Membrane Structure and Behavior",
-      "Gold and Silver Nanoparticles Synthesis and Applications"
-    ],
-    "candidate_name": "Nitya Sai Reddy Satyavolu",
-    "candidate_topics": [
-      "Quantum Dots Synthesis And Properties",
-      "Plasmonic and Surface Plasmon Research",
-      "Nanoplatforms for cancer theranostics",
-      "Luminescence Properties of Advanced Materials",
-      "DNA and Nucleic Acid Chemistry"
-    ],
-    "sample_papers": [
-      "DNA\u2010Encoded Tuning of Geometric and Plasmonic Properties of Nanoparticles Growing from Gold Nanorod Seeds",
-      "Mechanistic Insight into DNA-Guided Control of Nanoparticle Morphologies"
-    ],
-    "introduction_path": "Catherine Jones Murphy \u2192 UIUC Interdisciplinary Institute / Departmental Liaison \u2192 Nitya Sai Reddy Satyavolu (Cold Institutional Path)"
-  },
-  {
-    "card_id": "CARD_030",
-    "seed_id": "https://openalex.org/A5030076676",
-    "seed_name": "Catherine Jones Murphy",
-    "seed_department": "Bioengineering",
-    "seed_topics": [
-      "Plasmonic and Surface Plasmon Research",
-      "Nanoplatforms for cancer theranostics",
-      "Lipid Membrane Structure and Behavior",
-      "Gold and Silver Nanoparticles Synthesis and Applications"
-    ],
-    "candidate_name": "Christian J. Konopka",
-    "candidate_topics": [
-      "Quantum Dots Synthesis And Properties",
-      "Optical Imaging and Spectroscopy Techniques",
-      "Radiopharmaceutical Chemistry and Applications",
-      "Nanoplatforms for cancer theranostics",
-      "Dendrimers and Hyperbranched Polymers"
-    ],
-    "sample_papers": [
-      "Multimodal imaging of the receptor for advanced glycation end-products with molecularly targeted nanoparticles",
-      "Multimodal Nanocarrier Probes Reveal Superior Biodistribution Quantification by Isotopic Analysis over Fluorescence"
-    ],
-    "introduction_path": "Catherine Jones Murphy \u2192 UIUC Interdisciplinary Institute / Departmental Liaison \u2192 Christian J. Konopka (Cold Institutional Path)"
-  },
-  {
-    "card_id": "CARD_031",
-    "seed_id": "https://openalex.org/A5030076676",
-    "seed_name": "Catherine Jones Murphy",
-    "seed_department": "Bioengineering",
-    "seed_topics": [
-      "Plasmonic and Surface Plasmon Research",
-      "Nanoplatforms for cancer theranostics",
-      "Lipid Membrane Structure and Behavior",
-      "Gold and Silver Nanoparticles Synthesis and Applications"
-    ],
-    "candidate_name": "Zidong Wang",
-    "candidate_topics": [
-      "Nanocluster Synthesis and Applications",
-      "Plasmonic and Surface Plasmon Research",
-      "Gold and Silver Nanoparticles Synthesis and Applications",
-      "Advanced biosensing and bioanalysis techniques"
-    ],
-    "sample_papers": [
-      "DNA\u2010Encoded Tuning of Geometric and Plasmonic Properties of Nanoparticles Growing from Gold Nanorod Seeds",
-      "Mechanistic Insight into DNA-Guided Control of Nanoparticle Morphologies"
-    ],
-    "introduction_path": "Catherine Jones Murphy \u2192 UIUC Interdisciplinary Institute / Departmental Liaison \u2192 Zidong Wang (Cold Institutional Path)"
-  },
-  {
-    "card_id": "CARD_032",
-    "seed_id": "https://openalex.org/A5030076676",
-    "seed_name": "Catherine Jones Murphy",
-    "seed_department": "Bioengineering",
-    "seed_topics": [
-      "Plasmonic and Surface Plasmon Research",
-      "Nanoplatforms for cancer theranostics",
-      "Lipid Membrane Structure and Behavior",
-      "Gold and Silver Nanoparticles Synthesis and Applications"
-    ],
-    "candidate_name": "Alexander M. Barclay",
-    "candidate_topics": [
-      "Alzheimer's disease research and treatments",
-      "Parkinson's Disease Mechanisms and Treatments",
-      "Neuroinflammation and Neurodegeneration Mechanisms",
-      "Protein Structure and Dynamics"
-    ],
-    "sample_papers": [
-      "Solid-state NMR structure of a pathogenic fibril of full-length human \u03b1-synuclein",
-      "Structure of alpha-synuclein fibrils derived from human Lewy body dementia tissue"
-    ],
-    "introduction_path": "Catherine Jones Murphy \u2192 Prof. Marcus D. Tuttle \u2192 Alexander M. Barclay (Warm 2-Hop Path)"
-  },
-  {
-    "card_id": "CARD_033",
-    "seed_id": "https://openalex.org/A5030076676",
-    "seed_name": "Catherine Jones Murphy",
-    "seed_department": "Bioengineering",
-    "seed_topics": [
-      "Plasmonic and Surface Plasmon Research",
-      "Nanoplatforms for cancer theranostics",
-      "Lipid Membrane Structure and Behavior",
-      "Gold and Silver Nanoparticles Synthesis and Applications"
-    ],
-    "candidate_name": "Gemma Comellas",
-    "candidate_topics": [
-      "Alzheimer's disease research and treatments",
-      "Parkinson's Disease Mechanisms and Treatments",
-      "Protein Structure and Dynamics"
-    ],
-    "sample_papers": [
-      "Solid-state NMR structure of a pathogenic fibril of full-length human \u03b1-synuclein"
-    ],
-    "introduction_path": "Catherine Jones Murphy \u2192 Prof. Marcus D. Tuttle \u2192 Gemma Comellas (Warm 2-Hop Path)"
-  },
-  {
-    "card_id": "CARD_034",
-    "seed_id": "https://openalex.org/A5030076676",
-    "seed_name": "Catherine Jones Murphy",
-    "seed_department": "Bioengineering",
-    "seed_topics": [
-      "Plasmonic and Surface Plasmon Research",
-      "Nanoplatforms for cancer theranostics",
-      "Lipid Membrane Structure and Behavior",
-      "Gold and Silver Nanoparticles Synthesis and Applications"
-    ],
-    "candidate_name": "Andre Sutrisno",
-    "candidate_topics": [
-      "Zeolite Catalysis and Synthesis",
-      "biodegradable polymer synthesis and properties",
-      "Mesoporous Materials and Catalysis",
-      "Microbial Applications in Construction Materials",
-      "Recycling and utilization of industrial and municipal waste in materials production"
-    ],
-    "sample_papers": [
-      "Effects of calcium on setting mechanism of metakaolin\u2010based geopolymer",
-      "3D\u2010Printed Multidrug\u2010Eluting Stent from Graphene\u2010Nanoplatelet\u2010Doped Biodegradable Polymer Composite"
-    ],
-    "introduction_path": "Catherine Jones Murphy \u2192 Prof. Lingyang Zhu \u2192 Andre Sutrisno (Warm 2-Hop Path)"
-  },
-  {
-    "card_id": "CARD_035",
-    "seed_id": "https://openalex.org/A5030076676",
-    "seed_name": "Catherine Jones Murphy",
-    "seed_department": "Bioengineering",
-    "seed_topics": [
-      "Plasmonic and Surface Plasmon Research",
-      "Nanoplatforms for cancer theranostics",
-      "Lipid Membrane Structure and Behavior",
-      "Gold and Silver Nanoparticles Synthesis and Applications"
-    ],
-    "candidate_name": "Indranath Chakraborty",
-    "candidate_topics": [
-      "Quantum Dots Synthesis And Properties",
-      "Graphene and Nanomaterials Applications",
-      "Inorganic Chemistry and Materials",
-      "Gold and Silver Nanoparticles Synthesis and Applications",
-      "Nanoparticle-Based Drug Delivery"
-    ],
-    "sample_papers": [
-      "In Situ Single\u2010Nanoparticle Spectroscopy Study of Bimetallic Nanostructure Formation",
-      "Ion Exchange Transformation of Magic-Sized Clusters"
-    ],
-    "introduction_path": "Catherine Jones Murphy \u2192 UIUC Interdisciplinary Institute / Departmental Liaison \u2192 Indranath Chakraborty (Cold Institutional Path)"
-  },
-  {
-    "card_id": "CARD_036",
-    "seed_id": "https://openalex.org/A5030076676",
-    "seed_name": "Catherine Jones Murphy",
-    "seed_department": "Bioengineering",
-    "seed_topics": [
-      "Plasmonic and Surface Plasmon Research",
-      "Nanoplatforms for cancer theranostics",
-      "Lipid Membrane Structure and Behavior",
-      "Gold and Silver Nanoparticles Synthesis and Applications"
-    ],
-    "candidate_name": "Ruiyang Xue",
-    "candidate_topics": [
-      "Plasmonic and Surface Plasmon Research",
-      "Optical Imaging and Spectroscopy Techniques",
-      "Nanoplatforms for cancer theranostics",
-      "Gold and Silver Nanoparticles Synthesis and Applications",
-      "Nanoparticle-Based Drug Delivery"
-    ],
-    "sample_papers": [
-      "Emergence of two near-infrared windows for in vivo and intraoperative SERS",
-      "Biomimetic Surface-Enhanced Raman Scattering Nanoparticles with Improved Dispersibility, Signal Brightness, and Tumor Targeting Functions"
-    ],
-    "introduction_path": "Catherine Jones Murphy \u2192 UIUC Interdisciplinary Institute / Departmental Liaison \u2192 Ruiyang Xue (Cold Institutional Path)"
-  },
-  {
-    "card_id": "CARD_037",
-    "seed_id": "https://openalex.org/A5030076676",
-    "seed_name": "Catherine Jones Murphy",
-    "seed_department": "Bioengineering",
-    "seed_topics": [
-      "Plasmonic and Surface Plasmon Research",
-      "Nanoplatforms for cancer theranostics",
-      "Lipid Membrane Structure and Behavior",
-      "Gold and Silver Nanoparticles Synthesis and Applications"
-    ],
-    "candidate_name": "Hang Xing",
-    "candidate_topics": [
-      "Plasmonic and Surface Plasmon Research",
-      "Nanoplatforms for cancer theranostics",
-      "Dendrimers and Hyperbranched Polymers",
-      "Gold and Silver Nanoparticles Synthesis and Applications",
-      "Nanoparticle-Based Drug Delivery"
-    ],
-    "sample_papers": [
-      "DNA\u2010Encoded Tuning of Geometric and Plasmonic Properties of Nanoparticles Growing from Gold Nanorod Seeds",
-      "Chemical Control over Cellular Uptake of Organic Nanoparticles by Fine Tuning Surface Functional Groups"
-    ],
-    "introduction_path": "Catherine Jones Murphy \u2192 Prof. Andrew A. Gewirth \u2192 Hang Xing (Warm 2-Hop Path)"
-  },
-  {
-    "card_id": "CARD_038",
-    "seed_id": "https://openalex.org/A5030076676",
-    "seed_name": "Catherine Jones Murphy",
-    "seed_department": "Bioengineering",
-    "seed_topics": [
-      "Plasmonic and Surface Plasmon Research",
-      "Nanoplatforms for cancer theranostics",
-      "Lipid Membrane Structure and Behavior",
-      "Gold and Silver Nanoparticles Synthesis and Applications"
-    ],
-    "candidate_name": "Xuan Zhou",
-    "candidate_topics": [
-      "Combustion and Detonation Processes",
-      "Plasmonic and Surface Plasmon Research",
-      "High-Velocity Impact and Material Behavior",
-      "Metal-Organic Frameworks: Synthesis and Applications",
-      "TiO2 Photocatalysis and Solar Cells"
-    ],
-    "sample_papers": [
-      "Kinetic Modulation of Outer-Sphere Electron Transfer Reactions on Graphene Electrode with a Sub-surface Metal Substrate",
-      "Electrochemical Imaging of Photoanodic Water Oxidation Enhancements on TiO2 Thin Films Modified by Subsurface Aluminum Nanodimers"
-    ],
-    "introduction_path": "Catherine Jones Murphy \u2192 Prof. Kenneth Sanders Suslick \u2192 Xuan Zhou (Warm 2-Hop Path)"
-  },
-  {
-    "card_id": "CARD_039",
-    "seed_id": "https://openalex.org/A5030076676",
-    "seed_name": "Catherine Jones Murphy",
-    "seed_department": "Bioengineering",
-    "seed_topics": [
-      "Plasmonic and Surface Plasmon Research",
-      "Nanoplatforms for cancer theranostics",
-      "Lipid Membrane Structure and Behavior",
-      "Gold and Silver Nanoparticles Synthesis and Applications"
-    ],
-    "candidate_name": "Kuldeep Singh",
-    "candidate_topics": [
-      "Ultrasound and Hyperthermia Applications",
-      "Nanoplatforms for cancer theranostics",
-      "Nanoparticle-Based Drug Delivery"
-    ],
-    "sample_papers": [
-      "Trimodal Therapy: Combining Hyperthermia with Repurposed Bexarotene and Ultrasound for Treating Liver Cancer"
-    ],
-    "introduction_path": "Catherine Jones Murphy \u2192 UIUC Interdisciplinary Institute / Departmental Liaison \u2192 Kuldeep Singh (Cold Institutional Path)"
-  },
-  {
-    "card_id": "CARD_040",
-    "seed_id": "https://openalex.org/A5030076676",
-    "seed_name": "Catherine Jones Murphy",
-    "seed_department": "Bioengineering",
-    "seed_topics": [
-      "Plasmonic and Surface Plasmon Research",
-      "Nanoplatforms for cancer theranostics",
-      "Lipid Membrane Structure and Behavior",
-      "Gold and Silver Nanoparticles Synthesis and Applications"
-    ],
-    "candidate_name": "William L. Wilson",
-    "candidate_topics": [
-      "Nanoplatforms for cancer theranostics",
-      "Photonic Crystal and Fiber Optics",
-      "Laser-Matter Interactions and Applications",
-      "Luminescence and Fluorescent Materials",
-      "Metamaterials and Metasurfaces Applications"
-    ],
-    "sample_papers": [
-      "Suppressing Short-Term Polarization Noise and Related Spectral Decoherence in All-Normal Dispersion Fiber Supercontinuum Generation",
-      "Tunable Luminescent Carbon Nanospheres with Well-Defined Nanoscale Chemistry for Synchronized Imaging and Therapy"
-    ],
-    "introduction_path": "Catherine Jones Murphy \u2192 Prof. Huei-Huei Chang \u2192 William L. Wilson (Warm 2-Hop Path)"
-  },
-  {
-    "card_id": "CARD_041",
-    "seed_id": "https://openalex.org/A5030076676",
-    "seed_name": "Catherine Jones Murphy",
-    "seed_department": "Bioengineering",
-    "seed_topics": [
-      "Plasmonic and Surface Plasmon Research",
-      "Nanoplatforms for cancer theranostics",
-      "Lipid Membrane Structure and Behavior",
-      "Gold and Silver Nanoparticles Synthesis and Applications"
-    ],
-    "candidate_name": "Andrew J. Nieuwkoop",
-    "candidate_topics": [
-      "Alzheimer's disease research and treatments",
-      "Parkinson's Disease Mechanisms and Treatments",
-      "Protein Structure and Dynamics"
-    ],
-    "sample_papers": [
-      "Solid-state NMR structure of a pathogenic fibril of full-length human \u03b1-synuclein"
-    ],
-    "introduction_path": "Catherine Jones Murphy \u2192 Prof. Marcus D. Tuttle \u2192 Andrew J. Nieuwkoop (Warm 2-Hop Path)"
-  },
-  {
-    "card_id": "CARD_042",
-    "seed_id": "https://openalex.org/A5030076676",
-    "seed_name": "Catherine Jones Murphy",
-    "seed_department": "Bioengineering",
-    "seed_topics": [
-      "Plasmonic and Surface Plasmon Research",
-      "Nanoplatforms for cancer theranostics",
-      "Lipid Membrane Structure and Behavior",
-      "Gold and Silver Nanoparticles Synthesis and Applications"
-    ],
-    "candidate_name": "Kathryn D. Kloepper",
-    "candidate_topics": [
-      "Alzheimer's disease research and treatments",
-      "Parkinson's Disease Mechanisms and Treatments",
-      "Protein Structure and Dynamics"
-    ],
-    "sample_papers": [
-      "Solid-state NMR structure of a pathogenic fibril of full-length human \u03b1-synuclein"
-    ],
-    "introduction_path": "Catherine Jones Murphy \u2192 Prof. Marcus D. Tuttle \u2192 Kathryn D. Kloepper (Warm 2-Hop Path)"
-  },
-  {
-    "card_id": "CARD_043",
-    "seed_id": "https://openalex.org/A5030076676",
-    "seed_name": "Catherine Jones Murphy",
-    "seed_department": "Bioengineering",
-    "seed_topics": [
-      "Plasmonic and Surface Plasmon Research",
-      "Nanoplatforms for cancer theranostics",
-      "Lipid Membrane Structure and Behavior",
-      "Gold and Silver Nanoparticles Synthesis and Applications"
-    ],
-    "candidate_name": "Richard T. Haasch",
-    "candidate_topics": [
-      "Advanced Battery Technologies Research",
-      "Advanced Battery Materials and Technologies",
-      "Electron and X-Ray Spectroscopy Techniques",
-      "Advancements in Battery Materials",
-      "CO2 Reduction Techniques and Catalysts"
-    ],
-    "sample_papers": [
-      "Annealing free, clean graphene transfer using alternative polymer scaffolds",
-      "Synergetic Role of Li+ during Mg Electrodeposition/Dissolution in Borohydride Diglyme Electrolyte Solution: Voltammetric Stripping Behaviors on a Pt Microelectrode Indicative of Mg\u2013Li Alloying and Facilitated Dissolution"
-    ],
-    "introduction_path": "Catherine Jones Murphy \u2192 Prof. Lingyang Zhu \u2192 Richard T. Haasch (Warm 2-Hop Path)"
-  },
-  {
-    "card_id": "CARD_044",
-    "seed_id": "https://openalex.org/A5045551635",
-    "seed_name": "John A. Rogers",
-    "seed_department": "Crop Sciences",
-    "seed_topics": [
-      "Non-Invasive Vital Sign Monitoring",
-      "Neuroscience and Neural Engineering",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Wireless Body Area Networks"
-    ],
-    "candidate_name": "Jae\u2010Hwan Kim",
-    "candidate_topics": [
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Nanomaterials and Printing Technologies",
-      "Nanofabrication and Lithography Techniques",
-      "Thin-Film Transistor Technologies",
-      "Advanced Materials and Mechanics"
-    ],
-    "sample_papers": [
-      "Dry Transient Electronic Systems by Use of Materials that Sublime",
-      "Transformable, Freestanding 3D Mesostructures Based on Transient Materials and Mechanical Interlocking"
-    ],
-    "introduction_path": "John A. Rogers \u2192 Prof. Jahyun Koo \u2192 Jae\u2010Hwan Kim (Warm 2-Hop Path)"
-  },
-  {
-    "card_id": "CARD_045",
-    "seed_id": "https://openalex.org/A5045551635",
-    "seed_name": "John A. Rogers",
-    "seed_department": "Crop Sciences",
-    "seed_topics": [
-      "Non-Invasive Vital Sign Monitoring",
-      "Neuroscience and Neural Engineering",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Wireless Body Area Networks"
     ],
     "candidate_name": "Jonathan V. Sweedler",
     "candidate_topics": [
-      "Bacterial Identification and Susceptibility Testing",
-      "Chemical Synthesis and Analysis",
-      "Metabolomics and Mass Spectrometry Studies",
       "Advanced Proteomics Techniques and Applications",
-      "Spectroscopy Techniques in Biomedical and Chemical Research"
+      "Bacterial Identification and Susceptibility Testing",
+      "Bacterial biofilms and quorum sensing",
+      "Electrochemical Analysis and Applications",
+      "Electrochemical sensors and biosensors"
     ],
     "sample_papers": [
       "Lutein and Brain Function",
       "Rapid Mitogenic Regulation of the mTORC1 Inhibitor, DEPTOR, by Phosphatidic Acid"
     ],
-    "introduction_path": "John A. Rogers \u2192 Prof. Xuelin Guo \u2192 Jonathan V. Sweedler (Warm 2-Hop Path)"
+    "introduction_path": "John A. Rogers \u2192 Yiyue Luo \u2192 Jonathan V. Sweedler (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5045551635",
+      "https://openalex.org/A5007246518",
+      "https://openalex.org/A5006238710"
+    ]
   },
   {
-    "card_id": "CARD_046",
+    "card_id": "CARD_003",
     "seed_id": "https://openalex.org/A5045551635",
     "seed_name": "John A. Rogers",
-    "seed_department": "Crop Sciences",
+    "seed_department": "Community 1",
     "seed_topics": [
-      "Non-Invasive Vital Sign Monitoring",
-      "Neuroscience and Neural Engineering",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Wireless Body Area Networks"
-    ],
-    "candidate_name": "Xiaogang Guo",
-    "candidate_topics": [
-      "Nanofabrication and Lithography Techniques",
-      "3D Printing in Biomedical Research",
-      "Advanced Materials and Mechanics"
-    ],
-    "sample_papers": [
-      "Three-dimensional mesostructures as high-temperature growth templates, electronic cellular scaffolds, and self-propelled microrobots"
-    ],
-    "introduction_path": "John A. Rogers \u2192 Prof. Xuelin Guo \u2192 Xiaogang Guo (Warm 2-Hop Path)"
-  },
-  {
-    "card_id": "CARD_047",
-    "seed_id": "https://openalex.org/A5045551635",
-    "seed_name": "John A. Rogers",
-    "seed_department": "Crop Sciences",
-    "seed_topics": [
-      "Non-Invasive Vital Sign Monitoring",
-      "Neuroscience and Neural Engineering",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Wireless Body Area Networks"
-    ],
-    "candidate_name": "Han Hee Jung",
-    "candidate_topics": [
-      "Soft Robotics and Applications",
+      "Advanced MEMS and NEMS Technologies",
       "Advanced Materials and Mechanics",
-      "Advanced Sensor and Energy Harvesting Materials"
-    ],
-    "sample_papers": [
-      "Self-assembled three dimensional network designs for soft electronics"
-    ],
-    "introduction_path": "John A. Rogers \u2192 Prof. Han Na Jung \u2192 Han Hee Jung (Warm 2-Hop Path)"
-  },
-  {
-    "card_id": "CARD_048",
-    "seed_id": "https://openalex.org/A5045551635",
-    "seed_name": "John A. Rogers",
-    "seed_department": "Crop Sciences",
-    "seed_topics": [
-      "Non-Invasive Vital Sign Monitoring",
-      "Neuroscience and Neural Engineering",
       "Advanced Sensor and Energy Harvesting Materials",
-      "Wireless Body Area Networks"
-    ],
-    "candidate_name": "Molly B. Mevis",
-    "candidate_topics": [
-      "Cellular Mechanics and Interactions",
-      "Hydrogels: synthesis, properties, applications",
-      "3D Printing in Biomedical Research",
-      "Nanofabrication and Lithography Techniques",
-      "Advanced Materials and Mechanics"
-    ],
-    "sample_papers": [
-      "Three-dimensional mesostructures as high-temperature growth templates, electronic cellular scaffolds, and self-propelled microrobots",
-      "3D-Printed pHEMA Materials for Topographical and Biochemical Modulation of Dorsal Root Ganglion Cell Response"
-    ],
-    "introduction_path": "John A. Rogers \u2192 Prof. Xuelin Guo \u2192 Molly B. Mevis (Warm 2-Hop Path)"
-  },
-  {
-    "card_id": "CARD_049",
-    "seed_id": "https://openalex.org/A5045551635",
-    "seed_name": "John A. Rogers",
-    "seed_department": "Crop Sciences",
-    "seed_topics": [
-      "Non-Invasive Vital Sign Monitoring",
-      "Neuroscience and Neural Engineering",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Wireless Body Area Networks"
-    ],
-    "candidate_name": "Jong Uk Kim",
-    "candidate_topics": [
-      "Non-Invasive Vital Sign Monitoring",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Wireless Body Area Networks",
-      "Thermoregulation and physiological responses",
       "Nanofabrication and Lithography Techniques"
     ],
-    "sample_papers": [
-      "Transformable, Freestanding 3D Mesostructures Based on Transient Materials and Mechanical Interlocking",
-      "An on-skin platform for wireless monitoring of flow rate, cumulative loss and temperature of sweat in real time"
-    ],
-    "introduction_path": "John A. Rogers \u2192 UIUC Interdisciplinary Institute / Departmental Liaison \u2192 Jong Uk Kim (Cold Institutional Path)"
-  },
-  {
-    "card_id": "CARD_050",
-    "seed_id": "https://openalex.org/A5045551635",
-    "seed_name": "John A. Rogers",
-    "seed_department": "Crop Sciences",
-    "seed_topics": [
-      "Non-Invasive Vital Sign Monitoring",
-      "Neuroscience and Neural Engineering",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Wireless Body Area Networks"
-    ],
-    "candidate_name": "Stanislav S. Rubakhin",
+    "candidate_name": "Ashish A. Kulkarni",
     "candidate_topics": [
-      "Ion-surface interactions and analysis",
-      "Metabolomics and Mass Spectrometry Studies",
-      "Antioxidant Activity and Oxidative Stress",
-      "Microfluidic and Capillary Electrophoresis Applications",
-      "Advanced Proteomics Techniques and Applications"
-    ],
-    "sample_papers": [
-      "Lutein and Brain Function",
-      "Classification of Large Cellular Populations and Discovery of Rare Cells Using Single Cell Matrix-Assisted Laser Desorption/Ionization Time-of-Flight Mass Spectrometry"
-    ],
-    "introduction_path": "John A. Rogers \u2192 Prof. Xuelin Guo \u2192 Stanislav S. Rubakhin (Warm 2-Hop Path)"
-  },
-  {
-    "card_id": "CARD_051",
-    "seed_id": "https://openalex.org/A5045551635",
-    "seed_name": "John A. Rogers",
-    "seed_department": "Crop Sciences",
-    "seed_topics": [
-      "Non-Invasive Vital Sign Monitoring",
-      "Neuroscience and Neural Engineering",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Wireless Body Area Networks"
-    ],
-    "candidate_name": "Aaron W. Oraham",
-    "candidate_topics": [
-      "Cellular Mechanics and Interactions",
-      "Hydrogels: synthesis, properties, applications",
       "3D Printing in Biomedical Research",
+      "Additive Manufacturing and 3D Printing Technologies",
+      "Advanced Materials and Mechanics",
       "Nanofabrication and Lithography Techniques",
-      "Advanced Materials and Mechanics"
+      "Nanomaterials and Printing Technologies"
     ],
     "sample_papers": [
-      "Three-dimensional mesostructures as high-temperature growth templates, electronic cellular scaffolds, and self-propelled microrobots",
-      "3D-Printed pHEMA Materials for Topographical and Biochemical Modulation of Dorsal Root Ganglion Cell Response"
-    ],
-    "introduction_path": "John A. Rogers \u2192 Prof. Xuelin Guo \u2192 Aaron W. Oraham (Warm 2-Hop Path)"
-  },
-  {
-    "card_id": "CARD_052",
-    "seed_id": "https://openalex.org/A5045551635",
-    "seed_name": "John A. Rogers",
-    "seed_department": "Crop Sciences",
-    "seed_topics": [
-      "Non-Invasive Vital Sign Monitoring",
-      "Neuroscience and Neural Engineering",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Wireless Body Area Networks"
-    ],
-    "candidate_name": "Woomi Ryu",
-    "candidate_topics": [
-      "Nanofabrication and Lithography Techniques",
-      "3D Printing in Biomedical Research",
-      "Advanced Materials and Mechanics"
-    ],
-    "sample_papers": [
+      "High\u2010Operating\u2010Temperature Direct Ink Writing of Mesoscale Eutectic Architectures",
       "Three-dimensional mesostructures as high-temperature growth templates, electronic cellular scaffolds, and self-propelled microrobots"
     ],
-    "introduction_path": "John A. Rogers \u2192 Prof. Xuelin Guo \u2192 Woomi Ryu (Warm 2-Hop Path)"
+    "introduction_path": "John A. Rogers \u2192 Yiyue Luo \u2192 Ashish A. Kulkarni (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5045551635",
+      "https://openalex.org/A5007246518",
+      "https://openalex.org/A5004819366"
+    ]
   },
   {
-    "card_id": "CARD_053",
+    "card_id": "CARD_004",
     "seed_id": "https://openalex.org/A5045551635",
     "seed_name": "John A. Rogers",
-    "seed_department": "Crop Sciences",
+    "seed_department": "Community 1",
     "seed_topics": [
-      "Non-Invasive Vital Sign Monitoring",
-      "Neuroscience and Neural Engineering",
+      "Advanced MEMS and NEMS Technologies",
+      "Advanced Materials and Mechanics",
       "Advanced Sensor and Energy Harvesting Materials",
-      "Wireless Body Area Networks"
+      "Nanofabrication and Lithography Techniques"
     ],
-    "candidate_name": "Jin\u2010Tae Kim",
+    "candidate_name": "Juyoung Leem",
     "candidate_topics": [
-      "Biomimetic flight and propulsion mechanisms",
-      "Non-Invasive Vital Sign Monitoring",
-      "Fluid Dynamics and Turbulent Flows",
+      "2D Materials and Applications",
+      "Advanced Materials and Mechanics",
       "Advanced Sensor and Energy Harvesting Materials",
-      "Wireless Body Area Networks"
+      "Gold and Silver Nanoparticles Synthesis and Applications",
+      "Graphene research and applications"
     ],
     "sample_papers": [
-      "Flow-induced motions of flexible plates: fluttering, twisting and orbital modes",
-      "Three-dimensional electronic microfliers inspired by wind-dispersed seeds"
+      "Mechanically Self-Assembled, Three-Dimensional Graphene\u2013Gold Hybrid Nanostructures for Advanced Nanoplasmonic Sensors",
+      "Three-Dimensional Integration of Graphene via Swelling, Shrinking, and Adaptation"
     ],
-    "introduction_path": "John A. Rogers \u2192 UIUC Interdisciplinary Institute / Departmental Liaison \u2192 Jin\u2010Tae Kim (Cold Institutional Path)"
+    "introduction_path": "John A. Rogers \u2192 William P. King \u2192 Juyoung Leem (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5045551635",
+      "https://openalex.org/A5065601087",
+      "https://openalex.org/A5074607361"
+    ]
   },
   {
-    "card_id": "CARD_054",
+    "card_id": "CARD_005",
     "seed_id": "https://openalex.org/A5045551635",
     "seed_name": "John A. Rogers",
-    "seed_department": "Crop Sciences",
+    "seed_department": "Community 1",
     "seed_topics": [
-      "Non-Invasive Vital Sign Monitoring",
-      "Neuroscience and Neural Engineering",
+      "Advanced MEMS and NEMS Technologies",
+      "Advanced Materials and Mechanics",
       "Advanced Sensor and Energy Harvesting Materials",
-      "Wireless Body Area Networks"
-    ],
-    "candidate_name": "Gabriel Popescu",
-    "candidate_topics": [
-      "AI in cancer detection",
-      "Cellular Mechanics and Interactions",
-      "Advanced Fluorescence Microscopy Techniques",
-      "Cell Image Analysis Techniques",
-      "Optical Coherence Tomography Applications"
-    ],
-    "sample_papers": [
-      "High\u2010Resolution Projection Microstereolithography for Patterning of Neovasculature",
-      "Prediction of Prostate Cancer Recurrence Using Quantitative Phase Imaging"
-    ],
-    "introduction_path": "John A. Rogers \u2192 Prof. Kristopher Alan Kilian \u2192 Gabriel Popescu (Warm 2-Hop Path)"
-  },
-  {
-    "card_id": "CARD_055",
-    "seed_id": "https://openalex.org/A5045551635",
-    "seed_name": "John A. Rogers",
-    "seed_department": "Crop Sciences",
-    "seed_topics": [
-      "Non-Invasive Vital Sign Monitoring",
-      "Neuroscience and Neural Engineering",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Wireless Body Area Networks"
-    ],
-    "candidate_name": "Mikhail E. Kandel",
-    "candidate_topics": [
-      "AI in cancer detection",
-      "Cellular Mechanics and Interactions",
-      "Advanced Fluorescence Microscopy Techniques",
-      "Hydrogels: synthesis, properties, applications",
-      "Cell Image Analysis Techniques"
-    ],
-    "sample_papers": [
-      "Breast cancer diagnosis using spatial light interference microscopy",
-      "Label-Free Imaging of Single Microtubule Dynamics Using Spatial Light Interference Microscopy"
-    ],
-    "introduction_path": "John A. Rogers \u2192 Prof. Xuelin Guo \u2192 Mikhail E. Kandel (Warm 2-Hop Path)"
-  },
-  {
-    "card_id": "CARD_056",
-    "seed_id": "https://openalex.org/A5045551635",
-    "seed_name": "John A. Rogers",
-    "seed_department": "Crop Sciences",
-    "seed_topics": [
-      "Non-Invasive Vital Sign Monitoring",
-      "Neuroscience and Neural Engineering",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Wireless Body Area Networks"
-    ],
-    "candidate_name": "Jaeman Lim",
-    "candidate_topics": [
-      "Nanofabrication and Lithography Techniques",
-      "3D Printing in Biomedical Research",
-      "Advanced Materials and Mechanics"
-    ],
-    "sample_papers": [
-      "Three-dimensional mesostructures as high-temperature growth templates, electronic cellular scaffolds, and self-propelled microrobots"
-    ],
-    "introduction_path": "John A. Rogers \u2192 Prof. Xuelin Guo \u2192 Jaeman Lim (Warm 2-Hop Path)"
-  },
-  {
-    "card_id": "CARD_057",
-    "seed_id": "https://openalex.org/A5045551635",
-    "seed_name": "John A. Rogers",
-    "seed_department": "Crop Sciences",
-    "seed_topics": [
-      "Non-Invasive Vital Sign Monitoring",
-      "Neuroscience and Neural Engineering",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Wireless Body Area Networks"
-    ],
-    "candidate_name": "Zhaoqian Xie",
-    "candidate_topics": [
-      "Soft Robotics and Applications",
-      "Non-Invasive Vital Sign Monitoring",
-      "Neuroscience and Neural Engineering",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Wireless Body Area Networks"
-    ],
-    "sample_papers": [
-      "Battery-free, stretchable optoelectronic systems for wireless optical characterization of the skin",
-      "Remote control of muscle-driven miniature robots with battery-free wireless optoelectronics"
-    ],
-    "introduction_path": "John A. Rogers \u2192 Prof. Hitoshi Araki \u2192 Zhaoqian Xie (Warm 2-Hop Path)"
-  },
-  {
-    "card_id": "CARD_058",
-    "seed_id": "https://openalex.org/A5045551635",
-    "seed_name": "John A. Rogers",
-    "seed_department": "Crop Sciences",
-    "seed_topics": [
-      "Non-Invasive Vital Sign Monitoring",
-      "Neuroscience and Neural Engineering",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Wireless Body Area Networks"
+      "Nanofabrication and Lithography Techniques"
     ],
     "candidate_name": "Keong Yong",
     "candidate_topics": [
+      "2D Materials and Applications",
       "Advanced Materials and Mechanics",
-      "Surface Modification and Superhydrophobicity",
-      "Neuroscience and Neural Engineering",
+      "Advanced Sensor and Energy Harvesting Materials",
       "Force Microscopy Techniques and Applications",
-      "Advanced Sensor and Energy Harvesting Materials"
+      "Graphene research and applications"
     ],
     "sample_papers": [
       "Doping-Induced Tunable Wettability and Adhesion of Graphene",
       "Rapid Stencil Mask Fabrication Enabled One-Step Polymer-Free Graphene Patterning and Direct Transfer for Flexible Graphene Devices"
     ],
-    "introduction_path": "John A. Rogers \u2192 Prof. Narayana R. Aluru \u2192 Keong Yong (Warm 2-Hop Path)"
+    "introduction_path": "John A. Rogers \u2192 Richard T. Haasch \u2192 Keong Yong (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5045551635",
+      "https://openalex.org/A5069497115",
+      "https://openalex.org/A5035794126"
+    ]
   },
   {
-    "card_id": "CARD_059",
-    "seed_id": "https://openalex.org/A5040320137",
-    "seed_name": "Paul V. Braun",
-    "seed_department": "Information Sciences",
+    "card_id": "CARD_006",
+    "seed_id": "https://openalex.org/A5045551635",
+    "seed_name": "John A. Rogers",
+    "seed_department": "Community 1",
     "seed_topics": [
+      "Advanced MEMS and NEMS Technologies",
       "Advanced Materials and Mechanics",
-      "Advanced Battery Technologies Research",
-      "Advanced Battery Materials and Technologies",
-      "Advanced Sensor and Energy Harvesting Materials"
+      "Advanced Sensor and Energy Harvesting Materials",
+      "Nanofabrication and Lithography Techniques"
     ],
-    "candidate_name": "Leilei Yin",
+    "candidate_name": "Gabriel Popescu",
     "candidate_topics": [
-      "Ultrasonics and Acoustic Wave Propagation",
-      "Advanced Battery Technologies Research",
+      "3D Printing in Biomedical Research",
+      "AI in cancer detection",
+      "Advanced Fluorescence Microscopy Techniques",
+      "Cellular Mechanics and Interactions",
+      "Digital Holography and Microscopy"
+    ],
+    "sample_papers": [
+      "High\u2010Resolution Projection Microstereolithography for Patterning of Neovasculature",
+      "Prediction of Prostate Cancer Recurrence Using Quantitative Phase Imaging"
+    ],
+    "introduction_path": "John A. Rogers \u2192 Yiyue Luo \u2192 Gabriel Popescu (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5045551635",
+      "https://openalex.org/A5007246518",
+      "https://openalex.org/A5056127619"
+    ]
+  },
+  {
+    "card_id": "CARD_007",
+    "seed_id": "https://openalex.org/A5045551635",
+    "seed_name": "John A. Rogers",
+    "seed_department": "Community 1",
+    "seed_topics": [
+      "Advanced MEMS and NEMS Technologies",
+      "Advanced Materials and Mechanics",
+      "Advanced Sensor and Energy Harvesting Materials",
+      "Nanofabrication and Lithography Techniques"
+    ],
+    "candidate_name": "Pilgyu Kang",
+    "candidate_topics": [
+      "2D Materials and Applications",
+      "Advanced Materials and Mechanics",
+      "Advanced Sensor and Energy Harvesting Materials",
+      "Electrochemical sensors and biosensors",
+      "Gold and Silver Nanoparticles Synthesis and Applications"
+    ],
+    "sample_papers": [
+      "Mechanically Self-Assembled, Three-Dimensional Graphene\u2013Gold Hybrid Nanostructures for Advanced Nanoplasmonic Sensors",
+      "Heterogeneous, Three-Dimensional Texturing of Graphene"
+    ],
+    "introduction_path": "John A. Rogers \u2192 Paul V. Braun \u2192 SungWoo Nam \u2192 Pilgyu Kang (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5045551635",
+      "https://openalex.org/A5040320137",
+      "https://openalex.org/A5101901781",
+      "https://openalex.org/A5082130732"
+    ]
+  },
+  {
+    "card_id": "CARD_008",
+    "seed_id": "https://openalex.org/A5045551635",
+    "seed_name": "John A. Rogers",
+    "seed_department": "Community 1",
+    "seed_topics": [
+      "Advanced MEMS and NEMS Technologies",
+      "Advanced Materials and Mechanics",
+      "Advanced Sensor and Energy Harvesting Materials",
+      "Nanofabrication and Lithography Techniques"
+    ],
+    "candidate_name": "Stanislav S. Rubakhin",
+    "candidate_topics": [
+      "3D Printing in Biomedical Research",
+      "Advanced Proteomics Techniques and Applications",
+      "Antioxidant Activity and Oxidative Stress",
+      "Fatty Acid Research and Health",
+      "Ion-surface interactions and analysis"
+    ],
+    "sample_papers": [
+      "Lutein and Brain Function",
+      "Classification of Large Cellular Populations and Discovery of Rare Cells Using Single Cell Matrix-Assisted Laser Desorption/Ionization Time-of-Flight Mass Spectrometry"
+    ],
+    "introduction_path": "John A. Rogers \u2192 Yiyue Luo \u2192 Stanislav S. Rubakhin (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5045551635",
+      "https://openalex.org/A5007246518",
+      "https://openalex.org/A5020098405"
+    ]
+  },
+  {
+    "card_id": "CARD_009",
+    "seed_id": "https://openalex.org/A5045551635",
+    "seed_name": "John A. Rogers",
+    "seed_department": "Community 1",
+    "seed_topics": [
+      "Advanced MEMS and NEMS Technologies",
+      "Advanced Materials and Mechanics",
+      "Advanced Sensor and Energy Harvesting Materials",
+      "Nanofabrication and Lithography Techniques"
+    ],
+    "candidate_name": "Aaron Petronico",
+    "candidate_topics": [
+      "3D Printing in Biomedical Research",
       "Advanced Battery Materials and Technologies",
-      "Metamaterials and Metasurfaces Applications",
+      "Advanced Materials and Mechanics",
+      "Advanced battery technologies research",
       "Advancements in Battery Materials"
     ],
     "sample_papers": [
-      "Broadband Acoustic Cloaking within an Arbitrary Hard Cavity"
+      "A manganese catalyst for highly reactive yet chemoselective intramolecular C(sp3)\u2013H amination",
+      "Three-dimensional mesostructures as high-temperature growth templates, electronic cellular scaffolds, and self-propelled microrobots"
     ],
-    "introduction_path": "Paul V. Braun \u2192 UIUC Interdisciplinary Institute / Departmental Liaison \u2192 Leilei Yin (Cold Institutional Path)"
+    "introduction_path": "John A. Rogers \u2192 Yiyue Luo \u2192 Aaron Petronico (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5045551635",
+      "https://openalex.org/A5007246518",
+      "https://openalex.org/A5000815509"
+    ]
   },
   {
-    "card_id": "CARD_060",
-    "seed_id": "https://openalex.org/A5040320137",
-    "seed_name": "Paul V. Braun",
-    "seed_department": "Information Sciences",
+    "card_id": "CARD_010",
+    "seed_id": "https://openalex.org/A5045551635",
+    "seed_name": "John A. Rogers",
+    "seed_department": "Community 1",
     "seed_topics": [
+      "Advanced MEMS and NEMS Technologies",
       "Advanced Materials and Mechanics",
-      "Advanced Battery Technologies Research",
-      "Advanced Battery Materials and Technologies",
-      "Advanced Sensor and Energy Harvesting Materials"
+      "Advanced Sensor and Energy Harvesting Materials",
+      "Nanofabrication and Lithography Techniques"
     ],
-    "candidate_name": "Kimberly A. See",
+    "candidate_name": "Mikhail E. Kandel",
     "candidate_topics": [
-      "Magnesium Alloys: Properties and Applications",
-      "Advanced Battery Technologies Research",
-      "Advanced Battery Materials and Technologies",
-      "Advancements in Battery Materials",
-      "Advanced battery technologies research"
-    ],
-    "sample_papers": [
-      "The Interplay of Al and Mg Speciation in Advanced Mg Battery Electrolyte Solutions",
-      "Thiol-based electrolyte additives for high-performance lithium-sulfur batteries"
-    ],
-    "introduction_path": "Paul V. Braun \u2192 Prof. Andrew A. Gewirth \u2192 Kimberly A. See (Warm 2-Hop Path)"
-  },
-  {
-    "card_id": "CARD_061",
-    "seed_id": "https://openalex.org/A5040320137",
-    "seed_name": "Paul V. Braun",
-    "seed_department": "Information Sciences",
-    "seed_topics": [
-      "Advanced Materials and Mechanics",
-      "Advanced Battery Technologies Research",
-      "Advanced Battery Materials and Technologies",
-      "Advanced Sensor and Energy Harvesting Materials"
-    ],
-    "candidate_name": "Joselle M. McCracken",
-    "candidate_topics": [
-      "Cellular Mechanics and Interactions",
-      "Hydrogels: synthesis, properties, applications",
       "3D Printing in Biomedical Research",
-      "Nanofabrication and Lithography Techniques",
-      "Advanced Materials and Mechanics"
+      "AI in cancer detection",
+      "Advanced Fluorescence Microscopy Techniques",
+      "Advanced Materials and Mechanics",
+      "Cellular Mechanics and Interactions"
     ],
     "sample_papers": [
-      "Assembly of micro/nanomaterials into complex, three-dimensional architectures by compressive buckling",
-      "Programming Mechanical and Physicochemical Properties of 3D Hydrogel Cellular Microcultures via Direct Ink Writing"
+      "Breast cancer diagnosis using spatial light interference microscopy",
+      "Label-Free Imaging of Single Microtubule Dynamics Using Spatial Light Interference Microscopy"
     ],
-    "introduction_path": "Paul V. Braun \u2192 Prof. Molly B. Mevis \u2192 Joselle M. McCracken (Warm 2-Hop Path)"
+    "introduction_path": "John A. Rogers \u2192 Yiyue Luo \u2192 Mikhail E. Kandel (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5045551635",
+      "https://openalex.org/A5007246518",
+      "https://openalex.org/A5004021726"
+    ]
   },
   {
-    "card_id": "CARD_062",
-    "seed_id": "https://openalex.org/A5040320137",
-    "seed_name": "Paul V. Braun",
-    "seed_department": "Information Sciences",
+    "card_id": "CARD_011",
+    "seed_id": "https://openalex.org/A5045551635",
+    "seed_name": "John A. Rogers",
+    "seed_department": "Community 1",
     "seed_topics": [
+      "Advanced MEMS and NEMS Technologies",
       "Advanced Materials and Mechanics",
-      "Advanced Battery Technologies Research",
-      "Advanced Battery Materials and Technologies",
-      "Advanced Sensor and Energy Harvesting Materials"
-    ],
-    "candidate_name": "Paul C. Redfern",
-    "candidate_topics": [
-      "Advancements in Battery Materials",
-      "Advanced Battery Technologies Research",
-      "Advanced Battery Materials and Technologies"
-    ],
-    "sample_papers": [
-      "Role of Manganese Deposition on Graphite in the Capacity Fading of Lithium Ion Batteries"
-    ],
-    "introduction_path": "Paul V. Braun \u2192 UIUC Interdisciplinary Institute / Departmental Liaison \u2192 Paul C. Redfern (Cold Institutional Path)"
-  },
-  {
-    "card_id": "CARD_063",
-    "seed_id": "https://openalex.org/A5040320137",
-    "seed_name": "Paul V. Braun",
-    "seed_department": "Information Sciences",
-    "seed_topics": [
-      "Advanced Materials and Mechanics",
-      "Advanced Battery Technologies Research",
-      "Advanced Battery Materials and Technologies",
-      "Advanced Sensor and Energy Harvesting Materials"
-    ],
-    "candidate_name": "Rui Ning",
-    "candidate_topics": [
       "Advanced Sensor and Energy Harvesting Materials",
-      "Thermal properties of materials",
-      "Thermal Radiation and Cooling Technologies",
-      "Advanced Materials and Mechanics",
-      "Nanomaterials and Printing Technologies"
+      "Nanofabrication and Lithography Techniques"
     ],
-    "sample_papers": [
-      "Soft Elastomers with Ionic Liquid\u2010Filled Cavities as Strain Isolating Substrates for Wearable Electronics",
-      "Experimental and Theoretical Studies of Serpentine Interconnects on Ultrathin Elastomers for Stretchable Electronics"
-    ],
-    "introduction_path": "Paul V. Braun \u2192 Prof. Jeonghyun Kim \u2192 Rui Ning (Warm 2-Hop Path)"
-  },
-  {
-    "card_id": "CARD_064",
-    "seed_id": "https://openalex.org/A5040320137",
-    "seed_name": "Paul V. Braun",
-    "seed_department": "Information Sciences",
-    "seed_topics": [
-      "Advanced Materials and Mechanics",
-      "Advanced Battery Technologies Research",
-      "Advanced Battery Materials and Technologies",
-      "Advanced Sensor and Energy Harvesting Materials"
-    ],
-    "candidate_name": "Lane W. Martin",
+    "candidate_name": "Ali Ashraf",
     "candidate_topics": [
-      "Ferroelectric and Piezoelectric Materials",
-      "Thermography and Photoacoustic Techniques",
-      "Multiferroics and related materials",
-      "Electronic and Structural Properties of Oxides",
-      "Thermal properties of materials"
-    ],
-    "sample_papers": [
-      "Ferroelectrically driven spatial carrier density modulation in graphene",
-      "Thermal conductance of strongly bonded metal-oxide interfaces"
-    ],
-    "introduction_path": "Paul V. Braun \u2192 Prof. David G. Cahill \u2192 Lane W. Martin (Warm 2-Hop Path)"
-  },
-  {
-    "card_id": "CARD_065",
-    "seed_id": "https://openalex.org/A5040320137",
-    "seed_name": "Paul V. Braun",
-    "seed_department": "Information Sciences",
-    "seed_topics": [
+      "2D Materials and Applications",
       "Advanced Materials and Mechanics",
-      "Advanced Battery Technologies Research",
-      "Advanced Battery Materials and Technologies",
-      "Advanced Sensor and Energy Harvesting Materials"
-    ],
-    "candidate_name": "Xin Ning",
-    "candidate_topics": [
-      "Optical Imaging and Spectroscopy Techniques",
       "Advanced Sensor and Energy Harvesting Materials",
-      "Topology Optimization in Engineering",
-      "Innovative Energy Harvesting Technologies",
-      "Thermal properties of materials"
+      "Force Microscopy Techniques and Applications",
+      "Graphene research and applications"
     ],
     "sample_papers": [
-      "Engineered Elastomer Substrates for Guided Assembly of Complex 3D Mesostructures by Spatially Nonuniform Compressive Buckling",
-      "Flexible and Stretchable 3\u03c9 Sensors for Thermal Characterization of Human Skin"
+      "Heterogeneous, Three-Dimensional Texturing of Graphene",
+      "Doping-Induced Tunable Wettability and Adhesion of Graphene"
     ],
-    "introduction_path": "Paul V. Braun \u2192 Prof. John A. Rogers \u2192 Xin Ning (Warm 2-Hop Path)"
+    "introduction_path": "John A. Rogers \u2192 Richard T. Haasch \u2192 Ali Ashraf (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5045551635",
+      "https://openalex.org/A5069497115",
+      "https://openalex.org/A5089390032"
+    ]
   },
   {
-    "card_id": "CARD_066",
-    "seed_id": "https://openalex.org/A5040320137",
-    "seed_name": "Paul V. Braun",
-    "seed_department": "Information Sciences",
+    "card_id": "CARD_012",
+    "seed_id": "https://openalex.org/A5002313901",
+    "seed_name": "Ruopeng An",
+    "seed_department": "Community 2",
     "seed_topics": [
-      "Advanced Materials and Mechanics",
-      "Advanced Battery Technologies Research",
-      "Advanced Battery Materials and Technologies",
-      "Advanced Sensor and Energy Harvesting Materials"
+      "Aging, Health, and Disability",
+      "Balance, Gait, and Falls Prevention",
+      "Dementia and Cognitive Impairment Research",
+      "Gut microbiota and health"
     ],
-    "candidate_name": "Shivangi Rajput",
+    "candidate_name": "Edward McAuley",
     "candidate_topics": [
-      "Advancements in Battery Materials",
-      "Advanced Battery Technologies Research",
-      "Advanced Battery Materials and Technologies"
+      "Advanced Neuroimaging Techniques and Applications",
+      "Aging and Gerontology Research",
+      "Balance, Gait, and Falls Prevention",
+      "Cancer survivorship and care",
+      "Cognitive Functions and Memory"
     ],
     "sample_papers": [
-      "Strain Evolution in Lithium Manganese Oxide Electrodes"
+      "Fitness, but not physical activity, is related to functional integrity of brain networks associated with aging",
+      "Yoga and Cognition"
     ],
-    "introduction_path": "Paul V. Braun \u2192 Prof. Nancy R. Sottos \u2192 Shivangi Rajput (Warm 2-Hop Path)"
+    "introduction_path": "Ruopeng An \u2192 Sean Patrick Mullen \u2192 Edward McAuley (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5002313901",
+      "https://openalex.org/A5075934249",
+      "https://openalex.org/A5018856932"
+    ]
   },
   {
-    "card_id": "CARD_067",
-    "seed_id": "https://openalex.org/A5040320137",
-    "seed_name": "Paul V. Braun",
-    "seed_department": "Information Sciences",
+    "card_id": "CARD_013",
+    "seed_id": "https://openalex.org/A5002313901",
+    "seed_name": "Ruopeng An",
+    "seed_department": "Community 2",
     "seed_topics": [
-      "Advanced Materials and Mechanics",
-      "Advanced Battery Technologies Research",
-      "Advanced Battery Materials and Technologies",
-      "Advanced Sensor and Energy Harvesting Materials"
+      "Aging, Health, and Disability",
+      "Balance, Gait, and Falls Prevention",
+      "Dementia and Cognitive Impairment Research",
+      "Gut microbiota and health"
     ],
-    "candidate_name": "Kyle Christopher Smith",
+    "candidate_name": "Arthur F. Kramer",
     "candidate_topics": [
-      "Advanced Battery Technologies Research",
-      "Advanced Battery Materials and Technologies",
-      "Power Systems and Renewable Energy",
-      "Advancements in Battery Materials",
-      "Nanopore and Nanochannel Transport Studies"
+      "Advanced MRI Techniques and Applications",
+      "Advanced Neuroimaging Techniques and Applications",
+      "Children's Physical and Motor Development",
+      "Cognitive Abilities and Testing",
+      "Cognitive Functions and Memory"
     ],
     "sample_papers": [
-      "Design of Bi-Tortuous, Anisotropic Graphite Anodes for Fast Ion-Transport in Li-Ion Batteries",
-      "A symmetric organic-based nonaqueous redox flow battery and its state of charge diagnostics by FTIR"
+      "Physical activity, brain, and cognition",
+      "Fitness, but not physical activity, is related to functional integrity of brain networks associated with aging"
     ],
-    "introduction_path": "Paul V. Braun \u2192 Prof. Randy H. Ewoldt \u2192 Kyle Christopher Smith (Warm 2-Hop Path)"
+    "introduction_path": "Ruopeng An \u2192 Naiman A. Khan \u2192 Arthur F. Kramer (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5002313901",
+      "https://openalex.org/A5067579128",
+      "https://openalex.org/A5027110827"
+    ]
   },
   {
-    "card_id": "CARD_068",
-    "seed_id": "https://openalex.org/A5040320137",
-    "seed_name": "Paul V. Braun",
-    "seed_department": "Information Sciences",
+    "card_id": "CARD_014",
+    "seed_id": "https://openalex.org/A5002313901",
+    "seed_name": "Ruopeng An",
+    "seed_department": "Community 2",
     "seed_topics": [
-      "Advanced Materials and Mechanics",
-      "Advanced Battery Technologies Research",
-      "Advanced Battery Materials and Technologies",
-      "Advanced Sensor and Energy Harvesting Materials"
+      "Aging, Health, and Disability",
+      "Balance, Gait, and Falls Prevention",
+      "Dementia and Cognitive Impairment Research",
+      "Gut microbiota and health"
     ],
-    "candidate_name": "Zheng Yan",
+    "candidate_name": "Jason T. Fanning",
     "candidate_topics": [
-      "Modular Robots and Swarm Intelligence",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Topology Optimization in Engineering",
-      "Cellular and Composite Structures",
-      "Nanomaterials and Printing Technologies"
+      "Advanced Neuroimaging Techniques and Applications",
+      "Balance, Gait, and Falls Prevention",
+      "Behavioral Health and Interventions",
+      "Cognitive Abilities and Testing",
+      "Dementia and Cognitive Impairment Research"
     ],
     "sample_papers": [
-      "Assembly of micro/nanomaterials into complex, three-dimensional architectures by compressive buckling",
-      "A mechanically driven form of Kirigami as a route to 3D mesostructures in micro/nanomembranes"
+      "Fitness, but not physical activity, is related to functional integrity of brain networks associated with aging",
+      "White matter microstructure mediates the relationship between cardiorespiratory fitness and spatial working memory in older adults"
     ],
-    "introduction_path": "Paul V. Braun \u2192 Prof. Xuelin Guo \u2192 Zheng Yan (Warm 2-Hop Path)"
+    "introduction_path": "Ruopeng An \u2192 Sean Patrick Mullen \u2192 Jason T. Fanning (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5002313901",
+      "https://openalex.org/A5075934249",
+      "https://openalex.org/A5034499643"
+    ]
   },
   {
-    "card_id": "CARD_069",
-    "seed_id": "https://openalex.org/A5040320137",
-    "seed_name": "Paul V. Braun",
-    "seed_department": "Information Sciences",
+    "card_id": "CARD_015",
+    "seed_id": "https://openalex.org/A5002313901",
+    "seed_name": "Ruopeng An",
+    "seed_department": "Community 2",
     "seed_topics": [
-      "Advanced Materials and Mechanics",
-      "Advanced Battery Technologies Research",
-      "Advanced Battery Materials and Technologies",
-      "Advanced Sensor and Energy Harvesting Materials"
+      "Aging, Health, and Disability",
+      "Balance, Gait, and Falls Prevention",
+      "Dementia and Cognitive Impairment Research",
+      "Gut microbiota and health"
     ],
-    "candidate_name": "Kyung\u2010In Jang",
+    "candidate_name": "Anne McClure Walk",
     "candidate_topics": [
-      "Non-Invasive Vital Sign Monitoring",
-      "Neuroscience and Neural Engineering",
-      "Elasticity and Material Modeling",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Wireless Body Area Networks"
+      "Antioxidant Activity and Oxidative Stress",
+      "Dementia and Cognitive Impairment Research",
+      "Fatty Acid Research and Health",
+      "Neural and Behavioral Psychology Studies",
+      "Retinal Diseases and Treatments"
     ],
     "sample_papers": [
-      "Assembly of micro/nanomaterials into complex, three-dimensional architectures by compressive buckling",
-      "Soft, stretchable, fully implantable miniaturized optoelectronic systems for wireless optogenetics"
+      "From neuro-pigments to neural efficiency: The relationship between retinal carotenoids and behavioral and neuroelectric indices of cognitive control in childhood",
+      "Macular pigment optical density is positively associated with academic performance among preadolescent children"
     ],
-    "introduction_path": "Paul V. Braun \u2192 Prof. Ralph G. Nuzzo \u2192 Kyung\u2010In Jang (Warm 2-Hop Path)"
+    "introduction_path": "Ruopeng An \u2192 Naiman A. Khan \u2192 Anne McClure Walk (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5002313901",
+      "https://openalex.org/A5067579128",
+      "https://openalex.org/A5109230816"
+    ]
   },
   {
-    "card_id": "CARD_070",
-    "seed_id": "https://openalex.org/A5040320137",
-    "seed_name": "Paul V. Braun",
-    "seed_department": "Information Sciences",
+    "card_id": "CARD_016",
+    "seed_id": "https://openalex.org/A5002313901",
+    "seed_name": "Ruopeng An",
+    "seed_department": "Community 2",
     "seed_topics": [
+      "Aging, Health, and Disability",
+      "Balance, Gait, and Falls Prevention",
+      "Dementia and Cognitive Impairment Research",
+      "Gut microbiota and health"
+    ],
+    "candidate_name": "WILLIAM C. SULLIVAN",
+    "candidate_topics": [
+      "Educational Environments and Student Outcomes",
+      "Environmental Justice and Health Disparities",
+      "Facilities and Workplace Management",
+      "Place Attachment and Urban Studies",
+      "Urban Arborization and Environmental Studies"
+    ],
+    "sample_papers": [
+      "A dose\u2013response curve describing the relationship between tree cover density and landscape preference",
+      "Impact of views to school landscapes on recovery from stress and mental fatigue"
+    ],
+    "introduction_path": "Ruopeng An \u2192 Dongying Li \u2192 WILLIAM C. SULLIVAN (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5002313901",
+      "https://openalex.org/A5031707610",
+      "https://openalex.org/A5011365072"
+    ]
+  },
+  {
+    "card_id": "CARD_017",
+    "seed_id": "https://openalex.org/A5002313901",
+    "seed_name": "Ruopeng An",
+    "seed_department": "Community 2",
+    "seed_topics": [
+      "Aging, Health, and Disability",
+      "Balance, Gait, and Falls Prevention",
+      "Dementia and Cognitive Impairment Research",
+      "Gut microbiota and health"
+    ],
+    "candidate_name": "Sarah A. Roberts",
+    "candidate_topics": [
+      "Balance, Gait, and Falls Prevention",
+      "Behavioral Health and Interventions",
+      "Digital Mental Health Interventions",
+      "Frailty in Older Adults",
+      "Mobile Health and mHealth Applications"
+    ],
+    "sample_papers": [
+      "Preliminary validation of the short physical performance battery in older adults with multiple sclerosis: secondary data analysis",
+      "Effects of a DVD-delivered exercise intervention on physical function in older adults with multiple sclerosis: A pilot randomized controlled trial"
+    ],
+    "introduction_path": "Ruopeng An \u2192 Sean Patrick Mullen \u2192 Sarah A. Roberts (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5002313901",
+      "https://openalex.org/A5075934249",
+      "https://openalex.org/A5101591646"
+    ]
+  },
+  {
+    "card_id": "CARD_018",
+    "seed_id": "https://openalex.org/A5002313901",
+    "seed_name": "Ruopeng An",
+    "seed_department": "Community 2",
+    "seed_topics": [
+      "Aging, Health, and Disability",
+      "Balance, Gait, and Falls Prevention",
+      "Dementia and Cognitive Impairment Research",
+      "Gut microbiota and health"
+    ],
+    "candidate_name": "Neal J. Cohen",
+    "candidate_topics": [
+      "Advanced MRI Techniques and Applications",
+      "Advanced Neuroimaging Techniques and Applications",
+      "Antioxidant Activity and Oxidative Stress",
+      "Cognitive Abilities and Testing",
+      "Dementia and Cognitive Impairment Research"
+    ],
+    "sample_papers": [
+      "Viscoelasticity of subcortical gray matter structures",
+      "Parahippocampal Cortex Mediates the Relationship between Lutein and Crystallized Intelligence in Healthy, Older Adults"
+    ],
+    "introduction_path": "Ruopeng An \u2192 John W. Erdman \u2192 Neal J. Cohen (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5002313901",
+      "https://openalex.org/A5033908566",
+      "https://openalex.org/A5005434848"
+    ]
+  },
+  {
+    "card_id": "CARD_019",
+    "seed_id": "https://openalex.org/A5002313901",
+    "seed_name": "Ruopeng An",
+    "seed_department": "Community 2",
+    "seed_topics": [
+      "Aging, Health, and Disability",
+      "Balance, Gait, and Falls Prevention",
+      "Dementia and Cognitive Impairment Research",
+      "Gut microbiota and health"
+    ],
+    "candidate_name": "Yang Liu",
+    "candidate_topics": [
+      "Obesity, Physical Activity, Diet",
+      "Physical Activity and Health",
+      "Sports and Physical Education Studies"
+    ],
+    "sample_papers": [
+      "Results From Shanghai\u2019s (China) 2016 Report Card on Physical Activity for Children and Youth"
+    ],
+    "introduction_path": "No co-authorship route found within three hops. Consider direct outreach; no intermediary is verified.",
+    "path_ids": null
+  },
+  {
+    "card_id": "CARD_020",
+    "seed_id": "https://openalex.org/A5002313901",
+    "seed_name": "Ruopeng An",
+    "seed_department": "Community 2",
+    "seed_topics": [
+      "Aging, Health, and Disability",
+      "Balance, Gait, and Falls Prevention",
+      "Dementia and Cognitive Impairment Research",
+      "Gut microbiota and health"
+    ],
+    "candidate_name": "Saravanan Devendran",
+    "candidate_topics": [
+      "Animal Nutrition and Physiology",
+      "Clostridium difficile and Clostridium perfringens research",
+      "Drug Transport and Resistance Mechanisms",
+      "Enzyme Catalysis and Immobilization",
+      "Enzyme Production and Characterization"
+    ],
+    "sample_papers": [
+      "Identification and characterization of a 20\u03b2-HSDH from the anaerobic gut bacterium Butyricicoccus desmolans ATCC 43058",
+      "Identification of a gene encoding a flavoprotein involved in bile acid metabolism by the human gut bacterium Clostridium scindens ATCC 35704"
+    ],
+    "introduction_path": "Ruopeng An \u2192 John W. Erdman \u2192 Saravanan Devendran (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5002313901",
+      "https://openalex.org/A5033908566",
+      "https://openalex.org/A5010560377"
+    ]
+  },
+  {
+    "card_id": "CARD_021",
+    "seed_id": "https://openalex.org/A5002313901",
+    "seed_name": "Ruopeng An",
+    "seed_department": "Community 2",
+    "seed_topics": [
+      "Aging, Health, and Disability",
+      "Balance, Gait, and Falls Prevention",
+      "Dementia and Cognitive Impairment Research",
+      "Gut microbiota and health"
+    ],
+    "candidate_name": "Kelsey M. Hassevoort",
+    "candidate_topics": [
+      "Antioxidant Activity and Oxidative Stress",
+      "Cognitive Abilities and Testing",
+      "Dementia and Cognitive Impairment Research",
+      "Fatty Acid Research and Health",
+      "Memory and Neural Mechanisms"
+    ],
+    "sample_papers": [
+      "Childhood Markers of Health Behavior Relate to Hippocampal Health, Memory, and Academic Performance",
+      "Macular Carotenoids, Aerobic Fitness, and Central Adiposity Are Associated Differentially with Hippocampal-Dependent Relational Memory in Preadolescent Children"
+    ],
+    "introduction_path": "Ruopeng An \u2192 John W. Erdman \u2192 Kelsey M. Hassevoort (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5002313901",
+      "https://openalex.org/A5033908566",
+      "https://openalex.org/A5015869560"
+    ]
+  },
+  {
+    "card_id": "CARD_022",
+    "seed_id": "https://openalex.org/A5002313901",
+    "seed_name": "Ruopeng An",
+    "seed_department": "Community 2",
+    "seed_topics": [
+      "Aging, Health, and Disability",
+      "Balance, Gait, and Falls Prevention",
+      "Dementia and Cognitive Impairment Research",
+      "Gut microbiota and health"
+    ],
+    "candidate_name": "Maria Bohri",
+    "candidate_topics": [
+      "Balance, Gait, and Falls Prevention",
+      "Multiple Sclerosis Research Studies",
+      "Physical Activity and Health"
+    ],
+    "sample_papers": [
+      "Feasibility study design and methods for Project GEMS: Guidelines for Exercise in Multiple Sclerosis",
+      "Results of a feasibility randomised controlled study of the guidelines for exercise in multiple sclerosis project"
+    ],
+    "introduction_path": "Ruopeng An \u2192 Jacob J. Sosnoff \u2192 Robert Wayne Motl \u2192 Maria Bohri (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5002313901",
+      "https://openalex.org/A5031609471",
+      "https://openalex.org/A5033579432",
+      "https://openalex.org/A5001711865"
+    ]
+  },
+  {
+    "card_id": "CARD_023",
+    "seed_id": "https://openalex.org/A5002313901",
+    "seed_name": "Ruopeng An",
+    "seed_department": "Community 2",
+    "seed_topics": [
+      "Aging, Health, and Disability",
+      "Balance, Gait, and Falls Prevention",
+      "Dementia and Cognitive Impairment Research",
+      "Gut microbiota and health"
+    ],
+    "candidate_name": "Neha P. Gothe",
+    "candidate_topics": [
+      "Aging, Health, and Disability",
+      "Cardiovascular and exercise physiology",
+      "Dementia and Cognitive Impairment Research",
+      "Functional Brain Connectivity Studies",
+      "Mindfulness and Compassion Interventions"
+    ],
+    "sample_papers": [
+      "Fitness, but not physical activity, is related to functional integrity of brain networks associated with aging",
+      "Yoga and Cognition"
+    ],
+    "introduction_path": "Ruopeng An \u2192 Naiman A. Khan \u2192 Arthur F. Kramer \u2192 Neha P. Gothe (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5002313901",
+      "https://openalex.org/A5067579128",
+      "https://openalex.org/A5027110827",
+      "https://openalex.org/A5066535654"
+    ]
+  },
+  {
+    "card_id": "CARD_024",
+    "seed_id": "https://openalex.org/A5002313901",
+    "seed_name": "Ruopeng An",
+    "seed_department": "Community 2",
+    "seed_topics": [
+      "Aging, Health, and Disability",
+      "Balance, Gait, and Falls Prevention",
+      "Dementia and Cognitive Impairment Research",
+      "Gut microbiota and health"
+    ],
+    "candidate_name": "Nicholas A. Burd",
+    "candidate_topics": [
+      "Cardiovascular and exercise physiology",
+      "Dementia and Cognitive Impairment Research",
+      "Exercise and Physiological Responses",
+      "Fatty Acid Research and Health",
+      "Mesenchymal stem cell research"
+    ],
+    "sample_papers": [
+      "The Skeletal Muscle Anabolic Response to Plant- versus Animal-Based Protein Consumption",
+      "Anabolic sensitivity of postprandial muscle protein synthesis to the ingestion of a protein-dense food is reduced in overweight and obese young adults"
+    ],
+    "introduction_path": "Ruopeng An \u2192 John W. Erdman \u2192 Nicholas A. Burd (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5002313901",
+      "https://openalex.org/A5033908566",
+      "https://openalex.org/A5005461791"
+    ]
+  },
+  {
+    "card_id": "CARD_025",
+    "seed_id": "https://openalex.org/A5002313901",
+    "seed_name": "Ruopeng An",
+    "seed_department": "Community 2",
+    "seed_topics": [
+      "Aging, Health, and Disability",
+      "Balance, Gait, and Falls Prevention",
+      "Dementia and Cognitive Impairment Research",
+      "Gut microbiota and health"
+    ],
+    "candidate_name": "Karin Vermillion",
+    "candidate_topics": [
+      "Colorectal Cancer Screening and Detection",
+      "Gut microbiota and health",
+      "Nutritional Studies and Diet"
+    ],
+    "sample_papers": [
+      "Race-dependent association of sulfidogenic bacteria with colorectal cancer"
+    ],
+    "introduction_path": "Ruopeng An \u2192 Kelly Scott Swanson \u2192 Tzu-Wen Cross \u2192 Karin Vermillion (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5002313901",
+      "https://openalex.org/A5053823114",
+      "https://openalex.org/A5011316965",
+      "https://openalex.org/A5000152935"
+    ]
+  },
+  {
+    "card_id": "CARD_026",
+    "seed_id": "https://openalex.org/A5014465828",
+    "seed_name": "Huimin Zhao",
+    "seed_department": "Community 3",
+    "seed_topics": [
+      "Asymmetric Synthesis and Catalysis",
+      "Bacterial Genetics and Biotechnology",
+      "CRISPR and Genetic Engineering",
+      "Enzyme Catalysis and Immobilization"
+    ],
+    "candidate_name": "Michael C. Saul",
+    "candidate_topics": [
+      "Animal Behavior and Reproduction",
+      "Autism Spectrum Disorder Research",
+      "Genomics and Chromatin Dynamics",
+      "Insect and Arachnid Ecology and Behavior",
+      "Neurobiology and Insect Physiology Research"
+    ],
+    "sample_papers": [
+      "Deep evolutionary conservation of autism-related genes",
+      "Behavioral, transcriptomic and epigenetic responses to social challenge in honey bees"
+    ],
+    "introduction_path": "Huimin Zhao \u2192 Amy C. Cash-Ahmed \u2192 Michael C. Saul (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5014465828",
+      "https://openalex.org/A5051637782",
+      "https://openalex.org/A5058835953"
+    ]
+  },
+  {
+    "card_id": "CARD_027",
+    "seed_id": "https://openalex.org/A5014465828",
+    "seed_name": "Huimin Zhao",
+    "seed_department": "Community 3",
+    "seed_topics": [
+      "Asymmetric Synthesis and Catalysis",
+      "Bacterial Genetics and Biotechnology",
+      "CRISPR and Genetic Engineering",
+      "Enzyme Catalysis and Immobilization"
+    ],
+    "candidate_name": "Sihai Dave Zhao",
+    "candidate_topics": [
+      "Animal Behavior and Reproduction",
+      "Autism Spectrum Disorder Research",
+      "Gene Regulatory Network Analysis",
+      "Genomics and Chromatin Dynamics",
+      "Inflammation biomarkers and pathways"
+    ],
+    "sample_papers": [
+      "Deep evolutionary conservation of autism-related genes",
+      "Combining Biomarkers with EMR Data to Identify Patients in Different Phases of Sepsis"
+    ],
+    "introduction_path": "Huimin Zhao \u2192 Amy C. Cash-Ahmed \u2192 Sihai Dave Zhao (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5014465828",
+      "https://openalex.org/A5051637782",
+      "https://openalex.org/A5071172253"
+    ]
+  },
+  {
+    "card_id": "CARD_028",
+    "seed_id": "https://openalex.org/A5014465828",
+    "seed_name": "Huimin Zhao",
+    "seed_department": "Community 3",
+    "seed_topics": [
+      "Asymmetric Synthesis and Catalysis",
+      "Bacterial Genetics and Biotechnology",
+      "CRISPR and Genetic Engineering",
+      "Enzyme Catalysis and Immobilization"
+    ],
+    "candidate_name": "Shuyan Zhang",
+    "candidate_topics": [
+      "Biochemical and biochemical processes",
+      "Fungal and yeast genetics research",
+      "Lipid metabolism and biosynthesis",
+      "Microbial Metabolic Engineering and Bioproduction"
+    ],
+    "sample_papers": [
+      "Engineering Rhodosporidium toruloides for increased lipid production",
+      "Engineering Yarrowia lipolytica for production of medium-chain fatty acids"
+    ],
+    "introduction_path": "Huimin Zhao \u2192 Christopher V. Rao \u2192 Shuyan Zhang (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5014465828",
+      "https://openalex.org/A5005829958",
+      "https://openalex.org/A5101987035"
+    ]
+  },
+  {
+    "card_id": "CARD_029",
+    "seed_id": "https://openalex.org/A5014465828",
+    "seed_name": "Huimin Zhao",
+    "seed_department": "Community 3",
+    "seed_topics": [
+      "Asymmetric Synthesis and Catalysis",
+      "Bacterial Genetics and Biotechnology",
+      "CRISPR and Genetic Engineering",
+      "Enzyme Catalysis and Immobilization"
+    ],
+    "candidate_name": "Suryang Kwak",
+    "candidate_topics": [
+      "Biofuel production and bioconversion",
+      "Catalysis for Biomass Conversion",
+      "Enzyme Catalysis and Immobilization",
+      "Fungal and yeast genetics research",
+      "Lipid metabolism and biosynthesis"
+    ],
+    "sample_papers": [
+      "Combining C6 and C5 sugar metabolism for enhancing microbial bioconversion",
+      "Metabolic Engineering of Probiotic Saccharomyces boulardii"
+    ],
+    "introduction_path": "Huimin Zhao \u2192 Christopher V. Rao \u2192 Suryang Kwak (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5014465828",
+      "https://openalex.org/A5005829958",
+      "https://openalex.org/A5060672032"
+    ]
+  },
+  {
+    "card_id": "CARD_030",
+    "seed_id": "https://openalex.org/A5014465828",
+    "seed_name": "Huimin Zhao",
+    "seed_department": "Community 3",
+    "seed_topics": [
+      "Asymmetric Synthesis and Catalysis",
+      "Bacterial Genetics and Biotechnology",
+      "CRISPR and Genetic Engineering",
+      "Enzyme Catalysis and Immobilization"
+    ],
+    "candidate_name": "Eun Joong Oh",
+    "candidate_topics": [
+      "Bacterial Genetics and Biotechnology",
+      "Biochemical and biochemical processes",
+      "Biofuel production and bioconversion",
+      "Catalysis for Biomass Conversion",
+      "Enzyme Catalysis and Immobilization"
+    ],
+    "sample_papers": [
+      "Recent advances in biological production of sugar alcohols",
+      "Simultaneous Utilization of Cellobiose, Xylose, and Acetic Acid from Lignocellulosic Biomass for Biofuel Production by an Engineered Yeast Platform"
+    ],
+    "introduction_path": "Huimin Zhao \u2192 Christopher V. Rao \u2192 Guo-Chang Zhang \u2192 Eun Joong Oh (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5014465828",
+      "https://openalex.org/A5005829958",
+      "https://openalex.org/A5022751421",
+      "https://openalex.org/A5101879859"
+    ]
+  },
+  {
+    "card_id": "CARD_031",
+    "seed_id": "https://openalex.org/A5014465828",
+    "seed_name": "Huimin Zhao",
+    "seed_department": "Community 3",
+    "seed_topics": [
+      "Asymmetric Synthesis and Catalysis",
+      "Bacterial Genetics and Biotechnology",
+      "CRISPR and Genetic Engineering",
+      "Enzyme Catalysis and Immobilization"
+    ],
+    "candidate_name": "Guo-Chang Zhang",
+    "candidate_topics": [
+      "Bacterial Genetics and Biotechnology",
+      "Biochemical and biochemical processes",
+      "Biofuel production and bioconversion",
+      "Catalysis for Biomass Conversion",
+      "Enzyme Catalysis and Immobilization"
+    ],
+    "sample_papers": [
+      "Combining C6 and C5 sugar metabolism for enhancing microbial bioconversion",
+      "Lactic acid production from xylose by engineered Saccharomyces cerevisiae without PDC or ADH deletion"
+    ],
+    "introduction_path": "Huimin Zhao \u2192 Christopher V. Rao \u2192 Guo-Chang Zhang (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5014465828",
+      "https://openalex.org/A5005829958",
+      "https://openalex.org/A5022751421"
+    ]
+  },
+  {
+    "card_id": "CARD_032",
+    "seed_id": "https://openalex.org/A5014465828",
+    "seed_name": "Huimin Zhao",
+    "seed_department": "Community 3",
+    "seed_topics": [
+      "Asymmetric Synthesis and Catalysis",
+      "Bacterial Genetics and Biotechnology",
+      "CRISPR and Genetic Engineering",
+      "Enzyme Catalysis and Immobilization"
+    ],
+    "candidate_name": "Heejin Kim",
+    "candidate_topics": [
+      "Bacterial Genetics and Biotechnology",
+      "Biofuel production and bioconversion",
+      "Fungal and yeast genetics research",
+      "Microbial Metabolic Engineering and Bioproduction",
+      "Plant biochemistry and biosynthesis"
+    ],
+    "sample_papers": [
+      "Metabolic Engineering of Probiotic Saccharomyces boulardii",
+      "Recycling Carbon Dioxide during Xylose Fermentation by Engineered Saccharomyces cerevisiae"
+    ],
+    "introduction_path": "Huimin Zhao \u2192 Christopher V. Rao \u2192 Heejin Kim (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5014465828",
+      "https://openalex.org/A5005829958",
+      "https://openalex.org/A5100734359"
+    ]
+  },
+  {
+    "card_id": "CARD_033",
+    "seed_id": "https://openalex.org/A5014465828",
+    "seed_name": "Huimin Zhao",
+    "seed_department": "Community 3",
+    "seed_topics": [
+      "Asymmetric Synthesis and Catalysis",
+      "Bacterial Genetics and Biotechnology",
+      "CRISPR and Genetic Engineering",
+      "Enzyme Catalysis and Immobilization"
+    ],
+    "candidate_name": "Haiqing Xu",
+    "candidate_topics": [
+      "Bacterial Genetics and Biotechnology",
+      "Biofuel production and bioconversion",
+      "Fungal and yeast genetics research",
+      "Microbial Metabolic Engineering and Bioproduction",
+      "Plant biochemistry and biosynthesis"
+    ],
+    "sample_papers": [
+      "PHO13 deletion-induced transcriptional activation prevents sedoheptulose accumulation during xylose metabolism in engineered Saccharomyces cerevisiae",
+      "Enhanced isoprenoid production f rom xylose by engineered Saccharomyces cerevisiae"
+    ],
+    "introduction_path": "Huimin Zhao \u2192 Christopher V. Rao \u2192 Guo-Chang Zhang \u2192 Haiqing Xu (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5014465828",
+      "https://openalex.org/A5005829958",
+      "https://openalex.org/A5022751421",
+      "https://openalex.org/A5057259259"
+    ]
+  },
+  {
+    "card_id": "CARD_034",
+    "seed_id": "https://openalex.org/A5014465828",
+    "seed_name": "Huimin Zhao",
+    "seed_department": "Community 3",
+    "seed_topics": [
+      "Asymmetric Synthesis and Catalysis",
+      "Bacterial Genetics and Biotechnology",
+      "CRISPR and Genetic Engineering",
+      "Enzyme Catalysis and Immobilization"
+    ],
+    "candidate_name": "Ching\u2010Sung Tsai",
+    "candidate_topics": [
+      "Bacterial Genetics and Biotechnology",
+      "CRISPR and Genetic Engineering",
+      "Fungal and yeast genetics research",
+      "Microbial Metabolic Engineering and Bioproduction"
+    ],
+    "sample_papers": [
+      "Rapid and marker\u2010free refactoring of xylose\u2010fermenting yeast strains with Cas9/CRISPR",
+      "Glucose repression can be alleviated by reducing glucose phosphorylation rate in Saccharomyces cerevisiae"
+    ],
+    "introduction_path": "Huimin Zhao \u2192 Christopher V. Rao \u2192 Guo-Chang Zhang \u2192 Ching\u2010Sung Tsai (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5014465828",
+      "https://openalex.org/A5005829958",
+      "https://openalex.org/A5022751421",
+      "https://openalex.org/A5111402837"
+    ]
+  },
+  {
+    "card_id": "CARD_035",
+    "seed_id": "https://openalex.org/A5014465828",
+    "seed_name": "Huimin Zhao",
+    "seed_department": "Community 3",
+    "seed_topics": [
+      "Asymmetric Synthesis and Catalysis",
+      "Bacterial Genetics and Biotechnology",
+      "CRISPR and Genetic Engineering",
+      "Enzyme Catalysis and Immobilization"
+    ],
+    "candidate_name": "Yong\u2010Su Jin",
+    "candidate_topics": [
+      "Bacterial Genetics and Biotechnology",
+      "Biochemical and biochemical processes",
+      "Biofuel production and bioconversion",
+      "CRISPR and Genetic Engineering",
+      "Fungal and yeast genetics research"
+    ],
+    "sample_papers": [
+      "Maternal fucosyltransferase 2 status affects the gut bifidobacterial communities of breastfed infants",
+      "Markerless chromosomal gene deletion in Clostridium beijerinckii using CRISPR/Cas9 system"
+    ],
+    "introduction_path": "Huimin Zhao \u2192 Christopher V. Rao \u2192 Yong\u2010Su Jin (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5014465828",
+      "https://openalex.org/A5005829958",
+      "https://openalex.org/A5051968629"
+    ]
+  },
+  {
+    "card_id": "CARD_036",
+    "seed_id": "https://openalex.org/A5014465828",
+    "seed_name": "Huimin Zhao",
+    "seed_department": "Community 3",
+    "seed_topics": [
+      "Asymmetric Synthesis and Catalysis",
+      "Bacterial Genetics and Biotechnology",
+      "CRISPR and Genetic Engineering",
+      "Enzyme Catalysis and Immobilization"
+    ],
+    "candidate_name": "Laura Gail Sloofman",
+    "candidate_topics": [
+      "Animal Behavior and Reproduction",
+      "Epigenetics and DNA Methylation",
+      "Genomics and Chromatin Dynamics",
+      "Insect and Arachnid Ecology and Behavior",
+      "Neurobiology and Insect Physiology Research"
+    ],
+    "sample_papers": [
+      "Behavioral, transcriptomic and epigenetic responses to social challenge in honey bees",
+      "SMARCAD1 Contributes to the Regulation of Naive Pluripotency by Interacting with Histone Citrullination"
+    ],
+    "introduction_path": "Huimin Zhao \u2192 Amy C. Cash-Ahmed \u2192 Laura Gail Sloofman (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5014465828",
+      "https://openalex.org/A5051637782",
+      "https://openalex.org/A5049830131"
+    ]
+  },
+  {
+    "card_id": "CARD_037",
+    "seed_id": "https://openalex.org/A5014465828",
+    "seed_name": "Huimin Zhao",
+    "seed_department": "Community 3",
+    "seed_topics": [
+      "Asymmetric Synthesis and Catalysis",
+      "Bacterial Genetics and Biotechnology",
+      "CRISPR and Genetic Engineering",
+      "Enzyme Catalysis and Immobilization"
+    ],
+    "candidate_name": "Seung-Oh Seo",
+    "candidate_topics": [
+      "Bacterial Genetics and Biotechnology",
+      "Biochemical and biochemical processes",
+      "Biofuel production and bioconversion",
+      "CRISPR and Genetic Engineering",
+      "Fungal and yeast genetics research"
+    ],
+    "sample_papers": [
+      "Markerless chromosomal gene deletion in Clostridium beijerinckii using CRISPR/Cas9 system",
+      "Integrated, systems metabolic picture of acetone-butanol-ethanol fermentation by Clostridium acetobutylicum"
+    ],
+    "introduction_path": "Huimin Zhao \u2192 Christopher V. Rao \u2192 Peng\u2010Fei Xia \u2192 Seung-Oh Seo (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5014465828",
+      "https://openalex.org/A5005829958",
+      "https://openalex.org/A5006621494",
+      "https://openalex.org/A5103426477"
+    ]
+  },
+  {
+    "card_id": "CARD_038",
+    "seed_id": "https://openalex.org/A5014465828",
+    "seed_name": "Huimin Zhao",
+    "seed_department": "Community 3",
+    "seed_topics": [
+      "Asymmetric Synthesis and Catalysis",
+      "Bacterial Genetics and Biotechnology",
+      "CRISPR and Genetic Engineering",
+      "Enzyme Catalysis and Immobilization"
+    ],
+    "candidate_name": "Christopher H. Seward",
+    "candidate_topics": [
+      "Animal Behavior and Reproduction",
+      "Antibiotic Resistance in Bacteria",
+      "Antimicrobial Resistance in Staphylococcus",
+      "Escherichia coli research studies",
+      "Genomics and Chromatin Dynamics"
+    ],
+    "sample_papers": [
+      "Genomic insights into the ESBL and MCR-1-producing ST648 Escherichia coli with multi-drug resistance",
+      "Behavioral, transcriptomic and epigenetic responses to social challenge in honey bees"
+    ],
+    "introduction_path": "Huimin Zhao \u2192 Amy C. Cash-Ahmed \u2192 Christopher H. Seward (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5014465828",
+      "https://openalex.org/A5051637782",
+      "https://openalex.org/A5074121951"
+    ]
+  },
+  {
+    "card_id": "CARD_039",
+    "seed_id": "https://openalex.org/A5014465828",
+    "seed_name": "Huimin Zhao",
+    "seed_department": "Community 3",
+    "seed_topics": [
+      "Asymmetric Synthesis and Catalysis",
+      "Bacterial Genetics and Biotechnology",
+      "CRISPR and Genetic Engineering",
+      "Enzyme Catalysis and Immobilization"
+    ],
+    "candidate_name": "Anastashia Lesmana",
+    "candidate_topics": [
+      "Bacterial Genetics and Biotechnology",
+      "CRISPR and Genetic Engineering",
+      "Fungal and yeast genetics research",
+      "Microbial Metabolic Engineering and Bioproduction"
+    ],
+    "sample_papers": [
+      "Rapid and marker\u2010free refactoring of xylose\u2010fermenting yeast strains with Cas9/CRISPR",
+      "Glucose repression can be alleviated by reducing glucose phosphorylation rate in Saccharomyces cerevisiae"
+    ],
+    "introduction_path": "Huimin Zhao \u2192 Christopher V. Rao \u2192 Guo-Chang Zhang \u2192 Anastashia Lesmana (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5014465828",
+      "https://openalex.org/A5005829958",
+      "https://openalex.org/A5022751421",
+      "https://openalex.org/A5067527697"
+    ]
+  },
+  {
+    "card_id": "CARD_040",
+    "seed_id": "https://openalex.org/A5028002575",
+    "seed_name": "Weichang Hu",
+    "seed_department": "Community 4",
+    "seed_topics": [
+      "Chromosomal and Genetic Variations",
+      "Genetic Mapping and Diversity in Plants and Animals",
+      "Genomics and Phylogenetic Studies",
+      "Plant Molecular Biology Research"
+    ],
+    "candidate_name": "Nigel D. Goldenfeld",
+    "candidate_topics": [
+      "Advanced Thermodynamics and Statistical Mechanics",
+      "Evolution and Genetic Dynamics",
+      "Fluid Dynamics and Turbulent Flows",
+      "Insect and Arachnid Ecology and Behavior",
+      "Insect and Pesticide Research"
+    ],
+    "sample_papers": [
+      "Caste-Specific Differences in Hindgut Microbial Communities of Honey Bees (Apis mellifera)",
+      "Noise-Induced Mechanism for Biological Homochirality of Early Life Self-Replicators"
+    ],
+    "introduction_path": "Weichang Hu \u2192 Alvaro Gonzalo Hernandez \u2192 Nigel D. Goldenfeld (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5028002575",
+      "https://openalex.org/A5001434945",
+      "https://openalex.org/A5082881483"
+    ]
+  },
+  {
+    "card_id": "CARD_041",
+    "seed_id": "https://openalex.org/A5028002575",
+    "seed_name": "Weichang Hu",
+    "seed_department": "Community 4",
+    "seed_topics": [
+      "Chromosomal and Genetic Variations",
+      "Genetic Mapping and Diversity in Plants and Animals",
+      "Genomics and Phylogenetic Studies",
+      "Plant Molecular Biology Research"
+    ],
+    "candidate_name": "Yaxin Li",
+    "candidate_topics": [
+      "Plant Molecular Biology Research",
+      "Plant nutrient uptake and metabolism",
+      "Sugarcane Cultivation and Processing"
+    ],
+    "sample_papers": [
+      "Genome-Wide Analysis of Nitrate Transporter (NRT/NPF) Family in Sugarcane Saccharum spontaneum L."
+    ],
+    "introduction_path": "Weichang Hu \u2192 Ray Ming \u2192 Yaxin Li (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5028002575",
+      "https://openalex.org/A5028400477",
+      "https://openalex.org/A5100378838"
+    ]
+  },
+  {
+    "card_id": "CARD_042",
+    "seed_id": "https://openalex.org/A5028002575",
+    "seed_name": "Weichang Hu",
+    "seed_department": "Community 4",
+    "seed_topics": [
+      "Chromosomal and Genetic Variations",
+      "Genetic Mapping and Diversity in Plants and Animals",
+      "Genomics and Phylogenetic Studies",
+      "Plant Molecular Biology Research"
+    ],
+    "candidate_name": "Erik J. Sacks",
+    "candidate_topics": [
+      "Agricultural Productivity and Crop Improvement",
+      "Bioenergy crop production and management",
+      "Chromosomal and Genetic Variations",
+      "Genetic Mapping and Diversity in Plants and Animals",
+      "Genetic and phenotypic traits in livestock"
+    ],
+    "sample_papers": [
+      "Genetic structure ofMiscanthus sinensisandMiscanthus sacchariflorusin Japan indicates a gradient of bidirectional but asymmetric introgression",
+      "Genetic mapping of biomass yield in three interconnected Miscanthus populations"
+    ],
+    "introduction_path": "Weichang Hu \u2192 Matthew E. Hudson \u2192 Alexander Edward Lipka \u2192 Erik J. Sacks (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5028002575",
+      "https://openalex.org/A5024496701",
+      "https://openalex.org/A5071000917",
+      "https://openalex.org/A5084131482"
+    ]
+  },
+  {
+    "card_id": "CARD_043",
+    "seed_id": "https://openalex.org/A5028002575",
+    "seed_name": "Weichang Hu",
+    "seed_department": "Community 4",
+    "seed_topics": [
+      "Chromosomal and Genetic Variations",
+      "Genetic Mapping and Diversity in Plants and Animals",
+      "Genomics and Phylogenetic Studies",
+      "Plant Molecular Biology Research"
+    ],
+    "candidate_name": "Hugh M. Robertson",
+    "candidate_topics": [
+      "Chromosomal and Genetic Variations",
+      "Evolution and Genetic Dynamics",
+      "Genomics and Phylogenetic Studies",
+      "Hemiptera Insect Studies",
+      "Hymenoptera taxonomy and phylogeny"
+    ],
+    "sample_papers": [
+      "Genomic signatures of evolutionary transitions from solitary to group living",
+      "The genomes of two key bumblebee species with primitive eusocial organization"
+    ],
+    "introduction_path": "Weichang Hu \u2192 Matthew E. Hudson \u2192 Hugh M. Robertson (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5028002575",
+      "https://openalex.org/A5024496701",
+      "https://openalex.org/A5049466852"
+    ]
+  },
+  {
+    "card_id": "CARD_044",
+    "seed_id": "https://openalex.org/A5028002575",
+    "seed_name": "Weichang Hu",
+    "seed_department": "Community 4",
+    "seed_topics": [
+      "Chromosomal and Genetic Variations",
+      "Genetic Mapping and Diversity in Plants and Animals",
+      "Genomics and Phylogenetic Studies",
+      "Plant Molecular Biology Research"
+    ],
+    "candidate_name": "Kankshita Swaminathan",
+    "candidate_topics": [
+      "Crop Yield and Soil Fertility",
+      "Genetic Mapping and Diversity in Plants and Animals",
+      "Light effects on plants",
+      "Plant Gene Expression Analysis",
+      "Plant Molecular Biology Research"
+    ],
+    "sample_papers": [
+      "Evolutionary divergence of phytochrome protein function inZea maysPIF3 signaling",
+      "Identification and characterization of a novel stay\u2010green QTL that increases yield in maize"
+    ],
+    "introduction_path": "Weichang Hu \u2192 Matthew E. Hudson \u2192 Kankshita Swaminathan (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5028002575",
+      "https://openalex.org/A5024496701",
+      "https://openalex.org/A5064584191"
+    ]
+  },
+  {
+    "card_id": "CARD_045",
+    "seed_id": "https://openalex.org/A5028002575",
+    "seed_name": "Weichang Hu",
+    "seed_department": "Community 4",
+    "seed_topics": [
+      "Chromosomal and Genetic Variations",
+      "Genetic Mapping and Diversity in Plants and Animals",
+      "Genomics and Phylogenetic Studies",
+      "Plant Molecular Biology Research"
+    ],
+    "candidate_name": "May R. Berenbaum",
+    "candidate_topics": [
+      "Bee Products Chemical Analysis",
+      "Insect Resistance and Genetics",
+      "Insect and Arachnid Ecology and Behavior",
+      "Insect and Pesticide Research",
+      "Insect-Plant Interactions and Control"
+    ],
+    "sample_papers": [
+      "A dietary phytochemical alters caste-associated gene expression in honey bees",
+      "Task\u2010related differential expression of four cytochrome P450 genes in honeybee appendages"
+    ],
+    "introduction_path": "Weichang Hu \u2192 Mary A. Schuler \u2192 May R. Berenbaum (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5028002575",
+      "https://openalex.org/A5103177441",
+      "https://openalex.org/A5005001724"
+    ]
+  },
+  {
+    "card_id": "CARD_046",
+    "seed_id": "https://openalex.org/A5028002575",
+    "seed_name": "Weichang Hu",
+    "seed_department": "Community 4",
+    "seed_topics": [
+      "Chromosomal and Genetic Variations",
+      "Genetic Mapping and Diversity in Plants and Animals",
+      "Genomics and Phylogenetic Studies",
+      "Plant Molecular Biology Research"
+    ],
+    "candidate_name": "Lindsay V. Clark",
+    "candidate_topics": [
+      "Agricultural Productivity and Crop Improvement",
+      "Bioenergy crop production and management",
+      "Chromosomal and Genetic Variations",
+      "Genetic Mapping and Diversity in Plants and Animals",
+      "Genetic and phenotypic traits in livestock"
+    ],
+    "sample_papers": [
+      "Genetic structure ofMiscanthus sinensisandMiscanthus sacchariflorusin Japan indicates a gradient of bidirectional but asymmetric introgression",
+      "Genetic mapping of biomass yield in three interconnected Miscanthus populations"
+    ],
+    "introduction_path": "Weichang Hu \u2192 Matthew E. Hudson \u2192 Alexander Edward Lipka \u2192 Lindsay V. Clark (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5028002575",
+      "https://openalex.org/A5024496701",
+      "https://openalex.org/A5071000917",
+      "https://openalex.org/A5028089864"
+    ]
+  },
+  {
+    "card_id": "CARD_047",
+    "seed_id": "https://openalex.org/A5028002575",
+    "seed_name": "Weichang Hu",
+    "seed_department": "Community 4",
+    "seed_topics": [
+      "Chromosomal and Genetic Variations",
+      "Genetic Mapping and Diversity in Plants and Animals",
+      "Genomics and Phylogenetic Studies",
+      "Plant Molecular Biology Research"
+    ],
+    "candidate_name": "Gopal Battu",
+    "candidate_topics": [
+      "Genetic Mapping and Diversity in Plants and Animals",
+      "Genomics and Phylogenetic Studies",
+      "Soybean genetics and cultivation"
+    ],
+    "sample_papers": [
+      "A comparison of genotyping-by-sequencing analysis methods on low-coverage crop datasets shows advantages of a new workflow, GB-eaSy"
+    ],
+    "introduction_path": "Weichang Hu \u2192 Matthew E. Hudson \u2192 Gopal Battu (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5028002575",
+      "https://openalex.org/A5024496701",
+      "https://openalex.org/A5083675871"
+    ]
+  },
+  {
+    "card_id": "CARD_048",
+    "seed_id": "https://openalex.org/A5028002575",
+    "seed_name": "Weichang Hu",
+    "seed_department": "Community 4",
+    "seed_topics": [
+      "Chromosomal and Genetic Variations",
+      "Genetic Mapping and Diversity in Plants and Animals",
+      "Genomics and Phylogenetic Studies",
+      "Plant Molecular Biology Research"
+    ],
+    "candidate_name": "James B. Whitfield",
+    "candidate_topics": [
+      "Chromosomal and Genetic Variations",
+      "Genomics and Phylogenetic Studies",
+      "Hymenoptera taxonomy and phylogeny"
+    ],
+    "sample_papers": [
+      "Whole Genome Sequence of the Parasitoid Wasp Microplitis demolitor That Harbors an Endogenous Virus Mutualist"
+    ],
+    "introduction_path": "Weichang Hu \u2192 Matthew E. Hudson \u2192 Hugh M. Robertson \u2192 James B. Whitfield (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5028002575",
+      "https://openalex.org/A5024496701",
+      "https://openalex.org/A5049466852",
+      "https://openalex.org/A5016929091"
+    ]
+  },
+  {
+    "card_id": "CARD_049",
+    "seed_id": "https://openalex.org/A5028002575",
+    "seed_name": "Weichang Hu",
+    "seed_department": "Community 4",
+    "seed_topics": [
+      "Chromosomal and Genetic Variations",
+      "Genetic Mapping and Diversity in Plants and Animals",
+      "Genomics and Phylogenetic Studies",
+      "Plant Molecular Biology Research"
+    ],
+    "candidate_name": "Faqiang Wu",
+    "candidate_topics": [
+      "Chromosomal and Genetic Variations",
+      "Genetic Mapping and Diversity in Plants and Animals",
+      "Genetic and Environmental Crop Studies",
+      "Plant Molecular Biology Research",
+      "Soybean genetics and cultivation"
+    ],
+    "sample_papers": [
+      "Soybean domestication: the origin, genetic architecture and molecular bases",
+      "Evolutionary trajectories of duplicated FT homologues and their roles in soybean domestication"
+    ],
+    "introduction_path": "No co-authorship route found within three hops. Consider direct outreach; no intermediary is verified.",
+    "path_ids": null
+  },
+  {
+    "card_id": "CARD_050",
+    "seed_id": "https://openalex.org/A5028002575",
+    "seed_name": "Weichang Hu",
+    "seed_department": "Community 4",
+    "seed_topics": [
+      "Chromosomal and Genetic Variations",
+      "Genetic Mapping and Diversity in Plants and Animals",
+      "Genomics and Phylogenetic Studies",
+      "Plant Molecular Biology Research"
+    ],
+    "candidate_name": "Eric J. Sedivy",
+    "candidate_topics": [
+      "Chromosomal and Genetic Variations",
+      "Genetic Mapping and Diversity in Plants and Animals",
+      "Genetic and Environmental Crop Studies",
+      "Plant Molecular Biology Research",
+      "Soybean genetics and cultivation"
+    ],
+    "sample_papers": [
+      "Soybean domestication: the origin, genetic architecture and molecular bases",
+      "Evolutionary trajectories of duplicated FT homologues and their roles in soybean domestication"
+    ],
+    "introduction_path": "No co-authorship route found within three hops. Consider direct outreach; no intermediary is verified.",
+    "path_ids": null
+  },
+  {
+    "card_id": "CARD_051",
+    "seed_id": "https://openalex.org/A5028002575",
+    "seed_name": "Weichang Hu",
+    "seed_department": "Community 4",
+    "seed_topics": [
+      "Chromosomal and Genetic Variations",
+      "Genetic Mapping and Diversity in Plants and Animals",
+      "Genomics and Phylogenetic Studies",
+      "Plant Molecular Biology Research"
+    ],
+    "candidate_name": "Daniel P. Wickland",
+    "candidate_topics": [
+      "Genetic Mapping and Diversity in Plants and Animals",
+      "Genomics and Phylogenetic Studies",
+      "Plant pathogens and resistance mechanisms",
+      "Soybean genetics and cultivation"
+    ],
+    "sample_papers": [
+      "A comparison of genotyping-by-sequencing analysis methods on low-coverage crop datasets shows advantages of a new workflow, GB-eaSy",
+      "Genome-wide association mapping of resistance to a Brazilian isolate of Sclerotinia sclerotiorum in soybean genotypes mostly from Brazil"
+    ],
+    "introduction_path": "Weichang Hu \u2192 Matthew E. Hudson \u2192 Daniel P. Wickland (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5028002575",
+      "https://openalex.org/A5024496701",
+      "https://openalex.org/A5078581248"
+    ]
+  },
+  {
+    "card_id": "CARD_052",
+    "seed_id": "https://openalex.org/A5028002575",
+    "seed_name": "Weichang Hu",
+    "seed_department": "Community 4",
+    "seed_topics": [
+      "Chromosomal and Genetic Variations",
+      "Genetic Mapping and Diversity in Plants and Animals",
+      "Genomics and Phylogenetic Studies",
+      "Plant Molecular Biology Research"
+    ],
+    "candidate_name": "Jiang Wang",
+    "candidate_topics": [
+      "Plant Molecular Biology Research",
+      "Plant nutrient uptake and metabolism",
+      "Sugarcane Cultivation and Processing"
+    ],
+    "sample_papers": [
+      "Genome-Wide Analysis of Nitrate Transporter (NRT/NPF) Family in Sugarcane Saccharum spontaneum L."
+    ],
+    "introduction_path": "Weichang Hu \u2192 Ray Ming \u2192 Jiang Wang (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5028002575",
+      "https://openalex.org/A5028400477",
+      "https://openalex.org/A5057240038"
+    ]
+  },
+  {
+    "card_id": "CARD_053",
+    "seed_id": "https://openalex.org/A5010902410",
+    "seed_name": "Jianjun Cheng",
+    "seed_department": "Community 5",
+    "seed_topics": [
+      "Advanced Drug Delivery Systems",
+      "Advanced Polymer Synthesis and Characterization",
+      "Antimicrobial Peptides and Activities",
+      "Antimicrobial agents and applications"
+    ],
+    "candidate_name": "Christian J. Konopka",
+    "candidate_topics": [
+      "Advanced Glycation End Products research",
+      "Dendrimers and Hyperbranched Polymers",
+      "Nanoparticle-Based Drug Delivery",
+      "Nanoplatforms for cancer theranostics",
+      "Optical Imaging and Spectroscopy Techniques"
+    ],
+    "sample_papers": [
+      "Multimodal imaging of the receptor for advanced glycation end-products with molecularly targeted nanoparticles",
+      "Multimodal Nanocarrier Probes Reveal Superior Biodistribution Quantification by Isotopic Analysis over Fluorescence"
+    ],
+    "introduction_path": "Jianjun Cheng \u2192 Lawrence W. Dobrucki \u2192 Christian J. Konopka (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5010902410",
+      "https://openalex.org/A5004490629",
+      "https://openalex.org/A5036358235"
+    ]
+  },
+  {
+    "card_id": "CARD_054",
+    "seed_id": "https://openalex.org/A5010902410",
+    "seed_name": "Jianjun Cheng",
+    "seed_department": "Community 5",
+    "seed_topics": [
+      "Advanced Drug Delivery Systems",
+      "Advanced Polymer Synthesis and Characterization",
+      "Antimicrobial Peptides and Activities",
+      "Antimicrobial agents and applications"
+    ],
+    "candidate_name": "Jye Yng Teo",
+    "candidate_topics": [
+      "Advanced Drug Delivery Systems",
+      "Advanced Polymer Synthesis and Characterization",
+      "Hydrogels: synthesis, properties, applications",
+      "Nanoparticle-Based Drug Delivery",
+      "Tissue Engineering and Regenerative Medicine"
+    ],
+    "sample_papers": [
+      "Engineering Polymersomes for Diagnostics and Therapy",
+      "Surface tethering of stem cells with H2O2-responsive anti-oxidizing colloidal particles for protection against oxidation-induced death"
+    ],
+    "introduction_path": "Jianjun Cheng \u2192 Steven C. Zimmerman \u2192 Hyunjoon Kong \u2192 Jye Yng Teo (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5010902410",
+      "https://openalex.org/A5052747722",
+      "https://openalex.org/A5058397377",
+      "https://openalex.org/A5103989066"
+    ]
+  },
+  {
+    "card_id": "CARD_055",
+    "seed_id": "https://openalex.org/A5010902410",
+    "seed_name": "Jianjun Cheng",
+    "seed_department": "Community 5",
+    "seed_topics": [
+      "Advanced Drug Delivery Systems",
+      "Advanced Polymer Synthesis and Characterization",
+      "Antimicrobial Peptides and Activities",
+      "Antimicrobial agents and applications"
+    ],
+    "candidate_name": "Hyunjoon Kong",
+    "candidate_topics": [
+      "3D Printing in Biomedical Research",
+      "Additive Manufacturing and 3D Printing Technologies",
+      "Advanced Drug Delivery Systems",
       "Advanced Materials and Mechanics",
-      "Advanced Battery Technologies Research",
-      "Advanced Battery Materials and Technologies",
-      "Advanced Sensor and Energy Harvesting Materials"
+      "Advanced Polymer Synthesis and Characterization"
+    ],
+    "sample_papers": [
+      "High\u2010Resolution Projection Microstereolithography for Patterning of Neovasculature",
+      "Matrix stiffness-modulated proliferation and secretory function of the airway smooth muscle cells"
+    ],
+    "introduction_path": "Jianjun Cheng \u2192 Steven C. Zimmerman \u2192 Hyunjoon Kong (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5010902410",
+      "https://openalex.org/A5052747722",
+      "https://openalex.org/A5058397377"
+    ]
+  },
+  {
+    "card_id": "CARD_056",
+    "seed_id": "https://openalex.org/A5010902410",
+    "seed_name": "Jianjun Cheng",
+    "seed_department": "Community 5",
+    "seed_topics": [
+      "Advanced Drug Delivery Systems",
+      "Advanced Polymer Synthesis and Characterization",
+      "Antimicrobial Peptides and Activities",
+      "Antimicrobial agents and applications"
+    ],
+    "candidate_name": "Randy H. Ewoldt",
+    "candidate_topics": [
+      "3D Printing in Biomedical Research",
+      "Advanced Materials and Mechanics",
+      "Cellular Mechanics and Interactions",
+      "Control Systems and Identification",
+      "Elasticity and Material Modeling"
+    ],
+    "sample_papers": [
+      "Constitutive model fingerprints in medium-amplitude oscillatory shear",
+      "Quantitative rheological model selection: Good fits versus credible models using Bayesian inference"
+    ],
+    "introduction_path": "Jianjun Cheng \u2192 Joaqu\u00edn Rodr\u00edguez\u2010L\u00f3pez \u2192 Randy H. Ewoldt (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5010902410",
+      "https://openalex.org/A5007986677",
+      "https://openalex.org/A5031482147"
+    ]
+  },
+  {
+    "card_id": "CARD_057",
+    "seed_id": "https://openalex.org/A5010902410",
+    "seed_name": "Jianjun Cheng",
+    "seed_department": "Community 5",
+    "seed_topics": [
+      "Advanced Drug Delivery Systems",
+      "Advanced Polymer Synthesis and Characterization",
+      "Antimicrobial Peptides and Activities",
+      "Antimicrobial agents and applications"
     ],
     "candidate_name": "Bong Hoon Kim",
     "candidate_topics": [
-      "Quantum Dots Synthesis And Properties",
-      "Neuroscience and Neural Engineering",
+      "Advanced Drug Delivery Systems",
+      "Advanced Materials and Mechanics",
       "Advanced Sensor and Energy Harvesting Materials",
-      "Wireless Body Area Networks",
-      "Tissue Engineering and Regenerative Medicine"
+      "Electrohydrodynamics and Fluid Dynamics",
+      "Nanomaterials and Printing Technologies"
     ],
     "sample_papers": [
       "High-Resolution Patterns of Quantum Dots Formed by Electrohydrodynamic Jet Printing for Light-Emitting Diodes",
       "Biological lipid membranes for on-demand, wireless drug delivery from thin, bioresorbable electronic implants"
     ],
-    "introduction_path": "Paul V. Braun \u2192 Prof. Seung\u2010Kyun Kang \u2192 Bong Hoon Kim (Warm 2-Hop Path)"
+    "introduction_path": "Jianjun Cheng \u2192 Ji Ho Shin \u2192 Bong Hoon Kim (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5010902410",
+      "https://openalex.org/A5006184738",
+      "https://openalex.org/A5074378883"
+    ]
   },
   {
-    "card_id": "CARD_071",
-    "seed_id": "https://openalex.org/A5040320137",
-    "seed_name": "Paul V. Braun",
-    "seed_department": "Information Sciences",
+    "card_id": "CARD_058",
+    "seed_id": "https://openalex.org/A5010902410",
+    "seed_name": "Jianjun Cheng",
+    "seed_department": "Community 5",
     "seed_topics": [
-      "Advanced Materials and Mechanics",
-      "Advanced Battery Technologies Research",
-      "Advanced Battery Materials and Technologies",
-      "Advanced Sensor and Energy Harvesting Materials"
+      "Advanced Drug Delivery Systems",
+      "Advanced Polymer Synthesis and Characterization",
+      "Antimicrobial Peptides and Activities",
+      "Antimicrobial agents and applications"
     ],
-    "candidate_name": "Philipp Gutruf",
+    "candidate_name": "Subhanip Biswas",
     "candidate_topics": [
-      "Non-Invasive Vital Sign Monitoring",
-      "Photopolymerization techniques and applications",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Wireless Body Area Networks",
-      "MXene and MAX Phase Materials"
+      "Antimicrobial Peptides and Activities",
+      "Antimicrobial agents and applications",
+      "Bacterial Genetics and Biotechnology",
+      "Chemical Synthesis and Analysis",
+      "Microbial Natural Products and Biosynthesis"
     ],
     "sample_papers": [
-      "Miniaturized Battery\u2010Free Wireless Systems for Wearable Pulse Oximetry",
-      "Mechanical assembly of complex, 3D mesostructures from releasable multilayers of advanced materials"
+      "Structure\u2013Activity Relationships of the S-Linked Glycocin Sublancin",
+      "Investigations into the Mechanism of Action of Sublancin"
     ],
-    "introduction_path": "Paul V. Braun \u2192 Prof. Xuelin Guo \u2192 Philipp Gutruf (Warm 2-Hop Path)"
+    "introduction_path": "No co-authorship route found within three hops. Consider direct outreach; no intermediary is verified.",
+    "path_ids": null
   },
   {
-    "card_id": "CARD_072",
-    "seed_id": "https://openalex.org/A5040320137",
-    "seed_name": "Paul V. Braun",
-    "seed_department": "Information Sciences",
+    "card_id": "CARD_059",
+    "seed_id": "https://openalex.org/A5010902410",
+    "seed_name": "Jianjun Cheng",
+    "seed_department": "Community 5",
     "seed_topics": [
-      "Advanced Materials and Mechanics",
-      "Advanced Battery Technologies Research",
-      "Advanced Battery Materials and Technologies",
-      "Advanced Sensor and Energy Harvesting Materials"
+      "Advanced Drug Delivery Systems",
+      "Advanced Polymer Synthesis and Characterization",
+      "Antimicrobial Peptides and Activities",
+      "Antimicrobial agents and applications"
     ],
-    "candidate_name": "Mark Engelhard",
+    "candidate_name": "Andrew A. Gewirth",
     "candidate_topics": [
+      "Advanced Battery Materials and Technologies",
+      "Advanced Battery Technologies Research",
+      "Advanced battery technologies research",
       "Advancements in Battery Materials",
-      "Advanced Battery Technologies Research",
-      "Advanced Battery Materials and Technologies"
+      "CO2 Reduction Techniques and Catalysts"
     ],
     "sample_papers": [
-      "Role of Manganese Deposition on Graphite in the Capacity Fading of Lithium Ion Batteries"
+      "The Interplay of Al and Mg Speciation in Advanced Mg Battery Electrolyte Solutions",
+      "High Activity Oxygen Evolution Reaction Catalysts from Additive-Controlled Electrodeposited Ni and NiFe Films"
     ],
-    "introduction_path": "Paul V. Braun \u2192 UIUC Interdisciplinary Institute / Departmental Liaison \u2192 Mark Engelhard (Cold Institutional Path)"
+    "introduction_path": "Jianjun Cheng \u2192 Lingyang Zhu \u2192 Andrew A. Gewirth (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5010902410",
+      "https://openalex.org/A5019036156",
+      "https://openalex.org/A5021345935"
+    ]
   },
   {
-    "card_id": "CARD_073",
-    "seed_id": "https://openalex.org/A5040320137",
-    "seed_name": "Paul V. Braun",
-    "seed_department": "Information Sciences",
+    "card_id": "CARD_060",
+    "seed_id": "https://openalex.org/A5010902410",
+    "seed_name": "Jianjun Cheng",
+    "seed_department": "Community 5",
     "seed_topics": [
-      "Advanced Materials and Mechanics",
-      "Advanced Battery Technologies Research",
-      "Advanced Battery Materials and Technologies",
-      "Advanced Sensor and Energy Harvesting Materials"
+      "Advanced Drug Delivery Systems",
+      "Advanced Polymer Synthesis and Characterization",
+      "Antimicrobial Peptides and Activities",
+      "Antimicrobial agents and applications"
     ],
-    "candidate_name": "Jung Woo Lee",
+    "candidate_name": "Corinne R. Bromfield",
     "candidate_topics": [
-      "Quantum Dots Synthesis And Properties",
-      "Soft Robotics and Applications",
-      "Non-Invasive Vital Sign Monitoring",
-      "Phonocardiography and Auscultation Techniques",
-      "Neuroscience and Neural Engineering"
+      "Additive Manufacturing and 3D Printing Technologies",
+      "Coronary Interventions and Diagnostics",
+      "Nanoparticle-Based Drug Delivery",
+      "Nanoplatforms for cancer theranostics",
+      "Ultrasound and Hyperthermia Applications"
     ],
     "sample_papers": [
-      "High-Resolution Patterns of Quantum Dots Formed by Electrohydrodynamic Jet Printing for Light-Emitting Diodes",
-      "Miniaturized Flexible Electronic Systems with Wireless Power and Near\u2010Field Communication Capabilities"
+      "Trimodal Therapy: Combining Hyperthermia with Repurposed Bexarotene and Ultrasound for Treating Liver Cancer",
+      "3D\u2010Printed Multidrug\u2010Eluting Stent from Graphene\u2010Nanoplatelet\u2010Doped Biodegradable Polymer Composite"
     ],
-    "introduction_path": "Paul V. Braun \u2192 Prof. Benjamin Zimmerman \u2192 Jung Woo Lee (Warm 2-Hop Path)"
+    "introduction_path": "Jianjun Cheng \u2192 Lawrence W. Dobrucki \u2192 Dipanjan Pan \u2192 Corinne R. Bromfield (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5010902410",
+      "https://openalex.org/A5004490629",
+      "https://openalex.org/A5055819205",
+      "https://openalex.org/A5007993855"
+    ]
+  },
+  {
+    "card_id": "CARD_061",
+    "seed_id": "https://openalex.org/A5010902410",
+    "seed_name": "Jianjun Cheng",
+    "seed_department": "Community 5",
+    "seed_topics": [
+      "Advanced Drug Delivery Systems",
+      "Advanced Polymer Synthesis and Characterization",
+      "Antimicrobial Peptides and Activities",
+      "Antimicrobial agents and applications"
+    ],
+    "candidate_name": "Brittany A. Walker",
+    "candidate_topics": [
+      "Advanced Polymer Synthesis and Characterization",
+      "Hydrogels: synthesis, properties, applications",
+      "biodegradable polymer synthesis and properties"
+    ],
+    "sample_papers": [
+      "Acid-Triggered, Acid-Generating, and Self-Amplifying Degradable Polymers"
+    ],
+    "introduction_path": "Jianjun Cheng \u2192 Paul V. Braun \u2192 Brittany A. Walker (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5010902410",
+      "https://openalex.org/A5040320137",
+      "https://openalex.org/A5018224169"
+    ]
+  },
+  {
+    "card_id": "CARD_062",
+    "seed_id": "https://openalex.org/A5010902410",
+    "seed_name": "Jianjun Cheng",
+    "seed_department": "Community 5",
+    "seed_topics": [
+      "Advanced Drug Delivery Systems",
+      "Advanced Polymer Synthesis and Characterization",
+      "Antimicrobial Peptides and Activities",
+      "Antimicrobial agents and applications"
+    ],
+    "candidate_name": "Liang Ma",
+    "candidate_topics": [
+      "Adipokines, Inflammation, and Metabolic Diseases",
+      "Advanced Drug Delivery Systems",
+      "Advanced biosensing and bioanalysis techniques",
+      "Carbon and Quantum Dots Applications",
+      "Luminescence Properties of Advanced Materials"
+    ],
+    "sample_papers": [
+      "Brightness-equalized quantum dots",
+      "Quantum dot surface engineering: Toward inert fluorophores with compact size and bright, stable emission"
+    ],
+    "introduction_path": "Jianjun Cheng \u2192 Lawrence W. Dobrucki \u2192 Liang Ma (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5010902410",
+      "https://openalex.org/A5004490629",
+      "https://openalex.org/A5074231984"
+    ]
+  },
+  {
+    "card_id": "CARD_063",
+    "seed_id": "https://openalex.org/A5010902410",
+    "seed_name": "Jianjun Cheng",
+    "seed_department": "Community 5",
+    "seed_topics": [
+      "Advanced Drug Delivery Systems",
+      "Advanced Polymer Synthesis and Characterization",
+      "Antimicrobial Peptides and Activities",
+      "Antimicrobial agents and applications"
+    ],
+    "candidate_name": "Kyung\u2010In Jang",
+    "candidate_topics": [
+      "Advanced Materials and Mechanics",
+      "Advanced Sensor and Energy Harvesting Materials",
+      "Elasticity and Material Modeling",
+      "Microfluidic and Capillary Electrophoresis Applications",
+      "Nanomaterials and Printing Technologies"
+    ],
+    "sample_papers": [
+      "Assembly of micro/nanomaterials into complex, three-dimensional architectures by compressive buckling",
+      "Soft, stretchable, fully implantable miniaturized optoelectronic systems for wireless optogenetics"
+    ],
+    "introduction_path": "Jianjun Cheng \u2192 Daniel V. Harburg \u2192 Kyung\u2010In Jang (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5010902410",
+      "https://openalex.org/A5022223514",
+      "https://openalex.org/A5072065388"
+    ]
+  },
+  {
+    "card_id": "CARD_064",
+    "seed_id": "https://openalex.org/A5010902410",
+    "seed_name": "Jianjun Cheng",
+    "seed_department": "Community 5",
+    "seed_topics": [
+      "Advanced Drug Delivery Systems",
+      "Advanced Polymer Synthesis and Characterization",
+      "Antimicrobial Peptides and Activities",
+      "Antimicrobial agents and applications"
+    ],
+    "candidate_name": "Samya Sen",
+    "candidate_topics": [
+      "Advanced Polymer Synthesis and Characterization",
+      "Hydrogels: synthesis, properties, applications",
+      "biodegradable polymer synthesis and properties"
+    ],
+    "sample_papers": [
+      "Acid-Triggered, Acid-Generating, and Self-Amplifying Degradable Polymers"
+    ],
+    "introduction_path": "Jianjun Cheng \u2192 Paul V. Braun \u2192 Samya Sen (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5010902410",
+      "https://openalex.org/A5040320137",
+      "https://openalex.org/A5005323339"
+    ]
+  },
+  {
+    "card_id": "CARD_065",
+    "seed_id": "https://openalex.org/A5010902410",
+    "seed_name": "Jianjun Cheng",
+    "seed_department": "Community 5",
+    "seed_topics": [
+      "Advanced Drug Delivery Systems",
+      "Advanced Polymer Synthesis and Characterization",
+      "Antimicrobial Peptides and Activities",
+      "Antimicrobial agents and applications"
+    ],
+    "candidate_name": "Jiayu Leong",
+    "candidate_topics": [
+      "Advanced Drug Delivery Systems",
+      "Advanced Polymer Synthesis and Characterization",
+      "Bacterial biofilms and quorum sensing",
+      "Dendrimers and Hyperbranched Polymers",
+      "Diatoms and Algae Research"
+    ],
+    "sample_papers": [
+      "Engineering Polymersomes for Diagnostics and Therapy",
+      "Disease-directed design of biodegradable polymers: Reactive oxygen species and pH-responsive micellar nanoparticles for anticancer drug delivery"
+    ],
+    "introduction_path": "Jianjun Cheng \u2192 Steven C. Zimmerman \u2192 Hyunjoon Kong \u2192 Jiayu Leong (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5010902410",
+      "https://openalex.org/A5052747722",
+      "https://openalex.org/A5058397377",
+      "https://openalex.org/A5031899418"
+    ]
+  },
+  {
+    "card_id": "CARD_066",
+    "seed_id": "https://openalex.org/A5010902410",
+    "seed_name": "Jianjun Cheng",
+    "seed_department": "Community 5",
+    "seed_topics": [
+      "Advanced Drug Delivery Systems",
+      "Advanced Polymer Synthesis and Characterization",
+      "Antimicrobial Peptides and Activities",
+      "Antimicrobial agents and applications"
+    ],
+    "candidate_name": "Ki Jun Yu",
+    "candidate_topics": [
+      "Advanced Materials and Mechanics",
+      "Advanced Sensor and Energy Harvesting Materials",
+      "Analog and Mixed-Signal Circuit Design",
+      "Elasticity and Material Modeling",
+      "Electrohydrodynamics and Fluid Dynamics"
+    ],
+    "sample_papers": [
+      "Soft network composite materials with deterministic and bio-inspired designs",
+      "High-Resolution Patterns of Quantum Dots Formed by Electrohydrodynamic Jet Printing for Light-Emitting Diodes"
+    ],
+    "introduction_path": "Jianjun Cheng \u2192 Daniel V. Harburg \u2192 Ki Jun Yu (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5010902410",
+      "https://openalex.org/A5022223514",
+      "https://openalex.org/A5006572968"
+    ]
   }
 ]

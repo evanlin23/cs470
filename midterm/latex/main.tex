@@ -1,16 +1,19 @@
 \documentclass[10pt,twocolumn,letterpaper]{article}
 \usepackage[margin=0.65in,columnsep=0.22in]{geometry}
 \usepackage[T1]{fontenc}
-\usepackage{lmodern,microtype,amsmath,amssymb,booktabs,tabularx,url}
+\usepackage{lmodern,microtype,amsmath,amssymb,booktabs,tabularx,url,graphicx}
 \usepackage[colorlinks=true,allcolors=blue]{hyperref}
 \setlength{\emergencystretch}{1em}
+\renewcommand{\dbltopfraction}{0.95}
+\renewcommand{\textfraction}{0.05}
+\renewcommand{\dblfloatpagefraction}{0.7}
 \title{BridgeFinder: Discovering Cross-Community\\Research Collaborators at UIUC}
 \author{Evan Lin \and Eric Liu\\University of Illinois Urbana-Champaign}
 \date{CS 470 Mid-Semester Report, October 2026}
 \begin{document}
 \maketitle
 \begin{abstract}
-Students seeking research mentors often know an instructor but lack a route into another research community. BridgeFinder uses a weighted UIUC co-authorship graph to recommend researchers outside a seed instructor's community and explain possible introductions. The challenge is balancing topical relevance with network diversity while avoiding claims that a missing co-authorship proves a social gap. We have built an OpenAlex ingestion pipeline, two real-data corpora, a three-screen web prototype, temporal backtests, a citation analysis, and a formative study with five students. The archived scaled backtest gives Full BridgeFinder P@5 of 0.0364 versus 0.0283 for Adamic--Adar, but misses our proposed improvement thresholds. A citation comparison finds a mean ratio of 1.053 ($p=0.0601$), providing no significant evidence of a cross-community advantage. Feedback led to a faculty-seed entry point, an explicit missing-tie legend, and prominent introduction paths. We distinguish the implemented demonstration from the offline model and specify the remaining work before a comparative user study.
+Students seeking research mentors often know an instructor but lack a route into another research community. BridgeFinder uses a weighted UIUC co-authorship graph to recommend researchers outside a seed instructor's community and explain possible introductions. The challenge is balancing topical relevance with network diversity while avoiding claims that a missing co-authorship proves a social gap. We have built an OpenAlex ingestion pipeline, two real-data corpora, a three-screen web prototype, temporal backtests, a citation analysis, and a formative study with five students. The deterministic temporal backtest tests the same ranker used in the interface against popularity, centrality, topic-only, and Adamic--Adar baselines; its results show modest gains rather than satisfaction of all improvement targets. A citation comparison finds a mean ratio of 1.053 ($p=0.0601$), providing no significant evidence of a cross-community advantage. Feedback led to an instructor-anchor entry point, an explicit missing-tie legend, and prominent introduction paths. Shared model code aligns the interface and evaluation, while a browser-validated study workflow supports the next comparative evaluation.
 \end{abstract}
 
 \section{Problem, objective, and contribution}
@@ -46,7 +49,7 @@ Q=\frac{1}{2W}\sum_{ij}\left(w_{ij}-\frac{s_i s_j}{2W}\right)\mathbf{1}[c_i=c_j]
 \]
 Here $s_i=\sum_j w_{ij}$ and $W=\sum_{i<j}w_{ij}$. Girvan--Newman~\cite{girvan2002}, an alternative covered in community discovery, repeatedly removes high-betweenness edges and offers an interpretable hierarchy, but repeated shortest-path computations are expensive. Louvain is a practical choice for repeated analysis of thousands of authors; its resolution limit and stochastic partitions remain limitations. We do not treat its output as verified disciplinary labels.
 
-The pilot training graph contains 3,642 nodes and 16,408 edges; the scaled graph contains 9,042 nodes and 36,748 edges. The backtest partitions the union of all nontrivial connected components, not just the largest component. A validation run found 346 pilot communities with $Q\approx0.950$. This high modularity indicates strong separation of observed collaboration groups, but disconnected components can inflate it. It does not establish that all groups are socially isolated or that crossing them is useful. The graph structure motivates both cross-community filtering and an explicit distinction between reachable and unreachable candidates.
+The pilot training graph contains 3,642 nodes and 16,408 edges; the scaled graph contains 9,042 nodes and 36,748 edges. The backtest partitions the union of all nontrivial connected components, not just the largest component. The canonical, seeded run finds 344 pilot communities with $Q\approx0.949$. This high modularity indicates strong separation of observed collaboration groups, but disconnected components can inflate it. It does not establish that all groups are socially isolated or that crossing them is useful. The graph structure motivates both cross-community filtering and an explicit distinction between reachable and unreachable candidates.
 
 For candidate $v$, Burt autonomy is $H(v)=\max(0,1-C_v)$, with
 \[
@@ -69,32 +72,23 @@ $P=1$ for two-hop candidates, $0.5$ for candidates with a simple three-edge path
 \subsection{A demonstrable core flow}
 The implementation separates expensive graph preparation from browser interaction. \path{fetch_openalex.py} produces processed datasets; \texttt{backtest.py} and \path{citation_impact.py} evaluate them; \path{web/prepare_web_data.py} exports precomputed recommendations. A static HTTP server serves \texttt{web/index.html} and \texttt{data.json}; D3 v7 renders the graph. No account or publication history is required from the student.
 
-\begin{figure}[t]
+
+Figure~\ref{fig:prototype} shows actual browser captures of the implemented flow. First, selecting a familiar author addresses the publication cold start; the generator chooses up to 50 high-degree seeds with coverage of the eight largest communities. Records are historical UIUC-affiliated authors, with no unverified professor titles or departmental appointments. Numbered communities are inferred collaboration clusters. Second, a D3 force layout supplies the context for recommendations. Solid edges are observed pre-2020 co-authorships; orange dashed edges connect the selected seed to its actual ranked cross-community candidates. Clicking a dashed edge opens that candidate's card. Third, the card places a graph-backed route above topic details, displays autonomy as a positive gauge, and offers an editable outreach template. The template makes no claim that the student works with the seed or knows the intermediary; it does not send messages.
+
+\begin{figure*}[t]
 \centering
-\fbox{\parbox{0.90\columnwidth}{
-\textbf{1. Choose an anchor}\par
-Search or filter the faculty-seed grid; select a familiar instructor.\par\smallskip
-$\downarrow$\par
-\textbf{2. Explore collaboration topology}\par
-View colored nodes, solid observed ties, and dashed missing-tie examples; select an eligible seed node.\par\smallskip
-$\downarrow$\par
-\textbf{3. Inspect recommendations}\par
-Open ranked cards; compare topics and autonomy, inspect the proposed intermediary, and open an editable outreach template.
-}}
-\caption{Implemented interaction flow. This schematic describes controls and navigation, not a screenshot or measured researcher profile. Dashed links illustrate missing co-authorships; they are not validated opportunities.}
-\label{fig:flow}
-\end{figure}
+\includegraphics[width=0.63\textwidth]{midterm/review/screenshots/02-map.png}\\[4pt]
+\includegraphics[width=0.63\textwidth]{midterm/review/screenshots/03-recommendation.png}
+\caption{Actual Chromium screenshots: selecting an anchor opens the community map (top); clicking a ranked dashed candidate link opens its recommendation (bottom). The card shows the observed seed--intermediary--candidate co-authorship chain and explicitly limits its claim to co-authorship evidence. Numbered groups avoid presenting inferred communities as verified departments. Full-resolution captures and the automated walkthrough are retained in the repository.}
+\label{fig:prototype}
+\end{figure*}
 
-Figure~\ref{fig:flow} connects the student problem to implemented controls. First, selecting a familiar instructor addresses the publication cold start; the generator chooses up to 50 high-degree seeds with coverage of the eight largest communities. These are automatically selected author records, not a manually verified faculty directory. Second, the map makes the community context visible, adapting literature graph exploration to people. It samples leaders from the eight largest communities and draws missing links between community leaders. Such dashed links are illustrative and are not filtered by topic overlap. Clicking an eligible node changes the seed; dashed-link filtering of recommendations is not implemented. Third, cards put the introduction before topic details and show autonomy as a positive gauge, translating an opaque structural measure into an explanation. An outreach modal supplies a template, but does not send messages.
+\subsection{Shared model and truthful route semantics}
+The backtest, web exporter, and study generator now import \texttt{model.py}. They share the 2019 cutoff, training-only topic profiles, weighted graph, seeded Louvain partition, candidate filter, and Eq.~\ref{eq:score}. Canonical node/edge order, author-ID tie-breaking, and seeded betweenness remove the earlier sources of run variation. This alignment lets the offline evaluation speak to the displayed ranking, while still not measuring mentoring outcomes.
 
-\subsection{Scope and fidelity of the prototype}
-The web generator currently uses all years and stored author topics, with a different demonstration score:
-\[
-\Phi_{\rm web}=0.35S+0.25H+0.25B+0.15P_{\rm web},
-\]
-where $P_{\rm web}=0.5$ for two-hop candidates and $0.1$ otherwise. Consequently, offline improvements for Eq.~\ref{eq:score} cannot be attributed to the displayed ranking. Aligning these implementations is required before a study comparing that model's interface.
+A bounded shortest-path search supplies only actual two- or three-hop co-authorship chains; when no path is found, the card explicitly says no route was found within three hops and supplies no invented intermediary. This does not imply global disconnection. The student-to-anchor connection is user input; co-authorship does not establish acquaintance or willingness to introduce. Current appointments, availability, and personal trust remain outside the dataset.
 
-A shared co-author is data-backed for two-hop cards. Other cards insert a generic institutional liaison and label the route ``3-Hop'' without computing a three-hop path or verifying an appointment. That label must not be interpreted as an observed introduction. Community colors and department names are heuristic labels, with community indices mapped modulo eight; author titles and affiliations also need verification. These are substantive prototype limitations, not evidence of actual mentoring access. Before participant deployment, we will replace unsupported routes with an explicit ``no verified route'' state, verify seed identities, and unify the score. The core navigation can be demonstrated now; the social assertions require this additional work.
+The D3 distribution is served locally with its license after verification against the official npm release's SHA-512 integrity metadata. A Chromium walkthrough validates selection, map rendering, dashed-link navigation, card explanations, and the outreach modal without external CDN access. Automated checks compare all 500 displayed recommendations with shared-model rankings, validate every route edge and shortest-path length, and exercise the unavailable-route state on a disconnected graph fixture. The current scaled top-ten bundle contains 483 two-hop and 17 three-hop routes; the unavailable state is tested separately rather than misrepresented as an observed top-ten result.
 
 \section{Users and formative feedback}
 \subsection{Population and sampling rationale}
@@ -105,13 +99,13 @@ The authors report five completed individual, 30-minute think-aloud sessions: th
 \subsection{Feedback-to-design trace}
 The following are author-reported qualitative observations; no participant quotes, issue frequencies, or quantitative usability scores are claimed.
 
-\textbf{Entry point.} Students without publications could not use themselves as a seed. The interface now starts with a searchable faculty grid and department-style filters, enabling an instructor to serve as the anchor. A subsequent test should measure whether students can identify a familiar, correctly labeled seed without help.
+\textbf{Entry point.} Students without publications could not use themselves as a seed. The interface now starts with a searchable author grid and community filters, enabling an instructor to serve as the anchor. A subsequent test should measure whether students can identify a familiar, correctly identified seed without help.
 
 \textbf{Meaning of dashed links.} Participants interpreted dashed lines as weak existing collaborations. The map now explicitly distinguishes observed co-authorship from a missing-tie structural-hole example. The next round should ask participants to explain the legend in their own words; successful navigation alone would not demonstrate comprehension.
 
 \textbf{Action before explanation.} Participants looked for who could introduce them before reading topic details, and a low constraint value appeared to mean a poor candidate. The revised cards place the introduction first and express constraint through an autonomy gauge. The next round should test route comprehension and whether the gauge is mistaken for a success probability.
 
-These changes are visible in the current interface, but they do not demonstrate that the reported problems have been resolved. Anonymized session notes and a repeat walkthrough would strengthen the audit trail; the repository currently contains neither session-level notes nor completed comparative-study responses.
+These changes are visible in the current interface. The subsequent code audit also removed inferred department names and fabricated liaison routes, but neither these corrections nor automated walkthroughs demonstrate that the reported human comprehension problems have been resolved. Anonymized session notes and a repeat human walkthrough would strengthen the audit trail; the repository currently contains neither session-level notes nor completed comparative-study responses.
 
 \section{Evaluation: evidence and measurement plan}
 \subsection{Temporal prediction on real data}
@@ -122,26 +116,26 @@ Baselines isolate alternative explanations: preferential attachment tests popula
 \begin{table}[t]
 \centering\small
 \setlength{\tabcolsep}{3pt}
-\caption{Archived backtest outputs in \texttt{prototype/results/}. These are saved-run results, not deterministic guarantees.}
+\caption{Rerun of the shared temporal model: 180 eligible pilot seeds and 1,385 scaled seeds. Full metrics are retained in \texttt{midterm/review/}.}
 \label{tab:results}
 \begin{tabular}{lrrrr}
 \toprule
 &\multicolumn{2}{c}{Pilot}&\multicolumn{2}{c}{Scaled}\\
 Model&P@5&NDCG@10&P@5&NDCG@10\\
 \midrule
-Preferential attach.&.0011&.0011&.0081&.0125\\
-Betweenness&.0022&.0192&.0076&.0109\\
-Topic-Only&.0076&.0342&.0201&.0406\\
-Adamic--Adar&.0076&.0279&.0283&.0459\\
-Topic+Path&.0216&.0697&.0333&.0630\\
-Full BridgeFinder&.0195&.0671&.0364&.0705\\
+Preferential attach. & 0.0011 & 0.0011 & 0.0088 & 0.0133 \\
+Betweenness & 0.0011 & 0.0211 & 0.0078 & 0.0148 \\
+Topic-Only & 0.0044 & 0.0274 & 0.0208 & 0.0402 \\
+Adamic--Adar & 0.0056 & 0.0297 & 0.0295 & 0.0515 \\
+Topic+Path & 0.0133 & 0.0615 & 0.0344 & 0.0620 \\
+Full BridgeFinder & 0.0133 & 0.0514 & 0.0351 & 0.0674 \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-Table~\ref{tab:results} suggests useful signal beyond common neighbors. On the scaled corpus, Full BridgeFinder improves P@5 by $1.29\times$ and NDCG@10 by 0.0246 over Adamic--Adar. Against our proposed success criteria of $2\times$ P@5 and $+0.05$ NDCG@10, both scaled targets are missed. On the pilot, the P@5 target is met ($2.57\times$) but the NDCG gain is only 0.0392. These thresholds are project targets, not a documented preregistration. Topic+Path wins on the pilot while the full model wins on the scaled corpus; this is mixed evidence for the extra structural features, not proof that network density causes the difference. Absolute precision remains low: most suggested researchers do not become observed co-authors.
+Table~\ref{tab:results} suggests signal beyond common neighbors, but substantial room for improvement. On the scaled corpus, Full BridgeFinder improves P@5 by $1.19\times$ (0.0351 vs. 0.0295) and NDCG@10 by 0.0159 (0.0674 vs. 0.0515) over Adamic--Adar. Against our proposed targets of $2\times$ P@5 and $+0.05$ NDCG@10, both scaled targets are missed. On the pilot, the P@5 target is met ($2.38\times$) but the NDCG gain is only 0.0217. These are project targets, not a documented preregistration. Topic+Path ties Full BridgeFinder on pilot P@5 and wins on pilot NDCG@10, while the full model wins both scaled measures. This is mixed evidence for the extra features, not proof that network density causes the difference. Absolute precision remains low: most recommended researchers do not become observed co-authors. Failure to meet an empirical hypothesis is a result to explain, not a reason to change the success criteria after seeing the data.
 
-\textbf{Reproducibility and uncertainty.} Louvain sets seed 42, but sampled betweenness has no fixed seed and score ties inherit set iteration order. Exact rankings and metrics can vary across processes or dependency versions. The archived files omit participant/seed-level uncertainty and run metadata. Current validation uses Python 3.12, NetworkX 3.7, and SciPy 1.18.1. A fresh run with \texttt{PYTHONHASHSEED=0} evaluated 185 pilot and 1,386 scaled seeds. Full-model P@5/NDCG@10 were 0.0205/0.0678 (pilot) and 0.0365/0.0713 (scaled), versus Adamic--Adar 0.0065/0.0317 and 0.0294/0.0467. This preserves the qualitative comparison but confirms that archived numbers are not exact reproduction targets. Before tuning weights, fix tie-breaking and random seeds, retain per-seed metrics, use a separate validation interval, and report paired bootstrap intervals over seeds. Overlapping collaboration neighborhoods limit the independence assumption even then.
+\textbf{Reproducibility and uncertainty.} The revised shared model canonically orders nodes and edges, uses seed 42 for Louvain and sampled betweenness, and breaks score ties by author ID. A second pilot run under a different Python hash seed produced byte-identical metric JSON. Canonical insertion order changes the partition relative to archived runs: the revised pilot has 180 eligible seeds, and its results must not be interpreted as paired improvements over the earlier 185-seed experiment. We reran both corpora under Python 3.12, NetworkX 3.7, and SciPy 1.18.1; the table reports this implementation, while original archived outputs remain in \texttt{prototype/results/}. Dependency pins and test commands are documented in the repository. Uncertainty intervals over historical prediction metrics are still future work. Before tuning weights, retain per-seed metrics, use a separate validation interval, and report paired bootstrap intervals over seeds; overlapping collaboration neighborhoods limit the independence assumption even then.
 
 \subsection{Citation impact: a separate observational test}
 The citation script builds a pre-2020 graph after excluding papers with more than 25 retained UIUC authors. A later paper is cross-community when its known training authors span at least two communities, within-community when exactly one is represented, and unclassified when none is represented. Authors absent from training do not determine its category, so partially observed teams may be misclassified.
@@ -149,23 +143,23 @@ The citation script builds a pre-2020 graph after excluding papers with more tha
 The scaled analysis includes 6,231 evaluation papers: 1,071 cross-community, 4,183 within-community, and 977 unclassified. Cross-community mean citations are 64.86 (SD 241.34), versus 61.60 (SD 119.92); medians are 36 and 37. The mean ratio is 1.053, with two-sided Mann--Whitney $U=2{,}156{,}737$ and $p=0.0601$. Our success target is a ratio above 1.10 and $p<0.05$ against within-community papers. Neither criterion is met. Mann--Whitney tests a distributional difference, not specifically a difference in means. Year, field, team size, and repeated authors are uncontrolled, so these results establish neither a causal benefit nor absence of all benefit from brokerage.
 
 \subsection{Planned comparative user evaluation}
-We plan an exploratory within-subject study with 15 students, recruiting three from each of CS, ECE, Bioengineering, Crop Sciences, and Information Sciences. This deliberately broadens the computing-heavy formative sample and tests cross-field comprehension, although it is not representative of all UIUC students. Obtain consent, use pseudonymous identifiers, and allow withdrawal. Participants should first attempt the seed--map--card task, then rate five candidates per method (BridgeFinder, Adamic--Adar, Topic-Only) for a matched seed. Shuffle method-hidden cards, handle repeated candidates consistently, and counterbalance order. The goal is method blinding, not an unverified claim of double blinding.
+We plan an exploratory within-subject study with 15 students, recruiting three from each of CS, ECE, Bioengineering, Crop Sciences, and Information Sciences. These are recruitment categories, not inferred author appointments. This deliberately broadens the computing-heavy formative sample and tests cross-field comprehension, although it is not representative of all UIUC students. Obtain consent, use pseudonymous identifiers, and allow withdrawal. Participants should first attempt the seed--map--card task, then choose an appropriate research anchor and rate the union of the top five candidates from each method (BridgeFinder, Adamic--Adar, Topic-Only). Identical candidates appear once and are attributed to every method that selected them, preserving five outcomes per method with at most 15 unique cards. All methods use the same cross-community candidate population. Shuffle method-hidden cards independently per participant. The goal is method blinding, not an unverified claim of double blinding.
 
-\textbf{Relevance and novelty.} Seven-point relevance and novelty ratings test whether structural diversity preserves fit while surfacing unfamiliar names. Targets are mean ratings of at least 5/7 for each, compared with both baselines. The primary joint outcome is each participant's fraction of cards rated relevance $\ge5$ and novelty $\ge5$; target a 25-percentage-point gain over Adamic--Adar. Report paired differences and confidence intervals, with a paired test at $\alpha=0.05$ for this single primary comparison. Treat other comparisons as exploratory and apply Holm correction within their declared family. Do not treat 225 card ratings as 225 independent participants.
+\textbf{Relevance and novelty.} Seven-point relevance and novelty ratings test whether structural diversity preserves fit while surfacing unfamiliar names. Targets are mean ratings of at least 5/7 for each, compared with both baselines. The primary joint outcome is each participant's fraction of cards rated relevance $\ge5$ and novelty $\ge5$; target a 25-percentage-point gain over Adamic--Adar. Report paired differences and confidence intervals, with a two-sided paired Wilcoxon test at $\alpha=0.05$ for this single primary comparison; report the mean paired difference and a supplementary paired-$t$ interval. Treat other comparisons as exploratory and apply Holm correction within their declared family. Do not treat 225 card ratings as 225 independent participants.
 
 \textbf{Actionability and usability.} Seven-point actionability ratings test whether the explanation supports a plausible next step; target at least 5/7 and improvement over Topic-Only. Record unaided task completion and whether participants correctly distinguish observed ties from suggested routes, targeting at least 12 of 15 successful completions and correct explanations. Administer the standard ten-item System Usability Scale after the interactive task; score it using the standard alternating-item transformation, targeting mean SUS $\ge80/100$. SUS is compared with that fixed target, not a claim that static-card baseline systems have been usability-tested.
 
-\textbf{Implementation gates.} Card generation, a rating interface, and an analyzer exist, but collection is not yet ready end to end. The interface exports \texttt{evaluator\_id} and verbose rating keys; the analyzer expects \texttt{participant\_id}, \texttt{relevance}, \texttt{novelty}, and \texttt{actionability}. The interface loads the complete card bundle rather than a chosen seed's 15 cards, and supplies default ratings for unanswered cards during export. The analyzer summarizes the joint outcome but does not test it; SUS collection/scoring is absent. Before recruitment, align schemas, preserve unanswered ratings as missing, restrict each session to the assigned cards, verify pseudonymous IDs, add SUS and the primary paired comparison, and validate the complete export-to-analysis route. No comparative human result is reported at midterm.
+\textbf{Implemented collection and analysis.} The browser restricts a session to the selected seed, randomizes unique cards, requires every rating and all ten SUS answers, and exports a UUID-identified session using the analyzer's schema. Missing answers are never replaced with default ratings. The analyzer checks candidate completeness, duplicate identities, valid scales, five outcomes per method, and SUS completeness; invalid sessions are reported as exclusions rather than silently pooled. It scores SUS, tests the primary joint outcome at participant level, and Holm-corrects the exploratory Wilcoxon comparisons. An automated browser fixture completed the export-to-analysis route, and contract tests cover overlap attribution, incomplete data, duplicate IDs, and SUS bounds. These are engineering checks, not human results: generated test answers are discarded, and no comparative human finding is reported. Before recruitment, confirm consent logistics, suitable anchors for each participant, facilitator task/comprehension logging, and private handling of the method key. The small planned sample remains exploratory.
 
 \section{Discussion and next steps}
 BridgeFinder makes network structure part of both candidate selection and explanation. Removing it would remove cross-community filtering, autonomy, and shared-contact explanations, leaving topic search. The present evidence supports a feasible prototype and modest historical ranking gains; it does not establish better mentoring outcomes, usable institutional routes, or a significant citation advantage.
 
-The formative sample is small and self-selected; missing session notes limit independent verification. The graph omits informal relationships, external collaborators, and unpublished work. Harvest caps, large-team cliques, modularity resolution, and heuristic department labels affect who is visible. The web demonstration differs from the evaluated model, and its institutional routes must be corrected before real outreach. These limitations guide the next iteration rather than being treated as confirmed benefits.
+The formative sample is small and self-selected; missing session notes limit independent verification. The graph omits informal relationships, external collaborators, and unpublished work. Harvest caps, large-team cliques, modularity resolution, and heuristic department labels affect who is visible. The shared model and actual route extraction resolve the earlier evaluation/display mismatch and invented institutional paths; current appointments and introduction willingness still require human verification. These limitations guide the next iteration rather than being treated as confirmed benefits.
 
-In early November, unify the model and display semantics, verify seed identities, and complete the study collection gates. In mid-November, run the 15-person evaluation and report participant-level outcomes, including failures and uncertainty. In late November, revise the interface from observed comprehension errors and tune weights using a held-out validation period. In December, rerun the locked evaluation, document remaining biases, and prepare the final report and demonstration. User feedback and future collaboration precision answer different questions; both are necessary before recommending deployment.
+In early November, select appropriate historical anchors with participants, confirm consent and facilitator procedures, and deploy the validated study workflow. In mid-November, run the 15-person evaluation and report participant-level outcomes, including failures and uncertainty. In late November, revise the interface from observed comprehension errors and tune weights using a held-out validation period. In December, rerun the locked evaluation, document remaining biases, and prepare the final report and demonstration. User feedback and future collaboration precision answer different questions; both are necessary before recommending deployment.
 
 \section*{Contributions and AI assistance}
-Evan Lin: ingestion, backtest pipeline, and campus map. Eric Liu: brokerage score, citation analysis, study tooling, and formative sessions. Both authors contributed to the report. The existing project used Claude for debugging, layout, and typesetting. OpenAI Codex assisted with this rubric audit, code-to-report checks, evaluation reruns, and editing. No participant responses or quotations were generated for this revision.
+Evan Lin: ingestion, backtest pipeline, and campus map. Eric Liu: brokerage score, citation analysis, study tooling, and formative sessions. Both authors contributed to the report. The existing project used Claude for debugging, layout, and typesetting. OpenAI Codex assisted with the rubric audit, shared-model and study-workflow corrections, automated checks, evaluation reruns, screenshots, and editing. No participant responses or quotations were generated for this revision.
 
 \begin{thebibliography}{99}\small\raggedright
 \setlength{\itemsep}{1.2pt}\setlength{\parskip}{0pt}

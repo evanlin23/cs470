@@ -1,104 +1,112 @@
-"""Statistical Analysis for BridgeFinder Double-Blind User Study.
+"""Analyze complete, validated study sessions at participant level.
 
-Fixes methodological pooling bug: aggregates ratings per participant and method
-first (N participants -> df = N-1) before running paired Student's t-tests and
-Wilcoxon signed-rank tests with Bonferroni correction (alpha = 0.05 / 3 = 0.0167).
-
-Usage:
-    python3 prototype/study/analyze_study.py --responses prototype/study/study_responses.json --keys prototype/study/truth_keys.json
+Input: JSON list of browser session exports. No invented defaults or anonymous
+participant pooling. Primary outcome: relevant-and-new versus Adamic–Adar.
 """
 import argparse
 import json
-import os
-import sys
+import math
 import statistics
-from collections import defaultdict
+from pathlib import Path
 from scipy import stats
+
+METHODS = ['BridgeFinder', 'Triadic Closure', 'Topic-Only']
+DIMENSIONS = ['relevance', 'novelty', 'actionability']
+
+
+def sus_score(values):
+    if len(values) != 10 or any(type(v) is not int or not 1 <= v <= 5 for v in values):
+        raise ValueError('SUS requires exactly ten integer answers from 1 to 5')
+    return 2.5 * sum(v-1 if i % 2 == 0 else 5-v for i, v in enumerate(values))
+
+
+def paired(a, b):
+    difference = [x-y for x, y in zip(a, b)]
+    result = {'mean_difference': statistics.mean(difference), 'n': len(a)}
+    if len(a) < 2:
+        return {**result, 'p_ttest': None, 'p_wilcoxon': None, 'ci95': None}
+    if all(d == 0 for d in difference):
+        return {**result, 'p_ttest': 1.0, 'p_wilcoxon': 1.0, 'ci95': [0.0, 0.0]}
+    mean = statistics.mean(difference)
+    sem = stats.sem(difference)
+    ci = [mean, mean] if sem == 0 else list(stats.t.interval(.95, len(a)-1, loc=mean, scale=sem))
+    p_t = float(stats.ttest_rel(a, b).pvalue) if sem else None
+    return {**result, 'p_ttest': p_t if p_t is None or math.isfinite(p_t) else None,
+            'p_wilcoxon': float(stats.wilcoxon(difference).pvalue), 'ci95': [float(v) for v in ci]}
+
+
+def analyze(sessions, keys):
+    participants, excluded, seen = [], [], set()
+    if not isinstance(sessions, list):
+        raise ValueError('Input must be a list of exported session objects')
+    for session in sessions:
+        pid = session.get('participant_id')
+        if not isinstance(pid, str) or not pid or pid in seen:
+            raise ValueError('Each session needs a unique nonempty participant_id')
+        seen.add(pid)
+        if session.get('purpose') == 'automated-test':
+            raise ValueError('Automated fixtures are not participant evidence')
+        seed = session.get('seed_id')
+        expected = {cid for cid, key in keys.items() if key['seed_id'] == seed}
+        ratings = session.get('ratings', [])
+        ids = [row.get('card_id') for row in ratings]
+        if not expected or len(ids) != len(set(ids)) or set(ids) != expected:
+            excluded.append({'participant_id': pid, 'reason': 'incomplete, duplicate, or wrong-seed card set'})
+            continue
+        values = {m: {d: [] for d in DIMENSIONS+['relevant_and_new']} for m in METHODS}
+        try:
+            for row in ratings:
+                for dimension in DIMENSIONS:
+                    if type(row.get(dimension)) is not int or not 1 <= row[dimension] <= 7:
+                        raise ValueError('Missing or invalid rating')
+                for method in keys[row['card_id']]['models']:
+                    for dimension in DIMENSIONS:
+                        values[method][dimension].append(row[dimension])
+                    values[method]['relevant_and_new'].append(int(row['relevance'] >= 5 and row['novelty'] >= 5))
+            if any(len(values[m]['relevance']) != 5 for m in METHODS):
+                raise ValueError('Each method must contribute exactly five candidates')
+            sus = sus_score(session.get('sus', []))
+        except ValueError as error:
+            excluded.append({'participant_id': pid, 'reason': str(error)})
+            continue
+        participants.append({'participant_id': pid, 'sus': sus,
+                             'methods': {m: {d: statistics.mean(v) for d, v in dims.items()} for m, dims in values.items()}})
+    if not participants:
+        raise ValueError(f'No complete participant sessions; exclusions: {excluded}')
+    summary = {'n_participants': len(participants), 'excluded': excluded,
+               'mean_sus': statistics.mean(p['sus'] for p in participants), 'methods': {}, 'comparisons': {}}
+    for m in METHODS:
+        summary['methods'][m] = {d: statistics.mean(p['methods'][m][d] for p in participants) for d in DIMENSIONS+['relevant_and_new']}
+    exploratory = []
+    for baseline in METHODS[1:]:
+        for dimension in DIMENSIONS+['relevant_and_new']:
+            key = f'{baseline}:{dimension}'
+            comparison = paired([p['methods']['BridgeFinder'][dimension] for p in participants], [p['methods'][baseline][dimension] for p in participants])
+            comparison['primary'] = baseline == 'Triadic Closure' and dimension == 'relevant_and_new'
+            comparison['significant'] = comparison['p_wilcoxon'] is not None and comparison['p_wilcoxon'] < .05 if comparison['primary'] else None
+            summary['comparisons'][key] = comparison
+            if not comparison['primary'] and comparison['p_wilcoxon'] is not None:
+                exploratory.append((key, comparison['p_wilcoxon']))
+    previous = 0.0
+    for index, (key, pvalue) in enumerate(sorted(exploratory, key=lambda item: item[1])):
+        adjusted = min(1.0, max(previous, pvalue*(len(exploratory)-index)))
+        summary['comparisons'][key]['p_holm'] = adjusted
+        summary['comparisons'][key]['significant'] = adjusted < .05
+        previous = adjusted
+    return summary
 
 
 def analyze_responses(responses_path, keys_path, out_path):
-    if not os.path.exists(responses_path):
-        print(f"[Notice] {responses_path} not found. Collect real participant exports from prototype/study/index.html first.")
-        sys.exit(0)
+    result = analyze(json.loads(Path(responses_path).read_text()), json.loads(Path(keys_path).read_text()))
+    Path(out_path).parent.mkdir(parents=True, exist_ok=True)
+    Path(out_path).write_text(json.dumps(result, indent=2, allow_nan=False))
+    print(json.dumps(result, indent=2, allow_nan=False))
+    return result
 
-    with open(responses_path) as f:
-        responses = json.load(f)
-    with open(keys_path) as f:
-        truth_keys = json.load(f)
-
-    # Group by participant_id -> method -> dimension -> list of card ratings
-    per_participant = defaultdict(lambda: defaultdict(lambda: defaultdict(list)))
-    relevant_and_new = defaultdict(lambda: defaultdict(list))
-
-    for entry in responses:
-        pid = entry.get("participant_id", "anon")
-        cid = str(entry.get("card_id"))
-        method = truth_keys.get(cid)
-        if not method:
-            continue
-        rel = float(entry["relevance"])
-        nov = float(entry["novelty"])
-        act = float(entry["actionability"])
-
-        per_participant[pid][method]["relevance"].append(rel)
-        per_participant[pid][method]["novelty"].append(nov)
-        per_participant[pid][method]["actionability"].append(act)
-        relevant_and_new[pid][method].append(1.0 if (rel >= 5.0 and nov >= 5.0) else 0.0)
-
-    methods = ["BridgeFinder", "Triadic Closure", "Topic-Only"]
-    dims = ["relevance", "novelty", "actionability"]
-
-    # Compute participant-level means (proper unit of analysis for paired tests)
-    pids = [
-        pid for pid in per_participant
-        if all(m in per_participant[pid] for m in methods)
-    ]
-    print(f"Analyzing N = {len(pids)} complete participant evaluations (Bonferroni alpha = 0.0167)...")
-
-    summary = {"n_participants": len(pids), "methods": {}, "paired_tests": {}}
-
-    for m in methods:
-        summary["methods"][m] = {}
-        for d in dims:
-            p_means = [statistics.mean(per_participant[pid][m][d]) for pid in pids]
-            summary["methods"][m][d] = {
-                "mean": round(statistics.mean(p_means), 2) if p_means else 0.0,
-                "std": round(statistics.stdev(p_means), 2) if len(p_means) > 1 else 0.0,
-            }
-        rn_means = [statistics.mean(relevant_and_new[pid][m]) for pid in pids]
-        summary["methods"][m]["relevant_and_new_rate"] = round(statistics.mean(rn_means), 3) if rn_means else 0.0
-
-    # Paired tests across participant means: BridgeFinder vs baselines
-    for baseline in ["Triadic Closure", "Topic-Only"]:
-        pair_key = f"BridgeFinder_vs_{baseline.replace(' ', '_')}"
-        summary["paired_tests"][pair_key] = {}
-        for d in dims:
-            bf_vec = [statistics.mean(per_participant[pid]["BridgeFinder"][d]) for pid in pids]
-            bl_vec = [statistics.mean(per_participant[pid][baseline][d]) for pid in pids]
-            if len(bf_vec) >= 2:
-                t_stat, p_t = stats.ttest_rel(bf_vec, bl_vec)
-                try:
-                    w_stat, p_w = stats.wilcoxon(bf_vec, bl_vec)
-                except ValueError:
-                    w_stat, p_w = 0.0, 1.0
-                summary["paired_tests"][pair_key][d] = {
-                    "t_stat": round(float(t_stat), 3),
-                    "p_ttest": float(p_t),
-                    "w_stat": round(float(w_stat), 3),
-                    "p_wilcoxon": float(p_w),
-                    "significant_bonferroni": bool(p_t < 0.0167),
-                }
-
-    os.makedirs(os.path.dirname(out_path) or ".", exist_ok=True)
-    with open(out_path, "w") as f:
-        json.dump(summary, f, indent=2)
-    print(json.dumps(summary, indent=2))
-
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument("--responses", default="prototype/study/study_responses.json")
-    parser.add_argument("--keys", default="prototype/study/truth_keys.json")
-    parser.add_argument("--out", default="prototype/study/study_analysis_results.json")
+    parser.add_argument('--responses', required=True)
+    parser.add_argument('--keys', default='prototype/study/truth_keys.json')
+    parser.add_argument('--out', default='prototype/study/study_analysis_results.json')
     args = parser.parse_args()
     analyze_responses(args.responses, args.keys, args.out)

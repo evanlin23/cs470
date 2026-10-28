@@ -1,3 +1,5 @@
+> Historical handoff: implementation and metrics below predate the shared-model revision. For current commands, route semantics, study protocol, and validated results, use `prototype/README.md`, `prototype/study/README.md`, and `midterm/review/rubric-review.md`.
+
 # BridgeFinder: Project Handoff & Contributor Guide
 
 **Project Name:** BridgeFinder: A Social Network Brokerage Recommender for Campus Research Collaborations  
