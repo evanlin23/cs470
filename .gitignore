@@ -5,3 +5,6 @@ __pycache__/
 prototype/study/study_responses*.json
 
 .build/
+prototype/.raw_cache/
+.raw_cache/
+
