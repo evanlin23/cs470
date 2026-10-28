@@ -15,7 +15,7 @@
 \maketitle
 
 \begin{abstract}
-Students often look for research opportunities through people they already know. BridgeFinder helps them look beyond those circles. A student selects a familiar researcher, explores a map of collaboration groups, and sees suggested researchers with related work and possible introduction paths. At midterm, we have built the web prototype, analyzed two UIUC publication datasets, and gathered feedback from five students. A test using past collaborations finds that our recommendations predict later cross-community collaborations better than shared-contact ranking, although the gains fall short of our goals. The next step is to test whether students find these recommendations relevant, unfamiliar, and useful for contacting someone.
+Students often look for research opportunities through people they already know. BridgeFinder helps them look beyond those circles. A student selects a familiar researcher, explores a collaboration map, and sees related researchers with possible introduction paths. At midterm, we have built the web prototype, analyzed two UIUC publication datasets, and gathered feedback from five students. A test using past collaborations finds better predictions than shared-contact ranking, although the gains fall short of our goals. Next, we will test whether students find the suggestions relevant, unfamiliar, and useful for contacting someone.
 \end{abstract}
 
 \section{Objective}
@@ -26,11 +26,13 @@ A student who enjoyed a computing class might want to apply those skills in biol
 The main design challenge is to balance relevance with discovery. A suggestion should match the student's interests while adding someone they would be unlikely to find through their usual contacts. It should also explain a practical next step. At midterm, we have a working three-screen app, a pipeline for building the collaboration graph, tests on two publication datasets, and one round of student feedback. Our results show promise for finding later collaborators; whether the app helps students find mentors remains an open question.
 
 \section{Related Work}
-\textbf{Search and visual discovery.} Illinois Experts~\cite{experts} and Google Scholar help users find expertise through profiles and publications. They are useful when a student knows what to search for, but a list of relevant names does not by itself explain whom the student could ask for an introduction. Connected Papers and ResearchRabbit make related literature easier to explore through visual maps. We borrow that visual approach, but organize the map around researchers and their collaborations rather than papers. Our main addition is to connect a recommendation to a possible introduction path.
+\textbf{Researcher search.} Illinois Experts~\cite{experts} brings together institutional profiles and publications, making it a useful place to check someone's expertise. Google Scholar~\cite{scholar} supports publication search and author profiles, which help a student follow a research topic. Both are useful sources of candidate names. Our task goes a step further: explain how a candidate relates to someone the student already knows. We therefore put the collaboration map and possible introduction beside the research match, rather than expecting a profile search to answer that question.
 
-\textbf{Predicting collaborators.} Liben-Nowell and Kleinberg~\cite{libennowell2007} study how network structure predicts future links. One useful measure is Adamic--Adar, which favors people with shared contacts. This gives an understandable way to suggest likely collaborators, but can keep recommendations close to familiar circles. Tang et al.~\cite{tang2012} study cross-domain collaboration recommendations by combining evidence about research interests and relationships. That work supports using more than topic matching alone. Our project asks an additional question: can students understand and act on the connection we show? We therefore evaluate both ranking quality and students' judgments of the recommendations.
+\textbf{Literature maps.} Connected Papers~\cite{connectedpapers} gives a visual overview of related papers, helping a reader get oriented in an unfamiliar area. ResearchRabbit~\cite{researchrabbit} supports exploring related literature from a collection of papers. Their strength is making discovery an exploration rather than a sequence of keyword searches. For our purpose, however, a route between papers is not an introduction between people. BridgeFinder borrows the map-based interaction but makes researchers, shared co-authors, and candidate explanations the main objects.
 
-\textbf{Bridging research groups.} Granovetter's work on weak ties~\cite{granovetter1973} explains how contacts outside a close circle can bring new information. Burt's work on structural holes~\cite{burt1992,burt2004} describes the opportunities available to people who connect otherwise separate groups. These ideas motivate BridgeFinder, but do not guarantee that any particular missing collaboration would be valuable. Dahlander and McFarland's study of research organizations~\cite{dahlander2013} also shows why intellectual similarity and organizational context matter for collaboration. Our graph captures shared publications and topics; it cannot capture every personal or institutional reason a collaboration succeeds.
+\textbf{Collaboration recommendation.} Liben-Nowell and Kleinberg~\cite{libennowell2007} compare ways to predict future links from a network. Common-neighbor measures such as Adamic--Adar are simple, explainable comparisons, but favor people who already share contacts. We retain shared contacts as useful routes while restricting candidates to another community. Tang et al.~\cite{tang2012} address cross-domain collaboration recommendation using evidence about research interests and relationships. Their strength is treating relevance across domains as a recommendation problem. That ranking task does not by itself test whether a student can understand a suggested contact or use an introduction path. Our study therefore measures relevance, novelty, and willingness to contact someone, alongside the prediction test.
+
+\textbf{Evidence about research networks.} Granovetter~\cite{granovetter1973} explains how weak ties can carry information beyond close circles; Burt~\cite{burt1992,burt2004} explains the benefits available to people who bridge separate groups. These works give us a reason to look across communities, but they do not establish the value of a particular missing co-authorship. Dahlander and McFarland~\cite{dahlander2013} study how research ties form and persist over time, showing why intellectual similarity and organizational context matter. That longitudinal view helps explain collaboration, but does not provide our student-facing discovery workflow. BridgeFinder turns these ideas into suggestions that can be explored; publication data alone still cannot establish personal trust or mentoring availability.
 
 \section{Course Concepts and Network Analysis}
 \subsection{Building the collaboration graph}
@@ -93,29 +95,31 @@ The app follows the proposal's three-screen flow, with a starting-person selecto
 
 \begin{figure*}[t]
 \centering
-\includegraphics[width=0.62\textwidth]{midterm/review/screenshots/02-map.png}\\[3pt]
+\includegraphics[width=0.62\textwidth,trim=0 150 0 0,clip]{midterm/review/screenshots/02-map.png}\\[3pt]
 \includegraphics[width=0.82\textwidth,trim=45 205 45 205,clip]{midterm/review/screenshots/03-recommendation.png}
 \caption{The implemented prototype. Top: selecting John A. Rogers shows suggestions outside his collaboration community. Dashed orange links are suggested collaborations, while solid lines show observed collaborations. Bottom: opening Ashish A. Kulkarni's card shows a possible route through Yiyue Luo, alongside shared topics and example work. A co-authorship path suggests whom to ask; it does not guarantee an introduction.}
 \label{fig:prototype}
 \end{figure*}
 
 \subsection{What works now}
-Python prepares the graph and recommendations; a static web page renders them with D3. This keeps graph calculations out of the student's browsing session. The app, prediction test, and study cards use the same graph and ranking code, so the model we evaluate is the one displayed in the interface.
+Python computes recommendations in advance, and a static D3 web page displays them. The app, prediction test, and study cards share graph and ranking code, keeping the evaluation aligned with the interface.
 
-Cards show only paths found in the data, with at most two intermediaries. If no path is found within that limit, the app says so rather than inventing a contact. An outreach button opens an editable message template but does not send email. Automated checks cover the displayed rankings and route edges, and a browser walkthrough confirms that the main flow works. These checks establish that the prototype runs; the next user round will test whether people understand it.
+Cards show only observed paths, with at most two intermediaries, and explicitly mark unavailable routes. An outreach button opens an editable message without sending email. Automated checks verify rankings and route edges, and a browser walkthrough confirms that the main flow works. The next user round will test whether people understand it.
 
 \section{Users and Feedback}
-Our target users are UIUC students who want to explore research beyond their current department. They are a useful initial population because they may have subject knowledge from classes but few research contacts. We gathered early feedback from five students in individual, 30-minute sessions, during which they talked through their use of the prototype: three CS/CE undergraduate juniors or seniors and two graduate students from Bioengineering and Information Sciences. This convenience sample covers both computing and application areas, but is too small to represent the campus population. Its purpose was to find interface problems~\cite{nielsen1993}, not to establish statistical differences between recommendation methods.
+Our target users are UIUC students who want research opportunities beyond their current department. They may know a subject through classes but have few research contacts. We gathered feedback from five students in individual, 30-minute sessions, during which they talked through the early prototype: three CS/CE undergraduate juniors or seniors and two graduate students from Bioengineering and Information Sciences.
 
-Three observations led to design changes:
+This mix is useful for an initial design round. The undergraduates represent the app's entry problem: exploring research before having publications of their own. Including graduate students in application areas brings another perspective on interpreting unfamiliar research and contacts. Five sessions allow close attention to interaction problems~\cite{nielsen1993}; they do not support a campus-wide estimate of usability. The purpose of this round was to improve the main flow before comparing recommendation quality with a broader sample.
 
-\textbf{Students needed a way to start.} Students without publications could not use themselves as the starting node. We added a searchable list of researchers so they could begin with an instructor or someone whose work they knew.
+The feedback led to three changes, each addressing a different point in that flow:
 
-\textbf{Dashed lines were ambiguous.} Students read them as weak existing collaborations. We added a legend that separates observed co-authorships from suggested connections. The next round will check whether students can explain that difference without help.
+\textbf{Getting started.} Students without publications could not use themselves as the starting node. We added the searchable researcher list, so a familiar instructor can provide an entry point. This avoids requiring a new student to have an academic profile before using the app.
 
-\textbf{The introduction mattered before the score.} Students looked for who might introduce them before reading papers and topics. They also read a low constraint score as a poor recommendation. We moved the introduction path to the top of the card and displayed autonomy as a positive gauge. We still need to check whether this makes the explanation easier to use.
+\textbf{Reading the map.} Students interpreted dashed lines as weak existing collaborations. We added a legend separating observed co-authorship from suggested connections. The distinction is visible in the map in Figure~\ref{fig:prototype}: dashed links identify candidates to explore, not relationships that already exist.
 
-These are qualitative findings from the authors' sessions; we have not measured how common each issue was or whether the changes resolved it. The next study will include students from more disciplines and compare their judgments across recommendation methods.
+\textbf{Choosing a next step.} Students looked for who might introduce them before reading papers and topics. They also read a low constraint score as a poor recommendation. We moved the route to the top of the card and showed autonomy as a positive gauge. The card in Figure~\ref{fig:prototype} shows the resulting order: introduction first, then scores, topics, and example work.
+
+These observations explain the design changes, but do not show that the changes solved the problems. In the next round, students will explain the line types and suggested route without help, allowing us to check comprehension rather than infer it from successful clicks. We report these first-round findings qualitatively, without issue frequencies or participant quotations.
 
 \section{Evaluation}
 \subsection{Predicting later collaborations}
@@ -171,9 +175,9 @@ We will measure three kinds of success:
 We will compare methods using each participant's average ratings, rather than treating all cards as independent observations. The main joint relevance-and-novelty comparison will use a paired Wilcoxon test at $p<0.05$, with differences and uncertainty intervals reported. Other comparisons will be exploratory and use Holm correction for multiple tests. The rating interface, SUS questionnaire, export, and analysis scripts are implemented and tested. The comparative study itself has not yet been run.
 
 \section{Limitations and Next Steps}
-The prototype can show a student where a relevant researcher sits in a collaboration network and suggest whom to ask about an introduction. It cannot tell whether that researcher currently takes students or whether a co-author would be willing to introduce them. Its historical UIUC sample also misses informal relationships, collaborators outside UIUC, and some publications.
+A publication path cannot tell us whether someone currently takes students or would make an introduction. Our historical UIUC sample also misses informal relationships, external collaborators, and some publications. The prediction gains therefore need to be tested against students' actual experience of the app.
 
-The main question for the next round is whether the map and explanations help students make a useful choice. We will run the 15-student study in November, revise the interface based on observed misunderstandings, and test any scoring changes on separate validation data before the final evaluation. The final report will combine those user findings with the ranking results. So far, we have demonstrated a working system and modest prediction gains; useful mentoring connections remain the outcome we want to establish.
+In November, we will run the 15-student study and revise the interface. Any scoring changes will use separate validation data. The final report will combine user findings and prediction results to assess whether BridgeFinder helps students choose useful contacts.
 
 \section*{Contributions and AI Use}
 Evan Lin worked on data collection, the prediction test, and the campus map. Eric Liu worked on scoring, citation analysis, study tools, and the formative sessions. Both contributed to the report. Claude assisted with early development and drafting; OpenAI Codex assisted with implementation checks, tests, and report revision. No participant responses or quotations were generated.
@@ -198,7 +202,7 @@ R.~S. Burt.
 
 \bibitem{dahlander2013}
 L.~Dahlander and D.~A. McFarland.
-\newblock Ties that last: Tie formation and persistence in research organizations, 1988--2003.
+\newblock Ties that last: Tie formation and persistence in research collaborations over time.
 \newblock {\em Administrative Science Quarterly}, 58(1):69--110, 2013.
 
 \bibitem{girvan2002}
@@ -230,6 +234,21 @@ J.~Priem, H.~Piwowar, and R.~Orr.
 J.~Tang, S.~Wu, J.~Sun, and H.~Su.
 \newblock Cross-domain collaboration recommendation.
 \newblock In {\em Proceedings of the 18th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (KDD '12)}, pages 1285--1293, 2012.
+
+\bibitem{scholar}
+Google.
+\newblock Google Scholar: About.
+\newblock \url{https://scholar.google.com/intl/en/scholar/about.html}.
+
+\bibitem{connectedpapers}
+Connected Papers.
+\newblock Connected Papers: Explore connected papers in a visual graph.
+\newblock \url{https://www.connectedpapers.com/}.
+
+\bibitem{researchrabbit}
+ResearchRabbit.
+\newblock ResearchRabbit: Literature discovery.
+\newblock \url{https://www.researchrabbit.ai/}.
 
 \bibitem{experts}
 University~of Illinois.

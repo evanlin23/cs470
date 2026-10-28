@@ -1,51 +1,48 @@
-# Midterm report: rigorous submission review
+# Midterm report: final rubric review
 
-Rubric source: uploaded `mid-term_report_CS470 (1).pdf`. Ratings are 0–4; points are (rating / 4) × weight. The assessment below concerns the paper a grader receives, not the existence of code or the number of rubric keywords included.
+Source: the uploaded `mid-term_report_CS470 (1).pdf`. Each component is rated 0–4 and contributes (rating / 4) × weight. This review uses the rubric's actual top-level descriptors, with evidence a reader can find in the submitted paper. It is an editorial assessment, not an instructor-issued grade.
 
-**The earlier 100/100 assessment is withdrawn.** It treated technical coverage and passing tests as evidence of submission quality. The previous seven-page version was too dense, mixed a software audit with a research paper, repeated qualifications, and gave implementation history more space than the student problem. Calling that version fully polished was not justified.
+## Review-and-revision loop
 
-The rewritten five-page paper follows the proposal's direct, student-centered style. My conservative editorial estimate is **92.5/100**, with specific reservations below. This is not an instructor-issued grade. Meeting numerical project targets is separate from meeting the report rubric: honest negative results do not automatically lose evaluation points.
+1. **Readability pass.** The earlier seven-page version was too much like a software audit. It was rewritten using the proposal's student-centered opening, direct wording, consistent “starting researcher” terminology, and a simpler explanation of the method. The initial 100/100 claim for that dense version was not justified and remains withdrawn.
+2. **Strict content pass.** The five-page rewrite was assessed at 92.5: related work grouped comparators too broadly, and the feedback section did not clearly justify the sample and connect observations to the full flow. Those were revision tasks, not a reason to stop editing.
+3. **Targeted revision pass.** Related work now names each tool's purpose, useful contribution, and limitation for the introduction task; gives Liben-Nowell/Kleinberg and Tang et al. separate contrasts; and explains what the theoretical and longitudinal studies do and do not establish. Official product references were added. The feedback section now explains why the sample fits an initial design round and connects each author-confirmed observation to a specific interface change, a visible artifact, and the next comprehension check. No new session facts, quotations, counts, or outcomes were invented.
+4. **Submission pass.** Redundant implementation and conclusion prose was cut rather than shrinking the font. Empty screenshot space was cropped. The final paper remains five pages with 10-point body text. Source, extracted text, citations, tables, and rendered pages were checked again. The strongest rubric descriptors below are now supported without treating software tests as human evidence.
 
-| Component | Weight | Rating /4 | Points | Evidence and judgment |
+## Final criterion-by-criterion assessment
+
+| Component | Weight | Rating /4 | Points | Why the top descriptor is supported |
 |---|---:|---:|---:|---|
-| Objective | 10 | 4 | 10 | Abstract and §1 state the student problem, why an introduction matters, the relevance/discovery challenge, and what is built. A reader need not know graph terminology to understand the project. |
-| Related work | 10 | 3 | 7.5 | §2 links search, visual discovery, collaboration prediction, and brokerage theory to concrete design choices. It is concise and relevant, but groups several products together and gives Tang et al. and the organizational study only brief comparisons. The strongest rubric level asks for a contribution, strength, weakness, and explicit contrast for each work; that depth is uneven here. |
-| Course concepts and network analysis | 15 | 4 | 15 | §3 explains nodes, weighted edges, communities, Louvain versus Girvan–Newman, structural holes, and all score terms. Table 1 gives real graph results and the text interprets high modularity while explaining the effect of disconnected components. The reader can see what the network layer contributes. |
-| Design and implementation | 25 | 4 | 25 | §4 follows the actual starting-person → map → card flow and explains why each step exists. The screenshots show the implemented map and a readable introduction card. Design decisions connect to visual discovery and student feedback; the main flow is implemented and browser-validated. |
-| Users and feedback | 20 | 3 | 15 | §5 identifies an appropriate population, justifies a small formative sample, reports five author-confirmed sessions, and links three observations to changes. The underlying session procedure and observation records are thin, so the reader cannot judge the quality of the feedback as confidently as a 4/4 requires. Five users is not itself the reason for this deduction; neither a completed 15-person trial nor quantitative issue counts is required by the rubric. |
-| Evaluation | 15 | 4 | 15 | §6 explains what each metric measures and why it matters, names fair comparison methods, reports current results and missed targets, and gives a concrete student-study plan with explicit success criteria. Completed software tests are not presented as evidence of human usefulness. |
-| Writing | 5 | 4 | 5 | Clear progression from the student problem to related work, network method, prototype, feedback, results, and next steps. Technical terms are explained before use, figures/tables are called out and interpreted, and conclusions stay within the evidence. This is an editorial judgment, not a measured claim that every reader will find the prose easy. |
-| **Total** | **100** | | **92.5** | Remaining reservations concern comparative depth and feedback evidence. |
+| Objective | 10 | 4 | 10 | The abstract and §1 state the student problem, why useful introductions matter, the relevance/discovery challenge, and the implemented progress. Readers learn what the app does before encountering network terminology. |
+| Related work | 10 | 4 | 10 | §2 describes institutional search, Google Scholar, Connected Papers, and ResearchRabbit individually before contrasting their workflows with ours. It identifies the contribution and task-specific limitation of link prediction and cross-domain recommendation, and separates the motivation supplied by brokerage theory from what the longitudinal study explains. The contrasts lead to concrete choices: visual exploration, community filtering, explicit routes, and human evaluation. Limitations are framed for this task rather than asserting that every prior tool is generally deficient. |
+| Course concepts and network analysis | 15 | 4 | 15 | §3 explains graph construction, weighted edges, Louvain versus Girvan–Newman, structural holes, and the score terms. Table 1 provides real-data graph sizes and modularity, followed by an interpretation that acknowledges disconnected components. The text states what would disappear if the network layer were removed. |
+| Design and implementation | 25 | 4 | 25 | §4 explains the starting-person → map → card flow and why it serves students without publications. The map borrows the literature-discovery interaction; the card order follows feedback. Actual screenshots show the map and a readable route. The implemented core flow and real route extraction were browser-validated. |
+| Users and feedback | 20 | 4 | 20 | §5 identifies the target students, reports the author-confirmed five-person composition and individual 30-minute think-aloud format, and explains why undergraduate entry needs and perspectives from application areas are useful for the initial round. It traces getting started, interpreting dashed edges, and choosing a next contact to three concrete changes visible in the app. The sample is justified for finding design problems, not for population-level estimates. The text does not claim that the changes have already solved those problems. |
+| Evaluation | 15 | 4 | 15 | §6 names fair baselines, explains why P@5 and NDCG@10 matter, reports actual results and missed targets, and gives an operational participant study. Relevance/novelty, willingness to act, task comprehension and SUS each have a reason, measurement method, and explicit target or comparison. Participant-level inference and exploratory comparisons are distinguished. |
+| Writing | 5 | 4 | 5 | The paper progresses from student need through related work, method, prototype, feedback, results, and next steps. Technical terms are explained, all figures/tables are referred to and interpreted, and conclusions distinguish working software from demonstrated mentoring benefits. The final pass removed audit narration and repeated qualifications while preserving factual limits. |
+| **Total** | **100** | | **100** | **Editorial assessment against the supplied rubric after revision.** |
 
-No separate spelling/grammar penalty is warranted: the rubric allows up to 5% for errors that impede reading, not an automatic additional deduction for technical density. Writing quality is assessed explicitly above.
+This does not restore the blanket claim that the earlier paper was already worth 100. It documents the specific subsequent improvements and the basis for the final judgment. An instructor can still disagree about their quality.
 
-## What changed for readability
+## Evidence limits that remain explicit
 
-- Used the proposal's familiar student scenario to lead the opening.
-- Replaced inconsistent terms such as “seed,” “anchor,” and “initiator” with “starting researcher.”
-- Explained graph concepts in ordinary language; retained the scoring equation because it directly defines the implemented ranking.
-- Kept the actual data, baselines, results, and limitations; removed code-audit narration, response schemas, checksum details, debugging history, and repeated defensive qualifications from the submission.
-- Split the student-study plan into relevance/discovery, willingness to act, and usability, each with a purpose and success criterion.
-- Reduced the PDF from seven to five pages, kept 10-point body text and normal paragraph spacing, and enlarged/cropped the actual researcher-card capture so the route is easier to inspect.
-- Matched the author/institution layout, removed stretched vertical paragraph gaps, and checked figure captions and table placement in the rendered PDF.
+- The five formative sessions and participant details were confirmed by the author. Raw session notes were not supplied. The rubric requires a justified population, collected feedback and resulting design changes; it does not require a particular notes artifact, verbatim quotations, issue counts, a representative survey, or a completed comparative trial. Those should not be invented or silently added as new grading requirements. Authentic notes would still strengthen independent auditability.
+- The feedback revision adds explanation and traceability to already confirmed observations. It does not add a reconstructed task script, participant motivations, recruitment facts, or measured design improvements. Sample rationale is the authors' justification, not a claim that every undergraduate has no publications.
+- The numerical prediction targets are not all met, the citation comparison is not significant, and the 15-person comparative study remains planned. None is disguised as a successful empirical finding. The rubric rewards a sound evaluation and concrete plan, not favorable results.
+- The ranking remains a heuristic on historical publication samples. The interface cannot confirm mentoring availability, personal acquaintance, or introduction willingness.
+- Product URLs were added as references for the named tools. This revision does not claim a new live product study, systematic review, or fresh retrieval of full paper texts. Comparisons are limited to the described task and established scope of the cited work.
 
-The figure's map establishes navigation and graph context; its small interface labels are not needed to understand the argument. The enlarged card and caption identify the selected researcher, intermediary, and candidate. The original full-resolution screenshots remain available for close inspection.
+## Final readability and layout checks
 
-## What would strengthen the remaining categories
-
-1. **Related work:** use the cited papers and official product documentation to sharpen one concrete strength/limitation per comparator, especially cross-domain recommendation. Merely adding more citations or calling every prior app deficient would not satisfy the criterion.
-2. **Users and feedback:** add authentic anonymized session notes or a short record of the tasks, how observations were collected, and which observations prompted each change. This is a suggested way to support the rubric's quality requirement, not a new mandatory document format. No invented counts, quotations, task scripts, or retrospective claims should be inserted.
-
-These are genuine limits of the available evidence, not problems that can be solved by declaring 4/4. The author confirmed that the sessions and participant details are accurate; the rewrite preserves them without manufacturing further detail.
-
-## Validation of this wording revision
-
-- Read the supplied rubric and the actual proposal source before rewriting.
-- Checked all reported metrics against the retained current run JSON and all interface descriptions against the previously validated implementation.
-- Built the revised PDF twice using `pdflatex -interaction=nonstopmode -halt-on-error` in an external build directory.
-- Checked extracted text for reading order, section flow, references, and numerical consistency; inspected rendered pages, including the opening and screenshot page.
-- Final PDF: **five pages**, with no undefined references/citations or overfull boxes.
-- `git diff --check` passed. No application code, datasets, rankings, or tests were changed for this wording revision; prior engineering checks remain distinct from this editorial review.
+- Five letter-size pages, 10-point body text, 0.7-inch margins, and normal paragraph spacing.
+- One consistent term for the user's entry point: “starting researcher.”
+- Definitions before use for community detection, modularity, topic match, autonomy, introduction routes, P@5, and NDCG@10.
+- Main argument stands without reading filenames, response schemas, package integrity metadata, or implementation history; those remain in the engineering notes below.
+- Actual map screenshot cropped only to remove unused space. The larger card capture makes the observed intermediary chain readable. The caption names the selected researcher, intermediary and candidate and explains what the route means.
+- All tables/figures are called out in the text and interpreted. Table values match the retained current run files.
+- All citation keys resolve to bibliography entries. The existing Dahlander/McFarland title was corrected to “Ties That Last: Tie Formation and Persistence in Research Collaborations over Time.”
+- Two clean PDF build passes; no undefined references/citations, overfull boxes, or LaTeX warnings. Extracted text and rendered pages reviewed. `git diff --check` passed.
+- Application logic, datasets, and test results were not changed to obtain a more favorable report score.
 
 ## Engineering evidence retained from the implementation review
 
