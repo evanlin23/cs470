@@ -1,287 +1,1022 @@
 [
   {
     "card_id": "CARD_001",
-    "seed_id": "https://openalex.org/A5045551635",
-    "seed_name": "John A. Rogers",
+    "seed_id": "https://openalex.org/A5067579128",
+    "seed_name": "Naiman A. Khan",
     "seed_department": "Community 1",
     "seed_topics": [
-      "Advanced MEMS and NEMS Technologies",
-      "Advanced Materials and Mechanics",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Nanofabrication and Lithography Techniques"
+      "Adipokines, Inflammation, and Metabolic Diseases",
+      "Antioxidant Activity and Oxidative Stress",
+      "Fatty Acid Research and Health",
+      "Gut microbiota and health"
     ],
-    "candidate_name": "SungGyu Chun",
+    "candidate_name": "Jaume Padilla",
     "candidate_topics": [
-      "Advanced Materials and Mechanics",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Graphene research and applications"
+      "Adipokines, Inflammation, and Metabolic Diseases",
+      "Adipose Tissue and Metabolism",
+      "Gut microbiota and health"
     ],
     "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
-      "Heterogeneous, Three-Dimensional Texturing of Graphene"
+      "Comparison of Diet versus Exercise on Metabolic Function and Gut Microbiota in Obese Rats"
     ],
-    "introduction_path": "John A. Rogers \u2192 Paul V. Braun \u2192 SungWoo Nam \u2192 SungGyu Chun (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "introduction_path": "Naiman A. Khan \u2192 Ruopeng An \u2192 Kelly Scott Swanson \u2192 Jaume Padilla (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
     "path_ids": [
-      "https://openalex.org/A5045551635",
-      "https://openalex.org/A5040320137",
-      "https://openalex.org/A5101901781",
-      "https://openalex.org/A5044985385"
+      "https://openalex.org/A5067579128",
+      "https://openalex.org/A5002313901",
+      "https://openalex.org/A5053823114",
+      "https://openalex.org/A5018946159"
     ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
   },
   {
     "card_id": "CARD_002",
-    "seed_id": "https://openalex.org/A5045551635",
-    "seed_name": "John A. Rogers",
+    "seed_id": "https://openalex.org/A5067579128",
+    "seed_name": "Naiman A. Khan",
     "seed_department": "Community 1",
     "seed_topics": [
-      "Advanced MEMS and NEMS Technologies",
-      "Advanced Materials and Mechanics",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Nanofabrication and Lithography Techniques"
+      "Adipokines, Inflammation, and Metabolic Diseases",
+      "Antioxidant Activity and Oxidative Stress",
+      "Fatty Acid Research and Health",
+      "Gut microbiota and health"
     ],
-    "candidate_name": "Jonah Nguyen",
+    "candidate_name": "Thomas N. Smith",
     "candidate_topics": [
-      "Advanced Materials and Mechanics",
-      "Electrowetting and Microfluidic Technologies",
-      "Surface Modification and Superhydrophobicity"
+      "Adipokines, Inflammation, and Metabolic Diseases",
+      "Adipose Tissue and Metabolism",
+      "Gut microbiota and health"
     ],
     "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
-      "Exploring the Role of Habitat on the Wettability of Cicada Wings"
+      "Comparison of Diet versus Exercise on Metabolic Function and Gut Microbiota in Obese Rats"
     ],
-    "introduction_path": "John A. Rogers \u2192 David G. Cahill \u2192 Nenad Miljkovic \u2192 Jonah Nguyen (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "introduction_path": "Naiman A. Khan \u2192 Ruopeng An \u2192 Kelly Scott Swanson \u2192 Thomas N. Smith (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
     "path_ids": [
-      "https://openalex.org/A5045551635",
-      "https://openalex.org/A5001475799",
-      "https://openalex.org/A5033093452",
-      "https://openalex.org/A5016857452"
+      "https://openalex.org/A5067579128",
+      "https://openalex.org/A5002313901",
+      "https://openalex.org/A5053823114",
+      "https://openalex.org/A5018016311"
     ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
   },
   {
     "card_id": "CARD_003",
-    "seed_id": "https://openalex.org/A5045551635",
-    "seed_name": "John A. Rogers",
+    "seed_id": "https://openalex.org/A5067579128",
+    "seed_name": "Naiman A. Khan",
     "seed_department": "Community 1",
     "seed_topics": [
-      "Advanced MEMS and NEMS Technologies",
-      "Advanced Materials and Mechanics",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Nanofabrication and Lithography Techniques"
+      "Adipokines, Inflammation, and Metabolic Diseases",
+      "Antioxidant Activity and Oxidative Stress",
+      "Fatty Acid Research and Health",
+      "Gut microbiota and health"
     ],
-    "candidate_name": "Jonathan V. Sweedler",
+    "candidate_name": "Zhigang Yang",
     "candidate_topics": [
-      "Advanced Proteomics Techniques and Applications",
-      "Bacterial Identification and Susceptibility Testing",
-      "Bacterial biofilms and quorum sensing",
-      "Electrochemical Analysis and Applications",
-      "Electrochemical sensors and biosensors"
+      "Health and Lifestyle Studies",
+      "Obesity, Physical Activity, Diet",
+      "Physical Activity and Health"
     ],
     "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
-      "Lutein and Brain Function",
-      "Rapid Mitogenic Regulation of the mTORC1 Inhibitor, DEPTOR, by Phosphatidic Acid"
+      "Impact Of Physical Activity Participation On Waist-to-hip Ratio: A Propensity Score Analysis"
     ],
-    "introduction_path": "John A. Rogers \u2192 Yiyue Luo \u2192 Jonathan V. Sweedler (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "introduction_path": "Naiman A. Khan \u2192 Hai Xia Yan \u2192 Weimo Zhu \u2192 Zhigang Yang (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
     "path_ids": [
-      "https://openalex.org/A5045551635",
-      "https://openalex.org/A5007246518",
-      "https://openalex.org/A5006238710"
+      "https://openalex.org/A5067579128",
+      "https://openalex.org/A5026045061",
+      "https://openalex.org/A5110116850",
+      "https://openalex.org/A5004168577"
     ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
   },
   {
     "card_id": "CARD_004",
-    "seed_id": "https://openalex.org/A5045551635",
-    "seed_name": "John A. Rogers",
+    "seed_id": "https://openalex.org/A5067579128",
+    "seed_name": "Naiman A. Khan",
     "seed_department": "Community 1",
     "seed_topics": [
-      "Advanced MEMS and NEMS Technologies",
-      "Advanced Materials and Mechanics",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Nanofabrication and Lithography Techniques"
+      "Adipokines, Inflammation, and Metabolic Diseases",
+      "Antioxidant Activity and Oxidative Stress",
+      "Fatty Acid Research and Health",
+      "Gut microbiota and health"
     ],
-    "candidate_name": "Gabriel Popescu",
+    "candidate_name": "Richard Bukenya",
     "candidate_topics": [
-      "3D Printing in Biomedical Research",
-      "AI in cancer detection",
-      "Advanced Fluorescence Microscopy Techniques",
-      "Cellular Mechanics and Interactions",
-      "Digital Holography and Microscopy"
+      "Body Composition Measurement Techniques",
+      "Health Education and Validation",
+      "Nutrition, Health and Food Behavior",
+      "Nutritional Studies and Diet",
+      "Obesity, Physical Activity, Diet"
     ],
     "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
-      "High\u2010Resolution Projection Microstereolithography for Patterning of Neovasculature",
-      "Prediction of Prostate Cancer Recurrence Using Quantitative Phase Imaging"
+      "Validity and Reliability of General Nutrition Knowledge Questionnaire for Adults in Uganda",
+      "Assessing the reliability of FTIR spectroscopy measurements and validity of bioelectrical impedance analysis as a surrogate measure of body composition among children and adolescents aged 8\u201319 years attending schools in Kampala, Uganda"
     ],
-    "introduction_path": "John A. Rogers \u2192 Yiyue Luo \u2192 Gabriel Popescu (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "introduction_path": "Naiman A. Khan \u2192 Sharon M. Nickols\u2010Richardson \u2192 Karen Chapman\u2010Novakofski \u2192 Richard Bukenya (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
     "path_ids": [
-      "https://openalex.org/A5045551635",
-      "https://openalex.org/A5007246518",
-      "https://openalex.org/A5056127619"
+      "https://openalex.org/A5067579128",
+      "https://openalex.org/A5001585537",
+      "https://openalex.org/A5088418798",
+      "https://openalex.org/A5042429710"
     ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
   },
   {
     "card_id": "CARD_005",
-    "seed_id": "https://openalex.org/A5045551635",
-    "seed_name": "John A. Rogers",
+    "seed_id": "https://openalex.org/A5067579128",
+    "seed_name": "Naiman A. Khan",
     "seed_department": "Community 1",
     "seed_topics": [
-      "Advanced MEMS and NEMS Technologies",
-      "Advanced Materials and Mechanics",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Nanofabrication and Lithography Techniques"
+      "Adipokines, Inflammation, and Metabolic Diseases",
+      "Antioxidant Activity and Oxidative Stress",
+      "Fatty Acid Research and Health",
+      "Gut microbiota and health"
     ],
-    "candidate_name": "Peter Snapp",
+    "candidate_name": "Bryan A. White",
     "candidate_topics": [
-      "Advanced Materials and Mechanics",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Photonic Crystals and Applications"
+      "Animal Nutrition and Physiology",
+      "Gastrointestinal motility and disorders",
+      "Genomics and Phylogenetic Studies",
+      "Gut microbiota and health",
+      "Inflammatory Bowel Disease"
     ],
     "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
-      "Colloidal Photonic Crystal Strain Sensor Integrated with Deformable Graphene Phototransducer"
+      "Specific microbiome-dependent mechanisms underlie the energy harvest efficiency of ruminants",
+      "Exercise Alters Gut Microbiota Composition and Function in Lean and Obese Humans"
     ],
-    "introduction_path": "John A. Rogers \u2192 Paul V. Braun \u2192 SungWoo Nam \u2192 Peter Snapp (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "introduction_path": "Naiman A. Khan \u2192 Lucy J. Mailing \u2192 Bryan A. White (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
     "path_ids": [
-      "https://openalex.org/A5045551635",
-      "https://openalex.org/A5040320137",
-      "https://openalex.org/A5101901781",
-      "https://openalex.org/A5024053459"
+      "https://openalex.org/A5067579128",
+      "https://openalex.org/A5004031655",
+      "https://openalex.org/A5101849155"
     ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
   },
   {
     "card_id": "CARD_006",
-    "seed_id": "https://openalex.org/A5045551635",
-    "seed_name": "John A. Rogers",
+    "seed_id": "https://openalex.org/A5067579128",
+    "seed_name": "Naiman A. Khan",
     "seed_department": "Community 1",
     "seed_topics": [
-      "Advanced MEMS and NEMS Technologies",
-      "Advanced Materials and Mechanics",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Nanofabrication and Lithography Techniques"
+      "Adipokines, Inflammation, and Metabolic Diseases",
+      "Antioxidant Activity and Oxidative Stress",
+      "Fatty Acid Research and Health",
+      "Gut microbiota and health"
     ],
-    "candidate_name": "Ryan Steven Han",
+    "candidate_name": "Rebecca J. Welly",
     "candidate_topics": [
-      "Advanced Materials and Mechanics",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Graphene research and applications"
+      "Adipokines, Inflammation, and Metabolic Diseases",
+      "Adipose Tissue and Metabolism",
+      "Gut microbiota and health"
     ],
     "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
-      "Heterogeneous, Three-Dimensional Texturing of Graphene"
+      "Comparison of Diet versus Exercise on Metabolic Function and Gut Microbiota in Obese Rats"
     ],
-    "introduction_path": "John A. Rogers \u2192 Paul V. Braun \u2192 SungWoo Nam \u2192 Ryan Steven Han (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "introduction_path": "Naiman A. Khan \u2192 Ruopeng An \u2192 Kelly Scott Swanson \u2192 Rebecca J. Welly (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
     "path_ids": [
-      "https://openalex.org/A5045551635",
-      "https://openalex.org/A5040320137",
-      "https://openalex.org/A5101901781",
-      "https://openalex.org/A5024935115"
+      "https://openalex.org/A5067579128",
+      "https://openalex.org/A5002313901",
+      "https://openalex.org/A5053823114",
+      "https://openalex.org/A5011452407"
     ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
   },
   {
     "card_id": "CARD_007",
-    "seed_id": "https://openalex.org/A5045551635",
-    "seed_name": "John A. Rogers",
+    "seed_id": "https://openalex.org/A5067579128",
+    "seed_name": "Naiman A. Khan",
     "seed_department": "Community 1",
     "seed_topics": [
-      "Advanced MEMS and NEMS Technologies",
-      "Advanced Materials and Mechanics",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Nanofabrication and Lithography Techniques"
+      "Adipokines, Inflammation, and Metabolic Diseases",
+      "Antioxidant Activity and Oxidative Stress",
+      "Fatty Acid Research and Health",
+      "Gut microbiota and health"
     ],
-    "candidate_name": "Jaeuk Sung",
+    "candidate_name": "Kelly Scott Swanson",
     "candidate_topics": [
-      "Advanced Materials and Mechanics",
-      "Advanced Polymer Synthesis and Characterization",
-      "Lipid Membrane Structure and Behavior",
-      "Nanofabrication and Lithography Techniques",
-      "Nanoparticle-Based Drug Delivery"
+      "Animal Nutrition and Physiology",
+      "Aquaculture Nutrition and Growth",
+      "Food and Agricultural Sciences",
+      "Food composition and properties",
+      "Gastrointestinal motility and disorders"
     ],
     "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
-      "Microfluidics Synthesis of Gene Silencing Cubosomes",
-      "Interfacial Mechanophore Activation Using Laser-Induced Stress Waves"
+      "The Gastrointestinal Microbiome: A Review",
+      "Perspective: Physiologic Importance of Short-Chain Fatty Acids from Nondigestible Carbohydrate Fermentation"
     ],
-    "introduction_path": "John A. Rogers \u2192 David G. Cahill \u2192 Jaeuk Sung (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "introduction_path": "Naiman A. Khan \u2192 Ruopeng An \u2192 Kelly Scott Swanson (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
     "path_ids": [
-      "https://openalex.org/A5045551635",
-      "https://openalex.org/A5001475799",
-      "https://openalex.org/A5056431073"
+      "https://openalex.org/A5067579128",
+      "https://openalex.org/A5002313901",
+      "https://openalex.org/A5053823114"
     ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
   },
   {
     "card_id": "CARD_008",
-    "seed_id": "https://openalex.org/A5045551635",
-    "seed_name": "John A. Rogers",
+    "seed_id": "https://openalex.org/A5067579128",
+    "seed_name": "Naiman A. Khan",
     "seed_department": "Community 1",
     "seed_topics": [
-      "Advanced MEMS and NEMS Technologies",
-      "Advanced Materials and Mechanics",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Nanofabrication and Lithography Techniques"
-    ],
-    "candidate_name": "Stanislav S. Rubakhin",
-    "candidate_topics": [
-      "3D Printing in Biomedical Research",
-      "Advanced Proteomics Techniques and Applications",
+      "Adipokines, Inflammation, and Metabolic Diseases",
       "Antioxidant Activity and Oxidative Stress",
       "Fatty Acid Research and Health",
-      "Ion-surface interactions and analysis"
+      "Gut microbiota and health"
+    ],
+    "candidate_name": "Terese M. Zidon",
+    "candidate_topics": [
+      "Adipokines, Inflammation, and Metabolic Diseases",
+      "Adipose Tissue and Metabolism",
+      "Gut microbiota and health"
     ],
     "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
-      "Lutein and Brain Function",
-      "Classification of Large Cellular Populations and Discovery of Rare Cells Using Single Cell Matrix-Assisted Laser Desorption/Ionization Time-of-Flight Mass Spectrometry"
+      "Comparison of Diet versus Exercise on Metabolic Function and Gut Microbiota in Obese Rats"
     ],
-    "introduction_path": "John A. Rogers \u2192 Yiyue Luo \u2192 Stanislav S. Rubakhin (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "introduction_path": "Naiman A. Khan \u2192 Ruopeng An \u2192 Kelly Scott Swanson \u2192 Terese M. Zidon (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
     "path_ids": [
-      "https://openalex.org/A5045551635",
-      "https://openalex.org/A5007246518",
-      "https://openalex.org/A5020098405"
+      "https://openalex.org/A5067579128",
+      "https://openalex.org/A5002313901",
+      "https://openalex.org/A5053823114",
+      "https://openalex.org/A5021691120"
     ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
   },
   {
     "card_id": "CARD_009",
+    "seed_id": "https://openalex.org/A5067579128",
+    "seed_name": "Naiman A. Khan",
+    "seed_department": "Community 1",
+    "seed_topics": [
+      "Adipokines, Inflammation, and Metabolic Diseases",
+      "Antioxidant Activity and Oxidative Stress",
+      "Fatty Acid Research and Health",
+      "Gut microbiota and health"
+    ],
+    "candidate_name": "Victoria J. Vieira\u2010Potter",
+    "candidate_topics": [
+      "Adipokines, Inflammation, and Metabolic Diseases",
+      "Adipose Tissue and Metabolism",
+      "Gut microbiota and health"
+    ],
+    "model_version": "proposal-path-v3-common-neighbors",
+    "sample_papers": [
+      "Comparison of Diet versus Exercise on Metabolic Function and Gut Microbiota in Obese Rats"
+    ],
+    "introduction_path": "Naiman A. Khan \u2192 Ruopeng An \u2192 Kelly Scott Swanson \u2192 Victoria J. Vieira\u2010Potter (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5067579128",
+      "https://openalex.org/A5002313901",
+      "https://openalex.org/A5053823114",
+      "https://openalex.org/A5005123696"
+    ],
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
+  },
+  {
+    "card_id": "CARD_010",
+    "seed_id": "https://openalex.org/A5067579128",
+    "seed_name": "Naiman A. Khan",
+    "seed_department": "Community 1",
+    "seed_topics": [
+      "Adipokines, Inflammation, and Metabolic Diseases",
+      "Antioxidant Activity and Oxidative Stress",
+      "Fatty Acid Research and Health",
+      "Gut microbiota and health"
+    ],
+    "candidate_name": "Laura L Bauer",
+    "candidate_topics": [
+      "Advanced Drug Delivery Systems",
+      "Animal Nutrition and Physiology",
+      "Bamboo properties and applications",
+      "Gut microbiota and health",
+      "Microbial Metabolites in Food Biotechnology"
+    ],
+    "model_version": "proposal-path-v3-common-neighbors",
+    "sample_papers": [
+      "Agave Inulin Supplementation Affects the Fecal Microbiota of Healthy Adults Participating in a Randomized, Double-Blind, Placebo-Controlled, Crossover Trial1\u20133",
+      "In Vitro Fermentation of Xylooligosaccharides Produced from Miscanthus \u00d7 giganteus by Human Fecal Microbiota"
+    ],
+    "introduction_path": "Naiman A. Khan \u2192 Nicholas A. Burd \u2192 Laura L Bauer (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5067579128",
+      "https://openalex.org/A5005461791",
+      "https://openalex.org/A5010218041"
+    ],
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
+  },
+  {
+    "card_id": "CARD_011",
+    "seed_id": "https://openalex.org/A5067579128",
+    "seed_name": "Naiman A. Khan",
+    "seed_department": "Community 1",
+    "seed_topics": [
+      "Adipokines, Inflammation, and Metabolic Diseases",
+      "Antioxidant Activity and Oxidative Stress",
+      "Fatty Acid Research and Health",
+      "Gut microbiota and health"
+    ],
+    "candidate_name": "Karin Vermillion",
+    "candidate_topics": [
+      "Colorectal Cancer Screening and Detection",
+      "Gut microbiota and health",
+      "Nutritional Studies and Diet"
+    ],
+    "model_version": "proposal-path-v3-common-neighbors",
+    "sample_papers": [
+      "Race-dependent association of sulfidogenic bacteria with colorectal cancer",
+      "Abstract B31: Sulfidogenic bacteria are an important diet-driven exposure promoting colorectal cancer in African Americans"
+    ],
+    "introduction_path": "Naiman A. Khan \u2192 Lucy J. Mailing \u2192 Tzu-Wen Cross \u2192 Karin Vermillion (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5067579128",
+      "https://openalex.org/A5004031655",
+      "https://openalex.org/A5011316965",
+      "https://openalex.org/A5000152935"
+    ],
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
+  },
+  {
+    "card_id": "CARD_012",
+    "seed_id": "https://openalex.org/A5067579128",
+    "seed_name": "Naiman A. Khan",
+    "seed_department": "Community 1",
+    "seed_topics": [
+      "Adipokines, Inflammation, and Metabolic Diseases",
+      "Antioxidant Activity and Oxidative Stress",
+      "Fatty Acid Research and Health",
+      "Gut microbiota and health"
+    ],
+    "candidate_name": "Kenneth Robert Wilund",
+    "candidate_topics": [
+      "Balance, Gait, and Falls Prevention",
+      "Cardiovascular Health and Disease Prevention",
+      "Cardiovascular and exercise physiology",
+      "Dialysis and Renal Disease Management",
+      "Dietetics, Nutrition, and Education"
+    ],
+    "model_version": "proposal-path-v3-common-neighbors",
+    "sample_papers": [
+      "Results from the randomized controlled IHOPE trial suggest no effects of oral protein supplementation and exercise training on physical function in hemodialysis patients",
+      "Sex differences in autonomic function following maximal exercise"
+    ],
+    "introduction_path": "Naiman A. Khan \u2192 Nicholas A. Burd \u2192 Kenneth Robert Wilund (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5067579128",
+      "https://openalex.org/A5005461791",
+      "https://openalex.org/A5003266309"
+    ],
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
+  },
+  {
+    "card_id": "CARD_013",
+    "seed_id": "https://openalex.org/A5067579128",
+    "seed_name": "Naiman A. Khan",
+    "seed_department": "Community 1",
+    "seed_topics": [
+      "Adipokines, Inflammation, and Metabolic Diseases",
+      "Antioxidant Activity and Oxidative Stress",
+      "Fatty Acid Research and Health",
+      "Gut microbiota and health"
+    ],
+    "candidate_name": "Marni D. Boppart",
+    "candidate_topics": [
+      "Adipokines, Inflammation, and Metabolic Diseases",
+      "Cell Adhesion Molecules Research",
+      "Cellular Mechanics and Interactions",
+      "Exercise and Physiological Responses",
+      "Hydrogels: synthesis, properties, applications"
+    ],
+    "model_version": "proposal-path-v3-common-neighbors",
+    "sample_papers": [
+      "Influence of exercise and aging on extracellular matrix composition in the skeletal muscle stem cell niche",
+      "Collagen Scaffolds Incorporating Coincident Gradations of Instructive Structural and Biochemical Cues for Osteotendinous Junction Engineering"
+    ],
+    "introduction_path": "Naiman A. Khan \u2192 Nicholas A. Burd \u2192 Marni D. Boppart (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5067579128",
+      "https://openalex.org/A5005461791",
+      "https://openalex.org/A5051614460"
+    ],
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
+  },
+  {
+    "card_id": "CARD_014",
+    "seed_id": "https://openalex.org/A5074295593",
+    "seed_name": "Stephen P. Long",
+    "seed_department": "Community 2",
+    "seed_topics": [
+      "Agricultural Productivity and Crop Improvement",
+      "Bioenergy crop production and management",
+      "Biofuel production and bioconversion",
+      "Climate change impacts on agriculture"
+    ],
+    "candidate_name": "Yang Song",
+    "candidate_topics": [
+      "Bioenergy crop production and management",
+      "Climate change impacts on agriculture",
+      "Climate variability and models",
+      "Hydrology and Watershed Management Studies",
+      "Remote Sensing in Agriculture"
+    ],
+    "model_version": "proposal-path-v3-common-neighbors",
+    "sample_papers": [
+      "The Interplay Between Bioenergy Grass Production and Water Resources in the United States of America",
+      "Crop models capture the impacts of climate variability on corn yield"
+    ],
+    "introduction_path": "Stephen P. Long \u2192 Madhu Khanna \u2192 Atul Kumar Jain \u2192 Yang Song (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5074295593",
+      "https://openalex.org/A5029166175",
+      "https://openalex.org/A5037913161",
+      "https://openalex.org/A5081679735"
+    ],
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
+  },
+  {
+    "card_id": "CARD_015",
+    "seed_id": "https://openalex.org/A5074295593",
+    "seed_name": "Stephen P. Long",
+    "seed_department": "Community 2",
+    "seed_topics": [
+      "Agricultural Productivity and Crop Improvement",
+      "Bioenergy crop production and management",
+      "Biofuel production and bioconversion",
+      "Climate change impacts on agriculture"
+    ],
+    "candidate_name": "Xingchen Hong",
+    "candidate_topics": [
+      "Cloud Computing and Resource Management",
+      "Distributed and Parallel Computing Systems",
+      "Ecology and Vegetation Dynamics Studies",
+      "Environmental Monitoring and Data Management",
+      "Geographic Information Systems Studies"
+    ],
+    "model_version": "proposal-path-v3-common-neighbors",
+    "sample_papers": [
+      "CyberGIS\u2010Jupyter for reproducible and scalable geospatial analytics",
+      "TopoLens"
+    ],
+    "introduction_path": "Stephen P. Long \u2192 David Shaner LeBauer \u2192 Xingchen Hong (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5074295593",
+      "https://openalex.org/A5009711356",
+      "https://openalex.org/A5080333612"
+    ],
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
+  },
+  {
+    "card_id": "CARD_016",
+    "seed_id": "https://openalex.org/A5074295593",
+    "seed_name": "Stephen P. Long",
+    "seed_department": "Community 2",
+    "seed_topics": [
+      "Agricultural Productivity and Crop Improvement",
+      "Bioenergy crop production and management",
+      "Biofuel production and bioconversion",
+      "Climate change impacts on agriculture"
+    ],
+    "candidate_name": "Steffen Mueller",
+    "candidate_topics": [
+      "Bioenergy crop production and management",
+      "Biofuel production and bioconversion",
+      "Environmental Impact and Sustainability"
+    ],
+    "model_version": "proposal-path-v3-common-neighbors",
+    "sample_papers": [
+      "Carbon Calculator for Land Use Change from Biofuels Production (CCLUB) Users\u2019 Manual and Technical Documentation"
+    ],
+    "introduction_path": "Stephen P. Long \u2192 Evan H. DeLucia \u2192 Michelle M. Wander \u2192 Steffen Mueller (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5074295593",
+      "https://openalex.org/A5044416978",
+      "https://openalex.org/A5063418144",
+      "https://openalex.org/A5109238051"
+    ],
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
+  },
+  {
+    "card_id": "CARD_017",
+    "seed_id": "https://openalex.org/A5074295593",
+    "seed_name": "Stephen P. Long",
+    "seed_department": "Community 2",
+    "seed_topics": [
+      "Agricultural Productivity and Crop Improvement",
+      "Bioenergy crop production and management",
+      "Biofuel production and bioconversion",
+      "Climate change impacts on agriculture"
+    ],
+    "candidate_name": "Jennifer Dunn",
+    "candidate_topics": [
+      "Bioenergy crop production and management",
+      "Biofuel production and bioconversion",
+      "Environmental Impact and Sustainability"
+    ],
+    "model_version": "proposal-path-v3-common-neighbors",
+    "sample_papers": [
+      "Carbon Calculator for Land Use Change from Biofuels Production (CCLUB)"
+    ],
+    "introduction_path": "Stephen P. Long \u2192 Evan H. DeLucia \u2192 Michelle M. Wander \u2192 Jennifer Dunn (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5074295593",
+      "https://openalex.org/A5044416978",
+      "https://openalex.org/A5063418144",
+      "https://openalex.org/A5147727976"
+    ],
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
+  },
+  {
+    "card_id": "CARD_018",
+    "seed_id": "https://openalex.org/A5074295593",
+    "seed_name": "Stephen P. Long",
+    "seed_department": "Community 2",
+    "seed_topics": [
+      "Agricultural Productivity and Crop Improvement",
+      "Bioenergy crop production and management",
+      "Biofuel production and bioconversion",
+      "Climate change impacts on agriculture"
+    ],
+    "candidate_name": "Gary Schnitkey",
+    "candidate_topics": [
+      "Agricultural Development and Management",
+      "Agricultural Economics and Policy",
+      "Agricultural Innovations and Practices",
+      "Agricultural economics and policies",
+      "Agricultural risk and resilience"
+    ],
+    "model_version": "proposal-path-v3-common-neighbors",
+    "sample_papers": [
+      "Excessive rainfall leads to maize yield loss of a comparable magnitude to extreme drought in the United States",
+      "Is it Good to Have Options? The 2014 Farm Bill Program Decisions"
+    ],
+    "introduction_path": "Stephen P. Long \u2192 Evan H. DeLucia \u2192 Gary Schnitkey (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5074295593",
+      "https://openalex.org/A5044416978",
+      "https://openalex.org/A5065124456"
+    ],
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
+  },
+  {
+    "card_id": "CARD_019",
+    "seed_id": "https://openalex.org/A5074295593",
+    "seed_name": "Stephen P. Long",
+    "seed_department": "Community 2",
+    "seed_topics": [
+      "Agricultural Productivity and Crop Improvement",
+      "Bioenergy crop production and management",
+      "Biofuel production and bioconversion",
+      "Climate change impacts on agriculture"
+    ],
+    "candidate_name": "Rabin Bhattarai",
+    "candidate_topics": [
+      "Climate change impacts on agriculture",
+      "Climate variability and models",
+      "Engineering and Agricultural Innovations",
+      "Hydrology and Drought Analysis",
+      "Hydrology and Watershed Management Studies"
+    ],
+    "model_version": "proposal-path-v3-common-neighbors",
+    "sample_papers": [
+      "Utilization of coal fly and bottom ash pellet for phosphorus adsorption: Sustainable management and evaluation",
+      "Climate Change Impacts on Flow, Sediment and Nutrient Export in a Great Lakes Watershed Using SWAT"
+    ],
+    "introduction_path": "Stephen P. Long \u2192 Donald J. Wuebbles \u2192 Momcilo Markus \u2192 Rabin Bhattarai (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5074295593",
+      "https://openalex.org/A5001756256",
+      "https://openalex.org/A5039907277",
+      "https://openalex.org/A5047665516"
+    ],
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
+  },
+  {
+    "card_id": "CARD_020",
+    "seed_id": "https://openalex.org/A5074295593",
+    "seed_name": "Stephen P. Long",
+    "seed_department": "Community 2",
+    "seed_topics": [
+      "Agricultural Productivity and Crop Improvement",
+      "Bioenergy crop production and management",
+      "Biofuel production and bioconversion",
+      "Climate change impacts on agriculture"
+    ],
+    "candidate_name": "Phil Cardoso",
+    "candidate_topics": [
+      "Agricultural Productivity and Crop Improvement",
+      "Crop Yield and Soil Fertility",
+      "Fungal Plant Pathogen Control",
+      "Mycotoxins in Agriculture and Food",
+      "Ruminant Nutrition and Digestive Physiology"
+    ],
+    "model_version": "proposal-path-v3-common-neighbors",
+    "sample_papers": [
+      "1439 Chemical composition and fermentation profile of corn silage ensiled for zero, thirty, ninety, or one hundred fifty days from corn treated with a foliar fungicide at different growing stages",
+      "443 Effects of foliar fungicide and ensiling time on dry matter and in vitro digestibility of brown midrib and floury corn silage varieties."
+    ],
+    "introduction_path": "Stephen P. Long \u2192 Vijay Singh \u2192 Carl M M Parsons \u2192 M.R. Murphy \u2192 Phil Cardoso (4 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5074295593",
+      "https://openalex.org/A5000650931",
+      "https://openalex.org/A5054036093",
+      "https://openalex.org/A5074171832",
+      "https://openalex.org/A5112648441"
+    ],
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
+  },
+  {
+    "card_id": "CARD_021",
+    "seed_id": "https://openalex.org/A5074295593",
+    "seed_name": "Stephen P. Long",
+    "seed_department": "Community 2",
+    "seed_topics": [
+      "Agricultural Productivity and Crop Improvement",
+      "Bioenergy crop production and management",
+      "Biofuel production and bioconversion",
+      "Climate change impacts on agriculture"
+    ],
+    "candidate_name": "Craig Willis",
+    "candidate_topics": [
+      "Academic Publishing and Open Access",
+      "Algorithms and Data Compression",
+      "Distributed and Parallel Computing Systems",
+      "Information Retrieval and Search Behavior",
+      "Information and Cyber Security"
+    ],
+    "model_version": "proposal-path-v3-common-neighbors",
+    "sample_papers": [
+      "TERRA-REF Data Processing Infrastructure",
+      "Implementing Computational Reproducibility in the Whole Tale Environment"
+    ],
+    "introduction_path": "Stephen P. Long \u2192 David Shaner LeBauer \u2192 Craig Willis (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5074295593",
+      "https://openalex.org/A5009711356",
+      "https://openalex.org/A5084699532"
+    ],
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
+  },
+  {
+    "card_id": "CARD_022",
+    "seed_id": "https://openalex.org/A5074295593",
+    "seed_name": "Stephen P. Long",
+    "seed_department": "Community 2",
+    "seed_topics": [
+      "Agricultural Productivity and Crop Improvement",
+      "Bioenergy crop production and management",
+      "Biofuel production and bioconversion",
+      "Climate change impacts on agriculture"
+    ],
+    "candidate_name": "Hanseok Jeong",
+    "candidate_topics": [
+      "Agricultural Science and Fertilization",
+      "Climate change impacts on agriculture",
+      "Climate variability and models",
+      "Crop Yield and Soil Fertility",
+      "Engineering and Agricultural Innovations"
+    ],
+    "model_version": "proposal-path-v3-common-neighbors",
+    "sample_papers": [
+      "Exploring the effects of nitrogen fertilization management alternatives on nitrate loss and crop yields in tile-drained fields in Illinois",
+      "Simulated responses of tile-drained agricultural systems to recent changes in ambient atmospheric gradients"
+    ],
+    "introduction_path": "Stephen P. Long \u2192 Rob Kooper A \u2192 Shannon Bradley \u2192 Hanseok Jeong (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5074295593",
+      "https://openalex.org/A5025183449",
+      "https://openalex.org/A5005985586",
+      "https://openalex.org/A5038647558"
+    ],
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
+  },
+  {
+    "card_id": "CARD_023",
+    "seed_id": "https://openalex.org/A5074295593",
+    "seed_name": "Stephen P. Long",
+    "seed_department": "Community 2",
+    "seed_topics": [
+      "Agricultural Productivity and Crop Improvement",
+      "Bioenergy crop production and management",
+      "Biofuel production and bioconversion",
+      "Climate change impacts on agriculture"
+    ],
+    "candidate_name": "Jian Peng",
+    "candidate_topics": [
+      "Bioinformatics and Genomic Networks",
+      "Biomedical Text Mining and Ontologies",
+      "Complex Network Analysis Techniques",
+      "Computational Drug Discovery Methods",
+      "Genomics and Phylogenetic Studies"
+    ],
+    "model_version": "proposal-path-v3-common-neighbors",
+    "sample_papers": [
+      "A network integration approach for drug-target interaction prediction and computational drug repositioning from heterogeneous information",
+      "Integrating satellite and climate data to predict wheat yield in Australia using machine learning approaches"
+    ],
+    "introduction_path": "Stephen P. Long \u2192 Shaowen Wang \u2192 Jian Peng (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5074295593",
+      "https://openalex.org/A5026042163",
+      "https://openalex.org/A5061177999"
+    ],
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
+  },
+  {
+    "card_id": "CARD_024",
+    "seed_id": "https://openalex.org/A5074295593",
+    "seed_name": "Stephen P. Long",
+    "seed_department": "Community 2",
+    "seed_topics": [
+      "Agricultural Productivity and Crop Improvement",
+      "Bioenergy crop production and management",
+      "Biofuel production and bioconversion",
+      "Climate change impacts on agriculture"
+    ],
+    "candidate_name": "Matthew Charles Cervarich",
+    "candidate_topics": [
+      "Atmospheric and Environmental Gas Dynamics",
+      "Bioenergy crop production and management",
+      "Fire effects on ecosystems",
+      "Hydrology and Watershed Management Studies",
+      "Plant Water Relations and Carbon Dynamics"
+    ],
+    "model_version": "proposal-path-v3-common-neighbors",
+    "sample_papers": [
+      "The terrestrial carbon budget of South and Southeast Asia",
+      "The Interplay Between Bioenergy Grass Production and Water Resources in the United States of America"
+    ],
+    "introduction_path": "Stephen P. Long \u2192 Madhu Khanna \u2192 Atul Kumar Jain \u2192 Matthew Charles Cervarich (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5074295593",
+      "https://openalex.org/A5029166175",
+      "https://openalex.org/A5037913161",
+      "https://openalex.org/A5075616145"
+    ],
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
+  },
+  {
+    "card_id": "CARD_025",
+    "seed_id": "https://openalex.org/A5074295593",
+    "seed_name": "Stephen P. Long",
+    "seed_department": "Community 2",
+    "seed_topics": [
+      "Agricultural Productivity and Crop Improvement",
+      "Bioenergy crop production and management",
+      "Biofuel production and bioconversion",
+      "Climate change impacts on agriculture"
+    ],
+    "candidate_name": "Rishabh Gupta",
+    "candidate_topics": [
+      "Agricultural economics and policies",
+      "Climate change impacts on agriculture",
+      "Climate variability and models",
+      "Decision Support System Applications",
+      "Hydrology and Drought Analysis"
+    ],
+    "model_version": "proposal-path-v3-common-neighbors",
+    "sample_papers": [
+      "Development of Climate Data Bias Corrector (CDBC) Tool and Its Application over the Agro-Ecological Zones of India",
+      "Impact of global climate change on stream low flows: A case study of the great Miami river watershed, Ohio, USA"
+    ],
+    "introduction_path": "Stephen P. Long \u2192 Rob Kooper A \u2192 Shannon Bradley \u2192 Rishabh Gupta (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5074295593",
+      "https://openalex.org/A5025183449",
+      "https://openalex.org/A5005985586",
+      "https://openalex.org/A5046727016"
+    ],
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
+  },
+  {
+    "card_id": "CARD_026",
+    "seed_id": "https://openalex.org/A5074295593",
+    "seed_name": "Stephen P. Long",
+    "seed_department": "Community 2",
+    "seed_topics": [
+      "Agricultural Productivity and Crop Improvement",
+      "Bioenergy crop production and management",
+      "Biofuel production and bioconversion",
+      "Climate change impacts on agriculture"
+    ],
+    "candidate_name": "Zewei Miao",
+    "candidate_topics": [
+      "Agricultural Engineering and Mechanization",
+      "Bioenergy crop production and management",
+      "Biofuel production and bioconversion",
+      "Forest Biomass Utilization and Management",
+      "Thermochemical Biomass Conversion Processes"
+    ],
+    "model_version": "proposal-path-v3-common-neighbors",
+    "sample_papers": [
+      "Electrical capacitance as a proxy measurement of miscanthus bulk density, and the influence of moisture content and particle size",
+      "Measuring the influence of biomass preprocessing methods on the bioconversion efficiency of miscanthus giganteus and sugarcane bagasse"
+    ],
+    "introduction_path": "Stephen P. Long \u2192 Madhu Khanna \u2192 K. C. Ting \u2192 Zewei Miao (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5074295593",
+      "https://openalex.org/A5029166175",
+      "https://openalex.org/A5032201368",
+      "https://openalex.org/A5103703327"
+    ],
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
+  },
+  {
+    "card_id": "CARD_027",
+    "seed_id": "https://openalex.org/A5074295593",
+    "seed_name": "Stephen P. Long",
+    "seed_department": "Community 2",
+    "seed_topics": [
+      "Agricultural Productivity and Crop Improvement",
+      "Bioenergy crop production and management",
+      "Biofuel production and bioconversion",
+      "Climate change impacts on agriculture"
+    ],
+    "candidate_name": "Kenton G. McHenry",
+    "candidate_topics": [
+      "Astrophysics and Cosmic Phenomena",
+      "Cloud Computing and Resource Management",
+      "Distributed and Parallel Computing Systems",
+      "Environmental Monitoring and Data Management",
+      "Gamma-ray bursts and supernovae"
+    ],
+    "model_version": "proposal-path-v3-common-neighbors",
+    "sample_papers": [
+      "Enabling real-time multi-messenger astrophysics discoveries with deep learning",
+      "Clowder"
+    ],
+    "introduction_path": "Stephen P. Long \u2192 Rob Kooper A \u2192 Kenton G. McHenry (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5074295593",
+      "https://openalex.org/A5025183449",
+      "https://openalex.org/A5059328010"
+    ],
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
+  },
+  {
+    "card_id": "CARD_028",
+    "seed_id": "https://openalex.org/A5074295593",
+    "seed_name": "Stephen P. Long",
+    "seed_department": "Community 2",
+    "seed_topics": [
+      "Agricultural Productivity and Crop Improvement",
+      "Bioenergy crop production and management",
+      "Biofuel production and bioconversion",
+      "Climate change impacts on agriculture"
+    ],
+    "candidate_name": "Taylor Anne Damery",
+    "candidate_topics": [
+      "Agricultural Productivity and Crop Improvement",
+      "Crop Yield and Soil Fertility",
+      "Fungal Plant Pathogen Control"
+    ],
+    "model_version": "proposal-path-v3-common-neighbors",
+    "sample_papers": [
+      "175 The Effects of Cut Height and Fungicide Application on Whole Plant Corn Silage Yield."
+    ],
+    "introduction_path": "Stephen P. Long \u2192 Vijay Singh \u2192 Carl M M Parsons \u2192 M.R. Murphy \u2192 Russell T Pate \u2192 Taylor Anne Damery (5 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5074295593",
+      "https://openalex.org/A5000650931",
+      "https://openalex.org/A5054036093",
+      "https://openalex.org/A5074171832",
+      "https://openalex.org/A5049777665",
+      "https://openalex.org/A5005604022"
+    ],
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
+  },
+  {
+    "card_id": "CARD_029",
     "seed_id": "https://openalex.org/A5045551635",
     "seed_name": "John A. Rogers",
-    "seed_department": "Community 1",
+    "seed_department": "Community 3",
     "seed_topics": [
       "Advanced MEMS and NEMS Technologies",
       "Advanced Materials and Mechanics",
       "Advanced Sensor and Energy Harvesting Materials",
       "Nanofabrication and Lithography Techniques"
     ],
-    "candidate_name": "Alexander Pagano",
+    "candidate_name": "David Sias",
     "candidate_topics": [
-      "Advanced Materials and Mechanics",
-      "Modular Robots and Swarm Intelligence",
-      "Soft Robotics and Applications"
+      "Advanced Sensor and Energy Harvesting Materials",
+      "Carbon Nanotubes in Composites",
+      "Nanomaterials and Printing Technologies"
     ],
     "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
-      "A crawling robot driven by multi-stable origami"
+      "Tough Nano\u2010Architectured Conductive Textile Made by Capillary Splicing of Carbon Nanotubes"
     ],
-    "introduction_path": "John A. Rogers \u2192 Alison C. Dunn \u2192 Aimy A. Wissa \u2192 Alexander Pagano (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "introduction_path": "John A. Rogers \u2192 Nancy R. Sottos \u2192 Sameh Tawfick \u2192 David Sias (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
     "path_ids": [
       "https://openalex.org/A5045551635",
-      "https://openalex.org/A5014901949",
-      "https://openalex.org/A5076771658",
-      "https://openalex.org/A5001887744"
+      "https://openalex.org/A5048802994",
+      "https://openalex.org/A5036247243",
+      "https://openalex.org/A5008569534"
     ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
   },
   {
-    "card_id": "CARD_010",
+    "card_id": "CARD_030",
     "seed_id": "https://openalex.org/A5045551635",
     "seed_name": "John A. Rogers",
-    "seed_department": "Community 1",
+    "seed_department": "Community 3",
+    "seed_topics": [
+      "Advanced MEMS and NEMS Technologies",
+      "Advanced Materials and Mechanics",
+      "Advanced Sensor and Energy Harvesting Materials",
+      "Nanofabrication and Lithography Techniques"
+    ],
+    "candidate_name": "Qingkun Li",
+    "candidate_topics": [
+      "ECG Monitoring and Analysis",
+      "Non-Invasive Vital Sign Monitoring",
+      "Wireless Body Area Networks"
+    ],
+    "model_version": "proposal-path-v3-common-neighbors",
+    "sample_papers": [
+      "A Fault-Tolerant Hardware Architecture for Robust Wearable Heart Rate Monitoring"
+    ],
+    "introduction_path": "John A. Rogers \u2192 Jong Bin Lim \u2192 Zbigniew Kalbarczyk \u2192 Qingkun Li (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5045551635",
+      "https://openalex.org/A5102255466",
+      "https://openalex.org/A5043860236",
+      "https://openalex.org/A5011107000"
+    ],
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
+  },
+  {
+    "card_id": "CARD_031",
+    "seed_id": "https://openalex.org/A5045551635",
+    "seed_name": "John A. Rogers",
+    "seed_department": "Community 3",
+    "seed_topics": [
+      "Advanced MEMS and NEMS Technologies",
+      "Advanced Materials and Mechanics",
+      "Advanced Sensor and Energy Harvesting Materials",
+      "Nanofabrication and Lithography Techniques"
+    ],
+    "candidate_name": "Ioannis Chasiotis",
+    "candidate_topics": [
+      "Advanced Battery Materials and Technologies",
+      "Advanced Battery Technologies Research",
+      "Advanced MEMS and NEMS Technologies",
+      "Advanced Materials and Mechanics",
+      "Advancements in Battery Materials"
+    ],
+    "model_version": "proposal-path-v3-common-neighbors",
+    "sample_papers": [
+      "High strength and high modulus carbon fibers",
+      "Effect of porosity on electrochemical and mechanical properties of composite Li-ion anodes"
+    ],
+    "introduction_path": "John A. Rogers \u2192 Shimin Mao \u2192 Shen J. Dillon \u2192 Ioannis Chasiotis (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5045551635",
+      "https://openalex.org/A5022969279",
+      "https://openalex.org/A5079417032",
+      "https://openalex.org/A5009373211"
+    ],
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
+  },
+  {
+    "card_id": "CARD_032",
+    "seed_id": "https://openalex.org/A5045551635",
+    "seed_name": "John A. Rogers",
+    "seed_department": "Community 3",
+    "seed_topics": [
+      "Advanced MEMS and NEMS Technologies",
+      "Advanced Materials and Mechanics",
+      "Advanced Sensor and Energy Harvesting Materials",
+      "Nanofabrication and Lithography Techniques"
+    ],
+    "candidate_name": "Rohit Bhargava",
+    "candidate_topics": [
+      "Gold and Silver Nanoparticles Synthesis and Applications",
+      "Infrared Thermography in Medicine",
+      "Microfluidic and Capillary Electrophoresis Applications",
+      "Nanoparticle-Based Drug Delivery",
+      "Nanoplatforms for cancer theranostics"
+    ],
+    "model_version": "proposal-path-v3-common-neighbors",
+    "sample_papers": [
+      "A natural antisense lncRNA controls breast cancer progression by promoting tumor suppressor gene mRNA stability",
+      "Simultaneous cancer and tumor microenvironment subtyping using confocal infrared microscopy for all-digital molecular histopathology"
+    ],
+    "introduction_path": "John A. Rogers \u2192 Scott R. White \u2192 Rohit Bhargava (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5045551635",
+      "https://openalex.org/A5005620680",
+      "https://openalex.org/A5023245938"
+    ],
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
+  },
+  {
+    "card_id": "CARD_033",
+    "seed_id": "https://openalex.org/A5045551635",
+    "seed_name": "John A. Rogers",
+    "seed_department": "Community 3",
     "seed_topics": [
       "Advanced MEMS and NEMS Technologies",
       "Advanced Materials and Mechanics",
@@ -293,1334 +1028,252 @@
       "3D Printing in Biomedical Research",
       "AI in cancer detection",
       "Advanced Fluorescence Microscopy Techniques",
-      "Advanced Materials and Mechanics",
+      "Cell Image Analysis Techniques",
       "Cellular Mechanics and Interactions"
     ],
     "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
-      "Breast cancer diagnosis using spatial light interference microscopy",
-      "Label-Free Imaging of Single Microtubule Dynamics Using Spatial Light Interference Microscopy"
+      "Gradient light interference microscopy for 3D imaging of unlabeled specimens",
+      "Three-dimensional mesostructures as high-temperature growth templates, electronic cellular scaffolds, and self-propelled microrobots"
     ],
-    "introduction_path": "John A. Rogers \u2192 Yiyue Luo \u2192 Mikhail E. Kandel (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "introduction_path": "John A. Rogers \u2192 Jonathan V. Sweedler \u2192 Mikhail E. Kandel (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
     "path_ids": [
       "https://openalex.org/A5045551635",
-      "https://openalex.org/A5007246518",
+      "https://openalex.org/A5006238710",
       "https://openalex.org/A5004021726"
     ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
-  },
-  {
-    "card_id": "CARD_011",
-    "seed_id": "https://openalex.org/A5045551635",
-    "seed_name": "John A. Rogers",
-    "seed_department": "Community 1",
-    "seed_topics": [
-      "Advanced MEMS and NEMS Technologies",
-      "Advanced Materials and Mechanics",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Nanofabrication and Lithography Techniques"
-    ],
-    "candidate_name": "Pilgyu Kang",
-    "candidate_topics": [
-      "2D Materials and Applications",
-      "Advanced Materials and Mechanics",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Electrochemical sensors and biosensors",
-      "Gold and Silver Nanoparticles Synthesis and Applications"
-    ],
-    "model_version": "proposal-path-v3-common-neighbors",
-    "sample_papers": [
-      "Mechanically Self-Assembled, Three-Dimensional Graphene\u2013Gold Hybrid Nanostructures for Advanced Nanoplasmonic Sensors",
-      "Heterogeneous, Three-Dimensional Texturing of Graphene"
-    ],
-    "introduction_path": "John A. Rogers \u2192 Paul V. Braun \u2192 SungWoo Nam \u2192 Pilgyu Kang (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
-    "path_ids": [
-      "https://openalex.org/A5045551635",
-      "https://openalex.org/A5040320137",
-      "https://openalex.org/A5101901781",
-      "https://openalex.org/A5082130732"
-    ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
-  },
-  {
-    "card_id": "CARD_012",
-    "seed_id": "https://openalex.org/A5002313901",
-    "seed_name": "Ruopeng An",
-    "seed_department": "Community 2",
-    "seed_topics": [
-      "Aging, Health, and Disability",
-      "Balance, Gait, and Falls Prevention",
-      "Dementia and Cognitive Impairment Research",
-      "Gut microbiota and health"
-    ],
-    "candidate_name": "David M. B\u00fcchner",
-    "candidate_topics": [
-      "Balance, Gait, and Falls Prevention",
-      "Context-Aware Activity Recognition Systems",
-      "Frailty in Older Adults",
-      "Nutrition, Health and Food Behavior",
-      "Obesity, Physical Activity, Diet"
-    ],
-    "model_version": "proposal-path-v3-common-neighbors",
-    "sample_papers": [
-      "Accelerometer\u2010Measured Physical Activity and Mortality in Women Aged 63 to 99",
-      "A comparative study of fruit and vegetable consumption and physical activity among adolescents in 49 Low-and-Middle-Income Countries"
-    ],
-    "introduction_path": "Ruopeng An \u2192 Jong Cheol Shin \u2192 Diana S. Grigsby\u2010Toussaint \u2192 David M. B\u00fcchner (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
-    "path_ids": [
-      "https://openalex.org/A5002313901",
-      "https://openalex.org/A5045816651",
-      "https://openalex.org/A5013505213",
-      "https://openalex.org/A5047169089"
-    ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
-  },
-  {
-    "card_id": "CARD_013",
-    "seed_id": "https://openalex.org/A5002313901",
-    "seed_name": "Ruopeng An",
-    "seed_department": "Community 2",
-    "seed_topics": [
-      "Aging, Health, and Disability",
-      "Balance, Gait, and Falls Prevention",
-      "Dementia and Cognitive Impairment Research",
-      "Gut microbiota and health"
-    ],
-    "candidate_name": "Carter Phillips",
-    "candidate_topics": [
-      "Consumer Attitudes and Food Labeling",
-      "Food and Agricultural Sciences",
-      "Nutrition, Health and Food Behavior",
-      "Sensory Analysis and Statistical Methods"
-    ],
-    "model_version": "proposal-path-v3-common-neighbors",
-    "sample_papers": [
-      "Influence of seasoning on vegetable selection, liking and intent to purchase",
-      "Consumer Acceptance Comparison Between Seasoned and Unseasoned Vegetables"
-    ],
-    "introduction_path": "Ruopeng An \u2192 Sharon M. Nickols\u2010Richardson \u2192 Carter Phillips (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
-    "path_ids": [
-      "https://openalex.org/A5002313901",
-      "https://openalex.org/A5001585537",
-      "https://openalex.org/A5048982789"
-    ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
-  },
-  {
-    "card_id": "CARD_014",
-    "seed_id": "https://openalex.org/A5002313901",
-    "seed_name": "Ruopeng An",
-    "seed_department": "Community 2",
-    "seed_topics": [
-      "Aging, Health, and Disability",
-      "Balance, Gait, and Falls Prevention",
-      "Dementia and Cognitive Impairment Research",
-      "Gut microbiota and health"
-    ],
-    "candidate_name": "Joanna Manero",
-    "candidate_topics": [
-      "Consumer Attitudes and Food Labeling",
-      "Nutrition, Health and Food Behavior",
-      "Sensory Analysis and Statistical Methods"
-    ],
-    "model_version": "proposal-path-v3-common-neighbors",
-    "sample_papers": [
-      "Influence of seasoning on vegetable selection, liking and intent to purchase"
-    ],
-    "introduction_path": "Ruopeng An \u2192 Sharon M. Nickols\u2010Richardson \u2192 Joanna Manero (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
-    "path_ids": [
-      "https://openalex.org/A5002313901",
-      "https://openalex.org/A5001585537",
-      "https://openalex.org/A5054161406"
-    ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
-  },
-  {
-    "card_id": "CARD_015",
-    "seed_id": "https://openalex.org/A5002313901",
-    "seed_name": "Ruopeng An",
-    "seed_department": "Community 2",
-    "seed_topics": [
-      "Aging, Health, and Disability",
-      "Balance, Gait, and Falls Prevention",
-      "Dementia and Cognitive Impairment Research",
-      "Gut microbiota and health"
-    ],
-    "candidate_name": "Christopher J. Fields",
-    "candidate_topics": [
-      "Bacterial Genetics and Biotechnology",
-      "Dementia and Cognitive Impairment Research",
-      "Extracellular vesicles in disease",
-      "Fungal and yeast genetics research",
-      "Genomics and Phylogenetic Studies"
-    ],
-    "model_version": "proposal-path-v3-common-neighbors",
-    "sample_papers": [
-      "Plasma Exosomal miRNAs in Persons with and without Alzheimer Disease: Altered Expression and Prospects for Biomarkers",
-      "Draft genome sequences of Chrysoporthe austroafricana, Diplodia scrobiculata, Fusarium nygamai, Leptographium lundbergii, Limonomyces culmigenus, Stagonosporopsis tanaceti, and Thielaviopsis punctulata"
-    ],
-    "introduction_path": "Ruopeng An \u2192 John W. Erdman \u2192 Lindsey K. Ly \u2192 Christopher J. Fields (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
-    "path_ids": [
-      "https://openalex.org/A5002313901",
-      "https://openalex.org/A5033908566",
-      "https://openalex.org/A5000839333",
-      "https://openalex.org/A5105406899"
-    ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
-  },
-  {
-    "card_id": "CARD_016",
-    "seed_id": "https://openalex.org/A5002313901",
-    "seed_name": "Ruopeng An",
-    "seed_department": "Community 2",
-    "seed_topics": [
-      "Aging, Health, and Disability",
-      "Balance, Gait, and Falls Prevention",
-      "Dementia and Cognitive Impairment Research",
-      "Gut microbiota and health"
-    ],
-    "candidate_name": "Patricia G. Wolf",
-    "candidate_topics": [
-      "Anaerobic Digestion and Biogas Production",
-      "Cancer, Lipids, and Metabolism",
-      "Colorectal Cancer Screening and Detection",
-      "Diet, Metabolism, and Disease",
-      "Drug Transport and Resistance Mechanisms"
-    ],
-    "model_version": "proposal-path-v3-common-neighbors",
-    "sample_papers": [
-      "Relationship Between Microbiota of the Colonic Mucosa vs Feces and Symptoms, Colonic Transit, and Methane Production in Female Patients With Chronic Constipation",
-      "Table grape consumption reduces adiposity and markers of hepatic lipogenesis and alters gut microbiota in butter fat-fed mice"
-    ],
-    "introduction_path": "Ruopeng An \u2192 John W. Erdman \u2192 Lindsey K. Ly \u2192 Patricia G. Wolf (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
-    "path_ids": [
-      "https://openalex.org/A5002313901",
-      "https://openalex.org/A5033908566",
-      "https://openalex.org/A5000839333",
-      "https://openalex.org/A5023983153"
-    ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
-  },
-  {
-    "card_id": "CARD_017",
-    "seed_id": "https://openalex.org/A5002313901",
-    "seed_name": "Ruopeng An",
-    "seed_department": "Community 2",
-    "seed_topics": [
-      "Aging, Health, and Disability",
-      "Balance, Gait, and Falls Prevention",
-      "Dementia and Cognitive Impairment Research",
-      "Gut microbiota and health"
-    ],
-    "candidate_name": "Franck G. Carbonero",
-    "candidate_topics": [
-      "Food composition and properties",
-      "Gut microbiota and health",
-      "Nutritional Studies and Diet"
-    ],
-    "model_version": "proposal-path-v3-common-neighbors",
-    "sample_papers": [
-      "Fat, fibre and cancer risk in African Americans and rural Africans"
-    ],
-    "introduction_path": "Ruopeng An \u2192 John W. Erdman \u2192 Lindsey K. Ly \u2192 H. Rex Gaskins \u2192 Franck G. Carbonero (4 co-authorship hops; acquaintance and willingness to introduce are unverified)",
-    "path_ids": [
-      "https://openalex.org/A5002313901",
-      "https://openalex.org/A5033908566",
-      "https://openalex.org/A5000839333",
-      "https://openalex.org/A5014700891",
-      "https://openalex.org/A5065876203"
-    ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
-  },
-  {
-    "card_id": "CARD_018",
-    "seed_id": "https://openalex.org/A5002313901",
-    "seed_name": "Ruopeng An",
-    "seed_department": "Community 2",
-    "seed_topics": [
-      "Aging, Health, and Disability",
-      "Balance, Gait, and Falls Prevention",
-      "Dementia and Cognitive Impairment Research",
-      "Gut microbiota and health"
-    ],
-    "candidate_name": "Saravanan Devendran",
-    "candidate_topics": [
-      "Animal Nutrition and Physiology",
-      "Clostridium difficile and Clostridium perfringens research",
-      "Drug Transport and Resistance Mechanisms",
-      "Enzyme Catalysis and Immobilization",
-      "Enzyme Production and Characterization"
-    ],
-    "model_version": "proposal-path-v3-common-neighbors",
-    "sample_papers": [
-      "Identification and characterization of a 20\u03b2-HSDH from the anaerobic gut bacterium Butyricicoccus desmolans ATCC 43058",
-      "Identification of a gene encoding a flavoprotein involved in bile acid metabolism by the human gut bacterium Clostridium scindens ATCC 35704"
-    ],
-    "introduction_path": "Ruopeng An \u2192 John W. Erdman \u2192 Saravanan Devendran (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
-    "path_ids": [
-      "https://openalex.org/A5002313901",
-      "https://openalex.org/A5033908566",
-      "https://openalex.org/A5010560377"
-    ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
-  },
-  {
-    "card_id": "CARD_019",
-    "seed_id": "https://openalex.org/A5002313901",
-    "seed_name": "Ruopeng An",
-    "seed_department": "Community 2",
-    "seed_topics": [
-      "Aging, Health, and Disability",
-      "Balance, Gait, and Falls Prevention",
-      "Dementia and Cognitive Impairment Research",
-      "Gut microbiota and health"
-    ],
-    "candidate_name": "Alvaro Gonzalo Hernandez",
-    "candidate_topics": [
-      "Chromosomal and Genetic Variations",
-      "Clostridium difficile and Clostridium perfringens research",
-      "Dementia and Cognitive Impairment Research",
-      "Extracellular vesicles in disease",
-      "Genetic Mapping and Diversity in Plants and Animals"
-    ],
-    "model_version": "proposal-path-v3-common-neighbors",
-    "sample_papers": [
-      "The pineapple genome and the evolution of CAM photosynthesis",
-      "Plasma Exosomal miRNAs in Persons with and without Alzheimer Disease: Altered Expression and Prospects for Biomarkers"
-    ],
-    "introduction_path": "Ruopeng An \u2192 John W. Erdman \u2192 Lindsey K. Ly \u2192 Alvaro Gonzalo Hernandez (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
-    "path_ids": [
-      "https://openalex.org/A5002313901",
-      "https://openalex.org/A5033908566",
-      "https://openalex.org/A5000839333",
-      "https://openalex.org/A5001434945"
-    ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
-  },
-  {
-    "card_id": "CARD_020",
-    "seed_id": "https://openalex.org/A5002313901",
-    "seed_name": "Ruopeng An",
-    "seed_department": "Community 2",
-    "seed_topics": [
-      "Aging, Health, and Disability",
-      "Balance, Gait, and Falls Prevention",
-      "Dementia and Cognitive Impairment Research",
-      "Gut microbiota and health"
-    ],
-    "candidate_name": "Sandra A. Darfour-Oduro",
-    "candidate_topics": [
-      "Nutrition, Health and Food Behavior",
-      "Obesity, Physical Activity, Diet",
-      "Physical Activity and Health"
-    ],
-    "model_version": "proposal-path-v3-common-neighbors",
-    "sample_papers": [
-      "A comparative study of fruit and vegetable consumption and physical activity among adolescents in 49 Low-and-Middle-Income Countries"
-    ],
-    "introduction_path": "Ruopeng An \u2192 Jong Cheol Shin \u2192 Diana S. Grigsby\u2010Toussaint \u2192 Sandra A. Darfour-Oduro (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
-    "path_ids": [
-      "https://openalex.org/A5002313901",
-      "https://openalex.org/A5045816651",
-      "https://openalex.org/A5013505213",
-      "https://openalex.org/A5016351920"
-    ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
-  },
-  {
-    "card_id": "CARD_021",
-    "seed_id": "https://openalex.org/A5002313901",
-    "seed_name": "Ruopeng An",
-    "seed_department": "Community 2",
-    "seed_topics": [
-      "Aging, Health, and Disability",
-      "Balance, Gait, and Falls Prevention",
-      "Dementia and Cognitive Impairment Research",
-      "Gut microbiota and health"
-    ],
-    "candidate_name": "Jason M. Ridlon",
-    "candidate_topics": [
-      "Animal Nutrition and Physiology",
-      "Cancer, Lipids, and Metabolism",
-      "Clostridium difficile and Clostridium perfringens research",
-      "Drug Transport and Resistance Mechanisms",
-      "Genetic factors in colorectal cancer"
-    ],
-    "model_version": "proposal-path-v3-common-neighbors",
-    "sample_papers": [
-      "Taurocholic acid metabolism by gut microbes and colon cancer",
-      "Identification and characterization of a 20\u03b2-HSDH from the anaerobic gut bacterium Butyricicoccus desmolans ATCC 43058"
-    ],
-    "introduction_path": "Ruopeng An \u2192 John W. Erdman \u2192 Jason M. Ridlon (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
-    "path_ids": [
-      "https://openalex.org/A5002313901",
-      "https://openalex.org/A5033908566",
-      "https://openalex.org/A5026366028"
-    ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
-  },
-  {
-    "card_id": "CARD_022",
-    "seed_id": "https://openalex.org/A5002313901",
-    "seed_name": "Ruopeng An",
-    "seed_department": "Community 2",
-    "seed_topics": [
-      "Aging, Health, and Disability",
-      "Balance, Gait, and Falls Prevention",
-      "Dementia and Cognitive Impairment Research",
-      "Gut microbiota and health"
-    ],
-    "candidate_name": "Michael J. Miller",
-    "candidate_topics": [
-      "Animal Nutrition and Physiology",
-      "Bacteriophages and microbial interactions",
-      "Genomics, phytochemicals, and oxidative stress",
-      "Gut microbiota and health",
-      "Infant Nutrition and Health"
-    ],
-    "model_version": "proposal-path-v3-common-neighbors",
-    "sample_papers": [
-      "Maternal fucosyltransferase 2 status affects the gut bifidobacterial communities of breastfed infants",
-      "Myrosinase-dependent and \u2013independent formation and control of isothiocyanate products of glucosinolate hydrolysis"
-    ],
-    "introduction_path": "Ruopeng An \u2192 Sharon Marie Donovan \u2192 Michael J. Miller (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
-    "path_ids": [
-      "https://openalex.org/A5002313901",
-      "https://openalex.org/A5049145231",
-      "https://openalex.org/A5007697293"
-    ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
-  },
-  {
-    "card_id": "CARD_023",
-    "seed_id": "https://openalex.org/A5002313901",
-    "seed_name": "Ruopeng An",
-    "seed_department": "Community 2",
-    "seed_topics": [
-      "Aging, Health, and Disability",
-      "Balance, Gait, and Falls Prevention",
-      "Dementia and Cognitive Impairment Research",
-      "Gut microbiota and health"
-    ],
-    "candidate_name": "Ann C. Benefiel",
-    "candidate_topics": [
-      "Food composition and properties",
-      "Gut microbiota and health",
-      "Nutritional Studies and Diet"
-    ],
-    "model_version": "proposal-path-v3-common-neighbors",
-    "sample_papers": [
-      "Fat, fibre and cancer risk in African Americans and rural Africans"
-    ],
-    "introduction_path": "Ruopeng An \u2192 John W. Erdman \u2192 Lindsey K. Ly \u2192 H. Rex Gaskins \u2192 Ann C. Benefiel (4 co-authorship hops; acquaintance and willingness to introduce are unverified)",
-    "path_ids": [
-      "https://openalex.org/A5002313901",
-      "https://openalex.org/A5033908566",
-      "https://openalex.org/A5000839333",
-      "https://openalex.org/A5014700891",
-      "https://openalex.org/A5057095314"
-    ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
-  },
-  {
-    "card_id": "CARD_024",
-    "seed_id": "https://openalex.org/A5002313901",
-    "seed_name": "Ruopeng An",
-    "seed_department": "Community 2",
-    "seed_topics": [
-      "Aging, Health, and Disability",
-      "Balance, Gait, and Falls Prevention",
-      "Dementia and Cognitive Impairment Research",
-      "Gut microbiota and health"
-    ],
-    "candidate_name": "H. Rex Gaskins",
-    "candidate_topics": [
-      "Drug Transport and Resistance Mechanisms",
-      "Food composition and properties",
-      "Gastrointestinal motility and disorders",
-      "Gut microbiota and health",
-      "Inflammatory Bowel Disease"
-    ],
-    "model_version": "proposal-path-v3-common-neighbors",
-    "sample_papers": [
-      "Fat, fibre and cancer risk in African Americans and rural Africans",
-      "Relationship Between Microbiota of the Colonic Mucosa vs Feces and Symptoms, Colonic Transit, and Methane Production in Female Patients With Chronic Constipation"
-    ],
-    "introduction_path": "Ruopeng An \u2192 John W. Erdman \u2192 Lindsey K. Ly \u2192 H. Rex Gaskins (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
-    "path_ids": [
-      "https://openalex.org/A5002313901",
-      "https://openalex.org/A5033908566",
-      "https://openalex.org/A5000839333",
-      "https://openalex.org/A5014700891"
-    ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
-  },
-  {
-    "card_id": "CARD_025",
-    "seed_id": "https://openalex.org/A5002313901",
-    "seed_name": "Ruopeng An",
-    "seed_department": "Community 2",
-    "seed_topics": [
-      "Aging, Health, and Disability",
-      "Balance, Gait, and Falls Prevention",
-      "Dementia and Cognitive Impairment Research",
-      "Gut microbiota and health"
-    ],
-    "candidate_name": "Karin Vermillion",
-    "candidate_topics": [
-      "Colorectal Cancer Screening and Detection",
-      "Gut microbiota and health",
-      "Nutritional Studies and Diet"
-    ],
-    "model_version": "proposal-path-v3-common-neighbors",
-    "sample_papers": [
-      "Race-dependent association of sulfidogenic bacteria with colorectal cancer"
-    ],
-    "introduction_path": "Ruopeng An \u2192 Kelly Scott Swanson \u2192 Tzu-Wen Cross \u2192 Karin Vermillion (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
-    "path_ids": [
-      "https://openalex.org/A5002313901",
-      "https://openalex.org/A5053823114",
-      "https://openalex.org/A5011316965",
-      "https://openalex.org/A5000152935"
-    ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
-  },
-  {
-    "card_id": "CARD_026",
-    "seed_id": "https://openalex.org/A5040320137",
-    "seed_name": "Paul V. Braun",
-    "seed_department": "Community 3",
-    "seed_topics": [
-      "Advanced Battery Materials and Technologies",
-      "Advanced Battery Technologies Research",
-      "Advanced Materials and Mechanics",
-      "Advanced Sensor and Energy Harvesting Materials"
-    ],
-    "candidate_name": "Ujjal Das",
-    "candidate_topics": [
-      "Advanced Battery Materials and Technologies",
-      "Advanced Battery Technologies Research",
-      "Advancements in Battery Materials"
-    ],
-    "model_version": "proposal-path-v3-common-neighbors",
-    "sample_papers": [
-      "Role of Manganese Deposition on Graphite in the Capacity Fading of Lithium Ion Batteries"
-    ],
-    "introduction_path": "Paul V. Braun \u2192 Andrew A. Gewirth \u2192 Larry A. Curtiss \u2192 Ujjal Das (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
-    "path_ids": [
-      "https://openalex.org/A5040320137",
-      "https://openalex.org/A5021345935",
-      "https://openalex.org/A5058864798",
-      "https://openalex.org/A5018529571"
-    ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
-  },
-  {
-    "card_id": "CARD_027",
-    "seed_id": "https://openalex.org/A5040320137",
-    "seed_name": "Paul V. Braun",
-    "seed_department": "Community 3",
-    "seed_topics": [
-      "Advanced Battery Materials and Technologies",
-      "Advanced Battery Technologies Research",
-      "Advanced Materials and Mechanics",
-      "Advanced Sensor and Energy Harvesting Materials"
-    ],
-    "candidate_name": "Zheng Yan",
-    "candidate_topics": [
-      "Additive Manufacturing and 3D Printing Technologies",
-      "Advanced MEMS and NEMS Technologies",
-      "Advanced Materials and Mechanics",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Cellular and Composite Structures"
-    ],
-    "model_version": "proposal-path-v3-common-neighbors",
-    "sample_papers": [
-      "Assembly of micro/nanomaterials into complex, three-dimensional architectures by compressive buckling",
-      "A mechanically driven form of Kirigami as a route to 3D mesostructures in micro/nanomembranes"
-    ],
-    "introduction_path": "Paul V. Braun \u2192 Yiyue Luo \u2192 Zheng Yan (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
-    "path_ids": [
-      "https://openalex.org/A5040320137",
-      "https://openalex.org/A5007246518",
-      "https://openalex.org/A5036017595"
-    ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
-  },
-  {
-    "card_id": "CARD_028",
-    "seed_id": "https://openalex.org/A5040320137",
-    "seed_name": "Paul V. Braun",
-    "seed_department": "Community 3",
-    "seed_topics": [
-      "Advanced Battery Materials and Technologies",
-      "Advanced Battery Technologies Research",
-      "Advanced Materials and Mechanics",
-      "Advanced Sensor and Energy Harvesting Materials"
-    ],
-    "candidate_name": "Jiarui Zhang",
-    "candidate_topics": [
-      "Advancements in Battery Materials",
-      "Graphene research and applications",
-      "Supercapacitor Materials and Fabrication"
-    ],
-    "model_version": "proposal-path-v3-common-neighbors",
-    "sample_papers": [
-      "Layer Number Dependence of Li+ Intercalation on Few-Layer Graphene and Electrochemical Imaging of Its Solid\u2013Electrolyte Interphase Evolution"
-    ],
-    "introduction_path": "Paul V. Braun \u2192 Jianjun Cheng \u2192 Joaqu\u00edn Rodr\u00edguez\u2010L\u00f3pez \u2192 Jiarui Zhang (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
-    "path_ids": [
-      "https://openalex.org/A5040320137",
-      "https://openalex.org/A5010902410",
-      "https://openalex.org/A5007986677",
-      "https://openalex.org/A5100363740"
-    ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
-  },
-  {
-    "card_id": "CARD_029",
-    "seed_id": "https://openalex.org/A5040320137",
-    "seed_name": "Paul V. Braun",
-    "seed_department": "Community 3",
-    "seed_topics": [
-      "Advanced Battery Materials and Technologies",
-      "Advanced Battery Technologies Research",
-      "Advanced Materials and Mechanics",
-      "Advanced Sensor and Energy Harvesting Materials"
-    ],
-    "candidate_name": "Heriberto Flores-Zuleta",
-    "candidate_topics": [
-      "Advanced Battery Materials and Technologies",
-      "Advancements in Battery Materials",
-      "Electrochemical Analysis and Applications"
-    ],
-    "model_version": "proposal-path-v3-common-neighbors",
-    "sample_papers": [
-      "Probing the reversibility and kinetics of Li + during SEI formation and (de)intercalation on edge plane graphite using ion-sensitive scanning electrochemical microscopy"
-    ],
-    "introduction_path": "Paul V. Braun \u2192 Jianjun Cheng \u2192 Joaqu\u00edn Rodr\u00edguez\u2010L\u00f3pez \u2192 Heriberto Flores-Zuleta (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
-    "path_ids": [
-      "https://openalex.org/A5040320137",
-      "https://openalex.org/A5010902410",
-      "https://openalex.org/A5007986677",
-      "https://openalex.org/A5027415377"
-    ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
-  },
-  {
-    "card_id": "CARD_030",
-    "seed_id": "https://openalex.org/A5040320137",
-    "seed_name": "Paul V. Braun",
-    "seed_department": "Community 3",
-    "seed_topics": [
-      "Advanced Battery Materials and Technologies",
-      "Advanced Battery Technologies Research",
-      "Advanced Materials and Mechanics",
-      "Advanced Sensor and Energy Harvesting Materials"
-    ],
-    "candidate_name": "Yunxiong Zeng",
-    "candidate_topics": [
-      "Advanced Battery Materials and Technologies",
-      "Advancements in Battery Materials",
-      "Electrochemical Analysis and Applications"
-    ],
-    "model_version": "proposal-path-v3-common-neighbors",
-    "sample_papers": [
-      "Probing the reversibility and kinetics of Li + during SEI formation and (de)intercalation on edge plane graphite using ion-sensitive scanning electrochemical microscopy"
-    ],
-    "introduction_path": "Paul V. Braun \u2192 Jianjun Cheng \u2192 Joaqu\u00edn Rodr\u00edguez\u2010L\u00f3pez \u2192 Yunxiong Zeng (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
-    "path_ids": [
-      "https://openalex.org/A5040320137",
-      "https://openalex.org/A5010902410",
-      "https://openalex.org/A5007986677",
-      "https://openalex.org/A5087466524"
-    ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
-  },
-  {
-    "card_id": "CARD_031",
-    "seed_id": "https://openalex.org/A5040320137",
-    "seed_name": "Paul V. Braun",
-    "seed_department": "Community 3",
-    "seed_topics": [
-      "Advanced Battery Materials and Technologies",
-      "Advanced Battery Technologies Research",
-      "Advanced Materials and Mechanics",
-      "Advanced Sensor and Energy Harvesting Materials"
-    ],
-    "candidate_name": "Daniel R. Vissers",
-    "candidate_topics": [
-      "Advanced Battery Materials and Technologies",
-      "Advanced Battery Technologies Research",
-      "Advancements in Battery Materials"
-    ],
-    "model_version": "proposal-path-v3-common-neighbors",
-    "sample_papers": [
-      "Role of Manganese Deposition on Graphite in the Capacity Fading of Lithium Ion Batteries"
-    ],
-    "introduction_path": "Paul V. Braun \u2192 Andrew A. Gewirth \u2192 Larry A. Curtiss \u2192 Daniel R. Vissers (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
-    "path_ids": [
-      "https://openalex.org/A5040320137",
-      "https://openalex.org/A5021345935",
-      "https://openalex.org/A5058864798",
-      "https://openalex.org/A5009510433"
-    ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
-  },
-  {
-    "card_id": "CARD_032",
-    "seed_id": "https://openalex.org/A5040320137",
-    "seed_name": "Paul V. Braun",
-    "seed_department": "Community 3",
-    "seed_topics": [
-      "Advanced Battery Materials and Technologies",
-      "Advanced Battery Technologies Research",
-      "Advanced Materials and Mechanics",
-      "Advanced Sensor and Energy Harvesting Materials"
-    ],
-    "candidate_name": "Kyung\u2010In Jang",
-    "candidate_topics": [
-      "Advanced Materials and Mechanics",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "Elasticity and Material Modeling",
-      "Microfluidic and Capillary Electrophoresis Applications",
-      "Nanomaterials and Printing Technologies"
-    ],
-    "model_version": "proposal-path-v3-common-neighbors",
-    "sample_papers": [
-      "Assembly of micro/nanomaterials into complex, three-dimensional architectures by compressive buckling",
-      "Soft, stretchable, fully implantable miniaturized optoelectronic systems for wireless optogenetics"
-    ],
-    "introduction_path": "Paul V. Braun \u2192 Yonggang Y. Huang \u2192 Kyung\u2010In Jang (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
-    "path_ids": [
-      "https://openalex.org/A5040320137",
-      "https://openalex.org/A5011255000",
-      "https://openalex.org/A5072065388"
-    ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
-  },
-  {
-    "card_id": "CARD_033",
-    "seed_id": "https://openalex.org/A5040320137",
-    "seed_name": "Paul V. Braun",
-    "seed_department": "Community 3",
-    "seed_topics": [
-      "Advanced Battery Materials and Technologies",
-      "Advanced Battery Technologies Research",
-      "Advanced Materials and Mechanics",
-      "Advanced Sensor and Energy Harvesting Materials"
-    ],
-    "candidate_name": "Philipp Gutruf",
-    "candidate_topics": [
-      "Advanced MEMS and NEMS Technologies",
-      "Advanced Materials and Mechanics",
-      "Advanced Sensor and Energy Harvesting Materials",
-      "MXene and MAX Phase Materials",
-      "Nanofabrication and Lithography Techniques"
-    ],
-    "model_version": "proposal-path-v3-common-neighbors",
-    "sample_papers": [
-      "Miniaturized Battery\u2010Free Wireless Systems for Wearable Pulse Oximetry",
-      "Mechanical assembly of complex, 3D mesostructures from releasable multilayers of advanced materials"
-    ],
-    "introduction_path": "Paul V. Braun \u2192 Yonggang Y. Huang \u2192 Philipp Gutruf (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
-    "path_ids": [
-      "https://openalex.org/A5040320137",
-      "https://openalex.org/A5011255000",
-      "https://openalex.org/A5017456629"
-    ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
   },
   {
     "card_id": "CARD_034",
-    "seed_id": "https://openalex.org/A5040320137",
-    "seed_name": "Paul V. Braun",
+    "seed_id": "https://openalex.org/A5045551635",
+    "seed_name": "John A. Rogers",
     "seed_department": "Community 3",
     "seed_topics": [
-      "Advanced Battery Materials and Technologies",
-      "Advanced Battery Technologies Research",
+      "Advanced MEMS and NEMS Technologies",
       "Advanced Materials and Mechanics",
-      "Advanced Sensor and Energy Harvesting Materials"
-    ],
-    "candidate_name": "Jung Woo Lee",
-    "candidate_topics": [
       "Advanced Sensor and Energy Harvesting Materials",
-      "Electrohydrodynamics and Fluid Dynamics",
-      "Nanomaterials and Printing Technologies",
-      "Neuroscience and Neural Engineering",
-      "Non-Invasive Vital Sign Monitoring"
+      "Nanofabrication and Lithography Techniques"
+    ],
+    "candidate_name": "Martha Ulbrick Gillette",
+    "candidate_topics": [
+      "3D Printing in Biomedical Research",
+      "Cellular Mechanics and Interactions",
+      "Circadian rhythm and melatonin",
+      "Digital Holography and Microscopy",
+      "Nanoparticle-Based Drug Delivery"
     ],
     "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
-      "High-Resolution Patterns of Quantum Dots Formed by Electrohydrodynamic Jet Printing for Light-Emitting Diodes",
-      "Miniaturized Flexible Electronic Systems with Wireless Power and Near\u2010Field Communication Capabilities"
+      "Reactive oxygen species-responsive drug delivery systems for the treatment of neurodegenerative diseases",
+      "Perspective: The promise of multi-cellular engineered living systems"
     ],
-    "introduction_path": "Paul V. Braun \u2192 Yonggang Y. Huang \u2192 Jung Woo Lee (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "introduction_path": "John A. Rogers \u2192 Wen Huang \u2192 Martha Ulbrick Gillette (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
     "path_ids": [
-      "https://openalex.org/A5040320137",
-      "https://openalex.org/A5011255000",
-      "https://openalex.org/A5106822982"
+      "https://openalex.org/A5045551635",
+      "https://openalex.org/A5003613128",
+      "https://openalex.org/A5039332578"
     ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
   },
   {
     "card_id": "CARD_035",
-    "seed_id": "https://openalex.org/A5040320137",
-    "seed_name": "Paul V. Braun",
+    "seed_id": "https://openalex.org/A5045551635",
+    "seed_name": "John A. Rogers",
     "seed_department": "Community 3",
     "seed_topics": [
-      "Advanced Battery Materials and Technologies",
-      "Advanced Battery Technologies Research",
+      "Advanced MEMS and NEMS Technologies",
       "Advanced Materials and Mechanics",
-      "Advanced Sensor and Energy Harvesting Materials"
+      "Advanced Sensor and Energy Harvesting Materials",
+      "Nanofabrication and Lithography Techniques"
     ],
-    "candidate_name": "Paul C. Redfern",
+    "candidate_name": "Nenad Miljkovic",
     "candidate_topics": [
-      "Advanced Battery Materials and Technologies",
-      "Advanced Battery Technologies Research",
-      "Advancements in Battery Materials"
+      "Electrowetting and Microfluidic Technologies",
+      "Fluid Dynamics and Heat Transfer",
+      "Heat Transfer and Boiling Studies",
+      "Heat Transfer and Optimization",
+      "Icing and De-icing Technologies"
     ],
     "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
-      "Role of Manganese Deposition on Graphite in the Capacity Fading of Lithium Ion Batteries"
+      "Scalable Graphene Coatings for Enhanced Condensation Heat Transfer",
+      "Water immersion cooling of high power density electronics"
     ],
-    "introduction_path": "Paul V. Braun \u2192 Andrew A. Gewirth \u2192 Larry A. Curtiss \u2192 Paul C. Redfern (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "introduction_path": "John A. Rogers \u2192 David G. Cahill \u2192 Nenad Miljkovic (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
     "path_ids": [
-      "https://openalex.org/A5040320137",
-      "https://openalex.org/A5021345935",
-      "https://openalex.org/A5058864798",
-      "https://openalex.org/A5012401237"
+      "https://openalex.org/A5045551635",
+      "https://openalex.org/A5001475799",
+      "https://openalex.org/A5033093452"
     ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
   },
   {
     "card_id": "CARD_036",
-    "seed_id": "https://openalex.org/A5040320137",
-    "seed_name": "Paul V. Braun",
+    "seed_id": "https://openalex.org/A5045551635",
+    "seed_name": "John A. Rogers",
     "seed_department": "Community 3",
     "seed_topics": [
-      "Advanced Battery Materials and Technologies",
-      "Advanced Battery Technologies Research",
-      "Advanced Materials and Mechanics",
-      "Advanced Sensor and Energy Harvesting Materials"
-    ],
-    "candidate_name": "Stephen J. Pety",
-    "candidate_topics": [
-      "Advanced Battery Technologies Research",
-      "Advanced Multi-Objective Optimization Algorithms",
-      "Heat Transfer and Optimization",
-      "Thermal properties of materials",
-      "Topology Optimization in Engineering"
-    ],
-    "model_version": "proposal-path-v3-common-neighbors",
-    "sample_papers": [
-      "Gradient-based design of actively-cooled microvascular composite panels",
-      "Carbon fiber composites with 2D microvascular networks for battery cooling"
-    ],
-    "introduction_path": "Paul V. Braun \u2192 Ji Ho Shin \u2192 Scott R. White \u2192 Stephen J. Pety (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
-    "path_ids": [
-      "https://openalex.org/A5040320137",
-      "https://openalex.org/A5006184738",
-      "https://openalex.org/A5005620680",
-      "https://openalex.org/A5010259829"
-    ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
-  },
-  {
-    "card_id": "CARD_037",
-    "seed_id": "https://openalex.org/A5040320137",
-    "seed_name": "Paul V. Braun",
-    "seed_department": "Community 3",
-    "seed_topics": [
-      "Advanced Battery Materials and Technologies",
-      "Advanced Battery Technologies Research",
-      "Advanced Materials and Mechanics",
-      "Advanced Sensor and Energy Harvesting Materials"
-    ],
-    "candidate_name": "Haoran Wang",
-    "candidate_topics": [
-      "Advanced Battery Materials and Technologies",
-      "Advanced Battery Technologies Research",
-      "Advancements in Battery Materials",
-      "Microstructure and mechanical properties"
-    ],
-    "model_version": "proposal-path-v3-common-neighbors",
-    "sample_papers": [
-      "High damage tolerance of electrochemically lithiated silicon",
-      "Molecular dynamics simulations of plasticity and cracking in lithiated silicon electrodes"
-    ],
-    "introduction_path": "Paul V. Braun \u2192 Shen J. Dillon \u2192 John Lambros \u2192 Huck Beng Chew \u2192 Haoran Wang (4 co-authorship hops; acquaintance and willingness to introduce are unverified)",
-    "path_ids": [
-      "https://openalex.org/A5040320137",
-      "https://openalex.org/A5079417032",
-      "https://openalex.org/A5042050817",
-      "https://openalex.org/A5034381555",
-      "https://openalex.org/A5100324819"
-    ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
-  },
-  {
-    "card_id": "CARD_038",
-    "seed_id": "https://openalex.org/A5040320137",
-    "seed_name": "Paul V. Braun",
-    "seed_department": "Community 3",
-    "seed_topics": [
-      "Advanced Battery Materials and Technologies",
-      "Advanced Battery Technologies Research",
-      "Advanced Materials and Mechanics",
-      "Advanced Sensor and Energy Harvesting Materials"
-    ],
-    "candidate_name": "Mark Engelhard",
-    "candidate_topics": [
-      "Advanced Battery Materials and Technologies",
-      "Advanced Battery Technologies Research",
-      "Advancements in Battery Materials"
-    ],
-    "model_version": "proposal-path-v3-common-neighbors",
-    "sample_papers": [
-      "Role of Manganese Deposition on Graphite in the Capacity Fading of Lithium Ion Batteries"
-    ],
-    "introduction_path": "Paul V. Braun \u2192 Andrew A. Gewirth \u2192 Larry A. Curtiss \u2192 Mark Engelhard (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
-    "path_ids": [
-      "https://openalex.org/A5040320137",
-      "https://openalex.org/A5021345935",
-      "https://openalex.org/A5058864798",
-      "https://openalex.org/A5103242318"
-    ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
-  },
-  {
-    "card_id": "CARD_039",
-    "seed_id": "https://openalex.org/A5040320137",
-    "seed_name": "Paul V. Braun",
-    "seed_department": "Community 3",
-    "seed_topics": [
-      "Advanced Battery Materials and Technologies",
-      "Advanced Battery Technologies Research",
-      "Advanced Materials and Mechanics",
-      "Advanced Sensor and Energy Harvesting Materials"
-    ],
-    "candidate_name": "Joselle M. McCracken",
-    "candidate_topics": [
-      "3D Printing in Biomedical Research",
       "Advanced MEMS and NEMS Technologies",
       "Advanced Materials and Mechanics",
-      "Cellular Mechanics and Interactions",
-      "Hydrogels: synthesis, properties, applications"
-    ],
-    "model_version": "proposal-path-v3-common-neighbors",
-    "sample_papers": [
-      "Assembly of micro/nanomaterials into complex, three-dimensional architectures by compressive buckling",
-      "Programming Mechanical and Physicochemical Properties of 3D Hydrogel Cellular Microcultures via Direct Ink Writing"
-    ],
-    "introduction_path": "Paul V. Braun \u2192 Mikhail E. Kandel \u2192 Joselle M. McCracken (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
-    "path_ids": [
-      "https://openalex.org/A5040320137",
-      "https://openalex.org/A5004021726",
-      "https://openalex.org/A5059414563"
-    ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
-  },
-  {
-    "card_id": "CARD_040",
-    "seed_id": "https://openalex.org/A5040320137",
-    "seed_name": "Paul V. Braun",
-    "seed_department": "Community 3",
-    "seed_topics": [
-      "Advanced Battery Materials and Technologies",
-      "Advanced Battery Technologies Research",
-      "Advanced Materials and Mechanics",
-      "Advanced Sensor and Energy Harvesting Materials"
-    ],
-    "candidate_name": "Philip R. Barnett",
-    "candidate_topics": [
-      "Advanced Battery Technologies Research",
-      "Heat Transfer and Optimization",
-      "Thermal properties of materials"
-    ],
-    "model_version": "proposal-path-v3-common-neighbors",
-    "sample_papers": [
-      "Carbon fiber composites with 2D microvascular networks for battery cooling"
-    ],
-    "introduction_path": "Paul V. Braun \u2192 Ji Ho Shin \u2192 Scott R. White \u2192 Philip R. Barnett (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
-    "path_ids": [
-      "https://openalex.org/A5040320137",
-      "https://openalex.org/A5006184738",
-      "https://openalex.org/A5005620680",
-      "https://openalex.org/A5027616541"
-    ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
-  },
-  {
-    "card_id": "CARD_041",
-    "seed_id": "https://openalex.org/A5010902410",
-    "seed_name": "Jianjun Cheng",
-    "seed_department": "Community 4",
-    "seed_topics": [
-      "Advanced Drug Delivery Systems",
-      "Advanced Polymer Synthesis and Characterization",
-      "Antimicrobial Peptides and Activities",
-      "Antimicrobial agents and applications"
-    ],
-    "candidate_name": "Randy H. Ewoldt",
-    "candidate_topics": [
-      "3D Printing in Biomedical Research",
-      "Advanced Materials and Mechanics",
-      "Cellular Mechanics and Interactions",
-      "Control Systems and Identification",
-      "Elasticity and Material Modeling"
-    ],
-    "model_version": "proposal-path-v3-common-neighbors",
-    "sample_papers": [
-      "Constitutive model fingerprints in medium-amplitude oscillatory shear",
-      "Quantitative rheological model selection: Good fits versus credible models using Bayesian inference"
-    ],
-    "introduction_path": "Jianjun Cheng \u2192 Joaqu\u00edn Rodr\u00edguez\u2010L\u00f3pez \u2192 Randy H. Ewoldt (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
-    "path_ids": [
-      "https://openalex.org/A5010902410",
-      "https://openalex.org/A5007986677",
-      "https://openalex.org/A5031482147"
-    ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
-  },
-  {
-    "card_id": "CARD_042",
-    "seed_id": "https://openalex.org/A5010902410",
-    "seed_name": "Jianjun Cheng",
-    "seed_department": "Community 4",
-    "seed_topics": [
-      "Advanced Drug Delivery Systems",
-      "Advanced Polymer Synthesis and Characterization",
-      "Antimicrobial Peptides and Activities",
-      "Antimicrobial agents and applications"
-    ],
-    "candidate_name": "Santosh Kumar Misra",
-    "candidate_topics": [
-      "Advanced biosensing and bioanalysis techniques",
-      "Biosensors and Analytical Detection",
-      "Carbon and Quantum Dots Applications",
-      "Electrochemical sensors and biosensors",
-      "Graphene and Nanomaterials Applications"
-    ],
-    "model_version": "proposal-path-v3-common-neighbors",
-    "sample_papers": [
-      "Trimodal Therapy: Combining Hyperthermia with Repurposed Bexarotene and Ultrasound for Treating Liver Cancer",
-      "Regulating Biocompatibility of Carbon Spheres via Defined Nanoscale Chemistry and a Careful Selection of Surface Functionalities"
-    ],
-    "introduction_path": "Jianjun Cheng \u2192 Lawrence W. Dobrucki \u2192 Hailey J. Knox \u2192 Santosh Kumar Misra (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
-    "path_ids": [
-      "https://openalex.org/A5010902410",
-      "https://openalex.org/A5004490629",
-      "https://openalex.org/A5040049671",
-      "https://openalex.org/A5018760782"
-    ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
-  },
-  {
-    "card_id": "CARD_043",
-    "seed_id": "https://openalex.org/A5010902410",
-    "seed_name": "Jianjun Cheng",
-    "seed_department": "Community 4",
-    "seed_topics": [
-      "Advanced Drug Delivery Systems",
-      "Advanced Polymer Synthesis and Characterization",
-      "Antimicrobial Peptides and Activities",
-      "Antimicrobial agents and applications"
-    ],
-    "candidate_name": "Fatemeh Ostadhossein",
-    "candidate_topics": [
-      "Analytical Chemistry and Chromatography",
-      "Asymmetric Synthesis and Catalysis",
-      "Carbon and Quantum Dots Applications",
-      "Coronary Interventions and Diagnostics",
-      "Diamond and Carbon-based Materials Research"
-    ],
-    "model_version": "proposal-path-v3-common-neighbors",
-    "sample_papers": [
-      "Functional carbon nanodots for multiscale imaging and therapy",
-      "Hyperspectral Imaging Offers Visual and Quantitative Evidence of Drug Release from Zwitterionic\u2010Phospholipid\u2010Nanocarbon When Concurrently Tracked in 3D Intracellular Space"
-    ],
-    "introduction_path": "Jianjun Cheng \u2192 Lawrence W. Dobrucki \u2192 Hailey J. Knox \u2192 Fatemeh Ostadhossein (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
-    "path_ids": [
-      "https://openalex.org/A5010902410",
-      "https://openalex.org/A5004490629",
-      "https://openalex.org/A5040049671",
-      "https://openalex.org/A5076942007"
-    ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
-  },
-  {
-    "card_id": "CARD_044",
-    "seed_id": "https://openalex.org/A5010902410",
-    "seed_name": "Jianjun Cheng",
-    "seed_department": "Community 4",
-    "seed_topics": [
-      "Advanced Drug Delivery Systems",
-      "Advanced Polymer Synthesis and Characterization",
-      "Antimicrobial Peptides and Activities",
-      "Antimicrobial agents and applications"
-    ],
-    "candidate_name": "Bong Hoon Kim",
-    "candidate_topics": [
-      "Advanced Drug Delivery Systems",
-      "Advanced Materials and Mechanics",
       "Advanced Sensor and Energy Harvesting Materials",
-      "Electrohydrodynamics and Fluid Dynamics",
+      "Nanofabrication and Lithography Techniques"
+    ],
+    "candidate_name": "Ping Ju Chen",
+    "candidate_topics": [
+      "Advanced Sensor and Energy Harvesting Materials",
+      "Carbon Nanotubes in Composites",
       "Nanomaterials and Printing Technologies"
     ],
     "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
-      "High-Resolution Patterns of Quantum Dots Formed by Electrohydrodynamic Jet Printing for Light-Emitting Diodes",
-      "Biological lipid membranes for on-demand, wireless drug delivery from thin, bioresorbable electronic implants"
+      "Tough Nano\u2010Architectured Conductive Textile Made by Capillary Splicing of Carbon Nanotubes"
     ],
-    "introduction_path": "Jianjun Cheng \u2192 Ji Ho Shin \u2192 Bong Hoon Kim (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "introduction_path": "John A. Rogers \u2192 Nancy R. Sottos \u2192 Sameh Tawfick \u2192 Ping Ju Chen (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
     "path_ids": [
-      "https://openalex.org/A5010902410",
-      "https://openalex.org/A5006184738",
-      "https://openalex.org/A5074378883"
+      "https://openalex.org/A5045551635",
+      "https://openalex.org/A5048802994",
+      "https://openalex.org/A5036247243",
+      "https://openalex.org/A5108627411"
     ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
   },
   {
-    "card_id": "CARD_045",
-    "seed_id": "https://openalex.org/A5010902410",
-    "seed_name": "Jianjun Cheng",
-    "seed_department": "Community 4",
+    "card_id": "CARD_037",
+    "seed_id": "https://openalex.org/A5045551635",
+    "seed_name": "John A. Rogers",
+    "seed_department": "Community 3",
     "seed_topics": [
-      "Advanced Drug Delivery Systems",
-      "Advanced Polymer Synthesis and Characterization",
-      "Antimicrobial Peptides and Activities",
-      "Antimicrobial agents and applications"
-    ],
-    "candidate_name": "Ki Jun Yu",
-    "candidate_topics": [
+      "Advanced MEMS and NEMS Technologies",
       "Advanced Materials and Mechanics",
       "Advanced Sensor and Energy Harvesting Materials",
-      "Analog and Mixed-Signal Circuit Design",
-      "Elasticity and Material Modeling",
-      "Electrohydrodynamics and Fluid Dynamics"
+      "Nanofabrication and Lithography Techniques"
     ],
-    "model_version": "proposal-path-v3-common-neighbors",
-    "sample_papers": [
-      "Soft network composite materials with deterministic and bio-inspired designs",
-      "High-Resolution Patterns of Quantum Dots Formed by Electrohydrodynamic Jet Printing for Light-Emitting Diodes"
-    ],
-    "introduction_path": "Jianjun Cheng \u2192 Daniel V. Harburg \u2192 Ki Jun Yu (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
-    "path_ids": [
-      "https://openalex.org/A5010902410",
-      "https://openalex.org/A5022223514",
-      "https://openalex.org/A5006572968"
-    ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
-  },
-  {
-    "card_id": "CARD_046",
-    "seed_id": "https://openalex.org/A5010902410",
-    "seed_name": "Jianjun Cheng",
-    "seed_department": "Community 4",
-    "seed_topics": [
-      "Advanced Drug Delivery Systems",
-      "Advanced Polymer Synthesis and Characterization",
-      "Antimicrobial Peptides and Activities",
-      "Antimicrobial agents and applications"
-    ],
-    "candidate_name": "Subhanip Biswas",
+    "candidate_name": "Shengtai Shi",
     "candidate_topics": [
-      "Antimicrobial Peptides and Activities",
-      "Antimicrobial agents and applications",
-      "Bacterial Genetics and Biotechnology",
-      "Chemical Synthesis and Analysis",
-      "Microbial Natural Products and Biosynthesis"
-    ],
-    "model_version": "proposal-path-v3-common-neighbors",
-    "sample_papers": [
-      "Structure\u2013Activity Relationships of the S-Linked Glycocin Sublancin",
-      "Investigations into the Mechanism of Action of Sublancin"
-    ],
-    "introduction_path": "Jianjun Cheng \u2192 Timothy M. Fan \u2192 Saurabh Sinha \u2192 Huimin Zhao \u2192 Subhanip Biswas (4 co-authorship hops; acquaintance and willingness to introduce are unverified)",
-    "path_ids": [
-      "https://openalex.org/A5010902410",
-      "https://openalex.org/A5012219010",
-      "https://openalex.org/A5101657008",
-      "https://openalex.org/A5014465828",
-      "https://openalex.org/A5080885123"
-    ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
-  },
-  {
-    "card_id": "CARD_047",
-    "seed_id": "https://openalex.org/A5010902410",
-    "seed_name": "Jianjun Cheng",
-    "seed_department": "Community 4",
-    "seed_topics": [
-      "Advanced Drug Delivery Systems",
-      "Advanced Polymer Synthesis and Characterization",
-      "Antimicrobial Peptides and Activities",
-      "Antimicrobial agents and applications"
-    ],
-    "candidate_name": "Dae Seung Wie",
-    "candidate_topics": [
-      "Advanced MEMS and NEMS Technologies",
       "Advanced Sensor and Energy Harvesting Materials",
-      "Electrowetting and Microfluidic Technologies",
-      "Nanomaterials and Printing Technologies",
-      "Neuroscience and Neural Engineering"
+      "Electronic Packaging and Soldering Technologies",
+      "Nanomaterials and Printing Technologies"
     ],
     "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
-      "Thermally Triggered Degradation of Transient Electronic Devices",
-      "Biodegradable Thin Metal Foils and Spin\u2010On Glass Materials for Transient Electronics"
+      "Highly Stretchable Conductors Made by Laser Draw\u2010Casting of Ultralong Metal Nanowires"
     ],
-    "introduction_path": "Jianjun Cheng \u2192 Scott R. White \u2192 Dae Seung Wie (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "introduction_path": "John A. Rogers \u2192 Hohyun Keum \u2192 Gaurav Bahl \u2192 Shengtai Shi (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
     "path_ids": [
-      "https://openalex.org/A5010902410",
-      "https://openalex.org/A5005620680",
-      "https://openalex.org/A5009139113"
+      "https://openalex.org/A5045551635",
+      "https://openalex.org/A5041076066",
+      "https://openalex.org/A5026244625",
+      "https://openalex.org/A5008061758"
     ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
   },
   {
-    "card_id": "CARD_048",
-    "seed_id": "https://openalex.org/A5010902410",
-    "seed_name": "Jianjun Cheng",
-    "seed_department": "Community 4",
+    "card_id": "CARD_038",
+    "seed_id": "https://openalex.org/A5045551635",
+    "seed_name": "John A. Rogers",
+    "seed_department": "Community 3",
     "seed_topics": [
-      "Advanced Drug Delivery Systems",
-      "Advanced Polymer Synthesis and Characterization",
-      "Antimicrobial Peptides and Activities",
-      "Antimicrobial agents and applications"
+      "Advanced MEMS and NEMS Technologies",
+      "Advanced Materials and Mechanics",
+      "Advanced Sensor and Energy Harvesting Materials",
+      "Nanofabrication and Lithography Techniques"
     ],
-    "candidate_name": "Corinne R. Bromfield",
+    "candidate_name": "Liuqing Gao",
     "candidate_topics": [
-      "Additive Manufacturing and 3D Printing Technologies",
-      "Coronary Interventions and Diagnostics",
-      "Nanoparticle-Based Drug Delivery",
-      "Nanoplatforms for cancer theranostics",
-      "Ultrasound and Hyperthermia Applications"
+      "Acoustic Wave Phenomena Research",
+      "Acoustic Wave Resonator Technologies",
+      "Advanced DC-DC Converters",
+      "Advanced MEMS and NEMS Technologies",
+      "Energy Harvesting in Wireless Networks"
     ],
     "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
-      "Trimodal Therapy: Combining Hyperthermia with Repurposed Bexarotene and Ultrasound for Treating Liver Cancer",
-      "3D\u2010Printed Multidrug\u2010Eluting Stent from Graphene\u2010Nanoplatelet\u2010Doped Biodegradable Polymer Composite"
+      "4.5 GHz Lithium Niobate MEMS Filters With 10% Fractional Bandwidth for 5G Front-Ends",
+      "A Radio Frequency Nonreciprocal Network Based on Switched Acoustic Delay Lines"
     ],
-    "introduction_path": "Jianjun Cheng \u2192 Lawrence W. Dobrucki \u2192 Dipanjan Pan \u2192 Corinne R. Bromfield (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "introduction_path": "John A. Rogers \u2192 Wen Huang \u2192 Songbin Gong \u2192 Liuqing Gao (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
     "path_ids": [
-      "https://openalex.org/A5010902410",
-      "https://openalex.org/A5004490629",
-      "https://openalex.org/A5055819205",
-      "https://openalex.org/A5007993855"
+      "https://openalex.org/A5045551635",
+      "https://openalex.org/A5003613128",
+      "https://openalex.org/A5016497308",
+      "https://openalex.org/A5006806361"
     ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
   },
   {
-    "card_id": "CARD_049",
-    "seed_id": "https://openalex.org/A5010902410",
-    "seed_name": "Jianjun Cheng",
-    "seed_department": "Community 4",
+    "card_id": "CARD_039",
+    "seed_id": "https://openalex.org/A5045551635",
+    "seed_name": "John A. Rogers",
+    "seed_department": "Community 3",
     "seed_topics": [
-      "Advanced Drug Delivery Systems",
-      "Advanced Polymer Synthesis and Characterization",
-      "Antimicrobial Peptides and Activities",
-      "Antimicrobial agents and applications"
+      "Advanced MEMS and NEMS Technologies",
+      "Advanced Materials and Mechanics",
+      "Advanced Sensor and Energy Harvesting Materials",
+      "Nanofabrication and Lithography Techniques"
     ],
-    "candidate_name": "Jye Yng Teo",
+    "candidate_name": "Liang Yue",
     "candidate_topics": [
-      "Advanced Drug Delivery Systems",
-      "Advanced Polymer Synthesis and Characterization",
-      "Hydrogels: synthesis, properties, applications",
-      "Nanoparticle-Based Drug Delivery",
-      "Tissue Engineering and Regenerative Medicine"
+      "Advanced Sensor and Energy Harvesting Materials",
+      "Carbon Nanotubes in Composites",
+      "Nanomaterials and Printing Technologies"
     ],
     "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
-      "Engineering Polymersomes for Diagnostics and Therapy",
-      "Surface tethering of stem cells with H2O2-responsive anti-oxidizing colloidal particles for protection against oxidation-induced death"
+      "Tough Nano\u2010Architectured Conductive Textile Made by Capillary Splicing of Carbon Nanotubes"
     ],
-    "introduction_path": "Jianjun Cheng \u2192 Steven C. Zimmerman \u2192 Hyunjoon Kong \u2192 Jye Yng Teo (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "introduction_path": "John A. Rogers \u2192 Nancy R. Sottos \u2192 Sameh Tawfick \u2192 Liang Yue (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
     "path_ids": [
-      "https://openalex.org/A5010902410",
-      "https://openalex.org/A5052747722",
-      "https://openalex.org/A5058397377",
-      "https://openalex.org/A5103989066"
+      "https://openalex.org/A5045551635",
+      "https://openalex.org/A5048802994",
+      "https://openalex.org/A5036247243",
+      "https://openalex.org/A5100728825"
     ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
   },
   {
-    "card_id": "CARD_050",
-    "seed_id": "https://openalex.org/A5010902410",
-    "seed_name": "Jianjun Cheng",
-    "seed_department": "Community 4",
+    "card_id": "CARD_040",
+    "seed_id": "https://openalex.org/A5045551635",
+    "seed_name": "John A. Rogers",
+    "seed_department": "Community 3",
     "seed_topics": [
-      "Advanced Drug Delivery Systems",
-      "Advanced Polymer Synthesis and Characterization",
-      "Antimicrobial Peptides and Activities",
-      "Antimicrobial agents and applications"
+      "Advanced MEMS and NEMS Technologies",
+      "Advanced Materials and Mechanics",
+      "Advanced Sensor and Energy Harvesting Materials",
+      "Nanofabrication and Lithography Techniques"
     ],
-    "candidate_name": "Qiqi Tian",
+    "candidate_name": "Brandon Arakawa",
     "candidate_topics": [
-      "Antimicrobial Peptides and Activities",
-      "CRISPR and Genetic Engineering",
-      "Chemical Synthesis and Analysis",
-      "Microbial Natural Products and Biosynthesis",
-      "RNA Interference and Gene Delivery"
+      "Acoustic Wave Resonator Technologies",
+      "Advanced DC-DC Converters",
+      "Advanced MEMS and NEMS Technologies",
+      "Energy Harvesting in Wireless Networks",
+      "RFID technology advancements"
     ],
     "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
-      "Rapid Screening of Lanthipeptide Analogs via In-Colony Removal of Leader Peptides in Escherichia coli",
-      "An efficient gene knock-in strategy using 5\u2032-modified double-stranded DNA donors with short homology arms"
+      "A 150 MHz voltage controlled oscillator using lithium niobate RF-MEMS resonator",
+      "Radio frequency wireless power transfer to chip-scale apparatuses"
     ],
-    "introduction_path": "Jianjun Cheng \u2192 Paul V. Braun \u2192 Jonathan V. Sweedler \u2192 Qiqi Tian (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "introduction_path": "John A. Rogers \u2192 Wen Huang \u2192 Songbin Gong \u2192 Brandon Arakawa (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
     "path_ids": [
-      "https://openalex.org/A5010902410",
-      "https://openalex.org/A5040320137",
-      "https://openalex.org/A5006238710",
-      "https://openalex.org/A5046237702"
+      "https://openalex.org/A5045551635",
+      "https://openalex.org/A5003613128",
+      "https://openalex.org/A5016497308",
+      "https://openalex.org/A5032762645"
     ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
   },
   {
-    "card_id": "CARD_051",
-    "seed_id": "https://openalex.org/A5010902410",
-    "seed_name": "Jianjun Cheng",
-    "seed_department": "Community 4",
+    "card_id": "CARD_041",
+    "seed_id": "https://openalex.org/A5045551635",
+    "seed_name": "John A. Rogers",
+    "seed_department": "Community 3",
     "seed_topics": [
-      "Advanced Drug Delivery Systems",
-      "Advanced Polymer Synthesis and Characterization",
-      "Antimicrobial Peptides and Activities",
-      "Antimicrobial agents and applications"
-    ],
-    "candidate_name": "Jiayu Leong",
-    "candidate_topics": [
-      "Advanced Drug Delivery Systems",
-      "Advanced Polymer Synthesis and Characterization",
-      "Bacterial biofilms and quorum sensing",
-      "Dendrimers and Hyperbranched Polymers",
-      "Diatoms and Algae Research"
-    ],
-    "model_version": "proposal-path-v3-common-neighbors",
-    "sample_papers": [
-      "Engineering Polymersomes for Diagnostics and Therapy",
-      "Disease-directed design of biodegradable polymers: Reactive oxygen species and pH-responsive micellar nanoparticles for anticancer drug delivery"
-    ],
-    "introduction_path": "Jianjun Cheng \u2192 Steven C. Zimmerman \u2192 Hyunjoon Kong \u2192 Jiayu Leong (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
-    "path_ids": [
-      "https://openalex.org/A5010902410",
-      "https://openalex.org/A5052747722",
-      "https://openalex.org/A5058397377",
-      "https://openalex.org/A5031899418"
-    ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
-  },
-  {
-    "card_id": "CARD_052",
-    "seed_id": "https://openalex.org/A5010902410",
-    "seed_name": "Jianjun Cheng",
-    "seed_department": "Community 4",
-    "seed_topics": [
-      "Advanced Drug Delivery Systems",
-      "Advanced Polymer Synthesis and Characterization",
-      "Antimicrobial Peptides and Activities",
-      "Antimicrobial agents and applications"
+      "Advanced MEMS and NEMS Technologies",
+      "Advanced Materials and Mechanics",
+      "Advanced Sensor and Energy Harvesting Materials",
+      "Nanofabrication and Lithography Techniques"
     ],
     "candidate_name": "Andrew A. Gewirth",
     "candidate_topics": [
@@ -1632,368 +1285,918 @@
     ],
     "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
-      "The Interplay of Al and Mg Speciation in Advanced Mg Battery Electrolyte Solutions",
-      "High Activity Oxygen Evolution Reaction Catalysts from Additive-Controlled Electrodeposited Ni and NiFe Films"
+      "Nanoporous Copper\u2013Silver Alloys by Additive-Controlled Electrodeposition for the Selective Electroreduction of CO2 to Ethylene and Ethanol",
+      "Nonprecious Metal Catalysts for Oxygen Reduction in Heterogeneous Aqueous Systems"
     ],
-    "introduction_path": "Jianjun Cheng \u2192 Lingyang Zhu \u2192 Andrew A. Gewirth (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "introduction_path": "John A. Rogers \u2192 Scott R. White \u2192 Andrew A. Gewirth (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
     "path_ids": [
-      "https://openalex.org/A5010902410",
-      "https://openalex.org/A5019036156",
+      "https://openalex.org/A5045551635",
+      "https://openalex.org/A5005620680",
       "https://openalex.org/A5021345935"
     ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
+  },
+  {
+    "card_id": "CARD_042",
+    "seed_id": "https://openalex.org/A5087114395",
+    "seed_name": "Tarek Abdelzaher",
+    "seed_department": "Community 4",
+    "seed_topics": [
+      "Complex Network Analysis Techniques",
+      "Context-Aware Activity Recognition Systems",
+      "Distributed Sensor Networks and Detection Algorithms",
+      "Geographic Information Systems Studies"
+    ],
+    "candidate_name": "Kiumars Soltani",
+    "candidate_topics": [
+      "Data Management and Algorithms",
+      "Data Visualization and Analytics",
+      "Distributed and Parallel Computing Systems",
+      "Geographic Information Systems Studies",
+      "Human Mobility and Location-Based Analysis"
+    ],
+    "model_version": "proposal-path-v3-common-neighbors",
+    "sample_papers": [
+      "A scalable framework for spatiotemporal analysis of location-based social media data",
+      "Social sensing of urban land use based on analysis of Twitter users\u2019 mobility patterns"
+    ],
+    "introduction_path": "Tarek Abdelzaher \u2192 Xiang Ren \u2192 Aditya Parameswaran \u2192 Kiumars Soltani (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5087114395",
+      "https://openalex.org/A5009408707",
+      "https://openalex.org/A5013608601",
+      "https://openalex.org/A5042616094"
+    ],
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
+  },
+  {
+    "card_id": "CARD_043",
+    "seed_id": "https://openalex.org/A5087114395",
+    "seed_name": "Tarek Abdelzaher",
+    "seed_department": "Community 4",
+    "seed_topics": [
+      "Complex Network Analysis Techniques",
+      "Context-Aware Activity Recognition Systems",
+      "Distributed Sensor Networks and Detection Algorithms",
+      "Geographic Information Systems Studies"
+    ],
+    "candidate_name": "Reza Shiftehfar",
+    "candidate_topics": [
+      "Cloud Data Security Solutions",
+      "Context-Aware Activity Recognition Systems",
+      "Human Mobility and Location-Based Analysis",
+      "Indoor and Outdoor Localization Technologies",
+      "IoT and Edge/Fog Computing"
+    ],
+    "model_version": "proposal-path-v3-common-neighbors",
+    "sample_papers": [
+      "Victim Localization and Assessment System for Emergency Responders",
+      "Theoretical Considerations: Inferring and Enforcing Use Patterns for Mobile Cloud Assurance"
+    ],
+    "introduction_path": "Tarek Abdelzaher \u2192 Indranil Gupta \u2192 Karl Palmskog \u2192 Reza Shiftehfar (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5087114395",
+      "https://openalex.org/A5027240302",
+      "https://openalex.org/A5015320417",
+      "https://openalex.org/A5057264733"
+    ],
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
+  },
+  {
+    "card_id": "CARD_044",
+    "seed_id": "https://openalex.org/A5087114395",
+    "seed_name": "Tarek Abdelzaher",
+    "seed_department": "Community 4",
+    "seed_topics": [
+      "Complex Network Analysis Techniques",
+      "Context-Aware Activity Recognition Systems",
+      "Distributed Sensor Networks and Detection Algorithms",
+      "Geographic Information Systems Studies"
+    ],
+    "candidate_name": "Qi Zhu",
+    "candidate_topics": [
+      "Advanced Graph Neural Networks",
+      "Advanced Text Analysis Techniques",
+      "Bioinformatics and Genomic Networks",
+      "Biomedical Text Mining and Ontologies",
+      "Complex Network Analysis Techniques"
+    ],
+    "model_version": "proposal-path-v3-common-neighbors",
+    "sample_papers": [
+      "Easing Embedding Learning by Comprehensive Transcription of Heterogeneous Information Networks",
+      "A sp E m : Embedding Learning by Aspects in Heterogeneous Information Networks"
+    ],
+    "introduction_path": "Tarek Abdelzaher \u2192 Xiang Ren \u2192 Qi Zhu (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5087114395",
+      "https://openalex.org/A5009408707",
+      "https://openalex.org/A5055199412"
+    ],
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
+  },
+  {
+    "card_id": "CARD_045",
+    "seed_id": "https://openalex.org/A5087114395",
+    "seed_name": "Tarek Abdelzaher",
+    "seed_department": "Community 4",
+    "seed_topics": [
+      "Complex Network Analysis Techniques",
+      "Context-Aware Activity Recognition Systems",
+      "Distributed Sensor Networks and Detection Algorithms",
+      "Geographic Information Systems Studies"
+    ],
+    "candidate_name": "Xiyao Shi",
+    "candidate_topics": [
+      "Complex Network Analysis Techniques",
+      "Data Mining Algorithms and Applications",
+      "Graph Theory and Algorithms"
+    ],
+    "model_version": "proposal-path-v3-common-neighbors",
+    "sample_papers": [
+      "Contrast Subgraph Mining from Coherent Cores"
+    ],
+    "introduction_path": "Tarek Abdelzaher \u2192 Xiang Ren \u2192 Jingbo Shang \u2192 Xiyao Shi (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5087114395",
+      "https://openalex.org/A5009408707",
+      "https://openalex.org/A5039500313",
+      "https://openalex.org/A5018361531"
+    ],
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
+  },
+  {
+    "card_id": "CARD_046",
+    "seed_id": "https://openalex.org/A5087114395",
+    "seed_name": "Tarek Abdelzaher",
+    "seed_department": "Community 4",
+    "seed_topics": [
+      "Complex Network Analysis Techniques",
+      "Context-Aware Activity Recognition Systems",
+      "Distributed Sensor Networks and Detection Algorithms",
+      "Geographic Information Systems Studies"
+    ],
+    "candidate_name": "Myunghwa Hwang",
+    "candidate_topics": [
+      "Data Management and Algorithms",
+      "Geographic Information Systems Studies",
+      "Human Mobility and Location-Based Analysis"
+    ],
+    "model_version": "proposal-path-v3-common-neighbors",
+    "sample_papers": [
+      "A scalable framework for spatiotemporal analysis of location-based social media data"
+    ],
+    "introduction_path": "Tarek Abdelzaher \u2192 Jiawei Han \u2192 Shaowen Wang \u2192 Myunghwa Hwang (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5087114395",
+      "https://openalex.org/A5019539533",
+      "https://openalex.org/A5026042163",
+      "https://openalex.org/A5021284216"
+    ],
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
+  },
+  {
+    "card_id": "CARD_047",
+    "seed_id": "https://openalex.org/A5087114395",
+    "seed_name": "Tarek Abdelzaher",
+    "seed_department": "Community 4",
+    "seed_topics": [
+      "Complex Network Analysis Techniques",
+      "Context-Aware Activity Recognition Systems",
+      "Distributed Sensor Networks and Detection Algorithms",
+      "Geographic Information Systems Studies"
+    ],
+    "candidate_name": "Kirill Varshavskiy",
+    "candidate_topics": [
+      "Context-Aware Activity Recognition Systems",
+      "IoT and Edge/Fog Computing",
+      "IoT-based Smart Home Systems"
+    ],
+    "model_version": "proposal-path-v3-common-neighbors",
+    "sample_papers": [
+      "MiHub",
+      "Demo"
+    ],
+    "introduction_path": "Tarek Abdelzaher \u2192 Heting Gao \u2192 Hari Sundaram \u2192 Robin Hillary Kravets \u2192 Kirill Varshavskiy (4 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5087114395",
+      "https://openalex.org/A5080011047",
+      "https://openalex.org/A5018532037",
+      "https://openalex.org/A5001539463",
+      "https://openalex.org/A5001639243"
+    ],
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
+  },
+  {
+    "card_id": "CARD_048",
+    "seed_id": "https://openalex.org/A5087114395",
+    "seed_name": "Tarek Abdelzaher",
+    "seed_department": "Community 4",
+    "seed_topics": [
+      "Complex Network Analysis Techniques",
+      "Context-Aware Activity Recognition Systems",
+      "Distributed Sensor Networks and Detection Algorithms",
+      "Geographic Information Systems Studies"
+    ],
+    "candidate_name": "Alexandra Chronopoulou",
+    "candidate_topics": [
+      "Advanced Statistical Process Monitoring",
+      "Complex Network Analysis Techniques",
+      "Distributed Sensor Networks and Detection Algorithms"
+    ],
+    "model_version": "proposal-path-v3-common-neighbors",
+    "sample_papers": [
+      "Online community detection for fused social network graphs"
+    ],
+    "introduction_path": "Tarek Abdelzaher \u2192 Lui Sha \u2192 Ali Yekkehkhany \u2192 Rakesh Nagi \u2192 Alexandra Chronopoulou (4 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5087114395",
+      "https://openalex.org/A5067032971",
+      "https://openalex.org/A5046543057",
+      "https://openalex.org/A5084546619",
+      "https://openalex.org/A5017553029"
+    ],
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
+  },
+  {
+    "card_id": "CARD_049",
+    "seed_id": "https://openalex.org/A5087114395",
+    "seed_name": "Tarek Abdelzaher",
+    "seed_department": "Community 4",
+    "seed_topics": [
+      "Complex Network Analysis Techniques",
+      "Context-Aware Activity Recognition Systems",
+      "Distributed Sensor Networks and Detection Algorithms",
+      "Geographic Information Systems Studies"
+    ],
+    "candidate_name": "Fangbo Tao",
+    "candidate_topics": [
+      "Advanced Graph Neural Networks",
+      "Advanced Text Analysis Techniques",
+      "Bioinformatics and Genomic Networks",
+      "Biomedical Text Mining and Ontologies",
+      "Complex Network Analysis Techniques"
+    ],
+    "model_version": "proposal-path-v3-common-neighbors",
+    "sample_papers": [
+      "Large-Scale Embedding Learning in Heterogeneous Event Data",
+      "ClusType"
+    ],
+    "introduction_path": "Tarek Abdelzaher \u2192 Shuochao Yao \u2192 Fangbo Tao (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5087114395",
+      "https://openalex.org/A5005026261",
+      "https://openalex.org/A5043659320"
+    ],
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
+  },
+  {
+    "card_id": "CARD_050",
+    "seed_id": "https://openalex.org/A5087114395",
+    "seed_name": "Tarek Abdelzaher",
+    "seed_department": "Community 4",
+    "seed_topics": [
+      "Complex Network Analysis Techniques",
+      "Context-Aware Activity Recognition Systems",
+      "Distributed Sensor Networks and Detection Algorithms",
+      "Geographic Information Systems Studies"
+    ],
+    "candidate_name": "Junjun Yin",
+    "candidate_topics": [
+      "3D Modeling in Geospatial Applications",
+      "Advanced Database Systems and Queries",
+      "Data Management and Algorithms",
+      "Geographic Information Systems Studies",
+      "Human Mobility and Location-Based Analysis"
+    ],
+    "model_version": "proposal-path-v3-common-neighbors",
+    "sample_papers": [
+      "Depicting urban boundaries from a mobility network of spatial interactions: a case study of Great Britain with geo-located Twitter data",
+      "Social sensing of urban land use based on analysis of Twitter users\u2019 mobility patterns"
+    ],
+    "introduction_path": "Tarek Abdelzaher \u2192 Jiawei Han \u2192 Shaowen Wang \u2192 Junjun Yin (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5087114395",
+      "https://openalex.org/A5019539533",
+      "https://openalex.org/A5026042163",
+      "https://openalex.org/A5017353043"
+    ],
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
+  },
+  {
+    "card_id": "CARD_051",
+    "seed_id": "https://openalex.org/A5087114395",
+    "seed_name": "Tarek Abdelzaher",
+    "seed_department": "Community 4",
+    "seed_topics": [
+      "Complex Network Analysis Techniques",
+      "Context-Aware Activity Recognition Systems",
+      "Distributed Sensor Networks and Detection Algorithms",
+      "Geographic Information Systems Studies"
+    ],
+    "candidate_name": "Jian Peng",
+    "candidate_topics": [
+      "Bioinformatics and Genomic Networks",
+      "Biomedical Text Mining and Ontologies",
+      "Complex Network Analysis Techniques",
+      "Computational Drug Discovery Methods",
+      "Genomics and Phylogenetic Studies"
+    ],
+    "model_version": "proposal-path-v3-common-neighbors",
+    "sample_papers": [
+      "A network integration approach for drug-target interaction prediction and computational drug repositioning from heterogeneous information",
+      "Integrating satellite and climate data to predict wheat yield in Australia using machine learning approaches"
+    ],
+    "introduction_path": "Tarek Abdelzaher \u2192 Xiang Ren \u2192 Jian Peng (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5087114395",
+      "https://openalex.org/A5009408707",
+      "https://openalex.org/A5061177999"
+    ],
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
+  },
+  {
+    "card_id": "CARD_052",
+    "seed_id": "https://openalex.org/A5087114395",
+    "seed_name": "Tarek Abdelzaher",
+    "seed_department": "Community 4",
+    "seed_topics": [
+      "Complex Network Analysis Techniques",
+      "Context-Aware Activity Recognition Systems",
+      "Distributed Sensor Networks and Detection Algorithms",
+      "Geographic Information Systems Studies"
+    ],
+    "candidate_name": "Jiaming Shen",
+    "candidate_topics": [
+      "Advanced Graph Neural Networks",
+      "Advanced Text Analysis Techniques",
+      "Bioinformatics and Genomic Networks",
+      "Biomedical Text Mining and Ontologies",
+      "Domain Adaptation and Few-Shot Learning"
+    ],
+    "model_version": "proposal-path-v3-common-neighbors",
+    "sample_papers": [
+      "Weakly-Supervised Neural Text Classification",
+      "TaxoGen"
+    ],
+    "introduction_path": "Tarek Abdelzaher \u2192 Xiang Ren \u2192 Jiaming Shen (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5087114395",
+      "https://openalex.org/A5009408707",
+      "https://openalex.org/A5041327449"
+    ],
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
   },
   {
     "card_id": "CARD_053",
-    "seed_id": "https://openalex.org/A5074295593",
-    "seed_name": "Stephen P. Long",
-    "seed_department": "Community 5",
+    "seed_id": "https://openalex.org/A5087114395",
+    "seed_name": "Tarek Abdelzaher",
+    "seed_department": "Community 4",
     "seed_topics": [
-      "Bioenergy crop production and management",
-      "Biofuel production and bioconversion",
-      "Climate change impacts on agriculture",
-      "Crop Yield and Soil Fertility"
+      "Complex Network Analysis Techniques",
+      "Context-Aware Activity Recognition Systems",
+      "Distributed Sensor Networks and Detection Algorithms",
+      "Geographic Information Systems Studies"
     ],
-    "candidate_name": "Eun Joong Oh",
+    "candidate_name": "Jingbo Shang",
     "candidate_topics": [
-      "Bacterial Genetics and Biotechnology",
-      "Biochemical and biochemical processes",
-      "Biofuel production and bioconversion",
-      "Catalysis for Biomass Conversion",
-      "Enzyme Catalysis and Immobilization"
+      "Advanced Graph Neural Networks",
+      "Advanced Text Analysis Techniques",
+      "Biomedical Text Mining and Ontologies",
+      "Complex Network Analysis Techniques",
+      "Data Mining Algorithms and Applications"
     ],
     "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
-      "Recent advances in biological production of sugar alcohols",
-      "Simultaneous Utilization of Cellobiose, Xylose, and Acetic Acid from Lignocellulosic Biomass for Biofuel Production by an Engineered Yeast Platform"
+      "Empower Sequence Labeling with Task-Aware Neural Language Model",
+      "Automated Phrase Mining from Massive Text Corpora"
     ],
-    "introduction_path": "Stephen P. Long \u2192 Donald R. Ort \u2192 Guo-Chang Zhang \u2192 Eun Joong Oh (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "introduction_path": "Tarek Abdelzaher \u2192 Xiang Ren \u2192 Jingbo Shang (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
     "path_ids": [
-      "https://openalex.org/A5074295593",
-      "https://openalex.org/A5074557762",
-      "https://openalex.org/A5022751421",
-      "https://openalex.org/A5101879859"
+      "https://openalex.org/A5087114395",
+      "https://openalex.org/A5009408707",
+      "https://openalex.org/A5039500313"
     ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
   },
   {
     "card_id": "CARD_054",
-    "seed_id": "https://openalex.org/A5074295593",
-    "seed_name": "Stephen P. Long",
-    "seed_department": "Community 5",
+    "seed_id": "https://openalex.org/A5087114395",
+    "seed_name": "Tarek Abdelzaher",
+    "seed_department": "Community 4",
     "seed_topics": [
-      "Bioenergy crop production and management",
-      "Biofuel production and bioconversion",
-      "Climate change impacts on agriculture",
-      "Crop Yield and Soil Fertility"
+      "Complex Network Analysis Techniques",
+      "Context-Aware Activity Recognition Systems",
+      "Distributed Sensor Networks and Detection Algorithms",
+      "Geographic Information Systems Studies"
     ],
-    "candidate_name": "John A. Juvik",
+    "candidate_name": "Himel Dev",
     "candidate_topics": [
-      "Food Safety and Hygiene",
-      "Garlic and Onion Studies",
-      "Genetic Mapping and Diversity in Plants and Animals",
-      "Genomics, phytochemicals, and oxidative stress",
-      "Glutathione Transferases and Polymorphisms"
+      "Complex Network Analysis Techniques",
+      "Computer Graphics and Visualization Techniques",
+      "Data Mining Algorithms and Applications",
+      "Data Visualization and Analytics",
+      "Expert finding and Q&A systems"
     ],
     "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
-      "Influence of Epicuticular Physicochemical Properties on Porcine Rotavirus Adsorption to 24 Leafy Green Vegetables and Tomatoes",
-      "Correlation of Quinone Reductase Activity and Allyl Isothiocyanate Formation Among Different Genotypes and Grades of Horseradish Roots"
+      "Avoiding drill-down fallacies with VisPilot",
+      "The Size Conundrum"
     ],
-    "introduction_path": "Stephen P. Long \u2192 Vijay Singh \u2192 John A. Juvik (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "introduction_path": "Tarek Abdelzaher \u2192 Xiang Ren \u2192 Aditya Parameswaran \u2192 Himel Dev (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
     "path_ids": [
-      "https://openalex.org/A5074295593",
-      "https://openalex.org/A5000650931",
-      "https://openalex.org/A5028984028"
+      "https://openalex.org/A5087114395",
+      "https://openalex.org/A5009408707",
+      "https://openalex.org/A5013608601",
+      "https://openalex.org/A5018801730"
     ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
   },
   {
     "card_id": "CARD_055",
-    "seed_id": "https://openalex.org/A5074295593",
-    "seed_name": "Stephen P. Long",
+    "seed_id": "https://openalex.org/A5053142246",
+    "seed_name": "Karen M. Tabb",
     "seed_department": "Community 5",
     "seed_topics": [
-      "Bioenergy crop production and management",
-      "Biofuel production and bioconversion",
-      "Climate change impacts on agriculture",
-      "Crop Yield and Soil Fertility"
+      "Birth, Development, and Health",
+      "Gestational Diabetes Research and Management",
+      "Health disparities and outcomes",
+      "Maternal Mental Health During Pregnancy and Postpartum"
     ],
-    "candidate_name": "Jingjing Liu",
+    "candidate_name": "Barbara H. Fiese",
     "candidate_topics": [
-      "Fungal and yeast genetics research",
-      "Lipid metabolism and biosynthesis",
-      "Microbial Metabolic Engineering and Bioproduction",
-      "Plant biochemistry and biosynthesis",
-      "Probiotics and Fermented Foods"
+      "Child Nutrition and Feeding Issues",
+      "Diverse Educational Innovations Studies",
+      "Early Childhood Education and Development",
+      "Eating Disorders and Behaviors",
+      "Family Dynamics and Relationships"
     ],
     "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
-      "Metabolic Engineering of Probiotic Saccharomyces boulardii",
-      "Improved squalene production through increasing lipid contents in Saccharomyces cerevisiae"
+      "Parental perception of child weight in the first two years-of-life: a potential link between infant feeding and preschoolers' diet",
+      "Narrative Review of Culinary Interventions with Children in Schools to Promote Healthy Eating: Directions for Future Research and Practice"
     ],
-    "introduction_path": "Stephen P. Long \u2192 Donald R. Ort \u2192 Peng\u2010Fei Xia \u2192 Jingjing Liu (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "introduction_path": "Karen M. Tabb \u2192 Janet M. Liechty \u2192 Barbara H. Fiese (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
     "path_ids": [
-      "https://openalex.org/A5074295593",
-      "https://openalex.org/A5074557762",
-      "https://openalex.org/A5006621494",
-      "https://openalex.org/A5100442576"
+      "https://openalex.org/A5053142246",
+      "https://openalex.org/A5055833057",
+      "https://openalex.org/A5011614937"
     ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
   },
   {
     "card_id": "CARD_056",
-    "seed_id": "https://openalex.org/A5074295593",
-    "seed_name": "Stephen P. Long",
+    "seed_id": "https://openalex.org/A5053142246",
+    "seed_name": "Karen M. Tabb",
     "seed_department": "Community 5",
     "seed_topics": [
-      "Bioenergy crop production and management",
-      "Biofuel production and bioconversion",
-      "Climate change impacts on agriculture",
-      "Crop Yield and Soil Fertility"
+      "Birth, Development, and Health",
+      "Gestational Diabetes Research and Management",
+      "Health disparities and outcomes",
+      "Maternal Mental Health During Pregnancy and Postpartum"
     ],
-    "candidate_name": "Sibo Wang",
+    "candidate_name": "Shard\u00e9 McNeil Smith",
     "candidate_topics": [
-      "Advanced Neural Network Applications",
-      "Astronomical Observations and Instrumentation",
-      "Astrophysical Phenomena and Observations",
-      "Galaxies: Formation, Evolution, Phenomena",
-      "Gamma-ray bursts and supernovae"
+      "Attachment and Relationship Dynamics",
+      "Child and Adolescent Psychosocial and Emotional Development",
+      "Health disparities and outcomes",
+      "Media Studies and Communication",
+      "Mental Health Treatment and Access"
     ],
     "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
-      "Detecting In-Season Crop Nitrogen Stress of Corn for Field Trials Using UAV- and CubeSat-Based Multispectral Sensing",
-      "Deep learning at scale for the construction of galaxy catalogs in the Dark Energy Survey"
+      "Barriers and facilitators to mental health help-seeking among African American youth and their families: A systematic review study",
+      "Selective sharing on social media: Examining the effects of disparate racial impact frames on intentions to retransmit news stories among US college students"
     ],
-    "introduction_path": "Stephen P. Long \u2192 Shaowen Wang \u2192 Sibo Wang (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "introduction_path": "Karen M. Tabb \u2192 Rosalba Hern\u00e1ndez \u2192 Andiara Schwingel \u2192 Laura L. Payne \u2192 Brian L. Quick \u2192 Cabral A. Bigman \u2192 Shard\u00e9 McNeil Smith (6 co-authorship hops; acquaintance and willingness to introduce are unverified)",
     "path_ids": [
-      "https://openalex.org/A5074295593",
-      "https://openalex.org/A5026042163",
-      "https://openalex.org/A5100736049"
+      "https://openalex.org/A5053142246",
+      "https://openalex.org/A5056380283",
+      "https://openalex.org/A5024809040",
+      "https://openalex.org/A5053330047",
+      "https://openalex.org/A5079155538",
+      "https://openalex.org/A5013853735",
+      "https://openalex.org/A5079223750"
     ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
   },
   {
     "card_id": "CARD_057",
-    "seed_id": "https://openalex.org/A5074295593",
-    "seed_name": "Stephen P. Long",
+    "seed_id": "https://openalex.org/A5053142246",
+    "seed_name": "Karen M. Tabb",
     "seed_department": "Community 5",
     "seed_topics": [
-      "Bioenergy crop production and management",
-      "Biofuel production and bioconversion",
-      "Climate change impacts on agriculture",
-      "Crop Yield and Soil Fertility"
+      "Birth, Development, and Health",
+      "Gestational Diabetes Research and Management",
+      "Health disparities and outcomes",
+      "Maternal Mental Health During Pregnancy and Postpartum"
     ],
-    "candidate_name": "Eun Ju Yun",
+    "candidate_name": "Jennifer McCaffrey",
     "candidate_topics": [
-      "Biochemical and biochemical processes",
-      "Biofuel production and bioconversion",
-      "Enzyme Catalysis and Immobilization",
-      "Fungal and yeast genetics research",
-      "Microbial Metabolic Engineering and Bioproduction"
+      "Community Health and Development",
+      "Dietetics, Nutrition, and Education",
+      "Diverse Educational Innovations Studies",
+      "Food Security and Health in Diverse Populations",
+      "Health Education and Validation"
     ],
     "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
-      "Production of biofuels and chemicals from xylose using native and engineered yeast strains",
-      "Biosynthesis of a Functional Human Milk Oligosaccharide, 2\u2032-Fucosyllactose, and l -Fucose Using Engineered Saccharomyces cerevisiae"
+      "A systematic review of food pantry-based interventions in the USA",
+      "Plain water consumption in relation to energy intake and diet quality among US adults, 2005\u20132012"
     ],
-    "introduction_path": "Stephen P. Long \u2192 Donald R. Ort \u2192 Guo-Chang Zhang \u2192 Eun Ju Yun (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "introduction_path": "Karen M. Tabb \u2192 Fl\u00e1via Cristina Drumond Andrade \u2192 Ruopeng An \u2192 Jennifer McCaffrey (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
     "path_ids": [
-      "https://openalex.org/A5074295593",
-      "https://openalex.org/A5074557762",
-      "https://openalex.org/A5022751421",
-      "https://openalex.org/A5109166086"
+      "https://openalex.org/A5053142246",
+      "https://openalex.org/A5034752959",
+      "https://openalex.org/A5002313901",
+      "https://openalex.org/A5036169268"
     ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
   },
   {
     "card_id": "CARD_058",
-    "seed_id": "https://openalex.org/A5074295593",
-    "seed_name": "Stephen P. Long",
+    "seed_id": "https://openalex.org/A5053142246",
+    "seed_name": "Karen M. Tabb",
     "seed_department": "Community 5",
     "seed_topics": [
-      "Bioenergy crop production and management",
-      "Biofuel production and bioconversion",
-      "Climate change impacts on agriculture",
-      "Crop Yield and Soil Fertility"
+      "Birth, Development, and Health",
+      "Gestational Diabetes Research and Management",
+      "Health disparities and outcomes",
+      "Maternal Mental Health During Pregnancy and Postpartum"
     ],
-    "candidate_name": "Stephan Lane",
+    "candidate_name": "Stephanie A. Moore",
     "candidate_topics": [
-      "Bacterial Genetics and Biotechnology",
-      "Biofuel production and bioconversion",
-      "Fungal and yeast genetics research",
-      "Lipid metabolism and biosynthesis",
-      "Microbial Metabolic Engineering and Bioproduction"
+      "Child and Adolescent Psychosocial and Emotional Development",
+      "Mental Health Treatment and Access",
+      "Racial and Ethnic Identity Research"
     ],
     "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
-      "Enhanced isoprenoid production f rom xylose by engineered Saccharomyces cerevisiae",
-      "Glucose repression can be alleviated by reducing glucose phosphorylation rate in Saccharomyces cerevisiae"
+      "Barriers and facilitators to mental health help-seeking among African American youth and their families: A systematic review study"
     ],
-    "introduction_path": "Stephen P. Long \u2192 Donald R. Ort \u2192 Guo-Chang Zhang \u2192 Stephan Lane (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "introduction_path": "Karen M. Tabb \u2192 Rosalba Hern\u00e1ndez \u2192 Andiara Schwingel \u2192 Laura L. Payne \u2192 Brian L. Quick \u2192 Cabral A. Bigman \u2192 Arrianna Marie Planey \u2192 Stephanie A. Moore (7 co-authorship hops; acquaintance and willingness to introduce are unverified)",
     "path_ids": [
-      "https://openalex.org/A5074295593",
-      "https://openalex.org/A5074557762",
-      "https://openalex.org/A5022751421",
-      "https://openalex.org/A5072987212"
+      "https://openalex.org/A5053142246",
+      "https://openalex.org/A5056380283",
+      "https://openalex.org/A5024809040",
+      "https://openalex.org/A5053330047",
+      "https://openalex.org/A5079155538",
+      "https://openalex.org/A5013853735",
+      "https://openalex.org/A5002367398",
+      "https://openalex.org/A5009337607"
     ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
   },
   {
     "card_id": "CARD_059",
-    "seed_id": "https://openalex.org/A5074295593",
-    "seed_name": "Stephen P. Long",
+    "seed_id": "https://openalex.org/A5053142246",
+    "seed_name": "Karen M. Tabb",
     "seed_department": "Community 5",
     "seed_topics": [
-      "Bioenergy crop production and management",
-      "Biofuel production and bioconversion",
-      "Climate change impacts on agriculture",
-      "Crop Yield and Soil Fertility"
+      "Birth, Development, and Health",
+      "Gestational Diabetes Research and Management",
+      "Health disparities and outcomes",
+      "Maternal Mental Health During Pregnancy and Postpartum"
     ],
-    "candidate_name": "Girish Vinayak Chowdhary",
+    "candidate_name": "Naiman A. Khan",
     "candidate_topics": [
-      "Adaptive Dynamic Programming Control",
-      "Advanced Control Systems Optimization",
-      "Advanced Materials and Mechanics",
-      "Adversarial Robustness in Machine Learning",
-      "Agricultural Engineering and Mechanization"
+      "Adipokines, Inflammation, and Metabolic Diseases",
+      "Antioxidant Activity and Oxidative Stress",
+      "Fatty Acid Research and Health",
+      "Gut microbiota and health",
+      "Neural and Behavioral Psychology Studies"
     ],
     "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
-      "Research and development in agricultural robotics: A perspective of digital farming",
-      "Robust Deep Reinforcement Learning with Adversarial Attacks"
+      "Associations among diet, the gastrointestinal microbiota, and negative emotional states in adults",
+      "The acute effects of high-intensity interval training and moderate-intensity continuous exercise on declarative memory and inhibitory control"
     ],
-    "introduction_path": "Stephen P. Long \u2192 Shaowen Wang \u2192 Girish Vinayak Chowdhary (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "introduction_path": "Karen M. Tabb \u2192 Fl\u00e1via Cristina Drumond Andrade \u2192 Ruopeng An \u2192 Naiman A. Khan (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
     "path_ids": [
-      "https://openalex.org/A5074295593",
-      "https://openalex.org/A5026042163",
-      "https://openalex.org/A5073739058"
+      "https://openalex.org/A5053142246",
+      "https://openalex.org/A5034752959",
+      "https://openalex.org/A5002313901",
+      "https://openalex.org/A5067579128"
     ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
   },
   {
     "card_id": "CARD_060",
-    "seed_id": "https://openalex.org/A5074295593",
-    "seed_name": "Stephen P. Long",
+    "seed_id": "https://openalex.org/A5053142246",
+    "seed_name": "Karen M. Tabb",
     "seed_department": "Community 5",
     "seed_topics": [
-      "Bioenergy crop production and management",
-      "Biofuel production and bioconversion",
-      "Climate change impacts on agriculture",
-      "Crop Yield and Soil Fertility"
+      "Birth, Development, and Health",
+      "Gestational Diabetes Research and Management",
+      "Health disparities and outcomes",
+      "Maternal Mental Health During Pregnancy and Postpartum"
     ],
-    "candidate_name": "Haiqing Xu",
+    "candidate_name": "Roger Figueroa",
     "candidate_topics": [
-      "Bacterial Genetics and Biotechnology",
-      "Biofuel production and bioconversion",
-      "Fungal and yeast genetics research",
-      "Microbial Metabolic Engineering and Bioproduction",
-      "Plant biochemistry and biosynthesis"
+      "Child Development and Education",
+      "Children's Physical and Motor Development",
+      "Nutrition, Health and Food Behavior",
+      "Obesity and Health Practices",
+      "Obesity, Physical Activity, Diet"
     ],
     "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
-      "PHO13 deletion-induced transcriptional activation prevents sedoheptulose accumulation during xylose metabolism in engineered Saccharomyces cerevisiae",
-      "Enhanced isoprenoid production f rom xylose by engineered Saccharomyces cerevisiae"
+      "Motor Skill Competence and Physical Activity in Preschoolers: A Review",
+      "Factors associated with time provided to children for physical activity in family child care: a cross-sectional study"
     ],
-    "introduction_path": "Stephen P. Long \u2192 Donald R. Ort \u2192 Guo-Chang Zhang \u2192 Haiqing Xu (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "introduction_path": "Karen M. Tabb \u2192 Fl\u00e1via Cristina Drumond Andrade \u2192 Ruopeng An \u2192 Roger Figueroa (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
     "path_ids": [
-      "https://openalex.org/A5074295593",
-      "https://openalex.org/A5074557762",
-      "https://openalex.org/A5022751421",
-      "https://openalex.org/A5057259259"
+      "https://openalex.org/A5053142246",
+      "https://openalex.org/A5034752959",
+      "https://openalex.org/A5002313901",
+      "https://openalex.org/A5075433015"
     ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
   },
   {
     "card_id": "CARD_061",
-    "seed_id": "https://openalex.org/A5074295593",
-    "seed_name": "Stephen P. Long",
+    "seed_id": "https://openalex.org/A5053142246",
+    "seed_name": "Karen M. Tabb",
     "seed_department": "Community 5",
     "seed_topics": [
-      "Bioenergy crop production and management",
-      "Biofuel production and bioconversion",
-      "Climate change impacts on agriculture",
-      "Crop Yield and Soil Fertility"
+      "Birth, Development, and Health",
+      "Gestational Diabetes Research and Management",
+      "Health disparities and outcomes",
+      "Maternal Mental Health During Pregnancy and Postpartum"
     ],
-    "candidate_name": "Venkatraman Srinivasan",
+    "candidate_name": "Daniel J. Schober",
     "candidate_topics": [
-      "Climate change impacts on agriculture",
-      "Greenhouse Technology and Climate Control",
-      "Smart Agriculture and AI"
+      "Dietetics, Nutrition, and Education",
+      "Nutrition, Health and Food Behavior",
+      "Obesity, Physical Activity, Diet"
     ],
     "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
-      "Use of computational modeling combined with advanced visualization to develop strategies for the design of crop ideotypes to address food security"
+      "Implementing the Academy of Nutrition and Dietetics Benchmarks for Nutrition Education for Children: Child-Care Providers\u2019 Perspectives"
     ],
-    "introduction_path": "Stephen P. Long \u2192 Amy Marshall\u2010Col\u00f3n \u2192 Venkatraman Srinivasan (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "introduction_path": "Karen M. Tabb \u2192 Janet M. Liechty \u2192 Brent A. McBride \u2192 Daniel J. Schober (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
     "path_ids": [
-      "https://openalex.org/A5074295593",
-      "https://openalex.org/A5073183275",
-      "https://openalex.org/A5010579391"
+      "https://openalex.org/A5053142246",
+      "https://openalex.org/A5055833057",
+      "https://openalex.org/A5103034183",
+      "https://openalex.org/A5004814959"
     ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
   },
   {
     "card_id": "CARD_062",
-    "seed_id": "https://openalex.org/A5074295593",
-    "seed_name": "Stephen P. Long",
+    "seed_id": "https://openalex.org/A5053142246",
+    "seed_name": "Karen M. Tabb",
     "seed_department": "Community 5",
     "seed_topics": [
-      "Bioenergy crop production and management",
-      "Biofuel production and bioconversion",
-      "Climate change impacts on agriculture",
-      "Crop Yield and Soil Fertility"
+      "Birth, Development, and Health",
+      "Gestational Diabetes Research and Management",
+      "Health disparities and outcomes",
+      "Maternal Mental Health During Pregnancy and Postpartum"
     ],
-    "candidate_name": "Emerson D. Nafziger",
+    "candidate_name": "Ruopeng An",
     "candidate_topics": [
-      "Agricultural Science and Fertilization",
-      "Crop Yield and Soil Fertility",
-      "Nitrogen and Sulfur Effects on Brassica",
-      "Remote Sensing in Agriculture",
-      "Soil Carbon and Nitrogen Dynamics"
+      "Air Quality and Health Impacts",
+      "Food Security and Health in Diverse Populations",
+      "Food Security and Socioeconomic Dynamics",
+      "Nutrition and Health in Aging",
+      "Nutrition, Health and Food Behavior"
     ],
     "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
-      "Crop Rotation and Tillage Effects on Soil Physical and Chemical Properties in Illinois",
-      "Corn residue, tillage, and nitrogen rate effects on soil properties"
+      "Gait variability in people with neurological disorders: A systematic review and meta-analysis",
+      "A systematic review and meta-analysis of adherence to physical activity interventions among three chronic conditions: cancer, cardiovascular disease, and diabetes"
     ],
-    "introduction_path": "Stephen P. Long \u2192 Shaowen Wang \u2192 Emerson D. Nafziger (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "introduction_path": "Karen M. Tabb \u2192 Fl\u00e1via Cristina Drumond Andrade \u2192 Ruopeng An (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
     "path_ids": [
-      "https://openalex.org/A5074295593",
-      "https://openalex.org/A5026042163",
-      "https://openalex.org/A5091431112"
+      "https://openalex.org/A5053142246",
+      "https://openalex.org/A5034752959",
+      "https://openalex.org/A5002313901"
     ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
   },
   {
     "card_id": "CARD_063",
-    "seed_id": "https://openalex.org/A5074295593",
-    "seed_name": "Stephen P. Long",
+    "seed_id": "https://openalex.org/A5053142246",
+    "seed_name": "Karen M. Tabb",
     "seed_department": "Community 5",
     "seed_topics": [
-      "Bioenergy crop production and management",
-      "Biofuel production and bioconversion",
-      "Climate change impacts on agriculture",
-      "Crop Yield and Soil Fertility"
+      "Birth, Development, and Health",
+      "Gestational Diabetes Research and Management",
+      "Health disparities and outcomes",
+      "Maternal Mental Health During Pregnancy and Postpartum"
     ],
-    "candidate_name": "Jungyeon Kim",
+    "candidate_name": "Kenneth Robert Wilund",
     "candidate_topics": [
-      "Biofuel production and bioconversion",
-      "Fungal and yeast genetics research",
-      "Microbial Metabolic Engineering and Bioproduction"
+      "Balance, Gait, and Falls Prevention",
+      "Cardiovascular Health and Disease Prevention",
+      "Cardiovascular and exercise physiology",
+      "Dialysis and Renal Disease Management",
+      "Dietetics, Nutrition, and Education"
     ],
     "model_version": "proposal-path-v3-common-neighbors",
     "sample_papers": [
-      "PHO13 deletion-induced transcriptional activation prevents sedoheptulose accumulation during xylose metabolism in engineered Saccharomyces cerevisiae"
+      "Results from the randomized controlled IHOPE trial suggest no effects of oral protein supplementation and exercise training on physical function in hemodialysis patients",
+      "Sex differences in autonomic function following maximal exercise"
     ],
-    "introduction_path": "Stephen P. Long \u2192 Donald R. Ort \u2192 Guo-Chang Zhang \u2192 Haiqing Xu \u2192 Jungyeon Kim (4 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "introduction_path": "Karen M. Tabb \u2192 Shuo Xu \u2192 Kenneth Robert Wilund (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
     "path_ids": [
-      "https://openalex.org/A5074295593",
-      "https://openalex.org/A5074557762",
-      "https://openalex.org/A5022751421",
-      "https://openalex.org/A5057259259",
-      "https://openalex.org/A5013830080"
+      "https://openalex.org/A5053142246",
+      "https://openalex.org/A5026874493",
+      "https://openalex.org/A5003266309"
     ],
-    "dataset_id": "a5920cda8de90c29b359c8e64fdbdffacba2a5aa550509a2ea4253c3db5b829b"
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
+  },
+  {
+    "card_id": "CARD_064",
+    "seed_id": "https://openalex.org/A5053142246",
+    "seed_name": "Karen M. Tabb",
+    "seed_department": "Community 5",
+    "seed_topics": [
+      "Birth, Development, and Health",
+      "Gestational Diabetes Research and Management",
+      "Health disparities and outcomes",
+      "Maternal Mental Health During Pregnancy and Postpartum"
+    ],
+    "candidate_name": "Natasha Chong Cole",
+    "candidate_topics": [
+      "Attachment and Relationship Dynamics",
+      "Biochemical Analysis and Sensing Techniques",
+      "Child Nutrition and Feeding Issues",
+      "Eating Disorders and Behaviors",
+      "Infant Nutrition and Health"
+    ],
+    "model_version": "proposal-path-v3-common-neighbors",
+    "sample_papers": [
+      "Correlates of picky eating and food neophobia in young children: a systematic review and meta-analysis",
+      "Home feeding environment and picky eating behavior in preschool-aged children: A prospective analysis"
+    ],
+    "introduction_path": "Karen M. Tabb \u2192 Fl\u00e1via Cristina Drumond Andrade \u2192 Ruopeng An \u2192 Natasha Chong Cole (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5053142246",
+      "https://openalex.org/A5034752959",
+      "https://openalex.org/A5002313901",
+      "https://openalex.org/A5065657513"
+    ],
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
+  },
+  {
+    "card_id": "CARD_065",
+    "seed_id": "https://openalex.org/A5053142246",
+    "seed_name": "Karen M. Tabb",
+    "seed_department": "Community 5",
+    "seed_topics": [
+      "Birth, Development, and Health",
+      "Gestational Diabetes Research and Management",
+      "Health disparities and outcomes",
+      "Maternal Mental Health During Pregnancy and Postpartum"
+    ],
+    "candidate_name": "Soo\u2010Yeun Lee",
+    "candidate_topics": [
+      "Biochemical Analysis and Sensing Techniques",
+      "Child Nutrition and Feeding Issues",
+      "Consumer Attitudes and Food Labeling",
+      "Eating Disorders and Behaviors",
+      "Food Chemistry and Fat Analysis"
+    ],
+    "model_version": "proposal-path-v3-common-neighbors",
+    "sample_papers": [
+      "Functionality of Sugars in Foods and Health",
+      "Correlates of picky eating and food neophobia in young children: a systematic review and meta-analysis"
+    ],
+    "introduction_path": "Karen M. Tabb \u2192 Fl\u00e1via Cristina Drumond Andrade \u2192 Ruopeng An \u2192 Soo\u2010Yeun Lee (3 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5053142246",
+      "https://openalex.org/A5034752959",
+      "https://openalex.org/A5002313901",
+      "https://openalex.org/A5047902116"
+    ],
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
+  },
+  {
+    "card_id": "CARD_066",
+    "seed_id": "https://openalex.org/A5053142246",
+    "seed_name": "Karen M. Tabb",
+    "seed_department": "Community 5",
+    "seed_topics": [
+      "Birth, Development, and Health",
+      "Gestational Diabetes Research and Management",
+      "Health disparities and outcomes",
+      "Maternal Mental Health During Pregnancy and Postpartum"
+    ],
+    "candidate_name": "Leia Flure",
+    "candidate_topics": [
+      "Food Waste Reduction and Sustainability",
+      "Nutrition, Health and Food Behavior",
+      "Obesity, Physical Activity, Diet"
+    ],
+    "model_version": "proposal-path-v3-common-neighbors",
+    "sample_papers": [
+      "Measuring Plate Waste in Schools: An Emerging Opportunity to Collaborate to Improve School Nutrition Programs"
+    ],
+    "introduction_path": "Karen M. Tabb \u2192 Fl\u00e1via Cristina Drumond Andrade \u2192 Ruopeng An \u2192 Jennifer McCaffrey \u2192 Leia Flure (4 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5053142246",
+      "https://openalex.org/A5034752959",
+      "https://openalex.org/A5002313901",
+      "https://openalex.org/A5036169268",
+      "https://openalex.org/A5000540099"
+    ],
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
+  },
+  {
+    "card_id": "CARD_067",
+    "seed_id": "https://openalex.org/A5053142246",
+    "seed_name": "Karen M. Tabb",
+    "seed_department": "Community 5",
+    "seed_topics": [
+      "Birth, Development, and Health",
+      "Gestational Diabetes Research and Management",
+      "Health disparities and outcomes",
+      "Maternal Mental Health During Pregnancy and Postpartum"
+    ],
+    "candidate_name": "Leslie D. Cunningham-Sabo",
+    "candidate_topics": [
+      "Nutrition, Health and Food Behavior",
+      "Obesity, Physical Activity, Diet",
+      "School Health and Nursing Education"
+    ],
+    "model_version": "proposal-path-v3-common-neighbors",
+    "sample_papers": [
+      "Teacher Well-Being Attributes Are Positively Associated With Teacher Perceptions of Fuel for Fun Tasting Lessons"
+    ],
+    "introduction_path": "Karen M. Tabb \u2192 Fl\u00e1via Cristina Drumond Andrade \u2192 Ruopeng An \u2192 Jennifer McCaffrey \u2192 Melissa Pflugh Prescott \u2192 Leslie D. Cunningham-Sabo (5 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5053142246",
+      "https://openalex.org/A5034752959",
+      "https://openalex.org/A5002313901",
+      "https://openalex.org/A5036169268",
+      "https://openalex.org/A5001147721",
+      "https://openalex.org/A5010913181"
+    ],
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
+  },
+  {
+    "card_id": "CARD_068",
+    "seed_id": "https://openalex.org/A5053142246",
+    "seed_name": "Karen M. Tabb",
+    "seed_department": "Community 5",
+    "seed_topics": [
+      "Birth, Development, and Health",
+      "Gestational Diabetes Research and Management",
+      "Health disparities and outcomes",
+      "Maternal Mental Health During Pregnancy and Postpartum"
+    ],
+    "candidate_name": "Jaclyn A. Saltzman",
+    "candidate_topics": [
+      "Adolescent Health and Behaviors",
+      "Attachment and Relationship Dynamics",
+      "Child Nutrition and Feeding Issues",
+      "Eating Disorders and Behaviors",
+      "Health Literacy and Information Accessibility"
+    ],
+    "model_version": "proposal-path-v3-common-neighbors",
+    "sample_papers": [
+      "Development of Appetite Self-Regulation: Integrating Perspectives From Attachment and Family Systems Theory",
+      "Eating, feeding, and feeling: emotional responsiveness mediates longitudinal associations between maternal binge eating, feeding practices, and child weight"
+    ],
+    "introduction_path": "Karen M. Tabb \u2192 Janet M. Liechty \u2192 Jaclyn A. Saltzman (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5053142246",
+      "https://openalex.org/A5055833057",
+      "https://openalex.org/A5001534439"
+    ],
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
+  },
+  {
+    "card_id": "CARD_069",
+    "seed_id": "https://openalex.org/A5053142246",
+    "seed_name": "Karen M. Tabb",
+    "seed_department": "Community 5",
+    "seed_topics": [
+      "Birth, Development, and Health",
+      "Gestational Diabetes Research and Management",
+      "Health disparities and outcomes",
+      "Maternal Mental Health During Pregnancy and Postpartum"
+    ],
+    "candidate_name": "Seth W. Boughton",
+    "candidate_topics": [
+      "Aging and Gerontology Research",
+      "Child Welfare and Adoption",
+      "Dementia and Cognitive Impairment Research",
+      "Diabetes Management and Education",
+      "Health, psychology, and well-being"
+    ],
+    "model_version": "proposal-path-v3-common-neighbors",
+    "sample_papers": [
+      "Psychological Well-Being and Physical Health: Associations, Mechanisms, and Future Directions",
+      "Human trafficking of children in Illinois: Prevalence and characteristics"
+    ],
+    "introduction_path": "Karen M. Tabb \u2192 Fl\u00e1via Cristina Drumond Andrade \u2192 Seth W. Boughton (2 co-authorship hops; acquaintance and willingness to introduce are unverified)",
+    "path_ids": [
+      "https://openalex.org/A5053142246",
+      "https://openalex.org/A5034752959",
+      "https://openalex.org/A5081639138"
+    ],
+    "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3"
   }
 ]

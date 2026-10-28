@@ -1,15 +1,15 @@
 {
-  "n_cross_papers": 1051,
-  "n_within_papers": 4203,
-  "n_unclassified_papers": 977,
-  "total_eval_papers": 6231,
-  "mean_citations_cross": 65.13,
-  "std_citations_cross": 243.43,
-  "median_citations_cross": 36,
-  "mean_citations_within": 61.55,
-  "std_citations_within": 119.73,
-  "median_citations_within": 37,
-  "impact_ratio": 1.058,
-  "mann_whitney_u": 2139009.0,
-  "p_value_two_sided": 0.1132
+  "n_cross_papers": 4802,
+  "n_within_papers": 17866,
+  "n_unclassified_papers": 3560,
+  "total_eval_papers": 26228,
+  "mean_citations_cross": 21.77,
+  "std_citations_cross": 124.5,
+  "median_citations_cross": 7.0,
+  "mean_citations_within": 19.14,
+  "std_citations_within": 61.07,
+  "median_citations_within": 7.0,
+  "impact_ratio": 1.137,
+  "mann_whitney_u": 42781102.5,
+  "p_value_two_sided": 0.774
 }

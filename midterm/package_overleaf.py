@@ -2,6 +2,7 @@
 import argparse
 from pathlib import Path
 import re
+import shutil
 import subprocess
 import tempfile
 import zipfile
@@ -51,14 +52,21 @@ def package(destination, verify=False):
             for name, original in files.items():
                 if (folder / name).read_bytes() != original.read_bytes():
                     raise RuntimeError(f'Archive differs from current source: {name}')
-            for _ in range(2):
-                run = subprocess.run(['pdflatex', '-interaction=nonstopmode', '-halt-on-error', 'main.tex'],
-                                     cwd=folder, capture_output=True, text=True)
+            if shutil.which('pdflatex'):
+                for _ in range(2):
+                    run = subprocess.run(['pdflatex', '-interaction=nonstopmode', '-halt-on-error', 'main.tex'],
+                                         cwd=folder, capture_output=True, text=True)
+                    if run.returncode:
+                        raise RuntimeError(run.stdout[-5000:])
+                log = (folder / 'main.log').read_text()
+                if re.search(r'LaTeX Warning|Overfull|Underfull|undefined references|undefined citations', log):
+                    raise RuntimeError('Extracted project has compilation warnings; inspect the source.')
+            elif shutil.which('tectonic'):
+                run = subprocess.run(['tectonic', 'main.tex'], cwd=folder, capture_output=True, text=True)
                 if run.returncode:
-                    raise RuntimeError(run.stdout[-5000:])
-            log = (folder / 'main.log').read_text()
-            if re.search(r'LaTeX Warning|Overfull|Underfull|undefined references|undefined citations', log):
-                raise RuntimeError('Extracted project has compilation warnings; inspect the source.')
+                    raise RuntimeError(run.stderr or run.stdout)
+            else:
+                raise RuntimeError('Neither pdflatex nor tectonic found for verification.')
             def pdf_text(path):
                 return subprocess.check_output(['pdftotext', str(path), '-'], text=True)
             if pdf_text(folder / 'main.pdf') != pdf_text(ROOT / 'midterm/midterm.pdf'):

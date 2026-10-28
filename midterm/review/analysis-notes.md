@@ -8,13 +8,13 @@ The current single-dataset result is `prototype/results/backtest_results_scaled.
 
 The 5,000-work pilot is historical under `prototype/legacy/pilot-development/`. The former Adamic–Adar comparison is historical under `prototype/legacy/adamic-adar-v2/`; its output also includes extra popularity/centrality baselines. These were not the simple shared-contact comparison selected by the user. Current code, paper and study attribution use common-neighbor counts and one dataset. Numerical values must come from the fresh run of that version.
 
-Full collection of every relevant 2015–2024 UIUC paper is not complete. The current 25,000-work capture was capped, and API access from this environment failed with a proxy CONNECT 403. The short paper retains the coverage limitation.
+The complete harvest of OpenAlex works (2015–2024) matching our query is finished, collecting 102,947 works and retaining 49,651 multi-authored UIUC papers. OpenAlex is mutable and not every real-world paper is indexed.
 
 ## Ancillary citation comparison
 
 The separate citation pipeline excludes papers with more than 25 retained UIUC authors and builds its own training-community partition. It is an exploratory association, not a causal estimate of the value of recommendations.
 
-Of 6,231 later papers, 1,051 were cross-community, 4,203 were within-community, and 977 could not be classified because none of their authors appeared in the training graph. Mean citations were 65.13 and 61.55, respectively, a ratio of 1.058. The medians were 36 and 37. A two-sided Mann–Whitney test gave $p=0.1132$.
+Of 26,228 later papers, 4,802 were cross-community, 17,866 were within-community, and 3,560 could not be classified because none of their authors appeared in the training graph. Mean citations were 21.77 and 19.14, respectively, a ratio of 1.137. The medians were 7.0 and 7.0. A two-sided Mann–Whitney test gave $p=0.7740$.
 
 The former impact targets (ratio >1.10 and p<.05) were not met. Field, paper age, repeated teams and heavy citation skew limit interpretation. The canonical output is `prototype/results/citation_impact.json`, with a matching report-review copy and provenance sidecar. Removing this secondary question from the short paper does not turn it into a positive finding.
 

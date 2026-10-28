@@ -1,8 +1,8 @@
 # BridgeFinder contributor handoff
 
-**Full-dataset collection is pending. Existing results are provisional capped-data results, not completion of the user's full-collection request.**
+**Full-dataset collection is complete. 102,947 OpenAlex works were harvested to exhaustion and processed into 49,651 multi-authored UIUC papers.**
 
-This is the current shared-model workflow for `evanlin23/cs470`, branch `claude/modest-gauss-q759kv`. Historical exporters, study bundles and result files are preserved under `prototype/legacy/remote-label-fix/`; do not use them as current benchmarks.
+This is the current shared-model workflow for `evanlin23/cs470`, branch `claude/modest-gauss-q759kv`. Historical exporters, study bundles and result files are preserved under `prototype/legacy/remote-label-fix/`, `prototype/legacy/adamic-adar-v2/`, and `prototype/legacy/capped-25k/`; do not use them as current benchmarks.
 
 Evan Lin and Eric Liu are the project authors. The app helps UIUC students find relevant researchers outside a familiar researcher's collaboration community and inspect possible introductions.
 
@@ -33,13 +33,13 @@ Run `python prototype/audit_recommendations.py` to reproduce `prototype/review/c
 
 ## One current dataset
 
-The app, study and current report use `prototype/uiuc_data_scaled.json`. Its historical filename is retained for provenance. It contains 13,229 multi-UIUC-author papers retained from a capped collection of 25,000 OpenAlex works. There are 16,604 author records; the 2015–2019 training graph has 9,042 authors, 36,748 edges and 455 communities (modularity .905). The temporal evaluation has 1,369 starting researchers with later new cross-community ties.
+The app, study and current report use `prototype/uiuc_data_scaled.json`. Its historical filename is retained for provenance. It contains 49,651 multi-UIUC-author papers retained from a complete harvest of 102,947 OpenAlex works. There are 35,593 author records; the 2015–2019 training graph has 19,389 authors, 78,281 edges and 842 communities (modularity .884). The temporal evaluation has 3,492 starting researchers with later new cross-community ties.
 
-The 5,000-work pilot and its outputs are development history under `prototype/legacy/pilot-development/`. They are not a second current dataset. The report presents one prediction measure, top-ten precision (P@10), directly corresponding to the proposal's top-ten hit counting. Current P@10 values are Topic-Only .0099, simple triadic closure .0223 and BridgeFinder .0094, also recorded in `prototype/results/backtest_results_scaled.json` and the matching paper copy. Other metrics remain in that supporting JSON.
+The 5,000-work pilot and 25,000-work capped captures are development history under `prototype/legacy/`. They are not current datasets. The report presents one prediction measure, top-ten precision (P@10), directly corresponding to the proposal's top-ten hit counting. Current P@10 values are Topic-Only .0079, simple triadic closure .0287 and BridgeFinder .0131, also recorded in `prototype/results/backtest_results_scaled.json` and the matching paper copy. Other metrics remain in that supporting JSON.
 
-The current triadic-closure baseline simply counts shared co-authors, without inverse-degree weighting. Older Adamic–Adar source, results and study attribution are archived in `prototype/legacy/adamic-adar-v2/`. They must not be mixed with the new study dataset revision.
+The current triadic-closure baseline simply counts shared co-authors, without inverse-degree weighting. Older Adamic–Adar source, results and study attribution are archived in `prototype/legacy/adamic-adar-v2/`.
 
-This is **not** an exhaustive set of all relevant UIUC papers. A full collection attempt was blocked by the environment's OpenAlex proxy policy (HTTP CONNECT 403). Exhaustiveness requires completing the collection, checking pagination/coverage, and rerunning the pipeline. Nothing in the paper claims that has happened.
+OpenAlex is mutable and does not index every real-world UIUC paper, but this collection traversed the full query to exhaustion with reconciled unique work IDs.
 
 The separate citation analysis remains ancillary and is not part of the short paper. Its files and provenance remain under `prototype/results/` and `midterm/review/`.
 

@@ -2,23 +2,23 @@
   "schema_version": 1,
   "model_version": "proposal-path-v3-common-neighbors",
   "dataset_file": "uiuc_data_scaled.json",
-  "dataset_sha256": "91e02ba3a40d5e59af5b9d718689fe50fa0521c4269ca84b3852168597435e48",
+  "dataset_sha256": "0fae5f05012921f4caa07cb5d6b1d6f7949821365b053dcecbaa51a108d3bd78",
   "source_sha256": {
     "model.py": "9c0680c43e6c8142a04ab83e92ef8c58008670ce3f1425c78d4483c111b2af2d",
     "audit_recommendations.py": "3b43f337d4bcf3d1e1c663aa92b6c6137fd35ecd96a85da07144d2a0221cf387"
   },
   "runtime": {
-    "python": "3.12.14",
+    "python": "3.14.3",
     "networkx": "3.7",
-    "numpy": "2.5.4",
+    "numpy": "2.3.5",
     "scipy": "1.18.1"
   },
   "contexts": 50,
   "all_seed_candidate_pairs": {
-    "two_hop": 15153,
-    "three_hop": 53043,
-    "longer_than_three": 288917,
-    "unreachable": 78550
+    "two_hop": 30432,
+    "three_hop": 139310,
+    "longer_than_three": 637268,
+    "unreachable": 129150
   },
   "displayed_top10": {
     "two_hop": 0,
@@ -28,52 +28,52 @@
   },
   "top5_overlap_with_closure": 0,
   "top10_overlap_with_closure": 0,
-  "top5_overlap_with_topic_only": 88,
+  "top5_overlap_with_topic_only": 94,
   "contexts_with_different_top5_from_closure": 50,
   "examples_without_shared_coauthor": [
     {
-      "seed": "John A. Rogers",
-      "candidate": "Pilgyu Kang",
+      "seed": "Naiman A. Khan",
+      "candidate": "Victoria J. Vieira\u2010Potter",
       "rank": 1,
       "shared_coauthors": 0,
-      "score": 0.7205882352941176,
+      "score": 0.6484848484848484,
       "route": [
-        "John A. Rogers",
-        "Paul V. Braun",
-        "SungWoo Nam",
-        "Pilgyu Kang"
+        "Naiman A. Khan",
+        "Ruopeng An",
+        "Kelly Scott Swanson",
+        "Victoria J. Vieira\u2010Potter"
       ]
     },
     {
-      "seed": "John A. Rogers",
-      "candidate": "Ryan Steven Han",
+      "seed": "Naiman A. Khan",
+      "candidate": "Rebecca J. Welly",
       "rank": 2,
       "shared_coauthors": 0,
-      "score": 0.6318181818181818,
+      "score": 0.6484848484848484,
       "route": [
-        "John A. Rogers",
-        "Paul V. Braun",
-        "SungWoo Nam",
-        "Ryan Steven Han"
+        "Naiman A. Khan",
+        "Ruopeng An",
+        "Kelly Scott Swanson",
+        "Rebecca J. Welly"
       ]
     },
     {
-      "seed": "John A. Rogers",
-      "candidate": "SungGyu Chun",
+      "seed": "Naiman A. Khan",
+      "candidate": "Thomas N. Smith",
       "rank": 3,
       "shared_coauthors": 0,
-      "score": 0.6318181818181818,
+      "score": 0.6484848484848484,
       "route": [
-        "John A. Rogers",
-        "Paul V. Braun",
-        "SungWoo Nam",
-        "SungGyu Chun"
+        "Naiman A. Khan",
+        "Ruopeng An",
+        "Kelly Scott Swanson",
+        "Thomas N. Smith"
       ]
     }
   ],
   "candidate_count_range": [
-    6014,
-    7178
+    14521,
+    16117
   ],
   "displayed_slots": 500,
   "top5_slots": 250,

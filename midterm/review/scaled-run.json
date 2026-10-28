@@ -2,24 +2,24 @@
   "schema_version": 1,
   "model_version": "proposal-path-v3-common-neighbors",
   "dataset_file": "uiuc_data_scaled.json",
-  "dataset_sha256": "91e02ba3a40d5e59af5b9d718689fe50fa0521c4269ca84b3852168597435e48",
+  "dataset_sha256": "0fae5f05012921f4caa07cb5d6b1d6f7949821365b053dcecbaa51a108d3bd78",
   "source_sha256": {
     "model.py": "9c0680c43e6c8142a04ab83e92ef8c58008670ce3f1425c78d4483c111b2af2d",
     "backtest.py": "f7881f16cd686e046332fed41910831e69cc49dfa9b76dc8368b1ac65a947b98"
   },
   "runtime": {
-    "python": "3.12.14",
+    "python": "3.14.3",
     "networkx": "3.7",
-    "numpy": "2.5.4",
+    "numpy": "2.3.5",
     "scipy": "1.18.1"
   },
-  "training_nodes": 9042,
-  "training_edges": 36748,
-  "evaluation_nodes": 8518,
-  "evaluation_edges": 36436,
-  "communities": 455,
-  "modularity": 0.9045011968664354,
-  "eligible_seeds": 1369,
+  "training_nodes": 19389,
+  "training_edges": 78281,
+  "evaluation_nodes": 22758,
+  "evaluation_edges": 93220,
+  "communities": 842,
+  "modularity": 0.8838659159933046,
+  "eligible_seeds": 3492,
   "split_year": 2019,
   "louvain_seed": 42,
   "tie_break": "author_id",
@@ -37,5 +37,5 @@
   },
   "ground_truth": "all new cross-community ties among training nodes",
   "result_file": "backtest_results_scaled.json",
-  "result_sha256": "acef5c67e27df1e348e88d279f92f846ec2522310525a7ef311119c2fd785ed4"
+  "result_sha256": "bfafd3303a3efede3a2098c065ac3c4eaa7495e3e4c5f70141223e706194b6eb"
 }

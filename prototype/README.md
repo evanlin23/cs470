@@ -79,12 +79,12 @@ Historical outputs from the older remote revision are preserved under `prototype
 
 All 500 bundled suggestions currently have three-edge routes and no shared co-author. Run `python prototype/audit_recommendations.py` for the reproducible topology audit. Simple triadic closure ranks two-hop candidates by their number of shared co-authors; Topic-Only uses our >=3-hop pool. Different pools make this a comparison of discovery strategies, not score-only isolation. Current prediction results are compared with the shared-contact baseline and the paper reports that outcome.
 
-The previous two-hop-favoring hybrid is preserved under `legacy/shared-model-v1/`; it is historical, not the current benchmark. The proposal's approximately 110,000-work collection goal remains unfinished; the current larger sample contains 25,000 harvested works.
+The previous two-hop-favoring hybrid is preserved under `legacy/shared-model-v1/`; it is historical, not the current benchmark. The proposal's approximately 110,000-work collection goal has been completed; the current canonical dataset was harvested to exhaustion across all 102,947 matching works.
 
 ## Dataset scope
 
-There is one current dataset, `uiuc_data_scaled.json`, containing 13,229 relevant retained papers from a capped 25,000-work collection. The smaller pilot is archived under `legacy/pilot-development/`. The current paper reports P@10 on this one dataset. It does not claim complete campus coverage. A full OpenAlex collection attempt was blocked by the environment proxy with HTTP 403.
+There is one current dataset, `uiuc_data_scaled.json`, containing 49,651 relevant retained papers from a complete, uncapped 102,947-work collection. The smaller pilot and 25,000-work capped captures are archived under `legacy/`. The current paper reports P@10 on this complete dataset. It does not claim complete real-world campus coverage, but captures every matching OpenAlex work.
 
 ## Collect the full matching corpus
 
-Run `python prototype/fetch_openalex.py` from the repository root with OpenAlex API access. It is uncapped by default, resumes `.build/openalex-full`, verifies cursor exhaustion and reconciled API counts, and writes `uiuc_data_scaled.json` plus its collection manifest only after completion. A capped `--max_works` run checkpoints but never publishes. Existing capped data and results remain provisional until the full harvest succeeds. API keys, if required, belong in `OPENALEX_API_KEY`, not command arguments or Git. See `HANDOFF.md` for the current network blocker.
+Run `python prototype/fetch_openalex.py` from the repository root with OpenAlex API access. It is uncapped by default, resumes `.build/openalex-full`, verifies cursor exhaustion and reconciled API counts, and writes `uiuc_data_scaled.json` plus its collection manifest only after completion. A capped `--max_works` run checkpoints but never publishes. Existing capped data and results remain provisional until the full harvest succeeds. API keys, if required, belong in `OPENALEX_API_KEY`, not command arguments or Git.

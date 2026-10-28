@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "query": {
+    "institution_id": "I157725225",
+    "institution_ror": "https://ror.org/047426m28",
+    "start_year": 2015,
+    "end_year": 2024,
+    "filter": "institutions.id:I157725225,publication_year:2015-2024",
+    "selection": null,
+    "page_size": 200
+  },
+  "started_at": "2026-10-28T05:25:19.546494+00:00",
+  "pages": 515,
+  "complete": true,
+  "api_counts": [
+    102947
+  ],
+  "unique_works": 102947,
+  "updated_at": "2026-10-28T05:53:49.981480+00:00",
+  "final_api_count": 102947,
+  "completed_at": "2026-10-28T05:53:51.118166+00:00",
+  "dataset_file": "uiuc_data_scaled.json",
+  "dataset_sha256": "0fae5f05012921f4caa07cb5d6b1d6f7949821365b053dcecbaa51a108d3bd78",
+  "retained_papers": 49651,
+  "retained_authors": 35593,
+  "inclusion": "2015\u20132024 works with at least two distinct authors affiliated with UIUC on that work",
+  "scope": "Complete exhausted API traversal with reconciled work IDs; OpenAlex is mutable and not every real-world paper is indexed."
+}
