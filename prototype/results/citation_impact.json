@@ -1,15 +1,15 @@
 {
-  "n_cross_papers": 1071,
-  "n_within_papers": 4183,
+  "n_cross_papers": 1077,
+  "n_within_papers": 4177,
   "n_unclassified_papers": 977,
   "total_eval_papers": 6231,
-  "mean_citations_cross": 64.86,
-  "std_citations_cross": 241.34,
+  "mean_citations_cross": 64.94,
+  "std_citations_cross": 240.73,
   "median_citations_cross": 36,
-  "mean_citations_within": 61.6,
-  "std_citations_within": 119.92,
+  "mean_citations_within": 61.58,
+  "std_citations_within": 119.97,
   "median_citations_within": 37,
-  "impact_ratio": 1.053,
-  "mann_whitney_u": 2156737.0,
-  "p_value_two_sided": 0.0601
+  "impact_ratio": 1.055,
+  "mann_whitney_u": 2166227.5,
+  "p_value_two_sided": 0.0612
 }
