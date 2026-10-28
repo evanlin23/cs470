@@ -75,6 +75,12 @@ The criterion assessment remains 4/4 in each category under the supplied descrip
 
 The paper remains deliberately short. Remaining limits are empirical rather than missing prose: no student retest of the new explanations, no completed comparative study, and no confirmation that publication paths imply acquaintance or mentoring availability. These are stated in the submission. Inspecting the PDF does not validate the author-reported sessions independently.
 
+### Pass 7: structure and paragraph-level rewriting support
+
+Compared the section order directly with every rubric component. Sections 1–6 follow the rubric order; §3 now explicitly names Course Concepts as well as Network Analysis and states the brokerage idea before defining the graph. Writing applies across the whole paper, so it is not a standalone content section. The abstract and short closing section support the required short-paper form.
+
+Added source-only paragraph-purpose comments in `main.tex` and a section-to-criterion map in `rewrite-guide.md`. These make it possible for the authors to keep the structure while rewording each paragraph. They do not add visible audit material to the submission. The method alternative, real-data interpretation, design rationales, formative-sample justification, feedback-to-change links, and evaluation comparisons/thresholds remain; none was removed for brevity. Extra statistics remain in the supporting notes. Numerical results, methods, and study status are unchanged.
+
 ## What is not a rubric deduction by itself
 
 The rubric does not demand that predictions beat Adamic–Adar, that citation comparisons be significant, that the planned 15-person trial already be complete, that 110,000 papers already be harvested, or that a particular notes artifact be attached. Negative findings, a justified formative sample and candid scope limitations can still support excellent midterm work. These are limitations to discuss accurately, not automatic percentage penalties.

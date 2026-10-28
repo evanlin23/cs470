@@ -13,7 +13,9 @@ In Overleaf select New Project → Upload Project, then upload this ZIP.
 Set the main document to main.tex and the compiler to pdfLaTeX (the defaults
 should work). Recompile; references may require a second pass.
 
-Edit main.tex. The bibliography is embedded at the end, so no BibTeX or Biber
+Edit main.tex. Its % Rewrite purpose: comments explain what each paragraph
+needs to accomplish; they do not appear in the PDF. The section-to-rubric map
+is in review/rewrite-guide.md. The bibliography is embedded at the end, so no BibTeX or Biber
 step is required. Figures are included at their existing relative paths under
 midterm/review/screenshots/. Keep that structure unless you update main.tex.
 
