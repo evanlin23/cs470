@@ -23,8 +23,8 @@ midterm/review/screenshots/. Keep that structure unless you update main.tex.
 review/rubric-review.md contains the strict editorial assessment.
 review/rewrite-guide.md gives Evan and Eric the final rewrite priorities and
 facts that must remain synchronized. These Markdown files do not appear in
-the compiled paper. The current draft is four pages; the supplied rubric does
-not state a five-page limit. Check the layout after manual edits.
+the compiled paper. The supplied rubric does not state a page limit.
+Check the layout after manual edits.
 
 This archive excludes prototype data, code and private study keys. It was
 compiled locally after clean extraction using pdfLaTeX. No claim is made

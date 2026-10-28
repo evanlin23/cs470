@@ -1,5 +1,6 @@
 'use strict';
-const storageKey='bridgefinder-study-v2';
+const storageKey='bridgefinder-study-v3';
+const studyProtocol='student-interest-v1';
 const byId=id=>document.getElementById(id);
 const dimensions=['relevance','novelty','actionability'];
 const dimensionContainers=['relevanceScale','noveltyScale','actionabilityScale'];
@@ -15,8 +16,9 @@ const susItems=[
   'I felt very confident using the system.',
   'I needed to learn a lot of things before I could get going with this system.'
 ];
-let allCards=[],cards=[],currentIndex=0,responses={},sus=Array(10).fill(null),participantId=null,seedId=null,datasetId=null;
+let allCards=[],cards=[],currentIndex=0,responses={},sus=Array(10).fill(null),participantId=null,seedId=null,datasetId=null,researchInterest='';
 const validRating=(value,max)=>Number.isInteger(value)&&value>=1&&value<=max;
+const validInterest=value=>typeof value==='string'&&value.trim().length>0&&value.length<=500;
 function uuid(){
   if(crypto.randomUUID)return crypto.randomUUID();
   const bytes=crypto.getRandomValues(new Uint8Array(16));bytes[6]=(bytes[6]&15)|64;bytes[8]=(bytes[8]&63)|128;
@@ -38,7 +40,7 @@ function validateCards(data){
 function saveProgress(){
   if(!seedId)return;
   try{
-    sessionStorage.setItem(storageKey,JSON.stringify({dataset_id:datasetId,participant_id:participantId,seed_id:seedId,order:cards.map(row=>row.card_id),index:currentIndex,responses,sus}));
+    sessionStorage.setItem(storageKey,JSON.stringify({study_protocol:studyProtocol,research_interest:researchInterest,dataset_id:datasetId,participant_id:participantId,seed_id:seedId,order:cards.map(row=>row.card_id),index:currentIndex,responses,sus}));
     byId('saveStatus').textContent='Progress saved in this browser tab.';
   }catch{byId('saveStatus').textContent='This browser cannot save progress. Keep this tab open until you download your responses.';}
 }
@@ -46,7 +48,7 @@ function restoreProgress(){
   let draft;
   try{const saved=sessionStorage.getItem(storageKey);if(!saved)return false;draft=JSON.parse(saved);}catch{byId('saveStatus').textContent='Saved progress could not be read. A new session will begin.';return false;}
   try{
-    if(!draft||draft.dataset_id!==datasetId||typeof draft.participant_id!=='string'||!draft.participant_id.trim())throw new Error('Stale session');
+    if(!draft||draft.study_protocol!==studyProtocol||!validInterest(draft.research_interest)||draft.dataset_id!==datasetId||typeof draft.participant_id!=='string'||!draft.participant_id.trim())throw new Error('Stale session');
     const expected=allCards.filter(row=>row.seed_id===draft.seed_id);
     if(!expected.length||!Array.isArray(draft.order)||draft.order.length!==expected.length||new Set(draft.order).size!==expected.length||!expected.every(row=>draft.order.includes(row.card_id))||
        !Number.isInteger(draft.index)||draft.index<0||draft.index>expected.length||!draft.responses||typeof draft.responses!=='object'||Array.isArray(draft.responses)||
@@ -56,7 +58,8 @@ function restoreProgress(){
     }
     // Never allow restored navigation to bypass unanswered preceding cards.
     for(const id of draft.order.slice(0,draft.index))if(!dimensions.every(key=>validRating(draft.responses[id]?.[key],7)))throw new Error('Incomplete saved navigation');
-    seedId=draft.seed_id;participantId=draft.participant_id;responses=draft.responses;sus=draft.sus;currentIndex=draft.index;
+    seedId=draft.seed_id;participantId=draft.participant_id;researchInterest=draft.research_interest;responses=draft.responses;sus=draft.sus;currentIndex=draft.index;
+    byId('researchInterest').value=researchInterest;
     cards=draft.order.map(id=>expected.find(row=>row.card_id===id));
     byId('saveStatus').textContent='Resumed your saved session in this tab.';renderCard(currentIndex,false);return true;
   }catch{
@@ -80,8 +83,11 @@ async function loadCards(){
   finally{clearTimeout(timeout);}
 }
 function startStudy(){
+  const interest=byId('researchInterest').value.trim();
+  if(!validInterest(interest)){byId('setupStatus').textContent='Please write a research interest before rating suggestions.';byId('researchInterest').focus();return;}
   seedId=byId('seedSelect').value;cards=allCards.filter(row=>row.seed_id===seedId);
   if(!cards.length)return;
+  researchInterest=interest;byId('setupStatus').textContent='';
   responses={};sus=Array(10).fill(null);participantId=uuid();currentIndex=0;
   for(let i=cards.length-1;i>0;i--){const value=crypto.getRandomValues(new Uint32Array(1))[0];const j=Math.floor(value/4294967296*(i+1));[cards[i],cards[j]]=[cards[j],cards[i]];}
   renderCard(0);saveProgress();
@@ -112,7 +118,7 @@ function renderCard(index,focus=true){
     });
     if(focus)byId('susHeading').focus();return;
   }
-  const card=cards[index];byId('ratingStatus').textContent='';
+  const card=cards[index];byId('ratingStatus').textContent='';byId('interestContext').textContent=researchInterest;
   byId('cardCounterBadge').textContent=`Card ${index+1} of ${cards.length}`;
   for(const [id,text] of Object.entries({seedName:card.seed_name,seedMeta:`${card.seed_department} · ${card.seed_topics.join(' · ')}`,candidateName:card.candidate_name,introPath:card.introduction_path}))byId(id).textContent=text;
   for(const [id,values] of [['candTopics',card.candidate_topics],['samplePapers',card.sample_papers]]){
@@ -128,9 +134,10 @@ function nextCard(){
   renderCard(currentIndex+1);saveProgress();
 }
 function buildExport(){
+  if(!validInterest(researchInterest))throw new Error('A stated research interest is required.');
   if(!cards.length||!participantId||!cards.every(card=>dimensions.every(key=>validRating(responses[card.card_id]?.[key],7))))throw new Error('Please rate every card. Missing answers are never filled automatically.');
   if(!sus.every(value=>validRating(value,5)))throw new Error('Please answer all ten interface questions.');
-  return {schema_version:1,dataset_id:datasetId,participant_id:participantId,seed_id:seedId,sus:[...sus],ratings:cards.map(card=>({card_id:card.card_id,...responses[card.card_id]}))};
+  return {schema_version:1,study_protocol:studyProtocol,research_interest:researchInterest,dataset_id:datasetId,participant_id:participantId,seed_id:seedId,sus:[...sus],ratings:cards.map(card=>({card_id:card.card_id,...responses[card.card_id]}))};
 }
 function exportResponses(){
   try{
@@ -142,7 +149,7 @@ function exportResponses(){
 function resetStudy(){
   if(!confirm('Clear all answers in this tab and start a new session? This cannot be undone.'))return;
   try{sessionStorage.removeItem(storageKey);}catch{}
-  cards=[];seedId=null;responses={};sus=Array(10).fill(null);participantId=null;currentIndex=0;
+  cards=[];seedId=null;responses={};sus=Array(10).fill(null);participantId=null;currentIndex=0;researchInterest='';byId('researchInterest').value='';byId('setupStatus').textContent='';
   byId('setupView').hidden=false;byId('cardView').hidden=true;byId('summaryView').hidden=true;byId('sessionControls').hidden=true;
   byId('saveStatus').textContent='Session cleared.';byId('cardCounterBadge').textContent='Getting started';byId('startStudy').focus();
 }

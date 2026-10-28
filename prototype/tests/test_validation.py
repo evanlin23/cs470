@@ -28,6 +28,7 @@ class ValidationTests(unittest.TestCase):
         cls.keys=json.loads((ROOT/'study/truth_keys.json').read_text())
         seed=cls.cards[0]['seed_id']
         cls.session={'schema_version':1,'dataset_id':cls.cards[0]['dataset_id'],'participant_id':'synthetic-contract',
+                     'study_protocol':analysis.STUDY_PROTOCOL,'research_interest':'Synthetic interest in nutrition research',
                      'seed_id':seed,'sus':[5,1]*5,'ratings':[{'card_id':row['card_id'],'relevance':5,'novelty':5,'actionability':5} for row in cls.cards if row['seed_id']==seed]}
 
     def test_topic_labels_are_hints_not_community_ids(self):
@@ -93,6 +94,16 @@ class ValidationTests(unittest.TestCase):
     def test_rejects_mismatched_dataset_and_unsupported_schema(self):
         for key,value in [('dataset_id','0'*64),('schema_version',None),('schema_version',True),('schema_version',2)]:
             with self.subTest(key=key,value=value),self.assertRaises(ValueError):analysis.analyze([{**self.session,key:value}],self.keys)
+
+    def test_relevance_protocol_does_not_pool_old_or_missing_interest_context(self):
+        for field,value in [('study_protocol',None),('study_protocol','seed-topic-v1'),
+                            ('research_interest',None),('research_interest','  '),('research_interest','x'*501)]:
+            session={**self.session,field:value,'participant_id':'old-or-incomplete-protocol'}
+            with self.subTest(field=field,value=str(value)[:25]):
+                result=analysis.analyze([self.session,session],self.keys)
+                self.assertEqual(result['study_protocol'],analysis.STUDY_PROTOCOL)
+                self.assertEqual(result['n_participants'],1)
+                self.assertEqual(len(result['excluded']),1)
 
     def test_malformed_sessions_fail_with_value_error_not_type_error(self):
         invalid=[None,{},'text',[None],[[]],[{'participant_id':None}],[{**self.session,'ratings':None}],

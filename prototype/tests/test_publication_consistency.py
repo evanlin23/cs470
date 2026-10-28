@@ -36,7 +36,7 @@ class PublicationConsistencyTests(unittest.TestCase):
         for label,model in models:
             row=next(line for line in source.splitlines() if line.startswith(label+'&'))
             self.assertEqual(re.findall(r'0\.\d{4}',row),[f'{data[model]["P@10"]:.4f}'])
-        count=re.search(r'We evaluated ([\d,]+) starting researchers in this dataset',source)
+        count=re.search(r'We evaluated ([\d,]+) starting researchers\b',source)
         self.assertIsNotNone(count)
         self.assertEqual(int(count.group(1).replace(',','')),json.loads((ROOT/'results/scaled-run.json').read_text())['eligible_seeds'])
 

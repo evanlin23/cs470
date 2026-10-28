@@ -51,6 +51,7 @@ class BrowserTests(unittest.TestCase):
 
     def study(self):
         self.page.goto(self.base+'/study/');expect(self.page.locator('#startStudy')).to_be_enabled()
+        if self.page.locator('#researchInterest').is_visible():self.page.locator('#researchInterest').fill('Synthetic interest in nutrition research')
 
     def choose_first(self):
         self.web();self.page.locator('.select-seed-btn').first.click();expect(self.page.locator('#screenMap')).to_be_visible()
@@ -172,6 +173,7 @@ class BrowserTests(unittest.TestCase):
     def test_each_study_seed_card_count_and_no_hidden_methods(self):
         self.study()
         for seed_id in dict.fromkeys(card['seed_id'] for card in self.cards):
+            self.page.locator('#researchInterest').fill('Synthetic interest in nutrition research')
             self.page.locator('#seedSelect').select_option(seed_id);self.page.locator('#startStudy').click()
             count=sum(card['seed_id']==seed_id for card in self.cards)
             expect(self.page.locator('#cardCounterBadge')).to_have_text(f'Card 1 of {count}')
@@ -182,9 +184,10 @@ class BrowserTests(unittest.TestCase):
 
     def test_study_answers_order_and_identity_survive_reload(self):
         self.study();self.page.locator('#startStudy').click();name=self.page.locator('#candidateName').inner_text()
-        self.rate_card();draft=json.loads(self.page.evaluate("sessionStorage.getItem('bridgefinder-study-v2')"))
+        self.rate_card();draft=json.loads(self.page.evaluate("sessionStorage.getItem('bridgefinder-study-v3')"))
         self.page.reload();expect(self.page.locator('#cardCounterBadge')).to_have_text(f"Card 2 of {len(draft['order'])}")
-        restored=json.loads(self.page.evaluate("sessionStorage.getItem('bridgefinder-study-v2')"));self.assertEqual(restored,draft)
+        restored=json.loads(self.page.evaluate("sessionStorage.getItem('bridgefinder-study-v3')"));self.assertEqual(restored,draft)
+        expect(self.page.locator('#interestContext')).to_have_text(draft['research_interest'])
         self.page.locator('#prevBtn').click();expect(self.page.locator('#candidateName')).to_have_text(name)
         for dim in ['relevance','novelty','actionability']:expect(self.page.get_by_role('radio',name=f'{dim} 5',exact=True)).to_be_checked()
 
@@ -196,8 +199,19 @@ class BrowserTests(unittest.TestCase):
         self.page.reload();expect(self.page.locator('#summaryView')).to_be_visible();expect(self.page.locator('#sus-1')).to_have_value('1')
         payload=self.export();self.assertEqual(len(payload[0]['ratings']),count)
         self.assertEqual(payload[0]['dataset_id'],self.cards[0]['dataset_id'])
+        self.assertEqual(payload[0]['study_protocol'],analysis.STUDY_PROTOCOL)
+        self.assertEqual(payload[0]['research_interest'],'Synthetic interest in nutrition research')
         result=analysis.analyze(payload,self.keys);self.assertEqual(result['n_participants'],1);self.assertEqual(result['mean_sus'],100)
         # Synthetic browser answers and statistics are not persisted as human evidence.
+
+    def test_study_requires_and_displays_personal_interest(self):
+        self.study();self.page.locator('#researchInterest').fill(' ');self.page.locator('#startStudy').click()
+        expect(self.page.locator('#setupView')).to_be_visible()
+        expect(self.page.locator('#setupStatus')).to_contain_text('research interest')
+        interest='Synthetic interest in crops and nutrition'
+        self.page.locator('#researchInterest').fill(interest);self.page.locator('#startStudy').click()
+        expect(self.page.locator('#interestContext')).to_have_text(interest)
+        expect(self.page.locator('#relevanceScale').locator('..')).to_contain_text('your stated research interest')
 
 
 

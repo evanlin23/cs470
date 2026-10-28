@@ -1,7 +1,7 @@
 """Analyze complete, validated study sessions at participant level.
 
 Input: JSON list of browser session exports. No invented defaults or anonymous
-participant pooling. Primary outcome: relevant-and-new versus Adamic–Adar.
+participant pooling. Primary outcome: relevant-and-new versus triadic closure.
 """
 import argparse
 import json
@@ -12,6 +12,7 @@ from scipy import stats
 
 METHODS = ['BridgeFinder', 'Triadic Closure', 'Topic-Only']
 DIMENSIONS = ['relevance', 'novelty', 'actionability']
+STUDY_PROTOCOL = 'student-interest-v1'
 
 
 def sus_score(values):
@@ -83,6 +84,11 @@ def analyze(sessions, keys):
         try:
             if type(session.get('schema_version')) is not int or session['schema_version'] != 1:
                 raise ValueError('Unsupported or missing session schema_version')
+            if session.get('study_protocol') != STUDY_PROTOCOL:
+                raise ValueError('Session does not use the student-interest rating protocol')
+            interest = session.get('research_interest')
+            if not isinstance(interest, str) or not interest.strip() or len(interest) > 500:
+                raise ValueError('Missing or invalid stated research interest')
             if revision is not None and session.get('dataset_id') != revision:
                 raise ValueError('Session and method key come from different dataset revisions')
             seed = session.get('seed_id')
@@ -114,7 +120,7 @@ def analyze(sessions, keys):
                              'methods': {m: {d: statistics.mean(v) for d, v in dims.items()} for m, dims in values.items()}})
     if not participants:
         raise ValueError(f'No complete participant sessions; exclusions: {excluded}')
-    summary = {'dataset_id': revision, 'n_participants': len(participants), 'excluded': excluded,
+    summary = {'study_protocol': STUDY_PROTOCOL, 'dataset_id': revision, 'n_participants': len(participants), 'excluded': excluded,
                'mean_sus': statistics.mean(p['sus'] for p in participants), 'methods': {}, 'comparisons': {}}
     for m in METHODS:
         summary['methods'][m] = {d: statistics.mean(p['methods'][m][d] for p in participants) for d in DIMENSIONS+['relevant_and_new']}

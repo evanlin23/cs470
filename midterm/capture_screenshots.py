@@ -33,7 +33,16 @@ def main():
             page.screenshot(path=str(out / '01-seeds.png'))
             page.locator('.select-seed-btn').first.click()
             page.wait_for_selector('.map-node')
-            page.locator('.map-container').screenshot(path=str(out / '02-map.png'))
+            # Crop the actual rendered graph to remove empty margins and the
+            # sidebar. Keep node labels intact without modifying the UI image.
+            graph_box = page.locator('#topoMapSvg > g').bounding_box()
+            wrap_box = page.locator('.map-svg-wrap').bounding_box()
+            left = max(wrap_box['x'], math.floor(graph_box['x'] - 16))
+            top = max(wrap_box['y'], math.floor(graph_box['y'] - 16))
+            right = min(wrap_box['x'] + wrap_box['width'], math.ceil(graph_box['x'] + graph_box['width'] + 16))
+            bottom = min(wrap_box['y'] + wrap_box['height'], math.ceil(graph_box['y'] + graph_box['height'] + 16))
+            map_clip = {'x': left, 'y': top, 'width': right - left, 'height': bottom - top}
+            page.screenshot(path=str(out / '02-map.png'), clip=map_clip)
             page.locator('.mini-rec').first.click()
             page.wait_for_selector('.path-flow')
             assert page.locator('.rec-name').inner_text() == candidate['name']
@@ -63,6 +72,7 @@ def main():
         'candidate_id': candidate['id'], 'candidate_name': candidate['name'],
         'path_ids': candidate['path_ids'], 'path_names': [people[node] for node in candidate['path_ids']],
         'viewport': {'width': 1440, 'height': 1000, 'device_scale_factor': 3},
+        'map_crop': map_clip,
         'screenshot_sha256': {name: hashlib.sha256((out / name).read_bytes()).hexdigest()
                               for name in ['01-seeds.png', '02-map.png', '03-recommendation.png']},
         'source_sha256': {name: hashlib.sha256((ROOT / 'prototype/web' / name).read_bytes()).hexdigest()

@@ -49,6 +49,8 @@ Implementation: `prototype/model.py` (`proposal-path-v3-common-neighbors`).
 ## 4. Formative User Feedback
 
 We gathered feedback from four individuals in individual 30-minute sessions who talked through their use of the prototype:
+
+The author clarified that students received minimal context, were asked to work through the app, and gave active feedback as they encountered problems. Recruitment and note-taking/recording were not specified. Session duration remains omitted from the paper at the author's request.
 - **Participants**:
   - 2 graduate students: one in Computer Science, one Master of Computer Science student researching computational biology.
   - 2 undergraduates: one in Electrical and Computer Engineering (ECE), one in Food Systems.
@@ -91,4 +93,6 @@ python midterm/package_overleaf.py --verify
 
 ## Current paper figure and strict review
 
-`midterm/review/rubric-review.md` contains the latest strict criterion-by-criterion review. The old figure was from the capped dataset and has been replaced with actual full-data captures. Refresh with `python midterm/capture_screenshots.py`; `capture.json` binds its selected route, images and dataset/UI hashes. The source caption must match that record. The abstract now states both baseline comparisons. Session duration and the generated-response sentence are omitted from the short paper; the four-student composition and feedback changes remain. The original proposal is unchanged.
+`midterm/review/rubric-review.md` contains the latest conservative review, superseding the prior 100 claim. The external review's factual clarifications are now in the report. The paper uses one large actual full-data card detail instead of the small map image. Refresh captures with `python midterm/capture_screenshots.py`; `capture.json` binds the route, images and dataset/UI hashes. Caption names must match it. The report remains four pages, one dataset and one historical metric. Session duration and the generated-response sentence remain omitted. The original proposal is unchanged.
+
+The planned study now asks about each participant's stated research interest, not the starting researcher's topics. The interest is collected before app use, shown during ratings and included in exports. `student-interest-v1` identifies this protocol; the analyzer rejects older or missing protocols and missing interests. All comparison methods use identical card fields and the same shortest-path procedure. Twelve browser checks and 22 relevant publication/workflow/validation checks pass. The Tang comparison remains high-level because the author's original PDF could not be retrieved under the cloud destination policy; the review notes retain this source-check limitation.

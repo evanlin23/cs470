@@ -7,19 +7,23 @@
     <p id="saveStatus" class="data-note" role="status"></p>
     <section id="setupView" class="card" aria-labelledby="studyHeading">
       <h1 id="studyHeading">Help us evaluate research suggestions</h1>
-      <p>First, use <a href="../web/" target="_blank" rel="noopener">the BridgeFinder interface (opens a new tab)</a>. Then choose a starting researcher and rate their suggested contacts.</p>
+      <p>Write a research interest you want to explore, then use <a href="../web/" target="_blank" rel="noopener">the BridgeFinder interface (opens a new tab)</a>. Afterward, choose a starting researcher and rate their suggested contacts.</p>
       <p>Participation is voluntary. We collect no name or email. You may stop or clear this session at any time. Answers are saved in this browser tab so you can resume after a reload; they are sent nowhere until you choose to share the downloaded file.</p>
+      <label for="researchInterest">What research interest would you like to explore?</label><textarea id="researchInterest" rows="2" maxlength="500" aria-describedby="interestHelp"></textarea>
+      <p id="interestHelp" class="data-note">A short topic or question is enough. Please leave out names and personal details.</p>
       <label for="seedSelect">Starting researcher</label><select id="seedSelect" disabled></select>
-      <p class="data-note">Choose someone whose work you can assess. Communities are collaboration groups, not verified departments.</p>
+      <p class="data-note">Choose the closest match to your interest. Communities are collaboration groups, not verified departments.</p>
+      <p id="setupStatus" class="validation" role="alert"></p>
       <button id="startStudy" disabled>Start rating</button><button id="retryCards" class="secondary" hidden>Try loading cards again</button>
       <p id="loadStatus" role="status">Loading cards…</p>
     </section>
     <section id="cardView" class="card" aria-labelledby="candidateName" hidden>
+      <p class="data-note">Your research interest<br><span id="interestContext"></span></p>
       <div class="seed-context"><small>Starting researcher</small><h2 id="seedName"></h2><p id="seedMeta"></p></div>
       <p class="eyebrow">Suggested researcher · method hidden</p><h1 id="candidateName" tabindex="-1"></h1><div id="candTopics" class="seed-topics"></div>
       <h2>Example publications</h2><ul id="samplePapers" class="paper-list"></ul>
       <h2>Observed collaboration route</h2><div class="path-flow"><p id="introPath"></p></div>
-      <fieldset><legend>1. Relevance</legend><p>How relevant is this person's research to the starting researcher's work?</p><div id="relevanceScale" class="likert-scale"></div><p class="scale-help">1 = not relevant · 7 = very relevant</p></fieldset>
+      <fieldset><legend>1. Relevance</legend><p>How relevant is this person's research to your stated research interest?</p><div id="relevanceScale" class="likert-scale"></div><p class="scale-help">1 = not relevant · 7 = very relevant</p></fieldset>
       <fieldset><legend>2. Novelty</legend><p>How unfamiliar or unexpected is this research suggestion to you?</p><div id="noveltyScale" class="likert-scale"></div><p class="scale-help">1 = already familiar · 7 = new to me</p></fieldset>
       <fieldset><legend>3. Willingness to contact</legend><p>Given the suggested route, how realistic would contacting this person feel?</p><div id="actionabilityScale" class="likert-scale"></div><p class="scale-help">1 = not realistic · 7 = very realistic</p></fieldset>
       <p id="ratingStatus" class="validation" role="alert"></p>

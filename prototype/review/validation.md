@@ -1,59 +1,36 @@
-# Proposal-aligned prototype validation
+# Current full-data prototype validation
 
-Current model: `proposal-path-v3-common-neighbors`. The user's design direction restored joint-paper-count edges, reachable cross-community non-coauthors at shortest distance >=3, and training-topic similarity plus a saturated three-edge-path bonus. The proposal's three-screen happy path and restrained research-directory styling remain. Historical shared-model-v1 source/results are archived separately.
+Model `proposal-path-v3-common-neighbors` uses joint-paper weights, reachable cross-community non-coauthors at distance >=3, topic overlap and a saturated three-edge-path bonus. Simple triadic closure counts shared coauthors among two-hop candidates. The report keeps one dataset and P@10 as its only historical metric.
 
-## Verified
+## Current evidence
 
-`python -m unittest discover -s prototype/tests -v`: **20 tests passed**. Checks cover canonical result/report copies and provenance, all published prediction values and the supporting citation-analysis note, all 500 displayed rankings and shortest observed paths, hand-calculated score/eligibility (including four-hop and disconnected candidates), training-only features, native baseline study attribution and participant-level analysis.
+The dataset contains 49,651 papers retained from 102,947 works. The training graph has 19,389 nodes and 78,281 edges. All 500 bundled suggestions have shortest routes of three edges. Zero overlap with triadic closure follows from different candidate pools and is not evidence of quality.
 
-`python prototype/tests/browser_workflow.py --artifacts /tmp/bridgefinder-checks`: **11 Chromium tests passed**. The suite starts an isolated supported server and checks:
+The study contains 69 unique cards across five starting researchers. Every method contributes its actual top five, with shared candidates rated once and credited to each selecting method. The supported public server serves both app and study, excluding private keys and raw data.
 
-1. Search and community/topic filtering.
-2. All 50 researchers' maps, suggestion lists and ordered cards.
-3. Real map-link clicks and keyboard activation, zoom and fit.
-4. Reload, browser history and shareable researcher/candidate selections.
-5. Editable outreach with exact-text copying/download and keyboard focus.
-6. Layout at 360, 390, 768 and 1440px without horizontal overflow.
-7. Keyboard researcher selection and card ratings.
-8. All five study contexts with correct unique-card counts and hidden method labels.
-9. Same-tab recovery of card order, identity, answers and SUS progress.
-10. Actual downloaded response JSON analyzed with its matching private key.
-11. Desktop/mobile screenshot capture and optional ranking explanation.
+## Verification in the latest report revision
 
-The first run found that a node label intercepted the click on a suggested edge. Labels now have `pointer-events:none`; the full rerun passed. Clipboard permission UI itself is not automated; the test verifies the clipboard API contract and downloaded edited text.
+- Five publication-consistency tests pass, checking numerical claims, provenance, all route counts and current screenshot bindings.
+- Five full-data workflow tests pass, independently checking all displayed rankings/paths, all study top-five selections, training-only features and export/analysis behavior.
+- Twelve validation/analysis tests pass, including hand-calculated scores, distance rules, common-neighbor counts, participant-level analysis and rejection of incompatible rating protocols.
+- Twelve Chromium happy-path tests pass. Coverage includes search/filters; all 50 maps and card lists; actual map clicks, keyboard interaction, zoom/fit; history/reload/shared selection; edited outreach copy/download; mobile/tablet layout; all five study anchors; study progress recovery; real JSON download/analyzer round trip; screenshots; and required personal-interest entry and display.
 
-## Model and evidence limits
+The browser summary and representative screenshots in this directory are from this run. Clipboard tests verify the API contract and exact downloaded text. They do not automate operating-system permission dialogs.
 
-All 500 bundled suggestions have three-edge routes and no shared co-author. Simple triadic closure counts shared co-authors among two-hop candidates, while BridgeFinder and Topic-Only share the >=3-hop pool. Zero overlap between these pools is structural, not evidence of recommendation quality. Fresh backtests are compared with the shared-contact baseline; the report states that outcome.
+## Personal-interest study revision
 
-The study has 63 unique cards across five community contexts. Each method contributes its true top five, with shared candidates rated once and attributed to every selecting method. Export revision IDs bind cards to their matching private key. The supported public-asset server serves both app/study and excludes private keys/raw datasets.
+Participants state a research interest before using the app. The rating page displays it and asks about relevance to that interest. All methods use the same fields and unweighted shortest-path procedure. Closure routes have two edges, and other methods have at least three. Exports include the stated interest and `study_protocol: student-interest-v1`. Analysis requires that protocol and a nonempty interest, preventing silent pooling with earlier seed-topic ratings. Saved sessions use a new tab-storage key.
 
-All automated answers are synthetic fixtures, discarded after checks. They are not participant responses or evidence of human comprehension. Publication paths do not prove acquaintance, mentoring availability or willingness to introduce someone. Inferred topic labels are not departments.
+The author confirmed that formative participants received minimal context, worked through the app and gave active feedback when problems arose. Revised onboarding and card definitions have not been retested with students. Software tests and their synthetic answers are not human-study evidence. Paths do not confirm acquaintance, availability or willingness to introduce someone; inferred topics are not departments.
 
 ## Reproduce
 
-From the repository root, install `prototype/requirements.txt` and `prototype/tests/requirements.txt`; browser tests use `/usr/bin/chromium`.
-
 ```bash
-python prototype/refresh_results.py
-python prototype/web/prepare_web_data.py
-python prototype/study/generate_cards.py
-python prototype/audit_recommendations.py
-python -m unittest discover -s prototype/tests -v
+python -m unittest discover -s prototype/tests -p test_publication_consistency.py -v
+python -m unittest discover -s prototype/tests -p test_workflow.py -v
+python -m unittest discover -s prototype/tests -p test_validation.py -v
 python prototype/tests/browser_workflow.py --artifacts /tmp/bridgefinder-checks
 python prototype/serve.py
 ```
 
-The app is `/web/` and study `/study/` on default port 8765. `refresh_results.py` replaces canonical result files, report copies and provenance manifests only after all three analyses succeed. Screenshots and the browser summary retained here document the final browser run; the paper's own 3× captures are in `midterm/review/screenshots/`.
-
-## Author-feedback guidance update
-
-The landing page now explains why a starting researcher must be selected and gives three steps: choose that person, open a suggestion, then review the researcher card and route. A card is explicitly defined as a profile containing topics, papers and a possible introduction. The map explains its reduced scope and community colors. These changes follow the author's reported confusion; they are software-verified, not human-retested. The report also records the existing visual overhaul, corrected tags and focused map as responses to the author's additional feedback. Ranking, generated data and empirical results are unchanged.
-
-## Single-dataset, simple-closure revision
-
-The pilot dataset/results are historical. The current demo, study and report use the same 13,229-paper dataset. Common-neighbor counting replaces Adamic–Adar weighting for triadic closure. A hand-checked fixture verifies that two shared contacts rank above one regardless of contact degree. Study cards and revision IDs are regenerated from the true top five of the revised methods. The paper reports P@10, while additional computed metrics remain in supporting JSON.
-
-## Strict full-data report review
-
-All 11 browser checks were rerun successfully against the full-data demo and 69-card study bundle. The report's earlier image was stale after the dataset expansion. It now uses the actual Khan → An → Swanson → Vieira-Potter route. `midterm/capture_screenshots.py` captures and checks the example; the publication suite now has five checks, including dataset/UI/route/image bindings for the paper figure. That five-check suite passes. These browser and artifact checks do not establish human usability or validate the reported sessions independently.
+Earlier capped-data counts and validation records are historical in Git. No new backtest is needed for these report and study-question changes; ranking and canonical data/results are unchanged.
