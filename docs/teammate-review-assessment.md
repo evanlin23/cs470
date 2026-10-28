@@ -2,7 +2,7 @@
 
 The report, demo and study now use one current dataset and simple common-neighbor triadic closure. The paper reports P@10, matching the proposal's top-ten hit counting. Adamic–Adar is no longer the active comparison. The historical assessment below describes the previous proposal-path-v2 implementation; its numerical examples must not be used as current results. Current outputs and provenance are in `prototype/results/`, with matching paper-review copies. The pilot and weighted-baseline snapshots are retained under `prototype/legacy/`.
 
-A complete OpenAlex collection is still blocked by this environment's proxy policy. The current dataset has 13,229 retained papers from the existing capped 25,000-work capture and is described accurately in the paper.
+The full OpenAlex query was subsequently collected locally and pulled into this checkout: 102,947 works, 49,651 retained papers. The author also corrected the formative participant account to four students. Older capped-data and five-person statements in the historical assessment below do not describe the current submission.
 
 # Historical assessment of the teammate review and subsequent design change
 

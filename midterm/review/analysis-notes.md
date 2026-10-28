@@ -16,7 +16,7 @@ The separate citation pipeline excludes papers with more than 25 retained UIUC a
 
 Of 26,228 later papers, 4,802 were cross-community, 17,866 were within-community, and 3,560 could not be classified because none of their authors appeared in the training graph. Mean citations were 21.77 and 19.14, respectively, a ratio of 1.137. The medians were 7.0 and 7.0. A two-sided Mann–Whitney test gave $p=0.7740$.
 
-The former impact targets (ratio >1.10 and p<.05) were not met. Field, paper age, repeated teams and heavy citation skew limit interpretation. The canonical output is `prototype/results/citation_impact.json`, with a matching report-review copy and provenance sidecar. Removing this secondary question from the short paper does not turn it into a positive finding.
+The mean-ratio target (>1.10) was met, but the distributional-test target (p<.05) was not. Field, paper age, repeated teams and heavy citation skew limit interpretation. The canonical output is `prototype/results/citation_impact.json`, with a matching report-review copy and provenance sidecar. Removing this secondary question from the short paper does not turn it into a positive finding.
 
 ## Planned study details
 
@@ -24,6 +24,6 @@ The former impact targets (ratio >1.10 and p<.05) were not met. Field, paper age
 
 Card relevance asks about the starting researcher's work, while novelty concerns the participant's own familiarity. The routes and candidates both differ across methods, so actionability comparisons do not isolate a route-display treatment. SUS concerns the interactive BridgeFinder app, not the static baselines. The main paper keeps these measurement distinctions and the success thresholds while omitting the test names.
 
-The clarified usability task in the paper is a future protocol: choose a starting researcher, open a suggestion and draft, then explain the route and line types without coaching. Record task completion and explanation outcomes in a facilitator log. This description must not be retroactively reported as the script used in the five formative sessions.
+The clarified usability task in the paper is a future protocol: choose a starting researcher, open a suggestion and draft, then explain the route and line types without coaching. Record task completion and explanation outcomes in a facilitator log. This description must not be retroactively reported as the script used in the four formative sessions.
 
 No human comparative-study results are present. Test fixtures are not evidence of student ratings or comprehension.

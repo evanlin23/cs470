@@ -1,6 +1,6 @@
 # Repeated rubric review — current midterm draft
 
-**Collection status: incomplete.** The current results use a capped capture and are explicitly provisional. The editorial assessment below is not proof that the user's full-dataset request is finished. Network access must be applied before exhaustive collection and its evaluation can be completed.
+**Current data and feedback status.** The pulled collection manifest records a completed 102,947-work query with 49,651 retained papers. Its dataset hash and analysis outputs match the files in this checkout. The author corrected the formative round to four students in 30-minute sessions, with two undergraduates (ECE and Food Systems) and two graduate students (CS and an MCS student researching computational biology). Earlier five-participant and capped-collection statements in the pass history below are superseded.
 
 Source: uploaded `mid-term_report_CS470 (1).pdf`, checked against its extracted text. The rubric assigns integer scores 0–4 and weights each by `(score / 4) × weight`; 3 means between Sophisticated and Competent. Grammar can cost up to five percentage points when it impedes reading. The report should read as a short research paper.
 
@@ -100,6 +100,14 @@ The user requested one dataset, straightforward triadic closure, and an evaluati
 Triadic closure now ranks candidates by the number of shared co-authors, with no Adamic–Adar weighting. The shared model, backtest, study top fives, generated bundles, audit and tests are synchronized. Historical weighted-baseline outputs are archived. The main paper reports only P@10, corresponding to the proposal's count of later collaborators in the top ten. Additional metrics remain in supporting JSON. P@5 and NDCG@10 were implementation additions, not explicitly named proposal measures. Current values come from the newly computed run, not the previous baseline's table.
 
 The model and data-scope changes require a fresh validation rather than relying on earlier check counts. Earlier pass descriptions and their table-cell counts are historical.
+
+### Pass 11: pulled full-data results and corrected formative population
+
+Pulled the local collection/analysis and the subsequent author correction in commits `4bd2101` and `d0901c5`. The collection manifest reports 515 pages, 102,947 unique works, the same final API count and 49,651 retained papers. Checked its hash against the actual dataset and its counts against the JSON, including unique paper IDs, years, distinct retained authors and author references. The result manifests and published P@10 values pass consistency checks. These checks verify the provided artifacts; they do not independently replay the remote harvest.
+
+The feedback section now reports four students accurately. The earlier draft's miscount explanation is preserved here as a correction record rather than interrupting the submitted paper. The MCS participant is described as researching computational biology, not enrolled in an invented program with that title. The abstract, sample justification, handoff and study notes agree on the corrected count. Observations and implemented changes remain as supplied by the author, and no retest outcomes, quotations or frequencies were added. The proposal is unchanged.
+
+The rewrite guide also contained stale capped-data counts, and the ancillary citation note incorrectly said both targets failed even though the new mean ratio exceeds 1.10. These supporting-note errors were corrected to match the pulled results. No data, ranking implementation or calculated result was changed.
 
 ## What is not a rubric deduction by itself
 

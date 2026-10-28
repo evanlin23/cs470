@@ -50,7 +50,7 @@ Implementation: `prototype/model.py` (`proposal-path-v3-common-neighbors`).
 
 We gathered feedback from four individuals in individual 30-minute sessions who talked through their use of the prototype:
 - **Participants**:
-  - 2 graduate students: one in Computer Science, one Master of Computer Science in Computational Biology.
+  - 2 graduate students: one in Computer Science, one Master of Computer Science student researching computational biology.
   - 2 undergraduates: one in Electrical and Computer Engineering (ECE), one in Food Systems.
 - **Design Changes Implemented**:
   1. *Getting Started*: Added landing page instructions clarifying that selecting a starting researcher anchors the search.
