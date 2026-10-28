@@ -2,8 +2,14 @@
 \usepackage[margin=0.7in,columnsep=0.24in]{geometry}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern,microtype,amsmath,amssymb,booktabs,tabularx,url,graphicx}
-\usepackage[colorlinks=true,allcolors=blue]{hyperref}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage[hidelinks]{hyperref}
 \setlength{\emergencystretch}{1em}
+\widowpenalty=10000
+\clubpenalty=10000
+\brokenpenalty=10000
+\setlength{\textfloatsep}{12pt plus 2pt minus 2pt}
+\setlength{\intextsep}{10pt plus 2pt minus 2pt}
 \renewcommand{\dbltopfraction}{0.95}
 \renewcommand{\textfraction}{0.05}
 \renewcommand{\dblfloatpagefraction}{0.7}
@@ -34,8 +40,8 @@ The main design challenge is to balance relevance with discovery. A suggestion s
 
 \textbf{Evidence about research networks.} Granovetter~\cite{granovetter1973} explains how weak ties can carry information beyond close circles; Burt~\cite{burt1992,burt2004} explains the benefits available to people who bridge separate groups. These works give us a reason to look across communities, but they do not establish the value of a particular missing co-authorship. Dahlander and McFarland~\cite{dahlander2013} study how research ties form and persist over time, showing why intellectual similarity and organizational context matter. That longitudinal view helps explain collaboration, but does not provide our student-facing discovery workflow. BridgeFinder turns these ideas into suggestions that can be explored; publication data alone still cannot establish personal trust or mentoring availability.
 
-\section{Course Concepts and Network Analysis}
-\subsection{Building the collaboration graph}
+\section{Network Analysis}
+\subsection{Building the graph}
 We use OpenAlex~\cite{openalex} publications from 2015--2024. Each node represents an author affiliated with UIUC on a collected paper. Two authors share an edge if they wrote a paper together. We keep papers with at least two UIUC authors and omit collaborators outside UIUC.
 
 We collected a pilot sample of 5,000 works and a larger sample of 25,000 works. After keeping papers with multiple UIUC authors, these contain 2,493 and 13,229 papers, respectively. They are samples of campus research, not a complete directory. Table~\ref{tab:network} describes the graphs built from the earlier papers, which we use to make predictions.
@@ -46,28 +52,29 @@ We collected a pilot sample of 5,000 works and a larger sample of 25,000 works. 
 \setlength{\tabcolsep}{4pt}
 \caption{Collaboration graphs from 2015--2019 papers. A community is a group found from collaboration patterns, not a department.}
 \label{tab:network}
-\begin{tabular}{lrr}
+\renewcommand{\arraystretch}{1.12}
+\begin{tabularx}{\columnwidth}{@{}Xrr@{}}
 \toprule
 & Pilot & Larger sample\\
 \midrule
-Authors with collaboration edges & 3,642 & 9,042\\
+Authors with co-authorships & 3,642 & 9,042\\
 Co-authorship edges & 16,408 & 36,748\\
 Detected communities & 344 & 454\\
 Modularity & 0.949 & 0.925\\
 \bottomrule
-\end{tabular}
+\end{tabularx}
 \end{table}
 
 We give each shared paper a weight of $1/(a-1)$, where $a$ is the number of UIUC authors on that paper, and add those weights across papers. This reduces the influence of large teams: one paper with many authors should not count as strongly as repeated collaboration in a small group.
 
-\subsection{Finding communities and possible bridges}
+\subsection{Communities and bridges}
 We use Louvain community detection~\cite{blondel2008} to find groups with many collaborations inside the group and fewer outside it. Louvain seeks high \emph{modularity}, which measures how strongly edges fall within groups compared with a network with similar node strengths. We chose it over Girvan--Newman~\cite{girvan2002}, which repeatedly removes edges that lie on many shortest paths, because that repeated computation is costly on graphs of this size.
 
 The high modularity in Table~\ref{tab:network} suggests that the observed collaborations are concentrated in separate groups. This supports looking across group boundaries. However, some groups are in completely disconnected parts of the graph, which raises modularity even without a meaningful disciplinary divide. We label communities by number rather than treating them as verified departments.
 
 This is where structural holes and brokerage enter the app. We consider researchers in a different community who have not already co-authored with the selected researcher. A missing edge is a possible collaboration to explore, not proof that the two people do not know each other. A shared co-author provides a possible introduction; a longer path may require more intermediaries. These are observed publication paths, not measurements of friendship or trust.
 
-\subsection{Ranking the suggestions}
+\subsection{Recommendation score}
 For selected researcher $u$ and candidate $v$, our score is
 \begin{equation}
 \mathrm{Score}(u,v)=0.60S+0.12H+0.12B+0.16P.
@@ -84,7 +91,7 @@ The four terms describe different reasons to recommend someone:
 These are fixed design choices, not learned weights or probabilities of success. Topic match receives the most weight so that network position does not overwhelm relevance. We also test a simpler Topic+Path version to see whether the extra network features help. Without the network analysis, the app would lose its community filter and introduction paths and become a topic search tool.
 
 \section{Design and Implementation}
-\subsection{From a familiar person to a new contact}
+\subsection{Using the app}
 The app follows the proposal's three-screen flow, with a starting-person selector added to help students who have no publications:
 
 \textbf{1. Pick a familiar researcher.} The student searches a list of 50 starting researchers, chosen automatically from highly connected authors across the largest communities. The list shows names and research topics. These are historical author records; students need to check current appointments and availability.
@@ -97,7 +104,7 @@ The app follows the proposal's three-screen flow, with a starting-person selecto
 \centering
 \includegraphics[width=0.62\textwidth,trim=0 150 0 0,clip]{midterm/review/screenshots/02-map.png}\\[3pt]
 \includegraphics[width=0.82\textwidth,trim=45 205 45 205,clip]{midterm/review/screenshots/03-recommendation.png}
-\caption{The implemented prototype. Top: selecting John A. Rogers shows suggestions outside his collaboration community. Dashed orange links are suggested collaborations, while solid lines show observed collaborations. Bottom: opening Ashish A. Kulkarni's card shows a possible route through Yiyue Luo, alongside shared topics and example work. A co-authorship path suggests whom to ask; it does not guarantee an introduction.}
+\caption{Implemented prototype. Top: selecting John A. Rogers shows cross-community suggestions; solid lines are observed co-authorships and dashed orange lines are suggested collaborations. Bottom: Ashish A. Kulkarni's card shows a possible route through Yiyue Luo, topics, and example papers. A publication path does not guarantee an introduction.}
 \label{fig:prototype}
 \end{figure*}
 
@@ -122,7 +129,7 @@ The feedback led to three changes, each addressing a different point in that flo
 These observations explain the design changes, but do not show that the changes solved the problems. In the next round, students will explain the line types and suggested route without help, allowing us to check comprehension rather than infer it from successful clicks. We report these first-round findings qualitatively, without issue frequencies or participant quotations.
 
 \section{Evaluation}
-\subsection{Predicting later collaborations}
+\subsection{Prediction test}
 We built the graph and topic profiles using only 2015--2019 papers, then asked whether the recommended researchers actually became new cross-community co-authors in 2020--2024. We evaluated 180 starting researchers in the pilot sample and 1,385 in the larger sample. Each had at least one eligible new collaboration in the later period. This excludes researchers who formed no such ties, so the results do not describe every researcher or student.
 
 All methods rank the same candidates. Topic-Only tests whether topic matching is enough; Adamic--Adar tests shared contacts. Preferential attachment favors well-connected researchers, and betweenness favors researchers who lie on many shortest paths. Topic+Path tests a simpler version of our model.
@@ -134,24 +141,29 @@ We report \textbf{precision at five (P@5)}, the fraction of the first five sugge
 \setlength{\tabcolsep}{3pt}
 \caption{Prediction of new 2020--2024 cross-community collaborations. Higher values are better.}
 \label{tab:results}
-\begin{tabular}{lrrrr}
+\renewcommand{\arraystretch}{1.12}
+\begin{tabularx}{\columnwidth}{@{}Xrr@{\hspace{9pt}}rr@{}}
 \toprule
 &\multicolumn{2}{c}{Pilot}&\multicolumn{2}{c}{Larger sample}\\
-Method&P@5&NDCG@10&P@5&NDCG@10\\
+\cmidrule(lr){2-3}\cmidrule(l){4-5}
+Method&P@5&\shortstack{NDCG\\@10}&P@5&\shortstack{NDCG\\@10}\\
 \midrule
-Preferential attach.&.0011&.0011&.0088&.0133\\
-Betweenness&.0011&.0211&.0078&.0148\\
-Topic-Only&.0044&.0274&.0208&.0402\\
-Adamic--Adar&.0056&.0297&.0295&.0515\\
-Topic+Path&.0133&.0615&.0344&.0620\\
-BridgeFinder&.0133&.0514&.0351&.0674\\
+Pref. attachment&0.0011&0.0011&0.0088&0.0133\\
+Betweenness&0.0011&0.0211&0.0078&0.0148\\
+Topic-Only&0.0044&0.0274&0.0208&0.0402\\
+Adamic--Adar&0.0056&0.0297&0.0295&0.0515\\
+Topic+Path&0.0133&0.0615&0.0344&0.0620\\
+BridgeFinder&0.0133&0.0514&0.0351&0.0674\\
 \bottomrule
-\end{tabular}
+\end{tabularx}
 \end{table}
 
 On the larger sample, BridgeFinder improves P@5 from 0.0295 to 0.0351 over Adamic--Adar, a relative gain of about 19\%. NDCG@10 rises from 0.0515 to 0.0674. However, this falls short of our targets of doubling P@5 and adding 0.05 to NDCG@10. Precision is also low in absolute terms: only about 3.5\% of the top-five suggestions become observed collaborators.
 
+\noindent\begin{minipage}{\columnwidth}
 The simpler Topic+Path model has the same pilot P@5 as BridgeFinder and better pilot NDCG@10, while the full model performs better on the larger sample. The added features therefore do not help consistently. We have not yet estimated uncertainty around these differences. The results suggest that network information is useful, but do not establish reliable gains across settings or show that the app helps students find mentors.
+\par
+\end{minipage}
 
 \subsection{Citation impact}
 We also compared later papers involving authors from different training communities with papers whose known authors were in one community. This analysis separately excludes papers with more than 25 retained UIUC authors to reduce the influence of large teams.
@@ -238,22 +250,22 @@ J.~Tang, S.~Wu, J.~Sun, and H.~Su.
 \bibitem{scholar}
 Google.
 \newblock Google Scholar: About.
-\newblock \url{https://scholar.google.com/intl/en/scholar/about.html}.
+\newblock \href{https://scholar.google.com/intl/en/scholar/about.html}{Google Scholar overview}.
 
 \bibitem{connectedpapers}
 Connected Papers.
 \newblock Connected Papers: Explore connected papers in a visual graph.
-\newblock \url{https://www.connectedpapers.com/}.
+\newblock \href{https://www.connectedpapers.com/}{connectedpapers.com}.
 
 \bibitem{researchrabbit}
 ResearchRabbit.
 \newblock ResearchRabbit: Literature discovery.
-\newblock \url{https://www.researchrabbit.ai/}.
+\newblock \href{https://www.researchrabbit.ai/}{researchrabbit.ai}.
 
 \bibitem{experts}
 University~of Illinois.
 \newblock Illinois experts: Research and scholarship at {UIUC}.
-\newblock \url{https://experts.illinois.edu/}, 2024.
+\newblock \href{https://experts.illinois.edu/}{experts.illinois.edu}, 2024.
 
 \end{thebibliography}
 \end{document}

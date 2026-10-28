@@ -44,6 +44,12 @@ This does not restore the blanket claim that the earlier paper was already worth
 - Two clean PDF build passes; no undefined references/citations, overfull boxes, or LaTeX warnings. Extracted text and rendered pages reviewed. `git diff --check` passed.
 - Application logic, datasets, and test results were not changed to obtain a more favorable report score.
 
+## Formatting correction pass
+
+The rendered PDF revealed problems that a clean compilation log alone did not catch. This pass shortened headings that wrapped or hyphenated awkwardly, rebuilt both tables to fit the column width, separated the result groups, restored leading zeros, and used consistent small captions. The ablation paragraph is kept intact rather than split around the large figure. Widow/orphan penalties were added, reference links retain their targets with short readable labels, and citation links no longer appear in bright blue.
+
+The five-page PDF was rebuilt and visually checked. All 24 prediction values still match the saved results, all citations resolve, and the final build has no overflowing boxes or undefined references. These are typesetting corrections; empirical results and conclusions are unchanged.
+
 ## Engineering evidence retained from the implementation review
 
 The following sections document the earlier implementation validation. They support factual accuracy; they do not independently earn writing or feedback points. The submission itself no longer reads as this engineering checklist.
