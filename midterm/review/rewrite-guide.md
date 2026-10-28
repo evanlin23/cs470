@@ -60,3 +60,9 @@ If your rewrite changes a method, numerical claim or study protocol, synchronize
 ## Prose style
 
 The draft now uses periods or commas in place of colons and semicolons in its authored prose. Metric items use full sentences, and the closing paragraph states what the study findings will be used for. Preserve accurate names, reference titles, numerical ranges and the AI-use disclosure. There is no reliable punctuation-based test of authorship. Use your own explanation of the project rather than trying to imitate a supposed human-writing checklist. `style-review.md` records the source check and scope of these edits.
+
+## Match the proposal's style
+
+The proposal is clearest when it explains the student's action before the technical method. Keep that approach in the midterm. Say what a student chooses, sees and can do, then explain the graph that supports it. Use “five starting researchers for the card comparison” rather than “five study contexts.” Explain brokerage in terms of connections across groups. Describe think-aloud feedback as students talking through their use of the prototype.
+
+The midterm needs more evidence than the proposal. Keep its actual graph/results tables, the method alternative, observations linked to revisions, and concrete study thresholds. Avoid copying the proposal's stronger claims about structural holes, existing products or successful prediction unless the current evidence supports them. The current relevance question concerns the starting researcher's work, not directly the student's own interests; preserve that distinction and the interest-proxy limitation.

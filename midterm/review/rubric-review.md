@@ -85,6 +85,12 @@ Added source-only paragraph-purpose comments in `main.tex` and a section-to-crit
 
 The user requested removal of particular punctuation and formulaic phrasing. The authored title/body/caption now use no colons, semicolons or em dashes. Metric fragments were rewritten as sentences, and the closing line now describes how the study findings will be used. Original reference metadata and numerical-range punctuation remain accurate. Paragraph-purpose comments and the rubric-aligned structure remain intact. `style-review.md` records two research sources and explains why punctuation cannot establish authorship. The AI-use disclosure is preserved. No factual result or reported session event was changed.
 
+### Pass 9: comparison with the proposal's wording and flow
+
+Read the original proposal and latest midterm side by side and checked that the shared branch had no newer edits. The proposal's useful pattern is to explain the student's action before the technical method. The midterm retains that pattern, with the extra evidence required at midterm. Clarified the brokerage explanation, the distinction between 50 starting researchers and participant counts, the description of students talking through the prototype, and the five starting researchers used in the card comparison. Paragraph roles and rubric section order are unchanged.
+
+The algorithm still follows the proposal's >=3-hop, topic-plus-path approach and joint-paper weights. The focused map is a documented feedback-driven design revision. Current data coverage remains below the proposed collection size, and the study's relevance question uses the starting researcher's work as a proxy for student interests. These are disclosed limits, not wording to hide. The proposal's broader claims about existing tools, structural holes and future superiority were not copied into the results report. No empirical result, feedback event or implemented behavior changed in this pass.
+
 ## What is not a rubric deduction by itself
 
 The rubric does not demand that predictions beat Adamic–Adar, that citation comparisons be significant, that the planned 15-person trial already be complete, that 110,000 papers already be harvested, or that a particular notes artifact be attached. Negative findings, a justified formative sample and candid scope limitations can still support excellent midterm work. These are limitations to discuss accurately, not automatic percentage penalties.

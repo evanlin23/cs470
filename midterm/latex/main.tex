@@ -52,7 +52,7 @@ The challenge is to suggest someone relevant who also extends the student's usua
 \section{\texorpdfstring{Course Concepts and\\Network Analysis}{Course Concepts and Network Analysis}}
 \subsection{Graph and communities}
 % Rewrite purpose: Network 1: name the course concept; define real data, nodes, edge weights, and inclusion.
-Our project uses the course concept of brokerage to suggest connections across collaboration groups. We use OpenAlex~\cite{openalex} publications from 2015--2024. Nodes are authors affiliated with UIUC on a collected paper. An edge joins two authors who wrote together, weighted by their number of joint papers. We retain papers with at least two UIUC authors and omit external collaborators.
+Brokerage involves connecting people across groups that have few ties to one another. We use this course concept to suggest researchers outside a familiar person's collaboration group. We use OpenAlex~\cite{openalex} publications from 2015--2024. Nodes are authors affiliated with UIUC on a collected paper. An edge joins two authors who wrote together, weighted by their number of joint papers. We retain papers with at least two UIUC authors and omit external collaborators.
 
 % Rewrite purpose: Network 2: state the two actual sample sizes and introduce Table 1.
 Our pilot contains 5,000 collected works, of which 2,493 meet that rule. The larger sample contains 25,000 works, of which 13,229 remain. These are samples, not a complete campus directory. Table~\ref{tab:network} describes the earlier papers used to make recommendations.
@@ -84,7 +84,7 @@ The high modularity suggests concentrated collaboration groups, making cross-gro
 
 \subsection{Choosing suggestions}
 % Rewrite purpose: Network 5: define candidate eligibility, hops, reachability, and the displayed-route audit.
-Following the proposal, candidates must be in another community and at least three hops from the starting researcher. One hop is one co-authorship edge. This excludes existing collaborators and people who already share a co-author. Candidates must also be reachable so we can show a route. All 500 suggestions in the current 50-person demo have three-edge routes.
+Following the proposal, candidates must be in another community and at least three hops from the starting researcher. One hop is one co-authorship edge. This excludes existing collaborators and people who already share a co-author. Candidates must also be reachable so we can show a route. All 500 displayed suggestions across the demo's 50 starting researchers have three-edge routes.
 
 % Rewrite purpose: Network 6: introduce the score; keep the following equation and definitions together.
 The ranking combines topic overlap with a bonus for introduction paths, as shown below.
@@ -123,7 +123,7 @@ The app, historical test, and study cards share one ranking implementation. Reco
 
 \section{Users and Feedback}
 % Rewrite purpose: Users 1: identify the tested population and report only the author-confirmed session facts.
-Our target users want research opportunities but have few contacts beyond their classes or department. We gathered feedback in five individual, 30-minute think-aloud sessions. Participants were three CS/CE undergraduate juniors or seniors and two graduate students from Bioengineering and Information Sciences.
+Our target users want research opportunities but have few contacts beyond their classes or department. We gathered feedback in five individual, 30-minute sessions in which students talked through their use of the prototype. Participants were three CS/CE undergraduate juniors or seniors and two graduate students from Bioengineering and Information Sciences.
 
 % Rewrite purpose: Users 2: justify the sample composition and size for formative feedback.
 The undergraduates fit the entry problem of exploring research before having publications. The graduate students add perspectives from application areas. Five sessions suit an initial search for interaction problems~\cite{nielsen1993}, rather than a campus-wide usability estimate. We made four changes in response to the feedback.
@@ -180,13 +180,13 @@ Table~\ref{tab:results} shows that BridgeFinder predicts fewer later ties than A
 \Needspace{8\baselineskip}
 \subsection{Planned student study}
 % Rewrite purpose: Study 1: name the planned sample and its exploratory scope; this is not a completed study.
-We will recruit 15 students, aiming for three each from CS, ECE, Bioengineering, Crop Sciences, and Information Sciences. This broadens the formative sample but remains exploratory.
+We will recruit 15 students, aiming for three each from CS, ECE, Bioengineering, Crop Sciences, and Information Sciences. This adds backgrounds beyond those in our first feedback round, but the study remains exploratory.
 
 % Rewrite purpose: Study 2: describe the actual task and facilitator completion/comprehension checks.
 Each student will choose a starting researcher, open a suggestion and outreach draft, and explain the route and dashed line without coaching. A facilitator will record task completion and whether the student identifies the intermediaries and distinguishes suggestions from existing ties.
 
 % Rewrite purpose: Study 3: explain rating contexts, method blinding, and overlap attribution.
-Students will then choose one of five study contexts and rate up to 15 shuffled cards, with five from each method above. Method labels are hidden. Shared candidates appear once and count for every method that selected them. We will collect the following measures.
+For the card comparison, students will choose one of five starting researchers and rate up to 15 shuffled cards, with five from each method above. Method labels are hidden. Shared candidates appear once and count for every method that selected them. We will collect the following measures.
 \Needspace{7\baselineskip}
 \begin{itemize}
 \setlength{\itemsep}{2pt}
@@ -202,7 +202,7 @@ We will compare methods using participant averages, not treat individual cards a
 
 \section{Limitations and Next Steps}
 % Rewrite purpose: Conclusion 1: state the data, introduction, coverage, and interest-proxy limitations.
-Co-authorship cannot confirm an introduction or mentoring availability. Our sample omits external and informal ties and falls short of the proposed 110,000-work collection. The 50 starting researchers and five study contexts limit coverage. A researcher's topics may also be a poor proxy for a student's interests.
+Co-authorship cannot confirm an introduction or mentoring availability. Our sample omits external and informal ties and falls short of the proposed 110,000-work collection. The demo offers 50 starting researchers, and the card study offers five, so some students may not find a suitable starting point. A researcher's topics may also be a poor proxy for a student's interests.
 
 % Rewrite purpose: Conclusion 2: give next steps and return to the original student problem.
 In November, we will run the student study and revise the interface. Any ranking changes will use separate validation data. We will use the findings to assess whether the suggestions help students identify researchers they would consider contacting.
