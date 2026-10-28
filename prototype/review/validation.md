@@ -45,3 +45,7 @@ python prototype/serve.py
 ```
 
 The app is `/web/` and study `/study/` on default port 8765. `refresh_results.py` replaces canonical result files, report copies and provenance manifests only after all three analyses succeed. Screenshots and the browser summary retained here document the final browser run; the paper's own 3× captures are in `midterm/review/screenshots/`.
+
+## Author-feedback guidance update
+
+The landing page now explains why a starting researcher must be selected and gives three steps: choose that person, open a suggestion, then review the researcher card and route. A card is explicitly defined as a profile containing topics, papers and a possible introduction. The map explains its reduced scope and community colors. These changes follow the author's reported confusion; they are software-verified, not human-retested. The report also records the existing visual overhaul, corrected tags and focused map as responses to the author's additional feedback. Ranking, generated data and empirical results are unchanged.

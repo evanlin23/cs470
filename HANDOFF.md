@@ -93,6 +93,10 @@ The earlier handoff is recoverable from Git history. The check of the uploaded g
 
 ## Short-paper and Overleaf handoff
 
-The current report is a four-page draft. It keeps the three proposal comparisons; extra baseline and citation results remain in `midterm/review/analysis-notes.md` and the canonical JSON files. The conservative rubric review and author rewrite priorities are in `midterm/review/`.
+The current report is a four-page draft. It keeps the three proposal comparisons; extra baseline and citation results remain in `midterm/review/analysis-notes.md` and the canonical JSON files. The rubric review and author rewrite priorities are in `midterm/review/`.
 
 `python midterm/package_overleaf.py --verify` creates `midterm/bridgefinder-midterm-overleaf.zip` with a root `main.tex`, figures and review notes. It checks a clean extracted build against the current report. Use pdfLaTeX in Overleaf; no external bibliography file is required.
+
+## Author feedback follow-up
+
+The author supplied the observed first-screen selection problem, an unintuitive interface, mismatched tags, unclear card terminology and an overcrowded graph. The current paper traces these to explicit entry steps, the existing UI overhaul, corrected labels, a new researcher-card definition and the focused map. New entry instructions and card explanations have not been retested with students. The prototype now describes the full route and focused graph in plain language; ranking and results are unchanged.

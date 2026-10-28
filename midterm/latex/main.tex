@@ -83,7 +83,7 @@ Without the network, the app would lose its group boundary, distance rule, and i
 \section{Design and Implementation}
 The working prototype has three views:
 
-\textbf{1. Researchers.} The student searches 50 starting researchers by name or topic. We chose highly connected authors across large communities so the demo has enough suggestions. As in profile search~\cite{experts}, this provides a familiar entry point without requiring a student profile.
+\textbf{1. Researchers.} The student searches 50 starting researchers by name or topic. We chose highly connected authors across large communities so the demo has enough suggestions. The landing page explains the steps and defines a researcher card. As in profile search~\cite{experts}, it provides an entry point without requiring a student profile.
 
 \textbf{2. Network.} A map shows the selected researcher, suggestions, and intermediaries. Solid lines show observed co-authorships; orange dashed lines show suggested connections. This borrows visual exploration from literature maps~\cite{connectedpapers,researchrabbit} while focusing on people.
 
@@ -102,15 +102,17 @@ The app, historical test, and study cards share one ranking implementation. Reco
 \section{Users and Feedback}
 Our target users want research opportunities but have few contacts beyond their classes or department. We gathered feedback in five individual, 30-minute think-aloud sessions: three CS/CE undergraduate juniors or seniors and two graduate students from Bioengineering and Information Sciences.
 
-The undergraduates fit the entry problem of exploring research before having publications. The graduate students add perspectives from application areas. Five sessions suit an initial search for interaction problems~\cite{nielsen1993}, rather than a campus-wide usability estimate. The feedback led to three changes:
+The undergraduates fit the entry problem of exploring research before having publications. The graduate students add perspectives from application areas. Five sessions suit an initial search for interaction problems~\cite{nielsen1993}, rather than a campus-wide usability estimate. The feedback led to four changes:
 
-\textbf{Getting started.} Students without publications could not use themselves as the starting node. We added a searchable researcher list so a familiar instructor could serve as the entry point.
+\textbf{Getting started.} One student trying to find a relevant professor did not understand that they first needed to select a researcher to enter the graph. This exposed a missing explanation of the first step. We added landing-page instructions: choose a starting researcher, explore a suggestion, then review its route. The page now explains that the starting person's publications guide the suggestions.
 
-\textbf{Reading the map.} Students interpreted dashed lines as weak existing collaborations. We added a legend that separates observed co-authorships from suggestions, as shown in Figure~\ref{fig:prototype}.
+\textbf{Understanding the interface.} Students found the interface unintuitive, prompting an overhaul with simpler layouts and clearly named views. They were also unsure what a card meant. We have now added a plain definition: a researcher card is a profile with topics, example papers, and a possible introduction route. The map legend distinguishes observed collaborations from suggestions.
 
-\textbf{Choosing a next step.} Students looked for who might introduce them before reading papers and topics. We put the route first and moved technical scores out of the main card. The current ranking explanation is optional.
+\textbf{Readable map.} The graph showed too many nodes and was difficult to follow. We narrowed the display to the selected researcher, suggestions, and people along their routes. Community colors help distinguish groups without showing the entire campus graph.
 
-These qualitative observations guided the design. They do not show that the revisions solved the problems; the next round will check that directly. We do not report issue counts or participant quotations.
+\textbf{Correct labels.} Some tags in the original design did not match the researchers shown. We corrected the profile labeling and distinguish inferred research areas from collaboration groups. These labels do not claim verified departmental appointments.
+
+The new entry instructions and card definition have not yet been retested with students. These qualitative observations explain the revisions; they do not establish improved usability. We do not report issue counts or participant quotations.
 
 \section{Evaluation}
 \subsection{Historical prediction}

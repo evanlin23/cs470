@@ -4,11 +4,11 @@ The revised paper is an editable working draft. Keep the factual results and the
 
 ## Highest-value author revision: feedback
 
-Section 5 currently supports three changes with general qualitative observations. Strengthen it with one or two concrete, authentic examples from your sessions. This is the main reason the strict editorial review holds Users and Feedback at 3/4 rather than assuming 4/4.
+The author supplied a concrete example: a student wanted to find a relevant professor but did not realize they needed to select a researcher on the first screen to enter the graph. The author proposed clear landing-page descriptors and steps. Those instructions have now been implemented, and §5 links this observed problem to the revision. The author also confirmed that an unintuitive UI prompted the existing design overhaul, that mismatched professor tags were corrected, and that a graph with too many nodes led to a focused display with community grouping. A further report of confusion about what a card means led to the new plain-language definition on the landing page.
 
-For each example, explain what the participant was trying to do, what happened, what it revealed, and what you changed. For example, an account of a participant's actual interpretation of a dashed link would show why the legend mattered. The paper already reports that general observation; the missing part is a specific, accurate interaction context. Use this structure only with facts you remember reliably or can verify in notes. Do not turn this suggested example into a new claimed session event.
+Keep the sequence accurate: the confusion was observed; explicit instructions and the card definition were proposed in follow-up and then added; the interface overhaul and tag corrections were reported as completed changes. No student retest of the new explanations has been reported. Do not write that the change solved the problem or improved completion rates. The new account addresses the prior editorial reservation about feedback specificity.
 
-Confirm the five sessions, 30-minute format, three CS/CE undergraduates and two Bioengineering/Information Sciences graduate students, and the reported observations. The author confirmed these details in conversation; this review did not independently observe the sessions. Raw notes, quotations and issue counts are not mandatory rubric artifacts. Add them only if authentic and useful. Do not invent “4 of 5,” a participant quote, task timings, recruitment methods, or post-revision success.
+Confirm the five sessions, 30-minute format, three CS/CE undergraduates and two Bioengineering/Information Sciences graduate students, and other reported observations. These were author-confirmed in conversation, not independently observed by this review. Add issue frequencies or quotations only if authentic and useful. No new session, quote, participant identity or count was inferred from the example.
 
 ## Keep the central argument
 

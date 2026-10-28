@@ -158,7 +158,7 @@ function inspectRecommendation(seedId,candidateId) {
 function showAllRecommendations() { candidateFilter=null;showScreen('recommendations'); }
 function renderSidebar() {
   const seed=selectedSeed();
-  byId('mapContext').textContent = `Starting with ${seed.name}. Inspect an orange link or choose a suggestion from the list.`;
+  byId('mapContext').textContent = `Starting with ${seed.name}. This focused map shows suggestions and the people along their routes. Colors distinguish collaboration groups. Select an orange dashed line or a name in the list to open a researcher card.`;
   byId('sidebarSeedName').textContent=seed.name;
   byId('sidebarSeedDept').textContent=seed.community_name;
   byId('sidebarRecMiniList').replaceChildren();
