@@ -33,7 +33,7 @@ class PublicationConsistencyTests(unittest.TestCase):
     def test_all_published_prediction_cells_match_current_outputs(self):
         source=(REPO/'midterm/latex/main.tex').read_text()
         data=[json.loads((ROOT/'results'/name).read_text()) for name in ['backtest_results.json','backtest_results_scaled.json']]
-        models=[('Pref. attachment','Preferential Attachment'),('Betweenness','Global Betweenness'),('Topic-Only','Topic-Only'),
+        models=[('Topic-Only','Topic-Only'),
                 ('Adamic--Adar','Triadic Closure (Adamic-Adar)'),('BridgeFinder','BridgeFinder')]
         for label,model in models:
             row=next(line for line in source.splitlines() if line.startswith(label+'&'))
@@ -56,8 +56,8 @@ class PublicationConsistencyTests(unittest.TestCase):
         self.assertEqual(audit['displayed_top10']['unreachable'],0)
         self.assertIn('at least three hops',source)
 
-    def test_citation_counts_and_statistics_in_paper_match_canonical_run(self):
-        source=(REPO/'midterm/latex/main.tex').read_text()
+    def test_ancillary_citation_note_matches_canonical_run(self):
+        source=(REPO/'midterm/review/analysis-notes.md').read_text()
         result=json.loads((ROOT/'results/citation_impact.json').read_text())
         expected=[f"Of {result['total_eval_papers']:,} later papers, {result['n_cross_papers']:,} were cross-community, {result['n_within_papers']:,}",
                   f"and {result['n_unclassified_papers']:,} could not be classified",

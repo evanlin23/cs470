@@ -4,7 +4,7 @@ Current model: `proposal-path-v2`. The user's design direction restored joint-pa
 
 ## Verified
 
-`python -m unittest discover -s prototype/tests -v`: **19 tests passed**. Checks cover canonical result/report copies and provenance, all published prediction values and citation text, all 500 displayed rankings and shortest observed paths, hand-calculated score/eligibility (including four-hop and disconnected candidates), training-only features, native baseline study attribution and participant-level analysis.
+`python -m unittest discover -s prototype/tests -v`: **19 tests passed**. Checks cover canonical result/report copies and provenance, all published prediction values and the supporting citation-analysis note, all 500 displayed rankings and shortest observed paths, hand-calculated score/eligibility (including four-hop and disconnected candidates), training-only features, native baseline study attribution and participant-level analysis.
 
 `python prototype/tests/browser_workflow.py --artifacts /tmp/bridgefinder-checks`: **11 Chromium tests passed**. The suite starts an isolated supported server and checks:
 

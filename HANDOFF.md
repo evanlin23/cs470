@@ -90,3 +90,9 @@ python -c "import shutil; shutil.copyfile('.build/midterm/main.pdf', 'midterm/mi
 ```
 
 The earlier handoff is recoverable from Git history. The check of the uploaded group-member review is in `docs/teammate-review-assessment.md`. The prototype's UI and tests are documented in `prototype/review/validation.md`; the paper review is in `midterm/review/rubric-review.md`.
+
+## Short-paper and Overleaf handoff
+
+The current report is a four-page draft. It keeps the three proposal comparisons; extra baseline and citation results remain in `midterm/review/analysis-notes.md` and the canonical JSON files. The conservative rubric review and author rewrite priorities are in `midterm/review/`.
+
+`python midterm/package_overleaf.py --verify` creates `midterm/bridgefinder-midterm-overleaf.zip` with a root `main.tex`, figures and review notes. It checks a clean extracted build against the current report. Use pdfLaTeX in Overleaf; no external bibliography file is required.
