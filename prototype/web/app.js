@@ -10,6 +10,17 @@ let mapState = null;
 let returnFocus = null;
 const byId = id => document.getElementById(id);
 const validColor = value => /^#[0-9a-f]{6}$/i.test(value) ? value : '#2563eb';
+// Distinct colors per map view, starting with the selected researcher's community.
+// Reds and oranges come last so they are rarely confused with suggestion lines.
+const VIEW_COLORS = ['#2563EB','#16A34A','#9333EA','#0D9488','#CA8A04','#0284C7','#DB2777','#64748B','#EA580C','#DC2626'];
+function viewColors(seed) {
+  const order = [seed.community_id];
+  for (const row of appData.recommendations[seed.id] || []) for (const id of [...(row.path_ids || []), row.id]) {
+    const community = appData.graph.nodes.find(node => node.id === id)?.community_id;
+    if (community !== undefined && !order.includes(community)) order.push(community);
+  }
+  return new Map(order.map((community, index) => [community, VIEW_COLORS[index % VIEW_COLORS.length]]));
+}
 const number = value => Number(value).toFixed(3);
 const element = (tag, className, text) => {
   const node = document.createElement(tag);
@@ -85,9 +96,9 @@ function renderFilters() {
   for (const name of [...new Set(appData.seeds.map(row => row.topic_group || 'Other topics'))].sort()) topic.add(new Option(name,name));
 }
 
-function communityTag(row) {
+function communityTag(row, colors) {
   const tag = element('span','community-tag');
-  const dot = element('span','dot'); dot.style.background = validColor(row.color); dot.setAttribute('aria-hidden','true');
+  const dot = element('span','dot'); dot.style.background = colors?.get(row.community_id) || validColor(row.color); dot.setAttribute('aria-hidden','true');
   tag.append(dot, document.createTextNode(row.community_name)); return tag;
 }
 function topicTags(topics) {
@@ -175,12 +186,12 @@ function renderRecCards() {
   byId('recsSeedHeaderMeta').textContent=`${seed.community_name}. Based on publications up to 2019.`;
   byId('showAllCards').hidden=!candidateFilter;
   byId('recCardList').replaceChildren();
-  const rows=recommendations().filter(row => !candidateFilter || row.id === candidateFilter);
+  const rows=recommendations().filter(row => !candidateFilter || row.id === candidateFilter), colors=viewColors(seed);
   if (!rows.length) byId('recCardList').append(element('p','notice','No suggestions are available. Choose another starting researcher.'));
   for (const row of rows) {
     const card=element('article','rec-card'); card.dataset.candidateId=row.id;
     const top=element('div','rec-top-row'), intro=element('div');
-    intro.append(element('span','rank-number',String(row.rank).padStart(2,'0')),element('h2','rec-name',row.name),communityTag(row));
+    intro.append(element('span','rank-number',String(row.rank).padStart(2,'0')),element('h2','rec-name',row.name),communityTag(row,colors));
     top.append(intro);
     if (/^https:\/\/openalex\.org\/A[0-9]+$/.test(row.id)) { const source=element('a','profile-source','OpenAlex profile');source.href=row.id;source.target='_blank';source.rel='noopener';source.setAttribute('aria-label','OpenAlex profile (opens in a new tab)');top.append(source); }
     card.append(top);
@@ -211,6 +222,19 @@ function renderRecCards() {
   }
 }
 
+// Push each node off edges it is not part of, so a line never seems to pass through it.
+function edgeClearance(links,nodes,clearance,strength) {
+  return alpha => {
+    for (const link of links) for (const node of nodes) {
+      if (node === link.source || node === link.target) continue;
+      const ax=link.source.x, ay=link.source.y, dx=link.target.x-ax, dy=link.target.y-ay, length2=dx*dx+dy*dy || 1;
+      const t=Math.max(0,Math.min(1,((node.x-ax)*dx+(node.y-ay)*dy)/length2));
+      const px=node.x-(ax+t*dx), py=node.y-(ay+t*dy), distance=Math.hypot(px,py) || 1e-6, gap=clearance-distance;
+      if (gap > 0 && t > 0 && t < 1) { node.vx += px/distance*gap*strength*alpha; node.vy += py/distance*gap*strength*alpha; }
+    }
+  };
+}
+
 function renderMap() {
   byId('mapUnavailable').hidden=typeof window.d3 !== 'undefined';
   if (typeof window.d3 === 'undefined') return;
@@ -225,8 +249,9 @@ function renderMap() {
   const zoom=d3.zoom().scaleExtent([.2,5]).on('zoom',event => g.attr('transform',event.transform));svg.call(zoom);
   const simulation=d3.forceSimulation(nodes).randomSource(d3.randomLcg(42))
     .force('link',d3.forceLink(links).id(row=>row.id).distance(row=>row.type==='structural_hole'?155:90))
-    .force('charge',d3.forceManyBody().strength(-450)).force('center',d3.forceCenter(width/2,height/2)).force('collision',d3.forceCollide(28)).stop();
-  simulation.tick(200);
+    .force('charge',d3.forceManyBody().strength(-450)).force('center',d3.forceCenter(width/2,height/2)).force('collision',d3.forceCollide(34))
+    .force('clearance',edgeClearance(links,nodes,30,3)).stop();
+  simulation.tick(300);
   const line=g.append('g').selectAll('line').data(links).join('line').attr('class','map-link')
     .attr('stroke',row=>row.type==='structural_hole'?'#c63d1d':'#91a4bc').attr('stroke-width',row=>row.type==='structural_hole'?2.5:1.5)
     .attr('stroke-dasharray',row=>row.type==='structural_hole'?'7 5':null).attr('data-kind',row=>row.type)
@@ -236,7 +261,8 @@ function renderMap() {
     .on('click',(event,row)=>{ if(row.type==='structural_hole') inspectRecommendation(seed.id,row.candidate_id); })
     .on('keydown',(event,row)=>{ if(row.type==='structural_hole' && ['Enter',' '].includes(event.key)){event.preventDefault();inspectRecommendation(seed.id,row.candidate_id);} });
   const node=g.append('g').selectAll('g').data(nodes).join('g').attr('class','map-node');
-  node.append('circle').attr('r',row=>row.id===seed.id?15:11).attr('fill',row=>validColor(row.color)).attr('stroke',row=>row.id===seed.id?'#c63d1d':'white').attr('stroke-width',row=>row.id===seed.id?4:2);
+  const colors=viewColors(seed);
+  node.append('circle').attr('r',row=>row.id===seed.id?15:11).attr('fill',row=>colors.get(row.community_id) || validColor(row.color)).attr('stroke',row=>row.id===seed.id?'#c63d1d':'white').attr('stroke-width',row=>row.id===seed.id?4:2);
   node.append('text').attr('class','map-label').attr('dx',15).attr('dy',4).text(row=>row.name.split(' ').slice(-1)[0]);
   node.append('title').text(row=>`${row.name} · ${row.community_name}`);
   function position(){line.attr('x1',row=>row.source.x).attr('y1',row=>row.source.y).attr('x2',row=>row.target.x).attr('y2',row=>row.target.y);node.attr('transform',row=>`translate(${row.x},${row.y})`);}

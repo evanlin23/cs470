@@ -4,18 +4,18 @@ Scores use the CS 470 mid-term rubric (0–4 per component, `(score ÷ 4) × wei
 
 ## Summary
 
-| Component | Weight | Original (ae24db8) | Independent grade of first revision | Current |
-|---|---:|---:|---:|---:|
-| Objective | 10 | 3 | 4 | 4 |
-| Related work | 10 | 3 | 3 | 4 |
-| Course concepts and network analysis | 15 | 3 | 4 | 4 |
-| Design and implementation | 25 | 3 | 4 | 4 |
-| Users and feedback | 20 | 3 | 3 | 3–4 |
-| Evaluation | 15 | 3 | 4 | 4 |
-| Writing | 5 | 3 | 3 | 4 |
-| **Total** | **100** | **75** | **91.25** | **95–100** |
+| Component | Weight | Original (ae24db8) | Independent review 1 | Independent review 2 | Current |
+|---|---:|---:|---:|---:|---:|
+| Objective | 10 | 3 | 4 | 4 | 4 |
+| Related work | 10 | 3 | 3 | 4 | 4 |
+| Course concepts and network analysis | 15 | 3 | 4 | 4 | 4 |
+| Design and implementation | 25 | 3 | 4 | 4 | 4 |
+| Users and feedback | 20 | 3 | 3 | 3 | 3–4 |
+| Evaluation | 15 | 3 | 4 | 4 | 4 |
+| Writing | 5 | 3 | 3 | 3 | 4 |
+| **Total** | **100** | **75** | **91.25** | **93.75** | **95–100** |
 
-The middle column comes from a separate reviewer that read only the rubric, the report and the proposal, without these notes. The last column is our estimate after acting on that review. The report is 5 pages including references, within the 4–5 pages expected. P@10 remains the only historical metric, as in the proposal.
+Each independent review came from a separate reviewer that read only the rubric, the report and the proposal, without these notes. Each review graded the version left by the previous round of fixes. The last column is our estimate after acting on the second review. The report is 5 pages including references, within the 4–5 pages expected. P@10 remains the only historical metric, as in the proposal.
 
 ## What each component needed and what changed
 
@@ -32,11 +32,17 @@ Louvain is justified against Girvan–Newman, and the ≥3-hop rule against tria
 
 **Design and implementation.** Both figures show actual screens, the map and a full card with topics and papers. Each view is tied to the proposal, related work or feedback, including the ranked list beside the map that replaces the proposal's list screen. The figures now use Indranil Gupta's example (route McHenry → Gropp → Snir). The earlier example's top five suggestions were all one-paper co-authors from a single 2016 paper.
 
-**Users and feedback.** The report identifies the population, justifies the four participants (both levels, a non-computing undergraduate, a cross-field graduate student), admits the proposal's ten-tester target was missed, and ties four observed problems to four changes. The planned study now names its population. This is still the component most likely to lose points, because four sessions is a small round. Only another round of feedback would change that.
+**Users and feedback.** The report identifies the population, justifies the four participants (both levels, a non-computing undergraduate, a cross-field graduate student), admits the proposal's ten-tester target was missed, and ties four observed problems to four changes. Section 5 now says who will retest the changes (15 students from five departments, each rating all three methods). Both independent reviewers still scored this 3, because four sessions is below the proposal's own target. Wording cannot change that. One more real session would.
 
 **Evaluation.** P@10 is explained by where new ties form. Only 22% of 8,916 new cross-community ties joined people who already shared a co-author, 67% were three or more hops apart, and 11% had no training path. Every study measure has a comparison and a target. The SUS target is anchored to published norms. Partial blinding from route length is disclosed.
 
-**Writing.** The conclusion draws the evidence together. Claims were narrowed to their evidence, for example "For the 50 demo researchers" and the constraint caveat. Terminology is consistent (three-view, cross-community), and dangling or unclear sentences flagged by the reviewer were rewritten.
+**Writing.** The conclusion draws the evidence together. Claims were narrowed to their evidence, for example "For the 50 demo researchers", the constraint caveat, and "Shared contacts still miss most new ties". Terminology is consistent (three-view, cross-community), and the dangling, unparallel or tense-shifting sentences the reviewers flagged were rewritten. The second review found that Figure 1 seemed to contradict the method. A suggestion shared the starting researcher's color, and a line passed under the starting node. Both were app defects and were fixed in the app, not the caption (see below).
+
+## App fixes prompted by the reviews
+
+- **Colors.** The map recycled 8 colors across 842 communities, so different communities could share a color. Colors are now assigned within each view, starting with the selected researcher's community, with reds and oranges last so they are not confused with suggestion lines. A view has at most 9 communities and the palette has 10.
+- **Layout.** Lines often passed under nodes they do not touch, which looks like a co-authorship that does not exist. A small clearance force now pushes nodes off such lines. Across all 50 maps, these overlaps fell from 276 to 64, with label collisions about level (31 versus 27). The figure's map has none.
+- Both changes are in `prototype/web/app.js`. The 12 browser tests pass.
 
 ## A limitation the review uncovered
 

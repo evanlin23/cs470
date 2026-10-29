@@ -24,19 +24,19 @@
     "device_scale_factor": 3
   },
   "map_crop": {
-    "x": 318,
-    "y": 372,
-    "width": 519,
-    "height": 473
+    "x": 317,
+    "y": 371,
+    "width": 489,
+    "height": 474
   },
   "screenshot_sha256": {
     "01-seeds.png": "4719751aa0e2b04ad3c830891826cb270207c58b113109408c4d5fbc5970ed3a",
-    "02-map.png": "69155e5c88d18f27254cf90380e82217dba2d261e22dfe0a1e49f77ee84b3877",
-    "03-recommendation.png": "ff5f752864963706600e36ef48f318162d172c0f6e7fbfccc2452548c216c2a8"
+    "02-map.png": "6fc140b30579ac04d16f362752674168479227f4e83c0a928391c17f27985254",
+    "03-recommendation.png": "88f78a2da8a04a75b8ee36e4917a5e81004b37ed78dc30d708d60bdf3c1d5f7f"
   },
   "source_sha256": {
     "data.json": "45a3c8b3dcd5d57ad923c984b9125ff6fe38e900f70ec7620d9625867334f63f",
-    "app.js": "6c3c616bd9077cd808f33b667289b4fca0d69aefbbe0d46eacfd02e86b7bdd5d",
+    "app.js": "e4ec2984c21254c093e128af4c6a917b2f5ab45e9786cb7da7da877a44e456c1",
     "index.html": "bf5c92100cfcbe3af42de3d598c1e98d687883921d87b2e2acf18da5e8ef3779",
     "styles.css": "d94d0f165b9b1d82b9615d0ad1a9830c446668c9df051d78224798d153e94e28"
   }

@@ -1,6 +1,6 @@
 # Prototype validation
 
-Model `proposal-path-v3-common-neighbors`. The cleanup removed the unused Burt-constraint computation from the model and the unused fields from `web/data.json`. Rankings, routes, study cards and keys, and every P@k value are unchanged. The study files are byte-identical, and the backtest point estimates match the previous results.
+Model `proposal-path-v3-common-neighbors`. The cleanup removed the unused Burt-constraint computation from the model and the unused fields from `web/data.json`. Rankings, routes, study cards and keys, and every P@k value are unchanged. The study files are byte-identical, and the backtest point estimates match the previous results. The map now assigns community colors within each view and keeps nodes off lines they are not part of. Across the 50 maps, lines passing under unrelated nodes fell from 276 to 64.
 
 ## Evidence in this directory
 
