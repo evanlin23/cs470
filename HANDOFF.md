@@ -44,4 +44,4 @@ Run `pdflatex` from the repository root, because figure paths are relative to it
 
 ## Before submitting
 
-Read `midterm/review/rubric-review.md` and `midterm/review/rewrite-guide.md`. The authors still need to verify the ReferralWeb description, rewrite the draft in their own words, remove the `% Rewrite purpose:` comments from any source they hand in, and confirm the contributions and AI-use statement.
+Read `midterm/review/rubric-review.md`. If you reword the report, keep the facts listed in `midterm/review/rewrite-guide.md` synchronized, rebuild, and rerun the tests.

@@ -14,18 +14,17 @@ In Overleaf select New Project → Upload Project, then upload this ZIP.
 Set the main document to main.tex and the compiler to pdfLaTeX (the defaults
 should work). Recompile; references may require a second pass.
 
-Edit main.tex. Its % Rewrite purpose: comments explain what each paragraph
-needs to accomplish; they do not appear in the PDF. The section-to-rubric map
-is in review/rewrite-guide.md. The bibliography is embedded at the end, so no BibTeX or Biber
-step is required. Figures are included at their existing relative paths under
-midterm/review/screenshots/. Keep that structure unless you update main.tex.
+Edit main.tex. The bibliography is embedded at the end, so no BibTeX or
+Biber step is required. Figures are included at their existing relative paths
+under midterm/review/screenshots/. Keep that structure unless you update
+main.tex.
 
 review/rubric-review.md scores the report against the midterm rubric.
-review/rewrite-guide.md lists the facts that must stay synchronized and the
-items only the authors can confirm. review/tang-source-check.md records the
-primary-source comparison. These Markdown files do not appear in the compiled
-paper. The midterm report should stay within 4-5 pages. Check the layout after
-manual edits.
+review/rewrite-guide.md maps sections to the rubric and lists the facts that
+must stay synchronized. review/source-checks.md records the sources behind
+the related-work comparisons. These Markdown files do not appear in the
+compiled paper. The midterm report should stay within 4-5 pages. Check the
+layout after manual edits.
 
 This archive excludes prototype data, code and private study keys. It was
 compiled locally after clean extraction using pdfLaTeX. No claim is made
@@ -38,7 +37,7 @@ def package(destination, verify=False):
     figures = re.findall(r'\\includegraphics(?:\[[^\]]*\])?\{([^}]+)\}', source.read_text())
     files = {'main.tex': source}
     files.update({name: ROOT / name for name in figures})
-    for name in ['rubric-review.md', 'rewrite-guide.md', 'analysis-notes.md', 'tang-source-check.md']:
+    for name in ['rubric-review.md', 'rewrite-guide.md', 'analysis-notes.md', 'source-checks.md']:
         files['review/' + name] = ROOT / 'midterm/review' / name
     destination.parent.mkdir(parents=True, exist_ok=True)
     with zipfile.ZipFile(destination, 'w', compression=zipfile.ZIP_DEFLATED) as archive:

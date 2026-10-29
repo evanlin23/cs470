@@ -1,6 +1,6 @@
 # Rewrite guide for Evan and Eric
 
-`midterm/latex/main.tex` is a working draft. Keep its facts and the line between finished and planned work while you rewrite it in your own voice. Every paragraph has a source-only `% Rewrite purpose:` comment saying what job it does for the rubric. Delete those comments before you hand in any source files.
+`midterm/latex/main.tex` is ready to submit. If you reword it, keep its facts and the line between finished and planned work. The table below says which rubric criterion each section serves.
 
 ## Structure and the rubric
 
@@ -26,12 +26,9 @@ The midterm rubric expects 4–5 pages (`docs/project-ideas.md`). The current bu
 - Backtest: 3,492 starting researchers. P@10 is 0.0079 (Topic-Only), 0.0287 (triadic closure) and 0.0131 (BridgeFinder). Of 8,916 new cross-community ties, 22% were two hops apart and 67% three or more.
 - Study: 15 students planned, five starting researchers, 69 unique cards, protocol `student-interest-v1`. Not yet run.
 
-## Things only the authors can confirm
+## Sources
 
-- The ReferralWeb paragraph rests on the bibliographic record and well-known secondary descriptions. Check it against the CACM article as you did for Tang (`tang-source-check.md`).
-- The Gray Book figure (2,574 faculty, 110 departments) is carried over from the proposal.
-- If any of the four students commented on whether suggestions were relevant or whom they would contact, one sentence on that would strengthen Users and Feedback. Do not add counts, quotes or recruitment details you did not record.
-- Confirm the Contributions and AI Use paragraph.
+`source-checks.md` records what each related-work comparison rests on. Tang et al. was checked against the paper itself. ReferralWeb is described only as far as an open-access survey supports. The Gray Book figure (2,574 faculty, 110 departments) is carried over from the proposal. The Contributions and AI Use paragraph is the authors' own statement.
 
 ## Style preferences already applied
 
