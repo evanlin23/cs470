@@ -12,7 +12,7 @@ const byId = id => document.getElementById(id);
 const validColor = value => /^#[0-9a-f]{6}$/i.test(value) ? value : '#2563eb';
 // Distinct colors per map view, starting with the selected researcher's community.
 // Reds and oranges come last so they are rarely confused with suggestion lines.
-const VIEW_COLORS = ['#2563EB','#16A34A','#9333EA','#0D9488','#CA8A04','#0284C7','#DB2777','#64748B','#EA580C','#DC2626'];
+const VIEW_COLORS = ['#2563EB','#16A34A','#9333EA','#CA8A04','#DB2777','#64748B','#0D9488','#7C2D12','#EA580C','#DC2626'];
 function viewColors(seed) {
   const order = [seed.community_id];
   for (const row of appData.recommendations[seed.id] || []) for (const id of [...(row.path_ids || []), row.id]) {

@@ -4,18 +4,18 @@ Scores use the CS 470 mid-term rubric (0–4 per component, `(score ÷ 4) × wei
 
 ## Summary
 
-| Component | Weight | Original (ae24db8) | Independent review 1 | Independent review 2 | Current |
-|---|---:|---:|---:|---:|---:|
-| Objective | 10 | 3 | 4 | 4 | 4 |
-| Related work | 10 | 3 | 3 | 4 | 4 |
-| Course concepts and network analysis | 15 | 3 | 4 | 4 | 4 |
-| Design and implementation | 25 | 3 | 4 | 4 | 4 |
-| Users and feedback | 20 | 3 | 3 | 3 | 4 |
-| Evaluation | 15 | 3 | 4 | 4 | 4 |
-| Writing | 5 | 3 | 3 | 3 | 4 |
-| **Total** | **100** | **75** | **91.25** | **93.75** | **≈100** |
+| Component | Weight | Original (ae24db8) | Review 1 | Review 2 | Review 3 | Current |
+|---|---:|---:|---:|---:|---:|---:|
+| Objective | 10 | 3 | 4 | 4 | 4 | 4 |
+| Related work | 10 | 3 | 3 | 4 | 4 | 4 |
+| Course concepts and network analysis | 15 | 3 | 4 | 4 | 4 | 4 |
+| Design and implementation | 25 | 3 | 4 | 4 | 4 | 4 |
+| Users and feedback | 20 | 3 | 3 | 3 | 3 | 3–4 |
+| Evaluation | 15 | 3 | 4 | 4 | 4 | 4 |
+| Writing | 5 | 3 | 3 | 3 | 4 | 4 |
+| **Total** | **100** | **75** | **91.25** | **93.75** | **95** | **95–100** |
 
-Each independent review came from a separate reviewer that read only the rubric, the report and the proposal, without these notes. Each review graded the version left by the previous round of fixes. The last column is our estimate after acting on the second review and adding the second feedback round. The report is 5 pages including references, within the 4–5 pages expected. P@10 remains the only historical metric, as in the proposal.
+Each independent review came from a separate reviewer that read only the rubric, the report and the proposal, without these notes. Each review graded the version left by the previous round of fixes. Review 3 graded the report after the second feedback round was added. The last column is our estimate after acting on review 3. The report is 5 pages including references, within the 4–5 pages expected. P@10 remains the only historical metric, as in the proposal.
 
 ## What each component needed and what changed
 
@@ -32,7 +32,7 @@ Louvain is justified against Girvan–Newman, and the ≥3-hop rule against tria
 
 **Design and implementation.** Both figures show actual screens, the map and a full card with topics and papers. Each view is tied to the proposal, related work or feedback, including the ranked list beside the map that replaces the proposal's list screen. The figures now use Indranil Gupta's example (route McHenry → Gropp → Snir). The earlier example's top five suggestions were all one-paper co-authors from a single 2016 paper.
 
-**Users and feedback.** Both independent reviewers scored this 3, because four sessions fell below the proposal's own target of about ten. The authors then reported a second round. Six more UIUC students reviewed the revised app. Two were mathematics and computer science undergraduates, three were Master of Computer Science students, and one was a master's student in business technology management. All six found the revised interface clear, raised no new problems, and approved of the app. The report now has ten students across two rounds, which meets the proposal's target, and four observed problems that led to four changes, confirmed by a retest. This answers both reasons for the 3. The second round leans toward computing students, which a strict grader could note.
+**Users and feedback.** Both independent reviewers scored this 3, because four sessions fell below the proposal's own target of about ten. The authors then reported a second round. Six more UIUC students reviewed the revised app. Two were mathematics and computer science undergraduates, three were Master of Computer Science students, and one was a master's student in business technology management. All six found the revised interface clear, raised no new problems, and approved of the app. The report now has ten students across two rounds, which meets the proposal's target, and four observed problems that led to four changes, confirmed by a retest. Review 3 still gave 3. It noted that the round that changed the design had four testers, that most testers study computing, and that the second round's evidence is brief. The report now says each of these plainly. It states that the first round was below the five to ten the proposal cited, that the second round added six, and that most testers so far study computing, which the planned five-department study addresses. Further gains would need more recorded detail from the sessions, such as whether testers were looking for research positions, as the proposal planned.
 
 **Evaluation.** P@10 is explained by where new ties form. Only 22% of 8,916 new cross-community ties joined people who already shared a co-author, 67% were three or more hops apart, and 11% had no training path. Every study measure has a comparison and a target. The SUS target is anchored to published norms. Partial blinding from route length is disclosed.
 
@@ -40,7 +40,7 @@ Louvain is justified against Girvan–Newman, and the ≥3-hop rule against tria
 
 ## App fixes prompted by the reviews
 
-- **Colors.** The map recycled 8 colors across 842 communities, so different communities could share a color. Colors are now assigned within each view, starting with the selected researcher's community, with reds and oranges last so they are not confused with suggestion lines. A view has at most 9 communities and the palette has 10.
+- **Colors.** The map recycled 8 colors across 842 communities, so different communities could share a color. Colors are now assigned within each view, starting with the selected researcher's community, with reds and oranges last so they are not confused with suggestion lines. A view has at most 9 communities and the palette has 10. After review 3 the palette order was changed so that two blues never appear among the first six communities.
 - **Layout.** Lines often passed under nodes they do not touch, which looks like a co-authorship that does not exist. A small clearance force now pushes nodes off such lines. Across all 50 maps, these overlaps fell from 276 to 64, with label collisions about level (31 versus 27). The figure's map has none.
 - Both changes are in `prototype/web/app.js`. The 12 browser tests pass.
 
