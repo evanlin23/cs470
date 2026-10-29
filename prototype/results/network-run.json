@@ -5,7 +5,7 @@
   "dataset_sha256": "0fae5f05012921f4caa07cb5d6b1d6f7949821365b053dcecbaa51a108d3bd78",
   "source_sha256": {
     "model.py": "6a42eb14f4db0d126249cb8818a16908d72b9deda8b43f8f4255f92f1014ca46",
-    "network_stats.py": "1287946a0b184f780b58252d7b4af867371e3383117b349d9fcd05d8a98ad93e"
+    "network_stats.py": "f8ecd9b0601dc4f8490097d7bdc5c1697341887df7b3253cdbf2fa115e2c1dbd"
   },
   "runtime": {
     "python": "3.13.17",
@@ -14,5 +14,5 @@
     "scipy": "1.18.1"
   },
   "result_file": "network_stats.json",
-  "result_sha256": "453650a97b37cce79b82c8a1c441e5f9e3c2591ba9d3c3bae036b0c1d9bd80a1"
+  "result_sha256": "10f0c79c42803701a3030629f70dddfafa0dcebada21b673e380564e44b6cd25"
 }

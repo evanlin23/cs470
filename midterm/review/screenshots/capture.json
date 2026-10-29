@@ -1,37 +1,38 @@
 {
   "dataset_sha256": "0fae5f05012921f4caa07cb5d6b1d6f7949821365b053dcecbaa51a108d3bd78",
   "model_version": "proposal-path-v3-common-neighbors",
-  "seed_id": "https://openalex.org/A5067579128",
-  "seed_name": "Naiman A. Khan",
-  "candidate_id": "https://openalex.org/A5005123696",
-  "candidate_name": "Victoria J. Vieira\u2010Potter",
+  "seed_id": "https://openalex.org/A5027240302",
+  "seed_name": "Indranil Gupta",
+  "candidate_id": "https://openalex.org/A5041731995",
+  "candidate_name": "Marc Snir",
   "path_ids": [
-    "https://openalex.org/A5067579128",
-    "https://openalex.org/A5002313901",
-    "https://openalex.org/A5053823114",
-    "https://openalex.org/A5005123696"
+    "https://openalex.org/A5027240302",
+    "https://openalex.org/A5059328010",
+    "https://openalex.org/A5017241944",
+    "https://openalex.org/A5041731995"
   ],
   "path_names": [
-    "Naiman A. Khan",
-    "Ruopeng An",
-    "Kelly Scott Swanson",
-    "Victoria J. Vieira\u2010Potter"
+    "Indranil Gupta",
+    "Kenton G. McHenry",
+    "William Gropp",
+    "Marc Snir"
   ],
   "viewport": {
     "width": 1440,
+    "card_width": 1100,
     "height": 1000,
     "device_scale_factor": 3
   },
   "map_crop": {
-    "x": 382,
-    "y": 363,
-    "width": 416,
-    "height": 490
+    "x": 318,
+    "y": 372,
+    "width": 519,
+    "height": 473
   },
   "screenshot_sha256": {
     "01-seeds.png": "4719751aa0e2b04ad3c830891826cb270207c58b113109408c4d5fbc5970ed3a",
-    "02-map.png": "d3c590e0f5cd591c35fc8460e8e184013ffb0938261705c5f50c613f24d157d2",
-    "03-recommendation.png": "fcab12e3df61f39973b877476f7a8a7e3ea91c7f3f148207422d56957e408719"
+    "02-map.png": "69155e5c88d18f27254cf90380e82217dba2d261e22dfe0a1e49f77ee84b3877",
+    "03-recommendation.png": "ff5f752864963706600e36ef48f318162d172c0f6e7fbfccc2452548c216c2a8"
   },
   "source_sha256": {
     "data.json": "45a3c8b3dcd5d57ad923c984b9125ff6fe38e900f70ec7620d9625867334f63f",

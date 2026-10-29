@@ -1,4 +1,8 @@
-"""Capture the current prototype and record the exact example used in the paper."""
+"""Capture the current prototype and record the exact example used in the paper.
+
+The example starts from Indranil Gupta, a researcher a CS student would know from
+class, and must have ten suggestions that each appear on more than one UIUC paper.
+"""
 import hashlib
 import json
 import math
@@ -11,11 +15,16 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'prototype'))
 from serve import make_server
 
+EXAMPLE_SEED = 'https://openalex.org/A5027240302'  # Indranil Gupta
+
 
 def main():
     bundle = json.loads((ROOT / 'prototype/web/data.json').read_text())
-    seed = bundle['seeds'][0]
-    candidate = bundle['recommendations'][seed['id']][0]
+    authors = json.loads((ROOT / 'prototype/uiuc_data_scaled.json').read_text())['authors']
+    seed = next(row for row in bundle['seeds'] if row['id'] == EXAMPLE_SEED)
+    suggestions = bundle['recommendations'][seed['id']]
+    assert all(authors[row['id']]['paper_count'] > 1 for row in suggestions), 'example must avoid one-paper authors'
+    candidate = suggestions[0]
     people = {row['id']: row['name'] for row in bundle['graph']['nodes']}
     out = ROOT / 'midterm/review/screenshots'
     out.mkdir(parents=True, exist_ok=True)
@@ -31,8 +40,9 @@ def main():
             page.goto(f'http://127.0.0.1:{server.server_port}/web/')
             page.wait_for_selector('.seed-card')
             page.screenshot(path=str(out / '01-seeds.png'))
-            page.locator('.select-seed-btn').first.click()
+            page.locator('.seed-card', has_text=seed['name']).locator('.select-seed-btn').first.click()
             page.wait_for_selector('.map-node')
+            page.wait_for_timeout(1500)
             # Crop the actual rendered graph to remove empty margins and the
             # sidebar. Keep node labels intact without modifying the UI image.
             graph_box = page.locator('#topoMapSvg > g').bounding_box()
@@ -43,19 +53,20 @@ def main():
             bottom = min(wrap_box['y'] + wrap_box['height'], math.ceil(graph_box['y'] + graph_box['height'] + 16))
             map_clip = {'x': left, 'y': top, 'width': right - left, 'height': bottom - top}
             page.screenshot(path=str(out / '02-map.png'), clip=map_clip)
+            # A narrower window wraps the card so its text stays legible in print.
+            page.set_viewport_size({'width': 1100, 'height': 1000})
             page.locator('.mini-rec').first.click()
             page.wait_for_selector('.path-flow')
             assert page.locator('.rec-name').inner_text() == candidate['name']
             names = page.locator('.path-step-node').all_inner_texts()
             assert len(names) == len(candidate['path_ids'])
             assert all(people[node] in text for node, text in zip(candidate['path_ids'], names))
+            # Keep the route, topics and example papers; stop above the ranking details.
             card = page.locator('.rec-card').first.bounding_box()
-            route = page.locator('.path-flow').first.bounding_box()
-            last = page.locator('.path-step-node').last.bounding_box()
-            width = min(card['width'], max(800, math.ceil(last['x'] + last['width'] - card['x'] + 24)))
+            details = page.locator('.ranking-details').first.bounding_box()
             page.screenshot(path=str(out / '03-recommendation.png'), clip={
-                'x': card['x'], 'y': card['y'], 'width': width,
-                'height': route['y'] + route['height'] - card['y'] + 12})
+                'x': card['x'], 'y': card['y'], 'width': card['width'],
+                'height': details['y'] - card['y'] - 8})
             assert page.locator('.ranking-details').first.get_attribute('open') is None
             page.locator('.ranking-details summary').first.click()
             assert page.locator('.metrics-bar').first.is_visible()
@@ -71,7 +82,7 @@ def main():
         'seed_id': seed['id'], 'seed_name': seed['name'],
         'candidate_id': candidate['id'], 'candidate_name': candidate['name'],
         'path_ids': candidate['path_ids'], 'path_names': [people[node] for node in candidate['path_ids']],
-        'viewport': {'width': 1440, 'height': 1000, 'device_scale_factor': 3},
+        'viewport': {'width': 1440, 'card_width': 1100, 'height': 1000, 'device_scale_factor': 3},
         'map_crop': map_clip,
         'screenshot_sha256': {name: hashlib.sha256((out / name).read_bytes()).hexdigest()
                               for name in ['01-seeds.png', '02-map.png', '03-recommendation.png']},

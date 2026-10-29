@@ -8,7 +8,7 @@ All numbers come from `prototype/results/`, which `python prototype/refresh_resu
 
 ## Network structure
 
-`network_stats.json` describes the 2015–2019 training graph. It reports modularity of the Louvain partition restricted to the largest component and Burt's constraint (networkx, weighted) for every author in the largest component and for the intermediaries on the 500 displayed routes. Low constraint partly reflects high degree, and the 50 starting researchers were chosen for high degree.
+`network_stats.json` describes the 2015–2019 training graph. It reports modularity of the Louvain partition restricted to the largest component and Burt's constraint (networkx, weighted) for every author in the largest component and for the intermediaries on the 500 displayed routes. Low constraint partly reflects high degree, which the paper notes. It also counts displayed suggestions who appear on only one retained UIUC paper (143 of 500). Of these, 76 share that paper with another suggestion for the same starting researcher, because every co-author of one large paper gets the same three-path count. A minimum of two UIUC papers per suggestion is the planned fix, to be validated separately before the study.
 
 ## Ancillary citation comparison
 

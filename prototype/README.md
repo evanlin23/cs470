@@ -44,7 +44,7 @@ This reruns three analyses and replaces `prototype/results/` only if all of them
 | Script | Result | Contents |
 |---|---|---|
 | `backtest.py` | `backtest_results_scaled.json` | P@10 per method (the paper's metric), plus P@5, R@10 and NDCG@10, and the training-graph distance of the new ties |
-| `network_stats.py` | `network_stats.json` | Modularity inside the largest component, Burt's constraint of route intermediaries |
+| `network_stats.py` | `network_stats.json` | Modularity inside the largest component, Burt's constraint of route intermediaries, suggestions that appear on only one UIUC paper |
 | `citation_impact.py` | `citation_impact.json` | Exploratory citation comparison of cross- vs within-community papers (not in the paper) |
 
 `audit_recommendations.py` writes `review/closure-audit.json`, which checks the hop distance of every displayed suggestion and its overlap with the baselines.
