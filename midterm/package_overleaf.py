@@ -40,10 +40,15 @@ def package(destination, verify=False):
     for name in ['rubric-review.md', 'rewrite-guide.md', 'analysis-notes.md', 'source-checks.md']:
         files['review/' + name] = ROOT / 'midterm/review' / name
     destination.parent.mkdir(parents=True, exist_ok=True)
-    with zipfile.ZipFile(destination, 'w', compression=zipfile.ZIP_DEFLATED) as archive:
+    # A fixed timestamp keeps the archive byte-identical when its contents are unchanged.
+    def entry(name):
+        info = zipfile.ZipInfo(name, date_time=(2026, 1, 1, 0, 0, 0))
+        info.compress_type = zipfile.ZIP_DEFLATED
+        return info
+    with zipfile.ZipFile(destination, 'w') as archive:
         for name, path in files.items():
-            archive.write(path, name)
-        archive.writestr('README.md', README)
+            archive.writestr(entry(name), path.read_bytes())
+        archive.writestr(entry('README.md'), README)
     if verify:
         with tempfile.TemporaryDirectory(prefix='bridgefinder-overleaf-') as directory:
             folder = Path(directory)

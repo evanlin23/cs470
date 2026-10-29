@@ -46,8 +46,8 @@ Louvain is justified against Girvan–Newman, and the ≥3-hop rule against tria
 
 ## A limitation the review uncovered
 
-Of the 500 displayed suggestions, 143 (29%) appear on only one UIUC paper in 2015–2024. Some are likely students, visitors or outside collaborators. About half of them share that paper with another suggestion for the same researcher, because every co-author of one large paper gets the same path count. The report states this in Limitations and names the fix, a minimum of two UIUC papers per suggestion, to be validated separately. The ranking was not changed, because that would change the reported results and the study cards. Applying the filter is a decision for the authors.
+Of the 500 displayed suggestions, 143 (29%) appear on only one UIUC paper in 2015–2024. Some are likely students, visitors or outside collaborators. About half of them share that paper with another suggestion for the same researcher, because every co-author of one large paper gets the same path count. The report states this in Limitations and names the fix, a minimum of two UIUC papers per suggestion, to be validated separately. The ranking was not changed. The proposal's method has no minimum-paper rule, and applying one would change the reported results and the study cards, so the authors kept the filter as a disclosed next step.
 
 ## Unchanged
 
-The proposal, dataset, ranking, Table 2, the four-student account, the omitted session duration, the AI-use statement and the plain-prose style are unchanged. Every number in the paper is checked against `prototype/results/` by `prototype/tests/test_publication_consistency.py`.
+The proposal, dataset, ranking, Table 2, the first round's four-student account, the omitted session duration, the AI-use statement and the plain-prose style are unchanged. Every number in the paper is checked against `prototype/results/` by `prototype/tests/test_publication_consistency.py`.
