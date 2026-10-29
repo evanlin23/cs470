@@ -25,7 +25,7 @@ python -m unittest discover -s prototype/tests -v
 - **Model** `proposal-path-v3-common-neighbors`: reachable cross-community candidates at least three hops away, ranked by topic Jaccard plus `0.5*c3/(1+c3)`. Baselines are triadic closure (two-hop, shared co-author count) and Topic-Only (same pool as BridgeFinder).
 - **Data**: complete OpenAlex harvest for UIUC 2015–2024, 102,947 works collected and 49,651 multi-author UIUC papers retained. The training graph (≤2019) has 19,389 authors and 78,281 edges.
 - **Historical test**: 3,492 starting researchers. P@10, the proposal's only historical metric, is 0.0287 for triadic closure, 0.0131 for BridgeFinder and 0.0079 for Topic-Only. Of 8,916 new cross-community ties, 22% joined authors who already shared a co-author and 67% were three or more hops apart.
-- **Feedback**: round one (four students) led to four design changes. Round two (six students) used the revised app, finished without help and raised no new problems.
+- **Feedback**: round one (four students) led to four design changes. Round two (six students) reviewed the revised app, found it clear, raised no new problems and approved of it.
 - **Study**: the 15-student blinded card study is implemented but not yet run.
 
 ## Rebuild the report
