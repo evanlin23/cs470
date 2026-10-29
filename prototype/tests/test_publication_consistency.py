@@ -38,7 +38,7 @@ class PublicationConsistencyTests(unittest.TestCase):
             self.assertEqual(re.findall(r'0\.\d{4}',row),[f'{data[model]["P@10"]:.4f}'])
         distances=data['new_tie_training_distance']
         beyond=distances['three']['share']+distances['four_or_more']['share']
-        self.assertIn(f"Of {distances['ties']:,} new cross-community ties, only {100*distances['two']['share']:.0f}\\% joined authors who already shared a co-author, while {100*beyond:.0f}\\% joined authors three or more hops apart, inside BridgeFinder's candidate pool, and the remaining {100*distances['unreachable']['share']:.0f}\\% had no training path",source)
+        self.assertIn(f"Of the {distances['ties']:,} distinct new cross-community pairs behind Table~\\ref{{tab:results}}, only {100*distances['two']['share']:.0f}\\% joined authors who already shared a co-author, while {100*beyond:.0f}\\% joined authors three or more hops apart, inside BridgeFinder's candidate pool, and the remaining {100*distances['unreachable']['share']:.0f}\\% had no training path",source)
         count=re.search(r'We evaluated ([\d,]+) starting researchers\b',source)
         self.assertIsNotNone(count)
         self.assertEqual(int(count.group(1).replace(',','')),json.loads((ROOT/'results/scaled-run.json').read_text())['eligible_seeds'])
@@ -51,10 +51,11 @@ class PublicationConsistencyTests(unittest.TestCase):
         largest=stats['largest_component']
         expected=[f"Modularity in largest component & {largest['modularity']:.3f}",
                   f"which holds {100*largest['share']:.0f}\\% of authors, the same partition still scores {largest['modularity']:.3f}",
-                  f"median Burt constraint~\\cite{{burt1992}} is {stats['constraint_largest_component']['median_route_intermediaries']:.2f}",
-                  f"against {stats['constraint_largest_component']['median_all_authors']:.2f} for the median author in the largest component",
-                  f"the bonus supplies {100*sum(.5*r['path_bonus'] for r in rows)/sum(r['score'] for r in rows):.0f}\\% of their combined score",
-                  f"Of the displayed suggestions, {100*stats['displayed_suggestions_on_one_uiuc_paper']['share']:.0f}\\% appear on only one UIUC paper"]
+                  f"The {stats['constraint_largest_component']['route_intermediaries']} distinct intermediaries on these routes",
+                  f"largest component, is {stats['constraint_largest_component']['median_route_intermediaries']:.2f}",
+                  f"against {stats['constraint_largest_component']['median_all_authors']:.2f} for the median author there",
+                  f"the bonus makes up {100*sum(.5*r['path_bonus'] for r in rows)/sum(r['score'] for r in rows):.0f}\\% of their summed scores",
+                  f"Of the {len(rows)} displayed suggestions, {100*stats['displayed_suggestions_on_one_uiuc_paper']['share']:.0f}\\% appear on only one UIUC paper"]
         for text in expected:self.assertIn(text,source)
 
     def test_report_closure_summary_matches_displayed_data_and_audit(self):

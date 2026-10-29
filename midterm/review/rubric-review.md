@@ -38,6 +38,26 @@ Louvain is justified against Girvan–Newman, and the ≥3-hop rule against tria
 
 **Writing.** The conclusion draws the evidence together. Claims were narrowed to their evidence, for example "For the 50 demo researchers", the constraint caveat, and "Shared contacts still miss most new ties". Terminology is consistent (three-view, cross-community), and the dangling, unparallel or tense-shifting sentences the reviewers flagged were rewritten. The second review found that Figure 1 seemed to contradict the method. A suggestion shared the starting researcher's color, and a line passed under the starting node. Both were app defects and were fixed in the app, not the caption (see below).
 
+## External review (Perplexity)
+
+An outside review scored the report 97.5. Each suggestion was checked against the data before it was applied.
+
+- **Applied.**
+  - The 67% sentence now says it describes where new ties formed, not how likely any distant pair is to collaborate. Distant candidates far outnumber two-hop ones (for the 50 demo researchers, about 777,000 versus 30,000 candidate pairs in `prototype/review/closure-audit.json`).
+  - The 8,916 ties are now called distinct pairs behind Table 2.
+  - The 68% figure is now stated as a share of summed scores.
+  - The constraint sentence names its graph and weighting, counts the 264 distinct intermediaries once, and no longer reads low constraint as proof of brokerage.
+  - Graph-distance wording replaces claims about who is familiar to the student.
+  - "One route is enough" became "one observed route already offers a possible introduction chain".
+  - The literature-tool limitation no longer claims they ignore people. ResearchRabbit has author features.
+  - The baseline is named as the shared co-author count, not a reproduction of LinkedIn.
+  - The 29% figure now gives its denominator (500 suggestions) and window (2015–2024). It also says one paper does not establish affiliation, faculty status or availability to mentor, and that a two-paper filter adds data support without confirming employment.
+  - Louvain settings are given (networkx, weighted, resolution 1, seed 42).
+  - The primary study comparison is named.
+- **Not applied.**
+  - Describing the second round's procedure and adding session details. The authors asked that the paper state only that the six students found the revised interface clear, raised no new problems and approved of the app.
+  - Restoring an uncertainty caveat and adding access dates. Neither is needed for the rubric, and access dates are not recorded.
+
 ## App fixes prompted by the reviews
 
 - **Colors.** The map recycled 8 colors across 842 communities, so different communities could share a color. Colors are now assigned within each view, starting with the selected researcher's community, with reds and oranges last so they are not confused with suggestion lines. A view has at most 9 communities and the palette has 10. After review 3 the palette order was changed so that two blues never appear among the first six communities.
