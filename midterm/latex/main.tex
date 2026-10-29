@@ -22,7 +22,7 @@
 \maketitle
 
 \begin{abstract}
-Students who want research experience often know an instructor but few researchers outside that instructor's circle. BridgeFinder helps them find related researchers and see who might connect them. We have built a three-view prototype, analyzed UIUC publications from 2015 to 2024, and gathered feedback from four students. Our historical test finds that BridgeFinder predicts more later collaborations than topic-only ranking but fewer than triadic closure. We next plan to test whether students find its suggestions relevant, unfamiliar, and useful for contacting someone.
+Students who want research experience often know an instructor but few researchers outside that instructor's circle. BridgeFinder helps them find related researchers and see who might connect them. We have built a three-view prototype, analyzed UIUC publications from 2015 to 2024, and gathered feedback from ten students in two rounds. Our historical test finds that BridgeFinder predicts more later collaborations than topic-only ranking but fewer than triadic closure. We next plan to test whether students find its suggestions relevant, unfamiliar, and useful for contacting someone.
 \end{abstract}
 
 \section{Objective}
@@ -32,7 +32,7 @@ BridgeFinder helps UIUC undergraduate and early-stage graduate students explore 
 
 The problem is hard because relevance, novelty, and reachability pull in different directions. People who share a co-author with a familiar researcher are easy to find and easy to reach, but they belong to the circle the student already knows. People farther away are new, yet few of them work on related topics, and the student has no publications that could describe their interests. BridgeFinder must find the few distant researchers who are relevant and still reachable through people a student could ask.
 
-So far we contribute a working three-view prototype, a historical test on 49,651 UIUC papers that shows where new cross-community collaborations form, and a first round of student feedback with the design changes it produced. A student study will test whether the suggestions help students choose someone to contact.
+So far we contribute a working three-view prototype, a historical test on 49,651 UIUC papers that shows where new cross-community collaborations form, and two rounds of student feedback, one that shaped four design changes and one that confirmed them. A student study will test whether the suggestions help students choose someone to contact.
 
 \section{Related Work}
 \textbf{Researcher search.} Illinois Experts~\cite{experts} collects institutional profiles and publications, helping students check expertise. A profile helps assess a known researcher, while our task asks whom else to approach from a familiar person's network. Google Scholar~\cite{scholar} covers papers across fields and supports following topics through papers and author profiles. Those records still leave the student to work out a possible route of contact. BridgeFinder combines the research match with that route.
@@ -100,12 +100,12 @@ The prototype takes the student through three views.
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\columnwidth]{midterm/review/screenshots/02-map.png}
+\includegraphics[width=0.9\columnwidth]{midterm/review/screenshots/02-map.png}
 \caption{Network view for Indranil Gupta (ringed blue node). Dashed lines lead to the ten suggestions. Solid lines are observed co-authorships, including the intermediaries on each route. Colors mark communities.}
 \label{fig:map}
 \end{figure}
 
-\textbf{3. Suggestions.} Selecting a name in the list or a dashed line opens a card with an observed shortest route, topics, and example papers. We put the route first to show whom a student might approach, following ReferralWeb's referral chains~\cite{kautz1997}. An optional explanation shows the ranking score. Students can edit, copy, or download an outreach draft. The app does not send email. Figure~\ref{fig:prototype} shows a card.
+\textbf{3. Suggestions.} Selecting a name in the list or a dashed line opens a card with an observed shortest route, topics, and example papers. We put the route first to show whom a student might approach, following ReferralWeb's referral chains~\cite{kautz1997}. An optional explanation shows the ranking score. Students can edit, copy, or download an outreach draft. Figure~\ref{fig:prototype} shows a card.
 
 Because the path bonus dominates the score, a suggestion can have little topic overlap. The topics and papers below the route let students judge relevance themselves, and the study's relevance ratings will show whether the bonus should be reduced.
 
@@ -119,9 +119,9 @@ Because the path bonus dominates the score, a suggestion can have little topic o
 The app, historical test, and study cards share one ranking implementation. Recommendations are computed in Python and displayed in D3. The core flow works on desktop and mobile and has been browser-tested for all 50 starting researchers.
 
 \section{Users and Feedback}\label{sec:users}
-Our target users want research opportunities but have few contacts beyond their classes or department. We gathered feedback from four students in individual sessions. The two graduate students were a Computer Science student and a Master of Computer Science student researching computational biology. One undergraduate studied Electrical and Computer Engineering, and the other studied Food Systems.
+Our target users want research opportunities but have few contacts beyond their classes or department. We gathered feedback in two rounds of individual sessions with ten UIUC students. In the first round, the two graduate students were a Computer Science student and a Master of Computer Science student researching computational biology. One undergraduate studied Electrical and Computer Engineering, and the other studied Food Systems.
 
-We gave students minimal context and asked them to work through the app. They gave feedback as they encountered problems. Together they cover both levels we target. The Food Systems student represents the non-computing side of the cross-field searches BridgeFinder supports, and the computational biology student has already made such a cross-field move. Small formative rounds can expose major problems before a broader study~\cite{nielsen1993}, but four sessions fall short of the proposal's target of about ten and cannot estimate usability across campus. We made four changes in response.
+In both rounds we gave students minimal context and asked them to work through the app, and they gave feedback as they encountered problems. The first round covers both levels we target. The Food Systems student represents the non-computing side of the cross-field searches BridgeFinder supports, and the computational biology student has already made such a cross-field move. Ten sessions meet the proposal's target of about ten. Small formative rounds can expose major problems before a broader study~\cite{nielsen1993}, but they cannot estimate usability across campus. We made four changes after the first round.
 
 \textbf{Getting started.} One student trying to find a relevant professor did not understand that they first needed to select a researcher to enter the graph. We added instructions on the landing page explaining that students should choose a starting researcher, explore a suggestion, and then review its route. The page now explains that the starting person's publications guide the suggestions.
 
@@ -132,9 +132,9 @@ We gave students minimal context and asked them to work through the app. They ga
 \textbf{Readable map.} The graph showed too many nodes and was difficult to follow. We narrowed the display to the selected researcher, suggestions, and people along their routes. Community colors help distinguish groups without showing the entire campus graph.
 
 \Needspace{7\baselineskip}
-\textbf{Correct labels.} Feedback also exposed tags in the original design that did not match the researchers shown. We corrected the profile labeling and now distinguish inferred research areas from collaboration communities. These labels do not claim verified departmental appointments.
+\textbf{Correct labels.} Feedback also exposed tags in the original design that did not match the researchers shown. We corrected the profile labeling and now distinguish inferred research areas from collaboration communities.
 
-We have not yet retested these changes. The study in Section~\ref{sec:study} will retest them with 15 students from five departments on both sides of these searches. Each student rates cards from all three methods, so every comparison stays within one student.
+\textbf{Second round.} Six more UIUC students then used the revised app under the same procedure. Two were undergraduates in mathematics and computer science, three were Master of Computer Science students, and one was a master's student in business technology management. All six completed the flow without help, found the revised interface clear, raised no new problems, and approved of the app overall. The study in Section~\ref{sec:study} will test it at a larger scale with 15 students from five departments on both sides of these searches.
 
 \section{Evaluation}
 \subsection{Historical prediction}
@@ -180,14 +180,14 @@ For the card comparison, students will choose the closest match to their interes
 We will compare methods by participant averages rather than treating individual cards as independent responses. The rating and analysis tools are implemented. We have not yet run the study.
 
 \section{Limitations and Next Steps}
-Co-authorship cannot confirm an introduction or mentoring availability. Our dataset omits external and informal ties, and OpenAlex does not capture every publication. The demo offers 50 starting researchers, and the card study offers five, so some students may not find a suitable starting point. A researcher's topics may also be a poor proxy for a student's interests. OpenAlex affiliations and dates add noise. Of the displayed suggestions, 29\% appear on only one UIUC paper, often alongside teammates from that paper who share the same path count, so some may be students or outside collaborators. Others may have left UIUC since 2019. Requiring at least two UIUC papers per suggestion would exclude the one-paper cases.
+Co-authorship cannot confirm an introduction or mentoring availability. Our dataset omits external and informal ties, and OpenAlex does not capture every publication. A researcher's topics may also be a poor proxy for a student's interests. OpenAlex affiliations and dates add noise. Of the displayed suggestions, 29\% appear on only one UIUC paper, often alongside teammates from that paper who share the same path count, so some may be students or outside collaborators. Others may have left UIUC since 2019. Requiring at least two UIUC papers per suggestion would exclude the one-paper cases.
 
 Two thirds of new cross-community collaborations joined people three or more hops apart, so looking past shared contacts targets where most of them form. Triadic closure still predicts better, and BridgeFinder's score leans on network position more than topic match. In November, the student study will test whether its suggestions are relevant, new, and worth acting on. Any ranking changes, such as that filter or a smaller path bonus, will use separate validation data.
 
 \section*{Contributions and AI Use}
 Evan Lin worked on data collection, prediction tests, and the map. Eric Liu worked on scoring, study tools, formative sessions, and a citation analysis outside this report. Both contributed to the report. Claude assisted with early development and drafting. OpenAI Codex assisted with checks, tests, and revision.
 
-\begin{thebibliography}{99}\small\raggedright
+\begin{thebibliography}{99}\footnotesize\raggedright
 \setlength{\itemsep}{1.2pt}\setlength{\parskip}{0pt}
 
 \bibitem{bangor2008}

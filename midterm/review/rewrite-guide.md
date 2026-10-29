@@ -10,7 +10,7 @@
 | 2. Related Work | Related work (10%) | For each source: contribution, strength, limit for our task, explicit contrast. ReferralWeb is the closest prior system. LinkedIn is the triadic-closure product the proposal named |
 | 3. Course Concepts and Network Analysis | Course concepts (15%) | Brokerage, graph definition, Louvain versus Girvan–Newman, the ≥3-hop rule versus triadic closure, and what the data show (largest-component modularity, path-bonus dominance, low-constraint intermediaries) |
 | 4. Design and Implementation | Design (25%) | The three views, each tied to the problem, related work, the proposal, or feedback. Figures 1 and 2 |
-| 5. Users and Feedback | Users (20%) | Four students, why they fit, the ten-tester plan from the proposal, four observed problems and the change each caused |
+| 5. Users and Feedback | Users (20%) | Ten students in two rounds, why they fit, four observed problems and the change each caused, and the second round's retest of those changes |
 | 6. Evaluation | Evaluation (15%) | P@10 only (as proposed), one sentence on where new ties form, and the planned study with a comparison and target for every measure |
 | 7. Limitations and Next Steps | Writing (5%) | What the evidence shows, its limits, and the next step |
 

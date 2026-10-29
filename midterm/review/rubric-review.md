@@ -10,12 +10,12 @@ Scores use the CS 470 mid-term rubric (0–4 per component, `(score ÷ 4) × wei
 | Related work | 10 | 3 | 3 | 4 | 4 |
 | Course concepts and network analysis | 15 | 3 | 4 | 4 | 4 |
 | Design and implementation | 25 | 3 | 4 | 4 | 4 |
-| Users and feedback | 20 | 3 | 3 | 3 | 3–4 |
+| Users and feedback | 20 | 3 | 3 | 3 | 4 |
 | Evaluation | 15 | 3 | 4 | 4 | 4 |
 | Writing | 5 | 3 | 3 | 3 | 4 |
-| **Total** | **100** | **75** | **91.25** | **93.75** | **95–100** |
+| **Total** | **100** | **75** | **91.25** | **93.75** | **≈100** |
 
-Each independent review came from a separate reviewer that read only the rubric, the report and the proposal, without these notes. Each review graded the version left by the previous round of fixes. The last column is our estimate after acting on the second review. The report is 5 pages including references, within the 4–5 pages expected. P@10 remains the only historical metric, as in the proposal.
+Each independent review came from a separate reviewer that read only the rubric, the report and the proposal, without these notes. Each review graded the version left by the previous round of fixes. The last column is our estimate after acting on the second review and adding the second feedback round. The report is 5 pages including references, within the 4–5 pages expected. P@10 remains the only historical metric, as in the proposal.
 
 ## What each component needed and what changed
 
@@ -32,7 +32,7 @@ Louvain is justified against Girvan–Newman, and the ≥3-hop rule against tria
 
 **Design and implementation.** Both figures show actual screens, the map and a full card with topics and papers. Each view is tied to the proposal, related work or feedback, including the ranked list beside the map that replaces the proposal's list screen. The figures now use Indranil Gupta's example (route McHenry → Gropp → Snir). The earlier example's top five suggestions were all one-paper co-authors from a single 2016 paper.
 
-**Users and feedback.** The report identifies the population, justifies the four participants (both levels, a non-computing undergraduate, a cross-field graduate student), admits the proposal's ten-tester target was missed, and ties four observed problems to four changes. Section 5 now says who will retest the changes (15 students from five departments, each rating all three methods). Both independent reviewers still scored this 3, because four sessions is below the proposal's own target. Wording cannot change that. One more real session would.
+**Users and feedback.** Both independent reviewers scored this 3, because four sessions fell below the proposal's own target of about ten. The authors then reported a second round. Six more UIUC students used the revised app under the same procedure. Two were mathematics and computer science undergraduates, three were Master of Computer Science students, and one was a master's student in business technology management. All six completed the flow without help, found the revised interface clear, raised no new problems, and approved of the app. The report now has ten students across two rounds, which meets the proposal's target, and four observed problems that led to four changes, confirmed by a retest. This answers both reasons for the 3. The second round leans toward computing students, which a strict grader could note.
 
 **Evaluation.** P@10 is explained by where new ties form. Only 22% of 8,916 new cross-community ties joined people who already shared a co-author, 67% were three or more hops apart, and 11% had no training path. Every study measure has a comparison and a target. The SUS target is anchored to published norms. Partial blinding from route length is disclosed.
 
