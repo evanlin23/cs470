@@ -14,13 +14,13 @@ from model import prepare_model, rank_candidates, path_description, candidate_fe
 
 
 def generate(data):
-    graph, _, authors, membership, autonomy = prepare_model(data)
+    graph, _, authors, membership = prepare_model(data)
     groups = sorted(set(membership.values()))[:5]
     cards, keys = [], {}
     for group in groups:
         seed = min((n for n in graph if membership[n] == group), key=lambda n: (-graph.degree(n), n))
-        rows = rank_candidates(graph, seed, membership, autonomy)
-        native_closure = [r for r in candidate_features(graph, seed, membership, autonomy) if r['shared_coauthors'] > 0]
+        rows = rank_candidates(graph, seed, membership)
+        native_closure = [r for r in candidate_features(graph, seed, membership) if r['shared_coauthors'] > 0]
         if len(rows) < 5 or len(native_closure) < 5:
             raise ValueError('Study context needs five proposal candidates and five shared-contact baselines')
         selections = {}

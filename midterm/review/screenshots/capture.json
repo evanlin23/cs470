@@ -25,17 +25,17 @@
   "map_crop": {
     "x": 382,
     "y": 363,
-    "width": 412,
+    "width": 416,
     "height": 490
   },
   "screenshot_sha256": {
-    "01-seeds.png": "168becd3d56b0eee8b1b8957c04f7c6650aa4add15787b3631c63dd109dea097",
-    "02-map.png": "6e6a82d84ad9132e075a69e298705f2c7173b34819d60e2b24a0ad1e814a0c0a",
-    "03-recommendation.png": "4541960af19cb7c1ab42f3f04edff9dce0f896297ee20c6379db22891eab72dd"
+    "01-seeds.png": "4719751aa0e2b04ad3c830891826cb270207c58b113109408c4d5fbc5970ed3a",
+    "02-map.png": "d3c590e0f5cd591c35fc8460e8e184013ffb0938261705c5f50c613f24d157d2",
+    "03-recommendation.png": "fcab12e3df61f39973b877476f7a8a7e3ea91c7f3f148207422d56957e408719"
   },
   "source_sha256": {
-    "data.json": "a08bab4a6769481abe54fec6984388afc64fb0d4760d62dd348443fae4070f27",
-    "app.js": "cf13d50a88912e3a84738bc89c56aecf61aab9518b994234901abad1f3bbee6f",
+    "data.json": "45a3c8b3dcd5d57ad923c984b9125ff6fe38e900f70ec7620d9625867334f63f",
+    "app.js": "6c3c616bd9077cd808f33b667289b4fca0d69aefbbe0d46eacfd02e86b7bdd5d",
     "index.html": "bf5c92100cfcbe3af42de3d598c1e98d687883921d87b2e2acf18da5e8ef3779",
     "styles.css": "d94d0f165b9b1d82b9615d0ad1a9830c446668c9df051d78224798d153e94e28"
   }

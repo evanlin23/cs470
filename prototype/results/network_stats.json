@@ -1,0 +1,16 @@
+{
+  "nodes": 19389,
+  "edges": 78281,
+  "components": 774,
+  "largest_component": {
+    "nodes": 16806,
+    "share": 0.8668,
+    "communities": 69,
+    "modularity": 0.8789
+  },
+  "constraint_largest_component": {
+    "median_all_authors": 0.4672,
+    "median_route_intermediaries": 0.1175,
+    "route_intermediaries": 264
+  }
+}

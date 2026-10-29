@@ -12,12 +12,12 @@ COLORS = ["#2563EB", "#0284C7", "#16A34A", "#CA8A04", "#9333EA", "#EA580C", "#DC
 
 def build_and_export(data_path, out_path="prototype/web/data.json"):
     data = json.loads(Path(data_path).read_text())
-    graph, _, authors, membership, autonomy = prepare_model(data)
+    graph, _, authors, membership = prepare_model(data)
     communities = sorted(set(membership.values()))
     ranked_cache = {}
     def usable(node):
         if node not in ranked_cache:
-            ranked_cache[node] = rank_candidates(graph, node, membership, autonomy)
+            ranked_cache[node] = rank_candidates(graph, node, membership)
         return len(ranked_cache[node]) >= 10
     palettes = {c: {"name": f"Community {c+1}", "color": COLORS[c % len(COLORS)]} for c in communities}
     seeds = []
@@ -42,10 +42,9 @@ def build_and_export(data_path, out_path="prototype/web/data.json"):
     def profile(n):
         c = membership[n]
         return {"id": n, "name": authors[n]["name"], "community_id": c,
-                "community_name": palettes[c]["name"], "department": palettes[c]["name"],
+                "community_name": palettes[c]["name"],
                 "topic_group": classify_topics(sorted(graph.nodes[n]["topics"])),
-                "color": palettes[c]["color"], "degree": graph.degree(n),
-                "burt_autonomy": round(autonomy[n], 3), "topics": sorted(graph.nodes[n]["topics"])[:5]}
+                "color": palettes[c]["color"], "topics": sorted(graph.nodes[n]["topics"])[:5]}
     recommendations = {}
     visible = set(seeds)
     dashed = []
@@ -54,10 +53,7 @@ def build_and_export(data_path, out_path="prototype/web/data.json"):
         for i, row in enumerate(ranked_cache[seed][:10], 1):
             candidate = row["candidate_id"]
             path = row["path_ids"]
-            steps = ([{"role": "Your selected anchor", "title": authors[path[0]]["name"]}] +
-                     [{"role": "Co-author intermediary" if n != candidate else "Candidate", "title": authors[n]["name"]} for n in path[1:]]) if path else []
             recs.append({**profile(candidate), **row, "rank": i, "score": round(row["score"], 6),
-                         "path_steps": steps, "path_actionability": f"{len(path)-1}-hop co-authorship route" if path else "No route within 3 hops",
                          "sample_papers": papers[candidate][:2]})
             visible.add(candidate)
             if path:

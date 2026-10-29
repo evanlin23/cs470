@@ -1,4 +1,4 @@
-"""Measure brokerage/triadic-closure behavior without changing the ranker."""
+"""Audit the displayed suggestions' hop distances and overlap with the baselines."""
 import argparse
 import json
 from pathlib import Path
@@ -7,7 +7,7 @@ from run_metadata import metadata_for
 
 
 def audit(data_path, bundle_path):
-    graph, _, authors, membership, autonomy = prepare_model(json.loads(Path(data_path).read_text()))
+    graph, _, authors, membership = prepare_model(json.loads(Path(data_path).read_text()))
     bundle = json.loads(Path(bundle_path).read_text())
     counts = lambda: {'two_hop': 0, 'three_hop': 0, 'longer_than_three': 0, 'unreachable': 0}
     result = {**metadata_for(data_path, ['model.py', 'audit_recommendations.py'], MODEL_VERSION),
@@ -18,9 +18,9 @@ def audit(data_path, bundle_path):
     def kind(row):
         return 'unreachable' if row['path_ids'] is None else 'two_hop' if len(row['path_ids']) == 3 else 'three_hop' if len(row['path_ids']) == 4 else 'longer_than_three'
     for seed in bundle['seeds']:
-        rows = rank_candidates(graph, seed['id'], membership, autonomy)
+        rows = rank_candidates(graph, seed['id'], membership)
         sizes.append(len(rows))
-        all_rows = candidate_features(graph, seed['id'], membership, autonomy)
+        all_rows = candidate_features(graph, seed['id'], membership)
         aa = sorted([row for row in all_rows if row['shared_coauthors'] > 0], key=lambda row: (-row['shared_coauthors'], row['candidate_id']))
         topic = sorted(rows, key=lambda row: (-row['topic_similarity'], row['candidate_id']))
         bf5 = {row['candidate_id'] for row in rows[:5]}

@@ -1,7 +1,7 @@
 # Project spec (draft for review): finding people across the structural holes in UIUC research
 
 CS 470 (Fall 2026), 4-credit project. Team: Evan Lin, Eric Liu.
-Status: a pivot from "MethodBridge" (see `project-ideas.md`), after a pilot showed the paper-level version doesn't work (below).
+Status: a pivot from "MethodBridge" (see `docs/project-ideas.md`), after a pilot showed the paper-level version doesn't work (below).
 Proposal due Fri Oct 2, 5:00pm Central; mid-semester report Oct 30; final report and video Dec 9.
 
 ## Problem and users

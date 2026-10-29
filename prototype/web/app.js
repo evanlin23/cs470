@@ -27,8 +27,7 @@ const recommendations = () => appData.recommendations[selectedSeedId] || [];
 function validateBundle(data) {
   const strings = values => Array.isArray(values) && values.every(value => typeof value === 'string');
   const profile = row => row && typeof row.id === 'string' && typeof row.name === 'string' &&
-    typeof row.community_name === 'string' && strings(row.topics) && Number.isFinite(row.burt_autonomy) &&
-    row.burt_autonomy >= 0 && row.burt_autonomy <= 1;
+    typeof row.community_name === 'string' && strings(row.topics);
   if (!data || !Array.isArray(data.seeds) || !data.seeds.length || !data.seeds.every(profile) ||
       new Set(data.seeds.map(row => row.id)).size !== data.seeds.length ||
       !data.recommendations || !data.graph || !Array.isArray(data.graph.nodes) || !data.graph.nodes.every(profile) ||
@@ -46,7 +45,7 @@ function validateBundle(data) {
     for (const [index,row] of rows.entries()) {
       if (!profile(row) || row.candidate_id !== row.id || !nodes.has(row.id) || row.id === seed.id || row.rank !== index+1 ||
           !(Number.isFinite(row.score) && row.score >= 0 && row.score <= 1.5) ||
-          ![row.topic_similarity,row.boundary_spanning].every(value => Number.isFinite(value) && value >= 0 && value <= 1) ||
+          !(Number.isFinite(row.topic_similarity) && row.topic_similarity >= 0 && row.topic_similarity <= 1) ||
           !strings(row.sample_papers) || row.community_id === seed.community_id || edges.has(JSON.stringify([seed.id,row.id]))) throw new Error('Invalid recommendation.');
       if (row.path_ids !== null && (!strings(row.path_ids) || row.path_ids.length < 4 ||
           row.path_ids[0] !== seed.id || row.path_ids.at(-1) !== row.id || new Set(row.path_ids).size !== row.path_ids.length ||

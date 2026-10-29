@@ -4,13 +4,13 @@
   "dataset_file": "uiuc_data_scaled.json",
   "dataset_sha256": "0fae5f05012921f4caa07cb5d6b1d6f7949821365b053dcecbaa51a108d3bd78",
   "source_sha256": {
-    "model.py": "9c0680c43e6c8142a04ab83e92ef8c58008670ce3f1425c78d4483c111b2af2d",
-    "backtest.py": "f7881f16cd686e046332fed41910831e69cc49dfa9b76dc8368b1ac65a947b98"
+    "model.py": "6a42eb14f4db0d126249cb8818a16908d72b9deda8b43f8f4255f92f1014ca46",
+    "backtest.py": "fd3a27a8bfb60c57086a3c7c8da76b6d9641a87c7aef2225d6279134e84f55ba"
   },
   "runtime": {
-    "python": "3.14.3",
+    "python": "3.13.17",
     "networkx": "3.7",
-    "numpy": "2.3.5",
+    "numpy": "2.5.4",
     "scipy": "1.18.1"
   },
   "training_nodes": 19389,
@@ -37,5 +37,5 @@
   },
   "ground_truth": "all new cross-community ties among training nodes",
   "result_file": "backtest_results_scaled.json",
-  "result_sha256": "bfafd3303a3efede3a2098c065ac3c4eaa7495e3e4c5f70141223e706194b6eb"
+  "result_sha256": "4a39fcbad7a6744186543dbd39eb838b6add0ab4f1956b55fb53c0ba78e04a37"
 }

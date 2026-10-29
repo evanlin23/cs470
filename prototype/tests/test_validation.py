@@ -15,7 +15,7 @@ import unittest
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT))
 from topic_groups import classify_topics
-from model import compute_burt_constraint, compute_topic_similarity, rank_candidates, candidate_features
+from model import compute_topic_similarity, rank_candidates, candidate_features, shared_coauthor_counts
 import networkx as nx
 spec=importlib.util.spec_from_file_location('analysis',ROOT/'study/analyze_study.py')
 analysis=importlib.util.module_from_spec(spec);spec.loader.exec_module(analysis)
@@ -38,12 +38,12 @@ class ValidationTests(unittest.TestCase):
         self.assertEqual(classify_topics([]),'Other topics')
         self.assertEqual(classify_topics(['SOIL','crop']),classify_topics(['crop','soil']))
 
-    def test_burt_autonomy_matches_independent_networkx_oracle(self):
-        graph=nx.Graph();graph.add_weighted_edges_from([('a','b',2),('a','c',1),('b','c',1),('c','d',3)])
-        actual=compute_burt_constraint(graph);constraint=nx.constraint(graph,weight='weight')
-        for node in graph:
-            self.assertAlmostEqual(actual[node],max(0,1-constraint[node]))
-        self.assertEqual(compute_burt_constraint(nx.empty_graph(1))[0],0)
+    def test_similarity_and_shared_counts_match_independent_oracles(self):
+        graph=nx.gnm_random_graph(40,120,seed=7)
+        for seed in graph:
+            counts=shared_coauthor_counts(graph,seed)
+            for node in graph:
+                if node!=seed:self.assertEqual(counts[node],len(list(nx.common_neighbors(graph,seed,node))))
         self.assertEqual(compute_topic_similarity({'one','two'},{'two','three'}),1/3)
         self.assertEqual(compute_topic_similarity(set(),{'one'}),0)
 
@@ -53,15 +53,14 @@ class ValidationTests(unittest.TestCase):
                                       'near':{'topics':{'unrelated'}},'far':{'topics':{'relevant'}},
                                       'x':{'topics':{'relevant'}},'y':{'topics':{'relevant'}}})
         groups={'start':0,'broker':0,'near':1,'far':1,'x':2,'y':2}
-        autonomy=compute_burt_constraint(graph)
-        rows=rank_candidates(graph,'start',groups,autonomy)
+        rows=rank_candidates(graph,'start',groups)
         self.assertEqual([row['candidate_id'] for row in rows],['far'])
         self.assertEqual(rows[0]['distance'],3)
         self.assertEqual(rows[0]['three_hop_paths'],1)
         self.assertEqual(rows[0]['path_bonus'],.5)
         self.assertAlmostEqual(rows[0]['score'],1.25)
         self.assertEqual(rows[0]['shared_coauthors'],0)
-        all_rows={row['candidate_id']:row for row in candidate_features(graph,'start',groups,autonomy)}
+        all_rows={row['candidate_id']:row for row in candidate_features(graph,'start',groups)}
         self.assertGreater(all_rows['near']['shared_coauthors'],0)
         self.assertFalse(all_rows['near']['proposal_eligible'])
         self.assertFalse(all_rows['x']['proposal_eligible'])
@@ -74,7 +73,7 @@ class ValidationTests(unittest.TestCase):
         graph.add_edges_from(('hub2',f'other{i}') for i in range(12))
         nx.set_node_attributes(graph,{n:{'topics':set()} for n in graph})
         groups={n:0 if n in ['start','hub1','hub2','contact'] else 1 for n in graph}
-        features={r['candidate_id']:r for r in candidate_features(graph,'start',groups,{n:0 for n in graph})}
+        features={r['candidate_id']:r for r in candidate_features(graph,'start',groups)}
         self.assertEqual(features['two_contacts']['shared_coauthors'],2)
         self.assertEqual(features['one_contact']['shared_coauthors'],1)
         ranked=sorted([features['one_contact'],features['two_contacts']],key=lambda r:-r['shared_coauthors'])
@@ -85,7 +84,7 @@ class ValidationTests(unittest.TestCase):
         graph=nx.path_graph(['a','b','c','d','e'])
         nx.set_node_attributes(graph,{n:{'topics':{'same'}} for n in graph})
         groups={n:0 if n in ['a','b'] else 1 for n in graph}
-        rows={row['candidate_id']:row for row in rank_candidates(graph,'a',groups,compute_burt_constraint(graph))}
+        rows={row['candidate_id']:row for row in rank_candidates(graph,'a',groups)}
         self.assertEqual(rows['e']['distance'],4)
         self.assertEqual(rows['e']['path_bonus'],0)
         self.assertEqual(rows['e']['score'],1)

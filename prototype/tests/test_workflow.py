@@ -16,7 +16,7 @@ spec.loader.exec_module(analysis)
 class WorkflowTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.graph, _, cls.authors, cls.membership, cls.autonomy = prepare_model(json.loads((ROOT/'uiuc_data_scaled.json').read_text()))
+        cls.graph, _, cls.authors, cls.membership = prepare_model(json.loads((ROOT/'uiuc_data_scaled.json').read_text()))
         cls.bundle = json.loads((ROOT/'web/data.json').read_text())
         cls.cards = json.loads((ROOT/'study/study_cards.json').read_text())
         cls.keys = json.loads((ROOT/'study/truth_keys.json').read_text())
@@ -24,7 +24,7 @@ class WorkflowTests(unittest.TestCase):
     def test_displayed_rankings_match_model_and_paths_are_real(self):
         route_counts = {'three': 0, 'longer': 0}
         for seed, displayed in self.bundle['recommendations'].items():
-            expected = rank_candidates(self.graph, seed, self.membership, self.autonomy)[:10]
+            expected = rank_candidates(self.graph, seed, self.membership)[:10]
             self.assertEqual([r['candidate_id'] for r in expected], [r['candidate_id'] for r in displayed])
             for actual, model in zip(displayed, expected):
                 self.assertAlmostEqual(actual['score'], model['score'], places=6)
@@ -43,7 +43,7 @@ class WorkflowTests(unittest.TestCase):
         # Explicit disconnected-graph fixture exercises unavailable routing.
         fixture = nx.Graph([('a','b'),('c','d')])
         nx.set_node_attributes(fixture, {n: {'topics': set()} for n in fixture})
-        rows = rank_candidates(fixture, 'a', {'a':0,'b':0,'c':1,'d':1}, {n:0 for n in fixture})
+        rows = rank_candidates(fixture, 'a', {'a':0,'b':0,'c':1,'d':1})
         self.assertEqual(rows,[])
         print('Validated route states:', route_counts)
 
@@ -51,9 +51,9 @@ class WorkflowTests(unittest.TestCase):
         for seed in {c['seed_id'] for c in self.cards}:
             rows = [c for c in self.cards if c['seed_id']==seed]
             self.assertEqual(len(rows), len({self.keys[c['card_id']]['candidate_id'] for c in rows}))
-            ranked = rank_candidates(self.graph,seed,self.membership,self.autonomy)
+            ranked = rank_candidates(self.graph,seed,self.membership)
             for method, field in [('BridgeFinder','score'),('Triadic Closure','shared_coauthors'),('Topic-Only','topic_similarity')]:
-                pool=[r for r in candidate_features(self.graph,seed,self.membership,self.autonomy) if r['shared_coauthors']>0] if method=='Triadic Closure' else ranked
+                pool=[r for r in candidate_features(self.graph,seed,self.membership) if r['shared_coauthors']>0] if method=='Triadic Closure' else ranked
                 expected = {r['candidate_id'] for r in sorted(pool,key=lambda r:(-r[field],r['candidate_id']))[:5]}
                 actual = {self.keys[c['card_id']]['candidate_id'] for c in rows if method in self.keys[c['card_id']]['models']}
                 self.assertEqual(actual, expected)

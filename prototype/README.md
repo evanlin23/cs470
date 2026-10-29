@@ -1,90 +1,70 @@
 # BridgeFinder prototype
 
-Choose a UIUC researcher whose work you know, explore suggested connections outside their collaboration community, and open a card to see research topics, example papers, and a possible introduction route. You can edit and copy or download an outreach draft.
+Choose a UIUC researcher whose work you know, explore suggested researchers outside their collaboration community, and open a card with their topics, example papers, and an observed co-authorship route. The outreach draft can be edited, copied, or downloaded. No email is sent.
 
 ## Run
 
-From the repository root, with Python 3.12:
+From the repository root, with Python 3.12 or newer:
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
 python -m pip install -r prototype/requirements.txt
 python prototype/serve.py
 ```
 
-The server defaults to port 8765. The researcher interface is at `/web/` and the study is at `/study/`. It serves the public assets only, keeping the private method key and raw datasets out of the study interface. D3 is included locally; no API keys, frontend build, or external CDN are needed.
+Open `http://localhost:8765/web/` for the app and `/study/` for the blinded card study. The server only exposes the public app and study assets. It never serves the private method key or the raw dataset. D3 is bundled, so no build step or CDN is needed.
 
-## Main flow
+## Model
 
-1. Search by name or topic, or narrow the starting researchers by community or research area.
-2. Choose someone to open the map. Solid lines show published collaborations; orange dashed lines show suggestions. Click a dashed line or a name in the adjacent list.
-3. Read the suggested researcher's card and observed co-authorship route. Edit the outreach draft to reflect your actual background, then copy or download it. No email is sent.
+`model.py` (`proposal-path-v3-common-neighbors`) is shared by the app, the study cards, and the backtest.
 
-The interface works on desktop and mobile, supports keyboard navigation, and keeps researcher selections in the URL. Research areas are keyword-based hints adapted from the teammate's labeling work; they are not verified departments. They do not alter rankings or community identities. Numbered communities come from collaboration patterns.
+- Graph: UIUC authors from 2015–2019 papers. Edge weight is the number of joint papers. Topic profiles use only these training papers.
+- Communities: Louvain (seed 42).
+- BridgeFinder: reachable non-coauthors in another community at shortest distance of at least three edges, ranked by topic Jaccard plus `0.5*c3/(1+c3)`, where `c3` counts simple three-edge paths.
+- Triadic closure: cross-community two-hop candidates ranked by the number of shared co-authors.
+- Topic-Only: BridgeFinder's candidate pool ranked by topic Jaccard alone.
 
-The precomputed data describes UIUC-affiliated publications from 2015–2019. Current employment, mentoring availability, personal acquaintance, and willingness to introduce someone need to be checked separately.
+Ties are broken by author ID. Routes are observed shortest co-authorship paths. They do not confirm acquaintance, availability, or willingness to introduce someone. Topic-group labels in the app are keyword hints, not departments, and do not affect rankings.
 
-## Study
+## Data
 
-After using the research interface, a participant selects a starting researcher and rates the shuffled, method-hidden cards, then answers the ten SUS questions. Answers and card order survive a reload in the same browser tab. Participants can review earlier ratings and choose whether to download their responses. Nothing is uploaded automatically.
-
-See [the study protocol](study/README.md) for recruitment, interpretation, and analysis. The interface and analyzer use the same dataset revision ID so exports cannot accidentally be analyzed with another method key.
-
-## Check the happy path
+`uiuc_data_scaled.json` is the one dataset: 49,651 multi-author UIUC papers retained from all 102,947 OpenAlex works for institution `I157725225`, 2015–2024. `uiuc_data_scaled.collection.json` records the query and completeness checks. To re-collect it (uncapped and resumable, writes only after the harvest completes):
 
 ```bash
-python -m pip install -r prototype/tests/requirements.txt
-python -m unittest discover -s prototype/tests -v
-# Requires Chromium at /usr/bin/chromium. Starts and stops its own test server:
-python prototype/tests/browser_workflow.py --artifacts /tmp/bridgefinder-checks
+python prototype/fetch_openalex.py
 ```
 
-The browser suite covers normal desktop/mobile navigation, search and filters, all 50 researchers, actual map clicks, zoom/fit, shareable selection, an edited outreach message, study progress, and a downloaded study export analyzed with its matching method key. Test answers are synthetic and discarded; they are not user-study findings. Screenshots and the browser summary go to the chosen artifacts directory, not the report.
-
-## Regenerate the bundled data
-
-These commands use committed datasets and the shared temporal model. Run from the repository root:
-
-```bash
-python prototype/web/prepare_web_data.py
-python prototype/study/generate_cards.py
-python prototype/backtest.py --data prototype/uiuc_data_scaled.json --out /tmp/backtest.json
-```
-
-`model.py` supplies the same pre-2020 graph, training-only topic profiles, seeded partition, candidate population, and ranking weights to the demo, study, and backtest. Candidate ties resolve by author ID. The topic filter changes only the starting-person list, not those predictions.
-
-## Earlier MethodBridge experiment
-
-The earlier paper-transfer pilot remains in `fetch.py`, `analyze.py`, and `case_generank.json`. It uses OpenCitations/Crossref and requires network access; it is separate from the bundled-data BridgeFinder demo. Its original setup is:
-
-```bash
-MB_MAILTO=you@illinois.edu python prototype/fetch.py prototype/case_generank.json /tmp/graph.json
-python prototype/analyze.py /tmp/graph.json /tmp/methodbridge-results.json
-```
-
-## Reproduce the paper's results
+## Results
 
 ```bash
 python prototype/refresh_results.py
 ```
 
-This runs the single-dataset temporal backtest and the separate citation analysis. Both must succeed before the command replaces any published result. It updates `prototype/results/` and the matching copies under `midterm/review/` together, including provenance sidecars with dataset/code hashes, runtime versions, and actual seed counts. The paper's numbers are checked against these canonical files by `test_publication_consistency.py`. A changed result must be assessed and reflected in the report; do not hand-edit metrics to make a check pass.
+This reruns three analyses and replaces `prototype/results/` only if all of them succeed. Each result has a manifest with dataset and code hashes.
 
-Historical outputs from the older remote revision are preserved under `prototype/legacy/remote-label-fix/results/`. They are not the current benchmark. Citation analysis uses its separate 25-retained-author filter and canonical graph ordering; it is not identical to the prediction graph.
+| Script | Result | Contents |
+|---|---|---|
+| `backtest.py` | `backtest_results_scaled.json` | P@10 per method (the paper's metric), plus P@5, R@10 and NDCG@10, and the training-graph distance of the new ties |
+| `network_stats.py` | `network_stats.json` | Modularity inside the largest component, Burt's constraint of route intermediaries |
+| `citation_impact.py` | `citation_impact.json` | Exploratory citation comparison of cross- vs within-community papers (not in the paper) |
 
-## Proposal-based ranking
+`audit_recommendations.py` writes `review/closure-audit.json`, which checks the hop distance of every displayed suggestion and its overlap with the baselines.
 
-`proposal-path-v3-common-neighbors` follows the submitted proposal: edges count joint papers; candidates must be reachable, in another community, and at least three hops away. Rank = topic Jaccard similarity + `0.5*c3/(1+c3)`, where c3 counts simple three-edge introduction paths. More distant candidates can rank on topics without that bonus. Cards show actual shortest routes with all intermediaries.
+## Regenerate the app and study data
 
-All 500 bundled suggestions currently have three-edge routes and no shared co-author. Run `python prototype/audit_recommendations.py` for the reproducible topology audit. Simple triadic closure ranks two-hop candidates by their number of shared co-authors; Topic-Only uses our >=3-hop pool. Different pools make this a comparison of discovery strategies, not score-only isolation. Current prediction results are compared with the shared-contact baseline and the paper reports that outcome.
+```bash
+python prototype/web/prepare_web_data.py
+python prototype/study/generate_cards.py
+python prototype/audit_recommendations.py
+```
 
-The previous two-hop-favoring hybrid is preserved under `legacy/shared-model-v1/`; it is historical, not the current benchmark. The proposal's approximately 110,000-work collection goal has been completed; the current canonical dataset was harvested to exhaustion across all 102,947 matching works.
+See [study/README.md](study/README.md) for the study protocol and analysis.
 
-## Dataset scope
+## Tests
 
-There is one current dataset, `uiuc_data_scaled.json`, containing 49,651 relevant retained papers from a complete, uncapped 102,947-work collection. The smaller pilot and 25,000-work capped captures are archived under `legacy/`. The current paper reports P@10 on this complete dataset. It does not claim complete real-world campus coverage, but captures every matching OpenAlex work.
+```bash
+python -m pip install -r prototype/tests/requirements.txt
+python -m unittest discover -s prototype/tests -v
+python prototype/tests/browser_workflow.py --artifacts /tmp/bridgefinder-checks
+```
 
-## Collect the full matching corpus
-
-Run `python prototype/fetch_openalex.py` from the repository root with OpenAlex API access. It is uncapped by default, resumes `.build/openalex-full`, verifies cursor exhaustion and reconciled API counts, and writes `uiuc_data_scaled.json` plus its collection manifest only after completion. A capped `--max_works` run checkpoints but never publishes. Existing capped data and results remain provisional until the full harvest succeeds. API keys, if required, belong in `OPENALEX_API_KEY`, not command arguments or Git.
+The unit tests check the model against hand calculations and independent oracles, rankings and routes for all 50 starting researchers, study attribution and analysis, the collector, and agreement between the paper, results, and figure. The browser suite needs Chromium at `/usr/bin/chromium`. Its answers are synthetic and are not user-study evidence.

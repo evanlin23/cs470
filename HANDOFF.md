@@ -1,100 +1,47 @@
-# BridgeFinder: Contributor Handoff
+# BridgeFinder: contributor handoff
 
-BridgeFinder is a CS 470 project by **Evan Lin** and **Eric Liu** that helps UIUC students discover research collaborators outside a familiar professor's collaboration circle and inspect viable introduction paths.
+BridgeFinder is a CS 470 project by **Evan Lin** and **Eric Liu**. It helps UIUC students find researchers outside a familiar professor's collaboration circle and see an observed co-authorship route to them.
 
----
+## Layout
 
-## 1. Quickstart
+| Path | Contents |
+|---|---|
+| `proposal/` | Submitted proposal (unchanged) |
+| `midterm/latex/main.tex` | Mid-semester report source. `midterm/midterm.pdf` is the build |
+| `midterm/review/` | Rubric review, rewrite guide, supporting analysis notes, Tang source check, paper screenshots |
+| `prototype/` | Model, app, study, analyses, tests. See `prototype/README.md` |
+| `docs/` | Early planning: project ideas, the brokerage spec |
 
-Run the web prototype locally using Python 3.12+:
+## Quickstart
 
 ```bash
 python -m pip install -r prototype/requirements.txt
-python prototype/serve.py
+python prototype/serve.py            # http://localhost:8765/web/ and /study/
+python -m unittest discover -s prototype/tests -v
 ```
 
-Open `http://localhost:8765`:
-- `/web/` — Public researcher discovery interface (search, graph, cards, editable outreach draft).
-- `/study/` — Blinded study interface for rating recommendation cards.
+## Current state
 
----
+- **Model** `proposal-path-v3-common-neighbors`: reachable cross-community candidates at least three hops away, ranked by topic Jaccard plus `0.5*c3/(1+c3)`. Baselines are triadic closure (two-hop, shared co-author count) and Topic-Only (same pool as BridgeFinder).
+- **Data**: complete OpenAlex harvest for UIUC 2015–2024, 102,947 works collected and 49,651 multi-author UIUC papers retained. The training graph (≤2019) has 19,389 authors and 78,281 edges.
+- **Historical test**: 3,492 starting researchers. P@10, the proposal's only historical metric, is 0.0287 for triadic closure, 0.0131 for BridgeFinder and 0.0079 for Topic-Only. Of 8,916 new cross-community ties, 22% joined authors who already shared a co-author and 67% were three or more hops apart.
+- **Feedback**: four students (two graduate, two undergraduate) led to four design changes. The changes have not been retested.
+- **Study**: the 15-student blinded card study is implemented but not yet run.
 
-## 2. Recommendation Model & Baselines
-
-Implementation: `prototype/model.py` (`proposal-path-v3-common-neighbors`).
-- **Graph**: Multi-authored UIUC papers (2015–2019), edge weights = joint paper count, communities found via Louvain.
-- **BridgeFinder**: Candidates must be in another community at shortest distance $\ge 3$. Ranked by:
-  $$\text{Score} = \text{Topic Jaccard} + 0.5 \cdot \frac{c_3}{1 + c_3}$$
-  where $c_3$ is the count of simple 3-hop introduction paths.
-- **Baselines**:
-  - *Triadic Closure*: 2-hop candidates ranked by number of shared co-authors.
-  - *Topic-Only*: Candidates at distance $\ge 3$ ranked purely by topic similarity.
-
----
-
-## 3. Dataset & Evaluation Results
-
-- **Dataset (`prototype/uiuc_data_scaled.json`)**:
-  - Full uncapped OpenAlex harvest (2015–2024): 102,947 works collected $\to$ 49,651 multi-authored UIUC papers across 35,593 authors.
-  - Training graph ($\le 2019$): 19,389 authors, 78,281 edges, 842 communities (modularity $Q = 0.884$).
-  - Evaluation graph ($> 2019$): 22,758 authors, 93,220 edges.
-- **Historical Link Prediction (P@10 across 3,492 eligible seeds)**:
-  - **Triadic Closure**: **0.0287**
-  - **BridgeFinder**: **0.0131**
-  - **Topic-Only**: **0.0079**
-  *(Triadic closure predicts more future ties, but BridgeFinder discovers non-obvious connections across communities beyond shared co-authors).*
-
----
-
-## 4. Formative User Feedback
-
-We gathered feedback from four individuals in individual 30-minute sessions who talked through their use of the prototype:
-
-The author clarified that students received minimal context, were asked to work through the app, and gave active feedback as they encountered problems. Recruitment and note-taking/recording were not specified. Session duration remains omitted from the paper at the author's request.
-- **Participants**:
-  - 2 graduate students: one in Computer Science, one Master of Computer Science student researching computational biology.
-  - 2 undergraduates: one in Electrical and Computer Engineering (ECE), one in Food Systems.
-- **Design Changes Implemented**:
-  1. *Getting Started*: Added landing page instructions clarifying that selecting a starting researcher anchors the search.
-  2. *Interface & Cards*: Overhauled layouts and added clear definitions for researcher cards and introduction routes.
-  3. *Readable Map*: Focused graph view on the selected researcher, top suggestions, and route intermediaries with community coloring.
-  4. *Profile Labels*: Clarified inferred research keywords vs. collaboration communities (no unverified departmental claims).
-
----
-
-## 5. Key Files & Useful Commands
-
-| Path | Purpose |
-| :--- | :--- |
-| `prototype/model.py` | Core ranking algorithm and baselines |
-| `prototype/web/` | Web application assets and data |
-| `prototype/study/` | Blinded user study interface and card generator |
-| `midterm/latex/main.tex` | 4-page midterm research paper |
-| `midterm/midterm.pdf` | Compiled midterm report PDF |
-| `midterm/bridgefinder-midterm-overleaf.zip` | Standalone bundle ready for Overleaf |
-
-### Useful Commands
+## Rebuild the report
 
 ```bash
-# Run supporting tests
-python -m unittest discover -s prototype/tests -v
-
-# Refresh canonical results, web data, and study cards
-python prototype/refresh_results.py
-python prototype/web/prepare_web_data.py
-python prototype/study/generate_cards.py
-
-# Recompile paper PDF
-tectonic -Z search-path=. midterm/latex/main.tex && cp midterm/latex/main.pdf midterm/midterm.pdf
-
-# Package and verify Overleaf ZIP
+python prototype/refresh_results.py          # only if data or model changed
+python midterm/capture_screenshots.py        # only if the app or its data changed
+mkdir -p .build/midterm
+pdflatex -interaction=nonstopmode -halt-on-error -output-directory=.build/midterm midterm/latex/main.tex
+pdflatex -interaction=nonstopmode -halt-on-error -output-directory=.build/midterm midterm/latex/main.tex
+cp .build/midterm/main.pdf midterm/midterm.pdf
 python midterm/package_overleaf.py --verify
 ```
 
-## Current paper figure and strict review
+Run `pdflatex` from the repository root, because figure paths are relative to it. `test_publication_consistency.py` fails if the paper's numbers, results, manifests or screenshots drift apart.
 
-`midterm/review/rubric-review.md` contains the latest editorial review, superseding the earlier unsupported 100 claim. The external review's factual clarifications are now in the report. The paper uses one large actual full-data card detail instead of the small map image. Refresh captures with `python midterm/capture_screenshots.py`; `capture.json` binds the route, images and dataset/UI hashes. Caption names must match it. The report remains four pages, one dataset and one historical metric. Session duration and the generated-response sentence remain omitted. The original proposal is unchanged.
+## Before submitting
 
-The planned study now asks about each participant's stated research interest, not the starting researcher's topics. The interest is collected before app use, shown during ratings and included in exports. `student-interest-v1` identifies this protocol; the analyzer rejects older or missing protocols and missing interests. All comparison methods use identical card fields and the same shortest-path procedure. The implementation revision passed twelve browser checks and 22 relevant publication/workflow/validation checks.
-
-The author then supplied Tang et al.'s original PDF. The report now accurately describes learned collaboration topics and random-walk ranking, identifies the reliance on author publication histories, and contrasts our fixed score and student interest proxy. `midterm/review/tang-source-check.md` records source pages and provenance. This resolves the last identified 2.5-point deduction in the editorial review, which is now 100/100 against the descriptors, without guaranteeing the instructor's judgment. The original proposal's older claim that Tang ignores network structure is contradicted by the source and must not be copied into the midterm. Only the midterm and review notes are updated.
+Read `midterm/review/rubric-review.md` and `midterm/review/rewrite-guide.md`. The authors still need to verify the ReferralWeb description, rewrite the draft in their own words, remove the `% Rewrite purpose:` comments from any source they hand in, and confirm the contributions and AI-use statement.

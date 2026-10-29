@@ -52,37 +52,6 @@ def build_graphs(data, split_year=2019):
     return g_train, g_eval, authors
 
 
-def compute_burt_constraint(G):
-    """Computes Burt's aggregate network constraint C_i and autonomy H_i = 1 - C_i."""
-    burt_autonomy = {}
-    node_strength = {n: sum(d.get("weight", 1.0) for _, d in G[n].items()) for n in G.nodes()}
-
-    for i in G.nodes():
-        neighbors = list(G.neighbors(i))
-        k = len(neighbors)
-        if k <= 1:
-            burt_autonomy[i] = 0.0
-            continue
-
-        total_w = node_strength[i]
-        p = {nbr: G[i][nbr].get("weight", 1.0) / total_w for nbr in neighbors}
-
-        C_i = 0.0
-        for j in neighbors:
-            indirect = 0.0
-            for q in neighbors:
-                if q != j and G.has_edge(q, j):
-                    total_q = node_strength.get(q, 0.0)
-                    p_qj = G[q][j].get("weight", 1.0) / total_q if total_q > 0 else 0
-                    indirect += p[q] * p_qj
-            c_ij = (p[j] + indirect) ** 2
-            C_i += c_ij
-
-        burt_autonomy[i] = max(0.0, 1.0 - C_i)
-
-    return burt_autonomy
-
-
 def compute_topic_similarity(topics_u, topics_v):
     if not topics_u or not topics_v:
         return 0.0
@@ -104,25 +73,34 @@ def three_hop_path_counts(G, seed):
     return counts
 
 
+def shared_coauthor_counts(G, seed):
+    """Count co-authors shared by seed and each two-hop node (common neighbours)."""
+    counts = Counter()
+    for a in G.neighbors(seed):
+        for b in G.neighbors(a):
+            if b not in (seed, a):
+                counts[b] += 1
+    return counts
+
 
 def prepare_training_model(train):
-    """Canonical graph, partition and autonomy shared by every consumer."""
+    """Canonical graph and partition shared by every consumer."""
     nodes = sorted(n for n in train if train.degree(n) > 0)
     graph = nx.Graph()
     graph.add_nodes_from((n, train.nodes[n]) for n in nodes)
     graph.add_edges_from((u, v, dict(train[u][v])) for u, v in sorted(tuple(sorted(e)) for e in train.edges()))
     communities = sorted(nxc.louvain_communities(graph, seed=42), key=lambda c: (-len(c), sorted(c)))
     membership = {n: i for i, c in enumerate(communities) for n in c}
-    return graph, membership, compute_burt_constraint(graph)
+    return graph, membership
 
 
 def prepare_model(data, split_year=2019):
     train, evaluation, authors = build_graphs(data, split_year)
-    graph, membership, autonomy = prepare_training_model(train)
-    return graph, evaluation, authors, membership, autonomy
+    graph, membership = prepare_training_model(train)
+    return graph, evaluation, authors, membership
 
 
-def candidate_features(graph, seed, membership, autonomy):
+def candidate_features(graph, seed, membership):
     """All non-coauthor, cross-community candidates for native baseline comparisons.
 
     Only reachable candidates with shortest distance >=3 are eligible for the
@@ -130,27 +108,25 @@ def candidate_features(graph, seed, membership, autonomy):
     """
     paths = nx.single_source_shortest_path(graph, seed)
     counts = three_hop_path_counts(graph, seed)
+    shared = shared_coauthor_counts(graph, seed)
     rows = []
     for candidate in sorted(graph):
         if candidate == seed or graph.has_edge(seed, candidate) or membership[candidate] == membership[seed]:
             continue
         topic = compute_topic_similarity(graph.nodes[seed]["topics"], graph.nodes[candidate]["topics"])
-        bsi = sum(membership[w] == membership[seed] for w in graph[candidate]) / graph.degree(candidate)
         path = paths.get(candidate)
         distance = len(path)-1 if path else None
-        shared = sum(1 for _ in nx.common_neighbors(graph, seed, candidate))
         count = counts[candidate]
         bonus = count / (1.0 + count)
         rows.append({"candidate_id": candidate, "topic_similarity": topic,
-                     "burt_autonomy": autonomy[candidate], "boundary_spanning": bsi,
                      "three_hop_paths": count, "path_bonus": bonus, "path_ids": path,
                      "distance": distance, "proposal_eligible": distance is not None and distance >= 3,
-                     "score": topic + 0.5 * bonus, "shared_coauthors": shared})
+                     "score": topic + 0.5 * bonus, "shared_coauthors": shared[candidate]})
     return rows
 
 
-def rank_candidates(graph, seed, membership, autonomy):
-    rows = [row for row in candidate_features(graph, seed, membership, autonomy) if row['proposal_eligible']]
+def rank_candidates(graph, seed, membership):
+    rows = [row for row in candidate_features(graph, seed, membership) if row['proposal_eligible']]
     return sorted(rows, key=lambda row: (-row['score'], row['candidate_id']))
 
 

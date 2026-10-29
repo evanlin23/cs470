@@ -10,18 +10,20 @@ import argparse
 import json
 import math
 import os
-from collections import defaultdict
+from collections import Counter, defaultdict
 
-import networkx as nx
 from networkx.algorithms import community as nxc
 
-
-from model import build_graphs, prepare_training_model, rank_candidates, candidate_features, MODEL_VERSION
+from model import build_graphs, prepare_training_model, candidate_features, MODEL_VERSION
 from run_metadata import metadata_for, save_manifest
+
+def distance_label(distance):
+    return 'unreachable' if distance is None else 'four_or_more' if distance >= 4 else {2: 'two', 3: 'three'}[distance]
+
 
 def evaluate_baselines(g_train, g_eval, authors, min_eval_edges=1, metadata=None):
     # Canonical insertion order and tie breaks make this workflow reproducible.
-    graph, membership, autonomy = prepare_training_model(g_train)
+    graph, membership = prepare_training_model(g_train)
     communities = [set(n for n in graph if membership[n] == c) for c in sorted(set(membership.values()))]
     print(f"Identified {len(communities)} communities (Modularity Q = {nxc.modularity(graph, communities):.4f}).")
     truth = defaultdict(set)
@@ -45,8 +47,12 @@ def evaluate_baselines(g_train, g_eval, authors, min_eval_edges=1, metadata=None
                          'ground_truth': 'all new cross-community ties among training nodes'})
     models = ["Topic-Only", "Triadic Closure", "BridgeFinder"]
     metrics = {m: defaultdict(list) for m in models}
+    tie_distance = Counter()
     for u in seeds:
-        rows = candidate_features(graph, u, membership, autonomy)
+        rows = candidate_features(graph, u, membership)
+        for row in rows:
+            if row['candidate_id'] in truth[u] and u < row['candidate_id']:
+                tie_distance[distance_label(row['distance'])] += 1
         proposal = [r for r in rows if r['proposal_eligible']]
         shared_contact = [r for r in rows if r['shared_coauthors'] > 0]
         pools = [proposal, shared_contact, proposal]
@@ -61,6 +67,12 @@ def evaluate_baselines(g_train, g_eval, authors, min_eval_edges=1, metadata=None
             for metric, value in zip(["P@5", "P@10", "R@10", "NDCG@10"], [hits5/5, hits10/10, hits10/len(truth[u]), dcg/ideal]):
                 metrics[model][metric].append(value)
     summary = {m: {k: round(sum(v)/len(v), 4) for k, v in values.items()} for m, values in metrics.items()}
+    # Training-graph distance of every new tie, counted once per pair.
+    total = sum(tie_distance.values())
+    summary["new_tie_training_distance"] = {
+        "ties": total,
+        **{label: {"count": tie_distance[label], "share": round(tie_distance[label]/total, 4)}
+           for label in ["two", "three", "four_or_more", "unreachable"]}}
     print(json.dumps(summary, indent=2))
     return summary
 

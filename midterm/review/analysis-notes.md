@@ -1,14 +1,14 @@
-# Supporting analysis omitted from the short paper
+# Supporting analysis not shown in full in the paper
 
-The submission now focuses on the proposal's core question: do topic-and-path suggestions help a student discover a useful contact? The detailed citation analysis, extra popularity/centrality baselines, inferential-test names and implementation audit are retained here and in repository records. They are not necessary to explain the app or satisfy a rubric criterion. The short paper still reports the less favorable prediction results and its actual scope.
+All numbers come from `prototype/results/`, which `python prototype/refresh_results.py` regenerates with dataset and code hashes.
 
-## Historical results and extra metrics
+## Historical prediction
 
-The current single-dataset result is `prototype/results/backtest_results_scaled.json`. The paper shows P@10 for Topic-Only, simple common-neighbor Triadic Closure and BridgeFinder. P@5, R@10 and NDCG@10 remain in the supporting result JSON but are not required to explain the proposal's top-ten evaluation.
+`backtest_results_scaled.json` holds P@5, P@10, R@10 and NDCG@10 for Topic-Only, triadic closure and BridgeFinder. The paper reports only P@10, as the proposal specified. The file also records the training-graph distance of every new 2020–2024 cross-community tie, which the paper uses to explain the P@10 result. Triadic closure ranks two-hop candidates, while BridgeFinder and Topic-Only rank the reachable pool at three or more hops. The comparison is between discovery strategies, not scores on one pool.
 
-The 5,000-work pilot is historical under `prototype/legacy/pilot-development/`. The former Adamic–Adar comparison is historical under `prototype/legacy/adamic-adar-v2/`; its output also includes extra popularity/centrality baselines. These were not the simple shared-contact comparison selected by the user. Current code, paper and study attribution use common-neighbor counts and one dataset. Numerical values must come from the fresh run of that version.
+## Network structure
 
-The complete harvest of OpenAlex works (2015–2024) matching our query is finished, collecting 102,947 works and retaining 49,651 multi-authored UIUC papers. OpenAlex is mutable and not every real-world paper is indexed.
+`network_stats.json` describes the 2015–2019 training graph. It reports modularity of the Louvain partition restricted to the largest component and Burt's constraint (networkx, weighted) for every author in the largest component and for the intermediaries on the 500 displayed routes. Low constraint partly reflects high degree, and the 50 starting researchers were chosen for high degree.
 
 ## Ancillary citation comparison
 
@@ -16,14 +16,8 @@ The separate citation pipeline excludes papers with more than 25 retained UIUC a
 
 Of 26,228 later papers, 4,802 were cross-community, 17,866 were within-community, and 3,560 could not be classified because none of their authors appeared in the training graph. Mean citations were 21.77 and 19.14, respectively, a ratio of 1.137. The medians were 7.0 and 7.0. A two-sided Mann–Whitney test gave $p=0.7740$.
 
-The mean-ratio target (>1.10) was met, but the distributional-test target (p<.05) was not. Field, paper age, repeated teams and heavy citation skew limit interpretation. The canonical output is `prototype/results/citation_impact.json`, with a matching report-review copy and provenance sidecar. Removing this secondary question from the short paper does not turn it into a positive finding.
+The mean-ratio target (>1.10) was met, but the distributional-test target (p<.05) was not. Field, paper age, repeated teams and heavy citation skew limit interpretation. This question is not in the short paper.
 
 ## Planned study details
 
-`prototype/study/README.md` retains the method-blinded protocol and participant-level analysis details. The primary planned outcome is the within-participant difference in the proportion of jointly relevant-and-new cards, BridgeFinder versus simple Triadic Closure. The implementation uses a paired Wilcoxon comparison; other rating comparisons are exploratory with Holm correction, and paired t intervals are exploratory small-sample intervals. N=15 is not a powered confirmatory study.
-
-Card relevance now asks about the participant's own stated research interest, recorded before app use and shown while rating. The exported `student-interest-v1` protocol and nonempty interest are required by the analyzer, so older seed-topic ratings cannot be pooled silently. Novelty concerns the participant's own familiarity. The routes and candidates both differ across methods, so actionability comparisons do not isolate a route-display treatment. SUS concerns the interactive BridgeFinder app, not the static baselines. All methods use the same fields and unweighted shortest-path procedure, with two-hop closure routes and >=3-hop BridgeFinder/Topic-Only routes. Unreachable candidates are excluded.
-
-The clarified usability task in the paper is a future protocol: state a research interest, choose a starting researcher, open a suggestion and draft, then explain the route and line types without coaching. Record task completion and explanation outcomes in a facilitator log. This description must not be retroactively reported as the script used in the four formative sessions. The author described those sessions as minimal-context app exploration with active feedback when problems arose.
-
-No human comparative-study results are present. Test fixtures are not evidence of student ratings or comprehension.
+`prototype/study/README.md` holds the method-blinded protocol and participant-level analysis. The primary outcome is the within-participant difference in the share of cards rated both relevant and new, BridgeFinder versus triadic closure, tested with a paired Wilcoxon test. Other comparisons are exploratory with Holm correction. N=15 is not a powered confirmatory study. Relevance is rated against the participant's own stated interest, recorded before app use. The analyzer requires protocol `student-interest-v1` and a nonempty interest. No human comparative-study results exist yet. Test fixtures are not evidence of student ratings.

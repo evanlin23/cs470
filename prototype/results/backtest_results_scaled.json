@@ -16,5 +16,24 @@
     "P@10": 0.0131,
     "R@10": 0.035,
     "NDCG@10": 0.0264
+  },
+  "new_tie_training_distance": {
+    "ties": 8916,
+    "two": {
+      "count": 1942,
+      "share": 0.2178
+    },
+    "three": {
+      "count": 2313,
+      "share": 0.2594
+    },
+    "four_or_more": {
+      "count": 3638,
+      "share": 0.408
+    },
+    "unreachable": {
+      "count": 1023,
+      "share": 0.1147
+    }
   }
 }

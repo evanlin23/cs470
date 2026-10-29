@@ -1,61 +1,97 @@
-# Strict rubric review after the external review
+# Rubric review of the mid-semester report
 
-Scores use the uploaded rubric's integer 0–4 scale and `(score / 4) × weight`. The external review's 92.5/100 was a reasonable strict estimate. The earlier 100/100 self-assessment was too generous and is superseded here. No editorial estimate guarantees an instructor grade.
+This review scores the report against the uploaded CS 470 mid-term rubric (0–4 per component, `(score ÷ 4) × weight`). It replaces the earlier self-assessment of 100/100. That assessment checked that each required element was present and accurate. It did not ask whether each element met the Sophisticated descriptor. No editorial score guarantees the instructor's grade.
 
-## Current editorial assessment
+## Summary
 
-| Criterion | Weight | Score | Points | Basis and limits |
+| Component | Weight | Before (ae24db8) | After this revision | Main reason for the change |
 |---|---:|---:|---:|---|
-| Objective | 10 | 4 | 10 | The abstract and §1 identify the student problem, significance, challenge and completed progress. Both baseline comparisons are accurate. |
-| Related work | 10 | 4 | 10 | §2 gives relevant contributions, strengths, task-specific limits and explicit contrasts. The uploaded Tang paper now supports a concrete account of learned cross-field topics and random-walk ranking, its publication-history requirement, our student interest proxy and our fixed score's inability to learn cross-field topic relationships. |
-| Course concepts and network analysis | 15 | 4 | 15 | §3 defines the graph, weights, brokerage, communities and ranking, justifies Louvain against Girvan–Newman, and interprets real results. Harvest identity/date, per-paper affiliation, unweighted path counts and empty-topic handling are explicit. |
-| Design and implementation | 25 | 4 | 25 | §4 explains the complete three-view flow and its rationale. One large actual card image makes the route legible. Route-first ordering is a design choice, not an unsupported feedback attribution. |
-| Users and feedback | 20 | 4 | 20 | §5 identifies and justifies the four students, reports the author-confirmed minimal-context individual exploration with active feedback, and connects observations to four revisions. Recruitment and note-taking/recording were not specified and are not invented. No retest is claimed. |
-| Evaluation | 15 | 4 | 15 | §6 states candidate pools, frozen communities, seed inclusion and the fixed P@10 denominator. Planned measures have reasons, procedures, comparisons and targets. Personal-interest relevance and identical card/route presentation are described and implemented. |
-| Writing | 5 | 4 | 5 | The rubric-aligned argument, explained figure and conclusions agree with the evidence. Four rendered pages and the extracted Overleaf build are checked. |
-| **Total** | **100** | | **100** | No remaining specific rubric omission identified in this pass. This is an editorial assessment, not a guaranteed instructor grade. |
+| Objective | 10 | 3 (7.5) | 4 (10) | Challenge now explained, contribution stated, scale of the problem given |
+| Related work | 10 | 3 (7.5) | 4 (10) | Closest prior system (ReferralWeb) added with an explicit contrast |
+| Course concepts and network analysis | 15 | 3 (11.25) | 4 (15) | Results now say what they reveal about the network, and brokerage is measured |
+| Design and implementation | 25 | 3 (18.75) | 4 (25) | Map view shown, design choices traced to the proposal, feedback and score behavior |
+| Users and feedback | 20 | 3 (15) | 3–4 (15–20) | Proposal shortfall acknowledged. Sample size and detail are limited by the data we have |
+| Evaluation | 15 | 3 (11.25) | 4 (15) | P@10 result explained by where new ties form, and a reason for every study comparison and target |
+| Writing | 5 | 3 (3.75) | 4 (5) | Conclusion now synthesizes the evidence instead of only listing next steps |
+| **Total** | **100** | **75** | **95–100** | |
 
-The feedback score assesses an initial qualitative round, not representative usability evidence. The rubric does not require a particular participant minimum, recordings, quotations, session duration or a post-change retest. An instructor may judge the available evidence more strictly.
+The midterm should be 4–5 pages (`docs/project-ideas.md`). The revision is 5 pages including references. Every change answers a specific rubric descriptor. Nothing was added only for length.
 
-## Targeted corrections
+## Component review
 
-- All methods rank training authors in another training-period community and exclude existing collaborators. Frozen training labels identify future cross-community ties.
-- A seed needs any new cross-community future tie, even one outside BridgeFinder's candidate pool. P@10 always divides by ten, including short lists.
-- The paper records OpenAlex institution `I157725225`, years 2015–2024, completion on October 28, 2026 UTC, 515 exhausted pages, 102,947 collected works and 49,651 retained papers. Affiliation comes from each paper's authorship records. Table 1 is training only.
-- The author confirmed that students received minimal context, worked through the app and gave feedback when problems arose. No recruitment source, notes, recordings, frequencies or quotations were inferred.
-- Route-first placement is a design decision. The supplied feedback does not specifically establish that ordering as a participant request.
-- Participants state an interest before app use. The form displays it and asks about relevance to it. Exports identify `student-interest-v1`; analysis rejects old/missing protocols and missing interests. This changes one planned relevance measure, without adding a historical metric.
-- All comparison cards use identical fields and the same unweighted shortest-path procedure. Closure routes have two edges; BridgeFinder and Topic-Only routes have at least three. Unreachable candidates are excluded. Different candidates still prevent a causal test of route display.
-- Three-edge paths have four distinct vertices and ignore weights. Topic similarity is zero if either topic set is empty.
-- The paper uses one enlarged actual card detail instead of the small overview map. Full map captures remain in the repository. Web references show exact URLs without invented access dates.
+### Objective (10%)
 
-## Resolved primary-source check
+*Sophisticated:* clear goal, why it matters, why it is challenging, and an opening summary of what has been built.
 
-The previous 97.5 estimate withheld 2.5 points for the high-level Tang comparison. The author supplied the original PDF after external retrieval was blocked. Its title, authors and printed pages match the citation. Sections 2, 3.3 and 4.1–4.2 support the revised comparison. `tang-source-check.md` records the PDF hash and exact source locations.
+**Before.** The goal and the progress summary in the abstract were clear. Importance rested on one example. The challenge was a single sentence ("suggest someone relevant who also extends the student's usual circle"). The CHI-style form asks for an opening that states the contribution, and none was stated.
 
-Tang learns collaboration topics and uses random walk with restart on a graph containing authors and topics. Publication histories support its author representations. Our fixed score instead uses a chosen researcher as the student's interest proxy and displays a route, while lacking learned relationships between topics in different fields. The paragraph now gives a source-supported contribution, strength, task-specific limitation and explicit methodological contrast. This evidence, rather than added length or a better experimental result, resolves the identified Related Work deduction.
+**Changes.** Added the proposal's Gray Book figure (2,574 faculty, 110 departments) for why the problem matters. Rewrote the challenge as the tension between relevance, novelty and reachability, including the student cold start. Added a contribution paragraph listing the prototype, the historical test and the feedback round. Added the main network finding to the abstract.
 
-An instructor can still judge the formative sample, related-work depth or study plan more strictly. A rubric assessment does not establish human usability, validate reported sessions independently or guarantee a score. The authors should verify their final rewrite and contribution disclosure before submission.
+### Related work (10%)
 
-## Verification
+*Sophisticated:* carefully chosen sources, each with contribution, strengths, weaknesses, and an explicit contrast.
 
-- Current dataset/results/provenance match. P@10 remains .0079 for Topic-Only, .0287 for closure and .0131 for BridgeFinder.
-- This prose-only source-check pass reruns the five publication-consistency checks, the PDF build and clean Overleaf extraction/compilation. Ranking, UI and study behavior are unchanged.
-- The preceding implementation revision passed five full-data workflow tests, twelve validation/analysis tests and twelve Chromium happy-path tests. These cover all 500 displayed rankings/routes, genuine study top-five attribution, personal-interest entry, saved context, export/analysis, keyboard interaction and mobile layout. Automated answers are synthetic fixtures, not human evidence.
-- Four pages at the original 10pt size. Two pdfLaTeX passes without warnings, rendered-page inspection, and a cleanly extracted/compiled Overleaf project matching the report text.
-- Original proposal, dataset, ranking and historical results unchanged.
+**Before.** Each source had a contribution and a contrast, and the Tang et al. paragraph was strong. The closest prior system was missing. ReferralWeb (Kautz, Selman and Shah, 1997) mined co-authorship and other co-occurrences to find experts and show the referral chain to them, which is BridgeFinder's core idea. The rubric's Competent descriptor names exactly this gap ("an obvious comparable app or a central paper is missing").
 
-## Reproduce
+**Changes.** Added a ReferralWeb paragraph with its contribution, its strength (the chain makes an expert reachable), its limit (the searcher must be in the network, and results stay close to them), and the contrast (BridgeFinder starts from a familiar researcher and skips anyone within two hops). **Authors should check this description against the CACM article**, as they did for Tang.
 
-```bash
-python midterm/capture_screenshots.py
-python -m unittest discover -s prototype/tests -p test_publication_consistency.py -v
-python -m unittest discover -s prototype/tests -p test_workflow.py -v
-python -m unittest discover -s prototype/tests -p test_validation.py -v
-python prototype/tests/browser_workflow.py --artifacts /tmp/bridgefinder-review
-mkdir -p .build/midterm
-pdflatex -interaction=nonstopmode -halt-on-error -output-directory=.build/midterm midterm/latex/main.tex
-pdflatex -interaction=nonstopmode -halt-on-error -output-directory=.build/midterm midterm/latex/main.tex
-cp .build/midterm/main.pdf midterm/midterm.pdf
-python midterm/package_overleaf.py --verify
-```
+### Course concepts and network analysis (15%)
+
+*Sophisticated:* core function rests on a course concept, justified against an alternative from class, run on real data, and the report says what the results reveal about the network.
+
+**Before.** The concept was present and the data were real. Two parts were weak. The Louvain justification was qualitative. Interpretation was mostly negative ("this is not evidence of disciplinary separation"). Brokerage was named, yet nothing measured it, and the score's actual behavior was not reported.
+
+**Changes.** The new `prototype/network_stats.py` gives the report two short findings, and a third comes from the demo data.
+- Modularity stays 0.879 within the largest component (87% of authors), so the high modularity reflects real clustering rather than disconnected pieces. Table 1 shows both values.
+- On the 500 displayed suggestions the path bonus supplies 68% of the score, and every suggestion is exactly three hops away. The ranking therefore favors network position over topic match. This is a weakness, and the report now says so.
+- Route intermediaries have median Burt constraint 0.12, against 0.47 for the median author in the largest component, so the routes do pass through brokers.
+
+The Louvain justification is now concrete (Girvan–Newman recomputes betweenness for 78,281 edges, while Louvain runs in seconds). The ≥3-hop rule is now explicitly justified against triadic closure, the class alternative.
+
+### Design and implementation (25%)
+
+*Sophisticated:* careful discussion of goals and functionality, decisions traced to the problem and related work, and a prototype whose core flow can be demonstrated.
+
+**Before.** The flow was complete and demonstrable, but only one of the three views was shown (a card detail), and the map that carries the network idea was not. Rationale was one clause per view. Departures from the proposal (several instructors replaced by one starting researcher, campus-wide map replaced by a focused map) were not explained.
+
+**Changes.** Figure 1 now shows the actual network view, and Figure 2 shows the card. Each view now cites its reason: the proposal, related work, or the feedback that changed it. The score finding is carried into design. Topics and papers stay on the card so students can judge relevance, and the study's relevance ratings will decide whether the bonus should shrink. This is the highest-weight component, so it was the priority.
+
+### Users and feedback (20%)
+
+*Sophisticated:* population identified, well matched, of sufficient size and quality, justified, at least one round of feedback, and the report shows what it changed.
+
+**Before and after.** The report identifies the target users, describes four real sessions, justifies the mix, and ties each of four observed problems to a change. That meets most of the descriptor. Two risks remain, and only the authors can reduce them.
+- **Size and match.** Four students, two of them graduate students, against the proposal's "around 10 people". The report now states this openly instead of leaving a grader to find it.
+- **Quality.** The observations are general ("students found the interface unintuitive"). Nothing reports what students thought of the suggestions themselves, which is the app's core value. If any student said whether a suggestion was relevant or whom they would contact, one sentence on it would help most. Do not add counts, quotes or recruitment details that were not recorded.
+
+A strict grader may give 3 here (15/20). This is the component most likely to cost points.
+
+### Evaluation (15%)
+
+*Sophisticated:* several metrics, each justified, with a concrete plan and a named baseline or comparison point for each.
+
+**Before.** The plan was strong, with blinded cards, five per method, participant-level analysis, and thresholds. The weaknesses were that the P@10 result had no interpretation beyond "fewer than triadic closure", the SUS target had no reference, and contact ratings were compared only with Topic-Only for no stated reason.
+
+**Changes.** P@10 stays the only historical metric, as in the proposal, and Table 2 is unchanged.
+- One sentence now reports where the 8,916 new cross-community ties formed. Only 22% joined authors who already shared a co-author, and 67% were three or more hops apart, inside BridgeFinder's pool. This supports the project's premise even though triadic closure has the higher P@10.
+- The contact comparison is justified (Topic-Only shares BridgeFinder's pool, so the comparison tests the path bonus), and closure is reported for reference.
+- The SUS target is anchored to published SUS norms (Bangor et al., 2008).
+
+### Writing (5%)
+
+*Sophisticated:* a clear argument from problem to conclusion, every figure referenced and explained, and conclusions supported by evidence.
+
+**Before.** Sections were clear and the single figure was referenced. The conclusion was two sentences of next steps, and the argument stalled at the evaluation: if triadic closure predicts better, why BridgeFinder? Many defensive hedges diluted the line.
+
+**Changes.** The conclusion now draws the evidence together. It says where new ties form, that triadic closure still predicts better, what the score leans on, and what the study must decide. Two redundant hedges were removed, and both figures are referenced and explained.
+
+## What was not changed
+
+The proposal, the dataset, the ranking method, P@10 as the only historical metric, Table 2, the four-student account, the omission of session duration, the AI-use statement and the plain-prose style (no colons, semicolons or em dashes in authored text) are unchanged. All new numbers come from `prototype/results/` and are checked by `prototype/tests/test_publication_consistency.py`.
+
+## Before submitting
+
+1. Verify the ReferralWeb description against the paper.
+2. Add any real observation about how students judged the suggestions (Users and feedback).
+3. Rewrite in your own voice using `rewrite-guide.md`, keeping every number synchronized.
+4. Confirm the contributions and AI-use paragraph.
