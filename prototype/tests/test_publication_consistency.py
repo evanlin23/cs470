@@ -38,7 +38,7 @@ class PublicationConsistencyTests(unittest.TestCase):
             self.assertEqual(re.findall(r'0\.\d{4}',row),[f'{data[model]["P@10"]:.4f}'])
         distances=data['new_tie_training_distance']
         beyond=distances['three']['share']+distances['four_or_more']['share']
-        self.assertIn(f"Of the {distances['ties']:,} distinct new cross-community pairs behind Table~\\ref{{tab:results}}, only {100*distances['two']['share']:.0f}\\% joined authors who already shared a co-author, while {100*beyond:.0f}\\% joined authors three or more hops apart, inside BridgeFinder's candidate pool, and the remaining {100*distances['unreachable']['share']:.0f}\\% had no training path",source)
+        self.assertIn(f"Of the {distances['ties']:,} distinct new cross-community pairs behind Table~\\ref{{tab:results}}, only {100*distances['two']['share']:.0f}\\% joined authors who already shared a co-author, while {100*beyond:.0f}\\% joined authors three or more hops apart, inside BridgeFinder's candidate pool, and the remaining {100*distances['unreachable']['share']:.0f}\\% had no path in the training graph",source)
         count=re.search(r'We evaluated ([\d,]+) starting researchers\b',source)
         self.assertIsNotNone(count)
         self.assertEqual(int(count.group(1).replace(',','')),json.loads((ROOT/'results/scaled-run.json').read_text())['eligible_seeds'])

@@ -29,7 +29,7 @@ The midterm rubric expects 4–5 pages (`docs/project-ideas.md`). The current bu
 
 ## Sources
 
-`source-checks.md` records what each related-work comparison rests on. Tang et al. was checked against the paper itself. ReferralWeb is described only as far as an open-access survey supports. The Gray Book figure (2,574 faculty, 110 departments) is carried over from the proposal. The Contributions and AI Use paragraph is the authors' own statement.
+`source-checks.md` records what each related-work comparison rests on. Tang et al. was checked against the paper itself. ReferralWeb is described only as far as an open-access survey supports. The Gray Book figure (2,574 faculty, 110 departments) is carried over from the proposal. The AI Use section is the authors' own statement.
 
 ## Style preferences already applied
 
