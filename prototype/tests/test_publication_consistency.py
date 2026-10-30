@@ -50,10 +50,10 @@ class PublicationConsistencyTests(unittest.TestCase):
         rows=[row for rows in bundle['recommendations'].values() for row in rows]
         largest=stats['largest_component']
         expected=[f"Modularity in largest component & {largest['modularity']:.3f}",
-                  f"which holds {100*largest['share']:.0f}\\% of authors, the same partition still scores {largest['modularity']:.3f}",
+                  f"the same partition still scores {largest['modularity']:.3f} within the largest component, which holds {100*largest['share']:.0f}\\% of authors",
                   f"The {stats['constraint_largest_component']['route_intermediaries']} distinct intermediaries on these routes",
                   f"largest component, is {stats['constraint_largest_component']['median_route_intermediaries']:.2f}",
-                  f"against {stats['constraint_largest_component']['median_all_authors']:.2f} for the median author there",
+                  f"compared with {stats['constraint_largest_component']['median_all_authors']:.2f} for the median author there",
                   f"the bonus makes up {100*sum(.5*r['path_bonus'] for r in rows)/sum(r['score'] for r in rows):.0f}\\% of their summed scores",
                   f"Of the {len(rows)} displayed suggestions, {100*stats['displayed_suggestions_on_one_uiuc_paper']['share']:.0f}\\% appear on only one UIUC paper"]
         for text in expected:self.assertIn(text,source)
