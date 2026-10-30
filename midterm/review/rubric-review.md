@@ -58,6 +58,21 @@ An outside review scored the report 97.5. Each suggestion was checked against th
   - Describing the second round's procedure and adding session details. The authors asked that the paper state only that the six students found the revised interface clear, raised no new problems and approved of the app.
   - Restoring an uncertainty caveat and adding access dates. Neither is needed for the rubric, and access dates are not recorded.
 
+## Review 4, after the voice rewrite
+
+The middle sections were rewritten to match the authors' own abstract, objective and limitations. A fresh grader then scored the report 91.25, with Users and feedback and Evaluation at 3.
+
+- **Evaluation.** The rewrite had dropped the reason for P@10. It is restored: the app shows ten suggestions, and the proposal planned a top-ten test. "All methods predict the same future ties" became "scored against the same future ties", which no longer suggests the methods give identical predictions.
+- **Users.** The report now notes that the second round's six testers fell within the proposal's five to ten.
+- **Other fixes.**
+  - Illinois Experts' weakness is the missing introduction route, not a lack of search.
+  - ReferralWeb's colleague answers stay within two links.
+  - Requiring reachable candidates is flagged as a change from the proposal's mock-up.
+  - BridgeFinder beats Topic-Only through the path bonus.
+  - The study's five researchers are named as five of the 50. This was checked in the data.
+  - Five sentences were reworded in the authors' voice, the Figure 1 caption was corrected, and the references are now alphabetical.
+- **Not applied.** The grader suggested cutting "approved of the app". The authors asked to keep it.
+
 ## App fixes prompted by the reviews
 
 - **Colors.** The map recycled 8 colors across 842 communities, so different communities could share a color. Colors are now assigned within each view, starting with the selected researcher's community, with reds and oranges last so they are not confused with suggestion lines. A view has at most 9 communities and the palette has 10. After review 3 the palette order was changed so that two blues never appear among the first six communities.
