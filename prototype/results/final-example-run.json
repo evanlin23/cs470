@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "model_version": "proposal-path-v3-common-neighbors",
+  "dataset_file": "uiuc_data_scaled.json",
+  "dataset_sha256": "0fae5f05012921f4caa07cb5d6b1d6f7949821365b053dcecbaa51a108d3bd78",
+  "source_sha256": {
+    "model.py": "6a42eb14f4db0d126249cb8818a16908d72b9deda8b43f8f4255f92f1014ca46",
+    "final_analysis.py": "87d89b361a96e1e98a0729a5cfac54656eae3918bc04c44c54ec7aff102a38f6",
+    "final_example.py": "d41cd20690c9d9a92da815938cb4e95264101ef92a6732427845e450d06b8902"
+  },
+  "runtime": {
+    "python": "3.13.18",
+    "networkx": "3.7",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1"
+  },
+  "result_file": "final_example.json",
+  "result_sha256": "9fb8539d3c52ab3197d552b47d3f4a340e8136ec4b8af89aedfd6eb893d08ba5"
+}

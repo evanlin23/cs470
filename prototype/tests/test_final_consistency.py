@@ -111,6 +111,62 @@ class FinalReportConsistencyTests(unittest.TestCase):
         self.assertIn(f"raises P@10 from {test['metrics']['saturating lambda=0.5']['P@10']:.4f} to {test['metrics']['saturating lambda=0.5, two-paper minimum']['P@10']:.4f} (difference {diff['mean_difference']:.4f}, CI {diff['ci95'][0]:.4f} to {diff['ci95'][1]:.4f})", self.source)
         self.assertEqual(test['metrics']['saturating lambda=0.5']['P@10'], self.ranking['metrics']['far:BridgeFinder']['P@10'])
 
+    def test_worked_example_matches_saved_result(self):
+        example = json.loads((ROOT/'results/final_example.json').read_text())
+        record = json.loads((ROOT/'results/final-example-run.json').read_text())
+        self.assertEqual(digest(ROOT/'results/final_example.json'), record['result_sha256'])
+        for name, expected in record['source_sha256'].items():
+            self.assertEqual(digest(ROOT/name), expected, name)
+        block = self.source.split('\\label{tab:example}')[1].split('\\end{tabularx}')[0]
+        for method in example['methods'].values():
+            for row in method[:3]:
+                line = next((l for l in block.splitlines() if f"& {row['name']}," in l), None)
+                self.assertIsNotNone(line, row['name'])
+                cells = [c.strip().rstrip('\\').strip() for c in line.split('&')]
+                self.assertEqual(float(cells[2]), row['topic_overlap'], row['name'])
+                self.assertEqual(int(cells[3]), row['coauthors'], row['name'])
+                self.assertFalse(row['became_collaborator'])
+        self.assertIn('None of these nine people wrote a paper with Gupta in 2020--2024', self.source)
+
+    def test_new_ranking_measures(self):
+        r = self.ranking
+        self.assertIn(f"is {r['bridgefinder_p10_over_random_p10']:.0f} times the random expectation", self.source)
+        big = r['large_team_papers']
+        self.assertIn(f"The {big['papers']} training papers with more than {big['author_limit']} UIUC authors create {big['edges_only_from_large_papers']:,} edges that no smaller paper supports, {100*big['share_of_edges']:.0f}\\% of the training graph", self.source)
+        share = r['suggestion_profiles']['any:Personalized PageRank']['share_suggestions_two_steps_away']
+        self.assertIn(f"({r['metrics']['any:Personalized PageRank']['P@10']:.4f}), and {100*share:.0f}\\% of its top-ten suggestions are two steps away", self.source)
+        c = r['p10_comparisons_bootstrap']['Random two-hop minus far BridgeFinder']
+        self.assertIn(f"(difference {c['mean_difference']:.4f}, CI {c['ci95'][0]:.4f} to {c['ci95'][1]:.4f})", self.source)
+        self.assertEqual(r['suggestion_profiles']['far:BridgeFinder']['share_suggestions_two_steps_away'], 0)
+
+    def test_community_table(self):
+        c = self.result['communities']
+        rows = {r['method']: r for r in c['partitions']}
+        block = self.source.split('\\label{tab:communities}')[1].split('\\end{tabular*}')[0]
+        def row(label):
+            line = next(l for l in block.splitlines() if l.startswith(label + ' &'))
+            return [x.strip().rstrip('\\').strip() for x in line.split('&')]
+        deployed = rows['Louvain seed 42 (deployed)']
+        self.assertEqual(row('Louvain, deployed')[1:4], [f"{deployed['communities']}", f"{deployed['modularity']:.3f}", '1.00'])
+        seeds = [r for name, r in rows.items() if name.startswith('Louvain seed') and 'deployed' not in name]
+        cells = row('Louvain, 10 seeds')
+        self.assertEqual(len(seeds), 10)
+        self.assertEqual(cells[1], f"{min(r['communities'] for r in seeds)}--{max(r['communities'] for r in seeds)}")
+        self.assertEqual(cells[2], f"{min(r['modularity'] for r in seeds):.3f}--{max(r['modularity'] for r in seeds):.3f}")
+        self.assertEqual(cells[3], f"$\\geq${int(100*min(r['nmi_with_deployed'] for r in seeds))/100:.2f}")
+        self.assertEqual(cells[5], f"{100*c['louvain_seed_range']['demo_overlap_mean']:.0f}\\%")
+        for label, key in [('Greedy modularity', 'Greedy modularity (Clauset-Newman-Moore)'), ('Label propagation', 'Label propagation')]:
+            r, cells = rows[key], row(label)
+            self.assertEqual(cells[1:4], [f"{r['communities']:,}", f"{r['modularity']:.3f}", f"{r['nmi_with_deployed']:.2f}"])
+            self.assertEqual(cells[5], f"{100*r['demo_top10_overlap_with_deployed']:.0f}\\%")
+        for g in c['girvan_newman_subgraphs']:
+            cells = row(f"{g['nodes']} ({g['edges']:,})")
+            self.assertEqual(cells[2:4], [f"{g['girvan_newman']['best_modularity']:.3f}", f"{g['louvain']['modularity']:.3f}"])
+            self.assertLess(g['girvan_newman']['best_modularity'], g['louvain']['modularity'])
+        low = 1 - max(r['deployed_suggestions_still_cross_community'] for r in seeds)
+        high = 1 - min(r['deployed_suggestions_still_cross_community'] for r in seeds)
+        self.assertIn(f"between {100*low:.0f}\\% and {100*high:.0f}\\% of them would fall inside", self.source)
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -1,0 +1,234 @@
+{
+  "seed": "Indranil Gupta",
+  "seed_topics": [
+    "Advanced Data Storage Technologies",
+    "Advanced Database Systems and Queries",
+    "Algorithms and Data Compression",
+    "Cloud Computing and Resource Management",
+    "Distributed Control Multi-Agent Systems",
+    "Distributed and Parallel Computing Systems",
+    "Distributed systems and fault tolerance",
+    "Formal Methods in Verification",
+    "Graph Theory and Algorithms",
+    "Stochastic Gradient Optimization Techniques"
+  ],
+  "new_ties_2020_2024": 2,
+  "methods": {
+    "BridgeFinder": [
+      {
+        "name": "Marc Snir",
+        "topic_overlap": 0.43,
+        "coauthors": 15,
+        "three_step_routes": 5,
+        "distance": 3,
+        "topics": [
+          "Advanced Data Storage Technologies",
+          "Advanced Database Systems and Queries",
+          "Advanced Neural Network Applications",
+          "Distributed and Parallel Computing Systems"
+        ],
+        "became_collaborator": false
+      },
+      {
+        "name": "Honwai Leong",
+        "topic_overlap": 0.25,
+        "coauthors": 11,
+        "three_step_routes": 5,
+        "distance": 3,
+        "topics": [
+          "Cloud Computing and Resource Management",
+          "Distributed and Parallel Computing Systems",
+          "Distributed systems and fault tolerance",
+          "Pulsars and Gravitational Waves Research"
+        ],
+        "became_collaborator": false
+      },
+      {
+        "name": "D. Lesny",
+        "topic_overlap": 0.27,
+        "coauthors": 6,
+        "three_step_routes": 3,
+        "distance": 3,
+        "topics": [
+          "Cloud Computing and Resource Management",
+          "Distributed and Parallel Computing Systems",
+          "Distributed systems and fault tolerance",
+          "Scientific Computing and Data Management"
+        ],
+        "became_collaborator": false
+      },
+      {
+        "name": "Hassan Eslami",
+        "topic_overlap": 0.27,
+        "coauthors": 3,
+        "three_step_routes": 3,
+        "distance": 3,
+        "topics": [
+          "Advanced Data Storage Technologies",
+          "Cloud Computing and Resource Management",
+          "Distributed and Parallel Computing Systems",
+          "Parallel Computing and Optimization Techniques"
+        ],
+        "became_collaborator": false
+      },
+      {
+        "name": "Galen Wesley Arnold",
+        "topic_overlap": 0.27,
+        "coauthors": 6,
+        "three_step_routes": 3,
+        "distance": 3,
+        "topics": [
+          "Cloud Computing and Resource Management",
+          "Distributed and Parallel Computing Systems",
+          "Distributed systems and fault tolerance",
+          "Scientific Computing and Data Management"
+        ],
+        "became_collaborator": false
+      }
+    ],
+    "Personalized PageRank, distant pool": [
+      {
+        "name": "Thomas S. Huang",
+        "topic_overlap": 0.0,
+        "coauthors": 61,
+        "three_step_routes": 5,
+        "distance": 3,
+        "topics": [
+          "Advanced Clustering Algorithms Research",
+          "Advanced Image Processing Techniques",
+          "Advanced Image and Video Retrieval Techniques",
+          "Advanced Neural Network Applications"
+        ],
+        "became_collaborator": false
+      },
+      {
+        "name": "R. Srikant",
+        "topic_overlap": 0.18,
+        "coauthors": 28,
+        "three_step_routes": 4,
+        "distance": 3,
+        "topics": [
+          "Advanced Bandit Algorithms Research",
+          "Advanced Queuing Theory Analysis",
+          "Advanced Wireless Network Optimization",
+          "Age of Information Optimization"
+        ],
+        "became_collaborator": false
+      },
+      {
+        "name": "Michael Bailey",
+        "topic_overlap": 0.0,
+        "coauthors": 25,
+        "three_step_routes": 5,
+        "distance": 3,
+        "topics": [
+          "Advanced Malware Detection Techniques",
+          "Adversarial Robustness in Machine Learning",
+          "Blockchain Technology Applications and Security",
+          "Information and Cyber Security"
+        ],
+        "became_collaborator": false
+      },
+      {
+        "name": "Joshua Mason",
+        "topic_overlap": 0.0,
+        "coauthors": 25,
+        "three_step_routes": 6,
+        "distance": 3,
+        "topics": [
+          "Adversarial Robustness in Machine Learning",
+          "Blockchain Technology Applications and Security",
+          "Cybercrime and Law Enforcement Studies",
+          "Information and Cyber Security"
+        ],
+        "became_collaborator": false
+      },
+      {
+        "name": "Owolabi Legunsen",
+        "topic_overlap": 0.06,
+        "coauthors": 15,
+        "three_step_routes": 5,
+        "distance": 3,
+        "topics": [
+          "Advanced Software Engineering Methodologies",
+          "Formal Methods in Verification",
+          "Logic, programming, and type systems",
+          "Software Engineering Research"
+        ],
+        "became_collaborator": false
+      }
+    ],
+    "Triadic closure": [
+      {
+        "name": "John Michael Dallesasse",
+        "topic_overlap": 0.0,
+        "coauthors": 29,
+        "three_step_routes": 65,
+        "distance": 2,
+        "topics": [
+          "3D IC and TSV technologies",
+          "Analytical Chemistry and Sensors",
+          "Biosensors and Analytical Detection",
+          "CCD and CMOS Imaging Sensors"
+        ],
+        "became_collaborator": false
+      },
+      {
+        "name": "Patrick Su",
+        "topic_overlap": 0.0,
+        "coauthors": 22,
+        "three_step_routes": 66,
+        "distance": 2,
+        "topics": [
+          "Advanced Fiber Optic Sensors",
+          "Analytical Chemistry and Sensors",
+          "Biosensors and Analytical Detection",
+          "CCD and CMOS Imaging Sensors"
+        ],
+        "became_collaborator": false
+      },
+      {
+        "name": "Adam Bates",
+        "topic_overlap": 0.0,
+        "coauthors": 21,
+        "three_step_routes": 35,
+        "distance": 2,
+        "topics": [
+          "Adversarial Robustness in Machine Learning",
+          "Blockchain Technology Applications and Security",
+          "Digital and Cyber Forensics",
+          "Information and Cyber Security"
+        ],
+        "became_collaborator": false
+      },
+      {
+        "name": "William Gropp",
+        "topic_overlap": 0.18,
+        "coauthors": 55,
+        "three_step_routes": 53,
+        "distance": 2,
+        "topics": [
+          "Advanced Data Storage Technologies",
+          "Advanced Numerical Methods in Computational Mathematics",
+          "Computer Graphics and Visualization Techniques",
+          "Distributed and Parallel Computing Systems"
+        ],
+        "became_collaborator": false
+      },
+      {
+        "name": "Tamer Ba\u015far",
+        "topic_overlap": 0.05,
+        "coauthors": 50,
+        "three_step_routes": 36,
+        "distance": 2,
+        "topics": [
+          "Adaptive Dynamic Programming Control",
+          "Age of Information Optimization",
+          "Complex Network Analysis Techniques",
+          "Distributed Control Multi-Agent Systems"
+        ],
+        "became_collaborator": false
+      }
+    ]
+  }
+}

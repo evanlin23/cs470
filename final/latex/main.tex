@@ -10,6 +10,7 @@
 \usepackage{tabularx}
 \usepackage{xcolor}
 % Results that depend on the student study and round 4. Every \pending must be gone before submission.
+\setlength{\emergencystretch}{1.5em}
 \newcommand{\pending}[1]{\textcolor{red!70!black}{\textbf{[PENDING: #1]}}}
 
 \begin{document}
@@ -89,31 +90,30 @@ Modularity, largest component & 0.879\\
 To find the groups a broker would span, we use Louvain~\cite{blondel2008} (networkx, weighted, resolution 1, seed 42). Louvain groups authors who write many papers together by greedily maximizing modularity~\cite{newman2004}, which is high when groups hold more joint papers than chance predicts. The course covered Girvan--Newman~\cite{girvan2002,easley2010}, which instead removes the edge with the highest betweenness again and again until the graph falls apart into groups. We compared both, plus label propagation~\cite{raghavan2007} and greedy modularity~\cite{clauset2004}, on the training graph (Table~\ref{tab:communities}).
 
 \begin{table}[t]
-\caption{Community detection on the training graph. Agreement is normalized mutual information with the deployed partition. The last column is the share of the app's 500 suggestions that stay the same under each partition. Girvan--Newman is compared on subgraphs in the lower panel.}
+\caption{Community detection on the training graph. NMI is normalized mutual information with the deployed partition. Same is the share of the app's 500 suggestions that stay the same under each partition. The lower panel compares Girvan--Newman (GN) with Louvain on subgraphs around one researcher.}
 \label{tab:communities}
 \small
-\setlength{\tabcolsep}{3.5pt}
-\begin{tabular}{@{}lrrrrr@{}}
+\setlength{\tabcolsep}{2.6pt}
+\begin{tabular*}{\columnwidth}{@{\extracolsep{\fill}}lrrrrr@{}}
 \toprule
-Method & Groups & Modularity & Agreement & Time & Same\\
+Method & Groups & Modularity & NMI & Time & Same\\
 \midrule
-Louvain, seed 42 (deployed) & 842 & 0.884 & 1.00 & 2 s & 100\%\\
-Louvain, ten other seeds & 832--843 & 0.884--0.885 & 0.89--0.91 & 2 s & 86\%\\
+Louvain, deployed & 842 & 0.884 & 1.00 & 2 s & 100\%\\
+Louvain, 10 seeds & 832--843 & 0.884--0.885 & $\geq$0.89 & 2 s & 86\%\\
 Greedy modularity & 851 & 0.875 & 0.80 & 41 s & 76\%\\
 Label propagation & 2,221 & 0.752 & 0.76 & 1 s & 75\%\\
 \midrule
-\multicolumn{6}{@{}l}{Subgraphs around one researcher, Girvan--Newman against Louvain}\\
+Authors (edges) & & GN mod. & Louvain & & GN time\\
 \midrule
-Authors (edges) & \multicolumn{2}{r}{GN modularity} & \multicolumn{2}{r}{Louvain modularity} & GN time\\
-50 (165) & \multicolumn{2}{r}{0.233} & \multicolumn{2}{r}{0.469} & 0.2 s\\
-100 (599) & \multicolumn{2}{r}{0.291} & \multicolumn{2}{r}{0.487} & 4.1 s\\
-150 (780) & \multicolumn{2}{r}{0.420} & \multicolumn{2}{r}{0.559} & 9.5 s\\
-200 (1,024) & \multicolumn{2}{r}{0.503} & \multicolumn{2}{r}{0.612} & 20.1 s\\
+50 (165) & & 0.233 & 0.463 & & 0.2 s\\
+100 (599) & & 0.291 & 0.487 & & 3.8 s\\
+150 (780) & & 0.417 & 0.559 & & 8.9 s\\
+200 (1,024) & & 0.503 & 0.616 & & 19.2 s\\
 \bottomrule
-\end{tabular}
+\end{tabular*}
 \end{table}
 
-Louvain finds the partition with the highest modularity of the four methods in about two seconds. Label propagation is faster but splits the graph into 2,221 groups with a modularity of only 0.752. Greedy modularity comes close to Louvain (0.875) but takes 41 seconds and agrees less with it. Girvan--Newman could not run on the full graph at all. It recomputes the betweenness of every edge after each removal, so its cost grows with the square of the number of edges times the number of nodes. On neighborhoods of one researcher with 50 to 200 authors, its runtime rose from 0.2 to 20 seconds while Louvain took under 0.01 seconds, and its best partition always had lower modularity than Louvain's on the same subgraph. Extrapolating these runs to the 78,281 edges of the training graph gives months of computation. The evidence supports Louvain for this graph, which is the choice the midterm made on runtime alone.
+Louvain finds the partition with the highest modularity of the four methods in about two seconds. Label propagation is faster but splits the graph into 2,221 groups with a modularity of only 0.752. Greedy modularity comes close to Louvain (0.875) but takes 41 seconds and agrees less with it. Girvan--Newman could not run on the full graph at all. It recomputes the betweenness of every edge after each removal, so its cost grows with the square of the number of edges times the number of nodes. On neighborhoods of one researcher with 50 to 200 authors, its runtime rose from 0.2 to 19 seconds while Louvain took under 0.01 seconds, and its best partition always had lower modularity than Louvain's on the same subgraph. Extrapolating these runs to the 78,281 edges of the training graph gives months of computation. The evidence supports Louvain for this graph, which is the choice the midterm made on runtime alone.
 
 Louvain is randomized, so we reran it with ten other seeds. Modularity barely changed, and the partitions agree closely with the deployed one. Community boundaries do move, however. On average 86\% of the 500 displayed suggestions stay the same under another seed, and between 7\% and 11\% of them would fall inside the starting researcher's own community. Section~\ref{sec:poorly} discusses this weakness.
 
@@ -141,9 +141,25 @@ Without the network, the app would lose its community boundary, its distance rul
 \subsection{Where the network analysis performs poorly}\label{sec:poorly}
 We found six weaknesses, which we report here and test where we could.
 
-\textbf{Distance costs accuracy.} New collaborations are far more likely between people who already share a co-author. Of the 8,916 new cross-community pairs in 2020--2024, 22\% were two steps apart in the training graph, although two-step candidates are a tiny share of all candidates. The median starting researcher has 29 two-step candidates and 16,290 candidates three or more steps away. Even a random pick from the two-step pool predicts more new ties than BridgeFinder does from the distant pool. Looking past shared contacts is a deliberate trade of accuracy for novelty, and the historical test can only measure the cost, not the benefit.
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\begin{axis}[width=\columnwidth, height=4.3cm, ybar, bar width=16pt, ymin=0, ymax=48,
+  symbolic x coords={Two steps, Three steps, Four or more, No path}, xtick=data,
+  nodes near coords={\pgfmathprintnumber[fixed,precision=1]{\pgfplotspointmeta}\%}, nodes near coords style={font=\scriptsize},
+  ylabel={Share of new ties (\%)}, tick label style={font=\scriptsize}, label style={font=\footnotesize},
+  ytick={0,10,20,30,40}, axis lines*=left, enlarge x limits=0.18]
+\addplot[fill=black!25, draw=black!70] coordinates {(Two steps,21.8) (Three steps,25.9) (Four or more,40.8) (No path,11.5)};
+\end{axis}
+\end{tikzpicture}
+\caption{Training-graph distance of the 8,916 new cross-community pairs formed in 2020--2024. Two-step pairs are 22\% of new ties but well under 1\% of candidates, so a two-step candidate is far more likely to become a collaborator than a distant one.}
+\Description{A bar chart. New cross-community ties were two steps apart in 21.8 percent of cases, three steps in 25.9 percent, four or more steps in 40.8 percent, and had no path in 11.5 percent.}
+\label{fig:distance}
+\end{figure}
 
-\textbf{Large teams inflate path counts.} Every co-author of one large paper can receive the same path count from a researcher linked to the team. The 15 training papers with more than 25 UIUC authors produce 8\% of all co-author pairs. This is one reason why 29\% of the 500 displayed suggestions appear on only one UIUC paper between 2015 and 2024. Some of these people are likely students, visitors or outside collaborators.
+\textbf{Distance costs accuracy.} New collaborations are far more likely between people who already share a co-author. Of the 8,916 new cross-community pairs in 2020--2024, 22\% were two steps apart in the training graph (Figure~\ref{fig:distance}), although two-step candidates are a tiny share of all candidates. The median starting researcher has 29 two-step candidates and 16,290 candidates three or more steps away. Even a random pick from the two-step pool predicts more new ties than BridgeFinder does from the distant pool (difference 0.0036, CI 0.0018 to 0.0053). Looking past shared contacts is a deliberate trade of accuracy for novelty, and the historical test can only measure the cost, not the benefit.
+
+\textbf{Large teams inflate path counts.} Every co-author of one large paper can receive the same path count from a researcher linked to the team. The 11 training papers with more than 25 UIUC authors create 9,353 edges that no smaller paper supports, 12\% of the training graph. This is one reason why 29\% of the 500 displayed suggestions appear on only one UIUC paper between 2015 and 2024. Some of these people are likely students, visitors or outside collaborators.
 
 \textbf{One-paper authors rarely collaborate again.} In the historical test, 27\% of BridgeFinder's top-ten suggestions have a single training paper, and they become new collaborators at a quarter of the rate of the others (0.46\% against 1.77\%).
 
@@ -228,7 +244,26 @@ Editable draft, never sent & G4, trust in the route\\
 \end{table}
 
 \subsection{Reproducing the system}
-The repository contains the collector, the dataset with its completeness record, the shared model, the app and the study tools. Running the collector, then the web-data export, then a static file server reproduces the app exactly, because every ranking is deterministic. Each result file in the paper carries a manifest with hashes of the dataset and the code that produced it, and unit tests check the model against hand calculations, check every displayed route and ranking for all 50 starting researchers, and check that every number in this paper matches the result files.
+Figure~\ref{fig:procedure} lists the full procedure behind one starting researcher's suggestions. The repository contains the collector, the dataset with its completeness record, the shared model, the app and the study tools. Running the collector, then the web-data export, then a static file server reproduces the app exactly, because every ranking is deterministic. \begin{figure}[t]
+\small
+\fbox{\begin{minipage}{0.95\columnwidth}
+\textbf{Suggestions for starting researcher $u$}
+\begin{enumerate}\setlength{\itemsep}{1pt}
+\item Build the training graph from 2015--2019 papers with two or more UIUC authors, with edge weight equal to the number of joint papers.
+\item Give every author their ten most frequent OpenAlex topics in those papers.
+\item Run Louvain (weighted, resolution 1, seed 42) and record each author's community.
+\item From $u$, find shortest paths with breadth-first search, count simple three-step paths $c_3$, and count shared co-authors.
+\item Keep authors in another community, not co-authors of $u$, reachable, and at distance 3 or more.
+\item Score each with Equation~\ref{eq:score}, sort by score, break ties by author ID, and keep ten.
+\item For each, show the first shortest route found, the topics, two example papers from 2015--2019 and the ranking terms.
+\end{enumerate}
+\end{minipage}}
+\caption{The procedure behind every suggestion in the app, the historical test and the study.}
+\Description{A boxed numbered list of seven steps, from building the training graph to showing each suggestion's route, topics, papers and ranking terms.}
+\label{fig:procedure}
+\end{figure}
+
+Each result file in the paper carries a manifest with hashes of the dataset and the code that produced it, and unit tests check the model against hand calculations, check every displayed route and ranking for all 50 starting researchers, and check that every number in this paper matches the result files.
 
 \section{Users and Feedback}\label{sec:users}
 Our target users are UIUC undergraduates and early-stage graduate students who want research experience but have few contacts beyond their classes or department. They are the people who lack the network BridgeFinder supplies, and they can judge whether a suggestion is relevant and new to them in a way no historical test can. We tested the design with students in four rounds (Table~\ref{tab:rounds}).
@@ -312,11 +347,37 @@ Two-step & Personalized PageRank & \textbf{0.0340} & \textbf{0.0914} & \textbf{0
 \end{tabular}
 \end{table*}
 
-\textbf{BridgeFinder is the best ranking of distant candidates.} Within the distant pool, BridgeFinder's P@10 of 0.0131 is 65 times the random expectation and higher than co-author count (difference 0.0079, 95\% CI 0.0063 to 0.0095), path count alone (0.0041, CI 0.0028 to 0.0055) and topic overlap alone (0.0052, CI 0.0040 to 0.0064). Topic overlap and path count each carry signal, and their sum predicts better than either. Personalized PageRank ties BridgeFinder (difference 0.0002, CI $-$0.0014 to 0.0018), but the two reach the same accuracy with different people. PageRank's suggestions have a median of 31 co-authors and a mean topic overlap of 0.032, while BridgeFinder's have 9 co-authors and an overlap of 0.196. For a student, a suggestion's research has to match their interest, so at equal accuracy we prefer the ranking whose suggestions share six times more topics. This is the evidence behind our choice of the score over the PageRank covered in class.
+\textbf{BridgeFinder is the best ranking of distant candidates.} Within the distant pool, BridgeFinder's P@10 of 0.0131 is 62 times the random expectation and higher than co-author count (difference 0.0079, 95\% CI 0.0063 to 0.0095), path count alone (0.0041, CI 0.0028 to 0.0055) and topic overlap alone (0.0052, CI 0.0040 to 0.0064). Topic overlap and path count each carry signal, and their sum predicts better than either. Personalized PageRank ties BridgeFinder (difference 0.0002, CI $-$0.0014 to 0.0018), but the two reach the same accuracy with different people. PageRank's suggestions have a median of 31 co-authors and a mean topic overlap of 0.032, while BridgeFinder's have 9 co-authors and an overlap of 0.196. For a student, a suggestion's research has to match their interest, so at equal accuracy we prefer the ranking whose suggestions share six times more topics. This is the evidence behind our choice of the score over the PageRank covered in class.
 
 \textbf{The gap to triadic closure comes from distance, not the score.} Triadic closure's P@10 of 0.0287 is more than twice BridgeFinder's, as in the midterm. On the two-step pool, however, BridgeFinder's score reaches 0.0269, almost the same as triadic closure (difference 0.0018, CI 0.0001 to 0.0036). The score is about as good as counting shared co-authors at ranking nearby people. What costs accuracy is the decision to look three or more steps away, where the median researcher has 16,290 candidates and only two of them become new collaborators. That decision is the point of BridgeFinder, because the nearby people are exactly those a student could find through the familiar researcher.
 
-\textbf{The best predictor stays near the familiar circle.} Personalized PageRank over all reachable candidates has the highest P@10 of all (0.0369), because its top suggestions are almost all two steps away. This confirms the tension in Section~\ref{sec:network}. A system tuned only for predicting collaborations would recommend the familiar circle.
+\textbf{The best predictor stays near the familiar circle.} Personalized PageRank over all reachable candidates has the highest P@10 of all (0.0369), and 77\% of its top-ten suggestions are two steps away. This confirms the tension in Section~\ref{sec:network}. A system tuned only for predicting collaborations would recommend the familiar circle.
+
+\textbf{An example.} Table~\ref{tab:example} shows the top three suggestions of three methods for Indranil Gupta, who works on distributed systems and cloud computing. BridgeFinder suggests researchers in data storage and cloud computing in another collaboration community, each reachable through three to five three-step routes. Personalized PageRank on the same distant pool suggests well-connected researchers, two of whom work on image processing and computer security and share no topics with Gupta. Triadic closure suggests people who share co-authors with him but mostly work on sensors and chips. None of these nine people wrote a paper with Gupta in 2020--2024, which shows how sparse the historical signal is for any single researcher. The table shows instead what each method would put in front of a student.
+
+\begin{table}[t]
+\caption{Top three suggestions for Indranil Gupta. Overlap is topic Jaccard with Gupta, and co-authors is the suggestion's number of training-graph co-authors.}
+\label{tab:example}
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\columnwidth}{@{}l>{\raggedright\arraybackslash}Xrr@{}}
+\toprule
+Method & Suggestion and main topics & Overlap & Co-authors\\
+\midrule
+BridgeFinder & Marc Snir, data storage and databases & 0.43 & 15\\
+ & Honwai Leong, cloud and parallel computing & 0.25 & 11\\
+ & D. Lesny, cloud and parallel computing & 0.27 & 6\\
+\midrule
+PageRank, & Thomas S. Huang, image clustering and retrieval & 0.00 & 61\\
+distant & R. Srikant, bandits, queuing and wireless networks & 0.18 & 28\\
+ & Michael Bailey, malware and adversarial learning & 0.00 & 25\\
+\midrule
+Triadic & John Michael Dallesasse, 3D chips and sensors & 0.00 & 29\\
+closure & Patrick Su, fiber-optic and chemical sensors & 0.00 & 22\\
+ & Adam Bates, security and blockchain & 0.00 & 21\\
+\bottomrule
+\end{tabularx}
+\end{table}
 
 \subsection{Validation of the fixed choices}\label{sec:validation}
 The weight of 0.5 and the saturating form of the path bonus were set by hand during development, and the midterm promised that any change to the ranking would be chosen on separate data. We therefore repeated the historical test one period earlier, without any 2020--2024 data. We built the graph, communities and topics from 2015--2017 papers and predicted new cross-community ties in 2018--2019 for the 2,344 researchers who formed one. Figure~\ref{fig:validation} shows P@10 on this split as the weight on the path bonus changes.
@@ -368,6 +429,8 @@ BridgeFinder did not meet the proposal's goal of predicting more new collaborati
 \pending{Revise once study results are in.} Our results describe a trade-off that any brokerage recommender faces. Nearby people are the safest prediction, and a student can usually find them already. Distant people are new, but few of them collaborate later, and the historical record cannot say whether a suggestion that never led to a paper was nonetheless useful to a student. BridgeFinder's score makes the distant pool as predictable as the network allows. It matches PageRank's accuracy with researchers whose work is much closer to the starting researcher's.
 
 Several limitations remain. A co-authorship route does not show that the intermediaries know each other well, would introduce a student, or that the suggested researcher is available to mentor. Our graph misses ties to authors outside UIUC and collaborations that never produced a paper, and OpenAlex affiliations and dates add noise. Of the 500 displayed suggestions, 29\% appear on only one UIUC paper between 2015 and 2024, and one paper does not establish a current UIUC appointment. The 50 starting researchers are highly connected authors in large communities, so a student's own instructor may be missing, and the starting researcher's topics only approximate the student's interests. The study's method key is stored in our public repository, although it is never shown to participants and no student could see it while rating. \pending{study limitations, such as sample size, field mix and self-guided versus moderated sessions}
+
+BridgeFinder also raises questions about the people it names. Every suggestion and intermediary is a real researcher who did not ask to be recommended. The data are public publication records, and the app shows only names, topics and paper titles, but a popular tool could still send many unsolicited emails to the same well-connected intermediaries. Our design limits this in three ways. The outreach draft asks the student to check the route before requesting an introduction, nothing is sent automatically, and the score saturates so that the most connected people are not favored without limit. A deployed version would also need a way for researchers to opt out.
 
 Two changes follow directly from this work. The two-paper minimum, which validation selected and the test confirmed (Section~\ref{sec:validation}), will enter the app after the study. Letting students start from their own instructor, rather than one of 50 researchers, would require precomputing suggestions for every author, which the shared model already supports.
 

@@ -23,6 +23,7 @@ import csv
 import json
 import re
 import sys
+import urllib.parse
 from pathlib import Path
 
 BLOCK = re.compile(r'-----BEGIN BRIDGEFINDER ANSWERS-----\s*(.*?)\s*-----END BRIDGEFINDER ANSWERS-----', re.S)
@@ -34,7 +35,7 @@ COLUMNS = ['code', 'participant_id', 'started_at', 'finished_at', 'level', 'fiel
 
 
 QUICK_COLUMNS = ['code', 'participant_id', 'started_at', 'seconds', 'level', 'field', 'seed_id', 'set_id',
-                 'relevant_yes', 'heard_of_yes', 'contact_choice', 'comment', 'opened_app', 'app_task_completed', 'app_confusing', 'build_id']
+                 'relevant_yes', 'heard_of_yes', 'contact_choice', 'comment', 'opened_app', 'app_task_completed', 'app_confusing', 'build_id', 'import_repairs']
 
 
 def quick_row(session):
@@ -50,20 +51,56 @@ def quick_row(session):
             'build_id': session.get('build_id')}
 
 
+# Chat apps sometimes damage pasted text. These repairs undo two damages seen in
+# real replies, and each is exact: the result must parse as JSON, and the repair is
+# recorded in the participant's log row.
+ENCODED = {'%7B': '{', '%7D': '}', '%22': '"', '%5B': '[', '%5D': ']', '%7b': '{', '%7d': '}'}
+AUTOLINK = re.compile(r'(https?://[^\s"\[\]()]*)\[(.*?)\]\((https?://[^)\s]+)\)', re.S)
+
+
+def decode(text):
+    for code, char in ENCODED.items():
+        text = text.replace(code, char)
+    return text
+
+
+def undo_autolinks(text):
+    """A chat app turned part of the text into a Markdown link [label](url). The url is the
+    original text, percent-encoded, so put it back only when it matches what is visible."""
+    def fix(match):
+        start, label, url = match.groups()
+        original = urllib.parse.unquote(url)
+        return original if original == start + decode(label) else match.group(0)
+    return AUTOLINK.sub(fix, text)
+
+
+def candidates(raw):
+    joined = raw.replace('\r', '').replace('\n', '')
+    yield raw, []
+    yield joined, ['rejoined wrapped lines']
+    for base, notes in ((raw, []), (joined, ['rejoined wrapped lines'])):
+        unlinked = undo_autolinks(base)
+        if unlinked != base:
+            yield decode(unlinked), notes + ['undid an automatic link', 'decoded percent-encoded characters']
+        if decode(base) != base:
+            yield decode(base), notes + ['decoded percent-encoded characters']
+
+
 def extract(text):
     sessions = []
     for raw in BLOCK.findall(text):
-        # Mail and chat apps may wrap long lines; JSON ignores whitespace between tokens only,
-        # so rejoin wrapped lines without adding characters.
-        candidate = raw.strip()
-        for attempt in (candidate, candidate.replace('\r', '').replace('\n', '')):
+        for attempt, notes in candidates(raw.strip()):
             try:
-                sessions.append(json.loads(attempt))
-                break
+                session = json.loads(attempt)
             except json.JSONDecodeError:
                 continue
+            if isinstance(session, dict):
+                if notes:
+                    session['import_repairs'] = notes
+                sessions.append(session)
+                break
         else:
-            print('Skipped one block that is not valid JSON (it may have been cut off).', file=sys.stderr)
+            print('Skipped one block that is not valid JSON, even after repairs (it may have been cut off).', file=sys.stderr)
     return sessions
 
 

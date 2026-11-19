@@ -394,7 +394,12 @@ def part_communities(data, cnm_seconds_cap):
     center = demo[0]
     order = list(nx.bfs_tree(graph, center))
     for size in (50, 100, 150, 200):
-        sub = graph.subgraph(order[:size]).copy()
+        # Build the subgraph in sorted order: networkx subgraph views iterate a set,
+        # whose order changes with Python's hash seed and would make results vary.
+        keep = set(order[:size])
+        sub = nx.Graph()
+        sub.add_nodes_from(sorted(keep))
+        sub.add_edges_from(sorted((min(u, v), max(u, v), {'weight': d['weight']}) for u, v, d in graph.edges(keep, data=True) if u in keep and v in keep))
         trial = girvan_newman_trial(sub, limit_seconds=240)
         t = time.time(); louvain = nxc.louvain_communities(sub, seed=42); lt = time.time()-t
         gn.append({'nodes': sub.number_of_nodes(), 'edges': sub.number_of_edges(), 'girvan_newman': trial,
