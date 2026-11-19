@@ -236,7 +236,7 @@ Landing-page steps, card definition & Round 1 feedback\\
 Separate research areas from communities & Round 1 feedback\\
 Topics and papers under the route & Path bonus dominates (Section~\ref{sec:network})\\
 Editable draft, never sent & G4, trust in the route\\
-\pending{decisions from rounds 3 and 4} & Rounds 3 and 4\\
+Every answer undoable, a way back above an opened card & Round 3 feedback\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -276,8 +276,8 @@ Round & Students & What they did & What changed\\
 \midrule
 1 (before midterm) & 4, two graduate and two undergraduate, in CS, computational biology, ECE and Food Systems & Worked through the first prototype with minimal context and reported problems as they met them & Landing-page steps, renamed views, focused map, corrected labels\\
 2 (before midterm) & 6, two undergraduate and four master's students, in mathematics and CS, CS and business technology management & Reviewed the revised app & No new problems, so no changes\\
-3 (after midterm) & \pending{N, composition} & Rated six method-blinded suggestion cards and picked one to contact, and some used the app with an observer or a logger & \pending{changes}\\
-4 & \pending{N} & \pending{what they did} & \pending{changes confirmed}\\
+3 (after midterm) & 6, three undergraduate and three master's students, all in computer science & Took the one-minute study, rating six method-blinded cards and picking one person to contact & Every answer can be undone, and an opened card has a way back to all suggestions\\
+4 & \pending{N and composition} & Took the revised one-minute study, and \pending{N} tried the revised app & \pending{whether the undo and the way back worked, and any new problems}\\
 \bottomrule
 \end{tabularx}
 \end{table*}
@@ -290,11 +290,11 @@ Round & Students & What they did & What changed\\
 \item \textbf{Correct labels.} Some tags did not match the researchers shown. We corrected the profile labels and now distinguish inferred research areas from collaboration communities.
 \end{itemize}
 
-\textbf{Round 2.} Six more UIUC students then reviewed the revised app. Two were undergraduates studying mathematics and computer science, one in a dual degree and one in the combined degree. Three were Master of Computer Science students, and one was a master's student in business technology management. All six found the revised interface clear, raised no new problems, and approved of the app. Most testers in the first two rounds study computing, so for the third round we recruited across the five research areas of the study's starting researchers.
+\textbf{Round 2.} Six more UIUC students then reviewed the revised app. Two were undergraduates studying mathematics and computer science, one in a dual degree and one in the combined degree. Three were Master of Computer Science students, and one was a master's student in business technology management. All six found the revised interface clear, raised no new problems, and approved of the app. Most testers in the first two rounds study computing, so for the third round we tried to recruit across the five research areas of the study's starting researchers.
 
-\textbf{Round 3.} \pending{number of students in the one-minute study and in moderated sessions, with their levels and fields}. Students in the one-minute study rated six blinded suggestion cards and picked the person they would most like to contact (Section~\ref{sec:study}), and \pending{N} of them also tried the full app. For those students, the page logged which views they opened, which suggestions and cards they chose, whether they opened the ranking explanation and the outreach draft, and how long they spent, but never the text of their draft. Moderated students worked through the app without help while thinking aloud, answered three questions about what the solid lines, the dashed lines and the route mean, completed the SUS, and described what confused them, whether they would contact anyone, how far they trusted the route and what they would change. \pending{what students actually did, from the logs and notes, for example how many reached a card and a draft without help, where they hesitated and what they misread}. \pending{the changes made in response}
+\textbf{Round 3.} Six students took the first version of the one-minute study, three undergraduates and three master's students. Despite our aim, all six study computer science, and all six chose the computing starting researcher. Each rated six method-blinded suggestion cards and picked the person they would most like to contact (Section~\ref{sec:study}), taking a median of about half a minute. None of them had heard of any researcher they were shown, and three of the six said they would not contact any of their six suggestions. None opened the optional app task. One student told us that the interface was ``very intuitive, very helpful, very clear,'' but that they could not unselect a choice and had to refresh the page. Two places lacked an undo. In the study, a chosen answer or contact pick could only be switched, never cleared, and in the app the only way back from an opened card to the full list was a small button in the page header. We made both undoable. Pressing a chosen answer again now clears it, a Clear my pick link removes the contact pick, and an opened card has a Back to all suggestions button directly above it. Every answer records the version of the page it came from, so ratings from before and after this change stay separable.
 
-\textbf{Round 4.} \pending{a short check of the round-3 changes with new students, using the same unaided task and debrief}.
+\textbf{Round 4.} New students took the revised one-minute study, and \pending{N} of them also tried the revised app. For students who open the app, the page logs which views they open, which suggestions and cards they choose, whether they open the ranking explanation and the outreach draft, and how long they spend, but never the text of their draft. \pending{whether anyone still had trouble undoing a choice or finding the way back, any new problems, and the moderated sessions if Eric runs them}.
 
 \section{Evaluation}\label{sec:eval}
 We evaluate BridgeFinder in two ways. A historical test asks whether its suggestions anticipate real collaborations, and a student study asks whether students find them relevant, new and worth contacting. Table~\ref{tab:metrics} lists the metrics, why each matters and its baseline.

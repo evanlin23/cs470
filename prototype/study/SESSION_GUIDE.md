@@ -11,7 +11,10 @@ There are three ways to take part. Most students should get the first.
 
 Collect the pasted replies in text files and run `python prototype/study/import_answers.py replies/*.txt --out /path/to/private`. It splits the answers into `quick_sessions.json` for `analyze_quick.py` and `sessions.json` for `analyze_study.py`, with one log row per student for each. Rebuild both pages with `python prototype/study/build_standalone.py`, and test them with `python prototype/tests/standalone_workflow.py`.
 
-**Versions.** The live site changes only between feedback rounds, so every student in a round sees the same version, and each answer records its `build_id`. Round 3 uses the pages on the `gh-pages` branch at commit `074f860` (builds `9aad6f9-quick-ae836e3ce146` and `9aad6f9-full-35a674107be5`). The round-3 fixes (every answer in the one-minute study can be undone, and the app has a "Back to all suggestions" button above an opened card) are in `dist/` but are published only when round 3 ends. Run moderated round-3 sessions from the live `/full.html`, not from a fresh checkout.
+**Versions.** The live site changes only between feedback rounds, and each answer records its `build_id`, so answers from different versions stay separable.
+- **Round 3:** `gh-pages` commit `074f860`, builds `9aad6f9-quick-ae836e3ce146` and `9aad6f9-full-35a674107be5`.
+- **Round 4, live since 2026-11-19:** `gh-pages` commit `b82bb1f`, builds `1d93477-quick-666ba821fcee` and `1d93477-full-639f4005bda5`. It adds the round-3 fixes. Every answer in the one-minute study can be undone, and the app has a "Back to all suggestions" button above an opened card.
+- Rating questions, cards and sets are identical in both versions, so the one-minute ratings pool across rounds.
 
 The full and moderated versions use the same cards, rating questions and SUS, so they go into one analysis. The one-minute study has its own analysis, because it asks yes/no questions about six cards.
 
