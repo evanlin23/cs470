@@ -57,6 +57,16 @@ class ImportRepairTests(unittest.TestCase):
     def test_truncated_reply_is_skipped(self):
         self.assertEqual(importer.extract(wrap(self.clean[:-20])), [])
 
+    def test_clipped_markers(self):
+        text = f'BEGIN BRIDGEFINDER ANSWERS-----\n{self.clean}\n-----END'
+        [session] = importer.extract(text)
+        self.assertEqual(session, SESSION)
+
+    def test_several_replies_in_one_file(self):
+        other = json.dumps({**SESSION, 'participant_id': 'synthetic-0002'}, separators=(',', ':'))
+        sessions = importer.extract(wrap(self.clean) + '\nthanks!\n' + wrap(other))
+        self.assertEqual([s['participant_id'] for s in sessions], ['synthetic-0001', 'synthetic-0002'])
+
 
 if __name__ == '__main__':
     unittest.main()

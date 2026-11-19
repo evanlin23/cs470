@@ -26,7 +26,8 @@ import sys
 import urllib.parse
 from pathlib import Path
 
-BLOCK = re.compile(r'-----BEGIN BRIDGEFINDER ANSWERS-----\s*(.*?)\s*-----END BRIDGEFINDER ANSWERS-----', re.S)
+# Tolerate clipped marker lines (missing dashes, or END cut short) when copying by hand.
+BLOCK = re.compile(r'-*\s*BEGIN BRIDGEFINDER ANSWERS\s*-*\s*(.*?)\s*-*\s*END(?:\s+BRIDGEFINDER(?:\s+ANSWERS)?)?\s*-*(?=\s|$)', re.S)
 COLUMNS = ['code', 'participant_id', 'started_at', 'finished_at', 'level', 'field', 'seeking_research', 'tried_before',
            'research_interest', 'seed_id', 'app_seconds', 'chose_researcher', 'opened_card', 'opened_draft', 'task_completed',
            'cards_opened', 'researchers_explored', 'explanation_opened', 'searches', 'screens_visited', 'opened_candidates',
