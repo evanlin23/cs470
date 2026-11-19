@@ -4,6 +4,7 @@ Input: JSON list of browser session exports. No invented defaults or anonymous
 participant pooling. Primary outcome: relevant-and-new versus triadic closure.
 """
 import argparse
+from collections import Counter
 import json
 import math
 import statistics
@@ -143,8 +144,70 @@ def analyze(sessions, keys):
     return summary
 
 
-def analyze_responses(responses_path, keys_path, out_path):
-    result = analyze(json.loads(Path(responses_path).read_text()), json.loads(Path(keys_path).read_text()))
+def spearman(x, y):
+    if len(x) < 3 or len(set(x)) < 2 or len(set(y)) < 2:
+        return None
+    value = stats.spearmanr(x, y).statistic
+    return float(value) if math.isfinite(value) else None
+
+
+def topic_overlap_check(sessions, keys, features, included):
+    """Exploratory: do low-topic-overlap suggestions still feel relevant? (midterm grader's question)"""
+    cards = features['cards']
+    bf_cards = sorted(cid for cid, key in keys.items() if 'BridgeFinder' in key['models'])
+    cut = statistics.median(cards[cid]['topic_similarity'] for cid in bf_cards)
+    correlations, low, high, pooled = [], [], [], {'low': [], 'high': []}
+    for session in sessions:
+        if session.get('participant_id', '').strip() not in included:
+            continue
+        rows = [row for row in session['ratings'] if row['card_id'] in cards]
+        rho = spearman([cards[row['card_id']]['topic_similarity'] for row in rows], [row['relevance'] for row in rows])
+        if rho is not None:
+            correlations.append(rho)
+        mine = [row for row in rows if 'BridgeFinder' in keys[row['card_id']]['models']]
+        lo = [row['relevance'] for row in mine if cards[row['card_id']]['topic_similarity'] < cut]
+        hi = [row['relevance'] for row in mine if cards[row['card_id']]['topic_similarity'] >= cut]
+        for row in mine:
+            pooled['low' if cards[row['card_id']]['topic_similarity'] < cut else 'high'].append(int(row['relevance'] >= 5))
+        if lo and hi:
+            low.append(statistics.mean(lo))
+            high.append(statistics.mean(hi))
+    return {
+        'note': 'Exploratory. BridgeFinder cards split at their median topic overlap; participant-level means.',
+        'bridgefinder_overlap_cut': cut,
+        'within_participant_spearman_overlap_vs_relevance': {'mean': statistics.mean(correlations) if correlations else None, 'n': len(correlations)},
+        'bridgefinder_relevance_low_overlap_mean': statistics.mean(low) if low else None,
+        'bridgefinder_relevance_high_overlap_mean': statistics.mean(high) if high else None,
+        'high_minus_low': paired(high, low) if len(low) >= 1 else None,
+        'bridgefinder_share_relevance_at_least_5': {key: (statistics.mean(v) if v else None) for key, v in pooled.items()},
+    }
+
+
+def self_guided_summary(sessions, included):
+    rows = [s for s in sessions if s.get('participant_id', '').strip() in included]
+    modes = Counter(s.get('collection_mode', 'moderated') for s in rows)
+    guided = [s for s in rows if s.get('collection_mode') == 'self-guided-html-v1']
+    count = lambda test: sum(1 for s in guided if test(s))
+    app = lambda s: s.get('app') or {}
+    check = lambda s: s.get('comprehension') or {}
+    return {'collection_modes': dict(modes), 'self_guided': None if not guided else {
+        'n': len(guided),
+        'task_completed': count(lambda s: app(s).get('task_completed') is True),
+        'opened_draft': count(lambda s: app(s).get('opened_draft') is True),
+        'solid_lines_correct': count(lambda s: check(s).get('solid_lines_correct') is True),
+        'dashed_lines_correct': count(lambda s: check(s).get('dashed_lines_correct') is True),
+        'route_meaning_correct': count(lambda s: check(s).get('route_meaning_correct') is True),
+        'median_app_seconds': statistics.median([app(s)['seconds'] for s in guided if isinstance(app(s).get('seconds'), (int, float))] or [0]),
+    }}
+
+
+def analyze_responses(responses_path, keys_path, out_path, features_path=None):
+    sessions, keys = json.loads(Path(responses_path).read_text()), json.loads(Path(keys_path).read_text())
+    result = analyze(sessions, keys)
+    included = {s['participant_id'].strip() for s in sessions} - {e['participant_id'] for e in result['excluded']}
+    result.update(self_guided_summary(sessions, included))
+    if features_path:
+        result['topic_overlap_check'] = topic_overlap_check(sessions, keys, json.loads(Path(features_path).read_text()), included)
     Path(out_path).parent.mkdir(parents=True, exist_ok=True)
     Path(out_path).write_text(json.dumps(result, indent=2, allow_nan=False))
     print(json.dumps(result, indent=2, allow_nan=False))
@@ -155,8 +218,9 @@ if __name__ == '__main__':
     parser.add_argument('--responses', required=True)
     parser.add_argument('--keys', default='prototype/study/truth_keys.json')
     parser.add_argument('--out', default='prototype/study/study_analysis_results.json')
+    parser.add_argument('--card-features', help='card_features.json, for the exploratory topic-overlap check')
     args = parser.parse_args()
     try:
-        analyze_responses(args.responses, args.keys, args.out)
+        analyze_responses(args.responses, args.keys, args.out, args.card_features)
     except (ValueError, OSError) as error:
         parser.exit(2, f"Study analysis failed: {error}\n")

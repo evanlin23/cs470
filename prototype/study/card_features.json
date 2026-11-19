@@ -1,0 +1,489 @@
+{
+ "model_version": "proposal-path-v3-common-neighbors",
+ "dataset_id": "4c8c79c0042c9262e1a6ad0ccf62bd184fbfa516a1689691c156dd571d5b57a3",
+ "cards": {
+  "CARD_001": {
+   "topic_similarity": 0.1818,
+   "three_hop_paths": 14,
+   "shared_coauthors": 0,
+   "distance": 3,
+   "path_bonus_share_of_score": 0.7196
+  },
+  "CARD_002": {
+   "topic_similarity": 0.1818,
+   "three_hop_paths": 14,
+   "shared_coauthors": 0,
+   "distance": 3,
+   "path_bonus_share_of_score": 0.7196
+  },
+  "CARD_003": {
+   "topic_similarity": 0.1818,
+   "three_hop_paths": 1,
+   "shared_coauthors": 0,
+   "distance": 3,
+   "path_bonus_share_of_score": 0.5789
+  },
+  "CARD_004": {
+   "topic_similarity": 0.2308,
+   "three_hop_paths": 5,
+   "shared_coauthors": 0,
+   "distance": 3,
+   "path_bonus_share_of_score": 0.6436
+  },
+  "CARD_005": {
+   "topic_similarity": 0.0526,
+   "three_hop_paths": 164,
+   "shared_coauthors": 9,
+   "distance": 2,
+   "path_bonus_share_of_score": 0.9042
+  },
+  "CARD_006": {
+   "topic_similarity": 0.1818,
+   "three_hop_paths": 14,
+   "shared_coauthors": 0,
+   "distance": 3,
+   "path_bonus_share_of_score": 0.7196
+  },
+  "CARD_007": {
+   "topic_similarity": 0.1111,
+   "three_hop_paths": 266,
+   "shared_coauthors": 8,
+   "distance": 2,
+   "path_bonus_share_of_score": 0.8176
+  },
+  "CARD_008": {
+   "topic_similarity": 0.1818,
+   "three_hop_paths": 14,
+   "shared_coauthors": 0,
+   "distance": 3,
+   "path_bonus_share_of_score": 0.7196
+  },
+  "CARD_009": {
+   "topic_similarity": 0.1818,
+   "three_hop_paths": 14,
+   "shared_coauthors": 0,
+   "distance": 3,
+   "path_bonus_share_of_score": 0.7196
+  },
+  "CARD_010": {
+   "topic_similarity": 0.0526,
+   "three_hop_paths": 146,
+   "shared_coauthors": 7,
+   "distance": 2,
+   "path_bonus_share_of_score": 0.9042
+  },
+  "CARD_011": {
+   "topic_similarity": 0.1818,
+   "three_hop_paths": 11,
+   "shared_coauthors": 0,
+   "distance": 3,
+   "path_bonus_share_of_score": 0.716
+  },
+  "CARD_012": {
+   "topic_similarity": 0.0526,
+   "three_hop_paths": 225,
+   "shared_coauthors": 9,
+   "distance": 2,
+   "path_bonus_share_of_score": 0.9044
+  },
+  "CARD_013": {
+   "topic_similarity": 0.0526,
+   "three_hop_paths": 240,
+   "shared_coauthors": 10,
+   "distance": 2,
+   "path_bonus_share_of_score": 0.9044
+  },
+  "CARD_014": {
+   "topic_similarity": 0.1429,
+   "three_hop_paths": 4,
+   "shared_coauthors": 0,
+   "distance": 3,
+   "path_bonus_share_of_score": 0.7368
+  },
+  "CARD_015": {
+   "topic_similarity": 0.0,
+   "three_hop_paths": 58,
+   "shared_coauthors": 4,
+   "distance": 2,
+   "path_bonus_share_of_score": 1.0
+  },
+  "CARD_016": {
+   "topic_similarity": 0.1818,
+   "three_hop_paths": 2,
+   "shared_coauthors": 0,
+   "distance": 3,
+   "path_bonus_share_of_score": 0.6471
+  },
+  "CARD_017": {
+   "topic_similarity": 0.1818,
+   "three_hop_paths": 2,
+   "shared_coauthors": 0,
+   "distance": 3,
+   "path_bonus_share_of_score": 0.6471
+  },
+  "CARD_018": {
+   "topic_similarity": 0.0526,
+   "three_hop_paths": 59,
+   "shared_coauthors": 4,
+   "distance": 2,
+   "path_bonus_share_of_score": 0.9033
+  },
+  "CARD_019": {
+   "topic_similarity": 0.0526,
+   "three_hop_paths": 19,
+   "shared_coauthors": 0,
+   "distance": 3,
+   "path_bonus_share_of_score": 0.9002
+  },
+  "CARD_020": {
+   "topic_similarity": 0.1538,
+   "three_hop_paths": 0,
+   "shared_coauthors": 0,
+   "distance": 4,
+   "path_bonus_share_of_score": 0.0
+  },
+  "CARD_021": {
+   "topic_similarity": 0.0,
+   "three_hop_paths": 84,
+   "shared_coauthors": 5,
+   "distance": 2,
+   "path_bonus_share_of_score": 1.0
+  },
+  "CARD_022": {
+   "topic_similarity": 0.1111,
+   "three_hop_paths": 15,
+   "shared_coauthors": 0,
+   "distance": 3,
+   "path_bonus_share_of_score": 0.8084
+  },
+  "CARD_023": {
+   "topic_similarity": 0.0,
+   "three_hop_paths": 54,
+   "shared_coauthors": 4,
+   "distance": 2,
+   "path_bonus_share_of_score": 1.0
+  },
+  "CARD_024": {
+   "topic_similarity": 0.1429,
+   "three_hop_paths": 4,
+   "shared_coauthors": 0,
+   "distance": 3,
+   "path_bonus_share_of_score": 0.7368
+  },
+  "CARD_025": {
+   "topic_similarity": 0.0625,
+   "three_hop_paths": 14,
+   "shared_coauthors": 0,
+   "distance": 3,
+   "path_bonus_share_of_score": 0.8819
+  },
+  "CARD_026": {
+   "topic_similarity": 0.1538,
+   "three_hop_paths": 1,
+   "shared_coauthors": 0,
+   "distance": 3,
+   "path_bonus_share_of_score": 0.619
+  },
+  "CARD_027": {
+   "topic_similarity": 0.0,
+   "three_hop_paths": 181,
+   "shared_coauthors": 5,
+   "distance": 2,
+   "path_bonus_share_of_score": 1.0
+  },
+  "CARD_028": {
+   "topic_similarity": 0.1818,
+   "three_hop_paths": 0,
+   "shared_coauthors": 0,
+   "distance": 5,
+   "path_bonus_share_of_score": 0.0
+  },
+  "CARD_029": {
+   "topic_similarity": 0.1818,
+   "three_hop_paths": 3,
+   "shared_coauthors": 0,
+   "distance": 3,
+   "path_bonus_share_of_score": 0.6735
+  },
+  "CARD_030": {
+   "topic_similarity": 0.1818,
+   "three_hop_paths": 2,
+   "shared_coauthors": 0,
+   "distance": 3,
+   "path_bonus_share_of_score": 0.6471
+  },
+  "CARD_031": {
+   "topic_similarity": 0.1111,
+   "three_hop_paths": 9,
+   "shared_coauthors": 0,
+   "distance": 3,
+   "path_bonus_share_of_score": 0.802
+  },
+  "CARD_032": {
+   "topic_similarity": 0.0,
+   "three_hop_paths": 285,
+   "shared_coauthors": 9,
+   "distance": 2,
+   "path_bonus_share_of_score": 1.0
+  },
+  "CARD_033": {
+   "topic_similarity": 0.0,
+   "three_hop_paths": 823,
+   "shared_coauthors": 20,
+   "distance": 2,
+   "path_bonus_share_of_score": 1.0
+  },
+  "CARD_034": {
+   "topic_similarity": 0.0526,
+   "three_hop_paths": 352,
+   "shared_coauthors": 11,
+   "distance": 2,
+   "path_bonus_share_of_score": 0.9045
+  },
+  "CARD_035": {
+   "topic_similarity": 0.0,
+   "three_hop_paths": 297,
+   "shared_coauthors": 9,
+   "distance": 2,
+   "path_bonus_share_of_score": 1.0
+  },
+  "CARD_036": {
+   "topic_similarity": 0.1818,
+   "three_hop_paths": 3,
+   "shared_coauthors": 0,
+   "distance": 3,
+   "path_bonus_share_of_score": 0.6735
+  },
+  "CARD_037": {
+   "topic_similarity": 0.1818,
+   "three_hop_paths": 6,
+   "shared_coauthors": 0,
+   "distance": 3,
+   "path_bonus_share_of_score": 0.7021
+  },
+  "CARD_038": {
+   "topic_similarity": 0.1176,
+   "three_hop_paths": 10,
+   "shared_coauthors": 0,
+   "distance": 3,
+   "path_bonus_share_of_score": 0.7944
+  },
+  "CARD_039": {
+   "topic_similarity": 0.1818,
+   "three_hop_paths": 3,
+   "shared_coauthors": 0,
+   "distance": 3,
+   "path_bonus_share_of_score": 0.6735
+  },
+  "CARD_040": {
+   "topic_similarity": 0.125,
+   "three_hop_paths": 10,
+   "shared_coauthors": 0,
+   "distance": 3,
+   "path_bonus_share_of_score": 0.7843
+  },
+  "CARD_041": {
+   "topic_similarity": 0.0,
+   "three_hop_paths": 386,
+   "shared_coauthors": 8,
+   "distance": 2,
+   "path_bonus_share_of_score": 1.0
+  },
+  "CARD_042": {
+   "topic_similarity": 0.1111,
+   "three_hop_paths": 5,
+   "shared_coauthors": 0,
+   "distance": 3,
+   "path_bonus_share_of_score": 0.7895
+  },
+  "CARD_043": {
+   "topic_similarity": 0.2308,
+   "three_hop_paths": 3,
+   "shared_coauthors": 0,
+   "distance": 3,
+   "path_bonus_share_of_score": 0.619
+  },
+  "CARD_044": {
+   "topic_similarity": 0.0526,
+   "three_hop_paths": 75,
+   "shared_coauthors": 5,
+   "distance": 2,
+   "path_bonus_share_of_score": 0.9036
+  },
+  "CARD_045": {
+   "topic_similarity": 0.0833,
+   "three_hop_paths": 8,
+   "shared_coauthors": 0,
+   "distance": 3,
+   "path_bonus_share_of_score": 0.8421
+  },
+  "CARD_046": {
+   "topic_similarity": 0.1818,
+   "three_hop_paths": 2,
+   "shared_coauthors": 0,
+   "distance": 3,
+   "path_bonus_share_of_score": 0.6471
+  },
+  "CARD_047": {
+   "topic_similarity": 0.1818,
+   "three_hop_paths": 0,
+   "shared_coauthors": 0,
+   "distance": 4,
+   "path_bonus_share_of_score": 0.0
+  },
+  "CARD_048": {
+   "topic_similarity": 0.1818,
+   "three_hop_paths": 0,
+   "shared_coauthors": 0,
+   "distance": 4,
+   "path_bonus_share_of_score": 0.0
+  },
+  "CARD_049": {
+   "topic_similarity": 0.1111,
+   "three_hop_paths": 112,
+   "shared_coauthors": 7,
+   "distance": 2,
+   "path_bonus_share_of_score": 0.8169
+  },
+  "CARD_050": {
+   "topic_similarity": 0.2,
+   "three_hop_paths": 3,
+   "shared_coauthors": 0,
+   "distance": 3,
+   "path_bonus_share_of_score": 0.6522
+  },
+  "CARD_051": {
+   "topic_similarity": 0.0526,
+   "three_hop_paths": 75,
+   "shared_coauthors": 5,
+   "distance": 2,
+   "path_bonus_share_of_score": 0.9036
+  },
+  "CARD_052": {
+   "topic_similarity": 0.0,
+   "three_hop_paths": 83,
+   "shared_coauthors": 5,
+   "distance": 2,
+   "path_bonus_share_of_score": 1.0
+  },
+  "CARD_053": {
+   "topic_similarity": 0.0526,
+   "three_hop_paths": 100,
+   "shared_coauthors": 5,
+   "distance": 2,
+   "path_bonus_share_of_score": 0.9039
+  },
+  "CARD_054": {
+   "topic_similarity": 0.1176,
+   "three_hop_paths": 8,
+   "shared_coauthors": 0,
+   "distance": 3,
+   "path_bonus_share_of_score": 0.7907
+  },
+  "CARD_055": {
+   "topic_similarity": 0.1111,
+   "three_hop_paths": 28,
+   "shared_coauthors": 2,
+   "distance": 2,
+   "path_bonus_share_of_score": 0.8129
+  },
+  "CARD_056": {
+   "topic_similarity": 0.2,
+   "three_hop_paths": 0,
+   "shared_coauthors": 0,
+   "distance": 6,
+   "path_bonus_share_of_score": 0.0
+  },
+  "CARD_057": {
+   "topic_similarity": 0.1111,
+   "three_hop_paths": 10,
+   "shared_coauthors": 0,
+   "distance": 3,
+   "path_bonus_share_of_score": 0.8036
+  },
+  "CARD_058": {
+   "topic_similarity": 0.1818,
+   "three_hop_paths": 0,
+   "shared_coauthors": 0,
+   "distance": 7,
+   "path_bonus_share_of_score": 0.0
+  },
+  "CARD_059": {
+   "topic_similarity": 0.1111,
+   "three_hop_paths": 10,
+   "shared_coauthors": 0,
+   "distance": 3,
+   "path_bonus_share_of_score": 0.8036
+  },
+  "CARD_060": {
+   "topic_similarity": 0.1429,
+   "three_hop_paths": 6,
+   "shared_coauthors": 0,
+   "distance": 3,
+   "path_bonus_share_of_score": 0.75
+  },
+  "CARD_061": {
+   "topic_similarity": 0.1818,
+   "three_hop_paths": 1,
+   "shared_coauthors": 0,
+   "distance": 3,
+   "path_bonus_share_of_score": 0.5789
+  },
+  "CARD_062": {
+   "topic_similarity": 0.1111,
+   "three_hop_paths": 15,
+   "shared_coauthors": 3,
+   "distance": 2,
+   "path_bonus_share_of_score": 0.8084
+  },
+  "CARD_063": {
+   "topic_similarity": 0.0,
+   "three_hop_paths": 10,
+   "shared_coauthors": 2,
+   "distance": 2,
+   "path_bonus_share_of_score": 1.0
+  },
+  "CARD_064": {
+   "topic_similarity": 0.125,
+   "three_hop_paths": 12,
+   "shared_coauthors": 0,
+   "distance": 3,
+   "path_bonus_share_of_score": 0.7869
+  },
+  "CARD_065": {
+   "topic_similarity": 0.1111,
+   "three_hop_paths": 11,
+   "shared_coauthors": 0,
+   "distance": 3,
+   "path_bonus_share_of_score": 0.8049
+  },
+  "CARD_066": {
+   "topic_similarity": 0.1818,
+   "three_hop_paths": 0,
+   "shared_coauthors": 0,
+   "distance": 4,
+   "path_bonus_share_of_score": 0.0
+  },
+  "CARD_067": {
+   "topic_similarity": 0.1818,
+   "three_hop_paths": 0,
+   "shared_coauthors": 0,
+   "distance": 5,
+   "path_bonus_share_of_score": 0.0
+  },
+  "CARD_068": {
+   "topic_similarity": 0.1111,
+   "three_hop_paths": 23,
+   "shared_coauthors": 2,
+   "distance": 2,
+   "path_bonus_share_of_score": 0.8118
+  },
+  "CARD_069": {
+   "topic_similarity": 0.0,
+   "three_hop_paths": 29,
+   "shared_coauthors": 3,
+   "distance": 2,
+   "path_bonus_share_of_score": 1.0
+  }
+ }
+}
