@@ -23,3 +23,6 @@ dialog{border:1px solid #b7c2c0;border-radius:4px;box-shadow:0 12px 60px #14242a
 
 /* Labels describe nodes; let pointer clicks reach the observed/suggested edges. */
 .map-label{pointer-events:none}
+
+/* Round 3: the way back from one opened card sits right above it. */
+.back-to-all{align-self:flex-start}

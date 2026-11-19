@@ -6,6 +6,7 @@ screenshots and a test summary, outside the report's existing screenshots.
 import argparse
 import importlib.util
 import json
+import os
 from pathlib import Path
 import sys
 import threading
@@ -28,7 +29,8 @@ class BrowserTests(unittest.TestCase):
         cls.thread=threading.Thread(target=cls.server.serve_forever,daemon=True);cls.thread.start()
         cls.base=f'http://127.0.0.1:{cls.server.server_port}'
         cls.engine=sync_playwright().start()
-        cls.browser=cls.engine.chromium.launch(executable_path='/usr/bin/chromium',headless=True,args=['--no-sandbox'])
+        chromium=next((p for p in (os.environ.get('BF_CHROMIUM'),'/usr/bin/chromium','/opt/pw-browsers/chromium') if p and Path(p).exists()),'/usr/bin/chromium')
+        cls.browser=cls.engine.chromium.launch(executable_path=chromium,headless=True,args=['--no-sandbox'])
         cls.bundle=json.loads((ROOT/'web/data.json').read_text())
         cls.cards=json.loads((ROOT/'study/study_cards.json').read_text())
         cls.keys=json.loads((ROOT/'study/truth_keys.json').read_text())
@@ -116,6 +118,10 @@ class BrowserTests(unittest.TestCase):
         label=line.get_attribute('aria-label');line.click()
         expect(self.page.locator('.rec-card')).to_have_count(1)
         self.assertEqual('Inspect '+self.page.locator('.rec-name').inner_text(),label)
+        # Round 3: the way back sits right above the opened card.
+        back=self.page.locator('.back-to-all');expect(back).to_have_count(1);back.click()
+        expect(self.page.locator('.rec-card')).to_have_count(10);expect(self.page.locator('.back-to-all')).to_have_count(0)
+        self.page.locator('[data-screen=map]').click();self.page.locator('line[data-kind="structural_hole"]').first.click()
         self.page.locator('#showAllCards').click();expect(self.page.locator('.rec-card')).to_have_count(10)
         self.page.locator('[data-screen=map]').click()
         original=self.page.locator('#topoMapSvg > g').get_attribute('transform')

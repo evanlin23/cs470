@@ -104,8 +104,11 @@ function yesNo(cardId, key, label) {
     button.type = 'button';
     button.setAttribute('aria-pressed', String(S.answers[cardId]?.[key] === value));
     button.addEventListener('click', () => {
-      (S.answers[cardId] ??= {})[key] = value; save(); error('rate');
-      for (const sibling of group.querySelectorAll('.yn-button')) sibling.setAttribute('aria-pressed', String(sibling === button));
+      // Round 3: pressing the chosen answer again clears it.
+      const answers = (S.answers[cardId] ??= {});
+      answers[key] = answers[key] === value ? undefined : value;
+      save(); error('rate');
+      for (const sibling of group.querySelectorAll('.yn-button')) sibling.setAttribute('aria-pressed', String(sibling === button && answers[key] === value));
       progress();
     });
     group.append(button);
@@ -135,11 +138,25 @@ function renderRate() {
     return box;
   }));
   $('input[name="contact"][value="none"]').checked = S.contact === 'none';
-  for (const input of $$('input[name="contact"]')) input.addEventListener('change', () => { S.contact = input.value; save(); error('rate'); progress(); });
+  for (const input of $$('input[name="contact"]')) {
+    // Round 3: clicking the chosen option again, or "Clear my pick", removes the pick.
+    input.addEventListener('click', () => {
+      if (S.contact === input.value) { input.checked = false; S.contact = null; } else S.contact = input.value;
+      save(); error('rate'); progress();
+    });
+  }
   progress();
 }
+function clearContact() {
+  S.contact = null;
+  for (const input of $$('input[name="contact"]')) input.checked = false;
+  save(); progress();
+}
 function answered() { return S.shown.filter(id => QUESTIONS.every(([key]) => typeof S.answers[id]?.[key] === 'boolean')).length; }
-function progress() { $('#rateProgress').textContent = `${answered()} of ${S.shown.length} rated${S.contact ? ', favorite chosen' : ''}`; }
+function progress() {
+  $('#rateProgress').textContent = `${answered()} of ${S.shown.length} rated${S.contact ? ', favorite chosen' : ''}`;
+  $('#clearContact').hidden = !S.contact;
+}
 
 // ---------- optional app ----------
 let appFrame = null;
@@ -231,6 +248,7 @@ for (const button of $$('[data-next]')) button.addEventListener('click', () => n
 $('#field').addEventListener('input', e => { S.background.field = e.target.value.trim(); save(); });
 $('#comment').addEventListener('input', e => { S.comment = e.target.value.trim(); save(); $('#answersText').value = answersText(); });
 $('#appConfusing').addEventListener('input', e => { S.app.confusing = e.target.value.trim(); save(); });
+$('#clearContact').addEventListener('click', clearContact);
 $('#copyAnswers').addEventListener('click', copyAnswers);
 $('#downloadAnswers').addEventListener('click', downloadAnswers);
 $('#openApp').addEventListener('click', () => go('app'));

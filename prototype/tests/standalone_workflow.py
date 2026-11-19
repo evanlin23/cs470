@@ -212,6 +212,22 @@ class StandaloneStudyTests(unittest.TestCase):
         page.get_by_role('button', name='Done').click()
         expect(page.locator('[data-error="rate"]')).to_contain_text('both questions')
         cards = page.locator('.quick-card')
+        # Round 3: every answer can be undone. Pressing a chosen answer again clears it.
+        first_yes = cards.nth(0).get_by_role('group', name='Relevant to my interests?').get_by_role('button', name='Yes')
+        first_yes.click()
+        expect(first_yes).to_have_attribute('aria-pressed', 'true')
+        first_yes.click()
+        expect(first_yes).to_have_attribute('aria-pressed', 'false')
+        expect(page.locator('#rateProgress')).to_have_text('0 of 6 rated')
+        pick = cards.nth(1).get_by_label('I would most like to contact this person')
+        pick.click()
+        expect(page.locator('#clearContact')).to_be_visible()
+        pick.click()
+        expect(pick).not_to_be_checked()
+        expect(page.locator('#clearContact')).to_be_hidden()
+        pick.click()
+        page.locator('#clearContact').click()
+        expect(pick).not_to_be_checked()
         for index in range(6):
             card = cards.nth(index)
             card.get_by_role('group', name='Relevant to my interests?').get_by_role('button', name='Yes' if index % 2 == 0 else 'No').click()
@@ -308,6 +324,9 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--artifacts', type=Path)
     parser.add_argument('--chromium', default=CHROMIUM)
+    parser.add_argument('--dist', type=Path, help='test pages built into another folder (default: prototype/study/dist)')
     args, rest = parser.parse_known_args()
     ARTIFACTS, CHROMIUM = args.artifacts, args.chromium
+    if args.dist:
+        PAGE, QUICK = args.dist/PAGE.name, args.dist/QUICK.name
     unittest.main(argv=[sys.argv[0], *rest], verbosity=2)

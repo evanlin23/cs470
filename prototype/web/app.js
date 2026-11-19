@@ -187,6 +187,8 @@ function renderRecCards() {
   byId('showAllCards').hidden=!candidateFilter;
   byId('recCardList').replaceChildren();
   const rows=recommendations().filter(row => !candidateFilter || row.id === candidateFilter), colors=viewColors(seed);
+  // Round 3: a student could not find the way back from one opened card, so the way back sits right above it.
+  if (candidateFilter) byId('recCardList').append(button(`← Back to all ${recommendations().length} suggestions for ${seed.name}`,showAllRecommendations,'secondary back-to-all'));
   if (!rows.length) byId('recCardList').append(element('p','notice','No suggestions are available. Choose another starting researcher.'));
   for (const row of rows) {
     const card=element('article','rec-card'); card.dataset.candidateId=row.id;

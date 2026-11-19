@@ -56,7 +56,7 @@
     else if (target.closest('.map-link')) post('map_line_clicked');
     else if (target.closest('.map-node')) post('map_person_clicked', {name: clean(target.closest('.map-node').textContent, 60)});
     else if (target.closest('.nav-tab')) post('nav_tab', {screen: target.closest('.nav-tab').dataset.screen});
-    else if (target.closest('#mapAllCards, #showAllCards')) post('all_suggestions');
+    else if (target.closest('#mapAllCards, #showAllCards, .back-to-all')) post('all_suggestions');
     else if (target.closest('#changeSeed')) post('change_researcher');
     else if (target.closest('.outreach-button')) { draftFor = cardName; }
     else if (target.closest('#copyDraft')) post('draft_copied');

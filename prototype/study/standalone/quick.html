@@ -35,7 +35,8 @@
     <h1 tabindex="-1">Are these suggestions any good for you?</h1>
     <p class="muted">Suggested for <strong id="seedLabel"></strong>. Three different methods picked these, and we've hidden which picked which.</p>
     <div id="cardGrid" class="quick-grid"></div>
-    <fieldset class="none-row"><label class="choice"><input type="radio" name="contact" value="none"><span>I wouldn't contact any of them</span></label></fieldset>
+    <fieldset class="none-row"><label class="choice"><input type="radio" name="contact" value="none"><span>I wouldn't contact any of them</span></label>
+      <button type="button" id="clearContact" class="link-button" hidden>Clear my pick</button></fieldset>
     <p class="validation" role="alert" data-error="rate"></p>
     <div class="actions"><span class="data-note" id="rateProgress"></span><button data-next="rate">Done</button></div>
   </section>
