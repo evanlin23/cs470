@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 import re
 import statistics
+import subprocess
 import unittest
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -15,6 +16,14 @@ JOBS=[('backtest_results_scaled.json','scaled-run.json'),
 
 def digest(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+MIDTERM_COMMIT='a840986'  # the midterm report as submitted
+
+
+def historical_digest(path, commit=MIDTERM_COMMIT):
+    content=subprocess.run(['git','show',f'{commit}:{path}'],cwd=REPO,capture_output=True,check=True).stdout
+    return hashlib.sha256(content).hexdigest()
 
 
 class PublicationConsistencyTests(unittest.TestCase):
@@ -77,7 +86,10 @@ class PublicationConsistencyTests(unittest.TestCase):
         self.assertEqual(record['dataset_sha256'],digest(ROOT/'uiuc_data_scaled.json'))
         self.assertEqual(record['model_version'],bundle['metadata']['model_version'])
         for name,expected in record['source_sha256'].items():
-            self.assertEqual(digest(ROOT/'web'/name),expected,name)
+            # The app changed after the midterm (round-3 fixes). The midterm's figures must still
+            # match the app as it was at the midterm commit, which git keeps.
+            if digest(ROOT/'web'/name)!=expected:
+                self.assertEqual(historical_digest(f'prototype/web/{name}'),expected,name)
         for name,expected in record['screenshot_sha256'].items():
             self.assertEqual(digest(REPO/'midterm/review/screenshots'/name),expected,name)
         row=next(r for r in bundle['recommendations'][record['seed_id']] if r['id']==record['candidate_id'])

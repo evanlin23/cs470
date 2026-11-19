@@ -3,6 +3,7 @@
 The example starts from Indranil Gupta, a researcher a CS student would know from
 class, and must have ten suggestions that each appear on more than one UIUC paper.
 """
+import argparse
 import hashlib
 import json
 import math
@@ -19,6 +20,11 @@ EXAMPLE_SEED = 'https://openalex.org/A5027240302'  # Indranil Gupta
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    parser.add_argument('--out', type=Path, default=ROOT / 'midterm/review/screenshots',
+                        help='folder for the three screenshots and capture.json (final report: final/latex/figures)')
+    parser.add_argument('--chromium', default=next((p for p in ('/usr/bin/chromium', '/opt/pw-browsers/chromium') if Path(p).exists()), '/usr/bin/chromium'))
+    args = parser.parse_args()
     bundle = json.loads((ROOT / 'prototype/web/data.json').read_text())
     authors = json.loads((ROOT / 'prototype/uiuc_data_scaled.json').read_text())['authors']
     seed = next(row for row in bundle['seeds'] if row['id'] == EXAMPLE_SEED)
@@ -26,14 +32,14 @@ def main():
     assert all(authors[row['id']]['paper_count'] > 1 for row in suggestions), 'example must avoid one-paper authors'
     candidate = suggestions[0]
     people = {row['id']: row['name'] for row in bundle['graph']['nodes']}
-    out = ROOT / 'midterm/review/screenshots'
+    out = args.out
     out.mkdir(parents=True, exist_ok=True)
     server = make_server(port=0)
     thread = threading.Thread(target=server.serve_forever, daemon=True)
     thread.start()
     try:
         with sync_playwright() as engine:
-            browser = engine.chromium.launch(executable_path='/usr/bin/chromium', args=['--no-sandbox'])
+            browser = engine.chromium.launch(executable_path=args.chromium, args=['--no-sandbox'])
             page = browser.new_page(viewport={'width': 1440, 'height': 1000}, device_scale_factor=3)
             errors = []
             page.on('pageerror', lambda error: errors.append(str(error)))

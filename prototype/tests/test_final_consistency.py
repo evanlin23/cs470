@@ -24,6 +24,19 @@ class FinalReportConsistencyTests(unittest.TestCase):
         cls.result = json.loads(RESULT.read_text())
         cls.ranking = cls.result['ranking']
 
+    def test_figures_show_the_current_app(self):
+        """The final report's screenshots must come from the app as it is now."""
+        figures = REPO/'final/latex/figures'
+        record = json.loads((figures/'capture.json').read_text())
+        self.assertEqual(record['dataset_sha256'], digest(ROOT/'uiuc_data_scaled.json'))
+        for name, expected in record['source_sha256'].items():
+            self.assertEqual(digest(ROOT/'web'/name), expected, f'{name} changed: recapture with midterm/capture_screenshots.py --out final/latex/figures')
+        for name, expected in record['screenshot_sha256'].items():
+            self.assertEqual(digest(figures/name), expected, name)
+            self.assertIn(f'figures/{name}', self.source)
+        for name in record['path_names']:
+            self.assertIn(name, self.source)
+
     def test_manifest_matches_code_and_data(self):
         record = json.loads(MANIFEST.read_text())
         self.assertEqual(digest(RESULT), record['result_sha256'])

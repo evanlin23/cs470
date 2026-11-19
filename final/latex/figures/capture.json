@@ -1,0 +1,43 @@
+{
+  "dataset_sha256": "0fae5f05012921f4caa07cb5d6b1d6f7949821365b053dcecbaa51a108d3bd78",
+  "model_version": "proposal-path-v3-common-neighbors",
+  "seed_id": "https://openalex.org/A5027240302",
+  "seed_name": "Indranil Gupta",
+  "candidate_id": "https://openalex.org/A5041731995",
+  "candidate_name": "Marc Snir",
+  "path_ids": [
+    "https://openalex.org/A5027240302",
+    "https://openalex.org/A5059328010",
+    "https://openalex.org/A5017241944",
+    "https://openalex.org/A5041731995"
+  ],
+  "path_names": [
+    "Indranil Gupta",
+    "Kenton G. McHenry",
+    "William Gropp",
+    "Marc Snir"
+  ],
+  "viewport": {
+    "width": 1440,
+    "card_width": 1100,
+    "height": 1000,
+    "device_scale_factor": 3
+  },
+  "map_crop": {
+    "x": 317,
+    "y": 371,
+    "width": 489,
+    "height": 474
+  },
+  "screenshot_sha256": {
+    "01-seeds.png": "4719751aa0e2b04ad3c830891826cb270207c58b113109408c4d5fbc5970ed3a",
+    "02-map.png": "f301033c246052bed5df2a3e040cac69fed0018d5b50f1f825c0f9594298711c",
+    "03-recommendation.png": "f21491d953f50bd23b94c6d35e965e6c43b5a5ac067be979df57e8ad7278c2b7"
+  },
+  "source_sha256": {
+    "data.json": "45a3c8b3dcd5d57ad923c984b9125ff6fe38e900f70ec7620d9625867334f63f",
+    "app.js": "1f126259e4385543e1a346c4d86eb9d7811c491757b848259a4af3d6d4350a3a",
+    "index.html": "bf5c92100cfcbe3af42de3d598c1e98d687883921d87b2e2acf18da5e8ef3779",
+    "styles.css": "d38f94ad3ad77fc194d030bfa709b66ae1f9ef5174af240c3145a95f952d6de8"
+  }
+}
