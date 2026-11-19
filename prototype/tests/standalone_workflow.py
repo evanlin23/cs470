@@ -24,10 +24,14 @@ from pathlib import Path
 from playwright.sync_api import sync_playwright, expect
 
 ROOT = Path(__file__).resolve().parents[1]
-PAGE = ROOT/'study'/'dist'/'bridgefinder-study.html'
+PAGE = ROOT/'study'/'dist'/'bridgefinder-study-full.html'
+QUICK = ROOT/'study'/'dist'/'bridgefinder-study.html'
 spec = importlib.util.spec_from_file_location('analysis', ROOT/'study/analyze_study.py')
 analysis = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(analysis)
+quick_spec = importlib.util.spec_from_file_location('quick_analysis', ROOT/'study/analyze_quick.py')
+quick_analysis = importlib.util.module_from_spec(quick_spec)
+quick_spec.loader.exec_module(quick_analysis)
 ARTIFACTS = None
 CHROMIUM = '/opt/pw-browsers/chromium'
 ANSWERS = re.compile(r'-----BEGIN BRIDGEFINDER ANSWERS-----\n(.*)\n-----END BRIDGEFINDER ANSWERS-----', re.S)
@@ -189,6 +193,96 @@ class StandaloneStudyTests(unittest.TestCase):
                 rows = list(csv.DictReader(handle))
             self.assertEqual(len(rows), 2)
             self.assertTrue(all(row['task_completed'] == 'True' for row in rows))
+
+    def run_quick(self, url, label, area_index, try_app):
+        context = self.browser.new_context(viewport={'width': 1280, 'height': 900})
+        page = context.new_page()
+        errors = []
+        page.on('pageerror', lambda error: errors.append(str(error)))
+        page.goto(url)
+        expect(page.get_by_role('heading', name='Rate 6 research suggestions')).to_be_visible()
+        page.get_by_role('button', name='Start').click()
+        expect(page.locator('[data-error="start"]')).to_contain_text('describes you')
+        page.get_by_role('button', name='Undergraduate').click()
+        page.get_by_label("I'm a UIUC student").check()
+        page.get_by_role('button', name='Start').click()
+        self.shot(page, f'quick-{label}-1-area')
+        page.locator('.area-button').nth(area_index).click()
+        expect(page.locator('.quick-card')).to_have_count(6)
+        page.get_by_role('button', name='Done').click()
+        expect(page.locator('[data-error="rate"]')).to_contain_text('both questions')
+        cards = page.locator('.quick-card')
+        for index in range(6):
+            card = cards.nth(index)
+            card.get_by_role('group', name='Relevant to my interests?').get_by_role('button', name='Yes' if index % 2 == 0 else 'No').click()
+            card.get_by_role('group', name='Had you heard of them?').get_by_role('button', name='No' if index != 3 else 'Yes').click()
+        page.get_by_role('button', name='Done').click()
+        expect(page.locator('[data-error="rate"]')).to_contain_text('most like to contact')
+        chosen = cards.nth(2).get_attribute('data-card-id')
+        cards.nth(2).get_by_label('I would most like to contact this person').check()
+        self.shot(page, f'quick-{label}-2-rate')
+        page.reload()
+        expect(page.locator('.quick-card').nth(2).get_by_label('I would most like to contact this person')).to_be_checked()
+        page.get_by_role('button', name='Done').click()
+        expect(page.get_by_role('heading', name='Thanks! Last step: send it to us')).to_be_visible()
+        page.get_by_label('Anything confusing or missing?').fill('Show departments.')
+        if try_app:
+            page.get_by_text('Got 2 more minutes?').click()
+            page.get_by_role('button', name='Open the app').click()
+            app = page.frame_locator('iframe.app-frame')
+            app.locator('.select-seed-btn').first.click()
+            app.locator('.mini-rec').first.click()
+            app.get_by_role('button', name='Draft an email').click()
+            app.locator('#closeDraft').click()
+            page.get_by_label('What, if anything, confused you').fill('The colors.')
+            page.get_by_role('button', name='Back to sending my answers').click()
+        page.get_by_role('button', name='Copy my answers').click()
+        expect(page.locator('#copyStatus')).not_to_be_empty()
+        self.shot(page, f'quick-{label}-3-send')
+        raw = page.locator('#answersText').input_value()
+        self.assertEqual(errors, [])
+        context.close()
+        session = json.loads(ANSWERS.search(raw).group(1))
+        self.assertEqual(session['study_protocol'], 'quick-v1')
+        self.assertEqual(session['contact_choice'], chosen)
+        self.assertEqual(len(session['ratings']), 6)
+        self.assertEqual([r['relevant'] for r in session['ratings']], [True, False, True, False, True, False])
+        self.assertEqual(session['comment'], 'Show departments.')
+        self.assertLess(session['seconds'], 120)
+        if try_app:
+            self.assertTrue(session['app']['task_completed'])
+            self.assertEqual(session['app']['confusing'], 'The colors.')
+        else:
+            self.assertIsNone(session['app'])
+        for card in session['shown']:
+            self.assertEqual(self.keys[card]['seed_id'], session['seed_id'])
+        return session, raw
+
+    def test_quick_study(self):
+        runs = [self.run_quick(QUICK.as_uri(), 'file', 0, False),
+                self.run_quick(f'http://127.0.0.1:{self.server.server_port}/{QUICK.name}', 'http', 3, True)]
+        features = json.loads((ROOT/'study/card_features.json').read_text())
+        result = quick_analysis.analyze([s for s, _ in runs], self.keys, features)
+        self.assertEqual(result['n_participants'], 2)
+        self.assertEqual(result['excluded'], [])
+        self.assertEqual(result['contact_choice']['chose_someone'], 2)
+        self.assertEqual(result['optional_app']['opened'], 1)
+        with tempfile.TemporaryDirectory() as scratch:
+            scratch = Path(scratch)
+            (scratch/'replies.txt').write_text('\n\n'.join(raw for _, raw in runs), encoding='utf-8')
+            subprocess.run([sys.executable, str(ROOT/'study/import_answers.py'), str(scratch/'replies.txt'), '--out', str(scratch/'out')], check=True, capture_output=True)
+            imported = json.loads((scratch/'out/quick_sessions.json').read_text())
+            self.assertEqual(len(imported), 2)
+            self.assertFalse((scratch/'out/sessions.json').exists())
+            self.assertEqual(quick_analysis.analyze(imported, self.keys)['n_participants'], 2)
+            with open(scratch/'out/quick_log.csv', newline='') as handle:
+                self.assertEqual(len(list(csv.DictReader(handle))), 2)
+
+    def test_pages_never_contain_method_labels(self):
+        for path in (PAGE, QUICK):
+            text = path.read_text()
+            for word in ('Triadic Closure', 'Topic-Only', '"models"', 'truth_keys'):
+                self.assertNotIn(word, text, f'{path.name} leaks {word}')
 
     def test_mobile_app_step(self):
         context = self.browser.new_context(**self.engine.devices['iPhone 13'])

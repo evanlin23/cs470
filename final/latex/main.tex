@@ -88,7 +88,36 @@ Modularity, largest component & 0.879\\
 \subsection{Communities}\label{sec:communities}
 To find the groups a broker would span, we use Louvain~\cite{blondel2008} (networkx, weighted, resolution 1, seed 42). Louvain groups authors who write many papers together by greedily maximizing modularity~\cite{newman2004}, which is high when groups hold more joint papers than chance predicts. The course covered Girvan--Newman~\cite{girvan2002,easley2010}, which instead removes the edge with the highest betweenness again and again until the graph falls apart into groups. We compared both, plus label propagation~\cite{raghavan2007} and greedy modularity~\cite{clauset2004}, on the training graph (Table~\ref{tab:communities}).
 
-\pending{Table and paragraph filled from results/final\_analysis.json, communities part}
+\begin{table}[t]
+\caption{Community detection on the training graph. Agreement is normalized mutual information with the deployed partition. The last column is the share of the app's 500 suggestions that stay the same under each partition. Girvan--Newman is compared on subgraphs in the lower panel.}
+\label{tab:communities}
+\small
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+Method & Groups & Modularity & Agreement & Time & Same\\
+\midrule
+Louvain, seed 42 (deployed) & 842 & 0.884 & 1.00 & 2 s & 100\%\\
+Louvain, ten other seeds & 832--843 & 0.884--0.885 & 0.89--0.91 & 2 s & 86\%\\
+Greedy modularity & 851 & 0.875 & 0.80 & 41 s & 76\%\\
+Label propagation & 2,221 & 0.752 & 0.76 & 1 s & 75\%\\
+\midrule
+\multicolumn{6}{@{}l}{Subgraphs around one researcher, Girvan--Newman against Louvain}\\
+\midrule
+Authors (edges) & \multicolumn{2}{r}{GN modularity} & \multicolumn{2}{r}{Louvain modularity} & GN time\\
+50 (165) & \multicolumn{2}{r}{0.233} & \multicolumn{2}{r}{0.469} & 0.2 s\\
+100 (599) & \multicolumn{2}{r}{0.291} & \multicolumn{2}{r}{0.487} & 4.1 s\\
+150 (780) & \multicolumn{2}{r}{0.420} & \multicolumn{2}{r}{0.559} & 9.5 s\\
+200 (1,024) & \multicolumn{2}{r}{0.503} & \multicolumn{2}{r}{0.612} & 20.1 s\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Louvain finds the partition with the highest modularity of the four methods in about two seconds. Label propagation is faster but splits the graph into 2,221 groups with a modularity of only 0.752. Greedy modularity comes close to Louvain (0.875) but takes 41 seconds and agrees less with it. Girvan--Newman could not run on the full graph at all. It recomputes the betweenness of every edge after each removal, so its cost grows with the square of the number of edges times the number of nodes. On neighborhoods of one researcher with 50 to 200 authors, its runtime rose from 0.2 to 20 seconds while Louvain took under 0.01 seconds, and its best partition always had lower modularity than Louvain's on the same subgraph. Extrapolating these runs to the 78,281 edges of the training graph gives months of computation. The evidence supports Louvain for this graph, which is the choice the midterm made on runtime alone.
+
+Louvain is randomized, so we reran it with ten other seeds. Modularity barely changed, and the partitions agree closely with the deployed one. Community boundaries do move, however. On average 86\% of the 500 displayed suggestions stay the same under another seed, and between 7\% and 11\% of them would fall inside the starting researcher's own community. Section~\ref{sec:poorly} discusses this weakness.
+
+Even though disconnected pieces can inflate modularity, the deployed partition still scores 0.879 within the largest component, which holds 87\% of authors. UIUC researchers form dense groups with few ties between them, which is exactly the structure a broker can span.
 
 \subsection{Choosing suggestions}\label{sec:method}
 For a starting researcher $u$, a candidate $v$ must satisfy three rules. It must be in a different community from $u$, it must be reachable from $u$ in the training graph, and its shortest distance from $u$ must be at least three co-authorship steps. The distance rule excludes existing collaborators and anyone who already shares a co-author with $u$, so no suggestion is a triadic-closure suggestion. Reachability guarantees that every suggestion has an observed route to show.
@@ -110,7 +139,7 @@ Is the path bonus just a popularity score? Across the 3,492 starting researchers
 Without the network, the app would lose its community boundary, its distance rule and its introduction routes, and it would become a topic search tool. Section~\ref{sec:eval} shows that both halves of the score matter. Topic overlap alone and path counts alone each predict fewer later collaborations than their sum.
 
 \subsection{Where the network analysis performs poorly}\label{sec:poorly}
-We found five weaknesses, which we report here and test in Section~\ref{sec:eval}.
+We found six weaknesses, which we report here and test where we could.
 
 \textbf{Distance costs accuracy.} New collaborations are far more likely between people who already share a co-author. Of the 8,916 new cross-community pairs in 2020--2024, 22\% were two steps apart in the training graph, although two-step candidates are a tiny share of all candidates. The median starting researcher has 29 two-step candidates and 16,290 candidates three or more steps away. Even a random pick from the two-step pool predicts more new ties than BridgeFinder does from the distant pool. Looking past shared contacts is a deliberate trade of accuracy for novelty, and the historical test can only measure the cost, not the benefit.
 
@@ -119,6 +148,8 @@ We found five weaknesses, which we report here and test in Section~\ref{sec:eval
 \textbf{One-paper authors rarely collaborate again.} In the historical test, 27\% of BridgeFinder's top-ten suggestions have a single training paper, and they become new collaborators at a quarter of the rate of the others (0.46\% against 1.77\%).
 
 \textbf{The path bonus can override topic.} Because the bonus supplies most of the score, 14\% of BridgeFinder's top-ten suggestions share no topic with the starting researcher. The midterm grader asked whether such suggestions still feel relevant, which the student study tests (Section~\ref{sec:study}).
+
+\textbf{Community boundaries are not unique.} Rerunning Louvain with a different random seed changes about one in seven displayed suggestions, and a few suggestions that are cross-community under one partition fall inside the starting researcher's community under another (Section~\ref{sec:communities}). The boundary is a useful approximation, not a fact about the university.
 
 \textbf{The graph sees only part of the network.} OpenAlex misses some papers and assigns some affiliations wrongly, our graph leaves out all collaborators outside UIUC, and 11\% of new cross-community pairs had no path at all in the training graph. A co-authorship route also does not confirm that the people on it know each other well or would make an introduction.
 
@@ -212,7 +243,7 @@ Round & Students & What they did & What changed\\
 \midrule
 1 (before midterm) & 4, two graduate and two undergraduate, in CS, computational biology, ECE and Food Systems & Worked through the first prototype with minimal context and reported problems as they met them & Landing-page steps, renamed views, focused map, corrected labels\\
 2 (before midterm) & 6, two undergraduate and four master's students, in mathematics and CS, CS and business technology management & Reviewed the revised app & No new problems, so no changes\\
-3 (after midterm) & \pending{N, composition} & Used the app on their own, then rated method-blinded suggestion cards and completed the SUS & \pending{changes}\\
+3 (after midterm) & \pending{N, composition} & Rated six method-blinded suggestion cards and picked one to contact, and some used the app with an observer or a logger & \pending{changes}\\
 4 & \pending{N} & \pending{what they did} & \pending{changes confirmed}\\
 \bottomrule
 \end{tabularx}
@@ -228,7 +259,7 @@ Round & Students & What they did & What changed\\
 
 \textbf{Round 2.} Six more UIUC students then reviewed the revised app. Two were undergraduates studying mathematics and computer science, one in a dual degree and one in the combined degree. Three were Master of Computer Science students, and one was a master's student in business technology management. All six found the revised interface clear, raised no new problems, and approved of the app. Most testers in the first two rounds study computing, so for the third round we recruited across the five research areas of the study's starting researchers.
 
-\textbf{Round 3.} \pending{composition and recruitment of the study participants, by level and field, and how many were moderated or self-guided}. Each student first wrote a research interest in their own words, then used the app on their own with the task of finding someone they might write to. We recorded what they did. In self-guided sessions the study page logged which views they opened, which suggestions and cards they chose, whether they opened the ranking explanation and the outreach draft, and how long they spent, but never the text of their draft. After the task, students answered three questions about what the solid lines, the dashed lines and the route mean, then rated suggestion cards and completed the System Usability Scale~\cite{brooke1996}, and finally described what confused them, whether they would contact anyone, how far they trusted the route, and what they would change. \pending{what students actually did, from the event logs and notes, for example how many reached a card and a draft without help, where they hesitated, what they misread}. \pending{the changes made in response}
+\textbf{Round 3.} \pending{number of students in the one-minute study and in moderated sessions, with their levels and fields}. Students in the one-minute study rated six blinded suggestion cards and picked the person they would most like to contact (Section~\ref{sec:study}), and \pending{N} of them also tried the full app. For those students, the page logged which views they opened, which suggestions and cards they chose, whether they opened the ranking explanation and the outreach draft, and how long they spent, but never the text of their draft. Moderated students worked through the app without help while thinking aloud, answered three questions about what the solid lines, the dashed lines and the route mean, completed the SUS, and described what confused them, whether they would contact anyone, how far they trusted the route and what they would change. \pending{what students actually did, from the logs and notes, for example how many reached a card and a draft without help, where they hesitated and what they misread}. \pending{the changes made in response}
 
 \textbf{Round 4.} \pending{a short check of the round-3 changes with new students, using the same unaided task and debrief}.
 
@@ -244,9 +275,9 @@ We evaluate BridgeFinder in two ways. A historical test asks whether its suggest
 Metric & Why & Baseline\\
 \midrule
 P@10 on 2020--2024 ties & The app shows ten suggestions, and a later co-authorship is the strongest available sign of a useful match & Triadic closure, Topic-Only, PageRank, degree, path count, random\\
-Relevant and new (share of cards rated 5 or more on both) & The core claim, that BridgeFinder finds relevant people the student did not know & Triadic closure (primary), Topic-Only\\
-Willingness to contact & Whether the route makes contact feel realistic & Topic-Only\\
-Task completion and route understanding & Whether students can use the flow and read the route correctly & Target of 12 of 15\\
+Relevant and new (share of cards answered relevant and not heard of) & The core claim, that BridgeFinder finds relevant people the student did not know & Triadic closure (primary), Topic-Only\\
+Most wanted contact & Whether students would act on a suggestion & Random pick, triadic closure\\
+Task completion and route understanding & Whether students can use the flow and read the route correctly & Target of 12 of 15 (moderated)\\
 SUS & Overall usability & Published norms~\cite{bangor2008}\\
 \bottomrule
 \end{tabularx}
@@ -288,10 +319,43 @@ Two-step & Personalized PageRank & \textbf{0.0340} & \textbf{0.0914} & \textbf{0
 \textbf{The best predictor stays near the familiar circle.} Personalized PageRank over all reachable candidates has the highest P@10 of all (0.0369), because its top suggestions are almost all two steps away. This confirms the tension in Section~\ref{sec:network}. A system tuned only for predicting collaborations would recommend the familiar circle.
 
 \subsection{Validation of the fixed choices}\label{sec:validation}
-\pending{validation sweep paragraph and figure from results/final\_analysis.json, validation part}
+The weight of 0.5 and the saturating form of the path bonus were set by hand during development, and the midterm promised that any change to the ranking would be chosen on separate data. We therefore repeated the historical test one period earlier, without any 2020--2024 data. We built the graph, communities and topics from 2015--2017 papers and predicted new cross-community ties in 2018--2019 for the 2,344 researchers who formed one. Figure~\ref{fig:validation} shows P@10 on this split as the weight on the path bonus changes.
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\begin{axis}[width=\columnwidth, height=5.2cm, xmode=log, log basis x=10,
+  xtick={0.1,0.25,0.5,1,2,5}, xticklabels={0.1,0.25,0.5,1,2,5}, xmin=0.08, xmax=6.5,
+  ymin=0.006, ymax=0.0125, ytick={0.006,0.008,0.010,0.012},
+  yticklabel style={/pgf/number format/fixed, /pgf/number format/precision=3},
+  xlabel={Weight on the path bonus}, ylabel={P@10, 2018--2019 ties},
+  legend style={font=\scriptsize, at={(0.99,0.98)}, anchor=north east, draw=none, fill=none, cells={anchor=west}},
+  tick label style={font=\scriptsize}, label style={font=\footnotesize}, grid=major, grid style={black!8}]
+\addplot[black, thick, mark=*, mark size=1.6pt] coordinates {(0.1,0.0090) (0.25,0.0097) (0.5,0.0104) (1,0.0099) (2,0.0092) (5,0.0087)};
+\addlegendentry{Saturating bonus (deployed form)}
+\addplot[black!55, thick, dashed, mark=square*, mark size=1.4pt] coordinates {(0.1,0.0101) (0.25,0.0100) (0.5,0.0088) (1,0.0087) (2,0.0087) (5,0.0086)};
+\addlegendentry{Logarithmic bonus}
+\addplot[black, thick, mark=triangle*, mark size=2pt, mark options={fill=white}] coordinates {(0.5,0.0120) (1,0.0111) (2,0.0106)};
+\addlegendentry{Saturating, two-paper minimum}
+\addplot[black!40, thin, densely dotted, domain=0.08:6.5] {0.0083};
+\addlegendentry{Topic overlap only}
+\addplot[black!40, thin, dashdotted, domain=0.08:6.5] {0.0065};
+\addlegendentry{Path count only}
+\end{axis}
+\end{tikzpicture}
+\caption{Validation of the score on 2015--2017 data. The deployed weight of 0.5 is the best saturating weight, and both halves of the score add to each other. Requiring at least two training papers per candidate helps at every weight.}
+\Description{A line chart of P@10 against the weight on the path bonus, on a log scale from 0.1 to 5. The saturating bonus peaks at 0.0104 at weight 0.5. The logarithmic bonus peaks at 0.0101 at weight 0.1 and falls to about 0.0087. The saturating bonus with a two-paper minimum is highest, at 0.0120 at weight 0.5. Reference lines mark topic overlap alone at 0.0083 and path count alone at 0.0065.}
+\label{fig:validation}
+\end{figure}
+
+The deployed weight is the best of the saturating weights we tried, with a P@10 of 0.0104. Smaller weights fall toward topic overlap alone (0.0083) and larger weights toward path count alone (0.0065), so the two halves of the score add to each other rather than repeat each other. A logarithmic bonus, which keeps growing with the number of routes, peaks lower (0.0101 at weight 0.1) and falls quickly as its weight grows, which supports saturating the bonus. Requiring at least two training papers per candidate helps at every weight we tried, and the best setting overall is the deployed score with this two-paper minimum (0.0120). Removing training papers with more than 25 UIUC authors from the graph did not help (0.0101 against 0.0104), so large teams distort individual suggestions more than they lower accuracy.
+
+We then scored the selected setting once on the 2020--2024 test. The two-paper minimum raises P@10 from 0.0131 to 0.0149 (difference 0.0018, CI 0.0011 to 0.0025), which is still about half of triadic closure's 0.0287. Every student in the study must rate the same version, so we keep the deployed ranking until the study ends and then add the two-paper minimum to the app.
 
 \subsection{Student study}\label{sec:study}
-\textbf{Design.} Each student first states a research interest, uses the app as described in Section~\ref{sec:users}, and then picks the closest of five starting researchers, one from each of the five largest communities, covering nutrition and metabolic health, crops and bioenergy, materials and sensors, sensor networks and network analysis, and maternal health. The student then rates every card for that researcher, 13 to 15 cards in random order with method labels hidden. Each method contributes its own top five. A candidate chosen by two methods appears once and counts for both. All cards use the same fields and the same shortest-route procedure. Triadic closure cards necessarily show two-step routes, so blinding is only partial for that comparison. Students rate each card from 1 to 7 on relevance to their stated interest, on how new the person is to them, and on how realistic contact feels given the route. The primary outcome is the share of cards rated at least 5 for both relevance and novelty, compared between BridgeFinder and triadic closure within each student with a paired Wilcoxon test. Other comparisons are exploratory with Holm correction. Students could take part in a moderated session or through a self-guided version of the same study, a single web page that includes the app and returns the answers as text the student pastes back to us. Both versions use identical cards, questions and scales.
+\textbf{Design.} The midterm planned a 25-minute session in which 15 students rated 13 to 15 cards on three 7-point scales and completed the System Usability Scale. To reach more students across more fields, we split this into two parts. The main part is a one-minute study that any student can take on their phone from a link. A student picks their level and the closest of five research areas. Each area belongs to a starting researcher from one of the five largest communities, covering nutrition and metabolic health, crops and bioenergy, materials and sensors, computing and sensor networks, and maternal and public health. The student then sees six suggestion cards for that researcher in random order, with method labels hidden. Each card shows the person's name, topics, an example paper and the introduction route. The six cards are one of 40 prepared sets per researcher, each with two cards from the top five of each method. A candidate suggested by two methods counts for both. For every card the student answers two yes-or-no questions, whether the person is relevant to their interests and whether they had heard of them before, and finally picks the one person they would most like to contact, or none. Students can then spend two more minutes on the real app, which logs what they do, and tell us what confused them. All answers stay in the browser until the student copies them back to us.
+
+The primary outcome is the share of a student's cards that are relevant and new, meaning answered relevant and not heard of before. We compare BridgeFinder with triadic closure within each student using a paired Wilcoxon test. The contact choice tests whether students prefer one method's suggestions more often than a random pick among the six cards would. Comparisons with Topic-Only are exploratory with Holm correction. Triadic closure cards necessarily show two-step routes, so blinding is only partial for that comparison. The second part keeps the midterm's full protocol for a few moderated sessions, which measure task completion, route understanding and the SUS with an observer present.
 
 \textbf{Results.} \pending{Table of mean relevance, novelty, willingness to contact and relevant-and-new share per method, with the primary comparison, its confidence interval and p-value, and the Topic-Only comparisons. Then task completion, route understanding and SUS against their targets.}
 
@@ -305,7 +369,7 @@ BridgeFinder did not meet the proposal's goal of predicting more new collaborati
 
 Several limitations remain. A co-authorship route does not show that the intermediaries know each other well, would introduce a student, or that the suggested researcher is available to mentor. Our graph misses ties to authors outside UIUC and collaborations that never produced a paper, and OpenAlex affiliations and dates add noise. Of the 500 displayed suggestions, 29\% appear on only one UIUC paper between 2015 and 2024, and one paper does not establish a current UIUC appointment. The 50 starting researchers are highly connected authors in large communities, so a student's own instructor may be missing, and the starting researcher's topics only approximate the student's interests. The study's method key is stored in our public repository, although it is never shown to participants and no student could see it while rating. \pending{study limitations, such as sample size, field mix and self-guided versus moderated sessions}
 
-Two changes follow directly from this work. A minimum of two UIUC papers per suggestion would remove most one-paper authors, and Section~\ref{sec:validation} tests it on validation data before any change to the app. Letting students start from their own instructor, rather than one of 50 researchers, would require precomputing suggestions for every author, which the shared model already supports.
+Two changes follow directly from this work. The two-paper minimum, which validation selected and the test confirmed (Section~\ref{sec:validation}), will enter the app after the study. Letting students start from their own instructor, rather than one of 50 researchers, would require precomputing suggestions for every author, which the shared model already supports.
 
 \section{Conclusion}
 BridgeFinder helps students look beyond the researchers they already know. On ten years of UIUC publications, its combination of topic overlap and introduction routes is the most accurate way we found to rank people three or more steps away, matching personalized PageRank while suggesting people whose research is much closer to the student's starting point. Looking that far away costs accuracy against triadic closure, which stays inside the familiar circle. \pending{one or two sentences on what students said, from the study}

@@ -1,11 +1,17 @@
 # BridgeFinder study session guide (feedback round 3)
 
-There are two ways to run a session.
+There are three ways to take part. Most students should get the first.
 
-- **Self-guided (no facilitator).** Send the student `dist/bridgefinder-study.html` or its GitHub Pages link. The page walks them through consent, background, the unaided app task, a three-question check, the blinded card ratings, the System Usability Scale and the debrief. It records what they do in the app, and ends with a **Copy my answers** button. They paste the answers back to you. Collect the replies in text files and run `python prototype/study/import_answers.py replies/*.txt --out /path/to/private`, which writes `sessions.json` for the analyzer and `round3_log.csv` with one row per student. Rebuild the page with `python prototype/study/build_standalone.py`, and test it with `python prototype/tests/standalone_workflow.py`.
-- **Moderated (below).** You watch, ask the check questions out loud, and take notes. It is slower but tells you more about why people get stuck.
+- **One-minute study (default link).** Send https://evanlin23.github.io/cs470/ or `dist/bridgefinder-study.html`. The student taps their level and the closest of five research areas, answers two yes/no questions on six blinded suggestion cards (relevant to me? heard of them?), picks the one person they would most like to contact, and copies their answers back. Students who have two more minutes can try the real app from the last screen, and the page logs what they do there. Message to send:
 
-The two modes use the same cards, rating questions and SUS, so both kinds of session go into one analysis. Each self-guided answer carries `collection_mode: self-guided-html-v1`, so the report can say how many sessions of each kind there were.
+  > Can you help with our CS 470 project? It takes about a minute: https://evanlin23.github.io/cs470/ — rate 6 suggested UIUC researchers, then paste the answers back here. No name or email collected. Thanks!
+
+- **Full self-guided study (25 minutes).** https://evanlin23.github.io/cs470/full.html or `dist/bridgefinder-study-full.html`. Consent, background, the unaided app task with an event log, a three-question check, 13 to 15 cards on three 7-point scales, the System Usability Scale and a debrief.
+- **Moderated session (below).** The full study with you watching. Run three to five of these, because they show why people get stuck, and they give the task-completion and SUS numbers the midterm promised.
+
+Collect the pasted replies in text files and run `python prototype/study/import_answers.py replies/*.txt --out /path/to/private`. It splits the answers into `quick_sessions.json` for `analyze_quick.py` and `sessions.json` for `analyze_study.py`, with one log row per student for each. Rebuild both pages with `python prototype/study/build_standalone.py`, and test them with `python prototype/tests/standalone_workflow.py`.
+
+The full and moderated versions use the same cards, rating questions and SUS, so they go into one analysis. The one-minute study has its own analysis, because it asks yes/no questions about six cards.
 
 One moderated session takes about 25 minutes with one student and one facilitator. Each session gives the final report three kinds of evidence: what the student did in the app (task completion and comprehension), blinded ratings of 15 suggestion cards with the System Usability Scale (SUS), and open feedback for the next design round. The protocol and analysis are in [README.md](README.md). This guide is the script.
 

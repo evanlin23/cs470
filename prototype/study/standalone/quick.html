@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>BridgeFinder one-minute study</title>
+<style>{{CSS}}</style>
+</head>
+<body>
+<header class="study-header">
+  <span class="brand"><span><strong>BridgeFinder</strong><small>One-minute CS 470 study</small></span></span>
+  <span id="stepBadge" role="status"></span>
+</header>
+<main id="main" tabindex="-1">
+  <p id="saveNote" class="data-note" role="status"></p>
+
+  <section data-step="start" class="card" hidden>
+    <h1 tabindex="-1">Rate 6 research suggestions</h1>
+    <p>BridgeFinder suggests UIUC researchers outside your usual circle and shows a chain of co-authors who might introduce you. Tell us whether its suggestions are any good. It takes about a minute, and we collect no name or email.</p>
+    <fieldset><legend>I am a</legend><div class="pill-row" data-pills="level" data-options="Undergraduate|Master's student|PhD student|Other"></div></fieldset>
+    <label for="field">Major or program <span class="muted">(optional)</span></label><input id="field" type="text" maxlength="120" autocomplete="off">
+    <label class="check-row"><input type="checkbox" id="consent"> I'm a UIUC student and I agree to take part.</label>
+    <p class="validation" role="alert" data-error="start"></p>
+    <div class="actions"><span></span><button data-next="start">Start</button></div>
+  </section>
+
+  <section data-step="area" class="card" hidden>
+    <h1 tabindex="-1">Which area is closest to your interests?</h1>
+    <p class="muted">You'll see people suggested for a researcher in this area.</p>
+    <div id="areaChoices" class="area-list"></div>
+  </section>
+
+  <section data-step="rate" class="card wide-cards" hidden>
+    <h1 tabindex="-1">Are these suggestions any good for you?</h1>
+    <p class="muted">Suggested for <strong id="seedLabel"></strong>. Three different methods picked these, and we've hidden which picked which.</p>
+    <div id="cardGrid" class="quick-grid"></div>
+    <fieldset class="none-row"><label class="choice"><input type="radio" name="contact" value="none"><span>I wouldn't contact any of them</span></label></fieldset>
+    <p class="validation" role="alert" data-error="rate"></p>
+    <div class="actions"><span class="data-note" id="rateProgress"></span><button data-next="rate">Done</button></div>
+  </section>
+
+  <section data-step="send" class="card" hidden>
+    <h1 tabindex="-1">Thanks! Last step: send it to us</h1>
+    <label for="comment">Anything confusing or missing? <span class="muted">(optional)</span></label>
+    <textarea id="comment" rows="2" maxlength="1000"></textarea>
+    <div class="actions start"><button id="copyAnswers">Copy my answers</button><button id="downloadAnswers" class="secondary">Download as a file</button></div>
+    <p id="copyStatus" class="status-line" role="status"></p>
+    <p>Then paste them as a reply to whoever sent you this link.</p>
+    <details class="more">
+      <summary>Got 2 more minutes? Try the full app first</summary>
+      <p>Use the real app to find someone you might write to. When you are done, come back here and copy your answers. They will include what you did in the app.</p>
+      <button id="openApp" class="secondary">Open the app</button>
+    </details>
+    <details class="more"><summary>See exactly what you are sending</summary><textarea id="answersText" rows="6" readonly></textarea></details>
+    <p class="data-note">On a shared computer, start a new session after sending, so the next person starts fresh. <button id="newSession" class="link-button">Start a new session</button></p>
+  </section>
+
+  <section data-step="app" class="card wide" hidden>
+    <h1 tabindex="-1">Try the app</h1>
+    <p><strong>Your task:</strong> find a researcher who interests you, and get to the point where you could write to them. Work it out on your own.</p>
+    <div id="appHost" class="app-host"></div>
+    <label for="appConfusing">What, if anything, confused you in the app? <span class="muted">(optional)</span></label>
+    <textarea id="appConfusing" rows="2" maxlength="1000"></textarea>
+    <div class="actions"><span></span><button data-next="app">Back to sending my answers</button></div>
+  </section>
+
+  <noscript><p class="notice">This study needs JavaScript. Please open it in a current version of Chrome, Edge, Firefox or Safari.</p></noscript>
+  <p class="footer-note"><button id="withdraw" class="link-button">Stop and delete my answers</button></p>
+</main>
+<script>{{DATA}}</script>
+<script>{{JS}}</script>
+</body>
+</html>

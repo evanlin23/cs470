@@ -15,7 +15,7 @@ textarea[readonly]{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monosp
 .check-row{display:flex;gap:.6rem;align-items:center;font-weight:600}
 .task-box{border-left:3px solid var(--navy);padding:.2rem 0 .2rem 1rem;margin-bottom:1rem}
 .app-host{border:1px solid var(--border);background:white}
-.app-frame{display:block;width:100%;height:max(640px,86vh);border:0}
+.app-frame{display:block;width:100%;height:max(460px,calc(100vh - 250px));border:0}
 .actions{display:flex;gap:.8rem;align-items:center;flex-wrap:wrap;margin-top:1.4rem}
 .actions.start{justify-content:flex-start}
 .sus-item legend{font-weight:600;font-size:.98rem;line-height:1.4}
