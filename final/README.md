@@ -13,7 +13,7 @@ pdflatex main.tex
 pdflatex main.tex
 ```
 
-The folder is self-contained (`main.tex`, `references.bib`, `figures/`), so you can also zip it and upload it to Overleaf with the pdfLaTeX compiler.
+The folder is self-contained (`main.tex`, `references.bib`, `figures/`). `bridgefinder-final-overleaf.zip` holds exactly those files: in Overleaf, choose New Project, then Upload Project, and compile with pdfLaTeX. The preamble avoids redefining sections or line spacing, which newer acmart versions on Overleaf reject, and every figure has a `\Description`.
 
 ## Before submitting
 
