@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>BridgeFinder study</title>
+<style>{{CSS}}</style>
+</head>
+<body>
+<header class="study-header">
+  <span class="brand"><span><strong>BridgeFinder study</strong><small>CS 470 project feedback</small></span></span>
+  <span id="stepBadge" role="status"></span>
+</header>
+<main id="main" tabindex="-1">
+  <p id="saveNote" class="data-note" role="status"></p>
+
+  <section data-step="welcome" class="card" hidden>
+    <h1 tabindex="-1">Help us test BridgeFinder</h1>
+    <p>BridgeFinder is a CS 470 project by Evan Lin and Eric Liu. It helps UIUC students find researchers outside their usual circle, and shows who might be able to introduce them.</p>
+    <p>This takes about 20 to 25 minutes. You will:</p>
+    <ol class="plain-steps">
+      <li>answer four short questions about yourself,</li>
+      <li>try the app on your own,</li>
+      <li>rate 13 to 15 suggested researchers,</li>
+      <li>answer short questions about the app, and</li>
+      <li>copy your answers and send them back to us.</li>
+    </ol>
+    <p>We are testing the app, not you, so there are no wrong answers. Confusing parts are exactly what we want to find.</p>
+    <p class="data-note">We collect no name or email. Your answers stay in this browser until you choose to send them. You can stop at any time with the link at the bottom of the page, which deletes your answers from this browser.</p>
+    <label class="check-row"><input type="checkbox" id="consent"> I am a UIUC student and I agree to take part.</label>
+    <p class="validation" role="alert" data-error="welcome"></p>
+    <div class="actions"><span></span><button data-next="welcome">Start</button></div>
+  </section>
+
+  <section data-step="about" class="card" hidden>
+    <h1 tabindex="-1">About you</h1>
+    <fieldset><legend>Which best describes you?</legend><div class="choice-list" data-radio="level" data-options="Undergraduate|Master's student|PhD student|Other"></div></fieldset>
+    <label for="field">What is your major or program?</label><input id="field" type="text" maxlength="120" autocomplete="off">
+    <fieldset><legend>Are you looking for research experience?</legend><div class="choice-list" data-radio="seeking" data-options="Yes, now|Yes, in the future|Not really"></div></fieldset>
+    <fieldset><legend>Have you used BridgeFinder before?</legend><div class="choice-list" data-radio="tried_before" data-options="No|Yes"></div></fieldset>
+    <p class="validation" role="alert" data-error="about"></p>
+    <div class="actions"><button class="secondary" data-back="about">Back</button><button data-next="about">Continue</button></div>
+  </section>
+
+  <section data-step="interest" class="card" hidden>
+    <h1 tabindex="-1">Your research interest</h1>
+    <label for="interest">What research topic or question would you like to explore?</label>
+    <textarea id="interest" rows="3" maxlength="500"></textarea>
+    <p class="data-note">A short phrase is fine, for example "using machine learning for crop disease". Please leave out names and personal details.</p>
+    <p class="validation" role="alert" data-error="interest"></p>
+    <div class="actions"><button class="secondary" data-back="interest">Back</button><button data-next="interest">Continue</button></div>
+  </section>
+
+  <section data-step="app" class="card wide" hidden>
+    <h1 tabindex="-1">Try the app on your own</h1>
+    <div class="task-box">
+      <p><strong>Your task:</strong> Imagine you want to find a researcher to work with, outside your current professors' circles. Use the app below to find someone who interests you, and get to the point where you could write to them.</p>
+      <p>Work it out yourself. There are no instructions beyond what the app shows. When you think you are done, press <strong>I'm done with the app</strong> under the app.</p>
+    </div>
+    <div id="appHost" class="app-host"></div>
+    <div class="actions"><span class="data-note">You cannot come back to the app after this step.</span><button data-next="app">I'm done with the app</button></div>
+  </section>
+
+  <section data-step="check" class="card" hidden>
+    <h1 tabindex="-1">Quick check</h1>
+    <p>Answer from memory. "I'm not sure" is a perfectly good answer.</p>
+    <fieldset><legend>1. On the network map, what did the <strong>solid</strong> lines mean?</legend><div class="choice-list" data-radio="solid_lines" data-options="The two people have published a paper together|A suggested connection that does not exist yet|The two people are in the same department|I'm not sure"></div></fieldset>
+    <fieldset><legend>2. On the network map, what did the <strong>dashed</strong> lines mean?</legend><div class="choice-list" data-radio="dashed_lines" data-options="The two people have published a paper together|A suggested connection that does not exist yet|The two people are in the same department|I'm not sure"></div></fieldset>
+    <fieldset><legend>3. On a researcher card, what does the "Possible introduction" route show?</legend><div class="choice-list" data-radio="route_meaning" data-options="People who agreed to introduce students to the suggested researcher|A chain of people who wrote papers together, linking the starting researcher to the suggested researcher|Members of the suggested researcher's lab or department|I'm not sure"></div></fieldset>
+    <label for="routeNames">4. If you opened a researcher card, who was on its route? (optional)</label><input id="routeNames" type="text" maxlength="300" autocomplete="off">
+    <label for="stuck">5. Did you get stuck or confused anywhere in the app? Where? (optional)</label><textarea id="stuck" rows="3" maxlength="1500"></textarea>
+    <p class="validation" role="alert" data-error="check"></p>
+    <div class="actions"><span></span><button data-next="check">Continue</button></div>
+  </section>
+
+  <section data-step="choose" class="card" hidden>
+    <h1 tabindex="-1">Choose a starting researcher</h1>
+    <p class="data-note">Your research interest<br><span data-show="interest"></span></p>
+    <p>Pick the researcher whose work is closest to your interest. You will then rate the people suggested for them.</p>
+    <div id="seedChoices" class="choice-list seed-choices"></div>
+    <p class="validation" role="alert" data-error="choose"></p>
+    <div class="actions"><span></span><button data-next="choose">Start rating</button></div>
+  </section>
+
+  <section data-step="cards" class="card" hidden>
+    <p class="data-note">Your research interest<br><span data-show="interest"></span></p>
+    <div class="seed-context"><small>Starting researcher</small><h2 id="seedName"></h2><p id="seedMeta"></p></div>
+    <p class="eyebrow">Suggested researcher · method hidden</p>
+    <h1 id="candidateName" tabindex="-1"></h1>
+    <div id="candTopics" class="seed-topics"></div>
+    <h2>Example publications</h2><ul id="samplePapers" class="paper-list"></ul>
+    <h2>Observed collaboration route</h2><div class="path-flow"><p id="introPath"></p></div>
+    <div id="scales"></div>
+    <p class="validation" role="alert" data-error="cards"></p>
+    <div class="actions"><button class="secondary" id="prevCard">Previous card</button><button id="nextCard">Next card</button></div>
+  </section>
+
+  <section data-step="sus" class="card" hidden>
+    <h1 tabindex="-1">About the app</h1>
+    <p>Think about the BridgeFinder app you used earlier, not the rating cards. For each statement, choose how much you agree.</p>
+    <div id="susList"></div>
+    <p class="validation" role="alert" data-error="sus"></p>
+    <div class="actions"><span></span><button data-next="sus">Continue</button></div>
+  </section>
+
+  <section data-step="feedback" class="card" hidden>
+    <h1 tabindex="-1">Your feedback</h1>
+    <p>These answers decide what we change next, so a sentence or two each helps a lot. All are optional.</p>
+    <label for="fb_confusing">What was the most confusing moment, and what did you expect to happen there?</label><textarea id="fb_confusing" rows="3" maxlength="1500"></textarea>
+    <label for="fb_contact">Did any suggestion feel like someone you would actually contact? What made it feel that way, or not?</label><textarea id="fb_contact" rows="3" maxlength="1500"></textarea>
+    <label for="fb_trust">How much did you trust the introduction route? What would make it more trustworthy?</label><textarea id="fb_trust" rows="3" maxlength="1500"></textarea>
+    <label for="fb_change">What one thing would you change or add?</label><textarea id="fb_change" rows="3" maxlength="1500"></textarea>
+    <label for="fb_use">Would you use this when looking for research? Why or why not?</label><textarea id="fb_use" rows="3" maxlength="1500"></textarea>
+    <div class="actions"><span></span><button data-next="feedback">Finish</button></div>
+  </section>
+
+  <section data-step="send" class="card" hidden>
+    <h1 tabindex="-1">Last step: send us your answers</h1>
+    <ol class="plain-steps">
+      <li>Press <strong>Copy my answers</strong>.</li>
+      <li>Paste them as a reply to whoever sent you this study, then send.</li>
+    </ol>
+    <div class="actions start"><button id="copyAnswers">Copy my answers</button><button id="downloadAnswers" class="secondary">Download as a file</button></div>
+    <p id="copyStatus" class="status-line" role="status"></p>
+    <p class="data-note">If copying doesn't work, or your message app says the text is too long, download the file and attach it instead. Here is exactly what you are sending:</p>
+    <textarea id="answersText" rows="8" readonly></textarea>
+    <p>Thank you for helping! Your code is <strong id="participantCode"></strong>.</p>
+    <p class="data-note">On a shared computer, press the button below after you have sent your answers, so the next person starts fresh.</p>
+    <button id="newSession" class="secondary">Start a new session for someone else</button>
+  </section>
+
+  <noscript><p class="notice">This study needs JavaScript. Please open it in a current version of Chrome, Edge, Firefox or Safari.</p></noscript>
+  <p class="footer-note"><button id="withdraw" class="link-button">Stop and delete my answers</button></p>
+</main>
+<script>{{DATA}}</script>
+<script>{{JS}}</script>
+</body>
+</html>

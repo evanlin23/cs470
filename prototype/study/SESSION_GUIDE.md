@@ -1,6 +1,13 @@
 # BridgeFinder study session guide (feedback round 3)
 
-One session takes about 25 minutes with one student and one facilitator. Each session gives the final report three kinds of evidence: what the student did in the app (task completion and comprehension), blinded ratings of 15 suggestion cards with the System Usability Scale (SUS), and open feedback for the next design round. The protocol and analysis are in [README.md](README.md). This guide is the script.
+There are two ways to run a session.
+
+- **Self-guided (no facilitator).** Send the student `dist/bridgefinder-study.html` or its GitHub Pages link. The page walks them through consent, background, the unaided app task, a three-question check, the blinded card ratings, the System Usability Scale and the debrief. It records what they do in the app, and ends with a **Copy my answers** button. They paste the answers back to you. Collect the replies in text files and run `python prototype/study/import_answers.py replies/*.txt --out /path/to/private`, which writes `sessions.json` for the analyzer and `round3_log.csv` with one row per student. Rebuild the page with `python prototype/study/build_standalone.py`, and test it with `python prototype/tests/standalone_workflow.py`.
+- **Moderated (below).** You watch, ask the check questions out loud, and take notes. It is slower but tells you more about why people get stuck.
+
+The two modes use the same cards, rating questions and SUS, so both kinds of session go into one analysis. Each self-guided answer carries `collection_mode: self-guided-html-v1`, so the report can say how many sessions of each kind there were.
+
+One moderated session takes about 25 minutes with one student and one facilitator. Each session gives the final report three kinds of evidence: what the student did in the app (task completion and comprehension), blinded ratings of 15 suggestion cards with the System Usability Scale (SUS), and open feedback for the next design round. The protocol and analysis are in [README.md](README.md). This guide is the script.
 
 ## Before the first session
 
